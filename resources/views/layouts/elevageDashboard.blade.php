@@ -12,6 +12,11 @@
 
 <h1>{{$elevage->nom_elevage}}</h1>
 <h3>{{$elevage->nom_eleveur}}</h3>
+<?php
+$game =  App\Gamedata::Find(1);
+$date = $game->date();
+?>
+<span>{{$date}}</span>
 <nav>
 	<ul>
 		<li><a href="{{route('animaux',[$elevage])}}">Voir mon cheptel</a></li>

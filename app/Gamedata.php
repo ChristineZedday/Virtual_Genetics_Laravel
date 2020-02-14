@@ -12,7 +12,7 @@ class Gamedata extends Model
         return  Gamedata::find(1)->budget;
     }
 
-    static function date()
+    public function date()
     {
         return  Gamedata::find(1)->date_courante;
     }
