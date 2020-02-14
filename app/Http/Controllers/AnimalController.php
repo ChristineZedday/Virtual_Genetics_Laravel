@@ -1,0 +1,151 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Elevage;
+use App\Animal;
+
+class AnimalController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $elevage: elevage_id, $animal: animal_id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($elevage, $animal)
+    {
+        $elevage = Elevage::Find($elevage);
+        $animal = Animal::Find($animal);
+        return view('animal',['elevage'=>$elevage,'animal'=>$animal]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    /**
+     * Put animal for sale.
+     *
+     * @param  int  $elevage->id, $animal->id
+     * @return \Illuminate\Http\Response
+     */
+    public function vendre($elevage, $animal)
+    {
+        $elevage = Elevage::Find($elevage);
+        $animal = Animal::Find($animal);
+
+        if ($animal->elevage_id == $elevage->id) //on ne vend que ce qui nous appartient!
+        {
+            return view('vendreAnimal',['elevage'=>$elevage,'animal'=>$animal]);
+        }
+    }
+
+     /**
+     * Put animal for sale.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function vente(Request $request)
+    {
+        $validated =  $request->validate([ 'prix'=>'integer|required']); 
+       
+        $id = $request->input('id');
+        
+        $animal = Animal::Find($id);
+        $animal->prix = $validated['prix'];
+        $animal->a_vendre = true;
+
+        if ($animal->save())
+        {
+            $request->session()->flash('status',"animal mis en vente");
+            $request->session()->flash('alert-class',"alert-success");
+            return redirect()->route('animaux',[$animal->elevage_id]);
+        }
+    }
+
+     /**
+     * remove from sale.
+     *
+     * @param  int  $elevage->id, $animal->id
+     * @return \Illuminate\Http\Response
+     */
+    public function pasVendre($elevage, $animal)
+    {
+        //
+    }
+
+     /**
+     * Buy animal.
+     *
+     * @param  int  $elevage->id, $animal->id
+     * @return \Illuminate\Http\Response
+     */
+    public function acheter($elevage, $animal)
+    {
+        //
+    }
+}

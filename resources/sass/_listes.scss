@@ -1,0 +1,30 @@
+.animaux {
+	h3 {
+		color: $middle;
+		margin-top: 20px;
+		margin-left: 30px;
+	}
+	table {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-left: 20px;
+			margin-right: 10px;
+			color: $black;
+		tr{
+			margin-top: 5px;
+			margin-bottom: 5px;
+			
+			th {
+				font-weight: bold;
+				background-color: $grey;
+				padding: 5px;
+				
+			}
+			td {
+				background-color: lighten($grey,20%);
+				padding: 5px;
+				
+			}
+		}
+	}
+}

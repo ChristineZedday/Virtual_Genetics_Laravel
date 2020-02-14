@@ -1,0 +1,136 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Auth;
+use App\Http\Middleware\checkElevage;
+use App\Elevage;
+use App\gameData;
+
+class ElevageController extends Controller
+{
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        // $this->middleware('checkElevage');
+    
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+     
+    public function index($id)
+    {
+    $elevage = Elevage::Find($id);
+       return view('dashboard', ['elevage'=>$elevage]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('formCreateElevage');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $validated =  $request->validate(['nom_elevage'=>'string|required', 'nom_eleveur'=>'string|required']);
+        $elevage = new Elevage;
+        $elevage->fill($validated);
+        
+        $user = Auth::user();
+        if (isset($user)) {
+            $elevage ->user_id = $user->id;
+        }
+
+        $elevage->budget= gameData::budget();
+
+        if ($elevage->save())
+            {
+                $request->session()->flash('status',"elevage enregistrée avec succès");
+                $request->session()->flash('alert-class',"alert-success");
+                return redirect()->action('HomeController@index');
+            }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    /**
+     * Show list of animals for this stud
+     */
+    public function listeAnimaux ($id)
+    {
+        $elevage = Elevage::Find($id);
+      
+      return view('animaux', ['elevage'=>$elevage]);
+
+    }
+
+    /**
+     * Show money
+     */
+    public function budget ($id)
+    {
+        $elevage = Elevage::Find($id);
+        $budget = $elevage->budget;
+        return redirect()->back()->with('alert', $budget);
+    }
+}
