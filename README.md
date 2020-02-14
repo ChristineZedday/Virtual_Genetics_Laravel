@@ -1,6 +1,6 @@
 <h2>Simulateur d'élevage </h2>
 <p>En construction...</h2>
-<p>Conception sur https://github.com/christineZedday/Virtual_Genetics_conception</p>
+<p>Conception sur https://github.com/christineZedday/Virtual-Genetics-conception</p>
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
