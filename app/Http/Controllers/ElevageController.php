@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Middleware\checkElevage;
+use Illuminate\Support\Facades\DB;
 use App\Elevage;
+use App\Animal;
 use App\gameData;
 
 class ElevageController extends Controller
@@ -123,6 +125,23 @@ class ElevageController extends Controller
       return view('animaux', ['elevage'=>$elevage]);
 
     }
+
+    /**
+     * Show list of animals for sale in other studs
+     * int $id: id élevage courant
+     */
+    public function animauxAVendre ($id)
+    {
+        
+        $elevage = Elevage::Find($id);
+        
+        $animaux = Animal::all()->where('elevage_id', '!=', '$id')->where('a_vendre',true);
+        
+      
+      return view('animauxAVendre', ['elevage'=>$elevage, 'animaux'=>$animaux]);
+
+    }
+
 
     /**
      * Show money

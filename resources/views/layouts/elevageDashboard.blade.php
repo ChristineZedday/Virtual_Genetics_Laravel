@@ -18,6 +18,7 @@
 		<li><a href="{{route('budget',[$elevage])}}">Voir mon budget</a></li>
 		<li><a href="{{route('temps')}}">Avancer d'un mois</a></li>
 		<li><a href="{{route('home')}}">Voir mes élevages</a></li>
+		<li><a href="{{route('animaux.avendre',[$elevage])}}">Acheter un animal</a></li>
 		                       
 
                                   

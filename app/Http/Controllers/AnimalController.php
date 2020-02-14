@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Elevage;
 use App\Animal;
+use App\Gamedata;
 
 class AnimalController extends Controller
 {
@@ -135,7 +136,13 @@ class AnimalController extends Controller
      */
     public function pasVendre($elevage, $animal)
     {
-        //
+        $animal = Animal::Find($animal);
+        $elevage = Elevage::Find($elevage);
+       $animal->a_vendre = false;
+       if ($animal->save())
+       {
+           return redirect()->route('animaux',[$animal->elevage_id]);
+       }
     }
 
      /**
@@ -146,6 +153,27 @@ class AnimalController extends Controller
      */
     public function acheter($elevage, $animal)
     {
-        //
+        $animal = Animal::Find($animal);
+        $elevage = Elevage::Find($elevage);
+        $date = Gamedata::date();
+        $vendeur = $animal->elevage_id;
+        $vendeur = Elevage::Find($vendeur);
+
+        if ($elevage->budget >= $animal->prix)
+            {
+            $vendeur->budget = $vendeur->budget + $animal->prix;
+            $vendeur->save();
+            $elevage->budget = $elevage->budget - $animal->prix;
+            $elevage->save();
+            $animal->a_vendre = false;
+            $animal->date_achat = $date;
+            $animal->elevage_id = $elevage->id;
+                if ($animal->save())
+                {
+                    return redirect()->route('animaux',[$elevage->id]);
+                }
+        }
+
+        
     }
 }
