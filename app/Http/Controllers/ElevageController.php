@@ -123,7 +123,7 @@ class ElevageController extends Controller
     {
         $date = TempsController::dateCourante();
         $elevage = Elevage::Find($id);
-        $animaux = Animal::all()->where('elevage_id', $id)->where('date_naissance','>=', $date);
+        $animaux = Animal::all()->where('elevage_id', $id)->where('foetus', false);
       
       return view('animaux', ['elevage'=>$elevage,'animaux'=>$animaux]);
 
@@ -154,7 +154,7 @@ class ElevageController extends Controller
     {
         
         $elevage = Elevage::Find($id);
-        $juments = Animal::all()->where('elevage_id', $id)->where('sexe', 'femelle');
+        $juments = Animal::all()->where('elevage_id', $id)->where('sexe', 'femelle')->where('foetus',false);
       
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
 
@@ -170,7 +170,7 @@ class ElevageController extends Controller
         
         $jument =Animal::Find($jument);
         
-        $etalons = Animal::all()->where('elevage_id', $id)->where('sexe', 'mâle');
+        $etalons = Animal::all()->where('elevage_id', $id)->where('sexe', 'mâle')->where('foetus',false);
       
       return view('etalons', ['elevage'=>$elevage, 'etalons'=>$etalons, 'jument'=>$jument]);
 

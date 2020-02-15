@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class statutsFemelle extends Model
 {
     protected $table = 'statutsfemelles';
-    public function __construct($jument)
+   
+
+    public function Femelle()
     {
-        $this->animal_id = $jument;
-       
+        $this->belongsTo('App\Animal');
     }
 }

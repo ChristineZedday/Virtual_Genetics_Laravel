@@ -14,9 +14,9 @@ class ReproductionController extends Controller
 {
    public function croisement($elevage, $etalon, $jument)
    {
-    $statut = new StatutsFemelle($jument);
+    $statut = new StatutsFemelle();
     
-    
+    $statut->animal_id = $jument;
     $statut->pres_pleine = true; 
     $statut->etalon_id = $etalon;
     $date = TempsController::ElevenMonths();
@@ -27,6 +27,7 @@ class ReproductionController extends Controller
           $statut->vide = false; 
         
           $animal = new Animal;
+          $animal->foetus = true;
           $animal->date_naissance = $date;
           $animal->sire_id = $etalon;
           $animal->dam_id = $jument;

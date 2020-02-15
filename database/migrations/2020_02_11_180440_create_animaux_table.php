@@ -28,6 +28,7 @@ class CreateAnimauxTable extends Migration
             $table->bigInteger('elevage_id')->unsigned();
             $table->foreign('elevage_id')->references('id')->on('elevages');
             $table->boolean('fondateur')->default(true);
+            $table->boolean('foetus')->default(false);
             $table->bigInteger('sire_id')->unsigned()->nullable();
             $table->bigInteger('dam_id')->unsigned()->nullable();
             $table->foreign('sire_id')->references('id')->on('animaux');

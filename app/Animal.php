@@ -24,6 +24,11 @@ class Animal extends Model
     {
         return $this->HasOne('App\Animal', 'id', 'dam_id');
     }
+
+    public function Statut()
+    {
+        return $this->HasOne('App/statutsFemelle');
+    }
   
  
 }
