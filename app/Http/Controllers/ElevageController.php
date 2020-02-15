@@ -142,6 +142,36 @@ class ElevageController extends Controller
 
     }
 
+    
+    /**
+     * Show list of available females
+     */
+    public function faireSaillir ($id)
+    {
+        
+        $elevage = Elevage::Find($id);
+        
+        $juments = Animal::all()->where('elevage_id', $id)->where('sexe', 'femelle');
+      
+      return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
+
+    }
+
+     /**
+     * Show list of available males
+     */
+    public function choixEtalon ($id,$jument)
+    {
+        
+        $elevage = Elevage::Find($id);
+        $jument =Animal::Find($jument);
+        
+        $etalons = Animal::all()->where('elevage_id', $id)->where('sexe', 'mâle');
+      
+      return view('etalons', ['elevage'=>$elevage, 'etalons'=>$etalons, 'jument'=>$jument]);
+
+    }
+
 
     /**
      * Show money

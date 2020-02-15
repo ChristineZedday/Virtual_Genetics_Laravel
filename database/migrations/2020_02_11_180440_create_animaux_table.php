@@ -19,14 +19,19 @@ class CreateAnimauxTable extends Migration
             $table->string('nom')->nullable();
             $table->string('couleur')->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
-            $table->string('race');
-            $table->string('sexe');
+            $table->string('race')->default('OC');
+            $table->enum('sexe',['mâle','femelle']);
             $table->date('date_achat')->nullable();
             $table->date('date_naissance')->nullable();
             $table->boolean('a_vendre')->default(false);
             $table->bigInteger('prix')->nullable();
             $table->bigInteger('elevage_id')->unsigned();
             $table->foreign('elevage_id')->references('id')->on('elevages');
+            $table->boolean('fondateur')->default(true);
+            $table->bigInteger('sire_id')->unsigned()->nullable();
+            $table->bigInteger('dam_id')->unsigned()->nullable();
+            $table->foreign('sire_id')->references('id')->on('animaux');
+            $table->foreign('dam_id')->references('id')->on('animaux');
         });
     }
 

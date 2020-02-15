@@ -176,4 +176,22 @@ class AnimalController extends Controller
 
         
     }
+
+      /**
+     * Confirm male choice for the selected mare.
+     *
+     * @param  int  $elevage->id, $etalon->id, jument_id
+     * @return \Illuminate\Http\Response
+     */
+    public function confirmeEtalon($elevage, $etalon, $jument)
+    {
+        $etalon = Animal::Find($etalon);
+        $elevage = Elevage::Find($elevage);
+        $jument = Animal::Find($jument);
+       
+        return view('reproducteurs', ['elevage'=>$elevage, 'etalon'=>$etalon, 'jument'=>$jument]);
+    }
+
+        
+    
 }

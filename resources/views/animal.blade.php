@@ -23,6 +23,14 @@
 	@endif
 @endif
 </div>
+<div id='saillie'>
+@if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle'))
+
+<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
+			<button >Faire saillir</button></a>
+
+@endif
+</div>
 
 <script>
 function pricer()

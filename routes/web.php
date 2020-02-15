@@ -41,4 +41,10 @@ Route::get('/animal.pas.vendre/{elevage}/{animal}', 'AnimalController@pasVendre'
 
 Route::get('/animaux/avendre/{elevage}', 'ElevageController@animauxAVendre')->name('animaux.avendre');
 
-Route::get('/animal.acheter/{elevage}/{animal}', 'AnimalController@acheter')->name('acheter');
+Route::get('/animal/acheter/{elevage}/{animal}', 'AnimalController@acheter')->name('acheter');
+
+Route::get('/reproduction/jument/{elevage}', 'ElevageController@faireSaillir')->name('reproduction.jument');
+
+Route::get('/reproduction/etalons/{elevage}/{jument}', 'ElevageController@choixEtalon')->name('saillir');
+
+Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}', 'AnimalController@confirmeEtalon')->name('etalon');
