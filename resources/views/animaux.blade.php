@@ -13,14 +13,14 @@
     <th>A Vendre?</th>
     <th>Voir</th>
   </tr>
-@foreach ($elevage->Animaux as $animal)
+@foreach ($animaux as $animal)
 <tr>
 	<td> {{$animal->nom}} </td>
 	<td> {{$animal->race}} </td>
 	<td> {{$animal->sexe}} </td>
   <td> {{$animal->couleur}} </td>
 	<td> {{$animal->date_achat}} </td>
-	<td> {{ $animal->a_vendre? "à vendre": ""  }} </td>
+	<td> {{ $animal->a_vendre ? "à vendre" : ""  }} </td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"><button>voir</button></a> </td>
 </tr>
 @endforeach

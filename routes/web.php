@@ -11,11 +11,11 @@
 |
 */
 
-
+//routes de login
 
 Auth::routes();
 
-  Route::get('/', function () { if ( Auth::check() ) {return redirect()->action('HomeController@index');} else {return view('bienvenue');}});
+Route::get('/', function () { if ( Auth::check() ) {return redirect()->action('HomeController@index');} else {return view('bienvenue');}});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -23,15 +23,23 @@ Route::get('/elevage.create', 'ElevageController@create')->name('elevage.create'
 
 Route::post('/elevage.store', 'ElevageController@store')->name('elevage.store');
 
-Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');
+//routes générales élevage
 
-Route::get('/animaux/{elevage}', 'ElevageController@listeAnimaux')->name('animaux');
+Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');
 
 Route::get('/budget/{elevage}', 'ElevageController@budget')->name('budget');
 
 Route::get('/temps', 'TempsController@nextMonth')->name('temps');
 
+
+//Routes listant des animaux
+
+Route::get('/animaux/{elevage}', 'ElevageController@listeAnimaux')->name('animaux');
+
 Route::get('/animal/{elevage}/{animal}', 'AnimalController@show')->name('animal');
+
+//Routes achat vente
+
 
 Route::get('/animal.vendre/{elevage}/{animal}', 'AnimalController@vendre')->name('vendre');
 
@@ -43,8 +51,12 @@ Route::get('/animaux/avendre/{elevage}', 'ElevageController@animauxAVendre')->na
 
 Route::get('/animal/acheter/{elevage}/{animal}', 'AnimalController@acheter')->name('acheter');
 
+//routes reproduction
+
 Route::get('/reproduction/jument/{elevage}', 'ElevageController@faireSaillir')->name('reproduction.jument');
 
 Route::get('/reproduction/etalons/{elevage}/{jument}', 'ElevageController@choixEtalon')->name('saillir');
 
 Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}', 'AnimalController@confirmeEtalon')->name('etalon');
+
+Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}', 'ReproductionController@croisement')->name('croisement');

@@ -31,20 +31,4 @@
 
 @endif
 </div>
-
-<script>
-function pricer()
-{
-div = document.getElementById('vente');
-form = document.createElement('form');
-input = document.createElement('input');
-input.name ="prix";
-input.type = 'number';
-form.appendChild(input);
-valider = document.createElement('button');
-form.appenChild('valider');
-div.appenChild('form');
-
-}
-</script>
 @endsection

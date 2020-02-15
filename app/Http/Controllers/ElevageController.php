@@ -10,6 +10,7 @@ use App\Elevage;
 use App\Animal;
 use App\gameData;
 
+
 class ElevageController extends Controller
 {
 
@@ -120,9 +121,11 @@ class ElevageController extends Controller
      */
     public function listeAnimaux ($id)
     {
+        $date = TempsController::dateCourante();
         $elevage = Elevage::Find($id);
+        $animaux = Animal::all()->where('elevage_id', $id)->where('date_naissance','>=', $date);
       
-      return view('animaux', ['elevage'=>$elevage]);
+      return view('animaux', ['elevage'=>$elevage,'animaux'=>$animaux]);
 
     }
 
@@ -133,9 +136,9 @@ class ElevageController extends Controller
     public function animauxAVendre ($id)
     {
         
-        $elevage = Elevage::Find($id);
         
         $animaux = Animal::all()->where('elevage_id', '!=', '$id')->where('a_vendre',true);
+        $elevage = Elevage::Find($id);
         
       
       return view('animauxAVendre', ['elevage'=>$elevage, 'animaux'=>$animaux]);
@@ -145,12 +148,12 @@ class ElevageController extends Controller
     
     /**
      * Show list of available females
+     * param: int elevage_id 
      */
     public function faireSaillir ($id)
     {
         
         $elevage = Elevage::Find($id);
-        
         $juments = Animal::all()->where('elevage_id', $id)->where('sexe', 'femelle');
       
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
@@ -158,12 +161,13 @@ class ElevageController extends Controller
     }
 
      /**
-     * Show list of available males
+     * Show list of available males in elevage $id
+     * param int $id current stud $jument female 
      */
     public function choixEtalon ($id,$jument)
     {
-        
         $elevage = Elevage::Find($id);
+        
         $jument =Animal::Find($jument);
         
         $etalons = Animal::all()->where('elevage_id', $id)->where('sexe', 'mâle');

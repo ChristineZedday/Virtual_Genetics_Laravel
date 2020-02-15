@@ -6,8 +6,10 @@
 <p>{{$jument->nom}}</p>
 <p>{{$jument->race}}</p>
 <p>{{$jument->couleur}}</p>
-<p>par {{$jument->Sire->nom ??}}</p>
-<p>et {{$jument->Dam->nom ??}}</p>
+@if (! $jument->fondateur)
+<p>par {{$jument->Sire->nom}}</p>
+<p>et {{$jument->Dam->nom}}</p>
+@endif
 <h3 >Mes Etalons:</h3>
 <table>
 <tr>
