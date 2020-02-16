@@ -7,9 +7,14 @@
 <p>{{$animal->couleur}}</p>
 <p>{{$animal->taille_cm}}</p>
 <p>{{$animal->date_naissance}}</p>
+@if (! $animal->fondateur)
+<p>par {{$animal->Sire->nom}}</p>
+<p>et {{$animal->Dam->nom}}</p>
+@endif
 
 <p>{{$animal->elevage_id == $elevage->id? $animal->date_achat : ""}}</p>
 <p>{{$animal->a_vendre? "à vendre" : ""}}</p>
+<p>{{$animal->prix}}</p>
 <div id='vente'>
 @if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre))
 
