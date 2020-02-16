@@ -154,7 +154,8 @@ class ElevageController extends Controller
     {
         
         $elevage = Elevage::Find($id);
-        $juments = Animal::all()->where('elevage_id', $id)->where('sexe', 'femelle')->where('foetus',false);
+        $juments = Animal::where('elevage_id', $id)->where('sexe', 'femelle')->where('foetus',false)->whereDoesntHave('Statut', function($q) { $q->where('vide', false);})->get();
+      
       
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
 

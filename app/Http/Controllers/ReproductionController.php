@@ -14,7 +14,11 @@ class ReproductionController extends Controller
 {
    public function croisement($elevage, $etalon, $jument)
    {
-    $statut = new StatutsFemelle();
+    
+    $statut = Animal::Find($jument)->Statut;
+    
+    if (! $statut) 
+    {$statut = new StatutsFemelle();}
     
     $statut->animal_id = $jument;
     $statut->pres_pleine = true; 
@@ -28,6 +32,7 @@ class ReproductionController extends Controller
         
           $animal = new Animal;
           $animal->foetus = true;
+          $animal->fondateur = false;
           $animal->date_naissance = $date;
           $animal->sire_id = $etalon;
           $animal->dam_id = $jument;

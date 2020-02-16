@@ -43,17 +43,21 @@ class TempsController extends Controller
 function checkFemellesTerme($date)
 {
     
-    $statuts = statutsFemelle::all()->where('terme',  $date);
+    $statuts = statutsFemelle::where('terme',  $date)->get();
+  
     
     if (!empty($statuts))
         {
             foreach ($statuts as $statut)
             {
-                $tatut->conf_pleine = false;
+                
+                $statut->conf_pleine = false;
                 $statut->pres_pleine = false;
-                $tatut->vide = true;
+                $statut->vide = true;
                 $statut->conf_vide = true;
-                $etalon_id = null;     
+                $statut->etalon_id = null;    
+                $statut->terme = null;
+                $statut->save(); 
             }
     } 
 }
@@ -65,6 +69,8 @@ function checkNouveaux($date)
     foreach ($animaux as $animal)
     {
         $animal->foetus = false;
+        $animal->elevage_id = $animal->Dam->elevage_id;
+        $animal->save();
             
     }
 }

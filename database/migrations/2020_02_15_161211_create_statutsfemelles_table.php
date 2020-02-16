@@ -22,7 +22,7 @@ class CreateStatutsfemellesTable extends Migration
             $table->boolean('vide')->default(true);
             $table->boolean('conf_vide')->default(false);
             $table->bigInteger('etalon_id')->unsigned()->nullable()->default(null);
-            $table->date('terme');
+            $table->date('terme')->nullable();
             $table->foreign('animal_id')->references('id')->on('animaux'); //la jument
             $table->foreign('etalon_id')->references('id')->on('animaux');
         });

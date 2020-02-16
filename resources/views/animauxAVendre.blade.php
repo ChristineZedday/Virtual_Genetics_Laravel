@@ -8,6 +8,7 @@
     <th>Nom </th>
     <th>Race</th>
     <th>Sexe</th>
+	<th>Prix</th>
     <th>Elevage</th>
     
     <th>Voir</th>
@@ -17,6 +18,7 @@
 	<td> {{$animal->nom}} </td>
 	<td> {{$animal->race}} </td>
 	<td> {{$animal->sexe}} </td>
+	<td>{{$animal->prix}}</td>
 	<?php 
 		 $vendeur = $animal->elevage_id;
 		 $vendeur = App\Elevage::Find($vendeur);

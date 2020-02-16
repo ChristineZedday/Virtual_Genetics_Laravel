@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Elevage;
 use App\Animal;
 use App\Gamedata;
+use App\Http\Controllers\TempsController;
 
 class AnimalController extends Controller
 {
@@ -155,7 +156,7 @@ class AnimalController extends Controller
     {
         $animal = Animal::Find($animal);
         $elevage = Elevage::Find($elevage);
-        $date = Gamedata::date();
+        $date = TempsController::dateCourante();
         $vendeur = $animal->elevage_id;
         $vendeur = Elevage::Find($vendeur);
 

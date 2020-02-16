@@ -4,21 +4,29 @@ use Illuminate\Database\Seeder;
 
 class GamedatasTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        DB::table('gamedatas')->insert(array (
+        
+
+        \DB::table('gamedatas')->delete();
+        
+        \DB::table('gamedatas')->insert(array (
             0 => 
             array (
                 'id' => 1,
-                'date_courante' => '1970-01-01',
-                'budget' => 20000
-            
-            )));
-          
+                'created_at' => NULL,
+                'updated_at' => '2020-02-16 18:25:51',
+                'budget' => 20000,
+                'date_courante' => '1971-03-01',
+            ),
+        ));
+        
+        
     }
 }
