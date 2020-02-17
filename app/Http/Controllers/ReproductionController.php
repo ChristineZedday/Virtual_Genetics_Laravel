@@ -48,6 +48,8 @@ class ReproductionController extends Controller
             else{
                 $animal->race = 'OC';
             }
+            Genome::mixGenes($etalon->id, $jument->id);
+
         $animal->save();
          
        }

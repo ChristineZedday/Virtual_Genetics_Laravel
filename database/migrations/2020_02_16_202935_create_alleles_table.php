@@ -22,6 +22,7 @@ class CreateAllelesTable extends Migration
             $table->boolean('is_default')->default(false);
             $table->boolean('is_dominant')->default(false);
             $table->foreign('locus_id')->references('id')->on('loci');
+           
         });
     }
 
