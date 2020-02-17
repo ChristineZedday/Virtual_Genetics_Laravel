@@ -18,7 +18,7 @@ class CreateLociTable extends Migration
             $table->timestamps();
             $table->bigInteger('espece_id');
             $table->string('nom');
-            $table->string('abbr');
+            $table->string('abbrev');
             $table->string('chromosome')->nullable();
         
         });

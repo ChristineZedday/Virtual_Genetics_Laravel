@@ -193,6 +193,19 @@ class AnimalController extends Controller
         return view('reproducteurs', ['elevage'=>$elevage, 'etalon'=>$etalon, 'jument'=>$jument]);
     }
 
-        
+    
+      /**
+     * Registration of name/color
+     *
+     * @param  int  $animal->id, 
+     * @return \Illuminate\Http\Response
+     */
+    public function enregistrement($animal)
+    {
+        $animal = Animal::Find($animal);
+      
+       
+        return view('formEnregistrer', ['animal' =>$animal]);
+    }    
     
 }

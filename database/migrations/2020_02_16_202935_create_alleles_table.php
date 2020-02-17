@@ -18,7 +18,7 @@ class CreateAllelesTable extends Migration
             $table->timestamps();
             $table->bigInteger('locus_id')->unsigned();
             $table->string('nom');
-            $table->string('abbr');
+            $table->string('abbrev');
             $table->boolean('is_default')->default(false);
             $table->boolean('is_dominant')->default(false);
             $table->foreign('locus_id')->references('id')->on('loci');

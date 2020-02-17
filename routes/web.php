@@ -60,3 +60,9 @@ Route::get('/reproduction/etalons/{elevage}/{jument}', 'ElevageController@choixE
 Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}', 'AnimalController@confirmeEtalon')->name('etalon');
 
 Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}', 'ReproductionController@croisement')->name('croisement');
+
+//routes enregistrement 
+
+Route::get('/enregistrement/{animal}', 'AnimalController@enregistrer')->name('enregistrement');
+
+Route::get('/signalement/{animal}', 'AnimalController@enregistrer')->name('signalement');

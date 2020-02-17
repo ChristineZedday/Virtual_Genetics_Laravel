@@ -3,14 +3,32 @@
 	@isset($animal->nom)
 	<h1>{{ $animal->nom }}</h1>
 	@else
-	<button>Enregistrer le nom</button>
+	<a href="{{route('enregistrement',[$animal->id]))}}"><button>Enregistrer le nom</button></a>
 	@endisset
 <h3>{{$animal->race}}</h3>
 <p>{{$animal->sexe}}</p>
 @isset($animal->couleur)
 	<p>{{ $animal->couleur }}</p>
 	@else
-	<button>Enregistrer la robe</button>
+	<a href="{{route('signalement',[$animal->id]))}}"><button>Enregistrer la robe</button></a>
+	<p>
+	<?php 
+	$genome = App\Genotype::where('animal_id',$animal->id)->get();
+		foreach ($genome as $genotype)
+		{
+			$allP = App\Allele::Find($genotype->allele_p_id);
+			$allP = $allP->abbrev;
+			
+			$allM = App\Allele::Find($genotype->allele_m_id);
+			$allM = $allM->abbrev;
+			echo($allP.$allM ." ");
+
+
+		}
+
+	?>
+	
+	</p>	
 	@endisset
 <p>{{$animal->taille_cm}}</p>
 <p>{{$animal->date_naissance}}</p>
