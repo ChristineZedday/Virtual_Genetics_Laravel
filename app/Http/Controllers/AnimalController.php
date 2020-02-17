@@ -200,12 +200,34 @@ class AnimalController extends Controller
      * @param  int  $animal->id, 
      * @return \Illuminate\Http\Response
      */
-    public function enregistrement($animal)
+    public function enregistrer($animal)
     {
         $animal = Animal::Find($animal);
       
        
-        return view('formEnregistrer', ['animal' =>$animal]);
+        return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
+    }    
+
+    public function registration(Request $request, $animal)
+    {
+        $animal = Animal::Find($animal);
+        
+        $validated = $request->validate([ 'nom'=>'string','couleur'=>'string']); 
+
+        $animal->nom = $validated['nom'];
+        $animal->couleur = $validated['couleur'];
+
+        if ($animal->save())
+        {
+            {
+                $request->session()->flash('status',"animal enregistrée avec succès");
+                $request->session()->flash('alert-class',"alert-success");
+                return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+               
+            }
+        }
+      
+       
     }    
     
 }

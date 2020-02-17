@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Gamedata;
 use App\statutsFemelle;
 use App\Animal;
+use App\Genome;
 
 class ReproductionController extends Controller
  /**
@@ -41,16 +42,17 @@ class ReproductionController extends Controller
           $animal->sexe = $sexe==1? 'mâle' : 'femelle';
           $etalon = Animal::Find($etalon);
           $jument = Animal::Find($jument);
-            if ($etalon->race == $jument->race)
-            {
-                $animal->race = $etalon->race;
-            }
-            else{
-                $animal->race = 'OC';
-            }
-            Genome::mixGenes($etalon->id, $jument->id);
+                if ($etalon->race == $jument->race)
+                {
+                    $animal->race = $etalon->race;
+                }
+                else{
+                    $animal->race = 'OC';
+                }
+         $animal->save();
+         Genome::mixGenes($etalon->id, $jument->id, $animal->id);
 
-        $animal->save();
+       
          
        }
        else{

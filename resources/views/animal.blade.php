@@ -3,14 +3,14 @@
 	@isset($animal->nom)
 	<h1>{{ $animal->nom }}</h1>
 	@else
-	<a href="{{route('enregistrement',[$animal->id]))}}"><button>Enregistrer le nom</button></a>
+	<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom</button></a>
 	@endisset
 <h3>{{$animal->race}}</h3>
 <p>{{$animal->sexe}}</p>
 @isset($animal->couleur)
 	<p>{{ $animal->couleur }}</p>
 	@else
-	<a href="{{route('signalement',[$animal->id]))}}"><button>Enregistrer la robe</button></a>
+	<a href="{{route('signalement',[$animal->id])}}"><button>Enregistrer la robe</button></a>
 	<p>
 	<?php 
 	$genome = App\Genotype::where('animal_id',$animal->id)->get();

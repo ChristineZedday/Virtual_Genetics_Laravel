@@ -66,3 +66,5 @@ Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}', 'Reproduction
 Route::get('/enregistrement/{animal}', 'AnimalController@enregistrer')->name('enregistrement');
 
 Route::get('/signalement/{animal}', 'AnimalController@enregistrer')->name('signalement');
+
+Route::put('/registration/{animal}', 'AnimalController@registration')->name('registration');
