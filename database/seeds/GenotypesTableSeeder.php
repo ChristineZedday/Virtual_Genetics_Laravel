@@ -45,7 +45,7 @@ class GenotypesTableSeeder extends Seeder
                 'animal_id' => 4,
                 'allele_p_id' => 2,
                 'allele_m_id' => 2,
-                'locus_id' => 2,
+                'locus_id' => 1,
             ),
             3 => 
             array (
@@ -77,7 +77,6 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 5,
                 'locus_id' => 2,
             ),
-           
         ));
         
         

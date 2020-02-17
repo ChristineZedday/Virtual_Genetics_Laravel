@@ -39,6 +39,7 @@ class Genome extends Model
                         $genotype->locus_id = $genotypeM->locus_id;
                         $genotype->allele_p_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first();
                         $genotype->allele_m_id = rand(1,2)==1 ?  $genotypeM->allele_p_id : $genotypeM->allele_m_id;
+                        $genotype->save();
                     }
             }
         
