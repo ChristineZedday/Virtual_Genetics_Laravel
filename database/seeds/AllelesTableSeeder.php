@@ -25,7 +25,7 @@ class AllelesTableSeeder extends Seeder
                 'locus_id' => 1,
                 'nom' => 'Agouti',
                 'abbrev' => 'A+',
-                'is_default' => 0,
+                'is_default' => 1,
                 'is_dominant' => 1,
             ),
             1 => 
@@ -47,7 +47,7 @@ class AllelesTableSeeder extends Seeder
                 'locus_id' => 2,
                 'nom' => 'Extension',
                 'abbrev' => 'E+',
-                'is_default' => 0,
+                'is_default' => 1,
                 'is_dominant' => 1,
             ),
             3 => 
@@ -94,7 +94,17 @@ class AllelesTableSeeder extends Seeder
                 'is_default' => 1,
                 'is_dominant' => 0,
             ),
-           
+            7 => 
+            array (
+                'id' => 8,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 3,
+                'nom' => 'Tobiano',
+                'abbrev' => 'TO',
+                'is_default' => 0,
+                'is_dominant' => 1,
+            ),
         ));
         
         

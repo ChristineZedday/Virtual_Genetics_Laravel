@@ -97,7 +97,46 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
             ),
-           
+            4 => 
+            array (
+                'id' => 6,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Coed Coch Myrrdhin',
+                'couleur' => NULL,
+                'taille_cm' => 117,
+                'race' => 'Welsh A',
+                'sexe' => 'mâle',
+                'date_achat' => NULL,
+                'date_naissance' => '1965-02-13',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 4,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 7,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Coed Coch Keridwen',
+                'couleur' => NULL,
+                'taille_cm' => 111,
+                'race' => 'Welsh A',
+                'sexe' => 'femelle',
+                'date_achat' => NULL,
+                'date_naissance' => '1966-05-18',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 4,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+            ),
         ));
         
         
