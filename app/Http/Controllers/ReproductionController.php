@@ -39,7 +39,7 @@ class ReproductionController extends Controller
           $animal->dam_id = $jument;
           $animal->elevage_id = $elevage;
           $sexe = rand(1,2);
-          $animal->sexe = $sexe==1? 'mâle' : 'femelle';
+          $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
           $etalon = Animal::Find($etalon);
           $jument = Animal::Find($jument);
                 if ($etalon->race == $jument->race)

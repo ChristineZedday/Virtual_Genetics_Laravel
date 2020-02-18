@@ -135,10 +135,10 @@ class AnimalController extends Controller
      * @param  int  $elevage->id, $animal->id
      * @return \Illuminate\Http\Response
      */
-    public function pasVendre($elevage, $animal)
+    public function pasVendre($animal)
     {
         $animal = Animal::Find($animal);
-        $elevage = Elevage::Find($elevage);
+      
        $animal->a_vendre = false;
        if ($animal->save())
        {
@@ -156,7 +156,10 @@ class AnimalController extends Controller
     {
         $animal = Animal::Find($animal);
         $elevage = Elevage::Find($elevage);
-        $date = TempsController::dateCourante();
+        //$date = TempsController::dateCourante();
+        $game = Gamedata::Find(1);
+        $date = $game->date();
+       
         $vendeur = $animal->elevage_id;
         $vendeur = Elevage::Find($vendeur);
 

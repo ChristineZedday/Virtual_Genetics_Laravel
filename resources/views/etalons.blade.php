@@ -27,8 +27,13 @@
 	<td> {{$animal->race}} </td>
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->date_naissance}} </td>
-	<td> {{ $animal->Sire }} </td>
-	<td> {{ $animal->Dam }} </td>
+	@if (! $animal->fondateur)
+	<td> {{ $animal->Sire->nom }} </td>
+	<td> {{ $animal->Dam->nom}} </td>
+	@else
+	<td></td>
+	<td></td>
+	@endif
 
 	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>voir</button></a> </td>
 </tr>

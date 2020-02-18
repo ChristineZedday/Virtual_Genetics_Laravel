@@ -47,14 +47,14 @@
 				<button >Mettre en vente</button></a>
 	@else
 		@if ($animal->elevage_id == $elevage->id && $animal->a_vendre)
-		<a href="{{route('pas.vendre',[$elevage->id,$animal->id])}}"><button>Retirer de la vente</button></a>
+		<a href="{{route('pas.vendre',[$animal->id])}}"><button>Retirer de la vente</button></a>
 			@elseif ($animal->elevage_id != $elevage->id && $animal->a_vendre)
 			<a href="{{route('acheter',[$elevage->id,$animal->id])}}"><button>Acheter</button></a>
 		@endif
 	@endif
 </div>
 <div id='saillie'>
-	@if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle'))
+	@if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle') && (isset($animal->Statut) && ($animal->Statut->vide == true)))
 
 	<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
 				<button >Faire saillir</button></a>

@@ -38,6 +38,23 @@ class TempsController extends Controller
         
        return $date;
     }
+
+    static function ageMonths($date_naissance)
+    {
+        $game = Gamedata::Find(1);
+        $date = $game->date();
+        $date = strToTime($date);
+        $date_naissance = strToTime($date_naissance);
+        $age = $date - $date_naissance;
+       
+        $age = $age/(24*60*60*30);
+
+        dd($age);
+        
+        return $age;
+
+
+    }
 }
 
 function checkFemellesTerme($date)
@@ -70,6 +87,25 @@ function checkNouveaux($date)
     {
         $animal->foetus = false;
         $animal->elevage_id = $animal->Dam->elevage_id;
+        $animal->save();
+            
+    }
+}
+
+function checkPuberes($date)
+{
+    $animaux = Animal::where(ageMonths('date_naissance'), '>=', 24)->where('sexe', 'jeune mâle')->get();
+    foreach ($animaux as $animal)
+    {
+        $animal->sexe = 'mâle';
+        $animal->save();
+            
+    }
+
+    $animaux = Animal::where(ageMonths('date_naissance'), '>=', 24)->where('sexe', 'jeune femelle')->get();
+    foreach ($animaux as $animal)
+    {
+        $animal->sexe = 'femelle';
         $animal->save();
             
     }
