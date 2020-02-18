@@ -54,7 +54,7 @@
 	@endif
 </div>
 <div id='saillie'>
-	@if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle') && (isset($animal->Statut) && ($animal->Statut->vide == true)))
+	@if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle') && (isset($animal->Statut) && $animal->Statut->vide == true || !isset($animal->Statut)))
 
 	<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
 				<button >Faire saillir</button></a>

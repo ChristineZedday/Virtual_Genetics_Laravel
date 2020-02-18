@@ -98,7 +98,7 @@ function checkPuberes($date)
     foreach ($animaux as $animal)
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
-       {} $animal->sexe = 'mâle';
+       { $animal->sexe = 'mâle';
         $animal->save();}
             
     }
@@ -107,7 +107,7 @@ function checkPuberes($date)
     foreach ($animaux as $animal)
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
-        {} $animal->sexe = 'femelle';
+        { $animal->sexe = 'femelle';
          $animal->save();}
             
     }
