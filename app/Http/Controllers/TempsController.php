@@ -26,6 +26,7 @@ class TempsController extends Controller
 
         checkFemellesTerme($date);
         checkNouveaux($date);
+        checkPuberes($date);
 
         return redirect()->route('home');
     }
@@ -49,7 +50,6 @@ class TempsController extends Controller
        
         $age = $age/(24*60*60*30);
 
-        dd($age);
         
         return $age;
 
@@ -94,19 +94,21 @@ function checkNouveaux($date)
 
 function checkPuberes($date)
 {
-    $animaux = Animal::where(ageMonths('date_naissance'), '>=', 24)->where('sexe', 'jeune mâle')->get();
+    $animaux = Animal::where('sexe', 'jeune mâle')->get();
     foreach ($animaux as $animal)
     {
-        $animal->sexe = 'mâle';
-        $animal->save();
+        if (TempsController::ageMonths($animal->date_naissance) >= 24)
+       {} $animal->sexe = 'mâle';
+        $animal->save();}
             
     }
 
-    $animaux = Animal::where(ageMonths('date_naissance'), '>=', 24)->where('sexe', 'jeune femelle')->get();
+    $animaux = Animal::where('sexe', 'jeune femelle')->get();
     foreach ($animaux as $animal)
     {
-        $animal->sexe = 'femelle';
-        $animal->save();
+        if (TempsController::ageMonths($animal->date_naissance) >= 24)
+        {} $animal->sexe = 'femelle';
+         $animal->save();}
             
     }
 }
