@@ -26,6 +26,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Agouti Signaling Protein',
                 'abbrev' => 'ASIP',
                 'chromosome' => 'ECA22q15',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
             ),
             1 => 
             array (
@@ -36,6 +39,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Melanocortin 1 Receptor',
                 'abbrev' => 'MC1R',
                 'chromosome' => 'ECA3p12',
+                'next_linked_id' => 3,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => 0.07,
             ),
             2 => 
             array (
@@ -46,6 +52,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'KIT',
                 'abbrev' => 'KIT',
                 'chromosome' => 'ECA3q21-22',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => 2,
+                'taux_recomb_next' => NULL,
             ),
             3 => 
             array (
@@ -56,6 +65,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Membrane Associated Transport protein',
                 'abbrev' => 'MATP',
                 'chromosome' => 'ECA21p17',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
             ),
             4 => 
             array (
@@ -66,6 +78,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'TBX3 Dun',
                 'abbrev' => 'TBX3',
                 'chromosome' => 'ECA8',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
             ),
             5 => 
             array (
@@ -76,6 +91,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Endothelin receptor type B',
                 'abbrev' => 'EDNRB',
                 'chromosome' => 'ECA17',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
             ),
             6 => 
             array (
@@ -86,6 +104,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Microphtalmia-associated Transcription Factor',
                 'abbrev' => 'MITF',
                 'chromosome' => 'ECA16',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
             ),
             7 => 
             array (
@@ -96,6 +117,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Paired Box 3',
                 'abbrev' => 'PAX3',
                 'chromosome' => 'ECA6',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
             ),
             8 => 
             array (
@@ -106,6 +130,9 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Premelanosome protein 17',
                 'abbrev' => 'PML17',
                 'chromosome' => 'ECA6',
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
             ),
         ));
         

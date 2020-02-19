@@ -20,6 +20,11 @@ class CreateLociTable extends Migration
             $table->string('nom');
             $table->string('abbrev');
             $table->string('chromosome')->nullable();
+            $table->bigInteger('next_linked_id')->unsigned()->nullable();
+            $table->bigInteger('prev_linked_id')->unsigned()->nullable();
+            $table->float('taux_recomb_next')->nullable();
+            $table->foreign('next_linked_id')->references('id')->on('loci');
+            $table->foreign('prev_linked_id')->references('id')->on('loci');
         
         });
     }

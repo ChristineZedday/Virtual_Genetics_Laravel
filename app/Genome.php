@@ -16,6 +16,9 @@ class Genome extends Model
                 $genotype = new Genotype; 
                 $genotype->animal_id = $produit;
                 $genotype->locus_id = $genotypeP->locus_id;
+                
+                $locus = $genotype->Locus();
+               
                 $genotype->allele_p_id = rand(1,2)==1 ? $genotypeP->allele_p_id : $genotypeP->allele_m_id;
                 $genotypeM = Genotype::where('animal_id', $female)->where('locus_id', $genotype->locus_id)->first();
                     if (isset($genotypeM))

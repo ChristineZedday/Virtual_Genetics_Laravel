@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LociTableSeeder::class);
         $this->call(AllelesTableSeeder::class);
         $this->call(GenotypesTableSeeder::class);
-        $this->call(LinkagesTableSeeder::class);
+       
     }
 }
