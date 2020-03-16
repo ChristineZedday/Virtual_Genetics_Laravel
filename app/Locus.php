@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\loci;
-use App\Locus;
 use App\Linkage;
 
 class Locus extends Model
 {
     protected $table = 'loci';
-    protected $fillable = ['espece_id', 'nom', 'abbrev', 'chromosome', 'next_linked_id', 'prev_linked_id', 'taux_recomb_next'];
+    protected $fillable = ['espece_id', 'nom', 'abbrev', 'chromosome', 'linked', 'next_linked_id', 'prev_linked_id', 'taux_recomb_next'];
 
     public function Allele()
     {

@@ -8,6 +8,7 @@ class Genotype extends Model
 {
     public function Locus()
     {
-        return $this->belongsTo('App\locus', 'loci', 'id', 'locus_id');
+
+        return $this->hasOne('App\locus', 'id', 'locus_id');
     }
 }

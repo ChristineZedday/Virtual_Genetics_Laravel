@@ -20,6 +20,7 @@ class CreateLociTable extends Migration
             $table->string('nom');
             $table->string('abbrev');
             $table->string('chromosome')->nullable();
+            $table->boolean('linked')->default(false);
             $table->bigInteger('next_linked_id')->unsigned()->nullable();
             $table->bigInteger('prev_linked_id')->unsigned()->nullable();
             $table->float('taux_recomb_next')->nullable();
