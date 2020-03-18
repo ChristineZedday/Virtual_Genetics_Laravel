@@ -43,7 +43,7 @@ class LociTableSeeder extends Seeder
                 'linked' =>true,
                 'next_linked_id' => 3,
                 'prev_linked_id' => NULL,
-                'taux_recomb_next' => 0.07,
+                'taux_recomb_next' => 7,
             ),
             2 => 
             array (
