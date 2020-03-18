@@ -45,7 +45,8 @@ class Genome extends Model
             $defP = false;
             $patM = false;
             $defM = false;
-            $taux = 0;
+            $tauxP = 0;
+            $tauxM = 0;
         
             foreach ($linkedLoci as $loc)
                 {
@@ -53,7 +54,7 @@ class Genome extends Model
                     $genotype->animal_id = $produit;
                     $genotype->locus_id = $loc->id;
                     $genotypeP = Genotype::where('animal_id', $male)->where('locus_id', $loc->id)->first();
-                        
+                 
                     if (isset($genotypeP))
                         {
                             $genotype->allele_p_id = rand(1,2)==1 ? $genotypeP->allele_p_id : $genotypeP->allele_m_id;
@@ -66,8 +67,9 @@ class Genome extends Model
                             $genotype->allele_p_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
                             $defP = true;
                         }
+                  
 
-                        $genotypeM = Genotype::where('animal_id', $female)->where('locus_id', $loc->id)->first();
+                    $genotypeM = Genotype::where('animal_id', $female)->where('locus_id', $loc->id)->first();
                         
                    if (isset($genotypeM))
                        {
@@ -81,21 +83,25 @@ class Genome extends Model
                            $genotype->allele_m_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
                            $defM = true;
                        }
-
+                     
                     
-                    $genotype->save();  //so far so good 
+                    $genotype->save();   
                    
                     while (isset($loc->next_linked_id)) {
 
-                        $taux = $taux  + $loc->taux_recomb_next;
+
+                        $tauxP = $tauxP  + $loc->taux_recomb_next;
+                        $tauxM = $tauxM + $loc->taux_recomb_next;
                         $locus = $loc->next_linked_id; //on passe au suivant de la chaine
                         $genotype = new Genotype; 
                         $genotype->animal_id = $produit;
                         $genotype->locus_id = $locus;
+
                         $genotypeP = Genotype::where('animal_id', $male)->where('locus_id', $locus)->first();
                         if (isset($genotypeP)) {
                             if ($defP) { //si on avait l'allèle par défaut, homozygotie côté paternel donc pas de recomb significative
                                 $genotype->allele_p_id = rand(1,2)==1 ? $genotypeP->allele_p_id : $genotypeP->allele_m_id;
+                                
                                 if ($genotype->allele_p_id == $genotypeP->allele_p_id ) {
                                     $patP = true;
                                 }
@@ -105,7 +111,7 @@ class Genome extends Model
                                 
                             }
                             else if ($patP) {
-                                $recomb = (rand(1, 100) <= $taux); //on a bien absence de recomb avec un taux de 0%
+                                $recomb = (rand(1, 100) <= $tauxP); //on a bien absence de recomb avec un taux de 0%
                                 if ($recomb) {
                                     $genotype->allele_p_id = $genotypeP->allele_m_id;
                                     $patP = false;
@@ -115,12 +121,75 @@ class Genome extends Model
                                     $patP = true;
                                 }
                             }
+                            else {  //cas ou lon avait allèle mat précédent locus
+                                $recomb = (rand(1, 100) <= $tauxM); //on a bien absence de recomb avec un taux de 0%
+                                if ($recomb) {
+                                    $genotype->allele_p_id = $genotypeP->allele_p_id;
+                                    $patP = true;
+                                }
+                                else {
+                                    $genotype->allele_p_id = $genotypeP->allele_m_id;
+                                    $patP = false;
+                                }
+                            }
+                            $tauxP = 0; //recombinaison à partir de celui-ci et pas le premier
+                            
                         }
-                        else {
+                        else { //pas de génotypeP
                             $genotype->allele_p_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                            /*$defP conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande*/
                         }
 
+                        
+
 //memes tra pour Madame
+                        $genotypeM = Genotype::where('animal_id', $female)->where('locus_id', $locus)->first();
+                        if (isset($genotypeM)) {
+                            if ($defM) { //si on avait l'allèle par défaut, homozygotie côté maternel donc pas de recomb significative
+                                $genotype->allele_m_id = rand(1,2)==1 ? $genotypeM->allele_p_id : $genotypeM->allele_m_id;
+                                
+                                if ($genotype->allele_m_id == $genotypeM->allele_p_id ) {
+                                    $patM = true;
+                                }
+                                else {
+                                    $patM = false;
+                                }
+                                
+                            }
+                            else if ($patM) {
+                                $recomb = (rand(1, 100) <= $tauxM); //on a bien absence de recomb avec un taux de 0%
+                                if ($recomb) {
+                                    $genotype->allele_m_id = $genotypeM->allele_m_id;
+                                    $patM = false;
+                                }
+                                else {
+                                    $genotype->allele_m_id = $genotypeM->allele_p_id;
+                                    $patM = true;
+                                }
+                            }
+                            else {  //cas ou lon avait allèle mat précédent locus
+                                $recomb = (rand(1, 100) <= $tauxM); //on a bien absence de recomb avec un taux de 0%
+                                if ($recomb) {
+                                    $genotype->allele_m_id = $genotypeM->allele_p_id;
+                                    $patM = true;
+                                }
+                                else {
+                                    $genotype->allele_m_id = $genotypeM->allele_m_id;
+                                    $patM = false;
+                                }
+                            }
+                            $tauxM = 0; //recombinaison à partir de celui-ci et pas le premier
+                            
+                        }
+                        else { //pas de génotypeM
+                            $genotype->allele_m_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                            /*$defP conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande*/
+                        }
+
+                        $genotype->save();
+
+                        $loc = $locus; //sinon boucle infinie sur le premier
+                         
                     } //fin du while
 
                     
