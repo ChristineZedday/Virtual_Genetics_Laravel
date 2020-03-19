@@ -33,9 +33,26 @@ class Genome extends Model
                         else {
                              $genotype->allele_m_id =  Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
                              }
+
                         $genotype->save();
                          
 
+                    }
+            }
+            foreach ($genomeM as $genotypeM) {   //pour les génotypes de la mère que le père n'a pas
+                $locus = $genotypeM->Locus;
+                if (! $locus->linked) //first we treat non_linked loci
+                    {
+                        $genotypeP = Genotype::where('animal_id', $male)->where('locus_id', $locus->id)->first(); 
+                        if (! isset($genotypeP)) // s'il y est on l'a déjà traité, sinon ajouter
+                        {
+                            $genotype = new Genotype; 
+                            $genotype->animal_id = $produit;
+                            $genotype->locus_id = $locus->id;
+                            $genotype->allele_m_id = rand(1,2)==1 ? $genotypeM->allele_p_id : $genotypeM->allele_m_id;
+                            $genotype->allele_p_id = Allele::where('locus_id', $locus->id)->where('is_default',true)->first()->id;
+                            $genotype->save();
+                        }
                     }
             }
 
