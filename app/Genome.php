@@ -71,6 +71,8 @@ class Genome extends Model
                     $genotype->animal_id = $produit;
                     $genotype->locus_id = $loc->id;
                     $genotypeP = Genotype::where('animal_id', $male)->where('locus_id', $loc->id)->first();
+
+                    $alleleDefaut = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
                  
                     if (isset($genotypeP))
                         {
@@ -81,7 +83,7 @@ class Genome extends Model
 
                         }
                         else {
-                            $genotype->allele_p_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                            $genotype->allele_p_id = $alleleDefaut;
                             $defP = true;
                         }
                   
@@ -97,12 +99,13 @@ class Genome extends Model
 
                        }
                        else {
-                           $genotype->allele_m_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                           $genotype->allele_m_id = $alleleDefaut;
                            $defM = true;
                        }
                      
-                    
-                    $genotype->save();   
+                       if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
+                        $genotype->save();   
+                            }
                    
                     while (isset($loc->next_linked_id)) {
 
@@ -113,6 +116,8 @@ class Genome extends Model
                         $genotype = new Genotype; 
                         $genotype->animal_id = $produit;
                         $genotype->locus_id = $locus;
+
+                        $alleleDefaut = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
 
                         $genotypeP = Genotype::where('animal_id', $male)->where('locus_id', $locus)->first();
                         if (isset($genotypeP)) {
@@ -153,7 +158,7 @@ class Genome extends Model
                             
                         }
                         else { //pas de génotypeP
-                            $genotype->allele_p_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                            $genotype->allele_p_id = $alleleDefaut;
                             if (! $loc->prev_linked_id) {
                                 $defP = true;
                             }
@@ -202,15 +207,15 @@ class Genome extends Model
                             
                         }
                         else { //pas de génotypeM
-                            $genotype->allele_m_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                            $genotype->allele_m_id = $alleleDefaut;
                             if (! $loc->prev_linked_id) {
                                 $defM = true;
                             }
                             /*$defM conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande*/
                         }
-
-                        $genotype->save();
-
+                        if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
+                    $genotype->save();   
+                        }
                         $loc = $locus; //sinon boucle infinie sur le premier
                          
                     } //fin du while

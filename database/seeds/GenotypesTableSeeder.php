@@ -207,6 +207,26 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 21,
                 'locus_id' => 17,
             ),
+            19 => 
+            array (
+                'id' => 20,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 8,
+                'allele_p_id' => 3,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 8,
+                'allele_p_id' => 2,
+                'allele_m_id' => 1,
+                'locus_id' => 1,
+            ),
         ));
         
         
