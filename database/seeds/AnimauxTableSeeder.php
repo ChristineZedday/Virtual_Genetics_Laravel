@@ -137,6 +137,26 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
             ),
+            6 => 
+            array (
+                'id' => 8,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Django',
+                'couleur' => NULL,
+                'taille_cm' => 86,
+                'race' => 'OC',
+                'sexe' => 'mâle',
+                'date_achat' => NULL,
+                'date_naissance' => '1967-05-23',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 1,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+            ),
         ));
         
         

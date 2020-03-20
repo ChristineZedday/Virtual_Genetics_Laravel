@@ -154,7 +154,10 @@ class Genome extends Model
                         }
                         else { //pas de génotypeP
                             $genotype->allele_p_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
-                            /*$defP conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande*/
+                            if (! $loc->prev_linked_id) {
+                                $defP = true;
+                            }
+                            /*$defP conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande, sauf pour le premier locus*/
                         }
 
                         
@@ -200,7 +203,10 @@ class Genome extends Model
                         }
                         else { //pas de génotypeM
                             $genotype->allele_m_id = Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
-                            /*$defP conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande*/
+                            if (! $loc->prev_linked_id) {
+                                $defM = true;
+                            }
+                            /*$defM conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande*/
                         }
 
                         $genotype->save();
