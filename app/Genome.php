@@ -111,7 +111,9 @@ class Genome extends Model
 
 
                         $tauxP = $tauxP  + $loc->taux_recomb_next;
+                        if ($tauxP > 50) {$tauxP = 50;}
                         $tauxM = $tauxM + $loc->taux_recomb_next;
+                        if ($tauxM > 50) {$tauxM = 50;}
                         $locus = $loc->next_linked_id; //on passe au suivant de la chaine
                         $genotype = new Genotype; 
                         $genotype->animal_id = $produit;
