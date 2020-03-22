@@ -227,6 +227,166 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 1,
                 'locus_id' => 1,
             ),
+            21 => 
+            array (
+                'id' => 22,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 9,
+                'allele_p_id' => 1,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 9,
+                'allele_p_id' => 3,
+                'allele_m_id' => 3,
+                'locus_id' => 2,
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 9,
+                'allele_p_id' => 19,
+                'allele_m_id' => 19,
+                'locus_id' => 3,
+            ),
+            24 => 
+            array (
+                'id' => 25,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 10,
+                'allele_p_id' => 2,
+                'allele_m_id' => 1,
+                'locus_id' => 1,
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 11,
+                'allele_p_id' => 2,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 12,
+                'allele_p_id' => 2,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 10,
+                'allele_p_id' => 3,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 12,
+                'allele_p_id' => 4,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 13,
+                'allele_p_id' => 4,
+                'allele_m_id' => 3,
+                'locus_id' => 2,
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 10,
+                'allele_p_id' => 30,
+                'allele_m_id' => 30,
+                'locus_id' => 14,
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 11,
+                'allele_p_id' => 31,
+                'allele_m_id' => 30,
+                'locus_id' => 14,
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 10,
+                'allele_p_id' => 22,
+                'allele_m_id' => 23,
+                'locus_id' => 4,
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 12,
+                'allele_p_id' => 23,
+                'allele_m_id' => 22,
+                'locus_id' => 4,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 11,
+                'allele_p_id' => 19,
+                'allele_m_id' => 7,
+                'locus_id' => 3,
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 13,
+                'allele_p_id' => 7,
+                'allele_m_id' => 19,
+                'locus_id' => 3,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 12,
+                'allele_p_id' => 17,
+                'allele_m_id' => 7,
+                'locus_id' => 3,
+            ),
         ));
         
         
