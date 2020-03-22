@@ -1,7 +1,7 @@
 @extends('layouts.elevageDashboard')
 @section('content')
 	@isset($animal->nom)
-	<h1>{{ $animal->nom }}</h1>
+	<h1>@if (isset($animal->affixe) && $animal->affixe_pre) {{$animal->affixe}} @endif {{ $animal->nom }} @if (isset($animal->affixe) && (! $animal->affixe_pre)) {{$animal->affixe}} @endif </h1>
 	@else
 	<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom</button></a>
 	@endisset

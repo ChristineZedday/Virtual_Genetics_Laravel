@@ -17,6 +17,8 @@ class CreateAnimauxTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nom')->nullable();
+            $table->string('affixe')->nullable();
+            $table->boolean('affixe_pre')->default(false);
             $table->string('couleur')->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
             $table->string('race')->default('OC');

@@ -17,6 +17,8 @@ class CreateElevagesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nom_elevage');
+            $table->string('affixe')->nullable();
+            $table->boolean('affixe_pre')->default(false);
             $table->string('nom_eleveur');
             $table->bigInteger('budget');
             

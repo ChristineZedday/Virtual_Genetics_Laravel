@@ -37,6 +37,18 @@ class ReproductionController extends Controller
           $animal->date_naissance = $date;
           $animal->sire_id = $etalon;
           $animal->dam_id = $jument;
+          $dam = Animal::Find($animal->dam_id);
+          if ($dam->fondateur) {
+            $animal->affixe = $dam->affixe;
+            $animal->affixe_pre = $dam->affixe_pre;
+          }
+          else {
+              if (isset($elevage->affixe))
+              {
+                $animal->affixe = $elevage->affixe;
+                $animal->affixe_pre = $elevage->affixe_pre;
+              }
+          }
           $animal->elevage_id = $elevage;
           $sexe = rand(1,2);
           $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
