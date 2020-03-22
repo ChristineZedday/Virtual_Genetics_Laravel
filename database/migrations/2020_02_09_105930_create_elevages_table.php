@@ -21,7 +21,7 @@ class CreateElevagesTable extends Migration
             $table->boolean('affixe_pre')->default(false);
             $table->string('nom_eleveur');
             $table->bigInteger('budget');
-            
+            $table->enum('role',['Joueur','Vendeur', 'Acheteur', 'Haras', 'Mort', 'Retraite']);
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });

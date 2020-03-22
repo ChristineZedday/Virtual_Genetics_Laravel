@@ -27,7 +27,12 @@ class Animal extends Model
 
     public function Statut()
     {
-        return $this->HasOne('App\statutsFemelle');
+        return $this->HasOne('App\statutsFemelle', 'id');
+    }
+
+    public function faireSaillir($elevage)
+    {
+        dd($this);
     }
   
  

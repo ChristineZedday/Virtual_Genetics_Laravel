@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Gamedata;
 use App\statutsFemelle;
 use App\Animal;
+use App\Elevage;
 
 class TempsController extends Controller
 {
@@ -27,6 +28,7 @@ class TempsController extends Controller
         checkFemellesTerme($date);
         checkNouveaux($date);
         checkPuberes($date);
+        reproNPC($date);
 
         return redirect()->route('home');
     }
@@ -111,4 +113,28 @@ function checkPuberes($date)
          $animal->save();}
             
     }
+}
+
+function reproNPC($date)
+{
+    $saison = true; //ici vérifier mois
+        if ($saison) {
+            $vendeurs = Elevage::where('role','Vendeur')->get();
+            foreach($vendeurs as $vendeur)
+            {
+                $juments = Animal::where('elevage_id', $vendeur->id)->where('sexe','femelle')->get();
+                foreach ($juments as $jument)
+                {
+                    $statut = Animal::Find($jument->id)->Statut;
+                    if ((isset($statut) && $statut->vide) || (!isset($statut)))
+                    {
+                        if(rand(1,2)==1)
+                        {
+                            $jument->faireSaillir($vendeur);
+                        }
+                    }
+                }
+            
+            }    
+        }
 }
