@@ -15,10 +15,9 @@ class ReproductionController extends Controller
 {
    static function croisement($elevage, $etalon, $jument)
    {
-    
     $statut = Animal::Find($jument)->Statut;
     
-    if (! $statut) 
+    if (! isset($statut))
     {$statut = new StatutsFemelle();}
     
     $statut->animal_id = $jument;

@@ -130,13 +130,12 @@ function reproNPC($date)
                     {
                         if(rand(1,2)==1)
                         {
-                            $etalons = Animal::All()->where('elevage_id',$vendeur)->where('sexe','mâle');
-                           
+                            $etalons = Animal::where('elevage_id',$vendeur->id)->where('sexe','mâle')->get();
                             $nb = sizeof($etalons);
                             if ($nb > 0) {
                                 $choisi = rand(1,$nb) -1;
                                 $etalon = $etalons[$choisi]->id;
-                                ReproductionController::croisement($vendeur, $etalon, $jument);
+                                ReproductionController::croisement($vendeur->id, $etalon, $jument->id);
                             }                    
                           
                         }
