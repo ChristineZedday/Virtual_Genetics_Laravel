@@ -27,8 +27,9 @@ class TempsController extends Controller
 
         checkFemellesTerme($date);
         checkNouveaux($date);
-        checkPuberes($date);
+        checkPuberes();
         reproNPC($date);
+        VenteJeunes();
 
         return redirect()->route('home');
     }
@@ -41,6 +42,7 @@ class TempsController extends Controller
         
        return $date;
     }
+
 
     static function ageMonths($date_naissance)
     {
@@ -94,7 +96,7 @@ function checkNouveaux($date)
     }
 }
 
-function checkPuberes($date)
+function checkPuberes()
 {
     $animaux = Animal::where('sexe', 'jeune mâle')->get();
     foreach ($animaux as $animal)
@@ -144,4 +146,18 @@ function reproNPC($date)
             
             }    
         }
+}
+
+function VenteJeunes ()
+{
+    $animaux = Animal::where('sexe', 'jeune mâle')->orWhere('sexe', 'jeune femelle')->get();
+    foreach ($animaux as $animal)
+    {
+        if (TempsController::ageMonths($animal->date_naissance) >= 7)
+       { 
+        $animal->a_vendre = true;
+        $animal->prix = 500; //en attendant table de prix/race/sexe
+        $animal->save();}
+            
+    }
 }

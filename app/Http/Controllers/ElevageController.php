@@ -52,7 +52,7 @@ class ElevageController extends Controller
      */
     public function store(Request $request)
     {
-        $validated =  $request->validate(['nom_elevage'=>'string|required', 'nom_eleveur'=>'string|required']);
+        $validated =  $request->validate(['nom_elevage'=>'string|required', 'nom_eleveur'=>'string|required', 'affixe'=>'string', 'affixe_pre'=>'boolean']);
         $elevage = new Elevage;
         $elevage->fill($validated);
         
@@ -62,6 +62,11 @@ class ElevageController extends Controller
         }
 
         $elevage->budget= gameData::budget();
+       
+        if (isset($elevage->affixe))
+        {
+            $elevage->budget = $elevage->budget - 500;
+        }
 
         if ($elevage->save())
             {

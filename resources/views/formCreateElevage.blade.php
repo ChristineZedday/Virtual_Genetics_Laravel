@@ -19,8 +19,8 @@
 	</div>
 	<div>
 	<label for="affixe_pre">L'affixe peur précéder (mode anglo-saxon) ou suivre le nom (mode Français)</label><br/>
-	Avant le nom: <input type="radio" name="affixe_pre"  value="true" /><br />
-	Après le nom: <input type="radio" name="affixe_pre" checked="yes"  value="false"/><br />
+	Avant le nom: <input type="radio" name="affixe_pre"  value=1 /><br />
+	Après le nom: <input type="radio" name="affixe_pre"  value=0 checked="yes" /><br />
 	</div>
 	<button type="submit">Valider</button>
 	</form>
