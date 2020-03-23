@@ -4,10 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\animaux;
+use App\Http\Controllers\ReproductionController;
 
 class Animal extends Model
 {
     protected $table ='animaux';
+
+    public function getIdAttribute()
+    {
+        return $this->attributes['id'];
+    }
 
     public function Elevage()
     {
@@ -29,11 +35,5 @@ class Animal extends Model
     {
         return $this->HasOne('App\statutsFemelle', 'id');
     }
-
-    public function faireSaillir($elevage)
-    {
-        dd($this);
-    }
-  
  
 }

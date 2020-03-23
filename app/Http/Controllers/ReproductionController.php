@@ -13,7 +13,7 @@ class ReproductionController extends Controller
  * launch reproduction process
 */
 {
-   public function croisement($elevage, $etalon, $jument)
+   static function croisement($elevage, $etalon, $jument)
    {
     
     $statut = Animal::Find($jument)->Statut;
