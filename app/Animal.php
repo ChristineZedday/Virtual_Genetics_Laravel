@@ -10,10 +10,6 @@ class Animal extends Model
 {
     protected $table ='animaux';
 
-    public function getIdAttribute()
-    {
-        return $this->attributes['id'];
-    }
 
     public function Elevage()
     {

@@ -1,4 +1,10 @@
 
 
-filtrage repro selon âge
+animaux vendus toujours à vendre ?
+retirés de la vente, reviennent à vendre?
+animaux de son propre élevage proposés
+
+boutons pour enregistrer animal extérieur
+
+ponette passée stade femelle non disponible à la saillie
 

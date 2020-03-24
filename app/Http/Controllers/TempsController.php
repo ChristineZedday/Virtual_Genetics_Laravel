@@ -150,14 +150,18 @@ function reproNPC($date)
 
 function VenteJeunes ()
 {
-    $animaux = Animal::where('sexe', 'jeune mâle')->orWhere('sexe', 'jeune femelle')->get();
-    foreach ($animaux as $animal)
-    {
-        if (TempsController::ageMonths($animal->date_naissance) >= 7)
-       { 
-        $animal->a_vendre = true;
-        $animal->prix = 500; //en attendant table de prix/race/sexe
-        $animal->save();}
-            
+    $vendeurs = Elevage::where('role','Vendeur')->get();
+    foreach ($vendeurs as $vendeur) {
+        $animaux = Animal::where('sexe', 'jeune mâle')->orWhere('sexe', 'jeune femelle')->get();
+
+        foreach ($animaux as $animal)
+        {
+            if (TempsController::ageMonths($animal->date_naissance) >= 7 )
+        { 
+            $animal->a_vendre = true;
+            $animal->prix = 500; //en attendant table de prix/race/sexe
+            $animal->save();}
+                
+        }
     }
 }
