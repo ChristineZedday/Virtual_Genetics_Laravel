@@ -112,6 +112,9 @@ function checkPuberes()
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
         { $animal->sexe = 'femelle';
+          $statut = new statutsFemelle();
+          $statut->vide = true;
+          $statut->save;
          $animal->save();}
             
     }
@@ -125,10 +128,11 @@ function reproNPC($date)
             foreach($vendeurs as $vendeur)
             {
                 $juments = Animal::where('elevage_id', $vendeur->id)->where('sexe','femelle')->get();
+                
                 foreach ($juments as $jument)
                 {
                     $statut = Animal::Find($jument->id)->Statut;
-                    if ((isset($statut) && $statut->vide) || (!isset($statut)))
+                    if ((isset($statut) && $statut->vide==true))
                     {
                         if(rand(1,2)==1)
                         {
@@ -141,9 +145,9 @@ function reproNPC($date)
                             }                    
                           
                         }
-                    }
+                    }                  
                 }
-            
+               
             }    
         }
 }
