@@ -3,14 +3,18 @@
 	@isset($animal->nom)
 	<h1>@if (isset($animal->affixe) && $animal->affixe_pre) {{$animal->affixe}} @endif {{ $animal->nom }} @if (isset($animal->affixe) && (! $animal->affixe_pre)) {{$animal->affixe}} @endif </h1>
 	@else
+	@if ($animal->elevage_id == $elevage->id)
 	<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom</button></a>
+	@endif
 	@endisset
 <h3>{{$animal->race}}</h3>
 <p>{{$animal->sexe}}</p>
 @isset($animal->couleur)
 	<p>{{ $animal->couleur }}</p>
 	@else
+	@if ($animal->elevage_id == $elevage->id)
 	<a href="{{route('signalement',[$animal->id])}}"><button>Enregistrer la robe</button></a>
+	@endif
 	<p>
 	<?php 
 	$genome = App\Genotype::where('animal_id',$animal->id)->get();
@@ -33,8 +37,8 @@
 <p>{{$animal->taille_cm}}</p>
 <p>{{$animal->date_naissance}}</p>
 	@if (! $animal->fondateur)
-	<p>par {{$animal->Sire->nom}}</p>
-	<p>et {{$animal->Dam->nom}}</p>
+	<p>par @if (isset($animal->affixe) && $animal->affixe_pre) {{$animal->affixe}} @endif {{$animal->Sire->nom}} @if (isset($animal->affixe) && (! $animal->affixe_pre)) {{$animal->affixe}} @endif </p>
+	<p>et  @if (isset($animal->affixe) && $animal->affixe_pre) {{$animal->affixe}} {{$animal->Dam->nom}} @if (isset($animal->affixe) && (! $animal->affixe_pre)) {{$animal->affixe}} @endif </p>
 	@endif
 
 <p>{{$animal->elevage_id == $elevage->id? $animal->date_achat : ""}}</p>
