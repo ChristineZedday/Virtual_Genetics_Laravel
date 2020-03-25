@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Gamedata;
 use App\statutsFemelle;
 use App\Animal;
+use App\Elevage;
 use App\Genome;
 
 class ReproductionController extends Controller
@@ -42,10 +43,12 @@ class ReproductionController extends Controller
             $animal->affixe_pre = $dam->affixe_pre;
           }
           else {
-              if (isset($elevage->affixe))
+            $elv = Elevage::Find($elevage);
+              if (isset($elv->affixe))
               {
-                $animal->affixe = $elevage->affixe;
-                $animal->affixe_pre = $elevage->affixe_pre;
+
+                $animal->affixe = $elv->affixe;
+                $animal->affixe_pre = $elv->affixe_pre;
               }
           }
           $animal->elevage_id = $elevage;

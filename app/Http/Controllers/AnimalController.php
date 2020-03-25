@@ -156,7 +156,7 @@ class AnimalController extends Controller
     {
         $animal = Animal::Find($animal);
         $elevage = Elevage::Find($elevage);
-        //$date = TempsController::dateCourante();
+        // $date = TempsController::dateCourante();
         $game = Gamedata::Find(1);
         $date = $game->date();
        
