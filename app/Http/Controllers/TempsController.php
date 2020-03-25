@@ -30,6 +30,7 @@ class TempsController extends Controller
         checkPuberes();
         reproNPC($date);
         VenteJeunes();
+        achete();
 
         return redirect()->route('home');
     }
@@ -156,7 +157,8 @@ function VenteJeunes ()
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur) {
-        $animaux = Animal::where('sexe', 'jeune mâle')->orWhere('sexe', 'jeune femelle')->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where(function($query) { return $query->where('sexe', 'jeune mâle')
+            ->orWhere('sexe', 'jeune femelle');})->get();
 
         foreach ($animaux as $animal)
         {
@@ -167,5 +169,56 @@ function VenteJeunes ()
             $animal->save();}
                 
         }
+    }
+}
+
+function achete ()
+{
+    $acheteurs = Elevage::where('role', 'acheteur')->get();
+    foreach ($acheteurs as $acheteur)
+    {
+        $avendre = Animal::whereHas('Elevage', function ($query) {
+            $query->where('role', 'Joueur');
+        })->where('a_vendre', true)->get();
+       foreach ($avendre as $av)
+       {
+          switch (true) {
+              case ($av->prix >1000):
+                $achat = rand(1,100) == 1;
+              break;
+              case ($av->prix > 800):
+                $achat = rand(1,50) == 1;
+            break;
+              case ($av->prix > 600):
+                $achat = rand(1,25) == 1;
+            break;
+                case ($av->prix > 400):
+                $achat = rand(1,10) == 1;
+            break;
+                case ($av->prix > 300):
+                    $achat = rand(1,5) == 1;
+                break;
+                    case ($av->prix > 200):
+                        $achat = rand(1,3) == 1;
+                    break;
+                    case ($av->prix < 50):
+                        $achat = true;
+                    break;
+                    default :
+                    $achat = rand(1,2) ==1;
+
+          }
+          if ($achat) {
+            $vendeur = Elevage::Find($av->elevage_id);
+            $vendeur->budget += $av->prix;
+            $vendeur->save();
+            $av->elevage_id = $acheteur->id;
+            $av->prix*=2;
+            $av->save();
+
+          }
+    
+
+       }
     }
 }
