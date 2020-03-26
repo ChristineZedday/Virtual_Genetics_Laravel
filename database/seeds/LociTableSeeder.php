@@ -199,6 +199,20 @@ class LociTableSeeder extends Seeder
                 'prev_linked_id' => NULL,
                 'taux_recomb_next' => 43,
             ),
+            13 => 
+            array (
+                'id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'MSDF12',
+                'abbrev' => 'MSDF12',
+                'chromosome' => 'ECA7',
+                'linked' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
         ));
         
         
