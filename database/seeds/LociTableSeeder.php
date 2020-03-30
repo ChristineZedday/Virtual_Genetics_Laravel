@@ -213,6 +213,62 @@ class LociTableSeeder extends Seeder
                 'prev_linked_id' => NULL,
                 'taux_recomb_next' => NULL,
             ),
+            14 => 
+            array (
+                'id' => 19,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'Aggrecan',
+                'abbrev' => 'ACAN',
+                'chromosome' => 'ECA1',
+                'linked' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 20,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'B4GALT7',
+                'abbrev' => 'B4GALT7',
+                'chromosome' => 'ECA14',
+                'linked' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
+            16 => 
+            array (
+                'id' => 21,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'HMGA2',
+                'abbrev' => 'HMGA2',
+                'chromosome' => 'ECA6',
+                'linked' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
+            17 => 
+            array (
+                'id' => 22,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'Short stature homeobx',
+                'abbrev' => 'SHOX',
+                'chromosome' => 'ECAX/Y',
+                'linked' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
         ));
         
         

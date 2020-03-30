@@ -380,6 +380,50 @@ class AllelesTableSeeder extends Seeder
                 'is_default' => 1,
                 'is_dominant' => 1,
             ),
+            33 => 
+            array (
+                'id' => 34,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 19,
+                'nom' => 'Nanisme chondrodysplasia',
+                'abbrev' => 'd2',
+                'is_default' => 0,
+                'is_dominant' => 0,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 19,
+                'nom' => 'normal',
+                'abbrev' => 'N',
+                'is_default' => 1,
+                'is_dominant' => 1,
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 22,
+                'nom' => 'atavisme squelettal',
+                'abbrev' => 'sa',
+                'is_default' => 0,
+                'is_dominant' => 0,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 22,
+                'nom' => 'normal',
+                'abbrev' => 'SA',
+                'is_default' => 1,
+                'is_dominant' => 1,
+            ),
         ));
         
         
