@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Elevage;
 use App\Animal;
 use App\gameData;
+use App\Affixe;
 
 
 class ElevageController extends Controller
@@ -52,9 +53,21 @@ class ElevageController extends Controller
      */
     public function store(Request $request)
     {
-        $validated =  $request->validate(['nom_elevage'=>'string|required', 'nom_eleveur'=>'string|required', 'affixe'=>'string', 'affixe_pre'=>'boolean']);
+        $validated =  $request->validate(['nom_elevage'=>'string|required', 'nom_eleveur'=>'string|required']);
         $elevage = new Elevage;
         $elevage->fill($validated);
+
+        if (null !== $request->input('affixe')) {
+            $affixe = Affixe::where('libelle', $request->input('affixe'))->first(); //faudra mettre un vérif en javascript
+            if (!isset($affixe))
+                {
+                $affixe = new Affixe;
+                $affixe->libelle =  $request->input('affixe');
+                $affixe->affixe_pre = $request->input('affixe_pre');
+                $affixe->save();
+                $elevage->Affixe =$affixe;
+                }
+            }
         
         $user = Auth::user();
         if (isset($user)) {
@@ -63,7 +76,7 @@ class ElevageController extends Controller
 
         $elevage->budget= gameData::budget();
        
-        if (isset($elevage->affixe))
+        if (isset($elevage->Affixe))
         {
             $elevage->budget = $elevage->budget - 500;
         }

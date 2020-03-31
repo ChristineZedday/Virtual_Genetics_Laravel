@@ -23,8 +23,7 @@ class ElevagesTableSeeder extends Seeder
                 'created_at' => '2020-02-10 12:16:01',
                 'updated_at' => '2020-02-10 12:16:01',
                 'nom_elevage' => 'Ranch des Petits Poilus',
-                'affixe' => NULL,
-                'affixe_pre' => 0,
+                'affixe_id' => NULL,
                 'nom_eleveur' => 'Maggie Shettie',
                 'budget' => 20000,
                 'role' => 'Vendeur',
@@ -36,12 +35,11 @@ class ElevagesTableSeeder extends Seeder
                 'created_at' => '2020-02-10 20:32:30',
                 'updated_at' => '2020-02-10 20:32:30',
                 'nom_elevage' => 'Prairies Célestes',
-                'affixe' => NULL,
-                'affixe_pre' => 0,
+                'affixe_id' => NULL,
                 'nom_eleveur' => 'An Ankou',
                 'budget' => 20000,
                 'role' => 'Mort',
-                'user_id' => 2,
+                'user_id' => 1,
             ),
             2 => 
             array (
@@ -49,12 +47,11 @@ class ElevagesTableSeeder extends Seeder
                 'created_at' => '2020-02-10 20:39:02',
                 'updated_at' => '2020-02-10 20:39:02',
                 'nom_elevage' => 'Achète pas cher',
-                'affixe' => NULL,
-                'affixe_pre' => 0,
+                'affixe_id' => NULL,
                 'nom_eleveur' => 'Harpagon McKignon',
                 'budget' => 20000,
                 'role' => 'Acheteur',
-                'user_id' => 2,
+                'user_id' => 1,
             ),
             3 => 
             array (
@@ -62,13 +59,13 @@ class ElevagesTableSeeder extends Seeder
                 'created_at' => '2020-02-11 20:11:51',
                 'updated_at' => '2020-02-11 20:11:51',
                 'nom_elevage' => 'Haras des Noës Blanches',
-                'affixe' => NULL,
-                'affixe_pre' => 0,
+                'affixe_id' => NULL,
                 'nom_eleveur' => 'Gwendoline Welsh',
                 'budget' => 20000,
                 'role' => 'Vendeur',
                 'user_id' => 1,
             ),
+          
         ));
         
         

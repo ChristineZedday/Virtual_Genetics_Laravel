@@ -9,6 +9,7 @@ use App\Http\Controllers\ReproductionController;
 class Animal extends Model
 {
     protected $table ='animaux';
+    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race', 'prix', 'sexe', 'date_achat', 'date_naissance', 'a_vandre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_is', 'dam_id'];
 
 
     public function Elevage()

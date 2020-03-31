@@ -18,4 +18,9 @@ class Elevage extends Model
     {
         return $this->HasMany('App\Animal');
     }
+
+    public function Affixe()
+    {
+        return $this->hasOne('App\Affixe');
+    }
 }

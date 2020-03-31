@@ -17,8 +17,7 @@ class CreateAnimauxTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nom')->nullable();
-            $table->string('affixe')->nullable();
-            $table->boolean('affixe_pre')->default(false);
+            $table->bigInteger('affixe_id')->unsigned()->nullable();
             $table->string('couleur')->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
             $table->string('race')->default('OC');
@@ -28,13 +27,14 @@ class CreateAnimauxTable extends Migration
             $table->boolean('a_vendre')->default(false);
             $table->bigInteger('prix')->nullable();
             $table->bigInteger('elevage_id')->unsigned();
-            $table->foreign('elevage_id')->references('id')->on('elevages');
+            $table->foreign('elevage_id')->references('id')->on('elevages')->onUpdate('cascade');
             $table->boolean('fondateur')->default(true);
             $table->boolean('foetus')->default(false);
             $table->bigInteger('sire_id')->unsigned()->nullable();
             $table->bigInteger('dam_id')->unsigned()->nullable();
             $table->foreign('sire_id')->references('id')->on('animaux');
             $table->foreign('dam_id')->references('id')->on('animaux');
+            $table->foreign('affixe_id')->references('id')->on('affixes');
         });
     }
 

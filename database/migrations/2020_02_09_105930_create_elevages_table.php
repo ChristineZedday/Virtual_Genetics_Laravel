@@ -15,15 +15,15 @@ class CreateElevagesTable extends Migration
     {
         Schema::create('elevages', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('affixe_id')->unsigned()->nullable();
             $table->timestamps();
             $table->string('nom_elevage');
-            $table->string('affixe')->nullable();
-            $table->boolean('affixe_pre')->default(false);
             $table->string('nom_eleveur');
             $table->bigInteger('budget');
             $table->enum('role',['Joueur','Vendeur', 'Acheteur', 'Haras', 'Mort', 'Retraite']);
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('affixe_id')->references('id')->on('affixes');
         });
     }
 
