@@ -45,7 +45,7 @@ class ReproductionController extends Controller
             $elv = Elevage::Find($elevage);
               if (isset($elv->Affixe))
               {
-                $animal->Affixe = $elv->Affixe;
+                $animal->affixe_id = $elv->affixe_id;
               }
           }
           $animal->elevage_id = $elevage;
@@ -53,12 +53,12 @@ class ReproductionController extends Controller
           $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
           $etalon = Animal::Find($etalon);
           $jument = Animal::Find($jument);
-                if ($etalon->race == $jument->race)
+                if ($etalon->race_id == $jument->race_id)
                 {
-                    $animal->race = $etalon->race;
+                    $animal->race_id = $etalon->race_id;
                 }
                 else{
-                    $animal->race = 'OC';
+                    $animal->race_id = 1;
                 }
         $animal->taille_cm = ($etalon->taille_cm + $jument->taille_cm) /2 ;
         $animal->save();
