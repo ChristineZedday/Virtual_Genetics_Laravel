@@ -1,13 +1,13 @@
 @extends('layouts.elevageDashboard')
 @section('content')
 	@isset($animal->nom)
-	<h1>@if (isset($animal->affixe) && $animal->affixe_pre) {{$animal->affixe}} @endif {{ $animal->nom }} @if (isset($animal->affixe) && (! $animal->affixe_pre)) {{$animal->affixe}} @endif </h1>
+	<h1>@if (isset($animal->Affixe) && $animal->Affixe->affixe_pre) {{$animal->Affixe->libelle}} @endif {{ $animal->nom }} @if (isset($animal->Affixe) && (! $animal->Affixe->->affixe_pre)) {{$animal->Affixe->libelle}} @endif </h1>
 	@else
 		@if ($animal->elevage_id == $elevage->id)
 		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom</button></a>
 		@endif
 	@endisset
-<h3>{{$animal->race}}</h3>
+<h3>{{$animal->Race->nom}}</h3>
 <p>{{$animal->sexe}}</p>
 @isset($animal->couleur)
 	<p>{{ $animal->couleur }}</p>

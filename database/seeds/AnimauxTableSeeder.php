@@ -26,7 +26,7 @@ class AnimauxTableSeeder extends Seeder
                 'affixe_id' => 1, 
                 'couleur' => NULL,
                 'taille_cm' => 99,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => '1970-01-11',
                 'date_naissance' => '1966-05-13',
@@ -48,7 +48,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 102,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => '1970-02-11',
                 'date_naissance' => '1964-04-15',
@@ -70,7 +70,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 114,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-04-12',
@@ -91,7 +91,7 @@ class AnimauxTableSeeder extends Seeder
                 'affixe_id' => 3,
                 'couleur' => NULL,
                 'taille_cm' => 106,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => '1970-02-16',
                 'date_naissance' => '1963-06-16',
@@ -112,7 +112,7 @@ class AnimauxTableSeeder extends Seeder
                 'affixe_id' => 5,
                 'couleur' => NULL,
                 'taille_cm' => 117,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-02-13',
@@ -133,7 +133,7 @@ class AnimauxTableSeeder extends Seeder
                 'affixe_id' => 5,
                 'couleur' => NULL,
                 'taille_cm' => 111,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-05-18',
@@ -154,7 +154,7 @@ class AnimauxTableSeeder extends Seeder
                 'affixe_id' => NULL,
                 'couleur' => NULL,
                 'taille_cm' => 81,
-                'race' => 'Miniature',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1967-05-23',
@@ -177,7 +177,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 118,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1964-03-21',
@@ -198,7 +198,7 @@ class AnimauxTableSeeder extends Seeder
                 'affixe_id' => 11,
                 'couleur' => NULL,
                 'taille_cm' => 113,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-04-21',
@@ -221,7 +221,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 120,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-05-31',
@@ -244,7 +244,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 119,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-04-18',
@@ -266,7 +266,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 109,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-03-24',
@@ -289,7 +289,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 112,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-04-25',
@@ -312,7 +312,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 91,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1964-06-25',
@@ -335,7 +335,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 99,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1964-03-22',
@@ -358,7 +358,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 112,
-                'race' => 'Welsh A',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-05-25',
@@ -381,7 +381,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 103,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-03-29',
@@ -404,7 +404,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 95,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1967-03-25',
@@ -427,7 +427,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 98,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-03-25',
@@ -450,7 +450,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 89,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-03-28',
@@ -473,7 +473,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 94,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1964-05-28',
@@ -496,7 +496,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 97,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-04-28',
@@ -519,7 +519,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 101,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1967-06-28',
@@ -542,7 +542,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 93,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1964-06-28',
@@ -565,7 +565,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 89,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1964-03-28',
@@ -588,7 +588,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 96,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-03-28',
@@ -611,7 +611,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 98,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1969-04-29',
@@ -634,7 +634,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 103,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-03-29',
@@ -657,7 +657,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => NULL,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1966-05-29',
@@ -680,7 +680,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 107,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'mâle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-04-29',
@@ -703,7 +703,7 @@ class AnimauxTableSeeder extends Seeder
                 
                 'couleur' => NULL,
                 'taille_cm' => 105,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-03-29',
@@ -726,7 +726,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 104,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1964-06-29',
@@ -749,7 +749,7 @@ class AnimauxTableSeeder extends Seeder
                
                 'couleur' => NULL,
                 'taille_cm' => 103,
-                'race' => 'Shetland',
+                'race_id' =>1,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
                 'date_naissance' => '1965-03-14',

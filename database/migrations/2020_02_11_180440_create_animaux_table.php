@@ -20,7 +20,7 @@ class CreateAnimauxTable extends Migration
             $table->bigInteger('affixe_id')->unsigned()->nullable();
             $table->string('couleur')->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
-            $table->string('race')->default('OC');
+            $table->bigInteger('race_id')->unsigned()->nullable();
             $table->enum('sexe',['mâle','femelle', 'jeune mâle', 'jeune femelle', 'mâle stérilisé', 'femelle stérilisée']);
             $table->date('date_achat')->nullable();
             $table->date('date_naissance')->nullable();
@@ -35,6 +35,7 @@ class CreateAnimauxTable extends Migration
             $table->foreign('sire_id')->references('id')->on('animaux');
             $table->foreign('dam_id')->references('id')->on('animaux');
             $table->foreign('affixe_id')->references('id')->on('affixes');
+            $table->foreign('race_id')->references('id')->on('races');
         });
     }
 

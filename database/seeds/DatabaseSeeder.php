@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AffixesTableSeeder::class);
         $this->call(ElevagesTableSeeder::class);
         $this->call(GamedatasTableSeeder::class);
+        $this->call(RacesTableSeeder::class);
         $this->call(AnimauxTableSeeder::class);
         $this->call(LociTableSeeder::class);
         $this->call(AllelesTableSeeder::class);
@@ -23,5 +24,6 @@ class DatabaseSeeder extends Seeder
        
         $this->call(StatutsfemellesTableSeeder::class);
        
+        
     }
 }
