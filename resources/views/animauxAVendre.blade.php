@@ -15,8 +15,8 @@
   </tr>
 @foreach ($animaux as $animal)
 <tr>
-	<td> {{$animal->nom}} </td>
-	<td> {{$animal->race}} </td>
+	<td> {{$animal->NomComplet()}} </td>
+	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->sexe}} </td>
 	<td>{{$animal->prix}}</td>
 	<?php 

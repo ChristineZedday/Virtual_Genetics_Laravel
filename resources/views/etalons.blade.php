@@ -3,12 +3,12 @@
 
 <div class='animaux'>
 <h3>Jument à faire saillir:</h3>
-<p>{{$jument->nom}}</p>
-<p>{{$jument->race}}</p>
+<p>{{$jument->NomComplet()}}</p>
+<p>{{$jument->Race->nom}}</p>
 <p>{{$jument->couleur}}</p>
 @if (! $jument->fondateur)
-<p>par {{$jument->Sire->nom}}</p>
-<p>et {{$jument->Dam->nom}}</p>
+<p>par {{$jument->Sire->NomComplet()}}</p>
+<p>et {{$jument->Dam->NomComplet()}}</p>
 @endif
 <h3 >Mes Etalons:</h3>
 <table>
@@ -23,13 +23,13 @@
   </tr>
 @foreach ($etalons as $animal)
 <tr>
-	<td> {{$animal->nom}} </td>
-	<td> {{$animal->race}} </td>
+	<td> {{$animal->NomComplet()}} </td>
+	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->date_naissance}} </td>
 	@if (! $animal->fondateur)
-	<td> {{ $animal->Sire->nom }} </td>
-	<td> {{ $animal->Dam->nom}} </td>
+	<td> {{ $animal->Sire->NomComplet() }} </td>
+	<td> {{ $animal->Dam->NomComplet}} </td>
 	@else
 	<td></td>
 	<td></td>

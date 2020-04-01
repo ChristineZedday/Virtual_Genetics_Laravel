@@ -1,7 +1,7 @@
 @extends('layouts.elevageDashboard')
 @section('content')
 	@isset($animal->nom)
-	<h1>@if (isset($animal->Affixe) && $animal->Affixe->affixe_pre) {{$animal->Affixe->libelle}} @endif {{ $animal->nom }} @if (isset($animal->Affixe) && (! $animal->Affixe->->affixe_pre)) {{$animal->Affixe->libelle}} @endif </h1>
+	<h1>{{$animal->NomComplet()}}</h1>
 	@else
 		@if ($animal->elevage_id == $elevage->id)
 		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom</button></a>
@@ -34,8 +34,8 @@
 <p>{{$animal->taille_cm}}</p>
 <p>{{$animal->date_naissance}}</p>
 	@if (! $animal->fondateur)
-		<p>par @if (isset($animal->Sire->affixe) && ($animal->Sire->affixe_pre)) {{$animal->Sire->affixe}} @endif {{$animal->Sire->nom}} @if (isset($animal->Sire->affixe) && (! $animal->Sire->affixe_pre)) {{$animal->Sire->affixe}} @endif </p>
-		<p>et  @if (isset($animal->Dam->affixe) && ($animal->Dam->affixe_pre)) {{$animal->dam->affixe}} @endif {{$animal->Dam->nom}} @if (isset($animal->Dam->affixe) && (! $animal->Dam->affixe_pre)) {{$animal->Dam->affixe}} @endif </p>
+		<p>par  {{$animal->Sire->NomComplet()}} </p>
+		<p>et  {{$animal->Dam->NomComplet()}}</p>
 	@endif
 
 <p>{{$animal->elevage_id == $elevage->id? $animal->date_achat : ""}}</p>
