@@ -39,7 +39,7 @@ class ReproductionController extends Controller
           $animal->dam_id = $jument;
           $dam = Animal::Find($animal->dam_id);
           if ($dam->fondateur) {
-            $animal->Affixe = $dam->Affixe;
+            $animal->affixe_id = $dam->affixe_id;
           }
           else {
             $elv = Elevage::Find($elevage);
