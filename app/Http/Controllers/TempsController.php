@@ -35,6 +35,11 @@ class TempsController extends Controller
         if ($dateM == 01) {
             $game->lettre = checkLettre($date);
             $game->save();
+            $elevages = Elevage::where('role','Joueur')->get();
+            foreach ($elevages as $elevage)
+            {
+                $elevage->budget +=1000;
+            }
            
         }
         return redirect()->route('home');

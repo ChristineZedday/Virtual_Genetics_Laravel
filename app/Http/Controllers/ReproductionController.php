@@ -38,15 +38,20 @@ class ReproductionController extends Controller
           $animal->sire_id = $etalon;
           $animal->dam_id = $jument;
           $dam = Animal::Find($animal->dam_id);
+          $elv = Elevage::Find($elevage);
           if ($dam->fondateur) {
             $animal->affixe_id = $dam->affixe_id;
           }
           else {
-            $elv = Elevage::Find($elevage);
+           
               if (isset($elv->Affixe))
               {
                 $animal->affixe_id = $elv->affixe_id;
               }
+          }
+          if ($elv->role == 'Vendeur') {
+            $lettre = Gamedata::find(1)->lettre;
+            $animal->nom = $lettre;
           }
           $animal->elevage_id = $elevage;
           $sexe = rand(1,2);
