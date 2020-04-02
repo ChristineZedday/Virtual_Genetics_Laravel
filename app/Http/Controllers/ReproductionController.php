@@ -8,6 +8,7 @@ use App\statutsFemelle;
 use App\Animal;
 use App\Elevage;
 use App\Genome;
+use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
  /**
@@ -50,7 +51,7 @@ class ReproductionController extends Controller
               }
           }
           if ($elv->role == 'Vendeur') {
-            $lettre = Gamedata::find(1)->lettre;
+            $lettre = TempsController::checkLettre($date);
             $animal->nom = $lettre;
           }
           $animal->elevage_id = $elevage;

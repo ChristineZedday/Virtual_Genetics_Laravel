@@ -33,7 +33,7 @@ class TempsController extends Controller
         achete();
         $dateM = date('m',strtotime($date));
         if ($dateM == 01) {
-            $game->lettre = checkLettre($date);
+            $game->lettre = TempsController::checkLettre($date);
             $game->save();
             $elevages = Elevage::where('role','Joueur')->get();
             foreach ($elevages as $elevage)
@@ -68,6 +68,14 @@ class TempsController extends Controller
         
         return $age;
 
+
+    }
+    static function checkLettre($date)
+    {
+        $lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'];
+        $an = date('Y', strtotime($date));
+    $lettre = $lettres[($an - 1966) % 22];
+    return $lettre;
 
     }
 }
@@ -233,11 +241,3 @@ function achete ()
     }
 }
 
-function checkLettre($date)
-{
-    $lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'];
-    $an = date('Y', strtotime($date));
-   $lettre = $lettres[($an - 1966) % 22];
-   return $lettre;
-
-}
