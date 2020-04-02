@@ -151,7 +151,7 @@ function reproNPC($date)
                 foreach ($juments as $jument)
                 {
                     $statut = Animal::Find($jument->id)->Statut;
-                    if ((isset($statut) && $statut->vide==true))
+                    if ((!isset($statut) || $statut->vide==true))
                     {
                         if(rand(1,2)==1)
                         {

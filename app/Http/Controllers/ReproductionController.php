@@ -21,6 +21,7 @@ class ReproductionController extends Controller
     
     if (! isset($statut))
     {$statut = new StatutsFemelle();}
+   
     
     $statut->animal_id = $jument;
     $statut->pres_pleine = true; 

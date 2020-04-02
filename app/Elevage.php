@@ -21,6 +21,6 @@ class Elevage extends Model
 
     public function Affixe()
     {
-        return $this->hasOne('App\Affixe');
+        return $this->belongsTo('App\Affixe');
     }
 }

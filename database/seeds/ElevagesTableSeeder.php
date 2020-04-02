@@ -20,7 +20,7 @@ class ElevagesTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'affixe_id' => NULL,
+                'affixe_id' => 23,
                 'created_at' => '2020-02-10 12:16:01',
                 'updated_at' => '2020-04-01 18:25:43',
                 'nom_elevage' => 'Ranch des Petits Poilus',
@@ -56,7 +56,7 @@ class ElevagesTableSeeder extends Seeder
             3 => 
             array (
                 'id' => 4,
-                'affixe_id' => NULL,
+                'affixe_id' => 24,
                 'created_at' => '2020-02-11 20:11:51',
                 'updated_at' => '2020-02-11 20:11:51',
                 'nom_elevage' => 'Haras des Noës Blanches',

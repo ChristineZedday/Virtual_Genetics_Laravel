@@ -193,6 +193,22 @@ class AffixesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            22 => 
+            array (
+                'id' => 23,
+                'libelle' => 'de Poil',
+                'affixe_pre' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'libelle' => 'des Noës',
+                'affixe_pre' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
