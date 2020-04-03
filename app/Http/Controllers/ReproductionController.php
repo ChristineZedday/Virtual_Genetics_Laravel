@@ -68,6 +68,7 @@ class ReproductionController extends Controller
                     $animal->race_id = 1;
                 }
         $animal->taille_cm = ($etalon->taille_cm + $jument->taille_cm) /2 ;
+        $animal->consang = calculConsang($etalon->id, $jument->id);
         $animal->save();
         Genome::mixGenes($etalon->id, $jument->id, $animal->id);
 
@@ -82,3 +83,47 @@ class ReproductionController extends Controller
    }
   
 }
+
+function calculConsang($S, $D)
+{
+  $SS = Animal::find($S);
+  if (isset ($SS))
+  {
+    $ageS = TempsController::ageMonths($SS->date_naissance);
+  }
+ 
+  $DD = Animal::find($D);
+  if (isset ($DD))
+  {
+    $ageD = TempsController::ageMonths($DD->date_naissance);
+  }
+
+  switch (true)
+  {
+    case $D == null || $S==null :
+      return 0;
+    break;
+
+    case $D == $S:
+      return 100/(2-($SS->consang/100));
+    break;
+
+    case $SS->fondateur && $DD->fondateur:
+      return 0;
+    break;
+
+    case $SS->fondateur || ($ageS >= $ageD):
+      return calculConsang($S, $DD->sire_id)/2 + calculConsang($S, $DD->dam_id)/2 ;  
+    break;
+
+    case $DD->fondateur || ($ageD > $ageS):
+      return calculConsang($D, $SS->sire_id)/2 + calculConsang($D, $SS->dam_id)/2 ;  
+    break;
+
+    default:
+    dd ('???oublié quoi????');
+  }
+      
+  
+}
+

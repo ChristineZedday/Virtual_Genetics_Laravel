@@ -110,6 +110,7 @@
 				</table></td>
 		</tr>
 		</table>
+	<p>Taux de consanguinité: {{$animal->consang}}</p>
 	@endif
 
 <p>{{$animal->elevage_id == $elevage->id? $animal->date_achat : ""}}</p>
