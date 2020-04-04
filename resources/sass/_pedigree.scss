@@ -1,0 +1,41 @@
+.pedigree {
+	
+		
+		width: 600px;
+		height: 400px;
+		display: flex;
+		flex-direction: row;	
+		flex-wrap: no-wrap;	
+	
+	
+}
+.generation {
+
+	top:0;
+	left:0;
+	width : 200px;
+	height :400px;
+	display: flex;
+	flex-direction: column;
+	
+	flex-wrap: no-wrap;	
+	 
+}
+.male, .femelle{
+	width:100%;
+	height:50%;
+	display: flex;
+	justify-content: center;
+
+	text-align: center;
+	
+	}
+
+.male {
+	background-color: $blue;
+
+}
+.femelle {
+	background-color: $pink;
+
+}

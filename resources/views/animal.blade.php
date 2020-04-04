@@ -34,82 +34,28 @@
 <p>{{$animal->taille_cm}} cm</p>
 <p>{{$animal->date_naissance}}</p>
 	@if (! $animal->fondateur)
-		<table class='pedigree'>
-		<tr>
-			<td id='pere'>{{$animal->Sire->NomComplet()}}</td>
-			<td>
-				<table>
-					<tr>
-						<td id='gpp'>@isset($animal->Sire->Sire) {{$animal->Sire->Sire->NomComplet()}} @else gpp @endisset</td>
-					</tr>
-					<tr>
-						<td id='gmp'>@isset($animal->Sire->Dam) {{$animal->Sire->Dam->NomComplet()}} @else gmp @endisset</td>
-					</tr>
-				</table>
-			</td>
-			<td><table>
-					<tr>
-						<td>
-							<table>
-								<tr>
-								<td id='agpp'>@isset($animal->Sire->Sire->Sire) {{$animal->Sire->Sire->Sire->NomComplet()}} @else agpp @endisset</td>	
-								</tr>
-								<tr>
-								<td id='agmp'>@isset($animal->Sire->Sire->Dam) {{$animal->Sire->Sire->Dam->NomComplet()}} @else agmp @endisset</
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-					<td>
-							<table>
-								<tr>
-								<td id='agpp'>@isset($animal->Sire->Dam->Sire) {{$animal->Sire->Dam->Sire->NomComplet()}} @else agpp @endisset</td>	
-								</tr>
-								<tr>
-								<td id='agmp'>@isset($animal->Sire->Dam->Dam) {{$animal->Sire->Dam->Dam->NomComplet()}} @else agmp @endisset</
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table></td>
-		</tr>
-		<tr>
-			<td id='mere'>{{$animal->Dam->NomComplet()}}</td>
-			<td>
-				<table>
-					<tr>
-						<td id='gpm'>@isset($animal->Dam->Sire) {{$animal->Dam->Sire->NomComplet()}} @else gpm @endisset</td>
-					</tr>
-					<tr>
-						<td id='gmm'>@isset($animal->Dam->Dam) {{$animal->Dam->Dam->NomComplet()}} @else gmm @endisset</td>
-					</tr>
-				</table>
-			</td>
-			<td><table>
-					<tr>
-					<td><table>
-								<tr>
-								<td id='agpp'>@isset($animal->Dam->Sire->Sire) {{$animal->Dam->Sire->Sire->NomComplet()}} @else agmp @endisset</td>	
-								</tr>
-								<tr>
-								<td id='agmp'>@isset($animal->Dam->Sire->Dam) {{$animal->Dam->Sire->Dam->NomComplet()}} @else agmm @endisset</
-								</tr>
-							</table></td>
-					</tr>
-					<tr><td>
-					<table>
-								<tr>
-								<td id='agpp'>@isset($animal->Dam->Dam->Sire) {{$animal->Dam->Dam->Sire->NomComplet()}} @else agmp @endisset</td>	
-								</tr>
-								<tr>
-								<td id='agmp'>@isset($animal->Dam->Dam->Dam) {{$animal->Dam->Dam->Dam->NomComplet()}} @else agmm @endisset</
-								</tr>
-							</table></td>
-					</tr>
-				</table></td>
-		</tr>
-		</table>
+		<div class='pedigree'>
+			<span class='generation'>
+				<span class='male'>{{$animal->Sire->NomComplet()}}</span>
+				<span class=femelle>{{$animal->Dam->NomComplet()}}</span>
+			</span>
+			<span class='generation'>
+				<span class='male'>@isset($animal->Sire->Sire) {{$animal->Sire->Sire->NomComplet()}} @else gpp @endisset</span>
+				<span class=femelle>@isset($animal->Sire->Dam) {{$animal->Sire->Dam->NomComplet()}} @else gmp @endisset</span>
+				<span class='male'>@isset($animal->Dam->Sire) {{$animal->Dam->Sire->NomComplet()}} @else gpm @endisset</span>
+				<span class='femelle'> @isset($animal->Dam->Dam) {{$animal->Dam->Dam->NomComplet()}} @else gmm @endisset</span>
+			</span>
+			<span class='generation'>
+				<span class='male'>@isset($animal->Sire->Sire->Sire) {{$animal->Sire->Sire->Sire->NomComplet()}} @else agpp @endisset</span>
+				<span class='femelle'>@isset($animal->Sire->Sire->Dam) {{$animal->Sire->Sire->Dam->NomComplet()}} @else agmp @endisset</span>
+				<span class='male'>	@isset($animal->Sire->Dam->Sire) {{$animal->Sire->Dam->Sire->NomComplet()}} @else agpp @endisset</span>	
+				<span class='femelle'>@isset($animal->Sire->Dam->Dam) {{$animal->Sire->Dam->Dam->NomComplet()}} @else agmp @endisset</span>
+				<span class='male'>	@isset($animal->Dam->Sire->Sire) {{$animal->Dam->Sire->Sire->NomComplet()}} @else agmp @endisset</span>
+				<span class='femelle'>@isset($animal->Dam->Sire->Dam) {{$animal->Dam->Sire->Dam->NomComplet()}} @else agmm @endisset</span>
+				<span class='male'>@isset($animal->Dam->Dam->Sire) {{$animal->Dam->Dam->Sire->NomComplet()}} @else agmp @endisset</span>
+				<span class='femelle'>@isset($animal->Dam->Dam->Dam) {{$animal->Dam->Dam->Dam->NomComplet()}} @else agmm @endisset</span>
+	</sapn>					
+	</div>
 	<p>Taux de consanguinité: {{$animal->consang}}</p>
 	@endif
 
