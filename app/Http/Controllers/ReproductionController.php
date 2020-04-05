@@ -92,7 +92,7 @@ class ReproductionController extends Controller
               $animal->taille_cm = $animal->taille_additive;
           }
           $animal->save();
-       
+        }
          
        }
        else{
