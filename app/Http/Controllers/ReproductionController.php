@@ -76,7 +76,17 @@ class ReproductionController extends Controller
         $genotypes = Genotype::where('animal_id',$animal->id)->get();
         foreach ($genotypes as $genotype)
           {
-            $phenotype = Phenotype::where('allele1_id', $genotype->allele_p_id)->where('allele2_id', $genotype->allele_m_id);
+           $p = $genotype->allele_p_id;
+           $m = $genotype->allele_m_id;
+
+          $phenotype = Phenotype::where(function($query1) {return $query1->where('allele1_id', $p)->orWhere('allele1_id', $genotype->$m);})->where(function($query2) {return $query2->where('allele2_id', $p)->orWhere('allele2_id', $m);})->first();
+            if (isset($phenotype))
+              {$animal->attach($phenotype->id);}
+
+          if (isset($phenotype->effet_taille))
+            {
+              $animal->taille_cm += $phenotype->effet_taille; //taille génétique à séparer taille effective
+            }
           }
 
        
