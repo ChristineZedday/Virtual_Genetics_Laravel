@@ -8,6 +8,8 @@ use App\statutsFemelle;
 use App\Animal;
 use App\Elevage;
 use App\Genome;
+use App\Genotype;
+use App\Phenotype;
 use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
@@ -71,6 +73,11 @@ class ReproductionController extends Controller
         $animal->consang = calculConsang($etalon->id, $jument->id);
         $animal->save();
         Genome::mixGenes($etalon->id, $jument->id, $animal->id);
+        $genotypes = Genotype::where('animal_id',$animal->id)->get();
+        foreach ($genotypes as $genotype)
+          {
+            $phenotype = Phenotype::where('allele1_id', $genotype->allele_p_id)->where('allele2_id', $genotype->allele_m_id);
+          }
 
        
          

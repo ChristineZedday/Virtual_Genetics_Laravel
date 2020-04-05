@@ -1,12 +1,12 @@
 @extends('layouts.elevageDashboard')
 @section('content')
-	@isset($animal->nom)
+
 	<h1>{{$animal->NomComplet()}}</h1>
-	@else
-		@if ($animal->elevage_id == $elevage->id)
+	
+		@if ($animal->elevage_id == $elevage->id && sizeof($animal->nom <= 1))
 		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom</button></a>
 		@endif
-	@endisset
+	
 <h3>{{$animal->Race->nom}}</h3>
 <p>{{$animal->sexe}}</p>
 @isset($animal->couleur)

@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(StatutsfemellesTableSeeder::class);
        
         
+        $this->call(PhenotypesTableSeeder::class);
     }
 }

@@ -221,7 +221,7 @@ class AllelesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'locus_id' => 3,
-                'nom' => 'Blanc dominant 20',
+                'nom' => 'Blanc 20',
                 'abbrev' => 'W20',
                 'is_default' => 0,
                 'is_dominant' => 0,

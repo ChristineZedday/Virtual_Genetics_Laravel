@@ -44,6 +44,11 @@ class Animal extends Model
         return $this->HasOne('App\statutsFemelle', 'id');
     }
 
+    public function Phenotype()
+    {
+        return $this->belongsToMany('App\Phenotype');
+    }
+
     public function NomComplet()
     {
         if (isset($this->Affixe))
