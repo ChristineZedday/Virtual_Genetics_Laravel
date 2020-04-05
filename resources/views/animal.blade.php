@@ -3,8 +3,8 @@
 
 	<h1>{{$animal->NomComplet()}}</h1>
 	
-		@if ($animal->elevage_id == $elevage->id && sizeof($animal->nom <= 1))
-		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom</button></a>
+		@if (($animal->elevage_id == $elevage->id) && (strlen($animal->nom) <= 1))
+		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom </button></a>
 		@endif
 	
 <h3>{{$animal->Race->nom}}</h3>
