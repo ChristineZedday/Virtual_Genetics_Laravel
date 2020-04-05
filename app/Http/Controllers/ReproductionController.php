@@ -69,7 +69,7 @@ class ReproductionController extends Controller
                 else{
                     $animal->race_id = 1;
                 }
-        $animal->taille_cm = ($etalon->taille_cm + $jument->taille_cm) /2 ;
+        $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
         $animal->consang = calculConsang($etalon->id, $jument->id);
         $animal->save();
         Genome::mixGenes($etalon->id, $jument->id, $animal->id);
@@ -79,16 +79,19 @@ class ReproductionController extends Controller
            $p = $genotype->allele_p_id;
            $m = $genotype->allele_m_id;
 
-          $phenotype = Phenotype::where(function($query1) {return $query1->where('allele1_id', $p)->orWhere('allele1_id', $genotype->$m);})->where(function($query2) {return $query2->where('allele2_id', $p)->orWhere('allele2_id', $m);})->first();
+          $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->orWhere('allele1_id', $m);})->where(function($query2) use ($p,$m) {return $query2->where('allele2_id', $p)->orWhere('allele2_id', $m);})->first();
             if (isset($phenotype))
-              {$animal->phenotypes()->attach($phenotype->id);}
+              {$animal->Phenotype()->attach($phenotype->id);}
 
           if (isset($phenotype->effet_taille))
             {
-              $animal->taille_cm += $phenotype->effet_taille; //taille génétique à séparer taille effective
+              $animal->taille_cm = $animal->taille_additive + $phenotype->effet_taille; //taille génétique à séparer taille effective
+             
             }
+            else  {
+              $animal->taille_cm = $animal->taille_additive;
           }
-
+          $animal->save();
        
          
        }
