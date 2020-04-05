@@ -79,7 +79,7 @@ class ReproductionController extends Controller
            $p = $genotype->allele_p_id;
            $m = $genotype->allele_m_id;
 
-          $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->orWhere('allele1_id', $m);})->where(function($query2) use ($p,$m) {return $query2->where('allele2_id', $p)->orWhere('allele2_id', $m);})->first();
+          $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
             if (isset($phenotype))
               {$animal->Phenotype()->attach($phenotype->id);}
 
