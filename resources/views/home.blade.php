@@ -8,6 +8,7 @@
 		<p>Vos chevaux et poneys naissent, grandissent et vieillissent en fonction du temps: c'est vous qui choisissez votre rythme, en cliquant sur "avancer d'un mois". Attention: Si vous avez plusieurs élevages, tous seront concernés! Ne changez de mois que lorsque vous avez fait tout ce que vous aviez à faire dans tous vos élevages, et entendez-vous avec les autres joueurs si vous êtes plusieurs!</p>
 	
 		<p>Pour en savoir plus sur la génétique des chevaux, allez sur <a href="http://chrizedday.free.fr">mon site</a>, entre autres!</p>
+		<p><a href="{{route('temps')}}">Avancer d'un mois</a></p>
 		<h2>Liste de vos élevages:</h2>
 		@foreach ($elevages as $elevage)
 			<div><p>{{$elevage->nom_elevage}}</p>

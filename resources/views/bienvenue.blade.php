@@ -10,5 +10,6 @@
 	
 		<p>Pour en savoir plus sur la génétique des chevaux, allez sur <a href="http://chrizedday.free.fr">mon site</a>, entre autres!</p>
 	
+	
 	</div>
 @endsection

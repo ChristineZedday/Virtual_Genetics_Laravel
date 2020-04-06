@@ -424,6 +424,28 @@ class AllelesTableSeeder extends Seeder
                 'is_default' => 1,
                 'is_dominant' => 1,
             ),
+            37 => 
+            array (
+                'id' => 38,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 21,
+                'nom' => 'HGMA2 grand',
+                'abbrev' => 'HGB',
+                'is_default' => 1,
+                'is_dominant' => 0,
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 21,
+                'nom' => 'HGMA2 petit',
+                'abbrev' => 'HGS',
+                'is_default' => 0,
+                'is_dominant' => 0,
+            ),
         ));
         
         
