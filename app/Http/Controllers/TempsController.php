@@ -208,7 +208,7 @@ function VenteJeunes ()
             if (TempsController::ageMonths($animal->date_naissance) >= 7 )
         { 
             $animal->a_vendre = true;
-            $race = Race::find($animal->race);
+            $race = Race::find($animal->race_id);
             $animal->prix = $race->prix_moyen; 
             if ($animal->sexe='jeune femelle')
             {
