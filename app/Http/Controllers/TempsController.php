@@ -112,6 +112,15 @@ function checkNouveaux($date)
         $animal->foetus = false;
         $animal->elevage_id = $animal->Dam->elevage_id;
         $animal->save();
+        $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
+        $statut->vide = true;
+        $statut->pres_pleine= false;
+        $statut->conf_pleine = false;
+        $statut->conf_vide = true;
+        $statut->etalon_id = null;
+        $statut->terme = null;
+        $statut->save();
+
             
     }
 }
@@ -132,9 +141,6 @@ function checkPuberes()
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
         { $animal->sexe = 'femelle';
-          $statut = new statutsFemelle();
-          $statut->vide = true;
-          $statut->save;
          $animal->save();}
             
     }
@@ -161,8 +167,8 @@ function reproNPC($date)
                 
                 foreach ($juments as $jument)
                 {
-                    $statut = Animal::Find($jument->id)->Statut;
-                    if ((!isset($statut) || $statut->vide==true))
+                    $statut = Animal::find($jument->id)->Statut;
+                    if ((!isset($statut)) || ($statut->vide==true))
                     {
                         if(rand(1,2)==1)
                         {

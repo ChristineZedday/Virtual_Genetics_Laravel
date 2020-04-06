@@ -77,6 +77,18 @@ class ElevagesTableSeeder extends Seeder
                 'role' => 'Vendeur',
                 'user_id' => 1,
             ),
+            5 => 
+            array (
+                'id' => 6,
+                'affixe_id' => 25,
+                'created_at' => '2020-04-06 18:43:04',
+                'updated_at' => '2020-04-06 18:43:04',
+                'nom_elevage' => 'Les Bisounours',
+                'nom_eleveur' => 'Corinne Titoune',
+                'budget' => 19500,
+                'role' => 'Joueur',
+                'user_id' => 2,
+            ),
         ));
         
         

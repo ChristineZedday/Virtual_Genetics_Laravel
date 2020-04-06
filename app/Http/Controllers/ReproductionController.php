@@ -19,13 +19,14 @@ class ReproductionController extends Controller
 {
    static function croisement($elevage, $etalon, $jument)
    {
-    $statut = Animal::Find($jument)->Statut;
     
-    if (! isset($statut))
-    {$statut = new StatutsFemelle();}
+    $statut = StatutsFemelle::where('animal_id',$jument)->first();
+    
+    if ($statut==null) {
+      $statut = new StatutsFemelle();
+      $statut->animal_id = $jument;
+    }
    
-    
-    $statut->animal_id = $jument;
     $statut->pres_pleine = true; 
     $statut->etalon_id = $etalon;
     $date = TempsController::ElevenMonths();
@@ -98,6 +99,7 @@ class ReproductionController extends Controller
            $statut->vide = true;
        }
     $statut->save();
+   
     return redirect()->route('animaux',[$elevage]);
    }
   

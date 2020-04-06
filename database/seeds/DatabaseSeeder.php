@@ -21,10 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LociTableSeeder::class);
         $this->call(AllelesTableSeeder::class);
         $this->call(GenotypesTableSeeder::class);
-       
-        $this->call(StatutsfemellesTableSeeder::class);
-       
-        
         $this->call(PhenotypesTableSeeder::class);
     }
 }

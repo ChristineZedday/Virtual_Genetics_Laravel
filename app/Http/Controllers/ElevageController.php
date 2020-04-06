@@ -65,7 +65,7 @@ class ElevageController extends Controller
                 $affixe->libelle =  $request->input('affixe');
                 $affixe->affixe_pre = $request->input('affixe_pre');
                 $affixe->save();
-                $elevage->Affixe =$affixe;
+                $elevage->affixe_id=$affixe->id;
                 }
             }
         
@@ -76,7 +76,7 @@ class ElevageController extends Controller
 
         $elevage->budget= gameData::budget();
        
-        if (isset($elevage->Affixe))
+        if (isset($elevage->affixe_id))
         {
             $elevage->budget = $elevage->budget - 500;
         }

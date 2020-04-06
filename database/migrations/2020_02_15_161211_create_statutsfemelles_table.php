@@ -16,7 +16,7 @@ class CreateStatutsfemellesTable extends Migration
         Schema::create('statutsfemelles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->bigInteger('animal_id')->unsigned();
+            $table->bigInteger('animal_id')->unsigned()->unique();
             $table->boolean('pres_pleine')->default(false);
             $table->boolean('conf_pleine')->default(false);
             $table->boolean('vide')->default(true);
