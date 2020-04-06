@@ -22,20 +22,17 @@ class ReproductionController extends Controller
     
     $statut = StatutsFemelle::where('animal_id',$jument)->first();
     
-    if ($statut==null) {
-      $statut = new StatutsFemelle();
-      $statut->animal_id = $jument;
-    }
-   
     $statut->pres_pleine = true; 
     $statut->etalon_id = $etalon;
     $date = TempsController::ElevenMonths();
     $statut->terme = $date;
+    $statut->save();
        $success = rand(1,2);
        if ($success == 1)
        {
           $statut->vide = false; 
-        
+          $statut->save();
+         
           $animal = new Animal;
           $animal->foetus = true;
           $animal->fondateur = false;
@@ -97,8 +94,10 @@ class ReproductionController extends Controller
        }
        else{
            $statut->vide = true;
+           $statut->save();
+          
        }
-    $statut->save();
+   
    
     return redirect()->route('animaux',[$elevage]);
    }

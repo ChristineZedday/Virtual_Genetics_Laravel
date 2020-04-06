@@ -26,7 +26,7 @@ class TempsController extends Controller
         $game->date_courante = $date;
         $game->save();
 
-        checkFemellesTerme($date);
+        // checkFemellesTerme($date);
         checkNouveaux($date);
         checkPuberes();
         reproNPC($date);
@@ -167,8 +167,15 @@ function reproNPC($date)
                 
                 foreach ($juments as $jument)
                 {
-                    $statut = Animal::find($jument->id)->Statut;
-                    if ((!isset($statut)) || ($statut->vide==true))
+                    $statut = statutsFemelle::where('animal_id',$jument->id)->first();
+                   
+                    if ($statut==null)
+                    {
+                        $statut = new StatutsFemelle();
+                        $statut->animal_id = $jument->id;
+                        $statut->save();
+                    }
+                    if ($statut->vide==true)
                     {
                         if(rand(1,2)==1)
                         {
