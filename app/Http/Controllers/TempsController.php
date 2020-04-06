@@ -15,6 +15,7 @@ class TempsController extends Controller
     {
         $game = Gamedata::Find(1);
         $date = $game->date();
+        return $date;
     }
 
     static function nextMonth()
@@ -141,7 +142,17 @@ function checkPuberes()
 
 function reproNPC($date)
 {
-    $saison = true; //ici vérifier mois
+    $mois = date('m',strtotime($date));
+    switch ($mois) {
+        case $mois<4:
+            $saison = false;
+        break;
+        case $mois > 9:
+            $saison = false;
+        break;
+        default:
+        $saison = true;
+    }
         if ($saison) {
             $vendeurs = Elevage::where('role','Vendeur')->get();
             foreach($vendeurs as $vendeur)
