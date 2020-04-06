@@ -9,7 +9,8 @@
     <th>Race</th>
     <th>Sexe</th>
     <th>Couleur</th>
-    <th>génotype</th>
+	<th>génotype</th>
+	<th>taille</th>
     <th>Date acquisition</th>
     <th>A Vendre?</th>
     <th>Voir</th>
@@ -35,6 +36,7 @@
 
 	?>
   </td>
+  <td> {{ $animal->taille_cm}} ({{ $animal->taille_additive}}) </td>
 	<td>@isset ($animal->date_achat) {{$animal->date_achat}} @else {{$animal->date_naissance}} @endisset</td>
 	<td> {{ $animal->a_vendre ? "à vendre" : ""  }} </td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"><button>voir</button></a> </td>

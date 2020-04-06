@@ -68,7 +68,7 @@ class AnimauxTableSeeder extends Seeder
                 'id' => 4,
                 'created_at' => NULL,
                 'updated_at' => '2020-02-16 17:13:00',
-                'nom' => ' Diana',
+                'nom' => 'Diana',
                 'affixe_id' => 4,
                 'couleur' => NULL,
                 'taille_cm' => 114,
@@ -153,7 +153,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => 111,
+                'taille_additive' => 121,
             ),
             6 => 
             array (
@@ -252,7 +252,7 @@ class AnimauxTableSeeder extends Seeder
                 'id' => 12,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => ' Comet',
+                'nom' => 'Comet',
                 'affixe_id' => 12,
                 'couleur' => NULL,
                 'taille_cm' => 119,
@@ -291,7 +291,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => 109,
+                'taille_additive' => 129,
             ),
             12 => 
             array (
@@ -314,7 +314,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => 112,
+                'taille_additive' => 122,
             ),
             13 => 
             array (
@@ -462,7 +462,7 @@ class AnimauxTableSeeder extends Seeder
                 'nom' => 'Lily',
                 'affixe_id' => 15,
                 'couleur' => NULL,
-                'taille_cm' => 89,
+                'taille_cm' => 87,
                 'race_id' => 2,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
@@ -554,7 +554,7 @@ class AnimauxTableSeeder extends Seeder
                 'nom' => 'Rose',
                 'affixe_id' => 10,
                 'couleur' => NULL,
-                'taille_cm' => 93,
+                'taille_cm' => 91,
                 'race_id' => 2,
                 'sexe' => 'femelle',
                 'date_achat' => NULL,
@@ -590,7 +590,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => 109,
+                'taille_additive' => 111,
             ),
             25 => 
             array (
@@ -644,7 +644,7 @@ class AnimauxTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'Salsa',
-                'affixe_id' => 10,
+                'affixe_id' => 19,
                 'couleur' => NULL,
                 'taille_cm' => 103,
                 'race_id' => 2,
@@ -751,7 +751,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => 104,
+                'taille_additive' => 108,
             ),
             32 => 
             array (
@@ -774,7 +774,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => 103,
+                'taille_additive' => 105,
             ),
             33 => 
             array (
