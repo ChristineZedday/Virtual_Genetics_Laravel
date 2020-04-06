@@ -7,6 +7,7 @@ use App\Gamedata;
 use App\statutsFemelle;
 use App\Animal;
 use App\Elevage;
+use App\Race;
 
 class TempsController extends Controller
 {
@@ -207,7 +208,12 @@ function VenteJeunes ()
             if (TempsController::ageMonths($animal->date_naissance) >= 7 )
         { 
             $animal->a_vendre = true;
-            $animal->prix = 500; //en attendant table de prix/race/sexe
+            $race = Race::find($animal->race);
+            $animal->prix = $race->prix_moyen; 
+            if ($animal->sexe='jeune femelle')
+            {
+                $animal->prix += ($animal->prix)*0.2;
+            }
             $animal->save();}
                 
         }
