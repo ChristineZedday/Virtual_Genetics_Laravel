@@ -179,13 +179,13 @@ function reproNPC($date)
                     }
                     if ($statut->vide==true)
                     {
-                        mt_srand(time());
-                        if(mt_rand(1,2)==1)
+                        srand((float) microtime()*1000000);
+                        if(rand(1,2)==1)
                         {
                             $etalons = Animal::where('elevage_id',$vendeur->id)->where('sexe','mâle')->get();
                             $nb = sizeof($etalons);
                             if ($nb > 0) {
-                                $choisi = mt_rand(1,$nb) -1;
+                                $choisi = rand(1,$nb) -1;
                                 $etalon = $etalons[$choisi]->id;
                                 ReproductionController::croisement($vendeur->id, $etalon, $jument->id);
                             }                    
@@ -202,8 +202,7 @@ function VenteJeunes ()
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur) {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->where(function($query) { return $query->where('sexe', 'jeune mâle')
-            ->orWhere('sexe', 'jeune femelle');})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where(function($query) { return $query->where('sexe', 'jeune mâle')->orWhere('sexe', 'jeune femelle');})->get();
 
         foreach ($animaux as $animal)
         {
@@ -232,31 +231,31 @@ function achete ()
         })->where('a_vendre', true)->get();
        foreach ($avendre as $av)
        {
-        mt_srand(time());
+        srand((float) microtime()*1000000);
           switch (true) {
               case ($av->prix >1000):
-                $achat = mt_rand(1,100) == 1;
+                $achat = rand(1,100) == 1;
               break;
               case ($av->prix > 800):
-                $achat = mt_rand(1,50) == 1;
+                $achat = rand(1,50) == 1;
             break;
               case ($av->prix > 600):
-                $achat = mt_rand(1,25) == 1;
+                $achat = rand(1,25) == 1;
             break;
                 case ($av->prix > 400):
-                $achat = mt_rand(1,10) == 1;
+                $achat = rand(1,10) == 1;
             break;
                 case ($av->prix > 300):
-                    $achat = mt_rand(1,5) == 1;
+                    $achat = rand(1,5) == 1;
                 break;
                     case ($av->prix > 200):
-                        $achat = mt_rand(1,3) == 1;
+                        $achat = rand(1,3) == 1;
                     break;
                     case ($av->prix < 50):
                         $achat = true;
                     break;
                     default :
-                    $achat = mt_rand(1,2) ==1;
+                    $achat = rand(1,2) ==1;
 
           }
           if ($achat) {
