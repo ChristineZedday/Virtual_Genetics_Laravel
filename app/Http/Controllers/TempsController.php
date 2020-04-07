@@ -41,6 +41,7 @@ class TempsController extends Controller
             foreach ($elevages as $elevage)
             {
                 $elevage->budget +=1000;
+                $elevage->save();
             }
            
         }
@@ -178,6 +179,7 @@ function reproNPC($date)
                     }
                     if ($statut->vide==true)
                     {
+                        mt_srand(time());
                         if(mt_rand(1,2)==1)
                         {
                             $etalons = Animal::where('elevage_id',$vendeur->id)->where('sexe','mâle')->get();
@@ -230,6 +232,7 @@ function achete ()
         })->where('a_vendre', true)->get();
        foreach ($avendre as $av)
        {
+        mt_srand(time());
           switch (true) {
               case ($av->prix >1000):
                 $achat = mt_rand(1,100) == 1;

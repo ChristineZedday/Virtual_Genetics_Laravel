@@ -27,7 +27,8 @@ class ReproductionController extends Controller
     $date = TempsController::ElevenMonths();
     $statut->terme = $date;
     $statut->save();
-       $success = mt_rand(1,2);
+    mt_srand(time());
+    $success = mt_rand(1,2);
        if ($success == 1)
        {
           $statut->vide = false; 
