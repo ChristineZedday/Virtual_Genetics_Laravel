@@ -56,10 +56,10 @@ class ReproductionController extends Controller
                 $animal->affixe_id = $elv->affixe_id;
               }
           }
-          if ($elv->role == 'Vendeur') {
-            $lettre = TempsController::checkLettre($date);
-            $animal->nom = $lettre;
-          }
+          
+          $lettre = TempsController::checkLettre($date);
+          $animal->nom = $lettre;
+          
           $animal->elevage_id = $elevage;
           $sexe = rand(1,2);
           $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
