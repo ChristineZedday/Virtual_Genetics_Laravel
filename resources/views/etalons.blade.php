@@ -29,7 +29,7 @@
 	<td> {{$animal->date_naissance}} </td>
 	@if (! $animal->fondateur)
 	<td> {{ $animal->Sire->NomComplet() }} </td>
-	<td> {{ $animal->Dam->NomComplet}} </td>
+	<td> {{ $animal->Dam->NomComplet()}} </td>
 	@else
 	<td></td>
 	<td></td>

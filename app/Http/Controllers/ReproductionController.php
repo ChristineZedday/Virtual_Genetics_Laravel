@@ -21,7 +21,11 @@ class ReproductionController extends Controller
    {
     
     $statut = StatutsFemelle::where('animal_id',$jument)->first();
-    
+    if (!isset($statut))
+    {
+      $statut = new statutsFemelle();
+      $statut->animal_id = $jument;
+    }
     $statut->pres_pleine = true; 
     $statut->etalon_id = $etalon;
     $date = TempsController::ElevenMonths();
