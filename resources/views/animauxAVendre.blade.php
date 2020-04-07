@@ -7,7 +7,8 @@
 <tr>
     <th>Nom </th>
     <th>Race</th>
-    <th>Sexe</th>
+	<th>Sexe</th>
+	<th>taille</th>
 	<th>Prix</th>
     <th>Elevage</th>
     
@@ -18,6 +19,7 @@
 	<td> {{$animal->NomComplet()}} </td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->sexe}} </td>
+	<td> {{$animal->taille_cm}}</td>
 	<td>{{$animal->prix}}</td>
 	<?php 
 		 $vendeur = $animal->elevage_id;

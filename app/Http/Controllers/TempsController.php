@@ -178,12 +178,12 @@ function reproNPC($date)
                     }
                     if ($statut->vide==true)
                     {
-                        if(rand(1,2)==1)
+                        if(mt_rand(1,2)==1)
                         {
                             $etalons = Animal::where('elevage_id',$vendeur->id)->where('sexe','mâle')->get();
                             $nb = sizeof($etalons);
                             if ($nb > 0) {
-                                $choisi = rand(1,$nb) -1;
+                                $choisi = mt_rand(1,$nb) -1;
                                 $etalon = $etalons[$choisi]->id;
                                 ReproductionController::croisement($vendeur->id, $etalon, $jument->id);
                             }                    
@@ -232,28 +232,28 @@ function achete ()
        {
           switch (true) {
               case ($av->prix >1000):
-                $achat = rand(1,100) == 1;
+                $achat = mt_rand(1,100) == 1;
               break;
               case ($av->prix > 800):
-                $achat = rand(1,50) == 1;
+                $achat = mt_rand(1,50) == 1;
             break;
               case ($av->prix > 600):
-                $achat = rand(1,25) == 1;
+                $achat = mt_rand(1,25) == 1;
             break;
                 case ($av->prix > 400):
-                $achat = rand(1,10) == 1;
+                $achat = mt_rand(1,10) == 1;
             break;
                 case ($av->prix > 300):
-                    $achat = rand(1,5) == 1;
+                    $achat = mt_rand(1,5) == 1;
                 break;
                     case ($av->prix > 200):
-                        $achat = rand(1,3) == 1;
+                        $achat = mt_rand(1,3) == 1;
                     break;
                     case ($av->prix < 50):
                         $achat = true;
                     break;
                     default :
-                    $achat = rand(1,2) ==1;
+                    $achat = mt_rand(1,2) ==1;
 
           }
           if ($achat) {

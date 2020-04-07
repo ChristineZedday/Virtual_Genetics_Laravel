@@ -27,7 +27,7 @@ class ReproductionController extends Controller
     $date = TempsController::ElevenMonths();
     $statut->terme = $date;
     $statut->save();
-       $success = rand(1,2);
+       $success = mt_rand(1,2);
        if ($success == 1)
        {
           $statut->vide = false; 
@@ -56,7 +56,7 @@ class ReproductionController extends Controller
             $animal->nom = $lettre;
           }
           $animal->elevage_id = $elevage;
-          $sexe = rand(1,2);
+          $sexe = mt_rand(1,2);
           $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
           $etalon = Animal::Find($etalon);
           $jument = Animal::Find($jument);
