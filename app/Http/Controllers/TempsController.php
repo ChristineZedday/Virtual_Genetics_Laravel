@@ -211,7 +211,7 @@ function VenteJeunes ()
             $animal->a_vendre = true;
             $race = Race::find($animal->race_id);
             $animal->prix = $race->prix_moyen; 
-            if ($animal->sexe='jeune femelle')
+            if ($animal->sexe=='jeune femelle')
             {
                 $animal->prix += ($animal->prix)*0.2;
             }
