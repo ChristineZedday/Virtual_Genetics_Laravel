@@ -32,7 +32,7 @@
 	</p>	
 @endisset
 <p>{{$animal->taille_cm}} cm</p>
-<p>{{$animal->Pathologie->nom}}</p>
+<p>@isset ($animal->Pathologie){{$animal->Pathologie->nom}}@endisset</p>
 <p>{{$animal->date_naissance}}</p>
 	@if (! $animal->fondateur)
 		<div class='pedigree'>
