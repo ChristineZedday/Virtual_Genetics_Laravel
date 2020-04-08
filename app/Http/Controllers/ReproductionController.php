@@ -93,6 +93,10 @@ class ReproductionController extends Controller
                   $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
                   $animal->save();
                 }
+                if (isset($phenotype->pathologie_id))
+                {
+                  
+                }
             }
           }
          
