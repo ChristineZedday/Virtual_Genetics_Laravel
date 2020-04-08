@@ -49,6 +49,11 @@ class Animal extends Model
         return $this->belongsToMany('App\Phenotype');
     }
 
+    public function Pathologie()
+    {
+        return $this->belongsToMany('App\Pathologie');
+    }
+
     public function NomComplet()
     {
         if (isset($this->Affixe))

@@ -16,7 +16,7 @@ class CreatePathologiesTable extends Migration
         Schema::create('pathologies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

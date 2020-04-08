@@ -10,6 +10,7 @@ use App\Elevage;
 use App\Genome;
 use App\Genotype;
 use App\Phenotype;
+use App\Pathologie;
 use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
@@ -86,7 +87,7 @@ class ReproductionController extends Controller
           $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
             if (isset($phenotype)) {
               
-              $animal->Phenotype()->attach($phenotype->id);//pas forcément?
+              // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
 
               if (isset($phenotype->effet_taille))
                 {
@@ -95,7 +96,7 @@ class ReproductionController extends Controller
                 }
                 if (isset($phenotype->pathologie_id))
                 {
-                  
+                  $animal->Pathologie()->attach($phenotype->pathologie_id);
                 }
             }
           }
