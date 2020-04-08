@@ -11,6 +11,7 @@
     <th>Date de naissance</th>
     <th>Père</th>
 	<th>Mère</th>
+	<th>Statut</th>
     <th>Voir</th>
   </tr>
 @foreach ($juments as $animal)
@@ -21,7 +22,7 @@
 	<td> {{$animal->date_naissance}} </td>
 	<td>@isset($animal->Sire) {{ $animal->Sire->NomComplet() }} @endisset </td>
 	<td>@isset($animal->Dam) {{ $animal->Dam->NomComplet()}} @endisset </td>
-
+<td>@isset($animal->Statut){{$animal->Statut->vide}}@else pas de statut @endisset</td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"><button>voir</button></a> </td>
 </tr>
 @endforeach

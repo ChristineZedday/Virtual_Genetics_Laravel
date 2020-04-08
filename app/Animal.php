@@ -41,7 +41,7 @@ class Animal extends Model
 
     public function Statut()
     {
-        return $this->HasOne('App\statutsFemelle', 'id');
+        return $this->HasOne('App\statutsFemelle', 'animal_id');
     }
 
     public function Phenotype()

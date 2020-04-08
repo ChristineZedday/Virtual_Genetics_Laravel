@@ -1,3 +1,5 @@
-femelles qui sont resaillies avant terme, statut passé à vide avant terme?
+femelles saillies restent dans la liste à saillir?
+
+problème des femelles apparaissent sans statut alors qu'elles en ont un en base
 
 

@@ -143,7 +143,11 @@ function checkPuberes()
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
         { $animal->sexe = 'femelle';
-         $animal->save();}
+         $animal->save();
+         $statut = new statutsFemelle();
+         $statut->animal_id = $animal->id;
+         $statut->save();
+        }
             
     }
 }
