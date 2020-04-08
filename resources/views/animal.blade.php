@@ -32,7 +32,13 @@
 	</p>	
 @endisset
 <p>{{$animal->taille_cm}} cm</p>
-<p>@isset ($animal->Pathologie){{$animal->Pathologie->nom}}@endisset</p>
+<?php $pathos = $animal->Pathologie()->get() ?>
+<p>@isset($animal->Pathologie)
+	@foreach($pathos as $patho)
+	{{$patho->nom}}
+	@endforeach
+	@endisset
+</p> 
 <p>{{$animal->date_naissance}}</p>
 	@if (! $animal->fondateur)
 		<div class='pedigree'>
