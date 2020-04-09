@@ -69,6 +69,10 @@
 <p>{{$animal->elevage_id == $elevage->id? $animal->date_achat : ""}}</p>
 <p>{{$animal->a_vendre? "à vendre" : ""}}</p>
 <p>{{$animal->prix}}</p>
+<?php
+$image = $animal->Image;
+ ?>
+<img src="{{ asset('/img/'.$image->chemin)}}" alt="">
 <div id='vente'>
 	@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre))
 

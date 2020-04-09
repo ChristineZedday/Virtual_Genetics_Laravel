@@ -54,6 +54,11 @@ class Animal extends Model
         return $this->belongsToMany('App\Pathologie');
     }
 
+    public function Image()
+    {
+        return $this->morphedByMany('App\Image', 'Imageable');
+    }
+
     public function NomComplet()
     {
         if (isset($this->Affixe))

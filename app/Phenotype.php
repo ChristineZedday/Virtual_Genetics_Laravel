@@ -10,4 +10,9 @@ class Phenotype extends Model
     {
         return $this->belongsToMany('App\Animal');
     }
+
+    public function Image()
+    {
+        return $this->morphedByMany('App\Image', 'Imageable');
+    }
 }

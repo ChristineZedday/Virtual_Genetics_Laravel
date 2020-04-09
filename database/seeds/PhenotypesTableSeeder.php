@@ -89,6 +89,66 @@ class PhenotypesTableSeeder extends Seeder
                 'couleur_modif' => NULL,
                 'pathologie_id' => NULL,
             ),
+            6 => 
+            array (
+                'id' => 7,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 1,
+                'allele2_id' => 1,
+                'effet_taille' => NULL,
+                'couleur_base' => NULL,
+                'couleur_modif' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 1,
+                'allele2_id' => 2,
+                'effet_taille' => NULL,
+                'couleur_base' => NULL,
+                'couleur_modif' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 2,
+                'allele2_id' => 2,
+                'effet_taille' => NULL,
+                'couleur_base' => NULL,
+                'couleur_modif' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 4,
+                'allele2_id' => 4,
+                'effet_taille' => NULL,
+                'couleur_base' => 'alezan',
+                'couleur_modif' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 4,
+                'allele2_id' => 5,
+                'effet_taille' => NULL,
+                'couleur_base' => 'alezan',
+                'couleur_modif' => NULL,
+                'pathologie_id' => NULL,
+            ),
         ));
         
         

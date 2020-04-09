@@ -23,4 +23,9 @@ class Elevage extends Model
     {
         return $this->belongsTo('App\Affixe');
     }
+
+    public function Image()
+    {
+        return $this->morphedByMany('App\Image', 'Imageable');
+    }
 }
