@@ -27,7 +27,7 @@ class PhenotypesTableSeeder extends Seeder
                 'effet_taille' => -12,
                 'couleur_base' => NULL,
                 'couleur_modif' => NULL,
-                'pathologie_id' => NULL,
+                'pathologie_id' => 1,
             ),
             1 => 
             array (
@@ -39,7 +39,7 @@ class PhenotypesTableSeeder extends Seeder
                 'effet_taille' => -16,
                 'couleur_base' => NULL,
                 'couleur_modif' => NULL,
-                'pathologie_id' => NULL,
+                'pathologie_id' => 2,
             ),
             2 => 
             array (

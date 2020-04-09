@@ -21,9 +21,10 @@ class CreatePhenotypesTable extends Migration
             $table->tinyInteger('effet_taille')->nullable();
             $table->string('couleur_base')->nullable();
             $table->string('couleur_modif')->nullable();
-            $table->string('pathologie_id')->nullable();
+            $table->bigInteger('pathologie_id')->unsigned()->nullable();
             $table->foreign('allele1_id')->references('id')->on('alleles');
             $table->foreign('allele2_id')->references('id')->on('alleles');
+            $table->foreign('pathologie_id')->references('id')->on('pathologies');
         });
     }
 
