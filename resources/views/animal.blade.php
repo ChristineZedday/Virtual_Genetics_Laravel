@@ -69,10 +69,20 @@
 <p>{{$animal->elevage_id == $elevage->id? $animal->date_achat : ""}}</p>
 <p>{{$animal->a_vendre? "à vendre" : ""}}</p>
 <p>{{$animal->prix}}</p>
+<div id='image'>
 <?php
-$image = $animal->Image;
- ?>
-<img src="{{ asset('/img/'.$image->chemin)}}" alt="">
+$images = $animal->Image;
+if (!empty($images)) {
+	$path0 ="asset('/img/fond.png')";
+	echo '<img src='.$path0. 'style="z-index:0" >';
+		foreach ($images as $image) {
+			$path = "asset('/img/'".$image->chemin.")";
+			$style = "z-index:".$image->z_index; 
+			echo"<img src=".$path. "style =" . $style.">";
+		}
+}
+?>
+</div>
 <div id='vente'>
 	@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre))
 

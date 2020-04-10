@@ -23,6 +23,7 @@ class ImagesTableSeeder extends Seeder
                 'chemin' => 'fond.png',
                 'created_at' => NULL,
                 'updated_at' => NULL,
+                'z_index'=> 0,
             ),
             1 => 
             array (
@@ -30,6 +31,7 @@ class ImagesTableSeeder extends Seeder
                 'chemin' => 'bai.png',
                 'created_at' => NULL,
                 'updated_at' => NULL,
+                'z_index'=> 1,
             ),
             2 => 
             array (
@@ -37,6 +39,7 @@ class ImagesTableSeeder extends Seeder
                 'chemin' => 'noir.png',
                 'created_at' => NULL,
                 'updated_at' => NULL,
+                'z_index'=> 1,
             ),
             3 => 
             array (
@@ -44,6 +47,7 @@ class ImagesTableSeeder extends Seeder
                 'chemin' => 'alezan.png',
                 'created_at' => NULL,
                 'updated_at' => NULL,
+                'z_index'=> 1,
             ),
         ));
         

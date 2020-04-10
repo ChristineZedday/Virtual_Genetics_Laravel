@@ -98,6 +98,9 @@ class ReproductionController extends Controller
                 {
                   $animal->Pathologie()->attach($phenotype->pathologie_id);
                 }
+                if (isset($phenotype->Image)) {
+                  $animal->Image()->attach($phenotype->Image->id);
+                }
             }
           }
          
