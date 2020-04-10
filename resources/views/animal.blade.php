@@ -74,11 +74,11 @@
 $images = $animal->Image;
 if (isset($images)) {
 	$path0 ="asset('/img/fond.png')";
-	echo '<img src='.$path0. 'style="z-index:0" >';
+	echo '<img src='.$path0. ' style="z-index:0" >';
 		foreach ($images as $image) {
-			$path = "asset('/img/'".$image->chemin.")";
+			$path = "asset('/img/".$image->chemin."')";
 			$style = "z-index:".$image->z_index; 
-			echo"<img src=".$path. "style =" . $style.">";
+			echo"<img src=".$path. " style =" . $style.">";
 		}
 }
 ?>

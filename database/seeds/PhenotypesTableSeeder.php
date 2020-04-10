@@ -97,8 +97,8 @@ class PhenotypesTableSeeder extends Seeder
                 'allele1_id' => 1,
                 'allele2_id' => 1,
                 'effet_taille' => NULL,
-                'couleur_base' => 'noir',
-                'image_id' => 3,
+                'couleur_base' => 'bai',
+                'image_id' => 2,
                 'pathologie_id' => NULL,
             ),
             7 => 
@@ -109,8 +109,8 @@ class PhenotypesTableSeeder extends Seeder
                 'allele1_id' => 1,
                 'allele2_id' => 2,
                 'effet_taille' => NULL,
-                'couleur_base' => 'noir',
-                'image_id' => 3,
+                'couleur_base' => 'bai',
+                'image_id' => 2,
                 'pathologie_id' => NULL,
             ),
             8 => 

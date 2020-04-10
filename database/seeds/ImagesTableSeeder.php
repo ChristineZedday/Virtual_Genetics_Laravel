@@ -21,33 +21,33 @@ class ImagesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'chemin' => 'fond.png',
+                'z_index' => 0,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'z_index'=> 0,
             ),
             1 => 
             array (
                 'id' => 2,
                 'chemin' => 'bai.png',
+                'z_index' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'z_index'=> 1,
             ),
             2 => 
             array (
                 'id' => 3,
                 'chemin' => 'noir.png',
+                'z_index' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'z_index'=> 1,
             ),
             3 => 
             array (
                 'id' => 4,
                 'chemin' => 'alezan.png',
+                'z_index' => 4,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'z_index'=> 1,
             ),
         ));
         
