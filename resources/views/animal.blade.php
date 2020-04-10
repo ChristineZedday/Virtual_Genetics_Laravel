@@ -72,7 +72,7 @@
 <div id='image'>
 <?php
 $images = $animal->Image;
-if (!empty($images)) {
+if (isset($images)) {
 	$path0 ="asset('/img/fond.png')";
 	echo '<img src='.$path0. 'style="z-index:0" >';
 		foreach ($images as $image) {
