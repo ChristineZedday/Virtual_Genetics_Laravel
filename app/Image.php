@@ -16,6 +16,6 @@ class Image extends Model
     }
     public function phenotypes()
     {
-        return $this->morphedByMany('App\Phenotype', 'Imageable');
+        return $this->morphTo('App\Phenotype');
     }
 }

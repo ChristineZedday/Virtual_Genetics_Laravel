@@ -13,6 +13,6 @@ class Phenotype extends Model
 
     public function Image()
     {
-        return $this->morphToMany('App\Image', 'Imageable');
+        return $this->MorphOne('App\Image');
     }
 }
