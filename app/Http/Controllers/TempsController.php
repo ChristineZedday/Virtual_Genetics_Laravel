@@ -156,7 +156,7 @@ function reproNPC($date)
 {
     $mois = date('m',strtotime($date));
     switch ($mois) {
-        case $mois<4:
+        case $mois<3:
             $saison = false;
         break;
         case $mois > 9:

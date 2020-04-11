@@ -14,8 +14,12 @@ class Image extends Model
     {
         return $this->morphedByMany('App\Elevage', 'Imageable');
     }
-    public function phenotypes()
+    public function couleurs()
     {
-        return $this->morphTo('App\Phenotype');
+        return $this->morphedByMany('App\Couleur', 'Imageable');
     }
+    // public function phenotypes()
+    // {
+    //     return $this->morphTo('App\Phenotype');
+    // }
 }

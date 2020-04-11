@@ -11,6 +11,8 @@ use App\Genome;
 use App\Genotype;
 use App\Phenotype;
 use App\Pathologie;
+use App\Couleur;
+use App\AssoCouleur;
 use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
@@ -98,9 +100,16 @@ class ReproductionController extends Controller
                 {
                   $animal->Pathologie()->attach($phenotype->pathologie_id);
                 }
-                if (isset($phenotype->image_id) ) {
+                if (isset($phenotype->couleur_id) ) {
+                  $couleur = Couleur::Find($phenotype->couleur_id);
+                  if ((! isset($couleur->associee1)) && (! isset($couleur->associee2))) 
+                  {
+                    $animal->Image()->attach($couleur->Image()->first()->id);
+                  }
+                  else {
+
+                  }
                   
-                  $animal->Image()->attach($phenotype->image_id);
                 }
             }
           }

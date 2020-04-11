@@ -15,6 +15,9 @@ class CreateAssoCouleursTable extends Migration
     {
         Schema::create('asso_couleurs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('couleur_res_id')->unsigned();
+            $table->bigInteger('couleur1_id')->unsigned();
+            $table->bigInteger('couleur2_id')->unsigned();
             $table->timestamps();
         });
     }
