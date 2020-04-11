@@ -79,7 +79,7 @@ if (isset($images)) {
 		foreach ($images as $image) {
 			$path = "'/img/".$image->chemin."'";
 			$style = "position:absolute; z-index:".$image->z_index; 
-			echo"<img src=".$path. " style =" . $style.">";
+			echo"<img src=".$path. " style ='" . $style."'>";
 		}
 }
 ?>
