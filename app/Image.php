@@ -13,6 +13,6 @@ class Image extends Model
     return $this->hasMany('App\Elevage');
 }
 public function Couleur() {
-    return $this->belongsTo('App\Couleur');
+    return $this->hasOne('App\Couleur');
 }
 }

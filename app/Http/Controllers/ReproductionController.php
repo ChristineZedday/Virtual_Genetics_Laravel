@@ -13,6 +13,7 @@ use App\Phenotype;
 use App\Pathologie;
 use App\Couleur;
 use App\AssoCouleur;
+use App\Image;
 use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
@@ -104,50 +105,57 @@ class ReproductionController extends Controller
                 if (isset($phenotype->couleur_id) ) {
                   $couleur = Couleur::Find($phenotype->couleur_id);
                 
-                  if ((! isset($couleur->associee1)) && (! isset($couleur->associee2))) 
+                  if ((! isset($couleur->Associee1)) && (! isset($couleur->Associee2)) ) 
                   {
                     $image = $couleur->Image;
                    
-                    dd('non asso'.$image->chemin);
                     $animal->Image()->attach($image->id); 
                    
                   }
                   else {
-                  $assos[] = $couleur;
+                 
                   }
                   
                 }
-            }
-          } //end foreach
+            }//endisset phenotype
+          } //foreach genotype
          foreach ($assos as $asso)
          {
+           
            $ass = AssoCouleur::where('couleur1_id',$asso->id)->orWhere('couleur2_id',$asso->id)->get(); //toutes les asso avec cte couleur
-           dd($ass);//SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images.couleur_id' in 'where clause' (SQL: select * from `images` where `images`.`couleur_id` = 3 and `images`.`couleur_id` is not null limit 1) 
+           
 
               foreach ($ass as $as)
               {
                 
                 if ($asso->id == $as->couleur1_id)
                 {
-                  $trouve = in_array($as->couleur2_id, $assos);
-                  if ($trouve)
-                  {
-                    $id = $as->couleur_res_id;
-                    dd($id);
-                    $coul = AssoCouleur::find($id);
-                    dd($coul);
-                    $image = $coul->Image;
-                    dd($image);
-                    dd('asso'.$image->chemin);
-                    $animal->Image()->attach($image->id);
-                  break;//pour le moment parce qu'on a qu'un niv d'asso...
-                  }
+                  $coul = AssoCouleur::Find($as->couleur2_id);
+                
                 }
                 else {
-
+                  $coul =  AssoCouleur::Find($as->couleur1_id);
                 }
-              }
-         }
+                $trouve = in_array($coul, $assos);
+                if ($trouve)
+                {
+                  
+                  dd($as->couleur_res_id);
+                  $id = $as->couleur_res_id; 
+                  dd($id);
+                  $coul = AssoCouleur::find($id);
+                  dd($coul);
+                  $image = $coul->Image;
+                  dd($image);
+                  dd('asso'.$image->chemin);
+                  $animal->Image()->attach($image->id);
+                 //faudra retirer du tablo
+                }
+                else{
+                 
+                }
+              } //end foreach ass
+         } //end foreach asso
        }
        else{
            $statut->vide = true;

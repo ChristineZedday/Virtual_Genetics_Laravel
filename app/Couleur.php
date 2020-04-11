@@ -9,7 +9,7 @@ class Couleur extends Model
    
     public function Image()
     {
-        return $this->hasOne('App\Image');
+        return $this->belongsTo('App\Image');
     }
 
     public function Phentotype()
@@ -18,8 +18,9 @@ class Couleur extends Model
     }
     public function Associee1()
     {
-       return $this->hasOne('App\AssoCouleur', 'couleur1_id', 'id');
+       return $this->hasOne('App\AssoCouleur', 'couleur2_id', 'id');
    }
+     
    
    public function Associee2()
    {
