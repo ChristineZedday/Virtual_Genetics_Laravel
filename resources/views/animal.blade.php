@@ -70,18 +70,20 @@
 <p>{{$animal->a_vendre? "à vendre" : ""}}</p>
 <p>{{$animal->prix}}</p>
 <div id='image'>
+<figure class='jeu'>
 <?php
 $images = $animal->Image;
 if (isset($images)) {
-	$path0 ="asset('/img/fond.png')";
-	echo '<img src='.$path0. ' style="z-index:0" >';
+	$path0 ="'/img/fond.png'";
+	echo '<img src='.$path0. ' style="z-index:0; position:absolute" >';
 		foreach ($images as $image) {
-			$path = "asset('/img/".$image->chemin."')";
-			$style = "z-index:".$image->z_index; 
+			$path = "'/img/".$image->chemin."'";
+			$style = "position:absolute; z-index:".$image->z_index; 
 			echo"<img src=".$path. " style =" . $style.">";
 		}
 }
 ?>
+</figure>
 </div>
 <div id='vente'>
 	@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre))

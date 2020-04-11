@@ -10979,3 +10979,24 @@ a.text-dark:focus {
   background-color: #cfb1bb;
 }
 
+.jeu figure {
+  position: relative !important;
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: 400px;
+  height: 390px;
+  padding: 0px;
+  margin: 30px;
+  z-index: 0;
+}
+
+.jeu figure img {
+  top: 0px;
+  left: 0px;
+  width: 400px;
+  height: 390px;
+  position: absolute !important;
+  display: block;
+}
+
