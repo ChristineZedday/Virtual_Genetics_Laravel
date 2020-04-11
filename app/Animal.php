@@ -56,7 +56,7 @@ class Animal extends Model
 
     public function Image()
     {
-        return $this->morphToMany('App\Image', 'Imageable');
+        return $this->belongsToMany('App\Image');
     }
 
     public function NomComplet()

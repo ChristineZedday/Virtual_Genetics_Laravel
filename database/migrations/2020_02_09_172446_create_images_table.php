@@ -18,6 +18,7 @@ class CreateImagesTable extends Migration
             $table->string('chemin');
             $table->tinyInteger('z_index');
             $table->timestamps();
+           
         });
     }
 

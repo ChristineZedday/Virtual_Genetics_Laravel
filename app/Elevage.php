@@ -26,6 +26,6 @@ class Elevage extends Model
 
     public function Image()
     {
-        return $this->morphToMany('App\Image', 'Imageable');
+        return $this->hasOne('App\Image');
     }
 }

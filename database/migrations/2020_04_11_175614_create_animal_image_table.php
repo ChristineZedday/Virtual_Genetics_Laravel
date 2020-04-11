@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImageablesTable extends Migration
+class CreateAnimalImageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateImageablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('imageables', function (Blueprint $table) {
+        Schema::create('animal_image', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('animal_id')->unsigned();
             $table->bigInteger('image_id')->unsigned();
+            $table->foreign('animal_id')->references('id')->on('animaux');
+            $table->foreign('image_id')->references('id')->on('images');
             $table->timestamps();
-            $table->bigInteger('imageable_id')->unsigned();
-            $table->string('imageable_type');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateImageablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imageables');
+        Schema::dropIfExists('animal_image');
     }
 }

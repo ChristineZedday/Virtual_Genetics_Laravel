@@ -18,6 +18,9 @@ class CreateAssoCouleursTable extends Migration
             $table->bigInteger('couleur_res_id')->unsigned();
             $table->bigInteger('couleur1_id')->unsigned();
             $table->bigInteger('couleur2_id')->unsigned();
+            $table->foreign('couleur_res_id')->references('id')->on('couleurs');
+            $table->foreign('couleur1_id')->references('id')->on('couleurs');
+            $table->foreign('couleur2_id')->references('id')->on('couleurs');
             $table->timestamps();
         });
     }

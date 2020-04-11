@@ -81,6 +81,7 @@ class ReproductionController extends Controller
         $animal->save();
         Genome::mixGenes($etalon->id, $jument->id, $animal->id);
         $genotypes = Genotype::where('animal_id',$animal->id)->get();
+        $assos = [];
         foreach ($genotypes as $genotype)
           {
            $p = $genotype->allele_p_id;
@@ -89,7 +90,7 @@ class ReproductionController extends Controller
           $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
             if (isset($phenotype)) {
               
-              // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
+              $animal->Phenotype()->attach($phenotype->id);//pas forcément?
 
               if (isset($phenotype->effet_taille))
                 {
@@ -102,18 +103,51 @@ class ReproductionController extends Controller
                 }
                 if (isset($phenotype->couleur_id) ) {
                   $couleur = Couleur::Find($phenotype->couleur_id);
+                
                   if ((! isset($couleur->associee1)) && (! isset($couleur->associee2))) 
                   {
-                    $animal->Image()->attach($couleur->Image()->first()->id);
+                    $image = $couleur->Image;
+                   
+                    dd('non asso'.$image->chemin);
+                    $animal->Image()->attach($image->id); 
+                   
                   }
                   else {
-
+                  $assos[] = $couleur;
                   }
                   
                 }
             }
-          }
-         
+          } //end foreach
+         foreach ($assos as $asso)
+         {
+           $ass = AssoCouleur::where('couleur1_id',$asso->id)->orWhere('couleur2_id',$asso->id)->get(); //toutes les asso avec cte couleur
+           dd($ass);//SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images.couleur_id' in 'where clause' (SQL: select * from `images` where `images`.`couleur_id` = 3 and `images`.`couleur_id` is not null limit 1) 
+
+              foreach ($ass as $as)
+              {
+                
+                if ($asso->id == $as->couleur1_id)
+                {
+                  $trouve = in_array($as->couleur2_id, $assos);
+                  if ($trouve)
+                  {
+                    $id = $as->couleur_res_id;
+                    dd($id);
+                    $coul = AssoCouleur::find($id);
+                    dd($coul);
+                    $image = $coul->Image;
+                    dd($image);
+                    dd('asso'.$image->chemin);
+                    $animal->Image()->attach($image->id);
+                  break;//pour le moment parce qu'on a qu'un niv d'asso...
+                  }
+                }
+                else {
+
+                }
+              }
+         }
        }
        else{
            $statut->vide = true;
