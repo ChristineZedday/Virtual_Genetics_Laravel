@@ -31,48 +31,50 @@ class Couleur extends Model
 
   static function calculeCouleur($tab)
   {
-    $couleurs =[];
+   $assos = [];
     $images = [];
     foreach ($tab as $val)
-      {
-        $assos = AssoCouleur::where('couleur1_id',$val->id)->orWhere('couleur2_id',$val->id)->get();
-        if (empty($assos)) {
-                $image = $val->Image;
-                $images[] =$image;
-         }
+    {
+        if ($val->image_id)
+        {
+           $images[]=Image::Find($val->image_id);
+        }
+        else {
+            switch(true) {
+                case $val->base_couleur:
+                    switch($val->nom) {
+                        case 'noirbai':
+                           $assos[]='noirbai';
+                        break;
+                        case 'alezanbai':
+                            $assos[]='alezanbai';
+                        break;
+                        case 'alezannoir':
+                            $assos[]='alezannoir';
+                        break;
+            }
+            if (in_array('noirbai',$assos) && in_array('alezannoir', $assos))
+            {
+                $couleur = Couleur::where('nom', 'noir')->first();
+               
+            }
+            else  if (in_array('noirbai',$assos) && in_array('alezanbai', $assos))
+            {
+                $couleur = Couleur::where('nom', 'bai')->first();
 
-         else {
-             foreach ($assos as $asso) {
-                switch (true) { //asso avec 1, asso avec 2 , pas trouvé=image 
-                    case $val->id == $asso->couleur1_id:
-                        $trouve = in_array($asso->couleur2_id, $tab);
-                            if ($trouve) {
-                                $id = $val->couleur_res_id; 
-                                $couleur = Couleur::Find($id);
-                                $couleurs[] = $couleur;
-                                unset($tab[array_search($val, $tab)]);
-                            } 
-                    break;
-                    case $val->id == $asso->couleur2_id:
-                        $trouve = in_array($asso->couleur1_id, $tab);
-                            if ($trouve) {
-                                $id = $val->couleur_res_id; 
-                                $couleur = Couleur::Find($id);
-                                $couleurs[] = $couleur;
-                                unset($tab[array_search($val, $tab)]);
-                            }
-                    break;
-                    case
-                    break;
-                } //end switch
-             } //end foreach asso
-}
-    // }
-    //     $images = array_merge($images,)
-        
+            } 
+            else{
+                dd('jcomprenons point');
+            }
+            $image = $couleur->Image;
+            $images[]= $image;   
+            }
 
-      }
-      return $images;
+        }
+
+    }
+  
+    return $images;
   }
 }
     

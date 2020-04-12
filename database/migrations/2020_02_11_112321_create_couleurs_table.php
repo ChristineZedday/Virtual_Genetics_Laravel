@@ -17,6 +17,7 @@ class CreateCouleursTable extends Migration
             $table->bigIncrements('id');
             $table->string('nom');
             $table->bigInteger('image_id')->unsigned()->nullable();
+            $table->boolean('base_couleur')->nullable();
             $table->timestamps();
             $table->foreign('image_id')->references('id')->on('images');
         });

@@ -22,7 +22,7 @@ class CouleursTableSeeder extends Seeder
                 'id' => 1,
                 'nom' => 'bai',
                 'image_id' => 2,
-                'created_at' => NULL,
+                'base_couleur'=> 0, 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             1 => 
@@ -30,7 +30,7 @@ class CouleursTableSeeder extends Seeder
                 'id' => 2,
                 'nom' => 'noir',
                 'image_id' => 3,
-                'created_at' => NULL,
+                'base_couleur'=> 0, 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             2 => 
@@ -38,7 +38,7 @@ class CouleursTableSeeder extends Seeder
                 'id' => 3,
                 'nom' => 'alezan',
                 'image_id' => 4,
-                'created_at' => NULL,
+                'base_couleur'=> 0, 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             3 => 
@@ -46,7 +46,7 @@ class CouleursTableSeeder extends Seeder
                 'id' => 4,
                 'nom' => 'noirbai',
                 'image_id' => NULL,
-                'created_at' => NULL,
+                'base_couleur'=> 0, 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             4 => 
@@ -54,7 +54,7 @@ class CouleursTableSeeder extends Seeder
                 'id' => 5,
                 'nom' => 'alezanbai',
                 'image_id' => NULL,
-                'created_at' => NULL,
+                'base_couleur'=> 0, 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             5 => 
@@ -62,7 +62,7 @@ class CouleursTableSeeder extends Seeder
                 'id' => 6,
                 'nom' => 'alezannoir',
                 'image_id' => NULL,
-                'created_at' => NULL,
+                'base_couleur'=> 0, 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
         ));
