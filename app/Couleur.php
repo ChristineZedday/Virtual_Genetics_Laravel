@@ -31,7 +31,7 @@ class Couleur extends Model
 
   static function calculeCouleur($tab)
   {
-   $assos = [];
+
     $images = [];
     foreach ($tab as $val)
     {
@@ -39,38 +39,7 @@ class Couleur extends Model
         {
            $images[]=Image::Find($val->image_id);
         }
-        else {
-            switch(true) {
-                case $val->base_couleur:
-                    switch($val->nom) {
-                        case 'noirbai':
-                           $assos[]='noirbai';
-                        break;
-                        case 'alezanbai':
-                            $assos[]='alezanbai';
-                        break;
-                        case 'alezannoir':
-                            $assos[]='alezannoir';
-                        break;
-            }
-            if (in_array('noirbai',$assos) && in_array('alezannoir', $assos))
-            {
-                $couleur = Couleur::where('nom', 'noir')->first();
-               
-            }
-            else  if (in_array('noirbai',$assos) && in_array('alezanbai', $assos))
-            {
-                $couleur = Couleur::where('nom', 'bai')->first();
-
-            } 
-            else{
-                dd('jcomprenons point');
-            }
-            $image = $couleur->Image;
-            $images[]= $image;   
-            }
-
-        }
+       
 
     }
   
