@@ -21,6 +21,7 @@ class CreateLociTable extends Migration
             $table->string('abbrev');
             $table->string('chromosome')->nullable();
             $table->boolean('linked')->default(false);
+            $table->boolean('obligatoire')->default(false);
             $table->bigInteger('next_linked_id')->unsigned()->nullable();
             $table->bigInteger('prev_linked_id')->unsigned()->nullable();
             $table->tinyInteger('taux_recomb_next')->nullable(); //pourcentage de 0 à 100

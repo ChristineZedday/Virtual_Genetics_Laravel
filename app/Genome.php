@@ -218,6 +218,13 @@ class Genome extends Model
                         if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
                     $genotype->save();   
                         }
+                        else {
+                            $gene = Locus::Find($genotype->locus_id);
+                            if ($gene->obligatoire)
+                            {
+                                $genotype->save();  
+                            }
+                        }
                         $loc = $locus; //sinon boucle infinie sur le premier
                          
                     } //fin du while
