@@ -14,6 +14,11 @@ class Couleur extends Model
         return $this->belongsTo('App\Image');
     }
 
+    public function Animal()
+    {
+        return $this->belongsToMany('App\Animal');
+    }
+
     public function Phentotype()
      {
         return $this->belongsToMany('App\Phenotype');
@@ -29,22 +34,6 @@ class Couleur extends Model
       return $this->hasOne('App\AssoCouleur', 'couleur2_id', 'id');
   }
 
-  static function calculeCouleur($tab)
-  {
-
-    $images = [];
-    foreach ($tab as $val)
-    {
-        if ($val->image_id)
-        {
-           $images[]=Image::Find($val->image_id);
-        }
-       
-
-    }
-  
-    return $images;
-  }
 }
     
 

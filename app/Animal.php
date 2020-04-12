@@ -59,6 +59,11 @@ class Animal extends Model
         return $this->belongsToMany('App\Image');
     }
 
+    public function Couleur()
+    {
+        return $this->belongsToMany('App\Couleur');
+    }
+
     public function NomComplet()
     {
         if (isset($this->Affixe))

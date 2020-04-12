@@ -82,7 +82,8 @@ class ReproductionController extends Controller
         $animal->save();
         Genome::mixGenes($etalon->id, $jument->id, $animal->id);
         $genotypes = Genotype::where('animal_id',$animal->id)->get();
-        $couleurs = [];
+        $base_couleurs = [];
+        $modif_couleurs =[];
         foreach ($genotypes as $genotype)
           {
            $p = $genotype->allele_p_id;
@@ -104,17 +105,24 @@ class ReproductionController extends Controller
                 }
                 if (isset($phenotype->couleur_id) ) {
                   $couleur = Couleur::Find($phenotype->couleur_id);
-                  $couleurs[] = $couleur;
+                  
+                  $animal->Couleur()->attach($couleur->id);  
+                  if (isset($couleur->image_id))
+                  {
+                    $animal->Image()->attach($couleur->image_id);  
+                  }
+                  if ($couleur->base_couleur)
+                  {
+                    $base_couleurs[]= $couleur;
+                  }
+                  else{
+                    $modif_couleurs[] =$couleur;
+                  }
                   
                 }
             }//endisset phenotype
           } //foreach genotype
-          $images = Couleur::calculeCouleur($couleurs);
-          foreach ($images as $image)
-          {
-            $animal->Image()->attach($image->id);
-          }
-
+      
         //  foreach ($couleurs as $couleur)
         //  {
            
