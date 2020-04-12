@@ -82,13 +82,13 @@ class ReproductionController extends Controller
         $animal->save();
         Genome::mixGenes($etalon->id, $jument->id, $animal->id);
         $genotypes = Genotype::where('animal_id',$animal->id)->get();
-        $assos = [];
+        $couleurs = [];
         foreach ($genotypes as $genotype)
           {
            $p = $genotype->allele_p_id;
            $m = $genotype->allele_m_id;
 
-          $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
+            $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
             if (isset($phenotype)) {
               
               $animal->Phenotype()->attach($phenotype->id);//pas forcément?
@@ -104,58 +104,71 @@ class ReproductionController extends Controller
                 }
                 if (isset($phenotype->couleur_id) ) {
                   $couleur = Couleur::Find($phenotype->couleur_id);
-                
-                  if ((! isset($couleur->Associee1)) && (! isset($couleur->Associee2)) ) 
-                  {
-                    $image = $couleur->Image;
-                   
-                    $animal->Image()->attach($image->id); 
-                   
-                  }
-                  else {
-                 
-                  }
+                  $couleurs[] = $couleur;
                   
                 }
             }//endisset phenotype
           } //foreach genotype
-         foreach ($assos as $asso)
-         {
-           
-           $ass = AssoCouleur::where('couleur1_id',$asso->id)->orWhere('couleur2_id',$asso->id)->get(); //toutes les asso avec cte couleur
-           
+          $images = Couleur::calculeCouleur($couleurs);
+          foreach ($images as $image)
+          {
+            $animal->Image()->attach($image->id);
+          }
 
-              foreach ($ass as $as)
-              {
+        //  foreach ($couleurs as $couleur)
+        //  {
+           
+        //    $couleurs_asso = AssoCouleur::where('couleur1_id',$couleur->id)->orWhere('couleur2_id',$couleur->id)->get(); //toutes les asso avec cte couleur
+        //    dd($couleurs_asso);
+
+        //       foreach ($couleurs_asso as $couleur_asso)
+        //       {
+        //         switch (true) {
+        //           case $couleur->id == $couleur_asso->couleur1_id:
+        //             $coul = AssoCouleur::Find($couleur_asso->couleur2_id);
+        //             $trouve = in_array($coul, $couleurs);
+        //             if ($trouve) {
+        //               $id = $couleur_asso->couleur_res_id;   
+        //             }
+        //           break;
+
+        //           case $couleur->id == $couleur_asso->couleur2_id:
+        //             $coul = AssoCouleur::Find($couleur_asso->couleur1_id);
+        //           break;
+
+        //           case isset($couleur->image_id):
+        //             $id = $couleur->image_id;
+        //             dd($id);
+        //             $animal->Image()->attach($id);
+        //             unset($couleurs[array_search($couleur, $couleurs)]);
+        //           break;
+
+        //           default :
+        //           dd ('où je me suis plantée?');
+        //         }
+
+        //         dd($coul);
                 
-                if ($asso->id == $as->couleur1_id)
-                {
-                  $coul = AssoCouleur::Find($as->couleur2_id);
-                
-                }
-                else {
-                  $coul =  AssoCouleur::Find($as->couleur1_id);
-                }
-                $trouve = in_array($coul, $assos);
-                if ($trouve)
-                {
+        //         if (isset($coul)) {
+        //           $trouve = in_array($coul, $couleurs);
+        //           if ($trouve)
+        //           {
+                    
+        //             dd($couleur_asso->couleur_res_id);
+        //             $id = $couleur_asso->couleur_res_id; 
+        //             dd($id);
+        //             $coul = AssoCouleur::find($id);
+        //             dd($coul);
+        //             $image = $coul->Image->first();
+        //             dd($image);
+        //             dd($image->chemin);
+        //             $animal->Image()->attach($image->id);
+        //           //faudra retirer du tablo
+        //           }
                   
-                  dd($as->couleur_res_id);
-                  $id = $as->couleur_res_id; 
-                  dd($id);
-                  $coul = AssoCouleur::find($id);
-                  dd($coul);
-                  $image = $coul->Image;
-                  dd($image);
-                  dd('asso'.$image->chemin);
-                  $animal->Image()->attach($image->id);
-                 //faudra retirer du tablo
-                }
-                else{
-                 
-                }
-              } //end foreach ass
-         } //end foreach asso
+        //         }
+        //       } //end foreach asso
+        //  } //end foreach couleur
        }
        else{
            $statut->vide = true;
