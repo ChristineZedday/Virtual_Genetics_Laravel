@@ -110,13 +110,22 @@ class ReproductionController extends Controller
                     {
                       $blanc += $phenotype->effet_blanc;
                     }
-                    if ($couleur->base_couleur)
-                    {
-                      $base_couleurs[]= $couleur;
-                    }
-                    else{
+                    switch (true) {
+                      case $couleur->base_couleur:
+                        $base_couleurs[]= $couleur;
+                      break;
 
-                      $modif_couleurs[] =$couleur;
+                      case $couleur->est_motif:
+                        $modif_couleur[] =$couleur;
+                      break;
+                    
+                      case $couleur->est_dilution:
+
+                        $modif_couleurs[] =$couleur;
+                      break;
+
+                      default:
+                        $modif_couleurs[] =$couleur;
                     }
                   
                     
@@ -162,11 +171,16 @@ class ReproductionController extends Controller
 
             foreach ($modif_couleurs as $coul)
             {
-              $base = $animal->Couleur()->where('base_couleur', true)->first();
-              $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();$couleur = $couleur->couleur_res_id;
-              $animal->Couleur()->attach($couleur);
-              $image = Couleur::Find($couleur)->image_id;
-              $animal->Image()->attach($image);
+              if ($coul->est_dilution) {
+                $base = $animal->Couleur()->where('base_couleur', true)->first();
+                $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();$couleur = $couleur->couleur_res_id;
+                $animal->Couleur()->attach($couleur);
+                $image = Couleur::Find($couleur)->image_id;
+                $animal->Image()->attach($image);
+              }
+              if ($coul->est_motif) {
+                
+              }
             }
       
         //  foreach ($couleurs as $couleur)
