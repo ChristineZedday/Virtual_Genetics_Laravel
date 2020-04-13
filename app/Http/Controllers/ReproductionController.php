@@ -76,52 +76,92 @@ class ReproductionController extends Controller
                 else{
                     $animal->race_id = 1;
                 }
-        $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
-        $animal->taille_cm = $animal->taille_additive;
-        $animal->consang = calculConsang($etalon->id, $jument->id);
-        $animal->save();
-        Genome::mixGenes($etalon->id, $jument->id, $animal->id);
-        $genotypes = Genotype::where('animal_id',$animal->id)->get();
-        $base_couleurs = [];
-        $modif_couleurs =[];
-        foreach ($genotypes as $genotype)
-          {
-           $p = $genotype->allele_p_id;
-           $m = $genotype->allele_m_id;
+          $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
+          $animal->taille_cm = $animal->taille_additive;
+          $animal->consang = calculConsang($etalon->id, $jument->id);
+          $animal->save();
+          Genome::mixGenes($etalon->id, $jument->id, $animal->id);
+          $genotypes = Genotype::where('animal_id',$animal->id)->get();
+          $base_couleurs = [];
+          $modif_couleurs =[];
+          foreach ($genotypes as $genotype)
+            {
+              $p = $genotype->allele_p_id;
+              $m = $genotype->allele_m_id;
 
-            $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
-            if (isset($phenotype)) {
+              $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
+              if (isset($phenotype)) {
+                
+                // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
+
+                if (isset($phenotype->effet_taille))
+                  {
+                    $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
+                    $animal->save();
+                  }
+                  if (isset($phenotype->pathologie_id))
+                  {
+                    $animal->Pathologie()->attach($phenotype->pathologie_id);
+                  }
+                  if (isset($phenotype->couleur_id) ) {
+                    $couleur = Couleur::Find($phenotype->couleur_id);
+                    if ($couleur->base_couleur)
+                    {
+                      $base_couleurs[]= $couleur;
+                    }
+                    else{
+                      $modif_couleurs[] =$couleur;
+                    }
+                  
+                    
+                  } //end pheno couleur
+              }//endisset phenotype
+
               
-              $animal->Phenotype()->attach($phenotype->id);//pas forcément?
+            } //foreach genotype
 
-              if (isset($phenotype->effet_taille))
-                {
-                  $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
-                  $animal->save();
-                }
-                if (isset($phenotype->pathologie_id))
-                {
-                  $animal->Pathologie()->attach($phenotype->pathologie_id);
-                }
-                if (isset($phenotype->couleur_id) ) {
-                  $couleur = Couleur::Find($phenotype->couleur_id);
-                  
-                  $animal->Couleur()->attach($couleur->id);  
-                  if (isset($couleur->image_id))
-                  {
-                    $animal->Image()->attach($couleur->image_id);  
-                  }
-                  if ($couleur->base_couleur)
-                  {
-                    $base_couleurs[]= $couleur;
-                  }
-                  else{
-                    $modif_couleurs[] =$couleur;
-                  }
-                  
-                }
-            }//endisset phenotype
-          } //foreach genotype
+            $alezan = Couleur::where('nom','alezan')->first();
+            $noirbai = Couleur::where('nom','noirbai')->first();
+            $bai = Couleur::where('nom','bai')->first();
+            $noir = Couleur::where('nom','noir')->first();
+            $alezanbai = Couleur::where('nom','alezanbai')->first();
+           
+            if (in_array($alezan, $base_couleurs))
+            {
+              $animal->Couleur()->attach($alezan->id);
+              if (empty($modif_couleurs))
+              {
+                $animal->Image()->attach($alezan->image_id);
+              }
+            }
+
+            else if (in_array($noirbai, $base_couleurs) && (in_array($alezanbai, $base_couleurs)))
+            {
+              $animal->Couleur()->attach($bai->id);
+              if (empty($modif_couleurs))
+              {
+                $animal->Image()->attach($bai->image_id);
+              }
+            }
+
+            else {
+              $animal->Couleur()->attach($noir->id);
+              if (empty($modif_couleurs))
+              {
+                $animal->Image()->attach($noir->image_id);
+              }
+            }
+
+           
+
+            foreach ($modif_couleurs as $coul)
+            {
+              $base = $animal->Couleur()->where('base_couleur', true)->first();
+              $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();$couleur = $couleur->couleur_res_id;
+              $animal->Couleur()->attach($couleur);
+              $image = Couleur::Find($couleur)->image_id;
+              $animal->Image()->attach($image);
+            }
       
         //  foreach ($couleurs as $couleur)
         //  {

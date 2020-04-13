@@ -81,6 +81,14 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'chemin' => 'smoky_cream.png',
+                'z_index' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

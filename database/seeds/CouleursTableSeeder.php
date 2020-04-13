@@ -125,6 +125,16 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'nom' => 'smoky cream',
+                'image_id' =>9,
+                'base_couleur' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+          
         ));
         
         
