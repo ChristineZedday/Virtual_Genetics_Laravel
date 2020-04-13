@@ -129,12 +129,92 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 13,
                 'nom' => 'smoky cream',
-                'image_id' =>9,
+                'image_id' => 9,
                 'base_couleur' => 0,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-          
+            13 => 
+            array (
+                'id' => 14,
+                'nom' => 'abricot',
+                'image_id' => 10,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'nom' => 'isabelle perle',
+                'image_id' => 11,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'nom' => 'doublepearl',
+                'image_id' => NULL,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'nom' => 'tobiano',
+                'image_id' => NULL,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'nom' => 'sabino1',
+                'image_id' => NULL,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'nom' => 'W20',
+                'image_id' => NULL,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'nom' => 'Blanc',
+                'image_id' => NULL,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'nom' => 'tobianosabino',
+                'image_id' => NULL,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'nom' => 'tobianoW20',
+                'image_id' => NULL,
+                'base_couleur' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

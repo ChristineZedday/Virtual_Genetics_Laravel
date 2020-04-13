@@ -89,7 +89,78 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            
+            8 => 
+            array (
+                'id' => 14,
+                'couleur_res_id' => 14,
+                'couleur1_id' => 3,
+                'couleur2_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 15,
+                'couleur_res_id' => 15,
+                'couleur1_id' => 1,
+                'couleur2_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 16,
+                'couleur_res_id' => 2,
+                'couleur1_id' => 2,
+                'couleur2_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            11 => 
+            array (
+                'id' => 17,
+                'couleur_res_id' => 20,
+                'couleur1_id' => 20,
+                'couleur2_id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 18,
+                'couleur_res_id' => 20,
+                'couleur1_id' => 20,
+                'couleur2_id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            13 => 
+            array (
+                'id' => 19,
+                'couleur_res_id' => 20,
+                'couleur1_id' => 20,
+                'couleur2_id' => 19,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 20,
+                'couleur_res_id' => 21,
+                'couleur1_id' => 17,
+                'couleur2_id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 21,
+                'couleur_res_id' => 22,
+                'couleur1_id' => 17,
+                'couleur2_id' => 19,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
