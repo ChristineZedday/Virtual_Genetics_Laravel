@@ -18,6 +18,8 @@ class CreateCouleursTable extends Migration
             $table->string('nom');
             $table->bigInteger('image_id')->unsigned()->nullable();
             $table->boolean('base_couleur')->nullable();
+            $table->boolean('est_motif')->nullable();
+            $table->boolean('est_dilution')->nullable();
             $table->timestamps();
             $table->foreign('image_id')->references('id')->on('images');
         });

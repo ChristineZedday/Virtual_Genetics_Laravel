@@ -84,6 +84,7 @@ class ReproductionController extends Controller
           $genotypes = Genotype::where('animal_id',$animal->id)->get();
           $base_couleurs = [];
           $modif_couleurs =[];
+          $blanc =0;
           foreach ($genotypes as $genotype)
             {
               $p = $genotype->allele_p_id;
@@ -105,11 +106,16 @@ class ReproductionController extends Controller
                   }
                   if (isset($phenotype->couleur_id) ) {
                     $couleur = Couleur::Find($phenotype->couleur_id);
+                    if ($phenotype->effet_blanc <> null)
+                    {
+                      $blanc += $phenotype->effet_blanc;
+                    }
                     if ($couleur->base_couleur)
                     {
                       $base_couleurs[]= $couleur;
                     }
                     else{
+
                       $modif_couleurs[] =$couleur;
                     }
                   
