@@ -77,7 +77,7 @@ if (isset($images)) {
 	$path0 ="'/img/fond.png'";
 	echo '<img src='.$path0. ' style="z-index:0; position:absolute" >';
 		foreach ($images as $image) {
-			$path = "'/img/".$image->chemin."'";
+			$path = "'/img/".$image->chemin.".png'";
 			$style = "position:absolute; z-index:".$image->z_index; 
 			echo"<img src=".$path. " style ='" . $style."'>";
 		}
