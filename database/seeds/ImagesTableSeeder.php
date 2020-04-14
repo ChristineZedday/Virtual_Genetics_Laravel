@@ -130,7 +130,7 @@ class ImagesTableSeeder extends Seeder
                 'id' => 13,
                 'chemin' => 'blanc',
                 'extension' => 'png',
-                'z_index' => 80,
+                'z_index' => 100,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
