@@ -193,8 +193,8 @@ class ReproductionController extends Controller
                   }
                   else
                   {
-                    $image = Image::Find($coul->image_id);
-                    $image = Image::where('chemin',$image->chemin.$blanc)->first();
+                    $chemin = $coul->nom;
+                    $image = Image::where('chemin',$coul->nom.$blanc)->first();
                     
                     if ($image <> null)
                     {

@@ -207,7 +207,7 @@ class CouleursTableSeeder extends Seeder
             17 => 
             array (
                 'id' => 18,
-                'nom' => 'sabino1',
+                'nom' => 'sabino',
                 'image_id' => 14,
                 'base_couleur' => 0,
                 'est_motif' => 1,
