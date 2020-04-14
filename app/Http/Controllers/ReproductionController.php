@@ -184,20 +184,28 @@ class ReproductionController extends Controller
                 
                 if ($blanc >=0)
                 {
-                  $image = Image::Find($coul->image_id);
-                  $image = Image::where('chemin',$image->chemin.$blanc)->first();
-                  if (isset($image))
+                  if ($blanc >=10)
                   {
+                    $image = Image::where('chemin','blanc')->first();
                     $animal->Image()->attach($image->id);
                   }
-                  else 
+                  else
                   {
-                    $nimage=new Image();
-                    $nimage->extension = 'png';
-                    $nimage->chemin = $image->chemin.$blanc; //et faudra la dessiner si c'est pas fait!
-                    $nimage->z_index =80;
-                    $nimage->save();
-                    $animal->Image()->attach($nimage->id);
+                    $image = Image::Find($coul->image_id);
+                    $image = Image::where('chemin',$image->chemin.$blanc)->first();
+                    if (isset($image))
+                    {
+                      $animal->Image()->attach($image->id);
+                    }
+                    else 
+                    {
+                      $nimage=new Image();
+                      $nimage->extension = 'png';
+                      $nimage->chemin = $image->chemin.$blanc; //et faudra la dessiner si c'est pas fait!
+                      $nimage->z_index =80;
+                      $nimage->save();
+                      $animal->Image()->attach($nimage->id);
+                    }
                   }
 
                 }
