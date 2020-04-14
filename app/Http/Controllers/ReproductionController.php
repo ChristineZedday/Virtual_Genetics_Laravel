@@ -83,7 +83,8 @@ class ReproductionController extends Controller
           Genome::mixGenes($etalon->id, $jument->id, $animal->id);
           $genotypes = Genotype::where('animal_id',$animal->id)->get();
           $base_couleurs = [];
-          $modif_couleurs =[];
+          $dilue_couleurs =[];
+          $motif_couleurs =[];
           $blanc =0;
           foreach ($genotypes as $genotype)
             {
@@ -116,12 +117,12 @@ class ReproductionController extends Controller
                       break;
 
                       case $couleur->est_motif:
-                        $modif_couleur[] =$couleur;
+                        $motif_couleur[] =$couleur;
                       break;
                     
                       case $couleur->est_dilution:
 
-                        $modif_couleurs[] =$couleur;
+                        $dilue_couleurs[] =$couleur;
                       break;
 
                       default:
@@ -144,7 +145,7 @@ class ReproductionController extends Controller
             if (in_array($alezan, $base_couleurs))
             {
               $animal->Couleur()->attach($alezan->id);
-              if (empty($modif_couleurs))
+              if (empty($dilue_couleurs))
               {
                 $animal->Image()->attach($alezan->image_id);
               }
@@ -153,7 +154,7 @@ class ReproductionController extends Controller
             else if (in_array($noirbai, $base_couleurs) && (in_array($alezanbai, $base_couleurs)))
             {
               $animal->Couleur()->attach($bai->id);
-              if (empty($modif_couleurs))
+              if (empty($dilue_couleurs))
               {
                 $animal->Image()->attach($bai->image_id);
               }
@@ -161,7 +162,7 @@ class ReproductionController extends Controller
 
             else {
               $animal->Couleur()->attach($noir->id);
-              if (empty($modif_couleurs))
+              if (empty($dilue_couleurs))
               {
                 $animal->Image()->attach($noir->image_id);
               }
@@ -169,80 +170,50 @@ class ReproductionController extends Controller
 
            
 
-            foreach ($modif_couleurs as $coul)
+            foreach ($dilue_couleurs as $coul)
             {
-              if ($coul->est_dilution) {
+              
                 $base = $animal->Couleur()->where('base_couleur', true)->first();
                 $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();$couleur = $couleur->couleur_res_id;
                 $animal->Couleur()->attach($couleur);
                 $image = Couleur::Find($couleur)->image_id;
                 $animal->Image()->attach($image);
-              }
-              if ($coul->est_motif) {
-                
-              }
             }
-      
-        //  foreach ($couleurs as $couleur)
-        //  {
-           
-        //    $couleurs_asso = AssoCouleur::where('couleur1_id',$couleur->id)->orWhere('couleur2_id',$couleur->id)->get(); //toutes les asso avec cte couleur
-        //    dd($couleurs_asso);
-
-        //       foreach ($couleurs_asso as $couleur_asso)
-        //       {
-        //         switch (true) {
-        //           case $couleur->id == $couleur_asso->couleur1_id:
-        //             $coul = AssoCouleur::Find($couleur_asso->couleur2_id);
-        //             $trouve = in_array($coul, $couleurs);
-        //             if ($trouve) {
-        //               $id = $couleur_asso->couleur_res_id;   
-        //             }
-        //           break;
-
-        //           case $couleur->id == $couleur_asso->couleur2_id:
-        //             $coul = AssoCouleur::Find($couleur_asso->couleur1_id);
-        //           break;
-
-        //           case isset($couleur->image_id):
-        //             $id = $couleur->image_id;
-        //             dd($id);
-        //             $animal->Image()->attach($id);
-        //             unset($couleurs[array_search($couleur, $couleurs)]);
-        //           break;
-
-        //           default :
-        //           dd ('où je me suis plantée?');
-        //         }
-
-        //         dd($coul);
+            foreach ($motif_couleurs as $coul)
+            {
                 
-        //         if (isset($coul)) {
-        //           $trouve = in_array($coul, $couleurs);
-        //           if ($trouve)
-        //           {
-                    
-        //             dd($couleur_asso->couleur_res_id);
-        //             $id = $couleur_asso->couleur_res_id; 
-        //             dd($id);
-        //             $coul = AssoCouleur::find($id);
-        //             dd($coul);
-        //             $image = $coul->Image->first();
-        //             dd($image);
-        //             dd($image->chemin);
-        //             $animal->Image()->attach($image->id);
-        //           //faudra retirer du tablo
-        //           }
-                  
-        //         }
-        //       } //end foreach asso
-        //  } //end foreach couleur
-       }
-       else{
+                if ($blanc >=0)
+                {
+                  $image = Image::Find($coul->image_id);
+                  $image = Image::where('chemin',$image->chemin.$blanc)->first();
+                  if (isset($image))
+                  {
+                    $animal->Image()->attach($image->id);
+                  }
+                  else 
+                  {
+                    $nimage=new Image();
+                    $nimage->extension = 'png';
+                    $nimage->chemin = $image->chemin.$blanc; //et faudra la dessiner si c'est pas fait!
+                    $nimage->z_index =80;
+                    $nimage->save();
+                    $animal->Image()->attach($nimage->id);
+                  }
+
+                }
+              
+//sinon s'exprime pas. Na!
+                
+            } //end foreach
+            
+      
+    
+      }
+      else{
            $statut->vide = true;
            $statut->save();
           
-       }
+      }
    
    
     return redirect()->route('animaux',[$elevage]);
