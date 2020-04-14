@@ -193,6 +193,7 @@ class ReproductionController extends Controller
                   {
                     $image = Image::Find($coul->image_id);
                     $image = Image::where('chemin',$image->chemin.$blanc)->first();
+                    dd($image);
                     if (isset($image))
                     {
                       $animal->Image()->attach($image->id);
