@@ -26,7 +26,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 36,
                 'effet_taille' => -12,
                 'effet_blanc' => NULL,
-               
                 'couleur_id' => NULL,
                 'pathologie_id' => 1,
             ),
@@ -39,7 +38,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 34,
                 'effet_taille' => -16,
                 'effet_blanc' => NULL,
-               
                 'couleur_id' => NULL,
                 'pathologie_id' => 2,
             ),
@@ -52,7 +50,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 37,
                 'effet_taille' => -2,
                 'effet_blanc' => NULL,
-               
                 'couleur_id' => NULL,
                 'pathologie_id' => NULL,
             ),
@@ -65,7 +62,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 35,
                 'effet_taille' => -4,
                 'effet_blanc' => NULL,
-               
                 'couleur_id' => NULL,
                 'pathologie_id' => NULL,
             ),
@@ -78,7 +74,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 39,
                 'effet_taille' => -20,
                 'effet_blanc' => NULL,
-               
                 'couleur_id' => NULL,
                 'pathologie_id' => NULL,
             ),
@@ -91,7 +86,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 38,
                 'effet_taille' => -10,
                 'effet_blanc' => NULL,
-               
                 'couleur_id' => NULL,
                 'pathologie_id' => NULL,
             ),
@@ -104,7 +98,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 1,
                 'effet_taille' => NULL,
                 'effet_blanc' => 2,
-               
                 'couleur_id' => 5,
                 'pathologie_id' => NULL,
             ),
@@ -117,7 +110,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 2,
                 'effet_taille' => NULL,
                 'effet_blanc' => 0,
-               
                 'couleur_id' => 5,
                 'pathologie_id' => NULL,
             ),
@@ -130,7 +122,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 2,
                 'effet_taille' => NULL,
                 'effet_blanc' => -2,
-               
                 'couleur_id' => 6,
                 'pathologie_id' => NULL,
             ),
@@ -143,7 +134,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 4,
                 'effet_taille' => NULL,
                 'effet_blanc' => 2,
-               
                 'couleur_id' => 3,
                 'pathologie_id' => NULL,
             ),
@@ -156,7 +146,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 5,
                 'effet_taille' => NULL,
                 'effet_blanc' => 2,
-               
                 'couleur_id' => 3,
                 'pathologie_id' => NULL,
             ),
@@ -169,7 +158,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 3,
                 'effet_taille' => NULL,
                 'effet_blanc' => -2,
-               
                 'couleur_id' => 4,
                 'pathologie_id' => NULL,
             ),
@@ -182,7 +170,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 4,
                 'effet_taille' => NULL,
                 'effet_blanc' => 0,
-               
                 'couleur_id' => 4,
                 'pathologie_id' => NULL,
             ),
@@ -195,7 +182,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 5,
                 'effet_taille' => NULL,
                 'effet_blanc' => 0,
-               
                 'couleur_id' => 4,
                 'pathologie_id' => NULL,
             ),
@@ -208,7 +194,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 23,
                 'effet_taille' => NULL,
                 'effet_blanc' => NULL,
-             
                 'couleur_id' => 7,
                 'pathologie_id' => NULL,
             ),
@@ -221,7 +206,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 22,
                 'effet_taille' => NULL,
                 'effet_blanc' => NULL,
-                
                 'couleur_id' => 8,
                 'pathologie_id' => NULL,
             ),
@@ -234,7 +218,6 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 24,
                 'effet_taille' => NULL,
                 'effet_blanc' => NULL,
-                
                 'couleur_id' => NULL,
                 'pathologie_id' => NULL,
             ),
@@ -247,8 +230,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 7,
                 'effet_taille' => NULL,
                 'effet_blanc' => 2,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 17,
                 'pathologie_id' => NULL,
             ),
             18 => 
@@ -260,8 +242,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 8,
                 'effet_taille' => NULL,
                 'effet_blanc' => 2,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 17,
                 'pathologie_id' => NULL,
             ),
             19 => 
@@ -273,8 +254,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 6,
                 'effet_taille' => NULL,
                 'effet_blanc' => 6,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 18,
                 'pathologie_id' => NULL,
             ),
             20 => 
@@ -286,8 +266,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 7,
                 'effet_taille' => NULL,
                 'effet_blanc' => 2,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 18,
                 'pathologie_id' => NULL,
             ),
             21 => 
@@ -299,8 +278,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 7,
                 'effet_taille' => NULL,
                 'effet_blanc' => 8,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 21,
                 'pathologie_id' => NULL,
             ),
             22 => 
@@ -312,8 +290,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 7,
                 'effet_taille' => NULL,
                 'effet_blanc' => 1,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 19,
                 'pathologie_id' => NULL,
             ),
             23 => 
@@ -325,8 +302,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 19,
                 'effet_taille' => NULL,
                 'effet_blanc' => 2,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 19,
                 'pathologie_id' => NULL,
             ),
             24 => 
@@ -338,8 +314,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 19,
                 'effet_taille' => NULL,
                 'effet_blanc' => 9,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 20,
                 'pathologie_id' => NULL,
             ),
             25 => 
@@ -351,8 +326,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 6,
                 'effet_taille' => NULL,
                 'effet_blanc' => 10,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 20,
                 'pathologie_id' => NULL,
             ),
             26 => 
@@ -364,8 +338,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 8,
                 'effet_taille' => NULL,
                 'effet_blanc' => 9,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 20,
                 'pathologie_id' => NULL,
             ),
             27 => 
@@ -377,8 +350,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 6,
                 'effet_taille' => NULL,
                 'effet_blanc' => 4,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 23,
                 'pathologie_id' => NULL,
             ),
             28 => 
@@ -390,8 +362,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 8,
                 'effet_taille' => NULL,
                 'effet_blanc' => 4,
-               
-                'couleur_id' => NULL,
+                'couleur_id' => 22,
                 'pathologie_id' => NULL,
             ),
         ));

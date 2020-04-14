@@ -85,6 +85,7 @@ class ReproductionController extends Controller
           $base_couleurs = [];
           $dilue_couleurs =[];
           $motif_couleurs =[];
+          $modif_couleurs = [];
           $blanc =0;
           foreach ($genotypes as $genotype)
             {
@@ -117,7 +118,7 @@ class ReproductionController extends Controller
                       break;
 
                       case $couleur->est_motif:
-                        $motif_couleur[] =$couleur;
+                        $motif_couleurs[] =$couleur;
                       break;
                     
                       case $couleur->est_dilution:
@@ -172,19 +173,20 @@ class ReproductionController extends Controller
 
             foreach ($dilue_couleurs as $coul)
             {
-              
                 $base = $animal->Couleur()->where('base_couleur', true)->first();
-                $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();$couleur = $couleur->couleur_res_id;
+                $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
+                $couleur = $couleur->couleur_res_id;
                 $animal->Couleur()->attach($couleur);
                 $image = Couleur::Find($couleur)->image_id;
                 $animal->Image()->attach($image);
+               
             }
+
             foreach ($motif_couleurs as $coul)
             {
-                
                 if ($blanc >=0)
                 {
-                  if ($blanc >=10)
+                  if ($blanc >=9)
                   {
                     $image = Image::where('chemin','blanc')->first();
                     $animal->Image()->attach($image->id);
@@ -193,25 +195,28 @@ class ReproductionController extends Controller
                   {
                     $image = Image::Find($coul->image_id);
                     $image = Image::where('chemin',$image->chemin.$blanc)->first();
-                    dd($image);
-                    if (isset($image))
+                    
+                    if ($image <> null)
                     {
+                    
                       $animal->Image()->attach($image->id);
                     }
                     else 
                     {
                       $nimage=new Image();
                       $nimage->extension = 'png';
-                      $nimage->chemin = $image->chemin.$blanc; //et faudra la dessiner si c'est pas fait!
+                      $nimage->chemin =$coul->nom.$blanc;
+                    //et faudra la dessiner si c'est pas fait!
                       $nimage->z_index =80;
                       $nimage->save();
                       $animal->Image()->attach($nimage->id);
+                      
                     }
                   }
 
                 }
               
-//sinon s'exprime pas. Na!
+                                //sinon s'exprime pas. Na!
                 
             } //end foreach
             
