@@ -7,6 +7,7 @@ use App\Elevage;
 use App\Animal;
 use App\Gamedata;
 use App\Http\Controllers\TempsController;
+use App\statutsFemelle;
 
 class AnimalController extends Controller
 {
@@ -172,6 +173,14 @@ class AnimalController extends Controller
             $animal->a_vendre = false;
             $animal->date_achat = $date;
             $animal->elevage_id = $elevage->id;
+            $statut = statutsFemelle::where('animal_id', $animal->id)->first();
+            if (isset($statut) && $statut->pleine)
+            {
+                $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
+                $produit->elevage_id = $elevage->id;
+                $produit->affixe_id = $elevage->affixe_id;
+                $produit->save();
+            }
                 if ($animal->save())
                 {
                     return redirect()->route('animaux',[$elevage->id]);

@@ -21,7 +21,7 @@ class CreateAnimauxTable extends Migration
             $table->string('couleur')->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
             $table->bigInteger('race_id')->unsigned()->nullable();
-            $table->enum('sexe',['mâle','femelle', 'jeune mâle', 'jeune femelle', 'mâle stérilisé', 'femelle stérilisée']);
+            $table->enum('sexe',['mâle','femelle', 'jeune mâle', 'jeune femelle', 'mâle stérilisé', 'femelle stérilisée', 'vieille femelle', 'vieux mâle']);
             $table->date('date_achat')->nullable();
             $table->date('date_naissance')->nullable();
             $table->boolean('a_vendre')->default(false);

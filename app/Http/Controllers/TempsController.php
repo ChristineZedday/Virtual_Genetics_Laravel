@@ -43,6 +43,7 @@ class TempsController extends Controller
                 $elevage->budget +=1000;
                 $elevage->save();
             }
+            checkVieux ($date);
            
         }
         return redirect()->route('home');
@@ -70,9 +71,22 @@ class TempsController extends Controller
 
         
         return $age;
-
-
     }
+
+    static function ageYears($date_naissance)
+    {
+        $game = Gamedata::Find(1);
+        $date = $game->date();
+        $date = strToTime($date);
+        $date_naissance = strToTime($date_naissance);
+        $age = $date - $date_naissance;
+       
+        $age = $age/(24*60*60*30*12);
+
+        
+        return $age;
+    }
+
     static function checkLettre($date)
     {
         $lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'];
@@ -169,7 +183,8 @@ function reproNPC($date)
             $vendeurs = Elevage::where('role','Vendeur')->get();
             foreach($vendeurs as $vendeur)
             {
-                $juments = Animal::where('elevage_id', $vendeur->id)->where('sexe','femelle')->get();
+                $fem = ['femelle', 'vieille femelle'];
+                $juments = Animal::where('elevage_id', $vendeur->id)->whereIn('sexe',$fem)->get();
                 
                 foreach ($juments as $jument)
                 {
@@ -184,7 +199,14 @@ function reproNPC($date)
                     if ($statut->vide==true)
                     {
                         srand((float) microtime()*1000000);
-                        if(rand(1,2)==1)
+                        if ($jument->sexe ='femelle')
+                        {
+                             $var = 2;
+                            }
+                        else{
+                            $var =3;
+                        }
+                        if(rand(1,$var)==1)
                         {
                             $etalons = Animal::where('elevage_id',$vendeur->id)->where('sexe','mâle')->get();
                             $nb = sizeof($etalons);
@@ -274,6 +296,62 @@ function achete ()
     
 
        }
+    }
+}
+
+function checkVieux ($date)
+{
+    $cas = ['mâle', 'femelle', 'mâle stérilisé', 'femelle stérilisée'];  
+    $animaux = Animal::whereIn('sexe',$cas)->get();
+    foreach ($animaux as $animal)
+    {
+        $age = TempsController::ageYears($animal->date_naissance);
+        if ($age > 15)
+        {
+            switch ($animal->sexe) 
+     
+            {
+               case 'femelle':
+                $animal->sexe = 'vieille femelle';
+               break;
+          
+               case 'mâle':
+                $animal->sexe = 'vieux mâle';
+              break;
+
+              case 'mâle stérilisé':
+                $animal->sexe = 'vieux mâle stérilisé';
+              break;
+
+              case 'femelle stérilisée':
+                $animal->sexe = 'vieille femelle stérilisée';
+              break;
+
+              default :
+              dd ('quoi? un transexuel?');
+            }
+            $animal->save();
+        }
+    }
+    
+}
+function checkMorts ()
+{
+    $animaux = Animal::where('sexe','like','%vie')->get();
+    foreach ($animaux as $animal)
+    {
+        if (rand(1,300))
+        {
+            $animal->elevage_id =2;//chez l'Ankou!
+            $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
+            $statut = statutsFemelle::where('animal_id', $animal->id)->first();
+            if (isset($statut) && $statut->pleine)
+            {
+                $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
+                $produit->elevage_id = 2;
+                $produit->save();
+            }
+        }
     }
 }
 
