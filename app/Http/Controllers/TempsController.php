@@ -33,6 +33,7 @@ class TempsController extends Controller
         reproNPC($date);
         VenteJeunes();
         achete();
+        checkMorts();
         $dateM = date('m',strtotime($date));
         if ($dateM == 01) {
             $game->lettre = TempsController::checkLettre($date);
@@ -337,10 +338,10 @@ function checkVieux ($date)
 }
 function checkMorts ()
 {
-    $animaux = Animal::where('sexe','like','%vie')->get();
+    $animaux = Animal::where('sexe','LIKE','vie%')->get();
     foreach ($animaux as $animal)
     {
-        if (rand(1,300))
+        if (rand(1,240))
         {
             $animal->elevage_id =2;//chez l'Ankou!
             $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
