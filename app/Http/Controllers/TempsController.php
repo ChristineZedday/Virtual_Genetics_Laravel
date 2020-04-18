@@ -202,10 +202,10 @@ function reproNPC($date)
                         srand((float) microtime()*1000000);
                         if ($jument->sexe ='femelle')
                         {
-                             $var = 2;
+                             $var = 3;
                             }
                         else{
-                            $var =3;
+                            $var =4;
                         }
                         if(rand(1,$var)==1)
                         {
@@ -341,18 +341,34 @@ function checkMorts ()
     $animaux = Animal::where('sexe','LIKE','vie%')->get();
     foreach ($animaux as $animal)
     {
-        if (rand(1,240))
-        {
-            $animal->elevage_id =2;//chez l'Ankou!
-            $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
-            $statut = statutsFemelle::where('animal_id', $animal->id)->first();
-            if (isset($statut) && $statut->pleine)
+        $age = TempsController::ageMonths($animal->date_naissance);
+            switch ($age)
             {
-                $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
-                $produit->elevage_id = 2;
-                $produit->save();
+                case <20:
+                    $var = 300;
+                break;
+                case <25:
+                    $var = 200;
+                break;
+                case <30:
+                    $var =150;
+                break;
+                default:
+                $var = 50;
             }
-        }
+                if (rand(1,$var))
+                {
+                    $animal->elevage_id =2;//chez l'Ankou!
+                    $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
+                    $statut = statutsFemelle::where('animal_id', $animal->id)->first();
+                    if (isset($statut) && $statut->pleine)
+                    {
+                        $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
+                        $produit->elevage_id = 2;
+                        $produit->save();
+                    }
+                }
+            
     }
 }
 
