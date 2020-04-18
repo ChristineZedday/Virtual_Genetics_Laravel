@@ -344,13 +344,13 @@ function checkMorts ()
         $age = TempsController::ageMonths($animal->date_naissance);
             switch ($age)
             {
-                case <20:
+                case $age<20:
                     $var = 300;
                 break;
-                case <25:
+                case $age<25:
                     $var = 200;
                 break;
-                case <30:
+                case $age<30:
                     $var =150;
                 break;
                 default:
