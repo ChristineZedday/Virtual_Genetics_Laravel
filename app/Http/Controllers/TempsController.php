@@ -233,7 +233,7 @@ function VenteJeunes ()
 
         foreach ($animaux as $animal)
         {
-            if (TempsController::ageMonths($animal->date_naissance) >= 7 )
+            if ((TempsController::ageMonths($animal->date_naissance) >= 7) && (! $animal->fondateur) )
         { 
             $animal->a_vendre = true;
             $race = Race::find($animal->race_id);
