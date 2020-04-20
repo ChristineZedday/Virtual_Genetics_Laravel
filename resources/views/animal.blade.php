@@ -69,6 +69,27 @@
 <p>{{$animal->elevage_id == $elevage->id? $animal->date_achat : ""}}</p>
 <p>{{$animal->a_vendre? "à vendre" : ""}}</p>
 <p>{{$animal->prix}}</p>
+<div id='vente'>
+	@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre))
+
+		<a href="{{route('vendre',[$elevage->id,$animal->id])}}">
+					<button >Mettre en vente</button></a>
+	@else
+		@if ($animal->elevage_id == $elevage->id && $animal->a_vendre)
+			<a href="{{route('pas.vendre',[$animal->id])}}"><button>Retirer de la vente</button></a>
+		@elseif ($animal->elevage_id != $elevage->id && $animal->a_vendre)
+			<a href="{{route('acheter',[$elevage->id,$animal->id])}}"><button>Acheter</button></a>
+		@endif
+	@endif
+</div>
+
+@if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle') && (isset($animal->Statut) && $animal->Statut->vide == true || !isset($animal->Statut)))
+	<div id='saillie'>
+	<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
+				<button >Faire saillir</button>
+			</a>
+	</div>
+	@endif
 <div id='image'>
 <figure class='jeu'>
 <?php
@@ -85,26 +106,8 @@ if (isset($images)) {
 ?>
 </figure>
 </div>
-<div id='vente'>
-	@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre))
 
-		<a href="{{route('vendre',[$elevage->id,$animal->id])}}">
-					<button >Mettre en vente</button></a>
-	@else
-		@if ($animal->elevage_id == $elevage->id && $animal->a_vendre)
-			<a href="{{route('pas.vendre',[$animal->id])}}"><button>Retirer de la vente</button></a>
-		@elseif ($animal->elevage_id != $elevage->id && $animal->a_vendre)
-			<a href="{{route('acheter',[$elevage->id,$animal->id])}}"><button>Acheter</button></a>
-		@endif
-	@endif
-</div>
 
-	@if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle') && (isset($animal->Statut) && $animal->Statut->vide == true || !isset($animal->Statut)))
-	<div id='saillie'>
-	<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
-				<button >Faire saillir</button>
-			</a>
-	</div>
-	@endif
+
 
 @endsection
