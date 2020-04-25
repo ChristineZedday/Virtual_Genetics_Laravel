@@ -174,17 +174,25 @@ class AnimalController extends Controller
             $animal->date_achat = $date;
             $animal->elevage_id = $elevage->id;
             $statut = statutsFemelle::where('animal_id', $animal->id)->first();
-            if (isset($statut) && $statut->pleine)
+            if (isset($statut) )
             {
-                $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
-                $produit->elevage_id = $elevage->id;
-                $produit->affixe_id = $elevage->affixe_id;
-                $produit->save();
-            }
-                if ($animal->save())
+               if ($statut->pleine)
                 {
-                    return redirect()->route('animaux',[$elevage->id]);
+                    $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
+                    $produit->elevage_id = $elevage->id;
+                    $produit->affixe_id = $elevage->affixe_id;
+                    $produit->save();
                 }
+                // $suite =  Animal::where('foetus', false)->where('dam_id',$animal->id)->where(TempsController::ageMonths('date_naissance'), '<',7)->first();
+                // dd ($suite);
+                // $suite->elevage_id = $elevage->id;
+                // $suite->save();ajouter statut suitee
+            }
+            
+            if ($animal->save())
+            {
+                return redirect()->route('animaux',[$elevage->id]);
+            }
         }
 
         

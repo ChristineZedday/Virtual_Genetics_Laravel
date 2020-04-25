@@ -90,6 +90,11 @@
 			</a>
 	</div>
 	@endif
+	<div id="progeny">
+	@foreach ($animal->Progeny() as $petit)
+	<p>{{$petit->NomComplet()}} @if ($animal->sexe == 'femelle' || $animal->sexe == 'vieille femelle') par {{$petit->Sire->NomComplet()}} @endif</p>
+	@endforeach
+	</div>
 <div id='image'>
 <figure class='jeu'>
 <?php

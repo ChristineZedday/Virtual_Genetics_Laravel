@@ -39,6 +39,12 @@ class Animal extends Model
         return $this->HasOne('App\Animal', 'id', 'dam_id');
     }
 
+    public function Progeny()
+    {
+        $animaux =  Animal::where('dam_id', $this->id)->orWhere('sire_id', $this->id)->get();
+        return $animaux;
+    }
+
     public function Statut()
     {
         return $this->HasOne('App\statutsFemelle', 'animal_id');
