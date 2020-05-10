@@ -92,7 +92,7 @@ class ImagesTableSeeder extends Seeder
             8 => 
             array (
                 'id' => 9,
-                'chemin' => 'smoky_cream',
+                'chemin' => 'smokycream',
                 'extension' => 'png',
                 'z_index' => 18,
                 'created_at' => NULL,
@@ -110,7 +110,7 @@ class ImagesTableSeeder extends Seeder
             10 => 
             array (
                 'id' => 11,
-                'chemin' => 'isabelle_perle',
+                'chemin' => 'baiperle',
                 'extension' => 'png',
                 'z_index' => 17,
                 'created_at' => NULL,
@@ -176,6 +176,159 @@ class ImagesTableSeeder extends Seeder
                 'chemin' => 'sabinoW20',
                 'extension' => 'png',
                 'z_index' => 53,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'chemin' => 'tobiano0',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-18 15:31:40',
+                'updated_at' => '2020-04-18 15:31:40',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'chemin' => 'tobiano4',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-18 15:35:47',
+                'updated_at' => '2020-04-18 15:35:47',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'chemin' => 'tobiano2',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-18 15:36:04',
+                'updated_at' => '2020-04-18 15:36:04',
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'chemin' => 'W201',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-18 15:36:04',
+                'updated_at' => '2020-04-18 15:36:04',
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'chemin' => 'sabino2',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-20 17:33:35',
+                'updated_at' => '2020-04-20 17:33:35',
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'chemin' => 'W203',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-20 17:34:03',
+                'updated_at' => '2020-04-20 17:34:03',
+            ),
+            24 => 
+            array (
+                'id' => 25,
+                'chemin' => 'tobianoW202',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-20 18:22:14',
+                'updated_at' => '2020-04-20 18:22:14',
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'chemin' => 'sabinoW204',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-20 18:37:50',
+                'updated_at' => '2020-04-20 18:37:50',
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'chemin' => 'sabino0',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-20 20:36:05',
+                'updated_at' => '2020-04-20 20:36:05',
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'chemin' => 'sabino4',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-20 20:56:41',
+                'updated_at' => '2020-04-20 20:56:41',
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'chemin' => 'tobiano6',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-20 21:06:04',
+                'updated_at' => '2020-04-20 21:06:04',
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'chemin' => 'sabino6',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-04-21 16:40:49',
+                'updated_at' => '2020-04-21 16:40:49',
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'chemin' => 'pseudoperlino',
+                'extension' => 'png',
+                'z_index' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'chemin' => 'pseudocremello',
+                'extension' => 'png',
+                'z_index' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'chemin' => 'pseudosmoky',
+                'extension' => 'png',
+                'z_index' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'chemin' => 'noirperle',
+                'extension' => 'png',
+                'z_index' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'chemin' => 'abricot',
+                'extension' => 'png',
+                'z_index' => 17,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
