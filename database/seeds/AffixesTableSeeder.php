@@ -217,6 +217,166 @@ class AffixesTableSeeder extends Seeder
                 'created_at' => '2020-04-06 18:43:04',
                 'updated_at' => '2020-04-06 18:43:04',
             ),
+            25 => 
+            array (
+                'id' => 26,
+                'libelle' => 'Epona',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'libelle' => 'Weston',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'libelle' => 'Kirby Cane',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'libelle' => 'Afan',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'libelle' => 'Menai',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'libelle' => 'Criban',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'libelle' => 'Elvey',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'libelle' => 'Tylwyth',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            33 => 
+            array (
+                'id' => 35,
+                'libelle' => 'Abercriban',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            34 => 
+            array (
+                'id' => 36,
+                'libelle' => 'Brierdene',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            35 => 
+            array (
+                'id' => 37,
+                'libelle' => 'Broheulog',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 38,
+                'libelle' => 'Abercrychan',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            37 => 
+            array (
+                'id' => 39,
+                'libelle' => 'Glyncoch',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            38 => 
+            array (
+                'id' => 40,
+                'libelle' => 'Hilin',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            39 => 
+            array (
+                'id' => 41,
+                'libelle' => 'Cadlanvalley',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            40 => 
+            array (
+                'id' => 42,
+                'libelle' => 'Llanalyn',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            41 => 
+            array (
+                'id' => 43,
+                'libelle' => 'Llanarth',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            42 => 
+            array (
+                'id' => 44,
+                'libelle' => 'Nerwyn',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 45,
+                'libelle' => 'Rhyd-Y-Felin',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            44 => 
+            array (
+                'id' => 46,
+                'libelle' => 'Llanfrechfa',
+                'affixe_pre' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

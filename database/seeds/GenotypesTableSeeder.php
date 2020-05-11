@@ -1337,6 +1337,56 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 6,
                 'locus_id' => 3,
             ),
+            132 => 
+            array (
+                'id' => 288,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 40,
+                'allele_p_id' => 1,
+                'allele_m_id' => 1,
+                'locus_id' => 1,
+            ),
+            133 => 
+            array (
+                'id' => 289,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 40,
+                'allele_p_id' => 3,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            134 => 
+            array (
+                'id' => 290,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 40,
+                'allele_p_id' => 24,
+                'allele_m_id' => 23,
+                'locus_id' => 4,
+            ),
+            135 => 
+            array (
+                'id' => 291,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 40,
+                'allele_p_id' => 39,
+                'allele_m_id' => 39,
+                'locus_id' => 21,
+            ),
+            136 => 
+            array (
+                'id' => 292,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 40,
+                'allele_p_id' => 6,
+                'allele_m_id' => 7,
+                'locus_id' => 3,
+            ),
         ));
         
         
