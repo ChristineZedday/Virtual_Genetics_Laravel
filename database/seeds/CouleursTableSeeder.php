@@ -369,6 +369,105 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            32 => 
+            array (
+                'id' => 33,
+                'nom' => 'silver',
+                'image_id' => NULL,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'nom' => 'baisilver',
+                'image_id' => 44,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'nom' => 'noirsilver',
+                'image_id' => 45,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'nom' => 'mushroom',
+                'image_id' => NULL,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'nom' => 'mushroom',
+                'image_id' => 39,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'nom' => 'champagne',
+                'image_id' => NULL,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'nom' => 'champagneor',
+                'image_id' => 41,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'nom' => 'champagneambre',
+                'image_id' => 42,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'nom' => 'champagneclassique',
+                'image_id' => 43,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

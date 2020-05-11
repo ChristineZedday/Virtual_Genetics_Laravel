@@ -365,6 +365,102 @@ class PhenotypesTableSeeder extends Seeder
                 'couleur_id' => 22,
                 'pathologie_id' => NULL,
             ),
+            29 => 
+            array (
+                'id' => 30,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 11,
+                'allele2_id' => 11,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 38,
+                'pathologie_id' => NULL,
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 11,
+                'allele2_id' => 12,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 38,
+                'pathologie_id' => NULL,
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 27,
+                'allele2_id' => 27,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 29,
+                'pathologie_id' => NULL,
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 27,
+                'allele2_id' => 29,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 29,
+                'pathologie_id' => NULL,
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 27,
+                'allele2_id' => 28,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 29,
+                'pathologie_id' => NULL,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 32,
+                'allele2_id' => 32,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 36,
+                'pathologie_id' => NULL,
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 9,
+                'allele2_id' => 9,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 33,
+                'pathologie_id' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 9,
+                'allele2_id' => 10,
+                'effet_taille' => NULL,
+                'effet_blanc' => NULL,
+                'couleur_id' => 33,
+                'pathologie_id' => NULL,
+            ),
         ));
         
         
