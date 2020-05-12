@@ -889,7 +889,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 125,
             ),
             38 => 
             array (
@@ -912,7 +912,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 119,
             ),
             39 => 
             array (
@@ -935,7 +935,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 135,
             ),
             40 => 
             array (
@@ -958,7 +958,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 132,
             ),
             41 => 
             array (
@@ -981,7 +981,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 116,
             ),
             42 => 
             array (
@@ -1004,7 +1004,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 120,
             ),
             43 => 
             array (
@@ -1027,7 +1027,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 110,
             ),
             44 => 
             array (
@@ -1073,7 +1073,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 133,
             ),
             46 => 
             array (
@@ -1096,7 +1096,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 151,
             ),
             47 => 
             array (
@@ -1119,7 +1119,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 114,
             ),
             48 => 
             array (
@@ -1142,7 +1142,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 148,
             ),
             49 => 
             array (
@@ -1165,7 +1165,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 153,
             ),
             50 => 
             array (
@@ -1188,7 +1188,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 154,
             ),
         ));
         
