@@ -8,6 +8,7 @@ use App\Animal;
 use App\Gamedata;
 use App\Http\Controllers\TempsController;
 use App\statutsFemelle;
+use App\AssoRace;
 
 class AnimalController extends Controller
 {
@@ -224,8 +225,17 @@ class AnimalController extends Controller
     {
         $animal = Animal::Find($animal);
       
+        if ($animal->Race->nom == 'OC')
+        {
+            $rDam = $animal->Dam->Race->id;
+            $rSire = $animal->Sire->Race->id;
+            $races1 = AssoRace::where('race_pere_id',$rSire)->where('race_mere_id',$rDam)->get();
+            $races2 = AssoRace::where('race_pere_id',$rSire)->where('race_mere_id',null)->get();
+            $races3 = AssoRace::where('race_pere_id',null)->where('race_mere_id',$rDam)->get();
+            $races = array_merge($races1, $races2, $races3);
+        }
        
-        return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
+        return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
     }    
 
     public function registration(Request $request, $animal)
@@ -236,6 +246,10 @@ class AnimalController extends Controller
 
         $animal->nom = $validated['nom'];
         $animal->couleur = $validated['couleur'];
+        if ($request('race'))
+        {
+            $animal->race_id = $request('race');
+        }
 
         if ($animal->save())
         {

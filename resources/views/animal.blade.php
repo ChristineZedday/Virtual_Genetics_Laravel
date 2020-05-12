@@ -4,17 +4,14 @@
 	<h1>{{$animal->NomComplet()}}</h1>
 	
 		@if (($animal->elevage_id == $elevage->id) && (strlen($animal->nom) <= 1))
-		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer le nom </button></a>
+		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
 		@endif
 	
 <h3>{{$animal->Race->nom}}</h3>
 <p>{{$animal->sexe}}</p>
 @isset($animal->couleur)
 	<p>{{ $animal->couleur }}</p>
-	@else
-		@if ($animal->elevage_id == $elevage->id)
-		<a href="{{route('signalement',[$animal->id])}}"><button>Enregistrer la robe</button></a>
-		@endif
+@endisset
 	<p>
 	<?php 
 	$genome = App\Genotype::where('animal_id',$animal->id)->get();
