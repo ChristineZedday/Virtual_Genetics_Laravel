@@ -181,6 +181,7 @@ class ReproductionController extends Controller
                 $animal->Image()->attach($image);
                
             }
+            //gérer les dilutions multiples au moyen de couches d'images?
 
             foreach ($motif_couleurs as $coul)
             {
