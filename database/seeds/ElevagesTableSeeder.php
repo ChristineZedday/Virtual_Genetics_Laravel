@@ -89,6 +89,18 @@ class ElevagesTableSeeder extends Seeder
                 'role' => 'Joueur',
                 'user_id' => 2,
             ),
+            6 => 
+            array (
+                'id' => 7,
+                'affixe_id' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom_elevage' => 'Firaoun Arabians',
+                'nom_eleveur' => 'Medhi Déjan',
+                'budget' => 20000,
+                'role' => 'Vendeur',
+                'user_id' => 1,
+            ),
         ));
         
         

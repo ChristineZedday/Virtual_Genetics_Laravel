@@ -92,10 +92,40 @@ class RacesTableSeeder extends Seeder
                 'id' => 8,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Arabe',
+                'nom' => 'Pur-sang Arabe',
                 'prix_moyen' => 5000,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Demi-sang Arabe',
+                'prix_moyen' => 2000,
+                'taille_min' => NULL,
+                'taille_max' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Welsh Part Bred',
+                'prix_moyen' => 1000,
+                'taille_min' => NULL,
+                'taille_max' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Français de Selle',
+                'prix_moyen' => 1300,
+                'taille_min' => 120,
+                'taille_max' => 149,
             ),
         ));
         
