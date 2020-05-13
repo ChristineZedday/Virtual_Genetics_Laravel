@@ -20,7 +20,8 @@ class CreateAssoRaceTable extends Migration
             $table->bigInteger('race_mere_id')->unsigned()->nullable();
             $table->bigInteger('race_produit_id')->unsigned();
             $table->boolean('taille_conditions')->default(FALSE);
-            $table->tinyInteger('frais')->nullable();
+            $table->boolean('automatique')->default(FALSE);
+           
             $table->foreign('race_pere_id')->references('id')->on('races');
             $table->foreign('race_mere_id')->references('id')->on('races');
             $table->foreign('race_produit_id')->references('id')->on('races');

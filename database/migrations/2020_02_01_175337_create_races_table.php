@@ -18,6 +18,7 @@ class CreateRacesTable extends Migration
             $table->timestamps();
             $table->string('nom');
             $table->smallInteger('prix_moyen');
+            $table->tinyInteger('frais_enregistrement')->unsigned()->nullable();
             $table->tinyInteger('taille_min')->unsigned()->nullable();
             $table->tinyInteger('taille_max')->unsigned()->nullable();
 
