@@ -1050,7 +1050,7 @@ class AnimauxTableSeeder extends Seeder
                 'consang' => 0.0,
                 'sire_id' => NULL,
                 'dam_id' => NULL,
-                'taille_additive' => NULL,
+                'taille_additive' => 136,
             ),
             45 => 
             array (
