@@ -27,7 +27,7 @@
 
 	?>	
 	</p>	
-@endisset
+
 <p>{{$animal->taille_cm}} cm</p>
 <?php $pathos = $animal->Pathologie()->get() ?>
 <p>@isset($animal->Pathologie)
