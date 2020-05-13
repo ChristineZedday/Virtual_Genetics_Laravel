@@ -9,7 +9,9 @@
 @isset($animal->couleur)
 	<p>{{ $animal->couleur }}</p>
 @else
+@if ($elevage == $animal->elevage)
 <a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
+@endif
 @endisset
 	<p>
 	<?php 
