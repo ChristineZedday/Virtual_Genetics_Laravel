@@ -13,6 +13,8 @@ use App\Phenotype;
 use App\Pathologie;
 use App\Couleur;
 use App\AssoCouleur;
+use App\Race;
+use App\AssoRace;
 use App\Image;
 use App\Http\Controllers\TempsController;
 
@@ -67,17 +69,43 @@ class ReproductionController extends Controller
           $animal->elevage_id = $elevage;
           $sexe = rand(1,2);
           $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
+
+          
           $etalon = Animal::Find($etalon);
           $jument = Animal::Find($jument);
+
+          $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
+          $animal->taille_cm = $animal->taille_additive;
+
                 if ($etalon->race_id == $jument->race_id)
                 {
                     $animal->race_id = $etalon->race_id;
                 }
                 else{
+                  $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', true)->get();
+                  if (! empty($races))
+                  {
+                    foreach ($races as $race)
+                    {
+                      if (! $race->taille_conditions)
+                      {
+                        $animal->race_id = $race->race_produit_id;
+                      }
+                      else{
+                        $race = Race::Find($race->race_produit_id);
+                        if ($animal->taille_cm >= $race->taille_min && $animal->taille_cm <= $race->taille_max)
+                        {
+                          $animal->race_id = $race->id;
+                        }
+                      }
+                    }
+                  }
+                  else
+                  {
                     $animal->race_id = 1;
+                  }
                 }
-          $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
-          $animal->taille_cm = $animal->taille_additive;
+        
           $animal->consang = calculConsang($etalon->id, $jument->id);
           $animal->save();
           Genome::mixGenes($etalon->id, $jument->id, $animal->id);
