@@ -3,14 +3,13 @@
 
 	<h1>{{$animal->NomComplet()}}</h1>
 	
-		@if (($animal->elevage_id == $elevage->id) && (strlen($animal->nom) <= 1))
-		<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
-		@endif
 	
 <h3>{{$animal->Race->nom}}</h3>
 <p>{{$animal->sexe}}</p>
 @isset($animal->couleur)
 	<p>{{ $animal->couleur }}</p>
+@else
+<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
 @endisset
 	<p>
 	<?php 

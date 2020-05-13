@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class AssoRace extends Model
 {
-   protected $table = 'asso_races';
+   protected $table = 'asso_race';
 }
