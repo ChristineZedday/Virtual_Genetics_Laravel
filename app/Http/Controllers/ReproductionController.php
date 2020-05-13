@@ -64,7 +64,7 @@ class ReproductionController extends Controller
           }
           
           $lettre = TempsController::checkLettre($date);
-          $animal->nom = $lettre;
+          $animal->nom = crenom($lettre);
           
           $animal->elevage_id = $elevage;
           $sexe = rand(1,2);
@@ -305,5 +305,12 @@ function calculConsang($S, $D)
   }
       
   
+}
+
+function crenom ($lettre)
+{
+$consonnes = ['b','d','f','g','h','j','k','l','m','n','p','r','s','t','v','w','x','y','z'];
+$voyelles = ['a','e','i','o','u','y'];
+return $lettre.[array_rand($voyelles)].[array_rand($consonnes)].[array_rand($voyelles)].[array_rand($consonnes)].[array_rand($voyelles)];
 }
 
