@@ -75,7 +75,7 @@ class ReproductionController extends Controller
           $jument = Animal::Find($jument);
 
           $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
-          $animal->taille_cm = $animal->taille_additive + rand(2) -rand(2);
+          $animal->taille_cm = $animal->taille_additive + rand(-2,2);
 
                 if ($etalon->race_id == $jument->race_id)
                 {
@@ -203,10 +203,13 @@ class ReproductionController extends Controller
             {
                 $base = $animal->Couleur()->where('base_couleur', true)->first();
                 $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
-                $couleur = $couleur->couleur_res_id;
-                $animal->Couleur()->attach($couleur);
-                $image = Couleur::Find($couleur)->image_id;
-                $animal->Image()->attach($image);
+                if (isset($couleur))
+                  {
+                    $couleur = $couleur->couleur_res_id;
+                  $animal->Couleur()->attach($couleur);
+                  $image = Couleur::Find($couleur)->image_id;
+                  $animal->Image()->attach($image);
+                }
                
             }
             //gérer les dilutions multiples au moyen de couches d'images?
@@ -311,6 +314,6 @@ function crenom ($lettre)
 {
 $consonnes = ['b','d','f','g','h','j','k','l','m','n','p','r','s','t','v','w','x','y','z'];
 $voyelles = ['a','e','i','o','u','y'];
-return $lettre.[array_rand($voyelles)].[array_rand($consonnes)].[array_rand($voyelles)].[array_rand($consonnes)].[array_rand($voyelles)];
+return $lettre.$voyelles[array_rand($voyelles)].$consonnes[array_rand($consonnes)].$voyelles[array_rand($voyelles)].$consonnes[array_rand($consonnes)].$voyelles[array_rand($voyelles)];
 }
 
