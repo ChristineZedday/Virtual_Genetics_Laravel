@@ -75,7 +75,7 @@ class ReproductionController extends Controller
           $jument = Animal::Find($jument);
 
           $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
-          $animal->taille_cm = $animal->taille_additive;
+          $animal->taille_cm = $animal->taille_additive + rand(2) -rand(2);
 
                 if ($etalon->race_id == $jument->race_id)
                 {
