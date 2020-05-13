@@ -251,7 +251,7 @@ class AnimalController extends Controller
 
         $animal->nom = $validated['nom'];
         $animal->couleur = $validated['couleur'];
-        if ($request('race'))
+        if ($animal->race_id == 1 && $request('race'))
         {
             $animal->race_id = $request('race');
         }

@@ -15,16 +15,16 @@
 	<input type="text" name="couleur" value="@isset($animal->couleur) {{$animal->couleur}}  @endisset"/>
 	</div>
 	<div>
-	@if (!empty($races))
+	@isset($races)
 	<label for="race">Vous avez la possibilité d'enregistrer votre produit, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
 	<select  name="race">
 		@foreach ($races as $race)
-		<option value="{{$race->id}">{{$race->nom}} {{$race->frais_enregistrement}}</option>
-		endforeach
+		<option value="{{$race->id}}">{{$race->nom}} {{$race->frais_enregistrement}}</option>
+		@endforeach
  
   
 </select> 
-	@endif
+	@endisset
 	</div>
 	<button type="submit">Valider</button>
 	</form>
