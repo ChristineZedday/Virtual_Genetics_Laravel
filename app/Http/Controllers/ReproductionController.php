@@ -248,7 +248,16 @@ class ReproductionController extends Controller
 
                 }
               
-                                //sinon s'exprime pas. Na!
+                 
+              else 
+              {
+                if ($coul->nom == 'gris')
+                {
+                  $image = Image::where('chemin','gris')->first();
+                  $animal->Image()->attach($image->id);
+
+                }
+              }//sinon s'exprime pas. Na!
                 
             } //end foreach
             
