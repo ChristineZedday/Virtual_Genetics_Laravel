@@ -258,27 +258,28 @@ function achete ()
         })->where('a_vendre', true)->get();
        foreach ($avendre as $av)
        {
+        $prix_moy = Race::Find($av->race_id)->prix_moyen;
         srand((float) microtime()*1000000);
           switch (true) {
-              case ($av->prix >1000):
+              case ($av->prix > $prix_moy * 2):
                 $achat = rand(1,100) == 1;
               break;
-              case ($av->prix > 800):
+              case ($av->prix > $prix_moy * 1.5):
                 $achat = rand(1,50) == 1;
             break;
-              case ($av->prix > 600):
-                $achat = rand(1,25) == 1;
+              case ($av->prix > $prix_moy):
+                $achat = rand(1,20) == 1;
             break;
-                case ($av->prix > 400):
-                $achat = rand(1,10) == 1;
+                case ($av->prix > $prix_moy * 3/4 ):
+                $achat = rand(1,8) == 1;
             break;
-                case ($av->prix > 300):
-                    $achat = rand(1,5) == 1;
+                case ($av->prix > $prix_moy * 2/3):
+                    $achat = rand(1,4) == 1;
                 break;
-                    case ($av->prix > 200):
-                        $achat = rand(1,3) == 1;
+                    case ($av->prix >  $prix_moy /2):
+                        $achat = rand(1,2) == 1;
                     break;
-                    case ($av->prix < 50):
+                    case ( $prix_moy /3):
                         $achat = true;
                     break;
                     default :
