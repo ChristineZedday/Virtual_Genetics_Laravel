@@ -340,7 +340,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 30,
                 'nom' => 'bai dun',
-                'image_id' => NULL,
+                'image_id' => 37,
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -351,7 +351,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 31,
                 'nom' => 'alezan dun',
-                'image_id' => NULL,
+                'image_id' => 36,
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -362,7 +362,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 32,
                 'nom' => 'souris',
-                'image_id' => NULL,
+                'image_id' => 38,
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
