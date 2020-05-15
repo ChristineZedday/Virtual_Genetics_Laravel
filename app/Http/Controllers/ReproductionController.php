@@ -246,21 +246,19 @@ class ReproductionController extends Controller
                     }
                   }
 
-                }
-              
-                 
-              else 
-              {
-                if ($coul->nom == 'gris')
-                {
-                  $image = Image::where('chemin','gris')->first();
-                  $animal->Image()->attach($image->id);
-
-                }
+    
               }//sinon s'exprime pas. Na!
                 
             } //end foreach
             
+            foreach ($motif_couleurs as $coul) //gris pour l'instant, mofifier pour autres
+            {
+              
+               
+                  $image = Image::where('chemin',$coul->nom)->first();
+                  $animal->Image()->attach($image->id);
+
+            }
       
     
       }
