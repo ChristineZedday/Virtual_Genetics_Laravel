@@ -18,6 +18,7 @@
 	@isset($races)
 	<label for="race">Vous avez la possibilité d'enregistrer votre produit, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
 	<select  name="race">
+	<option value="1">OC 0</option>
 		@foreach ($races as $race)
 		<option value="{{$race->id}}">{{$race->nom}} {{$race->frais_enregistrement}}</option>
 		@endforeach

@@ -9,6 +9,7 @@ use App\Gamedata;
 use App\Http\Controllers\TempsController;
 use App\statutsFemelle;
 use App\AssoRace;
+use App\Race;
 
 class AnimalController extends Controller
 {
@@ -44,7 +45,7 @@ class AnimalController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display one choosen animal of current stud.
      *
      * @param  int  $elevage: elevage_id, $animal: animal_id
      * @return \Illuminate\Http\Response
@@ -91,7 +92,7 @@ class AnimalController extends Controller
     }
 
     /**
-     * Put animal for sale.
+     * Putingt animal for sale: display form.
      *
      * @param  int  $elevage->id, $animal->id
      * @return \Illuminate\Http\Response
@@ -108,7 +109,7 @@ class AnimalController extends Controller
     }
 
      /**
-     * Put animal for sale.
+     * Putting animal for sale: database saving.
      *
      * @param  Request  $request
      * @return \Illuminate\Http\Response
@@ -229,10 +230,17 @@ class AnimalController extends Controller
         {
             $rDam = $animal->Dam->Race->id;
             $rSire = $animal->Sire->Race->id;
-            $races1 = AssoRace::where('race_pere_id',$rSire)->where('race_mere_id',$rDam)->get();
-            $races2 = AssoRace::where('race_pere_id',$rSire)->where('race_mere_id',null)->get();
-            $races3 = AssoRace::where('race_pere_id',null)->where('race_mere_id',$rDam)->get();
-            $races = array_merge($races1, $races2, $races3);
+            $races = AssoRace::where(function ($query) use ($rSire,$rDam) {
+                $query->where(function ($qp) use ($rSire) {
+                    $qp->where('race_pere_id', $rSire)->orWhere('race_pere_id', null);
+                }
+                )->where(function ($qm) use ($rDam) {
+                    $qm->where('race_mere_id',$rDam)->orWhere('race_mere_id',null);
+                }
+            )
+            ;}
+            )->join('races','races.id', 'asso_race.race_produit_id')->get();
+         
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }
         else
@@ -247,19 +255,19 @@ class AnimalController extends Controller
     {
         $animal = Animal::Find($animal);
         
-        $validated = $request->validate([ 'nom'=>'string','couleur'=>'string']); 
+        $validated = $request->validate([ 'nom'=>'string','couleur'=>'string','race'=>'integer']); 
 
         $animal->nom = $validated['nom'];
         $animal->couleur = $validated['couleur'];
-        if ($animal->race_id == 1 && $request('race'))
+        if (($animal->race_id == 1) && ($validated['race']!==null))
         {
-            $animal->race_id = $request('race');
+            $animal->race_id = $validated['race'];
         }
 
         if ($animal->save())
         {
             {
-                $request->session()->flash('status',"animal enregistrée avec succès");
+                $request->session()->flash('status',"animal enregistré avec succès");
                 $request->session()->flash('alert-class',"alert-success");
                 return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
                
