@@ -83,8 +83,10 @@ class ReproductionController extends Controller
                 }
                 else{
                   $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', true)->get();
-                  if (! empty($races))
+                 
+                  if (sizeof($races) > 0)
                   {
+                   
                     foreach ($races as $race)
                     {
                       if (! $race->taille_conditions)
