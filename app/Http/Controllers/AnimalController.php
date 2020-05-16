@@ -262,6 +262,12 @@ class AnimalController extends Controller
         if (($animal->race_id == 1) && ($validated['race']!==null))
         {
             $animal->race_id = $validated['race'];
+            if ($animal->race !==1)
+            {
+                $elevage = Elevage::Find($animal->elevage_id);
+                $race = Race::Find($animal->race_id);
+                $elevage->budget -= $race->frais_enregistrement;
+            }
         }
 
         if ($animal->save())
