@@ -34,6 +34,7 @@ class ReproductionController extends Controller
     }
     $statut->pres_pleine = true; 
     $statut->etalon_id = $etalon;
+    $statut->date_saillie = TempsController::dateCourante();
     $date = TempsController::ElevenMonths();
     $statut->terme = $date;
     $statut->save();
