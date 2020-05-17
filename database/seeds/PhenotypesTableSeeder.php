@@ -485,6 +485,66 @@ class PhenotypesTableSeeder extends Seeder
                 'couleur_id' => 42,
                 'pathologie_id' => NULL,
             ),
+            39 => 
+            array (
+                'id' => 40,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 40,
+                'allele2_id' => 40,
+                'effet_taille' => NULL,
+                'effet_blanc' => 4,
+                'couleur_id' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 40,
+                'allele2_id' => 41,
+                'effet_taille' => NULL,
+                'effet_blanc' => 3,
+                'couleur_id' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 40,
+                'allele2_id' => 42,
+                'effet_taille' => NULL,
+                'effet_blanc' => 2,
+                'couleur_id' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 41,
+                'allele2_id' => 41,
+                'effet_taille' => NULL,
+                'effet_blanc' => 2,
+                'couleur_id' => NULL,
+                'pathologie_id' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 41,
+                'allele2_id' => 42,
+                'effet_taille' => NULL,
+                'effet_blanc' => 0,
+                'couleur_id' => NULL,
+                'pathologie_id' => NULL,
+            ),
         ));
         
         

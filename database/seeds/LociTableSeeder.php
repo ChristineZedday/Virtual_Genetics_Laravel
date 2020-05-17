@@ -287,6 +287,21 @@ class LociTableSeeder extends Seeder
                 'prev_linked_id' => NULL,
                 'taux_recomb_next' => NULL,
             ),
+            18 => 
+            array (
+                'id' => 23,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'Amplificateur blanc',
+                'abbrev' => 'AB',
+                'chromosome' => 'théorique',
+                'linked' => 0,
+                'obligatoire' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
         ));
         
         

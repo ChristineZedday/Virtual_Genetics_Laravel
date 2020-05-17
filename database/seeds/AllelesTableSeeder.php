@@ -446,6 +446,39 @@ class AllelesTableSeeder extends Seeder
                 'is_default' => 0,
                 'is_dominant' => 0,
             ),
+            39 => 
+            array (
+                'id' => 40,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 23,
+                'nom' => 'Amplification blanc fort',
+                'abbrev' => 'AB2',
+                'is_default' => 0,
+                'is_dominant' => 0,
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 23,
+                'nom' => 'Amplification blanc faible',
+                'abbrev' => 'AB1',
+                'is_default' => 1,
+                'is_dominant' => 0,
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 23,
+                'nom' => 'non amplification blanc',
+                'abbrev' => 'AB0',
+                'is_default' => 0,
+                'is_dominant' => 0,
+            ),
         ));
         
         
