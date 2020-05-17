@@ -173,7 +173,7 @@ class ElevageController extends Controller
         
         $elevage = Elevage::Find($id);
         $date = TempsController::dateCourante();
-        $juments = Animal::where('elevage_id', $id)->where('sexe', 'femelle')->whereHas('Statut', function($q) use ($date) { $q->where('vide', true)->where('date_saillie','<>',$date);})->get();
+        $juments = Animal::where('elevage_id', $id)->where('sexe', 'femelle')->whereHas('Statut', function($q)  { $q->where('vide', true);})->whereDoesntHave('Statut',function ($qu)use ($date) {$qu->where('date_saille',$date);})->get();
        
 
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
