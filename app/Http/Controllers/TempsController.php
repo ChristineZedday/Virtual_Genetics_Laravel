@@ -30,8 +30,9 @@ class TempsController extends Controller
         // checkFemellesTerme($date);
         checkNouveaux($date);
         checkPuberes();
-        reproNPC($date);
         VenteJeunes();
+        retireVente();
+        reproNPC($date);
         achete();
         checkMorts();
         $dateM = date('m',strtotime($date));
@@ -244,6 +245,20 @@ function VenteJeunes ()
             }
             $animal->save();}
                 
+        }
+    }
+}
+
+function retireVente()
+{
+    $vendeurs = Elevage::where('role','Vendeur')->get();
+    foreach ($vendeurs as $vendeur) {
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where('a_vendre', true)->where(function($query) { return $query->where('sexe', 'mâle')->orWhere('sexe', 'femelle');})->get();
+
+        foreach ($animaux as $animal)
+        {
+            $animal->a_vendre = false;
+            $animal->save();
         }
     }
 }
