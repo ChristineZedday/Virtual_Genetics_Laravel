@@ -267,6 +267,7 @@ class AnimalController extends Controller
                 $elevage = Elevage::Find($animal->elevage_id);
                 $race = Race::Find($animal->race_id);
                 $elevage->budget -= $race->frais_enregistrement;
+                $elevage->save();
             }
         }
 
