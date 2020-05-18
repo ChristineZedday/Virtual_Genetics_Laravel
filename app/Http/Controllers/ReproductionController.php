@@ -221,7 +221,7 @@ class ReproductionController extends Controller
             {
                 if ($blanc >=0)
                 {
-                  if ($blanc >=9)
+                  if ($blanc >9)
                   {
                     $image = Image::where('chemin','blanc')->first();
                     $animal->Image()->attach($image->id);
