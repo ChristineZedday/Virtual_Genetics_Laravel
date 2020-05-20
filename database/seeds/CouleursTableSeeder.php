@@ -241,7 +241,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 21,
                 'nom' => 'tobianosabino',
-                'image_id' => NULL,
+                'image_id' => 16,
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
