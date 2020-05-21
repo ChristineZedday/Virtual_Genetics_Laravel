@@ -474,6 +474,17 @@ class CouleursTableSeeder extends Seeder
                 'nom' => 'gris',
                 'image_id' => 47,
                 'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'nom' => 'rouan',
+                'image_id' => NULL,
+                'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
                 'created_at' => NULL,
