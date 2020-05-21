@@ -306,7 +306,7 @@ function achete ()
             $vendeur->budget += $av->prix;
             $vendeur->save();
             $av->elevage_id = $acheteur->id;
-            $av->prix*=2;
+            $av->a_vendre = false;
             $av->save();
 
           }
