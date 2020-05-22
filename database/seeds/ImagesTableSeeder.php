@@ -440,6 +440,24 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            47 => 
+            array (
+                'id' => 48,
+                'chemin' => 'W200',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-22 20:52:39',
+                'updated_at' => '2020-05-22 20:52:39',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'chemin' => 'flaxen',
+                'extension' => 'png',
+                'z_index' => 13,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

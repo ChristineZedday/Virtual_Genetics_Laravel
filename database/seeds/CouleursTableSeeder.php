@@ -505,7 +505,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 45,
                 'nom' => 'alezan crins lavés',
-                'image_id' => NULL,
+                'image_id' => 49,
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 0,
