@@ -97,6 +97,23 @@ class TempsController extends Controller
     return $lettre;
 
     }
+
+    static function saison()
+{
+    $date = TempsController::dateCourante();
+    $mois = date('m',strtotime($date));
+    switch ($mois) {
+        case $mois<3:
+            $saison = false;
+        break;
+        case $mois > 9:
+            $saison = false;
+        break;
+        default:
+        $saison = true;
+    }
+    return $saison;
+}
 }
 
 function checkFemellesTerme($date)
@@ -168,20 +185,12 @@ function checkPuberes()
     }
 }
 
+
+
 function reproNPC($date)
 {
-    $mois = date('m',strtotime($date));
-    switch ($mois) {
-        case $mois<3:
-            $saison = false;
-        break;
-        case $mois > 9:
-            $saison = false;
-        break;
-        default:
-        $saison = true;
-    }
-        if ($saison) {
+    
+        if (TempsController::saison($date)) {
             $vendeurs = Elevage::where('role','Vendeur')->get();
             foreach($vendeurs as $vendeur)
             {

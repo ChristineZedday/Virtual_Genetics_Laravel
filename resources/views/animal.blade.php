@@ -82,12 +82,14 @@
 </div>
 
 @if (($animal->elevage_id == $elevage->id )&& ($animal->sexe=='femelle') && (isset($animal->Statut) && $animal->Statut->vide == true || !isset($animal->Statut)))
+	@if (App\Http\Controllers\TempsController::saison())
 	<div id='saillie'>
 	<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
 				<button >Faire saillir</button>
 			</a>
 	</div>
 	@endif
+@endif
 	<div id="progeny">
 	@foreach ($animal->Progeny() as $petit)
 	<p>{{$petit->NomComplet()}} @if ($animal->sexe == 'femelle' || $animal->sexe == 'vieille femelle') par {{$petit->Sire->NomComplet()}} @endif</p>
