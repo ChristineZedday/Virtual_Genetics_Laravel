@@ -254,7 +254,7 @@ class ReproductionController extends Controller
                 
             } //end foreach
             
-            foreach ($modif_couleurs as $coul) //gris pour l'instant, mofifier pour autres
+            foreach ($modif_couleurs as $coul) //gris, crins lavés pour l'instant
             {
               
                
