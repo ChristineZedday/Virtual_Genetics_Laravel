@@ -228,7 +228,6 @@ class ReproductionController extends Controller
                   }
                   else
                   {
-                    $chemin = $coul->nom;
                     $image = Image::where('chemin',$coul->nom.$blanc)->first();
                     
                     if ($image <> null)
@@ -261,9 +260,17 @@ class ReproductionController extends Controller
                     $base = $animal->Couleur()->where('base_couleur', true)->first();
                     if ($base->nom = 'alezan')
                     {
-                      $image = Image::where('chemin','flaxen')->first();
+                      $mushroom = Couleur::where('nom','mushroom')->first();
+                      if (in_array($mushroom, $dilue_couleurs))
+                      {
+                      $image = Image::where('chemin','crinsblancs')->first();
                       $animal->Image()->attach($image->id);
-
+                      }
+                      else
+                     {
+                       $image = Image::where('chemin','flaxen')->first();
+                      $animal->Image()->attach($image->id);
+}
                     }
                   }
                   else {
