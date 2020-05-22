@@ -256,10 +256,21 @@ class ReproductionController extends Controller
             
             foreach ($modif_couleurs as $coul) //gris, crins lavés pour l'instant
             {
-              
+                  if ($coul->nom = 'crins lavés')
+                  {
+                    $base = $animal->Couleur()->where('base_couleur', true)->first();
+                    if ($base->nom = 'alezan')
+                    {
+                      $image = Image::where('chemin','flaxen')->first();
+                      $animal->Image()->attach($image->id);
+
+                    }
+                  }
+                  else {
                
-                  $image = Image::where('chemin',$coul->nom)->first();
-                  $animal->Image()->attach($image->id);
+                      $image = Image::where('chemin',$coul->nom)->first();
+                      $animal->Image()->attach($image->id);
+                      }
 
             }
       
@@ -322,7 +333,7 @@ function calculConsang($S, $D)
 
 function crenom ($lettre)
 {
-$consonnes = ['b','d','f','g','h','j','k','l','m','n','p','r','s','t','v','w','x','y','z'];
+$consonnes = ['b','d','f','g','h','j','k','l','m','n','p','r','s','t','v','w','x','z'];
 $voyelles = ['a','e','i','o','u','y'];
 return $lettre.$voyelles[array_rand($voyelles)].$consonnes[array_rand($consonnes)].$voyelles[array_rand($voyelles)].$consonnes[array_rand($consonnes)].$voyelles[array_rand($voyelles)];
 }
