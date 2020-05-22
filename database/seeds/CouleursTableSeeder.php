@@ -241,7 +241,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 21,
                 'nom' => 'tobianosabino',
-                'image_id' => NULL,php
+                'image_id' => NULL,
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -486,6 +486,28 @@ class CouleursTableSeeder extends Seeder
                 'image_id' => NULL,
                 'base_couleur' => 0,
                 'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'nom' => 'crins lavés',
+                'image_id' => NULL,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'nom' => 'alezan crins lavés',
+                'image_id' => NULL,
+                'base_couleur' => 0,
+                'est_motif' => 0,
                 'est_dilution' => 0,
                 'created_at' => NULL,
                 'updated_at' => NULL,
