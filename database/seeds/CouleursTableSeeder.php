@@ -197,7 +197,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 17,
                 'nom' => 'tobiano',
-                'image_id' => 12,
+                'image_id' => NULL,
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -208,7 +208,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 18,
                 'nom' => 'sabino',
-                'image_id' => 14,
+                'image_id' => NULL,
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -219,7 +219,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 19,
                 'nom' => 'W20',
-                'image_id' => 15,
+                'image_id' => NULL,
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -241,7 +241,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 21,
                 'nom' => 'tobianosabino',
-                'image_id' => 16,
+                'image_id' => NULL,
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
