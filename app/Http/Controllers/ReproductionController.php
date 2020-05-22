@@ -258,7 +258,7 @@ class ReproductionController extends Controller
                   if ($coul->nom = 'crins lavés')
                   {
                     $base = $animal->Couleur()->where('base_couleur', true)->first();
-                    if ($base->nom = 'alezan')
+                    if ($base->nom == 'alezan')
                     {
                       $mushroom = Couleur::where('nom','mushroom')->first();
                       if (in_array($mushroom, $dilue_couleurs))
