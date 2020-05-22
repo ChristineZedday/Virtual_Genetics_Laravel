@@ -255,7 +255,7 @@ class ReproductionController extends Controller
             
             foreach ($modif_couleurs as $coul) //gris, crins lavés pour l'instant
             {
-                  if ($coul->nom = 'crins lavés')
+                  if ($coul->nom =='crins lavés')
                   {
                     $base = $animal->Couleur()->where('base_couleur', true)->first();
                     if ($base->nom == 'alezan')
