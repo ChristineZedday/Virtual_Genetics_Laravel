@@ -479,6 +479,28 @@ class AllelesTableSeeder extends Seeder
                 'is_default' => 0,
                 'is_dominant' => 0,
             ),
+            42 => 
+            array (
+                'id' => 43,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 24,
+                'nom' => 'Flaxen',
+                'abbrev' => 'f',
+                'is_default' => 0,
+                'is_dominant' => 0,
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 24,
+                'nom' => 'normal',
+                'abbrev' => 'F',
+                'is_default' => 1,
+                'is_dominant' => 1,
+            ),
         ));
         
         

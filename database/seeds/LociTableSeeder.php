@@ -302,6 +302,21 @@ class LociTableSeeder extends Seeder
                 'prev_linked_id' => NULL,
                 'taux_recomb_next' => NULL,
             ),
+            19 => 
+            array (
+                'id' => 24,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'Flaxen ',
+                'abbrev' => 'FLAX',
+                'chromosome' => 'théorique',
+                'linked' => 0,
+                'obligatoire' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
         ));
         
         
