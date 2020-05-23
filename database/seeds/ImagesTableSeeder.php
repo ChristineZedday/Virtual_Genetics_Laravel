@@ -458,6 +458,51 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            49 => 
+            array (
+                'id' => 50,
+                'chemin' => 'sabinoW206',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 15:21:28',
+                'updated_at' => '2020-05-23 15:21:28',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'chemin' => 'rouan1',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 15:24:13',
+                'updated_at' => '2020-05-23 15:24:13',
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'chemin' => 'sabino8',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 15:24:13',
+                'updated_at' => '2020-05-23 15:24:13',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'chemin' => 'W204',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 15:24:26',
+                'updated_at' => '2020-05-23 15:24:26',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'chemin' => 'silver',
+                'extension' => 'png',
+                'z_index' => 24,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

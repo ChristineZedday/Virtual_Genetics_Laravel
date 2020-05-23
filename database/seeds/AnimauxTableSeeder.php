@@ -1259,6 +1259,29 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'taille_additive' => 149,
             ),
+            54 => 
+            array (
+                'id' => 77,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Abbie',
+                'affixe_id' => NULL,
+                'couleur' => NULL,
+                'taille_cm' => 75,
+                'race_id' => 3,
+                'sexe' => 'femelle',
+                'date_achat' => NULL,
+                'date_naissance' => '1968-05-23',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 5,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'taille_additive' => 95,
+            ),
         ));
         
         
