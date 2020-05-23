@@ -285,6 +285,7 @@ class ReproductionController extends Controller
                 case 'pangaré':
                   if ($base->nom == 'bai' || ($base->nom == 'alezan' && in_array($alezanbai, $base_couleurs) ))
                   { 
+                    dd($base_couleurs);
                     $image = Image::where('chemin','pangare')->first();
                     $animal->Image()->attach($image->id);
                   }
