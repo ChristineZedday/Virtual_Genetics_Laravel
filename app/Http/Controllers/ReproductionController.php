@@ -177,29 +177,26 @@ class ReproductionController extends Controller
             if (in_array($alezan, $base_couleurs))
             {
               $animal->Couleur()->attach($alezan->id);
-              if (empty($dilue_couleurs))
-              {
-                $animal->Image()->attach($alezan->image_id);
-              }
+            
+              $animal->Image()->attach($alezan->image_id);
+              
             }
 
             else if (in_array($noirbai, $base_couleurs) && (in_array($alezanbai, $base_couleurs)))
             {
               $animal->Couleur()->attach($bai->id);
-              if (empty($dilue_couleurs))
-              {
+             
                 $animal->Image()->attach($bai->image_id);
-              }
+              
             }
 
             else {
               $animal->Couleur()->attach($noir->id);
-              if (empty($dilue_couleurs))
-              {
+             
                 $animal->Image()->attach($noir->image_id);
-              }
+              
             }
-
+          
            
 
             foreach ($dilue_couleurs as $coul)
@@ -212,6 +209,11 @@ class ReproductionController extends Controller
                   $animal->Couleur()->attach($couleur);
                   $image = Couleur::Find($couleur)->image_id;
                   $animal->Image()->attach($image);
+                }
+
+                if ($coul->nom == 'silver')
+                {
+                  $modif_couleurs[] = $coul; //à la fois dilution (noir silver) et motif (crins lavés des autres Extension)
                 }
                
             }
@@ -246,43 +248,54 @@ class ReproductionController extends Controller
                       $animal->Image()->attach($nimage->id);
                       
                     }
-                  }
-
+                  } //blanc entre 0 et 9
     
-              }//sinon s'exprime pas. Na!
+              } //sinon s'exprime pas. Na!
                 
             } //end foreach
             
             foreach ($modif_couleurs as $coul) //gris, crins lavés pour l'instant
             {
-                  if ($coul->nom =='crins lavés')
+              $base = $animal->Couleur()->where('base_couleur', true)->first();  
+              switch ($coul->nom)
+              {
+                case 'crins lavés':
+                 
+                  if ($base->nom == 'alezan')
                   {
-                    $base = $animal->Couleur()->where('base_couleur', true)->first();
-                    if ($base->nom == 'alezan')
+                    $mushroom = Couleur::where('nom','mushroom')->first();
+                    if (in_array($mushroom, $dilue_couleurs))
                     {
-                      $mushroom = Couleur::where('nom','mushroom')->first();
-                      if (in_array($mushroom, $dilue_couleurs))
-                      {
-                      $image = Image::where('chemin','crinsblancs')->first();
+                    $image = Image::where('chemin','crinsblancs')->first();
+                    $animal->Image()->attach($image->id);
+                    }
+                    else
+                    {
+                      $image = Image::where('chemin','flaxen')->first();
                       $animal->Image()->attach($image->id);
-                      }
-                      else
-                     {
-                       $image = Image::where('chemin','flaxen')->first();
-                      $animal->Image()->attach($image->id);
-}
                     }
                   }
-                  else {
-               
-                      $image = Image::where('chemin',$coul->nom)->first();
-                      $animal->Image()->attach($image->id);
-                      }
+                break;
+                
+                case 'silver':
+                  if ($base->nom == 'bai' || $base->nom == 'noir')
+                  { 
+                    $image = Image::where('chemin','flaxen')->first();
+                    $animal->Image()->attach($image->id);
+                  }
+                break;
 
-            }
+                default:
+                  $image = Image::where('chemin',$coul->nom)->first();
+                  $animal->Image()->attach($image->id);
+                break;
+
+              }
+
+            } //end foreach
       
     
-      }
+      } //end if succès
       else{
            $statut->vide = true;
            $statut->save();
@@ -291,9 +304,9 @@ class ReproductionController extends Controller
    
    
     return redirect()->route('animaux',[$elevage]);
-   }
+   } //end function croisement
   
-}
+} //end class ReproductionController
 
 function calculConsang($S, $D)
 {
