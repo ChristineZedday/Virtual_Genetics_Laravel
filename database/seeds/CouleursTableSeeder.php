@@ -512,6 +512,17 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            45 => 
+            array (
+                'id' => 46,
+                'nom' => 'pangaré',
+                'image_id' => 62,
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

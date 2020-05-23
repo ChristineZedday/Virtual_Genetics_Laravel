@@ -503,6 +503,78 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            54 => 
+            array (
+                'id' => 55,
+                'chemin' => 'rouan3',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 17:04:12',
+                'updated_at' => '2020-05-23 17:04:12',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'chemin' => 'rouan5',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 17:07:29',
+                'updated_at' => '2020-05-23 17:07:29',
+            ),
+            56 => 
+            array (
+                'id' => 57,
+                'chemin' => 'W206',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 17:07:40',
+                'updated_at' => '2020-05-23 17:07:40',
+            ),
+            57 => 
+            array (
+                'id' => 58,
+                'chemin' => 'tobianoW206',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 17:09:08',
+                'updated_at' => '2020-05-23 17:09:08',
+            ),
+            58 => 
+            array (
+                'id' => 59,
+                'chemin' => 'tobianoW204',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 17:10:51',
+                'updated_at' => '2020-05-23 17:10:51',
+            ),
+            59 => 
+            array (
+                'id' => 60,
+                'chemin' => 'sabinoW202',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 17:11:50',
+                'updated_at' => '2020-05-23 17:11:50',
+            ),
+            60 => 
+            array (
+                'id' => 61,
+                'chemin' => 'W205',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => '2020-05-23 17:23:52',
+                'updated_at' => '2020-05-23 17:23:52',
+            ),
+            61 => 
+            array (
+                'id' => 62,
+                'chemin' => 'pangare',
+                'extension' => 'png',
+                'z_index' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
