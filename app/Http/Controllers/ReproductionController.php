@@ -182,11 +182,11 @@ class ReproductionController extends Controller
               
             }
 
-            else if (in_array($noirbai, $base_couleurs) && (in_array($alezanbai, $base_couleurs)))
+            else if (in_array($alezanbai, $base_couleurs) && in_array($noirbai, $base_couleurs))
             {
-              $animal->Couleur()->attach($bai->id);
              
-                $animal->Image()->attach($bai->image_id);
+              $animal->Couleur()->attach($bai->id);
+              $animal->Image()->attach($bai->image_id);
               
             }
 
@@ -196,12 +196,15 @@ class ReproductionController extends Controller
                 $animal->Image()->attach($noir->image_id);
               
             }
-          
-           
 
+            if (in_array($alezanbai, $base_couleurs))
+            {
+              $animal->Couleur()->attach($alezanbai->id);
+            }
+          
             foreach ($dilue_couleurs as $coul)
             {
-                $base = $animal->Couleur()->where('base_couleur', true)->first();
+                $base = $animal->Couleur()->where('base_couleur', true)->where('nom', '<>', 'alezanbai')->first();
                 $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
                 if (isset($couleur))
                   {
@@ -276,11 +279,18 @@ class ReproductionController extends Controller
                     }
                   }
                 break;
+
+                case 'pangaré':
+                  if ($base->nom == 'bai' || ($base->nom == 'alezan' && in_array($alezanbai, $base_couleurs) ))
+                  { 
+                    $image = Image::where('chemin','pangare')->first();
+                    $animal->Image()->attach($image->id);
+                  }
                 
                 case 'silver':
                   if ($base->nom == 'bai' || $base->nom == 'noir')
                   { 
-                    $image = Image::where('chemin','flaxen')->first();
+                    $image = Image::where('chemin','silver')->first();
                     $animal->Image()->attach($image->id);
                   }
                 break;
