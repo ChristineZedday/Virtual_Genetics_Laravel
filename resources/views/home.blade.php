@@ -9,6 +9,7 @@
 	
 		<p>Pour en savoir plus sur la génétique des chevaux, allez sur <a href="http://chrizedday.free.fr">mon site</a>, entre autres!</p>
 		<p><a href="{{route('temps')}}">Avancer d'un mois</a></p>
+		
 		<h2>Liste de vos élevages:</h2>
 		@foreach ($elevages as $elevage)
 			<div><p>{{$elevage->nom_elevage}}</p>

@@ -186,13 +186,14 @@ class ReproductionController extends Controller
             {
              
               $animal->Couleur()->attach($bai->id);
+              $base_couleurs[] = $bai;
               $animal->Image()->attach($bai->image_id);
               
             }
 
             else {
               $animal->Couleur()->attach($noir->id);
-             
+              $base_couleurs[] = $noir;
                 $animal->Image()->attach($noir->image_id);
               
             }
@@ -200,6 +201,7 @@ class ReproductionController extends Controller
             if (in_array($alezanbai, $base_couleurs))
             {
               $animal->Couleur()->attach($alezanbai->id);
+              
             }
           
             foreach ($dilue_couleurs as $coul)
