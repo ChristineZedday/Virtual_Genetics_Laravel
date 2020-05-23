@@ -24,6 +24,7 @@ class GamedatasTableSeeder extends Seeder
                 'updated_at' => '2020-02-16 18:25:51',
                 'budget' => 20000,
                 'date_courante' => '1970-03-01',
+                'date_debut' => '1970-03-01',
             ),
         ));
         

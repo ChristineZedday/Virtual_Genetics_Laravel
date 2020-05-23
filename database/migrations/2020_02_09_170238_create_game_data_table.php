@@ -18,6 +18,7 @@ class CreateGamedataTable extends Migration
             $table->timestamps();
             $table->mediumInteger('budget');
             $table->date('date_courante');
+            $table->date('date_debut');
             $table->string('lettre')->default('E');
         });
     }

@@ -19,12 +19,21 @@ class TempsController extends Controller
         return $date;
     }
 
-    static function nextMonth()
+    static function datedebut()
     {
         $game = Gamedata::Find(1);
-        $date = $game->date();
+        $date = $game->dateDeb();
+        return $date;
+    }
+
+    static function nextMonth()
+    {
+       
+        $date = TempsController::dateCourante();
+      
        
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
+        $game = Gamedata::Find(1);
         $game->date_courante = $date;
         $game->save();
 
@@ -397,4 +406,6 @@ function checkMorts ()
             
     }
 }
+
+
 

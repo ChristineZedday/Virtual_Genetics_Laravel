@@ -18,4 +18,9 @@ class Gamedata extends Model
     {
         return  Gamedata::find(1)->date_courante;
     }
+
+    public function dateDeb()
+    {
+        return  Gamedata::find(1)->date_debut;
+    }
 }
