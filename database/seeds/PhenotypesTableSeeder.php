@@ -665,6 +665,18 @@ class PhenotypesTableSeeder extends Seeder
                 'couleur_id' => 3,
                 'pathologie_id' => NULL,
             ),
+            54 => 
+            array (
+                'id' => 56,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'allele1_id' => 8,
+                'allele2_id' => 6,
+                'effet_taille' => NULL,
+                'effet_blanc' => 3,
+                'couleur_id' => 21,
+                'pathologie_id' => NULL,
+            ),
         ));
         
         
