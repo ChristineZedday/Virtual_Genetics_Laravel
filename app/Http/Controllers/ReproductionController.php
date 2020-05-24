@@ -280,12 +280,12 @@ class ReproductionController extends Controller
             
             foreach ($modif_couleurs as $coul) //gris, crins lavés pour l'instant
             {
-              $base = $animal->Couleur()->where('base_couleur', true)->first();  
+              $base =  $animal->base;
               switch ($coul->nom)
               {
                 case 'crins lavés':
                  
-                  if ($base->nom == 'alezan')
+                  if ($base == 'alezan')
                   {
                     $mushroom = Couleur::where('nom','mushroom')->first();
                     if (in_array($mushroom, $dilue_couleurs))
@@ -302,15 +302,15 @@ class ReproductionController extends Controller
                 break;
 
                 case 'pangaré':
-                  if ($base->nom == 'bai' || ($base->nom == 'alezan' && in_array($alezanbai, $base_couleurs) ))
+                  if ($base == 'bai' || $base == 'alezan agouti')
                   { 
-                    dd($base_couleurs);
+                    
                     $image = Image::where('chemin','pangare')->first();
                     $animal->Image()->attach($image->id);
                   }
                 
                 case 'silver':
-                  if ($base->nom == 'bai' || $base->nom == 'noir')
+                  if ($base == 'bai' || $base == 'noir')
                   { 
                     $image = Image::where('chemin','silver')->first();
                     $animal->Image()->attach($image->id);

@@ -166,7 +166,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'id' => 22,
                 'couleur_res_id' => 26,
                 'couleur1_id' => 3,
-                'couleur2_id' => 8,
+                'couleur2_id' => 25,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -320,6 +320,168 @@ class AssoCouleursTableSeeder extends Seeder
                 'couleur_res_id' => 20,
                 'couleur1_id' => 20,
                 'couleur2_id' => 43,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            34 => 
+            array (
+                'id' => 40,
+                'couleur_res_id' => 47,
+                'couleur1_id' => 47,
+                'couleur2_id' => 33,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            35 => 
+            array (
+                'id' => 41,
+                'couleur_res_id' => 48,
+                'couleur1_id' => 48,
+                'couleur2_id' => 33,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 42,
+                'couleur_res_id' => 10,
+                'couleur1_id' => 47,
+                'couleur2_id' => 7,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            37 => 
+            array (
+                'id' => 43,
+                'couleur_res_id' => 10,
+                'couleur1_id' => 48,
+                'couleur2_id' => 7,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            38 => 
+            array (
+                'id' => 44,
+                'couleur_res_id' => 11,
+                'couleur1_id' => 47,
+                'couleur2_id' => 8,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            39 => 
+            array (
+                'id' => 45,
+                'couleur_res_id' => 11,
+                'couleur1_id' => 48,
+                'couleur2_id' => 8,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            40 => 
+            array (
+                'id' => 46,
+                'couleur_res_id' => 14,
+                'couleur1_id' => 47,
+                'couleur2_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            41 => 
+            array (
+                'id' => 47,
+                'couleur_res_id' => 14,
+                'couleur1_id' => 48,
+                'couleur2_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            42 => 
+            array (
+                'id' => 48,
+                'couleur_res_id' => 26,
+                'couleur1_id' => 47,
+                'couleur2_id' => 25,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 49,
+                'couleur_res_id' => 26,
+                'couleur1_id' => 48,
+                'couleur2_id' => 25,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            44 => 
+            array (
+                'id' => 50,
+                'couleur_res_id' => 31,
+                'couleur1_id' => 47,
+                'couleur2_id' => 29,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            45 => 
+            array (
+                'id' => 51,
+                'couleur_res_id' => 31,
+                'couleur1_id' => 48,
+                'couleur2_id' => 29,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            46 => 
+            array (
+                'id' => 52,
+                'couleur_res_id' => 37,
+                'couleur1_id' => 47,
+                'couleur2_id' => 36,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            47 => 
+            array (
+                'id' => 53,
+                'couleur_res_id' => 37,
+                'couleur1_id' => 48,
+                'couleur2_id' => 36,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            48 => 
+            array (
+                'id' => 54,
+                'couleur_res_id' => 41,
+                'couleur1_id' => 47,
+                'couleur2_id' => 38,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            49 => 
+            array (
+                'id' => 55,
+                'couleur_res_id' => 41,
+                'couleur1_id' => 48,
+                'couleur2_id' => 38,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            50 => 
+            array (
+                'id' => 56,
+                'couleur_res_id' => 45,
+                'couleur1_id' => 47,
+                'couleur2_id' => 44,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            51 => 
+            array (
+                'id' => 57,
+                'couleur_res_id' => 45,
+                'couleur1_id' => 48,
+                'couleur2_id' => 44,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
