@@ -302,6 +302,7 @@ class ReproductionController extends Controller
                 break;
 
                 case 'pangaré':
+                  dd('ds pangaré');
                   if ($base == 'bai' || $base == 'alezan agouti')
                   { 
                     
