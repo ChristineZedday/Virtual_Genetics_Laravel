@@ -3,22 +3,20 @@ animaux à vendre de l'élevage vendeur?
 
 chevaux silver qui devraient pas?
 
-rouan doit être accentué, pas assez visible
-refaire gris également
 
-tobianosabino et tobiano rouan marchent pas?
+
 
 plusieurs images par couleurs avec table pivot couleur_image
 pour tobianorouan il faut 2 images
 séparer crins/robes/etc pour gérer mieux les doubles dilutions
 attacher l'ensemble des images à chaque bourrin
 
-images à faire: série des splash sw1
+images à faire: série des splash sw1 à finir
 robes léopard
 
 rabicano après ajout locus/allèle/phénotype/couleur/image
 
-rajout problème oeil pour silver et LPLP
+rajout problème oeil pour LPLP
 
 sooty?
 
