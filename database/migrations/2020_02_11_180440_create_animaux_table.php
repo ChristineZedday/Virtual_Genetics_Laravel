@@ -19,6 +19,7 @@ class CreateAnimauxTable extends Migration
             $table->string('nom')->nullable();
             $table->bigInteger('affixe_id')->unsigned()->nullable();
             $table->string('couleur')->nullable();
+            $table->enum('base',['bai','noir', 'alezan aa', 'alezan agouti'])->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
             $table->bigInteger('race_id')->unsigned()->nullable();
             $table->enum('sexe',['mâle','femelle', 'jeune mâle', 'jeune femelle', 'mâle stérilisé', 'femelle stérilisée', 'vieille femelle', 'vieux mâle']);

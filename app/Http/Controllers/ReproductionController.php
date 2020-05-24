@@ -174,39 +174,58 @@ class ReproductionController extends Controller
             $noir = Couleur::where('nom','noir')->first();
             $alezanbai = Couleur::where('nom','alezanbai')->first();
            
-            if (in_array($alezan, $base_couleurs))
+            switch (true)
             {
-              $animal->Couleur()->attach($alezan->id);
-            
-              $animal->Image()->attach($alezan->image_id);
-              
-            }
+              case in_array($alezan, $base_couleurs) && in_array($alezanbai, $base_couleurs):
 
-            else if (in_array($alezanbai, $base_couleurs) && in_array($noirbai, $base_couleurs))
-            {
-             
-              $animal->Couleur()->attach($bai->id);
-              $base_couleurs[] = $bai;
-              $animal->Image()->attach($bai->image_id);
-              
-            }
+                $animal->base = 'alezan agouti';
+                $animal->save();
+                
+                  $animal->Couleur()->attach($alezan->id);
+                
+                  $animal->Image()->attach($alezan->image_id);
+                  
+              break;
 
-            else {
-              $animal->Couleur()->attach($noir->id);
-              $base_couleurs[] = $noir;
+              case in_array($alezan, $base_couleurs) && !(in_array($alezanbai, $base_couleurs)):
+
+                $animal->base = 'alezan aa';
+                $animal->save();
+                
+                  $animal->Couleur()->attach($alezan->id);
+                
+                  $animal->Image()->attach($alezan->image_id);
+                  
+              break;
+
+              case in_array($alezanbai, $base_couleurs) && in_array($noirbai, $base_couleurs):
+
+                $animal->base = 'bai';
+                $animal->save();
+                
+                $animal->Couleur()->attach($bai->id);
+                
+                $animal->Image()->attach($bai->image_id);
+                  
+              break;
+
+              default:
+
+                $animal->base = 'noir';
+                $animal->save();
+                  
+                $animal->Couleur()->attach($noir->id);
+                
                 $animal->Image()->attach($noir->image_id);
-              
-            }
+                  
+              break;
 
-            if (in_array($alezanbai, $base_couleurs))
-            {
-              $animal->Couleur()->attach($alezanbai->id);
-              
+
             }
           
             foreach ($dilue_couleurs as $coul)
             {
-                $base = $animal->Couleur()->where('base_couleur', true)->where('nom', '<>', 'alezanbai')->first();
+                $base = Couleur::where('nom', $animal->base)->first();
                 $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
                 if (isset($couleur))
                   {
