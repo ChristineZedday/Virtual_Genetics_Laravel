@@ -285,7 +285,7 @@ class ReproductionController extends Controller
               {
                 case 'crins lavés':
                  
-                  if ($base == 'alezan aa' || 'alezan agouti')
+                  if ($base == 'alezan aa' || $base == 'alezan agouti')
                   {
                     $mushroom = Couleur::where('nom','mushroom')->first();
                     if (in_array($mushroom, $dilue_couleurs))
