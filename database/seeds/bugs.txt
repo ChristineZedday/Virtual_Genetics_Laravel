@@ -1,8 +1,12 @@
 
 animaux à vendre de l'élevage vendeur?
 
+chevaux silver qui devraient pas?
+
 rouan doit être accentué, pas assez visible
 refaire gris également
+
+tobianosabino et tobiano rouan marchent pas
 
 plusieurs images par couleurs avec table pivot couleur_image
 pour tobianorouan il faut 2 images
