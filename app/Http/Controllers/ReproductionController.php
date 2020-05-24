@@ -278,14 +278,14 @@ class ReproductionController extends Controller
                 
             } //end foreach
             
-            foreach ($modif_couleurs as $coul) //gris, crins lavés pour l'instant
+            foreach ($modif_couleurs as $coul) 
             {
               $base =  $animal->base;
               switch ($coul->nom)
               {
                 case 'crins lavés':
                  
-                  if ($base == 'alezan')
+                  if ($base == 'alezan aa' || 'alezan agouti')
                   {
                     $mushroom = Couleur::where('nom','mushroom')->first();
                     if (in_array($mushroom, $dilue_couleurs))

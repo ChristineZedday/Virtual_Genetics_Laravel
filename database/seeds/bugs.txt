@@ -6,9 +6,6 @@ pangaré ne marche pas
 rouan doit être accentué, pas assez visible
 refaire gris également
 
-idée : rajouter robe de base dans animaux, avec alezan agouti pour les alz animaux
-supprimer le tableau base_couleurs utiliser la couleur db
-
 plusieurs images par couleurs avec table pivot couleur_image
 pour tobianorouan il faut 2 images
 séparer crins/robes/etc pour gérer mieux les doubles dilutions
