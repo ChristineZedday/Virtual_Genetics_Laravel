@@ -373,7 +373,7 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 33,
                 'nom' => 'silver',
-                'image_id' => NULL,
+                'image_id' => 54,
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
