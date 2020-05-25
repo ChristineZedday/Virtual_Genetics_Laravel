@@ -233,12 +233,14 @@ class ReproductionController extends Controller
                   $animal->Couleur()->attach($couleur);
                   $image = Couleur::Find($couleur)->image_id;
                   $animal->Image()->attach($image);
+
+                  if ($coul->nom == 'silver')
+                  {
+                    $modif_couleurs[] = $coul; //à la fois dilution (noir silver) et motif (crins lavés des autres Extension)
+                  }
                 }
 
-                if ($coul->nom == 'silver')
-                {
-                  $modif_couleurs[] = $coul; //à la fois dilution (noir silver) et motif (crins lavés des autres Extension)
-                }
+              
                
             }
             //gérer les dilutions multiples au moyen de couches d'images?
