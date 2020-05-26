@@ -250,36 +250,72 @@ class ReproductionController extends Controller
 
             foreach ($motif_couleurs as $coul)
             {
-                if ($blanc >=0)
-                {
-                  if ($blanc >9)
+              switch (true)
+              {
+                case $blanc < 0:
+                break;
+
+                case $blanc > 9:
+                  $image = Image::where('chemin','blanc')->first();
+                  $animal->Image()->attach($image->id);
+                break;
+
+                case $coul == 'tobianorouan':
+                  $image = Image::where('chemin','tobiano'.$blanc)->first();
+                    
+                  if ($image <> null)
                   {
-                    $image = Image::where('chemin','blanc')->first();
                     $animal->Image()->attach($image->id);
                   }
-                  else
+                  else 
                   {
-                    $image = Image::where('chemin',$coul->nom.$blanc)->first();
+                    $nimage=new Image();
+                    $nimage->extension = 'png';
+                    $nimage->chemin ='tobiano'.$blanc;
+                  //et faudra la dessiner si c'est pas fait!
+                    $nimage->z_index =80;
+                    $nimage->save();
+                    $animal->Image()->attach($nimage->id);
+                  }
+
+                    $image = Image::where('chemin','rouan'.$blanc)->first();
                     
-                    if ($image <> null)
-                    {
+                  if ($image <> null)
+                  {
+                    $animal->Image()->attach($image->id);
+                  }
+                  else 
+                  {
+                    $nimage=new Image();
+                    $nimage->extension = 'png';
+                    $nimage->chemin ='rouan'.$blanc;
+                  //et faudra la dessiner si c'est pas fait!
+                    $nimage->z_index =80;
+                    $nimage->save();
+                    $animal->Image()->attach($nimage->id);
                     
-                      $animal->Image()->attach($image->id);
-                    }
-                    else 
-                    {
-                      $nimage=new Image();
-                      $nimage->extension = 'png';
-                      $nimage->chemin =$coul->nom.$blanc;
-                    //et faudra la dessiner si c'est pas fait!
-                      $nimage->z_index =80;
-                      $nimage->save();
-                      $animal->Image()->attach($nimage->id);
-                      
-                    }
-                  } //blanc entre 0 et 9
-    
-              } //sinon s'exprime pas. Na!
+                  }
+                break;
+
+                default:
+                $image = Image::where('chemin',$coul->nom.$blanc)->first();
+                    
+                if ($image <> null)
+                {
+                  $animal->Image()->attach($image->id);
+                }
+                else 
+                {
+                  $nimage=new Image();
+                  $nimage->extension = 'png';
+                  $nimage->chemin =$coul->nom.$blanc;
+                //et faudra la dessiner si c'est pas fait!
+                  $nimage->z_index =80;
+                  $nimage->save();
+                  $animal->Image()->attach($nimage->id);
+                }
+
+              }
                 
             } //end foreach
             
