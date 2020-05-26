@@ -354,7 +354,7 @@ class ReproductionController extends Controller
                 //     $image = Image::where('chemin','silver')->first();
                 //     $animal->Image()->attach($image->id);
                 //   }
-                // break;
+                break;
 
                 default:
                   $image = Image::where('chemin',$coul->nom)->first();
