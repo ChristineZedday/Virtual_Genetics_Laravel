@@ -1,7 +1,7 @@
 
 animaux à vendre de l'élevage vendeur?
 
-chevaux silver qui devraient pas?
+
 
 
 
@@ -11,8 +11,8 @@ pour tobianorouan il faut 2 images
 séparer crins/robes/etc pour gérer mieux les doubles dilutions
 attacher l'ensemble des images à chaque bourrin
 
-images à faire: série des splash sw1 à finir
-robes léopard
+images à faire: 
+robes léopard, couverture, varnish
 
 rabicano après ajout locus/allèle/phénotype/couleur/image
 
@@ -24,3 +24,4 @@ gérer la vente de saillies (joueur et PNJ), la castration
 
 insémination artificielle, échographie: version prochaine
 
+races selon taille
