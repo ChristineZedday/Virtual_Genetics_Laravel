@@ -348,13 +348,13 @@ class ReproductionController extends Controller
                     $animal->Image()->attach($image->id);
                   }
                 
-                case 'silver':
-                  if ($base == 'bai' || $base == 'noir')
-                  { 
-                    $image = Image::where('chemin','silver')->first();
-                    $animal->Image()->attach($image->id);
-                  }
-                break;
+                // case 'silver':
+                //   if ($base == 'bai' || $base == 'noir')
+                //   { 
+                //     $image = Image::where('chemin','silver')->first();
+                //     $animal->Image()->attach($image->id);
+                //   }
+                // break;
 
                 default:
                   $image = Image::where('chemin',$coul->nom)->first();
