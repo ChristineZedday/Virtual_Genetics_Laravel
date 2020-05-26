@@ -650,7 +650,7 @@ class PhenotypesTableSeeder extends Seeder
                 'allele2_id' => 17,
                 'effet_taille' => NULL,
                 'effet_blanc' => 3,
-                'couleur_id' => 17,
+                'couleur_id' => 50,
                 'pathologie_id' => NULL,
             ),
             53 => 

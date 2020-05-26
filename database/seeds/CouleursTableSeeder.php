@@ -21,7 +21,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'nom' => 'bai',
-               
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -32,7 +31,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'nom' => 'noir',
-           
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -43,7 +41,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'nom' => 'alezan',
-             
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -54,7 +51,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'nom' => 'noirbai',
-               
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -65,7 +61,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'nom' => 'alezanbai',
-                
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -76,7 +71,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'nom' => 'alezannoir',
-              
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -87,7 +81,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'nom' => 'creme',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -98,7 +91,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 8,
                 'nom' => 'doublecreme',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -109,7 +101,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 9,
                 'nom' => 'isabelle',
-              
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -120,7 +111,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 10,
                 'nom' => 'palomino',
-             
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -131,7 +121,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 11,
                 'nom' => 'cremello',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -142,7 +131,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'nom' => 'perlino',
-                
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -153,7 +141,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 13,
                 'nom' => 'smoky cream',
-                
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -164,7 +151,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 14,
                 'nom' => 'abricot',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -175,7 +161,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 15,
                 'nom' => 'bai perle',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -186,7 +171,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 16,
                 'nom' => 'doublepearl',
-              
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -197,7 +181,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 17,
                 'nom' => 'tobiano',
-               
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -208,7 +191,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 18,
                 'nom' => 'sabino',
-              
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -219,7 +201,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 19,
                 'nom' => 'W20',
-             
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -230,7 +211,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 20,
                 'nom' => 'Blanc',
-               
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -241,7 +221,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 21,
                 'nom' => 'tobianosabino',
-               
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -252,7 +231,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 22,
                 'nom' => 'tobianoW20',
-              
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -263,7 +241,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 23,
                 'nom' => 'sabinoW20',
-                
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -274,7 +251,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 24,
                 'nom' => 'noir perle',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -285,7 +261,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 25,
                 'nom' => 'cremeperle',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -296,7 +271,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 26,
                 'nom' => 'pseudocremello',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -307,7 +281,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 27,
                 'nom' => 'pseudoperlino',
-              
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -318,7 +291,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 28,
                 'nom' => 'pseudosmoky',
-                
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -329,7 +301,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 29,
                 'nom' => 'dun',
-                
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -340,7 +311,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 30,
                 'nom' => 'bai dun',
-                
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -351,7 +321,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 31,
                 'nom' => 'alezan dun',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -362,7 +331,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 32,
                 'nom' => 'souris',
-            
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -373,7 +341,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 33,
                 'nom' => 'silver',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -384,7 +351,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 34,
                 'nom' => 'baisilver',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -395,7 +361,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 35,
                 'nom' => 'noirsilver',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -406,7 +371,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 36,
                 'nom' => 'mushroom',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -417,7 +381,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 37,
                 'nom' => 'mushroom',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -428,7 +391,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 38,
                 'nom' => 'champagne',
-              
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -439,7 +401,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 39,
                 'nom' => 'champagneor',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -450,7 +411,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 40,
                 'nom' => 'champagneambre',
-            
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -461,7 +421,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 41,
                 'nom' => 'champagneclassique',
-                
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 1,
@@ -472,7 +431,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 42,
                 'nom' => 'gris',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -483,7 +441,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 43,
                 'nom' => 'rouan',
-             
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,
@@ -494,7 +451,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 44,
                 'nom' => 'crins lavés',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -505,7 +461,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 45,
                 'nom' => 'alezan crins lavés',
-               
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -516,7 +471,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 46,
                 'nom' => 'pangaré',
-              
                 'base_couleur' => 0,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -527,7 +481,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 47,
                 'nom' => 'alezan aa',
-               
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -538,7 +491,6 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 48,
                 'nom' => 'alezan agouti',
-              
                 'base_couleur' => 1,
                 'est_motif' => 0,
                 'est_dilution' => 0,
@@ -549,7 +501,16 @@ class CouleursTableSeeder extends Seeder
             array (
                 'id' => 49,
                 'nom' => 'splash',
-               
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'nom' => 'tobianorouan',
                 'base_couleur' => 0,
                 'est_motif' => 1,
                 'est_dilution' => 0,

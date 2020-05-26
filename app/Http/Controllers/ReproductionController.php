@@ -237,10 +237,7 @@ class ReproductionController extends Controller
                   foreach ($images as $image)
                   { $animal->Image()->attach($image->id);}
 
-                  if ($coul->nom == 'silver')
-                  {
-                    $modif_couleurs[] = $coul; //à la fois dilution (noir silver) et motif (crins lavés des autres Extension)
-                  }
+                 
                 }
 
               
