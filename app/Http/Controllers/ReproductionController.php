@@ -182,8 +182,8 @@ class ReproductionController extends Controller
                 $animal->save();
                 
                   $animal->Couleur()->attach($alezan->id);
-                
-                  $animal->Image()->attach($alezan->image_id);
+                  foreach ($alezan->Images as $image)
+                 { $animal->Image()->attach($image->id);}
                   
               break;
 
@@ -193,8 +193,8 @@ class ReproductionController extends Controller
                 $animal->save();
                 
                   $animal->Couleur()->attach($alezan->id);
-                
-                  $animal->Image()->attach($alezan->image_id);
+                  foreach ($alezan->Images as $image)
+                 { $animal->Image()->attach($image->id);}
                   
               break;
 
@@ -205,7 +205,8 @@ class ReproductionController extends Controller
                 
                 $animal->Couleur()->attach($bai->id);
                 
-                $animal->Image()->attach($bai->image_id);
+                foreach ($bai->Images as $image)
+                { $animal->Image()->attach($image->id);}
                   
               break;
 
@@ -215,8 +216,8 @@ class ReproductionController extends Controller
                 $animal->save();
                   
                 $animal->Couleur()->attach($noir->id);
-                
-                $animal->Image()->attach($noir->image_id);
+                foreach ($noir->Images as $image)
+                { $animal->Image()->attach($image->id);}
                   
               break;
 
@@ -231,8 +232,10 @@ class ReproductionController extends Controller
                   {
                     $couleur = $couleur->couleur_res_id;
                   $animal->Couleur()->attach($couleur);
-                  $image = Couleur::Find($couleur)->image_id;
-                  $animal->Image()->attach($image);
+
+                  $images = Couleur::Find($couleur)->Images;
+                  foreach ($images as $image)
+                  { $animal->Image()->attach($image->id);}
 
                   if ($coul->nom == 'silver')
                   {

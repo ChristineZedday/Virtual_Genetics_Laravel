@@ -31,5 +31,6 @@ class DatabaseSeeder extends Seeder
        
         $this->call(AssoCouleursTableSeeder::class);
         $this->call(AssoRaceTableSeeder::class);
+        $this->call(CouleurImageTableSeeder::class);
     }
 }
