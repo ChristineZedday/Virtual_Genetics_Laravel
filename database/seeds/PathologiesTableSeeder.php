@@ -41,6 +41,14 @@ class PathologiesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            3 => 
+            array (
+                'id' => 4,
+                'nom' => 'absence de vision nocturne',
+                'description' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

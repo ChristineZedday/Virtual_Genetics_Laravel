@@ -723,7 +723,7 @@ class PhenotypesTableSeeder extends Seeder
                 'effet_taille' => NULL,
                 'effet_blanc' => NULL,
                 'couleur_id' => 54,
-                'pathologie_id' => NULL,
+                'pathologie_id' => 4,
             ),
             59 => 
             array (
