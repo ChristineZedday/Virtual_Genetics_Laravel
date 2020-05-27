@@ -584,6 +584,42 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            63 => 
+            array (
+                'id' => 64,
+                'chemin' => 'Lpsabots',
+                'extension' => 'png',
+                'z_index' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            64 => 
+            array (
+                'id' => 65,
+                'chemin' => 'LpPeau',
+                'extension' => 'png',
+                'z_index' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            65 => 
+            array (
+                'id' => 66,
+                'chemin' => 'LpPATN0',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            66 => 
+            array (
+                'id' => 67,
+                'chemin' => 'LpLpPATN',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

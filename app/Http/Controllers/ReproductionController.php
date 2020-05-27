@@ -244,7 +244,8 @@ class ReproductionController extends Controller
                
             }
             //gérer les dilutions multiples au moyen de couches d'images?
-
+            $LP = false;
+            $LPLP = false;
             foreach ($motif_couleurs as $coul)
             {
               switch (true)
@@ -257,7 +258,7 @@ class ReproductionController extends Controller
                   $animal->Image()->attach($image->id);
                 break;
 
-                case $coul == 'tobianorouan':
+                case $coul->nom == 'tobianorouan':
                   $image = Image::where('chemin','tobiano'.$blanc)->first();
                     
                   if ($image <> null)
@@ -293,6 +294,44 @@ class ReproductionController extends Controller
                     
                   }
                 break;
+
+                case $coul->nom == 'marmoré' || $coul->nom == 'doubleLP':
+                  $LP = true;
+                  foreach ($coul->Images as $image)
+                  {
+                     $animal->Image()->attach($image->id);
+                  }
+                break;
+
+                case $coul->nom ==  'doubleLP':
+                  $LPLP = true;
+                  foreach ($coul->Images as $image)
+                  {
+                     $animal->Image()->attach($image->id);
+                  }
+
+                break;
+
+                case $coul->nom == 'couverture':
+                  if ($LP)
+                  {
+                    $images = Couleur::where('nom', 'couverture tachetée')->Images;
+                        foreach ($images as $image)
+                      {
+                        $animal->Image()->attach($image->id);
+                      }
+
+                  }
+                  else if ($LPLP)
+                  {
+                    $images = Couleur::where('nom', 'couverture blanche')->Images;
+                    foreach ($images as $image)
+                  {
+                    $animal->Image()->attach($image->id);
+                  }
+                  }
+                break;
+
 
                 default:
                 $image = Image::where('chemin',$coul->nom.$blanc)->first();
