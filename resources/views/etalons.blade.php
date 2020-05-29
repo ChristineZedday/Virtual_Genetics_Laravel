@@ -6,7 +6,7 @@
 <p>{{$jument->NomComplet()}}</p>
 <p>{{$jument->Race->nom}}</p>
 <p>{{$jument->couleur}}</p>
-<P>{{$jument_>taille_cm}}</P>
+<P>{{$jument->taille_cm}}</P>
 @if (! $jument->fondateur)
 <p>par {{$jument->Sire->NomComplet()}}</p>
 <p>et {{$jument->Dam->NomComplet()}}</p>
