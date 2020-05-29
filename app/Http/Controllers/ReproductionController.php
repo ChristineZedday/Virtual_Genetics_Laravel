@@ -235,7 +235,10 @@ class ReproductionController extends Controller
 
                   $images = Couleur::Find($couleur)->Images;
                   foreach ($images as $image)
-                  { $animal->Image()->attach($image->id);}
+                  { 
+                    if ($image <> null)
+                    {$animal->Image()->attach($image->id);}
+                  }
 
                  
                 }
@@ -254,44 +257,11 @@ class ReproductionController extends Controller
                 break;
 
                 case $blanc > 9:
-                  $image = Image::where('chemin','blanc')->first();
-                  $animal->Image()->attach($image->id);
-                break;
-
-                case $coul->nom == 'tobianorouan':
-                  $image = Image::where('chemin','tobiano'.$blanc)->first();
-                    
-                  if ($image <> null)
+                  $couleur = Couleur::where('nom','Blanc')->first();
+                  $images = $couleur->Images;
+                  foreach ($images as $image)
                   {
                     $animal->Image()->attach($image->id);
-                  }
-                  else 
-                  {
-                    $nimage=new Image();
-                    $nimage->extension = 'png';
-                    $nimage->chemin ='tobiano'.$blanc;
-                  //et faudra la dessiner si c'est pas fait!
-                    $nimage->z_index =80;
-                    $nimage->save();
-                    $animal->Image()->attach($nimage->id);
-                  }
-
-                    $image = Image::where('chemin','rouan'.$blanc)->first();
-                    
-                  if ($image <> null)
-                  {
-                    $animal->Image()->attach($image->id);
-                  }
-                  else 
-                  {
-                    $nimage=new Image();
-                    $nimage->extension = 'png';
-                    $nimage->chemin ='rouan'.$blanc;
-                  //et faudra la dessiner si c'est pas fait!
-                    $nimage->z_index =80;
-                    $nimage->save();
-                    $animal->Image()->attach($nimage->id);
-                    
                   }
                 break;
 
@@ -315,7 +285,7 @@ class ReproductionController extends Controller
                 case $coul->nom == 'couverture':
                   if ($LP)
                   {
-                    $images = Couleur::where('nom', 'couverture tachetée')->Images;
+                    $images = Couleur::where('nom', 'couverture tachetée')->first()->Images;
                         foreach ($images as $image)
                       {
                         $animal->Image()->attach($image->id);
@@ -324,34 +294,28 @@ class ReproductionController extends Controller
                   }
                   else if ($LPLP)
                   {
-                    $images = Couleur::where('nom', 'couverture blanche')->Images;
-                    foreach ($images as $image)
-                  {
-                    $animal->Image()->attach($image->id);
-                  }
+                    $images = Couleur::where('nom', 'couverture blanche')->first()->Images;
+                      foreach ($images as $image)
+                    {
+                      $animal->Image()->attach($image->id);
+                    }
                   }
                 break;
 
 
                 default:
-                $image = Image::where('chemin',$coul->nom.$blanc)->first();
+                $couleur = Couleur::where('nom',$coul->nom.$blanc)->first();
+                $images = $couleur->Images;
+               
+                     foreach ($images as $image)
+                      { 
+                        if ($image <> null)
+                      
+                       { $animal->Image()->attach($image->id);}
+                      }
                     
-                if ($image <> null)
-                {
-                  $animal->Image()->attach($image->id);
-                }
-                else 
-                {
-                  $nimage=new Image();
-                  $nimage->extension = 'png';
-                  $nimage->chemin =$coul->nom.$blanc;
-                //et faudra la dessiner si c'est pas fait!
-                  $nimage->z_index =80;
-                  $nimage->save();
-                  $animal->Image()->attach($nimage->id);
-                }
-
-              }
+               
+              } //end switch
                 
             } //end foreach
             

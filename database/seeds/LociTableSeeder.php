@@ -58,9 +58,9 @@ class LociTableSeeder extends Seeder
                 'chromosome' => 'ECA3q21-22',
                 'linked' => 1,
                 'obligatoire' => 0,
-                'next_linked_id' => NULL,
+                'next_linked_id' => 26,
                 'prev_linked_id' => 2,
-                'taux_recomb_next' => NULL,
+                'taux_recomb_next' => 0,
             ),
             3 => 
             array (
@@ -330,6 +330,36 @@ class LociTableSeeder extends Seeder
                 'obligatoire' => 0,
                 'next_linked_id' => NULL,
                 'prev_linked_id' => NULL,
+                'taux_recomb_next' => NULL,
+            ),
+            21 => 
+            array (
+                'id' => 26,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'Tobiano',
+                'abbrev' => 'TOBKIT',
+                'chromosome' => 'ECA3q21-22',
+                'linked' => 1,
+                'obligatoire' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => 3,
+                'taux_recomb_next' => 0,
+            ),
+            22 => 
+            array (
+                'id' => 27,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'espece_id' => 1,
+                'nom' => 'Rouan',
+                'abbrev' => 'RNKIT',
+                'chromosome' => 'ECA3q21-22',
+                'linked' => 1,
+                'obligatoire' => 0,
+                'next_linked_id' => NULL,
+                'prev_linked_id' => 26,
                 'taux_recomb_next' => NULL,
             ),
         ));

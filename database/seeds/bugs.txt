@@ -1,13 +1,9 @@
 
 animaux à vendre de l'élevage vendeur?
 
-y a tjrs des silver qui devraient pas
+tobianosabino?
+refaire gris
 
-
-
-
-plusieurs images par couleurs avec table pivot couleur_image
-pour tobianorouan il faut 2 images
 séparer crins/robes/etc pour gérer mieux les doubles dilutions
 attacher l'ensemble des images à chaque bourrin
 
@@ -16,7 +12,6 @@ robes léopard, couverture, varnish
 
 rabicano après ajout locus/allèle/phénotype/couleur/image
 
-rajout problème oeil pour LPLP
 
 sooty?
 
