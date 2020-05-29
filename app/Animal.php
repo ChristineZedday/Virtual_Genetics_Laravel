@@ -41,7 +41,8 @@ class Animal extends Model
 
     public function Progeny()
     {
-        $animaux =  Animal::where('dam_id', $this->id)->orWhere('sire_id', $this->id)->get();
+        $animal = $this;
+        $animaux =  Animal::where('foetus', 0)->where(function ($q) use ($animal) { $q->where('dam_id', $animal->id)->orWhere('sire_id', $animal->id);})->get();
         return $animaux;
     }
 
