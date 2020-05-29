@@ -10,6 +10,7 @@
 <p>{{$etalon->Dam->NomComplet()}}</p>
 @endif
 <p>{{$etalon->date_naissance}}</p>
+<p></p>
 
 </span>
 <span id = 'femelle'>
@@ -26,7 +27,9 @@
 </span>
 
 <a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id])}}">
-			<button>Confirmer le croisement?</button></a>
+			<button>Confirmer le croisement</button></a>
+<a href="{{route('saillir',[$elevage->id,,$jument->id])}}">
+			<button>Changer d'étalon</button></a>
 
 
 
