@@ -22,8 +22,8 @@
 {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	align-items: flex-start;
+
 
 }
 #boutons {
@@ -34,4 +34,46 @@
 	button {
 		margin-top: 20px;
 	}
+}
+
+#animal
+{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin: 50px;
+	
+	#rensa
+	{
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+		justify-content: space-between;
+		
+	}
+	#imb 
+	{
+		
+		// display: flex;
+		// flex-direction: column;
+		// flex-grow: 1.2;
+		margin: 50px;
+		// align-items: flex-start;
+		// justify-content: space-between;
+
+		}
+	}
+
+
+	#boutonsa
+	{
+	// 	display: flex;
+	// 	flex-direction: column;
+		position: relative;
+		top: 500px;
+		button {
+			margin-top: 20px;
+		}
+
 }
