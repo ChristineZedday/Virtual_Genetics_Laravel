@@ -10890,6 +10890,13 @@ a.text-dark:focus {
   background-color: #f3d186;
 }
 
+.bandeau nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .bandeau .alert {
   margin-left: 50px;
 }
@@ -10911,6 +10918,21 @@ a.text-dark:focus {
   text-decoration: none;
   color: #2f2429;
   text-transform: uppercase;
+}
+
+.bandeau #temps {
+  display: inline;
+  margin-right: 50px;
+}
+
+.bandeau #temps a {
+  text-decoration: none;
+  color: #2f2429;
+  text-transform: uppercase;
+}
+
+.bandeau #temps p {
+  color: #e3342f;
 }
 
 .animaux h3 {

@@ -16,19 +16,23 @@
 $game =  App\Gamedata::Find(1);
 $date = $game->date();
 ?>
-<span>{{$date}}</span>
+
 <nav>
 	<ul>
 		<li><a href="{{route('animaux',[$elevage])}}">Voir mon cheptel</a></li>
 		<li><a href="{{route('budget',[$elevage])}}">Voir mon budget</a></li>
-		<li><a href="{{route('temps')}}">Avancer d'un mois</a></li>
-		<li><a href="{{route('home')}}">Voir mes élevages</a></li>
+	
+		<li><a href="{{route('home')}}">Changer d'élevage</a></li>
 		<li><a href="{{route('animaux.avendre',[$elevage])}}">Acheter un animal</a></li>
-		<li><a href="{{route('reproduction.jument',[$elevage])}}">Faire saillir</a></li>
+		<li><a href="{{route('reproduction.jument',[$elevage])}}">Faire saillir une jument</a></li>
+		</ul>
+		<span id='temps'>
+		<p id='ladate'>{{$date}}</p>
+		<a href="{{route('temps')}}">Avancer d'un mois</a><p>Irreversible!</p></span>
 		                       
 
                                   
-	</ul>
+	
 </nav>
 @if (session('alert'))
     <div class="alert" }>

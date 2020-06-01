@@ -113,6 +113,18 @@ class ElevagesTableSeeder extends Seeder
                 'role' => 'Joueur',
                 'user_id' => 2,
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'affixe_id' => 48,
+                'created_at' => '2020-05-31 15:38:47',
+                'updated_at' => '2020-05-31 15:38:47',
+                'nom_elevage' => 'Must of Mushroom',
+                'nom_eleveur' => 'Christine Gallo',
+                'budget' => 19500,
+                'role' => 'Joueur',
+                'user_id' => 2,
+            ),
         ));
         
         

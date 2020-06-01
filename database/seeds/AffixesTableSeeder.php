@@ -385,6 +385,14 @@ class AffixesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            46 => 
+            array (
+                'id' => 48,
+                'libelle' => 'de Champignac',
+                'affixe_pre' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

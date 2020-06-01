@@ -4,6 +4,13 @@
 	color: $middle;
 	background-color: $isabelle;
 
+	nav {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	.alert {
 		margin-left: 50px;
 	}
@@ -25,6 +32,22 @@
 				color: $black;
 				text-transform: uppercase;
 			}
+		}
+	}
+	#temps {
+		display: inline;
+		background-color: $cremello;
+		margin-right: 50px;
+		#ladate {
+			$color: $black;
+		}
+		a {
+			text-decoration: none;
+			color: $black;
+			text-transform: uppercase;
+		}
+		p {
+			color: $red;
 		}
 	}
 }	
