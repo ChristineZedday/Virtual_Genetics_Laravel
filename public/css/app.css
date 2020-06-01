@@ -10922,7 +10922,9 @@ a.text-dark:focus {
 
 .bandeau #temps {
   display: inline;
-  margin-right: 50px;
+  background-color: #ffdd93;
+  margin-right: 150px;
+  padding: 15px;
 }
 
 .bandeau #temps a {
