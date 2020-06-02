@@ -10924,7 +10924,7 @@ a.text-dark:focus {
   display: inline;
   background-color: #ffdd93;
   margin-right: 150px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .bandeau #temps a {
@@ -10933,7 +10933,7 @@ a.text-dark:focus {
   text-transform: uppercase;
 }
 
-.bandeau #temps p {
+.bandeau #temps .rouge {
   color: #e3342f;
 }
 
@@ -11117,5 +11117,17 @@ a.text-dark:focus {
 
 #boutonsa button {
   margin-top: 20px;
+}
+
+#elevages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+#elevages div {
+  background-color: #f3d186;
+  padding: 20px;
 }
 

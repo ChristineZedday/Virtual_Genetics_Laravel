@@ -38,7 +38,7 @@
 		display: inline;
 		background-color: $cremello;
 		margin-right: 150px;
-		padding: 15px;
+		padding: 10px;
 		#ladate {
 			$color: $black;
 		}
@@ -47,7 +47,7 @@
 			color: $black;
 			text-transform: uppercase;
 		}
-		p {
+		.rouge {
 			color: $red;
 		}
 	}

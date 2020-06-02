@@ -27,16 +27,21 @@ class Genome extends Model
                         $genotype->allele_p_id = rand(1,2)==1 ? $genotypeP->allele_p_id : $genotypeP->allele_m_id;
                       
                         $genotypeM = Genotype::where('animal_id', $female)->where('locus_id', $genotype->locus_id)->first();
+                        $alleleDefaut =  Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                           
                       
                         if (isset($genotypeM))
                              {
                                  $genotype->allele_m_id = rand(1,2)==1 ? $genotypeM->allele_p_id : $genotypeM->allele_m_id;
                              }
                         else {
-                             $genotype->allele_m_id =  Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                          
+                             $genotype->allele_m_id =  $alleleDefaut;
                              }
 
-                        $genotype->save();
+                        if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut)) {
+                             $genotype->save();   
+                         }
                          
 
                     }
@@ -52,8 +57,12 @@ class Genome extends Model
                             $genotype->animal_id = $produit;
                             $genotype->locus_id = $locus->id;
                             $genotype->allele_m_id = rand(1,2)==1 ? $genotypeM->allele_p_id : $genotypeM->allele_m_id;
-                            $genotype->allele_p_id = Allele::where('locus_id', $locus->id)->where('is_default',true)->first()->id;
-                            $genotype->save();
+
+                            $alleleDefaut =  Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
+                            $genotype->allele_p_id = $alleleDefaut;
+                            if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
+                                $genotype->save();   
+                                    }
                         }
                     }
             }

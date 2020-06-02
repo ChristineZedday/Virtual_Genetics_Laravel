@@ -27,8 +27,9 @@ $date = $game->date();
 		<li><a href="{{route('reproduction.jument',[$elevage])}}">Faire saillir une jument</a></li>
 		</ul>
 		<span id='temps'>
-		<p id='ladate'>{{$date}}</p>
-		<a href="{{route('temps')}}">Avancer d'un mois</a><p>Irreversible!</p></span>
+		<span id='ladate'>{{$date}}</span><br/>
+		<a href="{{route('temps')}}">Avancer d'un mois</a><br/>
+		<span class= 'rouge'>Irréversible!</span></span>
 		                       
 
                                   

@@ -11,12 +11,16 @@
 		<p><a href="{{route('temps')}}">Avancer d'un mois</a></p>
 		
 		<h2>Liste de vos élevages:</h2>
-		@foreach ($elevages as $elevage)
-			<div><p>{{$elevage->nom_elevage}}</p>
-			<p>{{$elevage->nom_eleveur}}</p>
+			<div id='elevages'>
+			@foreach ($elevages as $elevage)
+				<div><p>{{$elevage->nom_elevage}}</p>
+				<p>{{$elevage->nom_eleveur}}</p>
+				
+				<a href="{{route('dashboard',[$elevage->id])}}"><button>Aller</button></a>
+				</div>
+			@endforeach
 			</div>
-			<a href="{{route('dashboard',[$elevage->id])}}"><button>Aller</button></a>
-		@endforeach
-		<a href="{{route('elevage.create')}}"><button>Nouvel élevage</button></a>
+			<a href="{{route('elevage.create')}}"><button>Nouvel élevage</button></a>
+			
 	</div>
 @endsection

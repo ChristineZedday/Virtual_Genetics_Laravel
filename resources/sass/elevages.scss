@@ -1,0 +1,10 @@
+#elevages {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	div {
+		background-color: $isabelle;
+		padding: 20px;
+	}
+	margin-bottom: 50px;
+}
