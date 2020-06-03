@@ -46,8 +46,8 @@ class RacesTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Miniature',
                 'prix_moyen' => 900,
-                'frais_enregistrement' => NULL,
-                'taille_min' => 50,
+                'frais_enregistrement' => 100,
+                'taille_min' => 30,
                 'taille_max' => 85,
             ),
             3 => 
@@ -58,8 +58,8 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Mountain',
                 'prix_moyen' => 1000,
                 'frais_enregistrement' => NULL,
-                'taille_min' => NULL,
-                'taille_max' => 121,
+                'taille_min' => 30,
+                'taille_max' => 141,
             ),
             4 => 
             array (
@@ -69,7 +69,7 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Pony',
                 'prix_moyen' => 1300,
                 'frais_enregistrement' => NULL,
-                'taille_min' => 121,
+                'taille_min' => 100,
                 'taille_max' => 137,
             ),
             5 => 
@@ -80,7 +80,7 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Pony type Cob',
                 'prix_moyen' => 1400,
                 'frais_enregistrement' => NULL,
-                'taille_min' => 121,
+                'taille_min' => 100,
                 'taille_max' => 137,
             ),
             6 => 
@@ -92,7 +92,7 @@ class RacesTableSeeder extends Seeder
                 'prix_moyen' => 2000,
                 'frais_enregistrement' => NULL,
                 'taille_min' => 137,
-                'taille_max' => NULL,
+                'taille_max' => 177,
             ),
             7 => 
             array (
@@ -113,8 +113,8 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Demi-sang Arabe',
                 'prix_moyen' => 2000,
                 'frais_enregistrement' => 150,
-                'taille_min' => NULL,
-                'taille_max' => NULL,
+                'taille_min' => 30,
+                'taille_max' => 215,
             ),
             9 => 
             array (
@@ -124,8 +124,8 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Part Bred',
                 'prix_moyen' => 1000,
                 'frais_enregistrement' => 50,
-                'taille_min' => NULL,
-                'taille_max' => NULL,
+                'taille_min' => 30,
+                'taille_max' => 215,
             ),
             10 => 
             array (

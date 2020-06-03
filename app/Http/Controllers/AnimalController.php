@@ -230,6 +230,7 @@ class AnimalController extends Controller
         {
             $rDam = $animal->Dam->Race->id;
             $rSire = $animal->Sire->Race->id;
+            $taille = $animal->taille_cm;
             $races = AssoRace::where(function ($query) use ($rSire,$rDam) {
                 $query->where(function ($qp) use ($rSire) {
                     $qp->where('race_pere_id', $rSire)->orWhere('race_pere_id', null);
@@ -239,7 +240,7 @@ class AnimalController extends Controller
                 }
             )
             ;}
-            )->join('races','races.id', 'asso_race.race_produit_id')->get();
+            )->join('races','races.id', 'asso_race.race_produit_id')->where(function ($qu) use ($taille) {$qu->where('taille_min', '<=', $taille)->where('taille_max', '>=', $taille);})->get();
          
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }

@@ -94,8 +94,7 @@ class Genome extends Model
                             if ( $genotype->allele_p_id == $genotypeP->allele_p_id ) {
                                 $patP = true; //sinon faux puisqu'ainsi initialisé
                             }
-                            $debug = $debug.' '.$loc->nom.' paternel: '.$genotypeP->allele_p_id.' '.$genotypeP->allele_m_id.' '.'transmis: ';
-
+                           
                         }
                     else 
                         {
@@ -103,7 +102,7 @@ class Genome extends Model
                             $defP = true;
                         }
                     
-                    $debug = $debug.' allele pat: '.$genotype->allele_p_id;
+               
                         
 
                     $genotypeM = Genotype::where('animal_id', $female)->where('locus_id', $loc->id)->first();
@@ -114,15 +113,13 @@ class Genome extends Model
                            if ( $genotype->allele_m_id == $genotypeM->allele_p_id ) {
                                $patM = true;
                            }
-                           $debug = $debug.' maternel: '.$genotypeM->allele_p_id.' '.$genotypeM->allele_m_id. ' transmis';   
-
+                          
                        }
                     else {
                            $genotype->allele_m_id = $alleleDefaut;
                            $defM = true;
                     }
 
-                    $debug = $debug.' allele mat: '.$genotype->allele_m_id;
                   
                     $deb = new Debug;
                     $deb->locus1 = $debug;
@@ -152,7 +149,7 @@ class Genome extends Model
 
                         $genotypeP = Genotype::where('animal_id', $male)->where('locus_id', $locus->id)->first();
                         if (isset($genotypeP)) {
-                            $debug = $debug.' '.$locus->nom.' génotype paternel: ';
+                            $debug = $debug.' '.$locus->abbrev.' paternel: ';
                             $debug = $debug.$genotypeP->allele_p_id.' '.$genotypeP->allele_m_id;
                             if ($defP) { //si on avait l'allèle par défaut, homozygotie côté paternel donc pas de recomb significative
                                 $genotype->allele_p_id = rand(1,2)==1 ? $genotypeP->allele_p_id : $genotypeP->allele_m_id;
@@ -210,7 +207,7 @@ class Genome extends Model
                        
                         if (isset($genotypeM)) 
                         {
-                            $debug = $debug. ' génotype maternel: '.$genotypeM->allele_p_id.' '.$genotypeM->allele_m_id;
+                            $debug = $debug. ' maternel: '.$genotypeM->allele_p_id.' '.$genotypeM->allele_m_id;
                             if ($defM) { //si on avait l'allèle par défaut, homozygotie côté maternel donc pas de recomb significative
                                 $genotype->allele_m_id = rand(1,2)==1 ? $genotypeM->allele_p_id : $genotypeM->allele_m_id;
                                 
