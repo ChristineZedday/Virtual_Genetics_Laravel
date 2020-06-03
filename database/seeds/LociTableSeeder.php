@@ -343,7 +343,7 @@ class LociTableSeeder extends Seeder
                 'chromosome' => 'ECA3q21-22',
                 'linked' => 1,
                 'obligatoire' => 0,
-                'next_linked_id' => NULL,
+                'next_linked_id' => 27,
                 'prev_linked_id' => 3,
                 'taux_recomb_next' => 0,
             ),
