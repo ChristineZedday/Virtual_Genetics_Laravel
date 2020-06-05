@@ -173,6 +173,7 @@ class ReproductionController extends Controller
             $bai = Couleur::where('nom','bai')->first();
             $noir = Couleur::where('nom','noir')->first();
             $alezanbai = Couleur::where('nom','alezanbai')->first();
+            $alezannoir = Couleur::Where('nom','alezannoir')->first();
            
             switch (true)
             {
@@ -210,13 +211,25 @@ class ReproductionController extends Controller
                   
               break;
 
-              default:
+              case in_array($alezannoir, $base_couleurs) && in_array($noirbai, $base_couleurs):
 
                 $animal->base = 'noir';
                 $animal->save();
-                  
+                
                 $animal->Couleur()->attach($noir->id);
+                
                 foreach ($noir->Images as $image)
+                { $animal->Image()->attach($image->id);}
+                  
+              break;
+
+              default:
+
+                $animal->base = 'bai';
+                $animal->save();
+                  
+                $animal->Couleur()->attach($bai->id);
+                foreach ($bai->Images as $image)
                 { $animal->Image()->attach($image->id);}
                   
               break;

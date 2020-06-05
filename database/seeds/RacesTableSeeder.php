@@ -48,7 +48,7 @@ class RacesTableSeeder extends Seeder
                 'prix_moyen' => 900,
                 'frais_enregistrement' => 100,
                 'taille_min' => 30,
-                'taille_max' => 85,
+                'taille_max' => 86,
             ),
             3 => 
             array (

@@ -44,7 +44,7 @@ class LociTableSeeder extends Seeder
                 'linked' => 1,
                 'obligatoire' => 1,
                 'next_linked_id' => 3,
-                'prev_linked_id' => 17,
+                'prev_linked_id' => NULL,
                 'taux_recomb_next' => 7,
             ),
             2 => 
@@ -206,11 +206,11 @@ class LociTableSeeder extends Seeder
                 'nom' => 'Endoplasmic reticulum-type Calcium-transporting ATPase3',
                 'abbrev' => 'ERTCA3',
                 'chromosome' => 'ECA3p',
-                'linked' => 1,
+                'linked' => 0,
                 'obligatoire' => 0,
-                'next_linked_id' => 2,
+                'next_linked_id' => NULL,
                 'prev_linked_id' => NULL,
-                'taux_recomb_next' => 43,
+                'taux_recomb_next' => NULL,
             ),
             13 => 
             array (

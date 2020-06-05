@@ -3,16 +3,15 @@ animaux à vendre de l'élevage vendeur?
 
 problème gènes liés poulain d'un tob sab ni tob ni sab?
 
-où sont passés les rouans? (next linked oublié pour tob)
+welsh cob au lieu welsh C
+OC au lieu de welsh
+races selon taille
 
 
 images à faire: 
 robes léopard, couverture, varnish
-
 rabicano après ajout locus/allèle/phénotype/couleur/image
-
 non dun 1
-
 sooty?
 
 gérer la vente de saillies (joueur et PNJ), la castration
@@ -20,7 +19,7 @@ fertilité selon consang
 
 insémination artificielle, échographie: version prochaine
 
-races selon taille
+
 
 pas donner le m^me nom + m^me affixe
 
@@ -29,3 +28,9 @@ liens pour les parents ou enfants
 croisement remplacer voir par choisir?
 
 pouvoir retirer de la liste des femelles à faire saillir ou des étalons
+
+approbation étalons?
+
+dans pedigree, ajouter race, év. robe
+
+budget message quand on a plus assez et retour au dashboard?
