@@ -33,4 +33,3 @@ approbation étalons?
 
 dans pedigree, ajouter race, év. robe
 
-budget message quand on a plus assez et retour au dashboard?
