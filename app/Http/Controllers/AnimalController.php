@@ -196,6 +196,9 @@ class AnimalController extends Controller
                 return redirect()->route('animaux',[$elevage->id]);
             }
         }
+        else {
+            return redirect()->back()->with('alert', $elevage->budget);
+        }
 
         
     }
