@@ -10990,6 +10990,7 @@ a.text-dark:focus {
   width: 100%;
   height: 50%;
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -11001,6 +11002,10 @@ a.text-dark:focus {
 
 .femelle {
   background-color: #cfb1bb;
+}
+
+a {
+  color: #2f2429;
 }
 
 .jeu figure {
