@@ -77,7 +77,7 @@ class Genome extends Model
                     $patP = false; //booléens pour savoir quels allèles ont a pris: paternel, defaut, maternel sinon, côté père, côté mère
                   
                     $patM = false;
-                    $defM = false;
+                  
                     $tauxP = 0;
                     $tauxM = 0;
 
@@ -122,6 +122,7 @@ class Genome extends Model
                        }
                     else {
                            $genotype->allele_m_id = $alleleDefaut;
+                           $debug = $debug.' def';
                            $patM = true;
                     }
 
@@ -189,11 +190,11 @@ class Genome extends Model
                         }
                         else { //pas de génotypeP
                             $genotype->allele_p_id = $alleleDefaut;
+                            $debug = $debug.' def ';
                            
-                            /*$defP conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande, sauf pour la première paire de locus*/
                         }
 
-                        $debug = $debug.' allele pat: '.$genotype->allele_p_id;
+                        $debug = $debug.$genotype->allele_p_id;
 
                         
 
@@ -202,19 +203,7 @@ class Genome extends Model
                        
                         if (isset($genotypeM)) 
                         {
-                            $debug = $debug. ' maternel: '.$genotypeM->allele_p_id.' '.$genotypeM->allele_m_id;
-                            if ($defM) { //si on avait l'allèle par défaut, homozygotie côté maternel donc pas de recomb significative
-                                $genotype->allele_m_id = rand(1,2)==1 ? $genotypeM->allele_p_id : $genotypeM->allele_m_id;
-                                
-                                if ($genotype->allele_m_id == $genotypeM->allele_p_id ) {
-                                    $patM = true;
-                                }
-                                else {
-                                    $patM = false;
-                                }
-                                
-                            }
-                            else if ($patM) {
+                           if ($patM) {
                                 $recomb = (rand(1, 100) <= $tauxM); //on a bien absence de recomb avec un taux de 0%
                                 if ($recomb) {
                                     $genotype->allele_m_id = $genotypeM->allele_m_id;
@@ -243,13 +232,10 @@ class Genome extends Model
                         }
                         else { //pas de génotypeM
                             $genotype->allele_m_id = $alleleDefaut;
-                            if (! $loc->prev_linked_id) {
-                                $defM = true;
-                            }
-                            
-                            /*$defM conserver le précédent, ne pas mettre le taux de recomb paternel à 0 pour que ce soit calculé par rapport à celui d'avant, donc avec une distance en centimorgans plus grande*/
+                            $debug = $debug.' def ';  
                         }
-                        $debug = $debug.' allele mat: '.$genotype->allele_m_id;
+
+                        $debug = $debug.$genotype->allele_m_id;
                         if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
                             $genotype->save();   
                         }
