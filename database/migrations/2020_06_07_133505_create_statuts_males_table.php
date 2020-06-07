@@ -17,7 +17,9 @@ class CreateStatutsMalesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->boolean('disponible');
-            $table->bigInteger('animal_id')->unsigned();
+            $table->enum('qualite', ['non autorisé','autorisé','approuvé']);
+            $table->tinyInteger('fertilite')->unsigned();
+            $table->bigInteger('animal_id')->unsigned()->unique();
             $table->mediumInteger('prix')->unsigned()->nullable();
             $table->foreign('animal_id')->references('id')->on('animaux');
         });
