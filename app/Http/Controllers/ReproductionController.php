@@ -40,6 +40,16 @@ class ReproductionController extends Controller
     $statut->save();
     srand((float) microtime()*1000000);
     $success = rand(1,2);
+
+    $etalon = Animal::Find($etalon);
+    $jument = Animal::Find($jument);
+    $elevage = Elevage::Find($elevage);
+
+      if ($etalon->elevage->id != $elevage->id)
+      {
+        $elevage->budget = $elevage->budget - $etalon->StatutMale->prix;
+        $elevage->save();
+      }
        if ($success == 1)
        {
           $statut->vide = false; 
@@ -48,32 +58,30 @@ class ReproductionController extends Controller
           $animal = new Animal;
           $animal->foetus = true;
           $animal->fondateur = false;
+         
           $animal->date_naissance = $date;
-          $animal->sire_id = $etalon;
-          $animal->dam_id = $jument;
+          $animal->sire_id = $etalon->id;
+          $animal->dam_id = $jument->id;
           $dam = Animal::Find($animal->dam_id);
-          $elv = Elevage::Find($elevage);
+          
           if ($dam->fondateur) {
             $animal->affixe_id = $dam->affixe_id;
           }
           else {
            
-              if (isset($elv->Affixe))
+              if (isset($elevage->Affixe))
               {
-                $animal->affixe_id = $elv->affixe_id;
+                $animal->affixe_id = $elevage->affixe_id;
               }
           }
           
           $lettre = TempsController::checkLettre($date);
           $animal->nom = crenom($lettre);
           
-          $animal->elevage_id = $elevage;
+          $animal->elevage_id = $elevage->id;
           $sexe = rand(1,2);
           $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
-
-          
-          $etalon = Animal::Find($etalon);
-          $jument = Animal::Find($jument);
+         
 
           $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
           $animal->taille_cm = $animal->taille_additive + rand(-2,2);
@@ -390,7 +398,7 @@ class ReproductionController extends Controller
       }
    
    
-    return redirect()->route('animaux',[$elevage]);
+    return redirect()->route('animaux',[$elevage->id]);
    } //end function croisement
   
 } //end class ReproductionController

@@ -8,6 +8,7 @@ use App\statutsFemelle;
 use App\Animal;
 use App\Elevage;
 use App\Race;
+use App\StatutMale;
 
 class TempsController extends Controller
 {
@@ -41,6 +42,7 @@ class TempsController extends Controller
         checkNouveaux($date);
         checkPuberes();
         VenteJeunes();
+        VenteSaillies();
         retireVente();
         reproNPC($date);
         achete();
@@ -371,6 +373,50 @@ function checkVieux ($date)
     }
     
 }
+
+function VenteSaillies ()
+{
+    $vendeurs = Elevage::where('role','Vendeur')->get();
+    foreach ($vendeurs as $vendeur)
+    {
+        $animaux = Animal::where('sexe', 'mâle')->orWhere('sexe', 'vieux mâle')->get();
+        foreach ($animaux as $animal)
+        {
+            if (isset ($animal->StatutMale) and ($animal->StatutMale->disponible))
+            {
+                if (rand(1,3)== 1)
+                {
+                    $animal->StatutMale->disponible = false;
+                    $animal->statutMale->save();
+                    
+                }
+            }
+            else if (isset ($animal->StatutMale) and ( !($animal->StatutMale->disponible)))
+            {
+                if (rand(1,3)== 1)
+                {
+                    $animal->StatutMale->disponible = true;
+                    $animal->statutMale->save();
+                    
+                }
+            }
+            else // pas de statut
+            {
+                if (rand(1,3)== 1)
+                { 
+                    $statut = new StatutMale();
+                    $statut->disponible = true;
+                    $statut->prix = $animal->Race->prix_moyen/20;
+                    $statut->animal_id = $animal->id;
+                    $statut->save();
+                    }
+            }
+        
+        }
+
+    }
+}
+
 function checkMorts ()
 {
     $animaux = Animal::where('sexe','LIKE','vie%')->get();

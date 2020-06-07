@@ -12,6 +12,6 @@ class statutsFemelle extends Model
 
     public function Femelle()
     {
-        $this->belongsTo('App\Animal');
+        return $this->belongsTo('App\Animal');
     }
 }

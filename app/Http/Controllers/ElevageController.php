@@ -187,13 +187,17 @@ class ElevageController extends Controller
     public function choixEtalon ($id,$jument)
     {
         $elevage = Elevage::Find($id);
+        $budget = $elevage->budget;
         
         $jument =Animal::Find($jument);
         
         $etalons = Animal::all()->where('elevage_id', $id)->where('sexe', 'mâle');
 
+        $exterieurs = Animal::whereHas('StatutMale', function ($query) use ($budget) {$query->where('disponible', 1)->where('prix', '<=', $budget);})->get();
+       
+
       
-      return view('etalons', ['elevage'=>$elevage, 'etalons'=>$etalons, 'jument'=>$jument]);
+      return view('etalons', ['elevage'=>$elevage, 'etalons'=>$etalons, 'exterieurs'=>$exterieurs, 'jument'=>$jument]);
 
     }
 

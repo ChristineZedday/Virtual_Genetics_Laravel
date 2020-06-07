@@ -51,6 +51,11 @@ class Animal extends Model
         return $this->HasOne('App\statutsFemelle', 'animal_id');
     }
 
+    public function StatutMale()
+    {
+        return $this->HasOne('App\StatutMale', 'animal_id');
+    }
+
     public function Phenotype()
     {
         return $this->belongsToMany('App\Phenotype');

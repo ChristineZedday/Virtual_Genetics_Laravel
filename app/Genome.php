@@ -132,7 +132,7 @@ class Genome extends Model
                     $deb->save();
                     $debug ='';
                      
-                    if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
+                    if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  ) or ($genotype->Locus->obligatoire)) {
                         $genotype->save();   
                             }
                    
@@ -236,7 +236,7 @@ class Genome extends Model
                         }
 
                         $debug = $debug.$genotype->allele_m_id;
-                        if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
+                        if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut or ($genotype->Locus->obligatoire) )) {
                             $genotype->save();   
                         }
                         else {
