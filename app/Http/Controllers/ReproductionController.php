@@ -36,10 +36,10 @@ class ReproductionController extends Controller
     $statutM = StatutMale::where('animal_id',$etalon)->first(); //fondateurs
     if (!isset($statutM))
     {
-      $statut = new StatutMale();
-      $statut->animal_id = $etalon;
-      $statut->qualite = 'autorisé' ;
-      $statut->save();
+      $statutM = new StatutMale();
+      $statutM->animal_id = $etalon;
+      $statutM->qualite = 'autorisé' ;
+      $statutM->save();
 
     }
     $statut->pres_pleine = true; 

@@ -16,7 +16,7 @@ class CreateStatutsMalesTable extends Migration
         Schema::create('statuts_males', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->boolean('disponible')->default('false');
+            $table->boolean('disponible')->default(false);
             $table->enum('qualite', ['non autorisé','autorisé','approuvé'])->default('non autorisé');
             $table->tinyInteger('fertilite')->unsigned()->default(100);
             $table->bigInteger('animal_id')->unsigned()->unique();
