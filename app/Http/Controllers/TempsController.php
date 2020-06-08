@@ -178,8 +178,14 @@ function checkPuberes()
     foreach ($animaux as $animal)
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
-       { $animal->sexe = 'mâle';
-        $animal->save();}
+        { 
+           $animal->sexe = 'mâle';
+            $animal->save();
+            $statut = new StatutMale();
+            $statut->animal_id = $animal->id;
+            $statut->fertilite = 100 - $animal->consang/2 ;
+            $statut->save();
+         }
             
     }
 
@@ -191,6 +197,7 @@ function checkPuberes()
          $animal->save();
          $statut = new statutsFemelle();
          $statut->animal_id = $animal->id;
+         $statut->fertilite = 100 - $animal->consang/2 ;
          $statut->save();
         }
             

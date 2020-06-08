@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Gamedata;
 use App\statutsFemelle;
+use App\StatutMale;
 use App\Animal;
 use App\Elevage;
 use App\Genome;
@@ -26,11 +27,19 @@ class ReproductionController extends Controller
    static function croisement($elevage, $etalon, $jument)
    {
     
-    $statut = StatutsFemelle::where('animal_id',$jument)->first();
+    $statut = statutsFemelle::where('animal_id',$jument)->first(); //fondateurs
     if (!isset($statut))
     {
       $statut = new statutsFemelle();
       $statut->animal_id = $jument;
+    }
+    $statutM = StatutMale::where('animal_id',$etalon)->first(); //fondateurs
+    if (!isset($statutM))
+    {
+      $statut = new StatutMale();
+      $statut->animal_id = $etalon;
+      $statut->qualite = 'autorisé' ;
+
     }
     $statut->pres_pleine = true; 
     $statut->etalon_id = $etalon;
@@ -38,11 +47,14 @@ class ReproductionController extends Controller
     $date = TempsController::ElevenMonths();
     $statut->terme = $date;
     $statut->save();
-    srand((float) microtime()*1000000);
-    $success = rand(1,2);
-
     $etalon = Animal::Find($etalon);
     $jument = Animal::Find($jument);
+    srand((float) microtime()*1000000);
+   
+    $fertilite = ($etalon->StatutMale->fertilite * $jument->Statut->fertilite)/100 ;
+    $success = rand(1,$fertilite);
+
+  
     $elevage = Elevage::Find($elevage);
 
       if ($etalon->elevage->id != $elevage->id)
@@ -50,7 +62,7 @@ class ReproductionController extends Controller
         $elevage->budget = $elevage->budget - $etalon->StatutMale->prix;
         $elevage->save();
       }
-       if ($success == 1)
+       if ($success > 50)
        {
           $statut->vide = false; 
           $statut->save();
