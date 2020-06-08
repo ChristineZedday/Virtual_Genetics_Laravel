@@ -17,7 +17,7 @@ class CreateStatutsfemellesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->bigInteger('animal_id')->unsigned()->unique();
-            $table->tinyInteger('fertilite')->unsigned();
+            $table->tinyInteger('fertilite')->unsigned()->default(100);
             $table->boolean('pres_pleine')->default(false);
             $table->boolean('conf_pleine')->default(false);
             $table->boolean('vide')->default(true);
