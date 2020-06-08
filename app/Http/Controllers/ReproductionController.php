@@ -39,6 +39,7 @@ class ReproductionController extends Controller
       $statut = new StatutMale();
       $statut->animal_id = $etalon;
       $statut->qualite = 'autorisé' ;
+      $statut->save();
 
     }
     $statut->pres_pleine = true; 

@@ -12,6 +12,7 @@ père aa bai silver
  il reste des animaux non renseignés sur loci obligatoires ou bien on en créée, changer 
 la requ^te de non save 
 
+étalons fondateurs non autorises? ceux proposés à la saillie, normal, à revoir
 
 races selon taille
 
@@ -21,8 +22,7 @@ rabicano après ajout locus/allèle/phénotype/couleur/image
 non dun 1
 sooty?
 
-gérer la vente de saillies (joueur et PNJ), la castration
-fertilité selon consang
+gérer la vente de saillies (joueur ), la castration
 
 insémination artificielle, échographie: version prochaine
 

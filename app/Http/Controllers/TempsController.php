@@ -413,6 +413,10 @@ function VenteSaillies ()
                 { 
                     $statut = new StatutMale();
                     $statut->disponible = true;
+                    if ($animal->fondateur)
+                    {
+                        $statut->qualite = 'autorisé';
+                    }
                     $statut->prix = $animal->Race->prix_moyen/20;
                     $statut->animal_id = $animal->id;
                     $statut->save();
