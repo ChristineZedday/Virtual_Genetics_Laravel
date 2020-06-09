@@ -1,19 +1,13 @@
 
-animaux à vendre de l'élevage vendeur?
 
 problème gènes liés poulain d'un tob sab ni tob ni sab?
-
 recombs non répertoriées?
-
 welsh cob au lieu welsh C
 OC au lieu de welsh
 ponette aa isab silver ???
 père aa bai silver
  il reste des animaux non renseignés sur loci obligatoires ou bien on en créée, changer 
 la requ^te de non save 
-
-étalons fondateurs non autorises? ceux proposés à la saillie, normal, à revoir
-
 races selon taille
 
 images à faire: 
@@ -26,13 +20,11 @@ gérer la vente de saillies (joueur ), la castration
 
 insémination artificielle, échographie: version prochaine
 
-
-
 pas donner le m^me nom + m^me affixe
 
 pouvoir retirer de la liste des femelles à faire saillir ou des étalons
 
 approbation étalons?
 
-
+filtres, tris?
 

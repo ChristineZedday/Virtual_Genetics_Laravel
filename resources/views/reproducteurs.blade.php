@@ -26,6 +26,7 @@ if (isset($images)) {
 ?>
 </figure>
 </div>
+@if (! $etalon->fondateur)
 <div class='pedigree'>
 			<span class='generation'>
 				<span class='male'>{{$etalon->Sire->NomComplet()}}</span>
@@ -47,7 +48,8 @@ if (isset($images)) {
 				<span class='male'>@isset($etalon->Dam->Dam->Sire) {{$etalon->Dam->Dam->Sire->NomComplet()}} @else agmp @endisset </span>
 				<span class='femelle'>@isset($etalon->Dam->Dam->Dam) {{$etalon->Dam->Dam->Dam->NomComplet()}} @else agmm @endisset </span>
 	</span>					
-	</div>
+</div>
+@endif
 
 </span>
 <div id='boutons'>

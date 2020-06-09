@@ -155,7 +155,7 @@ class ElevageController extends Controller
     {
         
         
-        $animaux = Animal::where('elevage_id', '<>', '$id')->where('a_vendre',true)->get();
+        $animaux = Animal::where('elevage_id', '!='  ,$id)->where('a_vendre',true)->get();
         $elevage = Elevage::Find($id);
         
       

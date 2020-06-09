@@ -42,7 +42,6 @@ class TempsController extends Controller
         checkNouveaux($date);
         checkPuberes();
         VenteJeunes();
-        VenteSaillies();
         retireVente();
         reproNPC($date);
         achete();
@@ -58,6 +57,7 @@ class TempsController extends Controller
                 $elevage->save();
             }
             checkVieux ($date);
+            VenteSaillies();
            
         }
         return redirect()->route('home');
@@ -403,6 +403,9 @@ function VenteSaillies ()
                 if (rand(1,3)== 1)
                 {
                     $animal->StatutMale->disponible = true;
+                    $animal->statutMale->prix = $animal->Race->prix_moyen/20;
+                    $animal->statutMale->animal_id = $animal->id;
+                  
                     $animal->statutMale->save();
                     
                 }
