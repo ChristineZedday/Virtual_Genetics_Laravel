@@ -125,6 +125,18 @@
 					@endif
 				@endif
 			</div>
+			
+				
+				<div id='sterilisation'>
+					<input type="hidden" id ="sexe" value ="{{$animal->sexe}}">
+					<input type="hidden" id ="budget" value ="{{$elevage->budget}}">
+					<input type="hidden" id ="route" value ="{{route('steriliser',[$elevage->id,$animal->id])}}">
+				
+				<button  onclick="checkConditions()">
+				Stériliser</button>
+				</div>	
+			
+			
 	
 			<div id="progeny">
 				@foreach ($animal->Progeny() as $petit)
@@ -136,7 +148,38 @@
 	</div>
 </div>
 
+<script>
+	function checkConditions()
+	{
+		sexe = document.getElementById('sexe').value;
+		budget = document.getElementById('budget').value;
+		route = document.getElementById('route').value;
+		alert('Opération irréversible!');
+		switch (true)
+		{
+			case (sexe == 'mâle stérilisé' || sexe== 'vieux mâle stérilisé' || sexe =='femelle stérilisée' || sexe == 'vieille femelle stérilisée'):
+				alert('Déjà fait!');
+			break;
 
+			case (sexe == 'jeune mâle' || sexe == 'jeune femelle'):
+				alert('trop jeune');
+			break;
+
+			case (budget < 100 ):
+				alert('Avec quoi allez-vous payer le véto?');
+			break;
+
+			case (budget < 300 & (sexe == 'femelle' || sexe == 'vieille femelle')):
+				alert('Trop cher pour vous.');
+			break;
+
+			default:
+			document.location.href=route; 
+
+
+		}
+	}
+</script>
 
 
 

@@ -173,7 +173,7 @@ class ElevageController extends Controller
         
         $elevage = Elevage::Find($id);
         $date = TempsController::dateCourante();
-        $juments = Animal::where('elevage_id', $id)->where('sexe', 'femelle')->whereHas('Statut', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
+        $juments = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'femelle')->orWhere('sexe', 'vieille femelle');})->whereHas('Statut', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
        
 
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
@@ -191,7 +191,7 @@ class ElevageController extends Controller
         
         $jument =Animal::Find($jument);
         
-        $etalons = Animal::all()->where('elevage_id', $id)->where('sexe', 'mâle');
+        $etalons = Animal::all()->where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'mâle')->orwhere('sexe','vieux mâle');});
 
         $exterieurs = Animal::whereHas('StatutMale', function ($query) use ($budget) {$query->where('disponible', 1)->where('prix', '<=', $budget);})->get();
        

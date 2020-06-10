@@ -218,6 +218,47 @@ class AnimalController extends Controller
         return view('reproducteurs', ['elevage'=>$elevage, 'etalon'=>$etalon, 'jument'=>$jument]);
     }
 
+    public function steriliser($elevage, $animal)
+    {
+        $animal = Animal::Find($animal);
+        $elevage = Elevage::Find($elevage);
+        $prixF = 300;
+        $prixM = 100;
+        switch ($animal->sexe)
+            {
+                case 'mâle':
+                    $animal->sexe = 'mâle stérilisé';
+                    $animal->save();
+                    $elevage->budget -= $prixM;
+                    $elevage->save();
+                break;
+
+                case 'vieux mâle':
+                    $animal->sexe = 'vieux mâle stérilisé';
+                    $animal->save();
+                    $elevage->budget -= $prixM;
+                    $elevage->save();
+                break;
+
+                case 'femelle':
+                    $animal->sexe = 'femelle stérilisée';
+                    $animal->save();
+                    $elevage->budget -= $prixF;
+                    $elevage->save();
+                break;
+
+                case 'vieille femelle':
+                    $animal->sexe = 'vieille femelle stérilisée';
+                    $animal->save();
+                    $elevage->budget -= $prixF;
+                    $elevage->save();
+                break;
+            
+
+            }
+            return redirect()->back();
+    }
+
     
       /**
      * Registration of name/color
