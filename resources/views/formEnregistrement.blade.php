@@ -5,7 +5,7 @@
 <form action="{{route('registration',[$animal->id])}}" method="POST">
 		@method('PUT')
         @csrf
-	<h2>Enregistrer votre produit</h2>
+	<h2 class='form'>Enregistrer votre produit</h2>
 	<div class='form'>
 	<label for="nom">Entrez le nom que vous avez choisi pour votre animal (sans l'affixe si vous en avez un)</label><br/>
 	<input type="text" name="nom" value="@isset($animal->nom) {{$animal->nom}}  @endisset"/>
@@ -24,11 +24,11 @@
 		@foreach ($races as $race)
 		<option value="{{$race->id}}">{{$race->nom}} {{$race->frais_enregistrement}}</option>
 		@endforeach
+</div>
  
-  
 </select> 
 	@endisset
-	
+	<div class='form'> 
 		<button type="submit">Valider</button>
 		</div>
 	</form>

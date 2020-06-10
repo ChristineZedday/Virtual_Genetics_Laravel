@@ -191,7 +191,7 @@ class ElevageController extends Controller
         
         $jument =Animal::Find($jument);
         
-        $etalons = Animal::all()->where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'mâle')->orwhere('sexe','vieux mâle');});
+        $etalons = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'mâle')->orwhere('sexe','vieux mâle');})->get();
 
         $exterieurs = Animal::whereHas('StatutMale', function ($query) use ($budget) {$query->where('disponible', 1)->where('prix', '<=', $budget);})->get();
        
