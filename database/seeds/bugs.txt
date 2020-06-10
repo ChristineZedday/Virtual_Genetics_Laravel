@@ -23,7 +23,4 @@ filtres, tris?
 
 forms vente et enregistrement à améliorer
 
-ajouter possibilité enregistrer un OC dans un stud book après son enregistrement OC (plus cher)
-
-crsf token
-
+ajouter possibilité enregistrer un OC dans un stud book après son enregistrement OC (plus cher

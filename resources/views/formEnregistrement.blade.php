@@ -6,15 +6,15 @@
 		@method('PUT')
         @csrf
 	<h2>Enregistrer votre produit</h2>
-	<div>
+	<div class='form'>
 	<label for="nom">Entrez le nom que vous avez choisi pour votre animal (sans l'affixe si vous en avez un)</label><br/>
 	<input type="text" name="nom" value="@isset($animal->nom) {{$animal->nom}}  @endisset"/>
 	</div>
-	<div>
+	<div class='form'>
 	<label for="couleur">Entrez la couleur de votre animal.</label><br/>
 	<input type="text" name="couleur" value="@isset($animal->couleur) {{$animal->couleur}}  @endisset"/>
 	</div>
-	<div>
+	<div class='form'>
 	Les animaux de pure race sont automatiquement enregistrés dans le livre généalogique de la race sans frais supplémentaires. Les animaux issus de croisement sont enregistrés comme Origine Constatée (OC), gratuitement, mais vous avez la possibité sous certaines conditions de les faire enregistrer dans un stud book ouvert (acceptant des animaux dont les deux parents ne sont pas inscrits), moyennant paiement d'un droit d'inscription.
 	Dans ce cas veuillez trouver la liste ci-dessous. Si l'animal est inscriptible dans plusieurs registres, un seul peut-être choisi, conformémént au règlement des Haras Nationaux.
 	@isset($races)
@@ -28,8 +28,9 @@
   
 </select> 
 	@endisset
-	</div>
-	<button type="submit">Valider</button>
+	
+		<button type="submit">Valider</button>
+		</div>
 	</form>
 </div>
 
