@@ -60,7 +60,7 @@ class TempsController extends Controller
             VenteSaillies();
            
         }
-        return redirect()->route('home');
+        return redirect()->back();
     }
 
     static function ElevenMonths()
@@ -386,7 +386,7 @@ function VenteSaillies ()
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur)
     {
-        $animaux = Animal::where('sexe', 'mâle')->orWhere('sexe', 'vieux mâle')->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where(function ($query) { return $query-> where('sexe', 'mâle')->orWhere('sexe', 'vieux mâle');})->get();
         foreach ($animaux as $animal)
         {
             if (isset ($animal->StatutMale) and ($animal->StatutMale->disponible))
@@ -404,8 +404,6 @@ function VenteSaillies ()
                 {
                     $animal->StatutMale->disponible = true;
                     $animal->statutMale->prix = $animal->Race->prix_moyen/20;
-                    $animal->statutMale->animal_id = $animal->id;
-                  
                     $animal->statutMale->save();
                     
                 }

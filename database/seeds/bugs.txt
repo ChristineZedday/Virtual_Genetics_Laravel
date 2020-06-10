@@ -1,14 +1,7 @@
 
 
 problème gènes liés poulain d'un tob sab ni tob ni sab?
-recombs non répertoriées?
-welsh cob au lieu welsh C
-OC au lieu de welsh
-ponette aa isab silver ???
-père aa bai silver
- il reste des animaux non renseignés sur loci obligatoires ou bien on en créée, changer 
-la requ^te de non save 
-races selon taille
+
 
 images à faire: 
 robes léopard, couverture, varnish
@@ -27,4 +20,10 @@ pouvoir retirer de la liste des femelles à faire saillir ou des étalons
 approbation étalons?
 
 filtres, tris?
+
+forms vente et enregistrement à améliorer
+
+ajouter possibilité enregistrer un OC dans un stud book après son enregistrement OC (plus cher)
+
+crsf token
 
