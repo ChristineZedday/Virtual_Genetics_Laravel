@@ -128,12 +128,14 @@
 			
 				
 				<div id='sterilisation'>
+				@if ($animal->elevage_id == $elevage->id )
 					<input type="hidden" id ="sexe" value ="{{$animal->sexe}}">
 					<input type="hidden" id ="budget" value ="{{$elevage->budget}}">
 					<input type="hidden" id ="route" value ="{{route('steriliser',[$elevage->id,$animal->id])}}">
 				
 				<button  onclick="checkConditions()">
 				Stériliser</button>
+				@endif
 				</div>	
 			
 			
@@ -154,30 +156,33 @@
 		sexe = document.getElementById('sexe').value;
 		budget = document.getElementById('budget').value;
 		route = document.getElementById('route').value;
-		alert('Opération irréversible!');
-		switch (true)
+		conf = confirm('Opération irréversible!');
+		if (conf)
 		{
-			case (sexe == 'mâle stérilisé' || sexe== 'vieux mâle stérilisé' || sexe =='femelle stérilisée' || sexe == 'vieille femelle stérilisée'):
-				alert('Déjà fait!');
-			break;
+			switch (true)
+			{
+				case (sexe == 'mâle stérilisé' || sexe== 'vieux mâle stérilisé' || sexe =='femelle stérilisée' || sexe == 'vieille femelle stérilisée'):
+					alert('Déjà fait!');
+				break;
 
-			case (sexe == 'jeune mâle' || sexe == 'jeune femelle'):
-				alert('trop jeune');
-			break;
+				case (sexe == 'jeune mâle' || sexe == 'jeune femelle'):
+					alert('Trop jeune!');
+				break;
 
-			case (budget < 100 ):
-				alert('Avec quoi allez-vous payer le véto?');
-			break;
+				case (budget < 100 ):
+					alert('Avec quoi allez-vous payer le véto?');
+				break;
 
-			case (budget < 300 & (sexe == 'femelle' || sexe == 'vieille femelle')):
-				alert('Trop cher pour vous.');
-			break;
+				case (budget < 300 & (sexe == 'femelle' || sexe == 'vieille femelle')):
+					alert('Trop cher pour vous!');
+				break;
 
-			default:
-			document.location.href=route; 
+				default:
+				document.location.href=route; 
 
 
-		}
+			}
+	}
 	}
 </script>
 
