@@ -25,7 +25,7 @@
   </tr>
 @foreach ($etalons as $animal)
 <tr>
-	<td> {{$animal->NomComplet()}} </td>
+	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille_cm}} </td>
@@ -38,7 +38,7 @@
 <td></td>
 	@endif
 
-	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>voir</button></a> </td>
+	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>Celui-ci?</button></a> </td>
 </tr>
 @endforeach
 </table>
@@ -57,7 +57,7 @@
   </tr>
 @foreach ($exterieurs as $animal)
 <tr>
-	<td> {{$animal->NomComplet()}} </td>
+	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille_cm}} </td>
@@ -71,7 +71,7 @@
 	@endif
 	<td> {{ $animal->StatutMale->prix}}</td>
 
-	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>voir</button></a> </td>
+	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>Celui-là?</button></a> </td>
 </tr>
 @endforeach
 </table>
