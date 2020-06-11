@@ -34,7 +34,7 @@ Route::get('/temps', 'TempsController@nextMonth')->name('temps');
 
 //Routes listant des animaux
 
-Route::get('/animaux/{elevage}', 'ElevageController@listeAnimaux')->name('animaux');
+Route::get('/animaux/{elevage}/{filtre}', 'ElevageController@listeAnimaux')->name('animaux');
 
 Route::get('/animal/{elevage}/{animal}', 'AnimalController@show')->name('animal');
 

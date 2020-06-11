@@ -19,7 +19,17 @@ $date = $game->date();
 
 <nav>
 	<ul>
-		<li><a href="{{route('animaux',[$elevage])}}">Voir mon cheptel</a></li>
+		<li class='deroule'><a href="{{route('animaux',[$elevage,'tous'])}}">Voir mon cheptel</a>
+			<ul class='sousmenu'>
+				<li><a href="{{route('animaux',[$elevage,'reps'])}}">Seulement les reproducteurs adultes</a></li>
+				<li><a href="{{route('animaux',[$elevage,'males'])}}">Etalons uniquement</a></li>
+				<li><a href="{{route('animaux',[$elevage,'femelles'])}}">Juments uniquement</a></li>
+				<li><a href="{{route('animaux',[$elevage,'jeunes'])}}">Seulement les jeunes</a></li>
+				<li><a href="{{route('animaux',[$elevage,'hongres'])}}">Seulement les animaux stérilisés</a></li>
+				<li><a href="{{route('animaux',[$elevage,'vente'])}}">Seulement les animaux à vendre</a></li>
+				
+			</ul>
+		</li>
 		<li><a href="{{route('budget',[$elevage])}}">Voir mon budget</a></li>
 	
 		<li><a href="{{route('home')}}">Changer d'élevage</a></li>

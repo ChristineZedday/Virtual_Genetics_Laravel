@@ -10909,6 +10909,11 @@ a.text-dark:focus {
   text-align: center;
 }
 
+.bandeau ul {
+  display: flex;
+  flex-direction: row;
+}
+
 .bandeau ul li {
   display: inline;
   margin: 5px;
@@ -10918,6 +10923,18 @@ a.text-dark:focus {
   text-decoration: none;
   color: #2f2429;
   text-transform: uppercase;
+}
+
+.bandeau .deroule .sousmenu {
+  display: none;
+}
+
+.bandeau .deroule:hover .sousmenu {
+  display: block;
+}
+
+.bandeau .deroule:hover .sousmenu li {
+  display: block;
 }
 
 .bandeau #temps {

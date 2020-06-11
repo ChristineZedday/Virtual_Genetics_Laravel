@@ -137,11 +137,39 @@ class ElevageController extends Controller
     /**
      * Show list of animals for this stud
      */
-    public function listeAnimaux ($id)
+    public function listeAnimaux ($id, $filtre)
     {
-        $date = TempsController::dateCourante();
+      
         $elevage = Elevage::Find($id);
-        $animaux = Animal::all()->where('elevage_id', $id)->where('foetus', false);
+        switch ($filtre)
+        {
+            case 'reps':
+                $animaux = Animal::where('elevage_id', $id)->whereIn('sexe',['mâle', 'vieux mâle', 'femelle', 'vieille femelle'])->get(); 
+            break;
+
+            case 'jeunes':
+                $animaux = Animal::where('elevage_id', $id)->where('foetus', false)->whereIn('sexe',['jeune mâle', 'jeune femelle'])->get(); 
+            break;
+
+            case 'males':
+                $animaux = Animal::where('elevage_id', $id)->whereIn('sexe',['mâle', 'vieux mâle'])->get(); 
+            break;
+
+            case 'femelles':
+                $animaux = Animal::where('elevage_id', $id)->whereIn('sexe',['femelle', 'vieille femelle'])->get(); 
+            break;
+
+            case 'hongres':
+                $animaux = Animal::where('elevage_id', $id)->whereIn('sexe',['mâle stérilisé', 'femelle stérilisée', 'vieux mâle stérilisé', 'vieille femelle stérilisée'])->get(); 
+            break;
+
+            case 'vente':
+                $animaux = Animal::where('elevage_id', $id)->where('foetus', false)->where('a_vendre', true)->get(); 
+            break;
+
+            default:
+            $animaux = Animal::all()->where('elevage_id', $id)->where('foetus', false);
+        }
       
       return view('animaux', ['elevage'=>$elevage,'animaux'=>$animaux]);
 

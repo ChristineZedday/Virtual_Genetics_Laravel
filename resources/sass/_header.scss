@@ -24,6 +24,8 @@
 	}
 
 	ul {
+		display: flex;
+		flex-direction: row;
 		li{
 			display: inline;
 			margin: 5px;
@@ -34,6 +36,25 @@
 			}
 		}
 	}
+	.deroule 
+{
+		.sousmenu 
+		{
+			display: none;
+		}
+		&:hover {
+
+			.sousmenu
+			{
+				display: block;	
+				li {
+					display: block;
+				}
+			}
+		}
+}
+
+
 	#temps {
 		display: inline;
 		background-color: $cremello;
