@@ -47,7 +47,7 @@ Route::put('/animal.envente', 'AnimalController@vente')->name('vente');
 
 Route::get('/animal.pas.vendre/{animal}', 'AnimalController@pasVendre')->name('pas.vendre');
 
-Route::get('/animaux/avendre/{elevage}', 'ElevageController@animauxAVendre')->name('animaux.avendre');
+Route::get('/animaux/avendre/{elevage}/{race}', 'ElevageController@animauxAVendre')->name('avendre');
 
 Route::get('/animal/acheter/{elevage}/{animal}', 'AnimalController@acheter')->name('acheter');
 

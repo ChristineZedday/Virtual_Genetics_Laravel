@@ -179,15 +179,14 @@ class ElevageController extends Controller
      * Show list of animals for sale in other studs
      * int $id: id élevage courant
      */
-    public function animauxAVendre ($id)
+    public function animauxAVendre ($id, $race)
     {
         
-        
-        $animaux = Animal::where('elevage_id', '!='  ,$id)->where('a_vendre',true)->get();
+        $animaux = Animal::where('elevage_id', '!=' , $id)->where('a_vendre',true)->where('race_id', $race)->get();
         $elevage = Elevage::Find($id);
-        
       
-      return view('animauxAVendre', ['elevage'=>$elevage, 'animaux'=>$animaux]);
+     
+      return view('animauxAVendre', ['elevage'=>$elevage,'animaux'=>$animaux]);
 
     }
 
