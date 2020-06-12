@@ -445,8 +445,8 @@ class ReproductionController extends Controller
           
       }
    
-   
-    return redirect()->route('animaux',[$elevage->id]);
+   if ($jument->Elevage->role != 'Vendeur')
+  {  return redirect()->route('dashboard',[$elevage->id]);}
    } //end function croisement
   
 } //end class ReproductionController

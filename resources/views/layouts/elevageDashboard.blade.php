@@ -34,7 +34,7 @@ $date = $game->date();
 			
 				<li><a href="{{route('home')}}">Changer d'élevage</a>
 				</li>
-				<li class='deroule'><a href="{{route('avendre',[$elevage, ' '])}}">Acheter un animal</a>
+				<li class='deroule'><a href="{{route('avendre',[$elevage, 'tous'])}}">Acheter un animal</a>
 				<ul class='sousmenu'>
 					<?php
 					$races = App\Race::all();

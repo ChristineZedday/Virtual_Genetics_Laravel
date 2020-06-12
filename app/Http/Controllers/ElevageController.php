@@ -181,8 +181,13 @@ class ElevageController extends Controller
      */
     public function animauxAVendre ($id, $race)
     {
-        
+        if ($race == 'tous')
+        {
+            $animaux = Animal::where('elevage_id', '!=' , $id)->where('a_vendre',true)->get();   
+        }
+        else{
         $animaux = Animal::where('elevage_id', '!=' , $id)->where('a_vendre',true)->where('race_id', $race)->get();
+        }
         $elevage = Elevage::Find($id);
       
      
