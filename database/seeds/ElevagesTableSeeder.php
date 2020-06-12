@@ -125,6 +125,30 @@ class ElevagesTableSeeder extends Seeder
                 'role' => 'Joueur',
                 'user_id' => 2,
             ),
+            9 => 
+            array (
+                'id' => 10,
+                'affixe_id' => 49,
+                'created_at' => '2020-06-12 12:33:27',
+                'updated_at' => '2020-06-12 12:33:27',
+                'nom_elevage' => 'Misty Mountains',
+                'nom_eleveur' => 'Gwladys Davies',
+                'budget' => 19500,
+                'role' => 'Vendeur',
+                'user_id' => 1,
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'affixe_id' => 50,
+                'created_at' => '2020-06-12 12:35:09',
+                'updated_at' => '2020-06-12 12:35:09',
+                'nom_elevage' => 'Cob Cottage',
+                'nom_eleveur' => 'Mary Cobbler',
+                'budget' => 19500,
+                'role' => 'Vendeur',
+                'user_id' => 1,
+            ),
         ));
         
         

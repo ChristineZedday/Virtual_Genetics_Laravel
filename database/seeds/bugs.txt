@@ -25,6 +25,4 @@ forms vente et enregistrement à améliorer
 
 ajouter possibilité enregistrer un OC dans un stud book après son enregistrement OC (plus cher
 
-séparer les sections welsh sinon plus que des c 
-
 limiter repro des npc quand la base grandit trop
