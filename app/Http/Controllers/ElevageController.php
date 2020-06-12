@@ -224,7 +224,7 @@ class ElevageController extends Controller
         }
 
         $etalon->StatutMale->save();
-        return redirect()->back()
+        return redirect()->back();
     }
    
 
