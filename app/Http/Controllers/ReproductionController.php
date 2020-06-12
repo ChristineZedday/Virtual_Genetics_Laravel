@@ -100,11 +100,12 @@ class ReproductionController extends Controller
           $animal->taille_cm = $animal->taille_additive + rand(-2,2);
 
          
-                if ($etalon->race_id == $jument->race_id)
+                if ($etalon->race_id == $jument->race_id && ($etalon->StatutMale->qualité == 'autorisé' || $etalon->StatutMale->qualité == 'approuvé'  ))
                 {
                     $animal->race_id = $etalon->race_id;
                 }
-                else{
+                else if ($etalon->StatutMale->qualité == 'autorisé' || $etalon->StatutMale->qualité == 'approuvé'  )
+                {
                   $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', true)->get();
                  
                   if (sizeof($races) > 0)
@@ -129,6 +130,10 @@ class ReproductionController extends Controller
                   {
                     $animal->race_id = 1;
                   }
+                }
+                else
+                {
+                  $animal->race_id = 1;
                 }
         
           $animal->consang = calculConsang($etalon->id, $jument->id);

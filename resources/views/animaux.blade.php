@@ -41,8 +41,9 @@ if (isset($images)) {
 	</td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a></td>
 	<td> {{$animal->Race->nom}} </td>
-	<td>@if (isset $animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
-					 @else {{$animal->sexe}} @endif </td>
+	<td>@isset ($animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
+		@else {{$animal->sexe}}
+		 @endisset </td>
   <td> {{$animal->couleur}} </td>
   <td>
   <?php 
