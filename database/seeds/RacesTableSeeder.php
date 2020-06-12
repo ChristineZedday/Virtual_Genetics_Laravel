@@ -58,8 +58,8 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Mountain',
                 'prix_moyen' => 1000,
                 'frais_enregistrement' => NULL,
-                'taille_min' => 30,
-                'taille_max' => 141,
+                'taille_min' => 90,
+                'taille_max' => 121,
             ),
             4 => 
             array (
@@ -69,7 +69,7 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Pony',
                 'prix_moyen' => 1300,
                 'frais_enregistrement' => NULL,
-                'taille_min' => 100,
+                'taille_min' => 122,
                 'taille_max' => 137,
             ),
             5 => 
@@ -80,7 +80,7 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Pony type Cob',
                 'prix_moyen' => 1400,
                 'frais_enregistrement' => NULL,
-                'taille_min' => 100,
+                'taille_min' => 122,
                 'taille_max' => 137,
             ),
             6 => 
@@ -91,8 +91,8 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Welsh Cob',
                 'prix_moyen' => 2000,
                 'frais_enregistrement' => NULL,
-                'taille_min' => 137,
-                'taille_max' => 177,
+                'taille_min' => 138,
+                'taille_max' => 165,
             ),
             7 => 
             array (

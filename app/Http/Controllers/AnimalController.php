@@ -193,7 +193,7 @@ class AnimalController extends Controller
             
             if ($animal->save())
             {
-                return redirect()->route('animaux',[$elevage->id]);
+                return redirect()->back();
             }
         }
         else {

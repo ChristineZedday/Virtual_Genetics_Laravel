@@ -61,8 +61,9 @@ class TempsController extends Controller
             VenteSaillies();
            
         }
-        $elevage = Elevage::Find($elevage);
-        return view('dashboard',['elevage' =>$elevage]);
+        // $elevage = Elevage::Find($elevage);
+        // return view('dashboard',['elevage' =>$elevage]);
+        return redirect()->back();
     }
 
     static function ElevenMonths()
