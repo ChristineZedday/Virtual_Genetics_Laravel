@@ -137,10 +137,21 @@
 				Stériliser</button>
 				@endif
 				</div>	
+
+				<div>
+					@isset($animal->StatutMale)
+						@if ($animal->StatutMale->qualite == 'non autorisé' && $animal->race_id != 1)
+						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
+						<button>  Présenter à la commission étalons</button>
+						</a>
+						@endif
+					@endisset
+				</div>
 			
 			
 	
 			<div id="progeny">
+			<h3>Descendants: </h3>
 				@foreach ($animal->Progeny() as $petit)
 				<p> <a href="{{route('animal',[$elevage->id, $petit->id])}}"> {{$petit->NomComplet()}} </a> @if ($animal->sexe == 'femelle' || $animal->sexe == 'vieille femelle') par {{$petit->Sire->NomComplet()}} @endif</p>
 				@endforeach

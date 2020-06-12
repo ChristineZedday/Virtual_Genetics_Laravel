@@ -207,6 +207,27 @@ class ElevageController extends Controller
 
     }
 
+    public function commissionEtalons ($id, $etalon)
+    {
+        $etalon = Animal::Find($etalon);
+        if ($etalon->modele_allures > 14)
+        {
+            $etalon->StatutMale->qualite ='approuvé';
+        }
+        else if ($etalon->modele_allures > 10)
+        {
+            $etalon->StatutMale->qualite = 'autorisé';
+        }
+        else 
+        { 
+            $etalon->StatutMale->qualite ='refusé';
+        }
+
+        $etalon->StatutMale->save();
+        return redirect()->back()
+    }
+   
+
      /**
      * Show list of available males in elevage $id
      * param int $id current stud $jument female 
