@@ -14,8 +14,10 @@
 <h3 >Mes Etalons:</h3>
 <table>
 <tr>
-    <th>Nom </th>
-    <th>Race</th>
+	<th>Nom </th>
+	<th>Qualité</th>
+	<th>Race</th>
+
     <th>Couleur</th>
 	<th>taille</th>
     <th>Date de naissance</th>
@@ -26,7 +28,9 @@
 @foreach ($etalons as $animal)
 <tr>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
+	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>
 	<td> {{$animal->Race->nom}} </td>
+
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille_cm}} </td>
 	<td> {{$animal->date_naissance}} </td>
@@ -45,7 +49,8 @@
 <h3>Etalons extérieurs</h3>
 <table>
 <tr>
-    <th>Nom </th>
+	<th>Nom </th>
+	<th>Qualité</th>
     <th>Race</th>
     <th>Couleur</th>
 	<th>taille</th>
@@ -58,6 +63,7 @@
 @foreach ($exterieurs as $animal)
 <tr>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
+	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille_cm}} </td>

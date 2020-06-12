@@ -41,7 +41,8 @@ if (isset($images)) {
 	</td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a></td>
 	<td> {{$animal->Race->nom}} </td>
-	<td> {{$animal->sexe}} </td>
+	<td>@if (isset $animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
+					 @else {{$animal->sexe}} @endif </td>
   <td> {{$animal->couleur}} </td>
   <td>
   <?php 
@@ -58,7 +59,7 @@ if (isset($images)) {
 
 	?>
   </td>
-  <td> {{ $animal->taille_cm}} ({{ $animal->taille_additive}}) </td>
+  <td> {{ $animal->taille_cm}}  </td>
 	<td>@isset ($animal->date_achat) {{$animal->date_achat}} @else {{$animal->date_naissance}} @endisset</td>
 	<td> {{ $animal->a_vendre ? "à vendre" : ""  }} </td>
 

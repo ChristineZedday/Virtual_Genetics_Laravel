@@ -26,3 +26,5 @@ forms vente et enregistrement à améliorer
 ajouter possibilité enregistrer un OC dans un stud book après son enregistrement OC (plus cher
 
 limiter repro des npc quand la base grandit trop
+
+affixes seconde gen mère père ou élevage vendeur aléatoiremnt

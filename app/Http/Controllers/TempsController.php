@@ -184,6 +184,21 @@ function checkPuberes()
             $statut = new StatutMale();
             $statut->animal_id = $animal->id;
             $statut->fertilite = 100 - $animal->consang/2 ;
+            if ($animal->Elevage->role == 'Vendeur')
+            {
+                if ($animal->modele_allures > 14)
+                {
+                    $statut->qualite = 'approuvé';
+                }
+                else if ($animal->modele_allures > 10)
+                {
+                    $statut->qualite = 'autorisé';
+                }
+                else
+                {
+                    $statut->qualite = 'refusé';
+                }
+            }
             $statut->save();
          }
             
@@ -238,7 +253,7 @@ function reproNPC($date)
                         }
                         if(rand(1,$var)==1)
                         {
-                            $etalons = Animal::where('elevage_id',$vendeur->id)->where('sexe','mâle')->get();
+                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite','autorisé')->orWhere('qualite','approuvé');})->get();
                             $nb = sizeof($etalons);
                             if ($nb > 0) {
                                 $choisi = rand(1,$nb) -1;
@@ -386,10 +401,10 @@ function VenteSaillies ()
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur)
     {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->where(function ($query) { return $query-> where('sexe', 'mâle')->orWhere('sexe', 'vieux mâle');})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'autorisé')->orWhere('qualite', 'approuvé');})->get();
         foreach ($animaux as $animal)
         {
-            if (isset ($animal->StatutMale) and ($animal->StatutMale->disponible))
+            if ($animal->StatutMale->disponible)
             {
                 if (rand(1,3)== 1)
                 {
@@ -398,31 +413,20 @@ function VenteSaillies ()
                     
                 }
             }
-            else if (isset ($animal->StatutMale) and ( !($animal->StatutMale->disponible)))
+            else 
             {
                 if (rand(1,3)== 1)
                 {
                     $animal->StatutMale->disponible = true;
-                    $animal->statutMale->prix = $animal->Race->prix_moyen/20;
+                    if ($animal->StatutMale->qualite = 'approuvé')
+                   { $animal->statutMale->prix = $animal->Race->prix_moyen/10;}
+                   else
+                   {$animal->statutMale->prix = $animal->Race->prix_moyen/20;}
                     $animal->statutMale->save();
                     
                 }
             }
-            else // pas de statut
-            {
-                if (rand(1,3)== 1)
-                { 
-                    $statut = new StatutMale();
-                    $statut->disponible = true;
-                    if ($animal->fondateur)
-                    {
-                        $statut->qualite = 'autorisé';
-                    }
-                    $statut->prix = $animal->Race->prix_moyen/20;
-                    $statut->animal_id = $animal->id;
-                    $statut->save();
-                    }
-            }
+           
         
         }
 
@@ -457,8 +461,15 @@ function checkMorts ()
                     if (isset($statut) && $statut->pleine)
                     {
                         $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
-                        $produit->elevage_id = 2;
-                        $produit->save();
+                        $produit->delete();
+                      
+                    }
+                    if (isset($statut))
+                   { $statut->delete();}
+                       
+                    if (isset($animal->StatutMale))
+                    {
+                        $animal->StatutMale->delete();
                     }
                 }
             

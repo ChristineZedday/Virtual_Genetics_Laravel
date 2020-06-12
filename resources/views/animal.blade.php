@@ -5,7 +5,8 @@
 		<div class='texte'>
 			<h1>{{$animal->NomComplet()}}</h1>
 				<h3>{{$animal->Race->nom}}</h3>
-				<p>{{$animal->sexe}}</p>
+				<p>@if (isset $animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
+					 @else {{$animal->sexe}} @endif</p>
 				@isset($animal->couleur)
 					<p>{{ $animal->couleur }}</p>
 				@else
