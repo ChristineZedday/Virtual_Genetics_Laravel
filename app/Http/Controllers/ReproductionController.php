@@ -100,7 +100,7 @@ class ReproductionController extends Controller
           $animal->taille_cm = $animal->taille_additive + rand(-2,2);
 
          
-                if ($etalon->race_id == $jument->race_id && ($etalon->StatutMale->qualité == 'autorisé' || $etalon->StatutMale->qualité == 'approuvé'  ))
+                if ($etalon->race_id == $jument->race_id && ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  ))
                 {
                     $animal->race_id = $etalon->race_id;
                 }
