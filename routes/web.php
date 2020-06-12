@@ -29,7 +29,7 @@ Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');
 
 Route::get('/budget/{elevage}', 'ElevageController@budget')->name('budget');
 
-Route::get('/temps', 'TempsController@nextMonth')->name('temps');
+Route::get('/temps/{elevage}', 'TempsController@nextMonth')->name('temps');
 
 
 //Routes listant des animaux

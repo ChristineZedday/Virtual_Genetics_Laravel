@@ -9,6 +9,7 @@ use App\Animal;
 use App\Elevage;
 use App\Race;
 use App\StatutMale;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class TempsController extends Controller
 {
@@ -27,7 +28,7 @@ class TempsController extends Controller
         return $date;
     }
 
-    static function nextMonth()
+    static function nextMonth($elevage)
     {
        
         $date = TempsController::dateCourante();
@@ -60,7 +61,8 @@ class TempsController extends Controller
             VenteSaillies();
            
         }
-        return redirect()->back();
+        $elevage = Elevage::Find($elevage);
+        return view('dashboard',['elevage' =>$elevage]);
     }
 
     static function ElevenMonths()

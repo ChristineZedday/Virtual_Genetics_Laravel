@@ -48,7 +48,7 @@ $date = $game->date();
 			</ul>
 			<span id='temps'>
 				<span id='ladate'>{{$date}}</span><br/>
-				<a href="{{route('temps')}}">Avancer d'un mois</a><br/>
+				<a href="{{route('temps',[$elevage])}}">Avancer d'un mois</a><br/>
 				<span class= 'rouge'>Irréversible!</span>
 			</span>
 								
