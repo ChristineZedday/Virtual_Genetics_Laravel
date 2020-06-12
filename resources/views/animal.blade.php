@@ -131,6 +131,9 @@
 				@if ($animal->elevage_id == $elevage->id )
 					<input type="hidden" id ="sexe" value ="{{$animal->sexe}}">
 					<input type="hidden" id ="budget" value ="{{$elevage->budget}}">
+					@isset ($animal->Statut)
+					<input type="hidden" id ="pleine" value ="{{$animal->Statut->pleine}}">
+					@endisset
 					<input type="hidden" id ="route" value ="{{route('steriliser',[$elevage->id,$animal->id])}}">
 				
 				<button  onclick="checkConditions()">
@@ -140,7 +143,7 @@
 
 				<div>
 					@isset($animal->StatutMale)
-						@if ($animal->StatutMale->qualite == 'non autorisé' && $animal->race_id != 1)
+						@if ($animal->StatutMale->qualite == 'non autorisé' && $animal->race_id != 1 && $animal->elevage_id = $elevage->id)
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
 						<button>  Présenter à la commission étalons</button>
 						</a>
@@ -167,11 +170,16 @@
 		sexe = document.getElementById('sexe').value;
 		budget = document.getElementById('budget').value;
 		route = document.getElementById('route').value;
+		pleine = document.getElementById('pleine').value
 		conf = confirm('Opération irréversible!');
 		if (conf)
 		{
 			switch (true)
 			{
+				case (pleine == 1):
+					alert ('femelle pleine, attendons la mise bas');
+				break;
+
 				case (sexe == 'mâle stérilisé' || sexe== 'vieux mâle stérilisé' || sexe =='femelle stérilisée' || sexe == 'vieille femelle stérilisée'):
 					alert('Déjà fait!');
 				break;

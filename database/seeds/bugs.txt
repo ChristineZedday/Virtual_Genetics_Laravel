@@ -17,7 +17,7 @@ pas donner le m^me nom + m^me affixe
 
 pouvoir retirer de la liste des femelles à faire saillir ou des étalons
 
-approbation étalons?
+faire payer approbation étalons? primes approuvés?
 
 trier? (javascript sur table? nvlle requête)
 
