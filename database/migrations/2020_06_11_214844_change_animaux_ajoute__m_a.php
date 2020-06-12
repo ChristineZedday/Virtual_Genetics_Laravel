@@ -15,6 +15,7 @@ class ChangeAnimauxAjouteMA extends Migration
     {
         Schema::table('animaux', function (Blueprint $table) {
         $table->tinyInteger('modele_allures')->unsigned()->default(12);
+        $table->tinyInteger('modele_allures_additifs')->unsigned()->default(12);
          });
     }
 
@@ -27,6 +28,7 @@ class ChangeAnimauxAjouteMA extends Migration
     {
         Schema::table('animaux', function (Blueprint $table) {
             $table->dropColumn('modele_allures');
+            $table->dropColumn('modele_allures_additifs');
          });
     }
 }

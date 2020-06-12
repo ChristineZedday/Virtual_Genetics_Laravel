@@ -20,6 +20,10 @@ class CreatePhenotypesTable extends Migration
             $table->bigInteger('allele2_id')->unsigned();
             $table->tinyInteger('effet_taille')->nullable();
             $table->tinyInteger('effet_blanc')->nullable();
+            $table->tinyInteger('effet_m_a')->nullable()->default(NULL);
+            $table->tinyInteger('effet_rouge')->nullable()->default(NULL);
+            $table->tinyInteger('effet_noir')->nullable()->default(NULL);
+            $table->tinyInteger('effet_noir_extremites')->nullable()->default(NULL);
           
             
             $table->bigInteger('couleur_id')->unsigned()->nullable();

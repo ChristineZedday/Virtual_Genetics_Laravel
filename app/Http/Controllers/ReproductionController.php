@@ -96,9 +96,10 @@ class ReproductionController extends Controller
           $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
          
 
-          $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 ;
+          $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2) ;
           $animal->taille_cm = $animal->taille_additive + rand(-2,2);
 
+         
                 if ($etalon->race_id == $jument->race_id)
                 {
                     $animal->race_id = $etalon->race_id;
@@ -131,7 +132,36 @@ class ReproductionController extends Controller
                 }
         
           $animal->consang = calculConsang($etalon->id, $jument->id);
+         
+
+          switch(true)
+          {
+            case $animal->consang < 6.25:
+              $n = 2;
+              $m = 2;
+            break;
+
+            case $animal->consang < 12.5:
+              $n = 2;
+              $m = 1;
+            break;
+
+            case $animal->consang < 25:
+              $n = 3;
+              $m = 1;
+            break;
+
+            default:
+            $n =4;
+            $m =0;
+          }
+
+          $animal->modele_allures_additifs = ($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m);
+
+          $animal->modele_allures = $animal->modele_allures_additifs + rand (-1,1);
+
           $animal->save();
+
           Genome::mixGenes($etalon->id, $jument->id, $animal->id);
           $genotypes = Genotype::where('animal_id',$animal->id)->get();
           $base_couleurs = [];
@@ -148,6 +178,12 @@ class ReproductionController extends Controller
               if (isset($phenotype)) {
                 
                 // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
+
+                if (isset($phenotype->effet_m_a))
+                {
+                  $animal->modele_allures = $animal->modele_allures + $phenotype->effet_m_a; 
+                  $animal->save();
+                }
 
                 if (isset($phenotype->effet_taille))
                   {

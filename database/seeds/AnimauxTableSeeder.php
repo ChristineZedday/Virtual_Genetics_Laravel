@@ -40,6 +40,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 99,
+                'modele_allures' => 11,
+                'modele_allures_additifs' => 11,
             ),
             1 => 
             array (
@@ -64,6 +66,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 102,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             2 => 
             array (
@@ -88,6 +92,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 114,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             3 => 
             array (
@@ -112,6 +118,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 106,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             4 => 
             array (
@@ -136,6 +144,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 117,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             5 => 
             array (
@@ -160,6 +170,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 121,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             6 => 
             array (
@@ -184,6 +196,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 104,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             7 => 
             array (
@@ -208,6 +222,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 118,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             8 => 
             array (
@@ -232,6 +248,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 113,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             9 => 
             array (
@@ -256,6 +274,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 120,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             10 => 
             array (
@@ -280,6 +300,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 119,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             11 => 
             array (
@@ -304,6 +326,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 129,
+                'modele_allures' => 11,
+                'modele_allures_additifs' => 11,
             ),
             12 => 
             array (
@@ -328,6 +352,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 122,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
             13 => 
             array (
@@ -352,6 +378,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 101,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
             14 => 
             array (
@@ -376,6 +404,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 99,
+                'modele_allures' => 10,
+                'modele_allures_additifs' => 10,
             ),
             15 => 
             array (
@@ -400,6 +430,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 112,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             16 => 
             array (
@@ -424,6 +456,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 103,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             17 => 
             array (
@@ -448,6 +482,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 105,
+                'modele_allures' => 18,
+                'modele_allures_additifs' => 18,
             ),
             18 => 
             array (
@@ -472,6 +508,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 98,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             19 => 
             array (
@@ -496,6 +534,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 109,
+                'modele_allures' => 18,
+                'modele_allures_additifs' => 18,
             ),
             20 => 
             array (
@@ -520,6 +560,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 114,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             21 => 
             array (
@@ -544,6 +586,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 107,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             22 => 
             array (
@@ -568,6 +612,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 101,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             23 => 
             array (
@@ -592,6 +638,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 113,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             24 => 
             array (
@@ -616,6 +664,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 111,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             25 => 
             array (
@@ -640,6 +690,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 106,
+                'modele_allures' => 9,
+                'modele_allures_additifs' => 9,
             ),
             26 => 
             array (
@@ -664,6 +716,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 108,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             27 => 
             array (
@@ -688,6 +742,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 103,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             28 => 
             array (
@@ -712,6 +768,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 98,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
             29 => 
             array (
@@ -736,6 +794,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 107,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             30 => 
             array (
@@ -760,6 +820,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 105,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             31 => 
             array (
@@ -784,6 +846,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 108,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             32 => 
             array (
@@ -808,6 +872,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 105,
+                'modele_allures' => 11,
+                'modele_allures_additifs' => 11,
             ),
             33 => 
             array (
@@ -832,6 +898,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 98,
+                'modele_allures' => 11,
+                'modele_allures_additifs' => 18,
             ),
             34 => 
             array (
@@ -856,6 +924,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 93,
+                'modele_allures' => 7,
+                'modele_allures_additifs' => 19,
             ),
             35 => 
             array (
@@ -880,6 +950,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 91,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 18,
             ),
             36 => 
             array (
@@ -904,6 +976,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 85,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
             37 => 
             array (
@@ -928,6 +1002,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 125,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             38 => 
             array (
@@ -952,6 +1028,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 119,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             39 => 
             array (
@@ -976,6 +1054,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 135,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             40 => 
             array (
@@ -1000,6 +1080,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 132,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             41 => 
             array (
@@ -1024,6 +1106,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 116,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
             42 => 
             array (
@@ -1048,6 +1132,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 120,
+                'modele_allures' => 18,
+                'modele_allures_additifs' => 18,
             ),
             43 => 
             array (
@@ -1072,6 +1158,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 110,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             44 => 
             array (
@@ -1096,6 +1184,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 136,
+                'modele_allures' => 18,
+                'modele_allures_additifs' => 18,
             ),
             45 => 
             array (
@@ -1120,6 +1210,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 133,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             46 => 
             array (
@@ -1144,6 +1236,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 151,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             47 => 
             array (
@@ -1168,6 +1262,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 114,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             48 => 
             array (
@@ -1192,6 +1288,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 148,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             49 => 
             array (
@@ -1216,6 +1314,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 153,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             50 => 
             array (
@@ -1240,6 +1340,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 154,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             51 => 
             array (
@@ -1264,6 +1366,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 156,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             52 => 
             array (
@@ -1288,6 +1392,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 153,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
             53 => 
             array (
@@ -1312,6 +1418,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 149,
+                'modele_allures' => 18,
+                'modele_allures_additifs' => 18,
             ),
             54 => 
             array (
@@ -1336,6 +1444,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 95,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             55 => 
             array (
@@ -1360,6 +1470,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 101,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
             56 => 
             array (
@@ -1384,6 +1496,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 104,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             57 => 
             array (
@@ -1408,6 +1522,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 102,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             58 => 
             array (
@@ -1432,6 +1548,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 100,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             59 => 
             array (
@@ -1456,6 +1574,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 80,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             60 => 
             array (
@@ -1480,6 +1600,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 127,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             61 => 
             array (
@@ -1504,6 +1626,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 115,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             62 => 
             array (
@@ -1528,6 +1652,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 126,
+                'modele_allures' => 11,
+                'modele_allures_additifs' => 11,
             ),
             63 => 
             array (
@@ -1552,6 +1678,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 134,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
             ),
             64 => 
             array (
@@ -1576,6 +1704,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 136,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             65 => 
             array (
@@ -1600,6 +1730,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 137,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             66 => 
             array (
@@ -1624,6 +1756,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 133,
+                'modele_allures' => 18,
+                'modele_allures_additifs' => 18,
             ),
             67 => 
             array (
@@ -1648,6 +1782,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 135,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
             ),
             68 => 
             array (
@@ -1672,6 +1808,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 132,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
             ),
             69 => 
             array (
@@ -1696,6 +1834,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 129,
+                'modele_allures' => 10,
+                'modele_allures_additifs' => 10,
             ),
             70 => 
             array (
@@ -1720,6 +1860,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 148,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
             ),
             71 => 
             array (
@@ -1744,6 +1886,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 134,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
             ),
             72 => 
             array (
@@ -1768,6 +1912,8 @@ class AnimauxTableSeeder extends Seeder
                 'sire_id' => NULL,
                 'dam_id' => NULL,
                 'taille_additive' => 151,
+                'modele_allures' => 17,
+                'modele_allures_additifs' => 17,
             ),
         ));
         
