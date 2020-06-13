@@ -195,259 +195,276 @@ class ReproductionController extends Controller
                 
                 // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
 
-                if (isset($phenotype->effet_m_a))
+                if (isset($phenotype->pathologie_id))
                 {
-                  $animal->modele_allures = $animal->modele_allures + $phenotype->effet_m_a; 
-                  $animal->save();
+                  if ($phenotype->pathologie_id == 5)
+                  {
+                    $statut->vide = true; 
+                    $statut->save();
+                    $embryoletal = true;
+                  }
+                  else
+                  {$animal->Pathologie()->attach($phenotype->pathologie_id);}
                 }
 
-                if (isset($phenotype->effet_taille))
+                if (! $embryoletal)
+                {
+                  if (isset($phenotype->effet_m_a))
                   {
-                    $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
+                    $animal->modele_allures = $animal->modele_allures + $phenotype->effet_m_a; 
                     $animal->save();
                   }
-                  if (isset($phenotype->pathologie_id))
-                  {
-                    $animal->Pathologie()->attach($phenotype->pathologie_id);
-                  }
-                  if (isset($phenotype->couleur_id) ) {
-                    $couleur = Couleur::Find($phenotype->couleur_id);
-                    if ($phenotype->effet_blanc <> null)
+
+                  if (isset($phenotype->effet_taille))
                     {
-                      $blanc += $phenotype->effet_blanc;
+                      $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
+                      $animal->save();
                     }
-                    switch (true) {
-                      case $couleur->base_couleur:
-                        $base_couleurs[]= $couleur;
-                      break;
+                 
+                    if (isset($phenotype->couleur_id) ) {
+                      $couleur = Couleur::Find($phenotype->couleur_id);
+                      if ($phenotype->effet_blanc <> null)
+                      {
+                        $blanc += $phenotype->effet_blanc;
+                      }
+                      switch (true) {
+                        case $couleur->base_couleur:
+                          $base_couleurs[]= $couleur;
+                        break;
 
-                      case $couleur->est_motif:
-                        $motif_couleurs[] =$couleur;
-                      break;
+                        case $couleur->est_motif:
+                          $motif_couleurs[] =$couleur;
+                        break;
+                      
+                        case $couleur->est_dilution:
+
+                          $dilue_couleurs[] =$couleur;
+                        break;
+
+                        default:
+                          $modif_couleurs[] =$couleur;
+                      }
                     
-                      case $couleur->est_dilution:
-
-                        $dilue_couleurs[] =$couleur;
-                      break;
-
-                      default:
-                        $modif_couleurs[] =$couleur;
-                    }
-                  
-                    
-                  } //end pheno couleur
-              }//endisset phenotype
+                      
+                    } //end pheno couleur
+                  } // end pas létal
+                  else{
+                    $animal->delete();
+                  }
+                }//endisset phenotype
 
               
             } //foreach genotype
 
-            $alezan = Couleur::where('nom','alezan')->first();
-            $noirbai = Couleur::where('nom','noirbai')->first();
-            $bai = Couleur::where('nom','bai')->first();
-            $noir = Couleur::where('nom','noir')->first();
-            $alezanbai = Couleur::where('nom','alezanbai')->first();
-            $alezannoir = Couleur::Where('nom','alezannoir')->first();
-           
-            switch (true)
+            if (! $embryoletal)
             {
-              case in_array($alezan, $base_couleurs) && in_array($alezanbai, $base_couleurs):
-
-                $animal->base = 'alezan agouti';
-                $animal->save();
-                
-                  $animal->Couleur()->attach($alezan->id);
-                  foreach ($alezan->Images as $image)
-                 { $animal->Image()->attach($image->id);}
-                  
-              break;
-
-              case in_array($alezan, $base_couleurs) && !(in_array($alezanbai, $base_couleurs)):
-
-                $animal->base = 'alezan aa';
-                $animal->save();
-                
-                  $animal->Couleur()->attach($alezan->id);
-                  foreach ($alezan->Images as $image)
-                 { $animal->Image()->attach($image->id);}
-                  
-              break;
-
-              case in_array($alezanbai, $base_couleurs) && in_array($noirbai, $base_couleurs):
-
-                $animal->base = 'bai';
-                $animal->save();
-                
-                $animal->Couleur()->attach($bai->id);
-                
-                foreach ($bai->Images as $image)
-                { $animal->Image()->attach($image->id);}
-                  
-              break;
-
-              case in_array($alezannoir, $base_couleurs) && in_array($noirbai, $base_couleurs):
-
-                $animal->base = 'noir';
-                $animal->save();
-                
-                $animal->Couleur()->attach($noir->id);
-                
-                foreach ($noir->Images as $image)
-                { $animal->Image()->attach($image->id);}
-                  
-              break;
-
-              default:
-
-                $animal->base = 'bai';
-                $animal->save();
-                  
-                $animal->Couleur()->attach($bai->id);
-                foreach ($bai->Images as $image)
-                { $animal->Image()->attach($image->id);}
-                  
-              break;
-
-
-            }
-          
-            foreach ($dilue_couleurs as $coul)
-            {
-                $base = Couleur::where('nom', $animal->base)->first();
-                $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
-                if (isset($couleur))
-                  {
-                    $couleur = $couleur->couleur_res_id;
-                  $animal->Couleur()->attach($couleur);
-
-                  $images = Couleur::Find($couleur)->Images;
-                  foreach ($images as $image)
-                  { 
-                    if ($image <> null)
-                    {$animal->Image()->attach($image->id);}
-                  }
-
-                 
-                }
-
-              
-               
-            }
-            //gérer les dilutions multiples au moyen de couches d'images?
-            $LP = false;
-            $LPLP = false;
-            foreach ($motif_couleurs as $coul)
-            {
+              $alezan = Couleur::where('nom','alezan')->first();
+              $noirbai = Couleur::where('nom','noirbai')->first();
+              $bai = Couleur::where('nom','bai')->first();
+              $noir = Couleur::where('nom','noir')->first();
+              $alezanbai = Couleur::where('nom','alezanbai')->first();
+              $alezannoir = Couleur::Where('nom','alezannoir')->first();
+            
               switch (true)
               {
-                case $blanc < 0:
+                case in_array($alezan, $base_couleurs) && in_array($alezanbai, $base_couleurs):
+
+                  $animal->base = 'alezan agouti';
+                  $animal->save();
+                  
+                    $animal->Couleur()->attach($alezan->id);
+                    foreach ($alezan->Images as $image)
+                  { $animal->Image()->attach($image->id);}
+                    
                 break;
 
-                case $blanc > 9:
-                  $couleur = Couleur::where('nom','Blanc')->first();
-                  $images = $couleur->Images;
-                  foreach ($images as $image)
-                  {
-                    $animal->Image()->attach($image->id);
+                case in_array($alezan, $base_couleurs) && !(in_array($alezanbai, $base_couleurs)):
+
+                  $animal->base = 'alezan aa';
+                  $animal->save();
+                  
+                    $animal->Couleur()->attach($alezan->id);
+                    foreach ($alezan->Images as $image)
+                  { $animal->Image()->attach($image->id);}
+                    
+                break;
+
+                case in_array($alezanbai, $base_couleurs) && in_array($noirbai, $base_couleurs):
+
+                  $animal->base = 'bai';
+                  $animal->save();
+                  
+                  $animal->Couleur()->attach($bai->id);
+                  
+                  foreach ($bai->Images as $image)
+                  { $animal->Image()->attach($image->id);}
+                    
+                break;
+
+                case in_array($alezannoir, $base_couleurs) && in_array($noirbai, $base_couleurs):
+
+                  $animal->base = 'noir';
+                  $animal->save();
+                  
+                  $animal->Couleur()->attach($noir->id);
+                  
+                  foreach ($noir->Images as $image)
+                  { $animal->Image()->attach($image->id);}
+                    
+                break;
+
+                default:
+
+                  $animal->base = 'bai';
+                  $animal->save();
+                    
+                  $animal->Couleur()->attach($bai->id);
+                  foreach ($bai->Images as $image)
+                  { $animal->Image()->attach($image->id);}
+                    
+                break;
+
+
+              }
+            
+              foreach ($dilue_couleurs as $coul)
+              {
+                  $base = Couleur::where('nom', $animal->base)->first();
+                  $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
+                  if (isset($couleur))
+                    {
+                      $couleur = $couleur->couleur_res_id;
+                    $animal->Couleur()->attach($couleur);
+
+                    $images = Couleur::Find($couleur)->Images;
+                    foreach ($images as $image)
+                    { 
+                      if ($image <> null)
+                      {$animal->Image()->attach($image->id);}
+                    }
+
+                  
                   }
-                break;
 
-                case $coul->nom == 'marmoré' || $coul->nom == 'doubleLP':
-                  $LP = true;
-                  foreach ($coul->Images as $image)
-                  {
-                     $animal->Image()->attach($image->id);
-                  }
-                break;
+                
+                
+              }
+              //gérer les dilutions multiples au moyen de couches d'images?
+              $LP = false;
+              $LPLP = false;
+              foreach ($motif_couleurs as $coul)
+              {
+                switch (true)
+                {
+                  case $blanc < 0:
+                  break;
 
-                case $coul->nom ==  'doubleLP':
-                  $LPLP = true;
-                  foreach ($coul->Images as $image)
-                  {
-                     $animal->Image()->attach($image->id);
-                  }
+                  case $blanc > 9:
+                    $couleur = Couleur::where('nom','Blanc')->first();
+                    $images = $couleur->Images;
+                    foreach ($images as $image)
+                    {
+                      $animal->Image()->attach($image->id);
+                    }
+                  break;
 
-                break;
+                  case $coul->nom == 'marmoré' || $coul->nom == 'doubleLP':
+                    $LP = true;
+                    foreach ($coul->Images as $image)
+                    {
+                      $animal->Image()->attach($image->id);
+                    }
+                  break;
 
-                case $coul->nom == 'couverture':
-                  if ($LP)
-                  {
-                    $images = Couleur::where('nom', 'couverture tachetée')->first()->Images;
+                  case $coul->nom ==  'doubleLP':
+                    $LPLP = true;
+                    foreach ($coul->Images as $image)
+                    {
+                      $animal->Image()->attach($image->id);
+                    }
+
+                  break;
+
+                  case $coul->nom == 'couverture':
+                    if ($LP)
+                    {
+                      $images = Couleur::where('nom', 'couverture tachetée')->first()->Images;
+                          foreach ($images as $image)
+                        {
+                          $animal->Image()->attach($image->id);
+                        }
+
+                    }
+                    else if ($LPLP)
+                    {
+                      $images = Couleur::where('nom', 'couverture blanche')->first()->Images;
                         foreach ($images as $image)
                       {
                         $animal->Image()->attach($image->id);
                       }
+                    }
+                  break;
 
-                  }
-                  else if ($LPLP)
-                  {
-                    $images = Couleur::where('nom', 'couverture blanche')->first()->Images;
+
+                  default:
+                  $couleur = Couleur::where('nom',$coul->nom.$blanc)->first();
+                  $images = $couleur->Images;
+                
                       foreach ($images as $image)
-                    {
-                      $animal->Image()->attach($image->id);
-                    }
-                  }
-                break;
-
-
-                default:
-                $couleur = Couleur::where('nom',$coul->nom.$blanc)->first();
-                $images = $couleur->Images;
-               
-                     foreach ($images as $image)
-                      { 
-                        if ($image <> null)
+                        { 
+                          if ($image <> null)
+                        
+                        { $animal->Image()->attach($image->id);}
+                        }
                       
-                       { $animal->Image()->attach($image->id);}
-                      }
-                    
-               
-              } //end switch
                 
-            } //end foreach
-            
-            foreach ($modif_couleurs as $coul) 
-            {
-              $base =  $animal->base;
-              switch ($coul->nom)
+                } //end switch
+                  
+              } //end foreach
+              
+              foreach ($modif_couleurs as $coul) 
               {
-                case 'crins lavés':
-                 
-                  if ($base == 'alezan aa' || $base == 'alezan agouti')
-                  {
-                    $mushroom = Couleur::where('nom','mushroom')->first();
-                    if (in_array($mushroom, $dilue_couleurs))
+                $base =  $animal->base;
+                switch ($coul->nom)
+                {
+                  case 'crins lavés':
+                  
+                    if ($base == 'alezan aa' || $base == 'alezan agouti')
                     {
-                    $image = Image::where('chemin','crinsblancs')->first();
-                    $animal->Image()->attach($image->id);
+                      $mushroom = Couleur::where('nom','mushroom')->first();
+                      if (in_array($mushroom, $dilue_couleurs))
+                      {
+                      $image = Image::where('chemin','crinsblancs')->first();
+                      $animal->Image()->attach($image->id);
+                      }
+                      else
+                      {
+                        $image = Image::where('chemin','flaxen')->first();
+                        $animal->Image()->attach($image->id);
+                      }
                     }
-                    else
-                    {
-                      $image = Image::where('chemin','flaxen')->first();
+                  break;
+
+                  case 'pangaré':
+                    
+                    if ($base == 'bai' || $base == 'alezan agouti')
+                    { 
+                      
+                      $image = Image::where('chemin','pangare')->first();
                       $animal->Image()->attach($image->id);
                     }
-                  }
-                break;
-
-                case 'pangaré':
                   
-                  if ($base == 'bai' || $base == 'alezan agouti')
-                  { 
-                    
-                    $image = Image::where('chemin','pangare')->first();
+                  break;
+
+                  default:
+                    $image = Image::where('chemin',$coul->nom)->first();
                     $animal->Image()->attach($image->id);
-                  }
-                
-                break;
+                  break;
 
-                default:
-                  $image = Image::where('chemin',$coul->nom)->first();
-                  $animal->Image()->attach($image->id);
-                break;
+                }
 
-              }
-
-            } //end foreach
-      
+              } //end foreach
+            }//end embryo létal
     
       } //end if succès
       else{

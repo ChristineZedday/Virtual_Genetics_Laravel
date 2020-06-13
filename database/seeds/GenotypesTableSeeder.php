@@ -3517,6 +3517,116 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 44,
                 'locus_id' => 24,
             ),
+            350 => 
+            array (
+                'id' => 617,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 98,
+                'allele_p_id' => 1,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            351 => 
+            array (
+                'id' => 618,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 98,
+                'allele_p_id' => 3,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            352 => 
+            array (
+                'id' => 619,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 98,
+                'allele_p_id' => 18,
+                'allele_m_id' => 7,
+                'locus_id' => 3,
+            ),
+            353 => 
+            array (
+                'id' => 620,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 99,
+                'allele_p_id' => 2,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            354 => 
+            array (
+                'id' => 621,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 99,
+                'allele_p_id' => 4,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            355 => 
+            array (
+                'id' => 622,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 99,
+                'allele_p_id' => 39,
+                'allele_m_id' => 39,
+                'locus_id' => 21,
+            ),
+            356 => 
+            array (
+                'id' => 623,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 99,
+                'allele_p_id' => 7,
+                'allele_m_id' => 18,
+                'locus_id' => 3,
+            ),
+            357 => 
+            array (
+                'id' => 624,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 97,
+                'allele_p_id' => 1,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            358 => 
+            array (
+                'id' => 625,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 97,
+                'allele_p_id' => 3,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            359 => 
+            array (
+                'id' => 626,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 98,
+                'allele_p_id' => 2,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            360 => 
+            array (
+                'id' => 627,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 98,
+                'allele_p_id' => 5,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
         ));
         
         
