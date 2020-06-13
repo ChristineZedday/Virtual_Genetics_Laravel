@@ -155,9 +155,19 @@
 
 				<div>
 				@isset($animal->StatutMale)
-						@if ($animal->StatutMale->qualite == 'autorisé' || $animal->StatutMale->qualite == 'approuvé')
+						@if (($animal->StatutMale->qualite == 'autorisé' || $animal->StatutMale->qualite == 'approuvé') && $animal->elevage_id == $elevage->id  && ! $animal->StatutMale->disponible )
 						<a href="{{route('monte',[$elevage->id,$animal->id])}}">
 						<button>  Proposer à la monte</button>
+						</a>
+						@endif
+					@endisset
+				</div>
+
+				<div>
+				@isset($animal->StatutMale)
+						@if ($animal->StatutMale->disponible && $animal->elevage_id == $elevage->id )
+						<a href="{{route('demonte',[$elevage->id,$animal->id])}}">
+						<button>  Retirer de la monte</button>
 						</a>
 						@endif
 					@endisset

@@ -231,7 +231,18 @@ class ElevageController extends Controller
         return view('monte',['elevage'=>$elevage, 'etalon'=>$etalon]);
     }
 
-    public function montePublique($request)
+    public function retirerMonte($elevage, $etalon)
+    {
+        $elevage = Elevage::Find($elevage);
+        $animal = Animal::Find($etalon);
+
+        $animal->StatutMale->disponible = false;
+        $animal->StatutMale->save();
+
+        return view('animal',['elevage'=>$elevage, 'animal'=>$animal]);
+    }
+
+    public function montePublique(request $request)
     {
        
         $validated =  $request->validate([ 'prix'=>'integer|required']); 

@@ -65,7 +65,9 @@ Route::get('/reproduction/etalon/{elevage}/{etalon}', 'ElevageController@commiss
 
 Route::get('/reproduction/monte/{elevage}/{etalon}', 'ElevageController@proposerMonte')->name('monte');
 
-Route::get('/reproduction/montePublique/{elevage}/{etalon}', 'ElevageController@montePublique')->name('montePublique');
+Route::get('/reproduction/demonte/{elevage}/{etalon}', 'ElevageController@retirerMonte')->name('demonte');
+
+Route::put('/reproduction/montepublique/{elevage}', 'ElevageController@montePublique')->name('montepublique');
 
 //routes enregistrement 
 
