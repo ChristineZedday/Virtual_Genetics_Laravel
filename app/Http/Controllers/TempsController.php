@@ -44,7 +44,7 @@ class TempsController extends Controller
         checkPuberes();
         VenteJeunes();
         retireVente();
-        reproNPC($date);
+       
         achete();
         checkMorts();
         $dateM = date('m',strtotime($date));
@@ -58,9 +58,10 @@ class TempsController extends Controller
                 $elevage->save();
             }
             checkVieux ($date);
-            VenteSaillies();
-           
+            VenteSaillies();   
         }
+        if (TempsController::saison())
+       { reproNPC();}
         // $elevage = Elevage::Find($elevage);
         // return view('dashboard',['elevage' =>$elevage]);
         return redirect()->back();
@@ -187,7 +188,7 @@ function checkPuberes()
             $statut = new StatutMale();
             $statut->animal_id = $animal->id;
             $statut->fertilite = 100 - $animal->consang/2 ;
-            if ($animal->Elevage->role == 'Vendeur')
+            if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1)
             {
                 if ($animal->modele_allures > 14)
                 {
@@ -224,10 +225,10 @@ function checkPuberes()
 
 
 
-function reproNPC($date)
+function reproNPC()
 {
     
-        if (TempsController::saison($date)) {
+       
             $vendeurs = Elevage::where('role','Vendeur')->get();
             foreach($vendeurs as $vendeur)
             {
@@ -269,7 +270,7 @@ function reproNPC($date)
                 }
                
             }    
-        }
+        
 }
 
 function VenteJeunes ()
