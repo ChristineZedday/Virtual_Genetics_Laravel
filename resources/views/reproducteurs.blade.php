@@ -84,6 +84,7 @@ if (isset($images)) {
 ?>
 </figure>
 </div>
+@if (! $jument->fondateur)
 <div class='pedigree'>
 			<span class='generation'>
 				<span class='male'>{{$jument->Sire->NomComplet()}}</span>
@@ -106,7 +107,7 @@ if (isset($images)) {
 				<span class='femelle'>@isset($jument->Dam->Dam->Dam) {{$jument->Dam->Dam->Dam->NomComplet()}} @else agmm @endisset </span>
 	</span>					
 	</div>
-
+@endif
 </span>
 </div>
 

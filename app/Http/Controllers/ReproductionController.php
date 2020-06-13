@@ -102,35 +102,41 @@ class ReproductionController extends Controller
          
                 if ($etalon->race_id == $jument->race_id && ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  ))
                 {
-                    $animal->race_id = $etalon->race_id;
+                  $animal->race_id = $etalon->race_id;
                 }
-                else if ($etalon->StatutMale->qualité == 'autorisé' || $etalon->StatutMale->qualité == 'approuvé'  )
-                {
-                  $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', true)->get();
-                 
-                  if (sizeof($races) > 0)
-                  {
-                   
-                    foreach ($races as $race)
+                else 
+                    if ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  )
                     {
-                      if (! $race->taille_conditions)
+                     
+                      $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->get(); //pas true, 1?
+
+                      if (sizeof($races) > 0)
                       {
-                        $animal->race_id = $race->race_produit_id;
-                      }
-                      else{
-                        $race = Race::Find($race->race_produit_id);
-                        dd('sa taille '.$animal->taille_cm.' race taille min '.$race->taille_min);
-                        if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
+                      
+                        foreach ($races as $race)
                         {
-                          $animal->race_id = $race->id;
+                         
+                          if ($race->taille_conditions)
+                          {
+                            $race = Race::Find($race->race_produit_id);
+
+                            if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
+                            {
+                              $animal->race_id = $race->id;
+                            }
+                          
+                          }
+                        else 
+                          {
+                          $animal->race_id = $race->race_produit_id;
+                          }
                         }
-                      }
                     }
-                  }
-                  else //croisement non répertorié
-                  {
-                    $animal->race_id = 1;
-                  }
+                  
+                    else //croisement non répertorié
+                    {
+                      $animal->race_id = 1;
+                    }
                 }
                 else //etalon pas autorisé
                 {
