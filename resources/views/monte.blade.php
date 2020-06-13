@@ -1,6 +1,6 @@
 @extends('layouts.elevageDashboard')
 @section('content')
-<form action="{{route('vente')}}" method="POST" >
+<form action="{{route('montepublique')}}" method="POST" >
 						@csrf
 						@method('PUT')
 <h3>{{$animal->nomComplet()}}</h3>

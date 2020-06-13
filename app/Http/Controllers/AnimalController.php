@@ -92,7 +92,7 @@ class AnimalController extends Controller
     }
 
     /**
-     * Putingt animal for sale: display form.
+     * Putting animal for sale: display form.
      *
      * @param  int  $elevage->id, $animal->id
      * @return \Illuminate\Http\Response
@@ -128,7 +128,7 @@ class AnimalController extends Controller
         {
             $request->session()->flash('status',"animal mis en vente");
             $request->session()->flash('alert-class',"alert-success");
-            return redirect()->route('animaux',[$animal->elevage_id]);
+            return redirect()->route('animaux',[$animal->elevage_id, 'vente']);
         }
     }
 
@@ -145,7 +145,8 @@ class AnimalController extends Controller
        $animal->a_vendre = false;
        if ($animal->save())
        {
-           return redirect()->route('animaux',[$animal->elevage_id]);
+        
+           return redirect()->route('animaux',[$animal->elevage_id,'tous']);
        }
     }
 

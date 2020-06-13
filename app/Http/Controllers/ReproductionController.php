@@ -34,7 +34,7 @@ class ReproductionController extends Controller
       $statut->animal_id = $jument;
     }
     $statutM = StatutMale::where('animal_id',$etalon)->first(); //fondateurs
-    if (!isset($statutM))
+    if (!isset($statutM)) //à supprimer? normalement tous les animaux ont un statut avec checkPuberes
     {
       $statutM = new StatutMale();
       $statutM->animal_id = $etalon;
@@ -62,6 +62,10 @@ class ReproductionController extends Controller
       {
         $elevage->budget = $elevage->budget - $etalon->StatutMale->prix;
         $elevage->save();
+
+        $etalonnier = $etalon->Elevage;
+        $etalonnier->budget = $etalonnier->budget + $etalon->StatutMale->prix;
+        $etalonnier->save();
       }
        if ($success > 50)
        {

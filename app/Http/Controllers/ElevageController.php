@@ -23,7 +23,7 @@ class ElevageController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a dashboard for the stud
      *
      * @return \Illuminate\Http\Response
      */
@@ -36,7 +36,7 @@ class ElevageController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new stud.
      *
      * @return \Illuminate\Http\Response
      */
@@ -46,7 +46,7 @@ class ElevageController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created stud in storage, with it's affixe if there's one.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -89,19 +89,10 @@ class ElevageController extends Controller
             }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing stud name or affixe (v2).
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -230,6 +221,33 @@ class ElevageController extends Controller
 
         $etalon->StatutMale->save();
         return redirect()->back();
+    }
+
+    public function proposerMonte($elevage, $etalon)
+    {
+        $elevage = Elevage::Find($elevage);
+        $etalon = Animal::Find($etalon);
+
+        return view('monte',['elevage'=>$elevage, 'etalon'=>$etalon]);
+    }
+
+    public function montePublique($request)
+    {
+       
+        $validated =  $request->validate([ 'prix'=>'integer|required']); 
+        $id = $request->input('id');
+        
+        $animal = Animal::Find($id);
+        $statut = $animal->StatutMale;
+        $statut->prix = $validated['prix'];
+        $statut->disponible = true;
+
+        if ($statut->save())
+        {
+            $request->session()->flash('status',"animal mis en vente");
+            $request->session()->flash('alert-class',"alert-success");
+            return redirect()->route('animaux',[$animal->elevage_id, 'tous']);
+        }
     }
    
 

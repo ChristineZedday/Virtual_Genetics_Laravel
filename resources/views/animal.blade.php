@@ -126,6 +126,7 @@
 					@endif
 				@endif
 			</div>
+
 			
 				
 				<div id='sterilisation'>
@@ -147,6 +148,16 @@
 						@if ($animal->StatutMale->qualite == 'non autorisé' && $animal->race_id != 1 && $animal->elevage_id = $elevage->id)
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
 						<button>  Présenter à la commission étalons</button>
+						</a>
+						@endif
+					@endisset
+				</div>
+
+				<div>
+				@isset($animal->StatutMale)
+						@if ($animal->StatutMale->qualite == 'autorisé' || $animal->StatutMale->qualite == 'approuvé')
+						<a href="{{route('monte',[$elevage->id,$animal->id])}}">
+						<button>  Proposer à la monte</button>
 						</a>
 						@endif
 					@endisset

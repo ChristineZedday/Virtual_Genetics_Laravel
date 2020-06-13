@@ -63,6 +63,10 @@ Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}', 'Reproduction
 
 Route::get('/reproduction/etalon/{elevage}/{etalon}', 'ElevageController@commissionEtalons')->name('commission');
 
+Route::get('/reproduction/monte/{elevage}/{etalon}', 'ElevageController@proposerMonte')->name('monte');
+
+Route::get('/reproduction/montePublique/{elevage}/{etalon}', 'ElevageController@montePublique')->name('montePublique');
+
 //routes enregistrement 
 
 Route::get('/enregistrement/{animal}', 'AnimalController@enregistrer')->name('enregistrement');
