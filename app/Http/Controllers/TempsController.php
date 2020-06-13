@@ -407,13 +407,16 @@ function VenteSaillies ()
     {
         $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'autorisé')->orWhere('qualite', 'approuvé');})->get();
         foreach ($animaux as $animal)
+      
         {
-            if ($animal->StatutMale->disponible)
+            $statut = $animal->StatutMale;
+            if ($statut->disponible)
             {
                 if (rand(1,3)== 1)
                 {
-                    $animal->StatutMale->disponible = false;
-                    $animal->statutMale->save();
+                    $statut->disponible = false;
+                    $statut->save();
+                  
                     
                 }
             }
@@ -421,13 +424,13 @@ function VenteSaillies ()
             {
                 if (rand(1,3)== 1)
                 {
-                    $animal->StatutMale->disponible = true;
-                    if ($animal->StatutMale->qualite = 'approuvé')
-                   { $animal->statutMale->prix = $animal->Race->prix_moyen/10;}
+                    $statut->disponible = true;
+                    if ($statut->qualite = 'approuvé')
+                   { $statut->prix = $animal->Race->prix_moyen/10;}
                    else
-                   {$animal->statutMale->prix = $animal->Race->prix_moyen/20;}
-                    $animal->statutMale->save();
-                    
+                   {$statut->prix = $animal->Race->prix_moyen/20;}
+                    $statut->save();
+                   
                 }
             }
            
