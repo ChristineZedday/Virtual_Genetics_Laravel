@@ -17,6 +17,8 @@ class CreatePathologiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nom');
             $table->string('description')->nullable();
+            $table->boolean('letal')->default(FALSE);
+            $table->boolean('letal_foetus')->default(FALSE);
             $table->timestamps();
         });
     }

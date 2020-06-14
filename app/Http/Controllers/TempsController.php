@@ -9,7 +9,7 @@ use App\Animal;
 use App\Elevage;
 use App\Race;
 use App\StatutMale;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Pathologie;
 
 class TempsController extends Controller
 {
@@ -442,9 +442,24 @@ function VenteSaillies ()
 
 function checkMorts ()
 {
+    $letaux = Animal::whereHas('Pathologie', function ($query) {$query->where('letal',1)->orWhere('letal_foetus', 1);})->get();
+    foreach ($letaux as $letal)
+    {
+        $letal->elevage_id =2;//chez l'Ankou!
+        $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
+        if ($letal->foetus)
+        {
+            $dam = $letal->Dam;
+            $date= date('Y-m-d',strtotime('+7 month',strtotime($dam->statut->date_saillie)));
+            $dam->statut->terme = $date;
+            $letal->date_naissance = $date;
+        }
+    }
+
     $animaux = Animal::where('sexe','LIKE','vie%')->get();
     foreach ($animaux as $animal)
     {
+        
         $age = TempsController::ageMonths($animal->date_naissance);
             switch ($age)
             {

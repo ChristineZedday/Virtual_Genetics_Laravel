@@ -545,6 +545,17 @@ class AllelesTableSeeder extends Seeder
                 'is_default' => 1,
                 'is_dominant' => 0,
             ),
+            48 => 
+            array (
+                'id' => 49,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'locus_id' => 19,
+                'nom' => 'Nanisme létal',
+                'abbrev' => 'd1',
+                'is_default' => 0,
+                'is_dominant' => 0,
+            ),
         ));
         
         
