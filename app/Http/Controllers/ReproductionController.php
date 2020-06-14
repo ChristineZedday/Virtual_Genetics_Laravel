@@ -81,12 +81,36 @@ class ReproductionController extends Controller
           $animal->dam_id = $jument->id;
           $dam = Animal::Find($animal->dam_id);
           
-          if ($dam->fondateur) {
-            $animal->affixe_id = $dam->affixe_id;
+          if ($elevage->role == 'Vendeur') {
+            $aff = rand(1,5);
+            switch ($aff)
+            {
+              case 1:
+              case 2:
+              case 3:
+                if (isset($dam->affixe_id))
+               { $animal->affixe_id = $dam->affixe_id;}
+              break;
+
+              case 4:
+                if (isset($animal->Sire->affixe_id))
+               { $animal->affixe_id = $animal->Sire->affixe_id;}
+              break;
+
+              case 5:
+                if (isset($elevage->Affixe))
+                {
+                  $animal->affixe_id = $elevage->affixe_id;
+                }
+              break;
+
+
+            }
+           
           }
           else {
            
-              if (isset($elevage->Affixe))
+              if (isset($elevage->Affixe) && $elevage->role == 'Joueur')
               {
                 $animal->affixe_id = $elevage->affixe_id;
               }
