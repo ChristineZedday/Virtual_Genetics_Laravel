@@ -872,6 +872,96 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            95 => 
+            array (
+                'id' => 104,
+                'chemin' => 'frameovero0',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            96 => 
+            array (
+                'id' => 105,
+                'chemin' => 'frameovero1',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            97 => 
+            array (
+                'id' => 106,
+                'chemin' => 'frameovero2',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            98 => 
+            array (
+                'id' => 107,
+                'chemin' => 'frameovero3',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            99 => 
+            array (
+                'id' => 108,
+                'chemin' => 'frameovero4',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            100 => 
+            array (
+                'id' => 109,
+                'chemin' => 'frameovero5',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            101 => 
+            array (
+                'id' => 110,
+                'chemin' => 'frameovero6',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            102 => 
+            array (
+                'id' => 111,
+                'chemin' => 'frameovero7',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            103 => 
+            array (
+                'id' => 112,
+                'chemin' => 'frameovero8',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            104 => 
+            array (
+                'id' => 113,
+                'chemin' => 'frameovero9',
+                'extension' => 'png',
+                'z_index' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
