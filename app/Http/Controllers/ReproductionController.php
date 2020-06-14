@@ -209,6 +209,8 @@ class ReproductionController extends Controller
           $motif_couleurs =[];
           $modif_couleurs = [];
           $blanc =0;
+          $embryoletal = false;
+          
           foreach ($genotypes as $genotype)
             {
               $p = $genotype->allele_p_id;
