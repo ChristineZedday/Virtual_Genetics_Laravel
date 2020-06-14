@@ -385,7 +385,7 @@ class ReproductionController extends Controller
                   case $blanc < 0:
                   break;
 
-                  case $blanc > 9:
+                  case $blanc > 9 || $coul->nom =='Blanc':
                     $couleur = Couleur::where('nom','Blanc')->first();
                     $images = $couleur->Images;
                     foreach ($images as $image)
