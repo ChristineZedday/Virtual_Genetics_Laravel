@@ -49,6 +49,22 @@ class PathologiesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'nom' => 'mort embryon',
+                'description' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'nom' => 'intestin incomplet',
+                'description' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

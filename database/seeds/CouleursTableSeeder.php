@@ -1137,6 +1137,16 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            112 => 
+            array (
+                'id' => 128,
+                'nom' => 'frame overo',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

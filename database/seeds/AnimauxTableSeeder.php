@@ -2019,6 +2019,32 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
             ),
+            77 => 
+            array (
+                'id' => 100,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Flashy',
+                'affixe_id' => NULL,
+                'couleur' => NULL,
+                'base' => NULL,
+                'taille_cm' => 75,
+                'race_id' => 3,
+                'sexe' => 'jeune mâle',
+                'date_achat' => NULL,
+                'date_naissance' => '1968-06-14',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 5,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'taille_additive' => 95,
+                'modele_allures' => 14,
+                'modele_allures_additifs' => 14,
+            ),
         ));
         
         
