@@ -1147,6 +1147,106 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            113 => 
+            array (
+                'id' => 129,
+                'nom' => 'frameovero0',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            114 => 
+            array (
+                'id' => 130,
+                'nom' => 'frameovero1',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            115 => 
+            array (
+                'id' => 131,
+                'nom' => 'frameovero2',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            116 => 
+            array (
+                'id' => 132,
+                'nom' => 'frameovero3',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            117 => 
+            array (
+                'id' => 133,
+                'nom' => 'frameovero4',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            118 => 
+            array (
+                'id' => 134,
+                'nom' => 'frameovero5',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            119 => 
+            array (
+                'id' => 135,
+                'nom' => 'frameovero6',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            120 => 
+            array (
+                'id' => 136,
+                'nom' => 'frameovero7',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            121 => 
+            array (
+                'id' => 137,
+                'nom' => 'frameovero8',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            122 => 
+            array (
+                'id' => 138,
+                'nom' => 'frameovero9',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
