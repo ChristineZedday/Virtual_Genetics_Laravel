@@ -133,9 +133,9 @@
 				@if ($animal->elevage_id == $elevage->id )
 					<input type="hidden" id ="sexe" value ="{{$animal->sexe}}">
 					<input type="hidden" id ="budget" value ="{{$elevage->budget}}">
-					@isset ($animal->Statut)
-					<input type="hidden" id ="pleine" value ="{{$animal->Statut->pleine}}">
-					@endisset
+					
+					<input type="hidden" id ="pleine" @isset ($animal->Statut) value ="{{$animal->Statut->pleine}}" @else value= "0" @endisset >
+					
 					<input type="hidden" id ="route" value ="{{route('steriliser',[$elevage->id,$animal->id])}}">
 				
 				<button  onclick="checkConditions()">

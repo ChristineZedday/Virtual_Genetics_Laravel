@@ -258,6 +258,9 @@ class AnimalController extends Controller
                     $elevage->budget -= $prixF;
                     $elevage->save();
                 break;
+
+                default:
+                dd('comment suis-je arrivée là?');
             
 
             }
