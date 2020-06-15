@@ -228,6 +228,7 @@ class ReproductionController extends Controller
                     $statut->vide = true; 
                     $statut->save();
                     $embryoletal = true;
+                    $animal->elevage_id = 2; //ou $animal->delete();
                   }
                   else
                   {$animal->Pathologie()->attach($phenotype->pathologie_id);}
@@ -274,9 +275,7 @@ class ReproductionController extends Controller
                       
                     } //end pheno couleur
                   } // end pas létal
-                  else{
-                    $animal->delete();
-                  }
+                  
                 }//endisset phenotype
 
               
@@ -490,7 +489,7 @@ class ReproductionController extends Controller
                 }
 
               } //end foreach
-            }//end embryo létal
+            }//end pas embryo létal
     
       } //end if succès
       else{
