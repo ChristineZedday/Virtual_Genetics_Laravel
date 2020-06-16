@@ -166,6 +166,7 @@
 				<div>
 				@isset($animal->StatutMale)
 						@if ($animal->StatutMale->disponible && $animal->elevage_id == $elevage->id )
+						<p>Proposé à la monte publique pour: {{$animal->StatutMale->prix}}</p>
 						<a href="{{route('demonte',[$elevage->id,$animal->id])}}">
 						<button>  Retirer de la monte</button>
 						</a>
