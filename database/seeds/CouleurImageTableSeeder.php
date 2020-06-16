@@ -897,6 +897,54 @@ class CouleurImageTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            110 => 
+            array (
+                'id' => 149,
+                'couleur_id' => 139,
+                'image_id' => 114,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            111 => 
+            array (
+                'id' => 150,
+                'couleur_id' => 139,
+                'image_id' => 100,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            112 => 
+            array (
+                'id' => 151,
+                'couleur_id' => 140,
+                'image_id' => 115,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            113 => 
+            array (
+                'id' => 152,
+                'couleur_id' => 140,
+                'image_id' => 101,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            114 => 
+            array (
+                'id' => 153,
+                'couleur_id' => 141,
+                'image_id' => 116,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            115 => 
+            array (
+                'id' => 154,
+                'couleur_id' => 141,
+                'image_id' => 101,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

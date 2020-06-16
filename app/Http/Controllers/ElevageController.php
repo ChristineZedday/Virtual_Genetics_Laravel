@@ -257,7 +257,7 @@ class ElevageController extends Controller
         {
             $request->session()->flash('status',"animal mis en vente");
             $request->session()->flash('alert-class',"alert-success");
-            return redirect()->route('animaux',[$animal->elevage_id, 'tous']);
+            return redirect()->route('animaux',[$animal->elevage_id, 'males']);
         }
     }
    
