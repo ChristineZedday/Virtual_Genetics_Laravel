@@ -413,7 +413,7 @@ class ReproductionController extends Controller
                   case $coul->nom == 'couverture':
                     if ($LP)
                     {
-                      $images = Couleur::where('nom', 'couverture tachetée')->first()->Images;
+                      $images = Couleur::where('nom', 'couverture tachetée'.$blanc)->first()->Images;
                           foreach ($images as $image)
                         {
                           $animal->Image()->attach($image->id);
@@ -422,7 +422,7 @@ class ReproductionController extends Controller
                     }
                     else if ($LPLP)
                     {
-                      $images = Couleur::where('nom', 'couverture blanche')->first()->Images;
+                      $images = Couleur::where('nom', 'couverture blanche'.$blanc)->first()->Images;
                         foreach ($images as $image)
                       {
                         $animal->Image()->attach($image->id);

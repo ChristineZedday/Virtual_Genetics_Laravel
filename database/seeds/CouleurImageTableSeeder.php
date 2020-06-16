@@ -945,6 +945,166 @@ class CouleurImageTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            116 => 
+            array (
+                'id' => 155,
+                'couleur_id' => 143,
+                'image_id' => 67,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            117 => 
+            array (
+                'id' => 156,
+                'couleur_id' => 144,
+                'image_id' => 118,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            118 => 
+            array (
+                'id' => 157,
+                'couleur_id' => 145,
+                'image_id' => 120,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            119 => 
+            array (
+                'id' => 158,
+                'couleur_id' => 146,
+                'image_id' => 122,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            120 => 
+            array (
+                'id' => 159,
+                'couleur_id' => 147,
+                'image_id' => 124,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            121 => 
+            array (
+                'id' => 161,
+                'couleur_id' => 149,
+                'image_id' => 126,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            122 => 
+            array (
+                'id' => 162,
+                'couleur_id' => 150,
+                'image_id' => 128,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            123 => 
+            array (
+                'id' => 163,
+                'couleur_id' => 151,
+                'image_id' => 130,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            124 => 
+            array (
+                'id' => 164,
+                'couleur_id' => 152,
+                'image_id' => 132,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            125 => 
+            array (
+                'id' => 165,
+                'couleur_id' => 153,
+                'image_id' => 134,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            126 => 
+            array (
+                'id' => 166,
+                'couleur_id' => 157,
+                'image_id' => 66,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            127 => 
+            array (
+                'id' => 167,
+                'couleur_id' => 154,
+                'image_id' => 117,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            128 => 
+            array (
+                'id' => 168,
+                'couleur_id' => 155,
+                'image_id' => 119,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            129 => 
+            array (
+                'id' => 169,
+                'couleur_id' => 156,
+                'image_id' => 121,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            130 => 
+            array (
+                'id' => 170,
+                'couleur_id' => 158,
+                'image_id' => 123,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            131 => 
+            array (
+                'id' => 171,
+                'couleur_id' => 159,
+                'image_id' => 125,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            132 => 
+            array (
+                'id' => 172,
+                'couleur_id' => 160,
+                'image_id' => 127,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            133 => 
+            array (
+                'id' => 173,
+                'couleur_id' => 161,
+                'image_id' => 129,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            134 => 
+            array (
+                'id' => 174,
+                'couleur_id' => 162,
+                'image_id' => 131,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            135 => 
+            array (
+                'id' => 175,
+                'couleur_id' => 163,
+                'image_id' => 133,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

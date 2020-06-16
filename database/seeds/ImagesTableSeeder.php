@@ -989,6 +989,168 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            108 => 
+            array (
+                'id' => 117,
+                'chemin' => 'LpPATN1',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            109 => 
+            array (
+                'id' => 118,
+                'chemin' => 'LpLpPATN1',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            110 => 
+            array (
+                'id' => 119,
+                'chemin' => 'LpPATN2',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            111 => 
+            array (
+                'id' => 120,
+                'chemin' => 'LpLpPATN2',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            112 => 
+            array (
+                'id' => 121,
+                'chemin' => 'LpPATN3',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            113 => 
+            array (
+                'id' => 122,
+                'chemin' => 'LpLpPATN3',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            114 => 
+            array (
+                'id' => 123,
+                'chemin' => 'LpPATN4',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            115 => 
+            array (
+                'id' => 124,
+                'chemin' => 'LpLpPATN4',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            116 => 
+            array (
+                'id' => 125,
+                'chemin' => 'LpPATN5',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            117 => 
+            array (
+                'id' => 126,
+                'chemin' => 'LpLpPATN5',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            118 => 
+            array (
+                'id' => 127,
+                'chemin' => 'LpPATN6',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            119 => 
+            array (
+                'id' => 128,
+                'chemin' => 'LpLpPATN6',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            120 => 
+            array (
+                'id' => 129,
+                'chemin' => 'LpPATN7',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            121 => 
+            array (
+                'id' => 130,
+                'chemin' => 'LpLpPATN7',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            122 => 
+            array (
+                'id' => 131,
+                'chemin' => 'LpPATN8',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            123 => 
+            array (
+                'id' => 132,
+                'chemin' => 'LpLpPATN8',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            124 => 
+            array (
+                'id' => 133,
+                'chemin' => 'LpPATN9',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            125 => 
+            array (
+                'id' => 134,
+                'chemin' => 'LpLpPATN9',
+                'extension' => 'png',
+                'z_index' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

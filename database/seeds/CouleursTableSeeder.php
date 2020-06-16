@@ -1287,6 +1287,206 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            127 => 
+            array (
+                'id' => 143,
+                'nom' => 'couverture blanche0',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            128 => 
+            array (
+                'id' => 144,
+                'nom' => 'couverture blanche1',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            129 => 
+            array (
+                'id' => 145,
+                'nom' => 'couverture blanche2',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            130 => 
+            array (
+                'id' => 146,
+                'nom' => 'couverture blanche3',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            131 => 
+            array (
+                'id' => 147,
+                'nom' => 'couverture blanche4',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            132 => 
+            array (
+                'id' => 149,
+                'nom' => 'couverture blanche5',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            133 => 
+            array (
+                'id' => 150,
+                'nom' => 'couverture blanche6',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            134 => 
+            array (
+                'id' => 151,
+                'nom' => 'couverture blanche7',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            135 => 
+            array (
+                'id' => 152,
+                'nom' => 'couverture blanche8',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            136 => 
+            array (
+                'id' => 153,
+                'nom' => 'couverture blanche9',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            137 => 
+            array (
+                'id' => 154,
+                'nom' => 'couverture tachetée1',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            138 => 
+            array (
+                'id' => 155,
+                'nom' => 'couverture tachetée2',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            139 => 
+            array (
+                'id' => 156,
+                'nom' => 'couverture tachetée3',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            140 => 
+            array (
+                'id' => 157,
+                'nom' => 'couverture tachetée0',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            141 => 
+            array (
+                'id' => 158,
+                'nom' => 'couverture tachetée4',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            142 => 
+            array (
+                'id' => 159,
+                'nom' => 'couverture tachetée5',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            143 => 
+            array (
+                'id' => 160,
+                'nom' => 'couverture tachetée6',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            144 => 
+            array (
+                'id' => 161,
+                'nom' => 'couverture tachetée7',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            145 => 
+            array (
+                'id' => 162,
+                'nom' => 'couverture tachetée8',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            146 => 
+            array (
+                'id' => 163,
+                'nom' => 'couverture tachetée9',
+                'base_couleur' => 0,
+                'est_motif' => 1,
+                'est_dilution' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
