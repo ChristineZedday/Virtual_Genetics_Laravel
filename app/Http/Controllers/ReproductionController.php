@@ -150,9 +150,10 @@ class ReproductionController extends Controller
                             $race = Race::Find($race->race_produit_id);
                             
 
-                            if (($animal->taille_cm > $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
+                            if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
                             {
                               $animal->race_id = $race->id;
+                              $animal->save();
                             }
                           
                           }
@@ -225,7 +226,7 @@ class ReproductionController extends Controller
 
                 if (isset($phenotype->pathologie_id))
                 {
-                  if ($phenotype->pathologie_id == 5)
+                  if ($phenotype->pathologie_id == 5) //mort embryon
                   {
                     $statut->vide = true; 
                     $statut->save();
