@@ -224,7 +224,7 @@ class ReproductionController extends Controller
                 
                 // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
 
-                if (isset($phenotype->pathologie_id))
+                if ($phenotype->pathologie_id != NULL)
                 {
                   if ($phenotype->pathologie_id == 5) //mort embryon
                   {
