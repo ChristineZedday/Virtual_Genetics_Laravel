@@ -141,14 +141,16 @@ class ReproductionController extends Controller
                       if (sizeof($races) > 0)
                       {
                       
+                        
                         foreach ($races as $race)
                         {
                          
                           if ($race->taille_conditions)
                           {
                             $race = Race::Find($race->race_produit_id);
+                            
 
-                            if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
+                            if (($animal->taille_cm > $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
                             {
                               $animal->race_id = $race->id;
                             }

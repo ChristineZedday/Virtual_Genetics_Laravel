@@ -145,7 +145,7 @@
 
 				<div>
 					@isset($animal->StatutMale)
-						@if ($animal->StatutMale->qualite == 'non autorisé' && $animal->race_id != 1 && $animal->elevage_id = $elevage->id)
+						@if ($animal->StatutMale->qualite == 'non autorisé' && $animal->race_id != 1 && $animal->elevage_id == $elevage->id)
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
 						<button>  Présenter à la commission étalons</button>
 						</a>
