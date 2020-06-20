@@ -232,6 +232,7 @@ class ReproductionController extends Controller
                     $statut->save();
                     $embryoletal = true;
                     $animal->elevage_id = 2; //ou $animal->delete();
+                    $animal->save();
                   }
                   else
                   {$animal->Pathologie()->attach($phenotype->pathologie_id);}
