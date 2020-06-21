@@ -442,7 +442,8 @@ function VenteSaillies ()
 
 function checkMorts ()
 {
-    $letaux = Animal::whereHas('Pathologie', function ($query) {$query->where('letal',1)->orWhere('letal_foetus', 1);})->get();
+    $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal',1)->orWhere('letal_foetus', 1);})->get();
+    dd($letaux);
     foreach ($letaux as $letal)
     {
         $letal->elevage_id =2;//chez l'Ankou!
