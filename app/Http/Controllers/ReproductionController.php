@@ -159,7 +159,7 @@ class ReproductionController extends Controller
                           }
                         else 
                           {
-                          $animal->race_id = $race->race_produit_id;
+                          $animal->race_id = $race->race_produit_id; //qd c'est automatique il n'y a qu'une seule possibilité
                           }
                         }
                     }

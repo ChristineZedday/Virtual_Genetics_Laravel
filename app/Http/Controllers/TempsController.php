@@ -10,6 +10,7 @@ use App\Elevage;
 use App\Race;
 use App\StatutMale;
 use App\Pathologie;
+use App\Debug;
 
 class TempsController extends Controller
 {
@@ -456,7 +457,7 @@ function VenteSaillies ()
 function checkMorts ()
 {
     $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal',1)->orWhere('letal_foetus', 1);})->get();
-    dd($letaux);
+   
     foreach ($letaux as $letal)
     {
         $letal->elevage_id =2;//chez l'Ankou!
@@ -464,9 +465,12 @@ function checkMorts ()
         if ($letal->foetus)
         {
             $dam = $letal->Dam;
+            $letal->foetus = false;
             $date= date('Y-m-d',strtotime('+7 month',strtotime($dam->statut->date_saillie)));
             $dam->statut->terme = $date;
+            $dam->satut->save();
             $letal->date_naissance = $date;
+            $letal->save();
         }
     }
 
