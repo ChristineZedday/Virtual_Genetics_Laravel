@@ -234,6 +234,21 @@ function reproNPC()
             {
                 $fem = ['femelle', 'vieille femelle'];
                 $juments = Animal::where('elevage_id', $vendeur->id)->whereIn('sexe',$fem)->get();
+
+                $count = sizeof($juments);
+                switch (true)
+                {
+                    case $count < 25:
+                        $var = 3;
+                    break;
+
+                    case $count < 50:
+                        $var = 4;
+                    break;
+
+                    default:
+                    $var = 5;
+                }
                 
                 foreach ($juments as $jument)
                 {
@@ -248,13 +263,11 @@ function reproNPC()
                     if ($statut->vide==true)
                     {
                         srand((float) microtime()*1000000);
-                        if ($jument->sexe ='femelle')
+                        if ($jument->sexe ='vieille femelle')
                         {
-                             $var = 3;
+                             $var = $var +1;
                             }
-                        else{
-                            $var =4;
-                        }
+                        
                         if(rand(1,$var)==1)
                         {
                             $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite','autorisé')->orWhere('qualite','approuvé');})->get();
