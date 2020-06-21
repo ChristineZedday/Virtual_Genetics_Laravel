@@ -178,7 +178,7 @@ function checkNouveaux($date)
 
 function checkPuberes()
 {
-    $animaux = Animal::where('sexe', 'jeune mâle')->get();
+    $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
@@ -208,7 +208,7 @@ function checkPuberes()
             
     }
 
-    $animaux = Animal::where('sexe', 'jeune femelle')->get();
+    $animaux = Animal::where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
         if (TempsController::ageMonths($animal->date_naissance) >= 24)
