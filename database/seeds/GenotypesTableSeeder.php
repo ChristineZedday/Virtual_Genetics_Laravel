@@ -3607,8 +3607,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 4,
                 'locus_id' => 2,
             ),
-            
-            361 => 
+            359 => 
             array (
                 'id' => 628,
                 'created_at' => NULL,
@@ -3618,7 +3617,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 1,
                 'locus_id' => 1,
             ),
-            362 => 
+            360 => 
             array (
                 'id' => 629,
                 'created_at' => NULL,
@@ -3628,7 +3627,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 4,
                 'locus_id' => 2,
             ),
-            363 => 
+            361 => 
             array (
                 'id' => 630,
                 'created_at' => NULL,
@@ -3638,7 +3637,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 7,
                 'locus_id' => 3,
             ),
-            364 => 
+            362 => 
             array (
                 'id' => 631,
                 'created_at' => NULL,
@@ -3648,7 +3647,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 14,
                 'locus_id' => 10,
             ),
-            365 => 
+            363 => 
             array (
                 'id' => 632,
                 'created_at' => NULL,
@@ -3658,7 +3657,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 2,
                 'locus_id' => 1,
             ),
-            366 => 
+            364 => 
             array (
                 'id' => 633,
                 'created_at' => NULL,
@@ -3668,7 +3667,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 4,
                 'locus_id' => 2,
             ),
-            367 => 
+            365 => 
             array (
                 'id' => 634,
                 'created_at' => NULL,
@@ -3678,7 +3677,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 35,
                 'locus_id' => 19,
             ),
-            368 => 
+            366 => 
             array (
                 'id' => 635,
                 'created_at' => NULL,
@@ -3688,7 +3687,7 @@ class GenotypesTableSeeder extends Seeder
                 'allele_m_id' => 24,
                 'locus_id' => 4,
             ),
-            369 => 
+            367 => 
             array (
                 'id' => 636,
                 'created_at' => NULL,
@@ -3697,6 +3696,66 @@ class GenotypesTableSeeder extends Seeder
                 'allele_p_id' => 39,
                 'allele_m_id' => 39,
                 'locus_id' => 21,
+            ),
+            368 => 
+            array (
+                'id' => 641,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 96,
+                'allele_p_id' => 2,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            369 => 
+            array (
+                'id' => 642,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 96,
+                'allele_p_id' => 4,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            370 => 
+            array (
+                'id' => 643,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 102,
+                'allele_p_id' => 1,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            371 => 
+            array (
+                'id' => 644,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 102,
+                'allele_p_id' => 4,
+                'allele_m_id' => 4,
+                'locus_id' => 2,
+            ),
+            372 => 
+            array (
+                'id' => 645,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 102,
+                'allele_p_id' => 39,
+                'allele_m_id' => 39,
+                'locus_id' => 21,
+            ),
+            373 => 
+            array (
+                'id' => 646,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'animal_id' => 102,
+                'allele_p_id' => 14,
+                'allele_m_id' => 13,
+                'locus_id' => 10,
             ),
         ));
         

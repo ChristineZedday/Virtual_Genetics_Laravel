@@ -2071,6 +2071,32 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
             ),
+            79 => 
+            array (
+                'id' => 102,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Toinette',
+                'affixe_id' => NULL,
+                'couleur' => NULL,
+                'base' => NULL,
+                'taille_cm' => 74,
+                'race_id' => 3,
+                'sexe' => 'jeune femelle',
+                'date_achat' => NULL,
+                'date_naissance' => NULL,
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 5,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'taille_additive' => 74,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
+            ),
         ));
         
         
