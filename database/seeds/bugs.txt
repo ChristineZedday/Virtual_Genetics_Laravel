@@ -1,35 +1,20 @@
 
-problème gènes liés poulain d'un tob sab ni tob ni sab?
 
- mettre prix dans liste à vendre
+mettre prix dans liste à vendre
 
-
-ok pour d1d2,OLWSOLWS,W1W1
-
-mettre propriétaire blade animal qd c'est pas le sien
+vente suitées
 
 images à faire: 
-
 robes varnish?
-
 rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
+doubles dilute?
 
 !!!WD 138!!!
 
 
-insémination artificielle, échographie: version prochaine
-
 pas donner le m^me nom + m^me affixe
 
 pouvoir retirer de la liste des femelles à faire saillir ou des étalons
-
 faire payer approbation étalons? primes approuvés?
-
 trier? (javascript sur table? nvlle requête)
-
-forms vente et enregistrement à améliorer
-
-ajouter possibilité enregistrer un OC dans un stud book après son enregistrement OC (plus cher
-
-limiter repro des npc quand la base grandit trop

@@ -5,6 +5,7 @@
 		<div class='texte'>
 			<h1>{{$animal->NomComplet()}}</h1>
 				<h3>{{$animal->Race->nom}}</h3>
+				<p>@if ($animal->elevage_id != $elevage->id) Propriétaire: {{$animal->Elevage->nom_eleveur}} @endif</p>
 				<p>@isset ($animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
 					 @else {{$animal->sexe}} @endisset</p>
 				@isset($animal->couleur)
@@ -103,7 +104,7 @@
 			<p>{{$animal->a_vendre? "à vendre" : ""}}</p>
 					
 			<div id='vente'>
-				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre))
+				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && (App\Gamedata::ageMonths($animal->date_naissance)>7))
 
 					<a href="{{route('vendre',[$elevage->id,$animal->id])}}">
 								<button >Mettre en vente</button></a>
