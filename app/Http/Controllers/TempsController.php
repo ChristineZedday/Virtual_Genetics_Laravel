@@ -43,6 +43,7 @@ class TempsController extends Controller
         // checkFemellesTerme($date);
         Gamedata::checkNouveaux($date);
         Gamedata::checkPuberes();
+        Gamedata::checkSevres();
         Gamedata::VenteJeunes();
         Gamedata::retireVente();
        

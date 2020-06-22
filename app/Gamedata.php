@@ -124,7 +124,7 @@ static function checkSevres()
                 $animal->sexe = 'jeune femelle';
             }
                 $animal->save();
-                $statut = $animal->Dam->statutsFemelle;
+                $statut = $animal->Dam->Statut;
                 $statut->suitee = false;
                 $statut->save();
             
