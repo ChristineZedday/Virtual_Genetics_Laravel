@@ -186,10 +186,12 @@ class AnimalController extends Controller
                     $produit->affixe_id = $elevage->affixe_id;
                     $produit->save();
                 }
-                // $suite =  Animal::where('foetus', false)->where('dam_id',$animal->id)->where(TempsController::ageMonths('date_naissance'), '<',7)->first();
-                // dd ($suite);
-                // $suite->elevage_id = $elevage->id;
-                // $suite->save();ajouter statut suitee
+               if ($statut->suitee)
+               {
+                $produit = Animal::where('dam_id',$animal->id)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->first(); 
+                $produit->elevage_id = $elevage->id; 
+                $produit->save();
+               }
             }
             
             if ($animal->save())

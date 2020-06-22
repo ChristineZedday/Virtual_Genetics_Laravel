@@ -282,27 +282,27 @@ static function checkVieux ($date)
     }
 }
 
-static function checkFemellesTerme($date)
-{
+// static function checkFemellesTerme($date)
+// {
     
-    $statuts = statutsFemelle::where('terme',  $date)->get();
+//     $statuts = statutsFemelle::where('terme',  $date)->get();
   
     
-    if (!empty($statuts))
-        {
-            foreach ($statuts as $statut)
-            {
+//     if (!empty($statuts))
+//         {
+//             foreach ($statuts as $statut)
+//             {
                 
-                $statut->conf_pleine = false;
-                $statut->pres_pleine = false;
-                $statut->vide = true;
-                $statut->conf_vide = true;
-                $statut->etalon_id = null;    
-                $statut->terme = null;
-                $statut->save(); 
-            }
-    } 
-}
+//                 $statut->conf_pleine = false;
+//                 $statut->pres_pleine = false;
+//                 $statut->vide = true;
+//                 $statut->conf_vide = true;
+//                 $statut->etalon_id = null;    
+//                 $statut->terme = null;
+//                 $statut->save(); 
+//             }
+//     } 
+// }
 
 static function VenteJeunes ()
 {

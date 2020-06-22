@@ -8,7 +8,7 @@ use App\Http\Middleware\checkElevage;
 use Illuminate\Support\Facades\DB;
 use App\Elevage;
 use App\Animal;
-use App\gameData;
+use App\Gamedata;
 use App\Affixe;
 
 
@@ -195,7 +195,7 @@ class ElevageController extends Controller
     {
         
         $elevage = Elevage::Find($id);
-        $date = TempsController::dateCourante();
+        $date = Gamedata::date();
         $juments = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'femelle')->orWhere('sexe', 'vieille femelle');})->whereHas('Statut', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
        
 
