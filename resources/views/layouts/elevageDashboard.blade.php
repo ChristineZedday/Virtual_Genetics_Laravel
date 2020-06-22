@@ -24,7 +24,10 @@ $date = $game->date();
 						<li><a href="{{route('animaux',[$elevage,'reps'])}}">Seulement les reproducteurs adultes</a></li>
 						<li><a href="{{route('animaux',[$elevage,'males'])}}">Etalons uniquement</a></li>
 						<li><a href="{{route('animaux',[$elevage,'femelles'])}}">Juments uniquement</a></li>
-						<li><a href="{{route('animaux',[$elevage,'jeunes'])}}">Seulement les jeunes</a></li>
+						<li><a href="{{route('animaux',[$elevage,'jeunes'])}}">Seulement les jeunes sevrés</a>
+					</li>
+					<li><a href="{{route('animaux',[$elevage,'foals'])}}">Seulement les poulains sous la mère</a>
+					</li>
 						<li><a href="{{route('animaux',[$elevage,'hongres'])}}">Seulement les animaux stérilisés</a></li>
 						<li><a href="{{route('animaux',[$elevage,'vente'])}}">Seulement les animaux à vendre</a></li>
 						
