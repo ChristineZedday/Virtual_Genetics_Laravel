@@ -282,27 +282,46 @@ static function checkVieux ($date)
     }
 }
 
-// static function checkFemellesTerme($date)
-// {
-    
-//     $statuts = statutsFemelle::where('terme',  $date)->get();
-  
-    
-//     if (!empty($statuts))
-//         {
-//             foreach ($statuts as $statut)
-//             {
-                
-//                 $statut->conf_pleine = false;
-//                 $statut->pres_pleine = false;
-//                 $statut->vide = true;
-//                 $statut->conf_vide = true;
-//                 $statut->etalon_id = null;    
-//                 $statut->terme = null;
-//                 $statut->save(); 
-//             }
-//     } 
-// }
+// 
+static function VenteSaillies ()
+{
+    $vendeurs = Elevage::where('role','Vendeur')->get();
+    foreach ($vendeurs as $vendeur)
+    {
+        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'autorisé')->orWhere('qualite', 'approuvé');})->get();
+        foreach ($animaux as $animal)
+      
+        {
+            $statut = $animal->StatutMale;
+            if ($statut->disponible)
+            {
+                if (rand(1,3)== 1)
+                {
+                    $statut->disponible = false;
+                    $statut->save();
+                  
+                    
+                }
+            }
+            else 
+            {
+                if (rand(1,3)== 1)
+                {
+                    $statut->disponible = true;
+                    if ($statut->qualite = 'approuvé')
+                   { $statut->prix = $animal->Race->prix_moyen/10;}
+                   else
+                   {$statut->prix = $animal->Race->prix_moyen/20;}
+                    $statut->save();
+                   
+                }
+            }
+           
+        
+        }
+
+    }
+}
 
 static function VenteJeunes ()
 {
