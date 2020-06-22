@@ -143,7 +143,7 @@ class ElevageController extends Controller
             break;
 
             case 'foals':
-                $animaux = Animal::where('elevage_id', $id)->where('foetus', false)->whereIn('sexe',['poulain', 'pouliche'])->get(); 
+                $animaux = Animal::where('elevage_id', $id)->where('foetus', false)->whereIn('sexe',['jeune poulain', 'jeune pouliche'])->get(); 
             break;
 
             case 'males':
