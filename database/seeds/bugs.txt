@@ -2,7 +2,8 @@
 
 mettre prix dans liste à vendre
 
-vente suitées
+vente suitées ok
+vente pleines: pas chgt d'affixe?
 
 
 mettre robes fondateurs

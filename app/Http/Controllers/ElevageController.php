@@ -126,7 +126,7 @@ class ElevageController extends Controller
     }
 
     /**
-     * Show list of animals for this stud
+     * Show list of animals for this stud, with filters (age, sex...)
      */
     public function listeAnimaux ($id, $filtre)
     {
@@ -192,7 +192,7 @@ class ElevageController extends Controller
 
     
     /**
-     * Show list of available females
+     * Show list of available females of the stud, not pregnant not steriles
      * param: int elevage_id 
      */
     public function faireSaillir ($id)
@@ -206,6 +206,13 @@ class ElevageController extends Controller
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
 
     }
+
+    /**
+     * Examination of males before use them for reproduction
+     * approuvé: best quality, produce breed registrables offspring
+     * autorisé: produce breed registrables offspring
+     * refusé: produce grades (OC)
+     */
 
     public function commissionEtalons ($id, $etalon)
     {
