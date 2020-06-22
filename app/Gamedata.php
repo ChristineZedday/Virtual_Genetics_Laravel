@@ -96,6 +96,8 @@ static function checkNouveaux($date)
         $animal->save();
         $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
         $statut->vide = true;
+        if ($animal->elevage_id != 2)
+       { $statut->suitee = true;}
         $statut->pres_pleine= false;
         $statut->conf_pleine = false;
         $statut->conf_vide = true;
@@ -106,7 +108,29 @@ static function checkNouveaux($date)
             
     }
 }
-
+static function checkSevres()
+{
+    $animaux = Animal::where('elevage_id', '!=', 2)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
+    foreach ($animaux as $animal)
+    {
+        if (Gamedata::ageMonths($animal->date_naissance) > 6)
+        {
+            if ($animal->sexe == 'jeune poulain')
+            {
+                $animal->sexe = 'jeune mâle';
+            }
+            else
+            {
+                $animal->sexe = 'jeune femelle';
+            }
+                $animal->save();
+                $statut = $animal->Dam->statutsFemelle;
+                $statut->suitee = false;
+                $statut->save();
+            
+        }
+    }
+}
 
 static function checkPuberes()
 {
@@ -137,6 +161,8 @@ static function checkPuberes()
             }
             $statut->save();
          }
+
+        
             
     }
 

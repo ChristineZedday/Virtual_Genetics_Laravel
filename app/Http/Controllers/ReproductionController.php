@@ -44,8 +44,8 @@ class ReproductionController extends Controller
     }
     $statut->pres_pleine = true; 
     $statut->etalon_id = $etalon;
-    $statut->date_saillie = TempsController::dateCourante();
-    $date = TempsController::ElevenMonths();
+    $statut->date_saillie = Gamedata::date();
+    $date = Gamedata::ElevenMonths();
     $statut->terme = $date;
     $statut->save();
     $etalon = Animal::Find($etalon);
@@ -116,12 +116,12 @@ class ReproductionController extends Controller
               }
           }
           
-          $lettre = TempsController::checkLettre($date);
+          $lettre = Gamedata::checkLettre($date);
           $animal->nom = crenom($lettre);
           
           $animal->elevage_id = $elevage->id;
           $sexe = rand(1,2);
-          $animal->sexe = $sexe==1? 'jeune mâle' : 'jeune femelle';
+          $animal->sexe = $sexe==1? 'jeune poulain' : 'jeune pouliche';
          
 
           $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2) ;
@@ -232,7 +232,7 @@ class ReproductionController extends Controller
                     $statut->save();
                     $embryoletal = true;
                     $animal->delete();
-                    $statut->terme = TempsController::dateCourante();;
+                    $statut->terme = Gamedata::date();;
                    
                   }
                   else
@@ -514,13 +514,13 @@ function calculConsang($S, $D)
   $SS = Animal::find($S);
   if (isset ($SS))
   {
-    $ageS = TempsController::ageMonths($SS->date_naissance);
+    $ageS = Gamedata::ageMonths($SS->date_naissance);
   }
  
   $DD = Animal::find($D);
   if (isset ($DD))
   {
-    $ageD = TempsController::ageMonths($DD->date_naissance);
+    $ageD = Gamedata::ageMonths($DD->date_naissance);
   }
 
   switch (true)

@@ -20,6 +20,7 @@ class CreateStatutsfemellesTable extends Migration
             $table->tinyInteger('fertilite')->unsigned()->default(100);
             $table->boolean('pres_pleine')->default(false);
             $table->boolean('conf_pleine')->default(false);
+            $table->boolean('suitee')->default(false);
             $table->boolean('vide')->default(true);
             $table->boolean('conf_vide')->default(false);
             $table->bigInteger('etalon_id')->unsigned()->nullable()->default(null);
