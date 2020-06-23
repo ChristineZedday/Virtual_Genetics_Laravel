@@ -13,7 +13,7 @@
 	<th>génotype</th>
 	<th>taille</th>
     <th>Date acquisition</th>
-    <th>A Vendre?</th>
+    <th> @isset ($vente) prix @else A Vendre? @endisset</th>
 	
    
   </tr>
@@ -62,7 +62,7 @@ if (isset($images)) {
   </td>
   <td> {{ $animal->taille_cm}}  </td>
 	<td>@isset ($animal->date_achat) {{$animal->date_achat}} @else {{$animal->date_naissance}} @endisset</td>
-	<td> {{ $animal->a_vendre ? "à vendre" : ""  }} </td>
+	<td>@isset ($vente) {{$animal->prix}} @else {{ $animal->a_vendre ? "à vendre" : ""  }} @endisset</td>
 
 </tr>
 @endforeach

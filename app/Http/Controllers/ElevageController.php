@@ -160,6 +160,8 @@ class ElevageController extends Controller
 
             case 'vente':
                 $animaux = Animal::where('elevage_id', $id)->where('foetus', false)->where('a_vendre', true)->get(); 
+                $vente = true;
+                return view('animaux', ['elevage'=>$elevage,'animaux'=>$animaux, 'vente'=>$vente]);
             break;
 
             default:
