@@ -160,9 +160,8 @@ class AnimalController extends Controller
     {
         $animal = Animal::Find($animal);
         $elevage = Elevage::Find($elevage);
-        // $date = TempsController::dateCourante();
-        $game = Gamedata::Find(1);
-        $date = $game->date();
+       
+        $date =  Gamedata::date();
        
         $vendeur = $animal->elevage_id;
         $vendeur = Elevage::Find($vendeur);
@@ -183,7 +182,7 @@ class AnimalController extends Controller
                 {
                     $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
                     $produit->elevage_id = $elevage->id;
-                    $produit->affixe_id = $elevage->affixe_id;
+                    $produit->affixe_id = $elevage->Affixe->id;
                     $produit->save();
                 }
                if ($statut->suitee)

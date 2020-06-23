@@ -132,42 +132,53 @@ class ReproductionController extends Controller
                 {
                   $animal->race_id = $etalon->race_id;
                 }
-                else 
-                    if ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  )
+                else if ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  )
                     {
                      
-                      $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->get(); //pas true, 1?
+                      $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first(); //pas true, 1?
 
-                      if (sizeof($races) > 0)
+                      if (isset($race))
                       {
-                      
-                        
-                        foreach ($races as $race)
-                        {
-                         
-                          if ($race->taille_conditions)
-                          {
-                            $race = Race::Find($race->race_produit_id);
-                            
+                        $race = Race::Find($race->race_produit_id);
+                        $animal->race_id = $race->id;
+                        $animal->save();
+                      }
+                      else 
+                      {
+                        $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',1)->get();
 
-                            if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
-                            {
-                              $animal->race_id = $race->id;
-                              $animal->save();
-                            }
-                          
-                          }
-                        else 
+                        if (sizeof($races)>0)
+                        {
+                          foreach ($races as $race)
                           {
-                          $animal->race_id = $race->race_produit_id; //qd c'est automatique il n'y a qu'une seule possibilité
+                           
+                            if ($race->taille_conditions)
+                            {
+                              $race = Race::Find($race->race_produit_id);
+                              
+  
+                              if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
+                              {
+                                $animal->race_id = $race->id;
+                                $animal->save();
+                              }
+                            }
                           }
+                          if ($animal->race_id == null)
+                          {
+                            $animal->race_id = 1;
+                            $animal->save();
+                          }
+
+
                         }
-                    }
+                    
+                        else //croisement non prévu 
+                          {
+                          $animal->race_id = 1;
+                        }
+                     }
                   
-                    else //croisement non répertorié
-                    {
-                      $animal->race_id = 1;
-                    }
                 }
                 else //etalon pas autorisé
                 {
