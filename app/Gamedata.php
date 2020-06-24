@@ -264,7 +264,7 @@ static function checkVieux ($date)
                     $animal->elevage_id =2;//chez l'Ankou!
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     $statut = statutsFemelle::where('animal_id', $animal->id)->first();
-                    if (isset($statut) 
+                    if (isset($statut))
                     {
                         if ($statut->pleine)
                         {
