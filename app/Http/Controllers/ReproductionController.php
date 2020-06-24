@@ -137,7 +137,7 @@ class ReproductionController extends Controller
                      
                       $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first(); //pas true, 1?
 
-                      if (isset($race))
+                      if (isset ($race))
                       {
                         $race = Race::Find($race->race_produit_id);
                         $animal->race_id = $race->id;

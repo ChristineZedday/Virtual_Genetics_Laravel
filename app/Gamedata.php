@@ -264,14 +264,21 @@ static function checkVieux ($date)
                     $animal->elevage_id =2;//chez l'Ankou!
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     $statut = statutsFemelle::where('animal_id', $animal->id)->first();
-                    if (isset($statut) && $statut->pleine)
+                    if (isset($statut) 
                     {
-                        $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
-                        $produit->delete();
+                        if ($statut->pleine)
+                        {
+                            $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
+                            $produit->delete();
+                            $statut->delete();
+                        }
+                        else
+                        {
+                            $statut->delete();
+                        }
                       
                     }
-                    if (isset($statut))
-                   { $statut->delete();}
+                   
                        
                     if (isset($animal->StatutMale))
                     {
