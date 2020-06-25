@@ -103,11 +103,14 @@ static function checkNouveaux($date)
         $statut->conf_vide = true;
         $statut->etalon_id = null;
         $statut->terme = null;
-        $statut->save();
-
+        $statut->save(); 
+        if ($animal->Dam->elevage_id == 2)
+        {$statut->delete();}
             
     }
+    
 }
+
 static function checkSevres()
 {
     $animaux = Animal::where('elevage_id', '!=', 2)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
@@ -125,8 +128,9 @@ static function checkSevres()
             }
                 $animal->save();
                 $statut = $animal->Dam->Statut;
-                $statut->suitee = false;
-                $statut->save();
+                if (isset ($statut))
+               { $statut->suitee = false;
+                $statut->save();}
             
         }
     }
@@ -227,6 +231,7 @@ static function checkVieux ($date)
     foreach ($letaux as $letal)
     {
         $letal->elevage_id =2;//chez l'Ankou!
+        $letal->date_achat = Gamedata::date();
         $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
         if ($letal->foetus)
         {
@@ -269,8 +274,8 @@ static function checkVieux ($date)
                         if ($statut->pleine)
                         {
                             $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
-                            $produit->delete();
-                            $statut->delete();
+                            $produit->elevage_id =2;//pour effacer faudrait effacer genotypes et images
+                          
                         }
                         else
                         {
@@ -410,6 +415,7 @@ static function achete ()
             $vendeur->budget += $av->prix;
             $vendeur->save();
             $av->elevage_id = $acheteur->id;
+            $av->date_achat = Gamedata::date();
             $av->a_vendre = false;
             $av->save();
 
