@@ -373,7 +373,7 @@ class AffixesTableSeeder extends Seeder
             array (
                 'id' => 46,
                 'libelle' => 'Llanfrechfa',
-                'affixe_pre' => 0,
+                'affixe_pre' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

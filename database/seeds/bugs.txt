@@ -1,14 +1,9 @@
 poulains des juments mortes pas effacés?
-ajouter date acquisition
 
-
-vente suitées ok
 vente pleines: pas chgt d'affixe?
 
 
-mettre robes fondateurs
-ajouter fondateurs sauf en shetland
-
+ajouter fondateurs (actuel: 16 arabes, 22 shetland, 7 welsh D, 3 Welsh C, 14 Welsh B, 19 Welsh A dont 1 pour produire Welsh C, 15 miniatures)
 images à faire: 
 robes varnish?
 rabicano après ajout locus/allèle/phénotype/couleur/image
