@@ -239,7 +239,7 @@ static function checkVieux ($date)
             $letal->foetus = false;
             $date= date('Y-m-d',strtotime('+7 month',strtotime($dam->statut->date_saillie)));
             $dam->statut->terme = $date;
-            $dam->satut->save();
+            $dam->statut->save();
             $letal->date_naissance = $date;
             $letal->save();
         }
