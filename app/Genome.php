@@ -39,7 +39,7 @@ class Genome extends Model
                              $genotype->allele_m_id =  $alleleDefaut;
                              }
 
-                        if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut)) {
+                        if ( $genotype->allele_p_id != $alleleDefaut || $genotype->allele_m_id != $alleleDefaut ||$locus->obligatoire){
                              $genotype->save();   
                          }
                          
@@ -60,9 +60,9 @@ class Genome extends Model
 
                             $alleleDefaut =  Allele::where('locus_id', $genotype->locus_id)->where('is_default',true)->first()->id;
                             $genotype->allele_p_id = $alleleDefaut;
-                            if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  )) {
+                            if ( $genotype->allele_p_id != $alleleDefaut || $genotype->allele_m_id != $alleleDefaut ||$locus->obligatoire){
                                 $genotype->save();   
-                                    }
+                            }
                         }
                     }
             }
@@ -215,7 +215,7 @@ class Genome extends Model
                                     $patM = true;
                                 }
                             }
-                            else {  //cas ou lon avait allèle mat précédent locus
+                            else {  //cas ou l'on avait allèle mat précédent locus
                                 $recomb = (rand(1, 100) <= $tauxM); //on a bien absence de recomb avec un taux de 0%
                                 if ($recomb) {
                                     $genotype->allele_m_id = $genotypeM->allele_p_id;
