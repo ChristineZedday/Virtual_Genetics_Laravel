@@ -2513,6 +2513,32 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
             ),
+            96 => 
+            array (
+                'id' => 119,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Faery',
+                'affixe_id' => NULL,
+                'couleur' => 'bai tobiano',
+                'base' => NULL,
+                'taille_cm' => 65,
+                'race_id' => 3,
+                'sexe' => 'jeune femelle',
+                'date_achat' => NULL,
+                'date_naissance' => '1969-06-28',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 5,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'taille_additive' => 85,
+                'modele_allures' => 11,
+                'modele_allures_additifs' => 11,
+            ),
         ));
         
         
