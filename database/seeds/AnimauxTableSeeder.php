@@ -1558,7 +1558,7 @@ class AnimauxTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Little Thing',
                 'affixe_id' => NULL,
-                'couleur' => 'bai',
+                'couleur' => 'bai dunlike',
                 'base' => NULL,
                 'taille_cm' => 60,
                 'race_id' => 3,
