@@ -1607,6 +1607,106 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            159 => 
+            array (
+                'id' => 176,
+                'nom' => 'smoky cream2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            160 => 
+            array (
+                'id' => 177,
+                'nom' => 'abricot2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            161 => 
+            array (
+                'id' => 178,
+                'nom' => 'bai perle2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            162 => 
+            array (
+                'id' => 179,
+                'nom' => 'champagneambre2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            163 => 
+            array (
+                'id' => 180,
+                'nom' => 'champagneor2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            164 => 
+            array (
+                'id' => 181,
+                'nom' => 'champagneclassique2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            165 => 
+            array (
+                'id' => 182,
+                'nom' => 'noirsilver2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            166 => 
+            array (
+                'id' => 183,
+                'nom' => 'pseudocremello2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            167 => 
+            array (
+                'id' => 184,
+                'nom' => 'pseudoperlino2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            168 => 
+            array (
+                'id' => 185,
+                'nom' => 'pseudosmoky2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
