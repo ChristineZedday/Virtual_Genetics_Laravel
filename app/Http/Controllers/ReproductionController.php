@@ -367,6 +367,7 @@ class ReproductionController extends Controller
 
 
               }
+              $size = sizeof($dilue_couleurs);
             
               foreach ($dilue_couleurs as $coul)
               {
@@ -375,14 +376,44 @@ class ReproductionController extends Controller
                   if (isset($couleur))
                     {
                       $couleur = $couleur->couleur_res_id;
-                    $animal->Couleur()->attach($couleur);
+                      switch(true)
+                      {
+                        case $size == 1:
+                          $animal->Couleur()->attach($couleur);
 
-                    $images = Couleur::Find($couleur)->Images;
-                    foreach ($images as $image)
-                    { 
-                      if ($image <> null)
-                      {$animal->Image()->attach($image->id);}
-                    }
+                          $images = Couleur::Find($couleur)->Images;
+                          foreach ($images as $image)
+                          { 
+                            if ($image <> null)
+                            {$animal->Image()->attach($image->id);}
+                          }
+                        break;
+
+                        // case $size ==2:
+                        //   $couleur = Couleur::where('nom',$couleur->nom.'2')->first()->id;
+                        //   $animal->Couleur()->attach($couleur);
+
+                        //   $images = Couleur::Find($couleur)->Images;
+                        //   foreach ($images as $image)
+                        //   { 
+                        //     if ($image <> null)
+                        //     {$animal->Image()->attach($image->id);}
+                        //   }
+                        // break;
+
+                        default:
+                        $couleur = Couleur::where('nom',$couleur->nom.'2')->first()->id;
+                        $animal->Couleur()->attach($couleur);
+
+                        $images = Couleur::Find($couleur)->Images;
+                        foreach ($images as $image)
+                        { 
+                          if ($image <> null)
+                          {$animal->Image()->attach($image->id);}
+                        }
+
+                      }
+                   
 
                   
                   }

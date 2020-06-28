@@ -1497,6 +1497,116 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            148 => 
+            array (
+                'id' => 165,
+                'nom' => 'mushroom2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            149 => 
+            array (
+                'id' => 166,
+                'nom' => 'baimushroom2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            150 => 
+            array (
+                'id' => 167,
+                'nom' => 'palomino2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            151 => 
+            array (
+                'id' => 168,
+                'nom' => 'cremello2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            152 => 
+            array (
+                'id' => 169,
+                'nom' => 'perlino2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            153 => 
+            array (
+                'id' => 170,
+                'nom' => 'isabelle2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            154 => 
+            array (
+                'id' => 171,
+                'nom' => 'alezan dun2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            155 => 
+            array (
+                'id' => 172,
+                'nom' => 'alezannondun2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            156 => 
+            array (
+                'id' => 173,
+                'nom' => 'bai dun2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            157 => 
+            array (
+                'id' => 174,
+                'nom' => 'souris2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            158 => 
+            array (
+                'id' => 175,
+                'nom' => 'noirnondun2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
