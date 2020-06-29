@@ -402,10 +402,10 @@ class ReproductionController extends Controller
                         // break;
 
                         default:
-                        $couleur = Couleur::where('nom',$couleur->nom.'2')->first()->id;
-                        $animal->Couleur()->attach($couleur);
+                        $couleur = Couleur::where('nom', $couleur->nom.'2')->first();
+                        $animal->Couleur()->attach($couleur->id);
 
-                        $images = Couleur::Find($couleur)->Images;
+                        $images = $couleur->Images;
                         foreach ($images as $image)
                         { 
                           if ($image <> null)
