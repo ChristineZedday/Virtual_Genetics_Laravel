@@ -152,8 +152,6 @@ class ReproductionController extends Controller
                           foreach ($races as $race)
                           {
                            
-                            if ($race->taille_conditions)
-                            {
                               $race = Race::Find($race->race_produit_id);
                               
   
@@ -162,7 +160,7 @@ class ReproductionController extends Controller
                                 $animal->race_id = $race->id;
                                 $animal->save();
                               }
-                            }
+                            
                           }
                           if ($animal->race_id == null)
                           {
