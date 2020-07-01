@@ -402,6 +402,7 @@ class ReproductionController extends Controller
                         // break;
 
                         default:
+                        $couleur = Couleur::Find($couleur);
                         $couleur = Couleur::where('nom', $couleur->nom.'2')->first();
                         $animal->Couleur()->attach($couleur->id);
 
