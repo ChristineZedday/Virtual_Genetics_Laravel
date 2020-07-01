@@ -1,4 +1,6 @@
 poulains des juments mortes pas effacés?
+statut femelles mortes
+mortalité à baisser qd bugs résolus
 
 vente pleines: pas chgt d'affixe?
 

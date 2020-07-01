@@ -1707,6 +1707,36 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            169 => 
+            array (
+                'id' => 186,
+                'nom' => 'bainondun2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            170 => 
+            array (
+                'id' => 187,
+                'nom' => 'baisilver2',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            171 => 
+            array (
+                'id' => 188,
+                'nom' => 'noir perle2',
+                'base_couleur' => NULL,
+                'est_motif' => NULL,
+                'est_dilution' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

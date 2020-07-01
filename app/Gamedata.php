@@ -87,26 +87,23 @@ static function ElevenMonths()
 
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance',  $date)->get();
+    $animaux = Animal::where('date_naissance',  $date)->where('elevage_id', '!=', 2)->get();
 
     foreach ($animaux as $animal)
     {
-        $animal->foetus = false;
-        $animal->elevage_id = $animal->Dam->elevage_id;
-        $animal->save();
-        $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
-        $statut->vide = true;
-        if ($animal->elevage_id != 2)
-       { $statut->suitee = true;}
-        $statut->pres_pleine= false;
-        $statut->conf_pleine = false;
-        $statut->conf_vide = true;
-        $statut->etalon_id = null;
-        $statut->terme = null;
-        $statut->save(); 
-        if ($animal->Dam->elevage_id == 2)
-        {$statut->delete();}
-            
+            $animal->foetus = false;
+            $animal->elevage_id = $animal->Dam->elevage_id;
+            $animal->save();
+            $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
+            $statut->vide = true;
+            $statut->suitee = true;
+            $statut->pres_pleine= false;
+            $statut->conf_pleine = false;
+            $statut->conf_vide = true;
+            $statut->etalon_id = null;
+            $statut->terme = null;
+            $statut->save(); 
+          
     }
     
 }
@@ -127,10 +124,11 @@ static function checkSevres()
                 $animal->sexe = 'jeune femelle';
             }
                 $animal->save();
-                $statut = $animal->Dam->Statut;
+                if ($animal->Dam->elevage_id !=2)
+             {   $statut = $animal->Dam->Statut;
                 if (isset ($statut))
                { $statut->suitee = false;
-                $statut->save();}
+                $statut->save();}}
             
         }
     }
@@ -267,6 +265,7 @@ static function checkVieux ($date)
                 if (rand(1,$var))
                 {
                     $animal->elevage_id =2;//chez l'Ankou!
+                    $animal->date_achat = Gamedata::date();
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     $statut = statutsFemelle::where('animal_id', $animal->id)->first();
                     if (isset($statut))
@@ -275,6 +274,8 @@ static function checkVieux ($date)
                         {
                             $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
                             $produit->elevage_id =2;//pour effacer faudrait effacer genotypes et images
+                            $statut->delete();
+
                           
                         }
                         else
