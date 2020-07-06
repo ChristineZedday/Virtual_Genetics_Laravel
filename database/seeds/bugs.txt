@@ -1,6 +1,8 @@
 poulains des juments mortes pas effacés?
 statut femelles mortes
-mortalité à baisser qd bugs résolus
+mortalité à baisser qd bugs résolus?
+
+qd admin afficher gènes
 
 vente pleines: pas chgt d'affixe?
 

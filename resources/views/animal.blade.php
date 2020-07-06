@@ -15,6 +15,23 @@
 				<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
 				@endif
 				@endisset
+				<p>
+					@if (Auth::user()->name == 'admin')
+				<?php 
+					$genome = App\Genotype::where('animal_id',$animal->id)->get();
+						foreach ($genome as $genotype)
+						{
+							$allP = App\Allele::Find($genotype->allele_p_id);
+							$allP = $allP->abbrev;
+							
+							$allM = App\Allele::Find($genotype->allele_m_id);
+							$allM = $allM->abbrev;
+							echo($allP.$allM ." ");
+						}
+
+					?>	
+					</p>
+					@endif	
 				
 
 				<p>{{$animal->taille_cm}} cm</p>
