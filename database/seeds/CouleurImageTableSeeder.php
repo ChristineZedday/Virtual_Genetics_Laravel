@@ -1385,6 +1385,86 @@ class CouleurImageTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            171 => 
+            array (
+                'id' => 211,
+                'couleur_id' => 170,
+                'image_id' => 142,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            172 => 
+            array (
+                'id' => 212,
+                'couleur_id' => 167,
+                'image_id' => 157,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            173 => 
+            array (
+                'id' => 213,
+                'couleur_id' => 165,
+                'image_id' => 136,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            174 => 
+            array (
+                'id' => 214,
+                'couleur_id' => 176,
+                'image_id' => 162,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            175 => 
+            array (
+                'id' => 215,
+                'couleur_id' => 179,
+                'image_id' => 141,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            176 => 
+            array (
+                'id' => 216,
+                'couleur_id' => 180,
+                'image_id' => 156,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            177 => 
+            array (
+                'id' => 217,
+                'couleur_id' => 181,
+                'image_id' => 148,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            178 => 
+            array (
+                'id' => 218,
+                'couleur_id' => 183,
+                'image_id' => 158,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            179 => 
+            array (
+                'id' => 219,
+                'couleur_id' => 184,
+                'image_id' => 143,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            180 => 
+            array (
+                'id' => 220,
+                'couleur_id' => 185,
+                'image_id' => 149,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

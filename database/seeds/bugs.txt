@@ -2,19 +2,20 @@ poulains des juments mortes pas effacés?
 statut femelles mortes
 mortalité à baisser qd bugs résolus?
 
-qd admin afficher gènes
-
 vente pleines: pas chgt d'affixe?
 
 vérifier le budget pour enregistrement
-
 
 ajouter fondateurs (actuel: 16 arabes, 22 shetland, 7 welsh D, 3 Welsh C, 14 Welsh B, 19 Welsh A dont 1 pour produire Welsh C, 16 miniatures)
 images à faire: 
 robes varnish?
 rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
-doubles dilute?
+
+doubles dilute:
+dunalino pas assez foncé baidun2 au lieu de isabelle2
+champagne or + palomino pas dilué du tout
+rajouté museau champagne en plus yeux
 
 !!!WD 138!!!
 

@@ -1480,7 +1480,7 @@ class AnimauxTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Cerise',
                 'affixe_id' => NULL,
-                'couleur' => 'alezan',
+                'couleur' => 'alezan dunlike',
                 'base' => NULL,
                 'taille_cm' => 84,
                 'race_id' => 3,
