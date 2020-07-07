@@ -4,6 +4,11 @@ mortalité à baisser qd bugs résolus?
 
 epona copain alz cl
 
+poulain tovero pas image tobiano alors que frame oui
+images ok, couleur_image ok
+
+raie de mulet alezan pas très visible sur dunlike
+
 doublons dans race proposées
 
 vente pleines: pas chgt d'affixe?
@@ -17,11 +22,10 @@ rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
 
 doubles dilute:
-dunalino pas assez foncé baidun2 au lieu de isabelle2
-champagne or + palomino pas dilué du tout
-rajouté museau champagne en plus yeux
 
-!!!WD 138!!!
+rajouter museau champagne en plus yeux
+
+!!!WD 138!!! des fois ça marche des fois pas...
 
 
 pas donner le m^me nom + m^me affixe
