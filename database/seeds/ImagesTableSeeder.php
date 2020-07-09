@@ -1201,7 +1201,7 @@ class ImagesTableSeeder extends Seeder
                 'id' => 141,
                 'chemin' => 'champagneambre2',
                 'extension' => 'png',
-                'z_index' => 16,
+                'z_index' => 20,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -1373,6 +1373,33 @@ class ImagesTableSeeder extends Seeder
                 'chemin' => 'yeuxbleus',
                 'extension' => 'png',
                 'z_index' => 32,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            151 => 
+            array (
+                'id' => 163,
+                'chemin' => 'rmalezandil',
+                'extension' => 'png',
+                'z_index' => 30,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            152 => 
+            array (
+                'id' => 164,
+                'chemin' => 'museauchampagne',
+                'extension' => 'png',
+                'z_index' => 29,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            153 => 
+            array (
+                'id' => 165,
+                'chemin' => 'museaurose',
+                'extension' => 'png',
+                'z_index' => 31,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

@@ -505,7 +505,8 @@ class ReproductionController extends Controller
                     if ($base == 'alezan aa' || $base == 'alezan agouti')
                     {
                       $mushroom = Couleur::where('nom','mushroom')->first();
-                      if (in_array($mushroom, $dilue_couleurs))
+                      $champagne = Couleur::where('nom','champagneor')->first();
+                      if (in_array($mushroom, $dilue_couleurs) || in_array($champagne, $dilue_couleurs))
                       {
                       $image = Image::where('chemin','crinsblancs')->first();
                       $animal->Image()->attach($image->id);
