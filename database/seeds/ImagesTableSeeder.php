@@ -1412,6 +1412,15 @@ class ImagesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            155 => 
+            array (
+                'id' => 167,
+                'chemin' => 'membressilver',
+                'extension' => 'png',
+                'z_index' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
