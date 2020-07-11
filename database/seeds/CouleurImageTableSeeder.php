@@ -1205,7 +1205,7 @@ class CouleurImageTableSeeder extends Seeder
             array (
                 'id' => 189,
                 'couleur_id' => 184,
-                'image_id' => 161,
+                'image_id' => 162,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -1445,7 +1445,7 @@ class CouleurImageTableSeeder extends Seeder
             array (
                 'id' => 219,
                 'couleur_id' => 184,
-                'image_id' => 143,
+                'image_id' => 6,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -1766,6 +1766,70 @@ class CouleurImageTableSeeder extends Seeder
                 'id' => 260,
                 'couleur_id' => 170,
                 'image_id' => 161,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            219 => 
+            array (
+                'id' => 261,
+                'couleur_id' => 12,
+                'image_id' => 165,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            220 => 
+            array (
+                'id' => 262,
+                'couleur_id' => 12,
+                'image_id' => 170,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            221 => 
+            array (
+                'id' => 263,
+                'couleur_id' => 27,
+                'image_id' => 170,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            222 => 
+            array (
+                'id' => 264,
+                'couleur_id' => 27,
+                'image_id' => 165,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            223 => 
+            array (
+                'id' => 265,
+                'couleur_id' => 169,
+                'image_id' => 165,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            224 => 
+            array (
+                'id' => 266,
+                'couleur_id' => 169,
+                'image_id' => 170,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            225 => 
+            array (
+                'id' => 267,
+                'couleur_id' => 184,
+                'image_id' => 170,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            226 => 
+            array (
+                'id' => 268,
+                'couleur_id' => 184,
+                'image_id' => 165,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
