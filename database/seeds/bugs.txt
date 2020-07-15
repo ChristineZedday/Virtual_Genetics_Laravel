@@ -3,6 +3,10 @@ statut femelles mortes
 mortalité à baisser qd bugs résolus?
 
 epona copain alz cl
+toinette: date naissance à rajouter
+
+les images pas toujours attachées, (couleur pas attachée) bugs lors de la repro?
+attacher les images à l'affichage slt?
 
 poulain tovero pas image tobiano alors que frame oui
 images ok, couleur_image ok

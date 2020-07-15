@@ -17,6 +17,7 @@ use App\AssoCouleur;
 use App\Race;
 use App\AssoRace;
 use App\Image;
+use App\Debug;
 use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
@@ -366,6 +367,11 @@ class ReproductionController extends Controller
 
               }
               $size = sizeof($dilue_couleurs);
+              $debug = new Debug();
+              $debug->locus1 = $animal->nom;
+              $debug->locsuivs = sizeof($dilue_couleurs);
+              $debug->save();
+
             
               foreach ($dilue_couleurs as $coul)
               {
