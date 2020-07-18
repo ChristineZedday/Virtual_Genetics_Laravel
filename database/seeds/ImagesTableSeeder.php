@@ -436,7 +436,7 @@ class ImagesTableSeeder extends Seeder
                 'id' => 54,
                 'chemin' => 'silver',
                 'extension' => 'png',
-                'z_index' => 24,
+                'z_index' => 30,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

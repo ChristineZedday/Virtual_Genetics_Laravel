@@ -95,14 +95,15 @@ static function checkNouveaux($date)
             $animal->elevage_id = $animal->Dam->elevage_id;
             $animal->save();
             $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
-            $statut->vide = true;
-            $statut->suitee = true;
-            $statut->pres_pleine= false;
-            $statut->conf_pleine = false;
-            $statut->conf_vide = true;
-            $statut->etalon_id = null;
-            $statut->terme = null;
-            $statut->save(); 
+            if (isset($statut))
+            {  $statut->vide = true;
+                $statut->suitee = true;
+                $statut->pres_pleine= false;
+                $statut->conf_pleine = false;
+                $statut->conf_vide = true;
+                $statut->etalon_id = null;
+                $statut->terme = null;
+                $statut->save(); }
           
     }
     
