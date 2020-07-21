@@ -17,6 +17,9 @@ sabots des dilués? cremello, etc...
 
 triple dilutes?
 
+enlever bouton faire saillir pour femelles saillies dans le mois
+liste faire saillir qd pas saison
+
 TOn toTO? vérifier doublons db animal 207 vient de Faery TOn au lieu de Toto
 
 poney bai mushroom nd1 n'a pas l'image nondun mais a bien mushroom2
@@ -35,7 +38,7 @@ sooty?
 
 
 
-!!!WD 138!!! des fois ça marche des fois pas...
+!!!WD 138!!! des fois ça marche des fois pas... arrondi? forcé à int
 
 
 pas donner le m^me nom + m^me affixe
@@ -43,3 +46,7 @@ pas donner le m^me nom + m^me affixe
 pouvoir retirer de la liste des femelles à faire saillir ou des étalons
 faire payer approbation étalons? primes approuvés?
 trier? (javascript sur table? nvlle requête)
+
+contrôles stérilisation jument pleine?
+
+vieille femelle sterilisée donnée tronquée: oubli enum, corrigé

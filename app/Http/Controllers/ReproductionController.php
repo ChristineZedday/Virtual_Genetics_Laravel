@@ -125,7 +125,7 @@ class ReproductionController extends Controller
           $animal->sexe = $sexe==1? 'jeune poulain' : 'jeune pouliche';
          
 
-          $animal->taille_additive = ($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2) ;
+          $animal->taille_additive = (int) (($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2)) ;
           $animal->taille_cm = $animal->taille_additive + rand(-2,2);
 
          

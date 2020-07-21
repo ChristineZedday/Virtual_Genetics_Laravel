@@ -22,7 +22,7 @@ class CreateAnimauxTable extends Migration
             $table->enum('base',['bai','noir', 'alezan aa', 'alezan agouti'])->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
             $table->bigInteger('race_id')->unsigned()->nullable();
-            $table->enum('sexe',['jeune poulain', 'jeune pouliche', 'mâle','femelle', 'jeune mâle', 'jeune femelle', 'mâle stérilisé', 'femelle stérilisée', 'vieille femelle', 'vieux mâle']);
+            $table->enum('sexe',['jeune poulain', 'jeune pouliche', 'mâle','femelle', 'jeune mâle', 'jeune femelle', 'mâle stérilisé', 'femelle stérilisée', 'vieille femelle', 'vieux mâle', 'vieux mâle stérilisé', 'vieille femelle stérilisée']);
             $table->date('date_achat')->nullable();
             $table->date('date_naissance')->nullable();
             $table->boolean('a_vendre')->default(false);
