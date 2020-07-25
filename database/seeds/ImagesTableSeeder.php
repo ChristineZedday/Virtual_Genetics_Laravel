@@ -1408,7 +1408,7 @@ class ImagesTableSeeder extends Seeder
                 'id' => 166,
                 'chemin' => 'membresnoirs',
                 'extension' => 'png',
-                'z_index' => 28,
+                'z_index' => 20,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
