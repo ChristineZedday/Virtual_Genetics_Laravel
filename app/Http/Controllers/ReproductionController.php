@@ -419,6 +419,21 @@ class ReproductionController extends Controller
                                   {$animal->Image()->attach($image->id);}
                                 }
                           }
+                          else{//si pa de double prendre la dilution normale
+                            $couleur = Couleur::where('nom', $couleur->nom)->first();
+                            if (isset($couleur))
+                             {
+                                  $animal->Couleur()->attach($couleur->id);
+    
+                                  $images = $couleur->Images;
+                                    foreach ($images as $image)
+                                    { 
+                                      if ($image <> null)
+                                      {$animal->Image()->attach($image->id);}
+                                    }
+                              }
+
+                          }
                       }
                    
 

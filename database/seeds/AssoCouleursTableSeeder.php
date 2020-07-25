@@ -503,6 +503,15 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            54 => 
+            array (
+                'id' => 66,
+                'couleur_res_id' => 189,
+                'couleur1_id' => 2,
+                'couleur2_id' => 7,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
