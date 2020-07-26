@@ -73,15 +73,6 @@ class AssoCouleursTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => 12,
-                'couleur_res_id' => 2,
-                'couleur1_id' => 2,
-                'couleur2_id' => 7,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-            ),
-            7 => 
-            array (
                 'id' => 13,
                 'couleur_res_id' => 13,
                 'couleur1_id' => 2,
@@ -89,7 +80,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 14,
                 'couleur_res_id' => 14,
@@ -98,7 +89,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 15,
                 'couleur_res_id' => 15,
@@ -107,7 +98,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            10 => 
+            9 => 
             array (
                 'id' => 16,
                 'couleur_res_id' => 24,
@@ -116,7 +107,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            11 => 
+            10 => 
             array (
                 'id' => 17,
                 'couleur_res_id' => 20,
@@ -125,7 +116,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 => 
+            11 => 
             array (
                 'id' => 18,
                 'couleur_res_id' => 20,
@@ -134,7 +125,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 => 
+            12 => 
             array (
                 'id' => 19,
                 'couleur_res_id' => 20,
@@ -143,7 +134,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            14 => 
+            13 => 
             array (
                 'id' => 22,
                 'couleur_res_id' => 26,
@@ -152,7 +143,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 => 
+            14 => 
             array (
                 'id' => 23,
                 'couleur_res_id' => 27,
@@ -161,7 +152,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            16 => 
+            15 => 
             array (
                 'id' => 24,
                 'couleur_res_id' => 28,
@@ -170,7 +161,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            17 => 
+            16 => 
             array (
                 'id' => 25,
                 'couleur_res_id' => 30,
@@ -179,7 +170,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            18 => 
+            17 => 
             array (
                 'id' => 26,
                 'couleur_res_id' => 31,
@@ -188,7 +179,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            19 => 
+            18 => 
             array (
                 'id' => 27,
                 'couleur_res_id' => 32,
@@ -197,7 +188,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 => 
+            19 => 
             array (
                 'id' => 28,
                 'couleur_res_id' => 37,
@@ -206,7 +197,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 => 
+            20 => 
             array (
                 'id' => 29,
                 'couleur_res_id' => 34,
@@ -215,7 +206,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 => 
+            21 => 
             array (
                 'id' => 31,
                 'couleur_res_id' => 39,
@@ -224,7 +215,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 => 
+            22 => 
             array (
                 'id' => 32,
                 'couleur_res_id' => 40,
@@ -233,7 +224,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 => 
+            23 => 
             array (
                 'id' => 33,
                 'couleur_res_id' => 41,
@@ -242,7 +233,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 => 
+            24 => 
             array (
                 'id' => 35,
                 'couleur_res_id' => 2,
@@ -251,7 +242,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 => 
+            25 => 
             array (
                 'id' => 36,
                 'couleur_res_id' => 35,
@@ -260,7 +251,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            27 => 
+            26 => 
             array (
                 'id' => 37,
                 'couleur_res_id' => 3,
@@ -269,7 +260,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 => 
+            27 => 
             array (
                 'id' => 38,
                 'couleur_res_id' => 45,
@@ -278,7 +269,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            29 => 
+            28 => 
             array (
                 'id' => 39,
                 'couleur_res_id' => 20,
@@ -287,7 +278,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            30 => 
+            29 => 
             array (
                 'id' => 40,
                 'couleur_res_id' => 47,
@@ -296,7 +287,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 => 
+            30 => 
             array (
                 'id' => 41,
                 'couleur_res_id' => 48,
@@ -305,7 +296,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 => 
+            31 => 
             array (
                 'id' => 42,
                 'couleur_res_id' => 10,
@@ -314,7 +305,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            33 => 
+            32 => 
             array (
                 'id' => 43,
                 'couleur_res_id' => 10,
@@ -323,7 +314,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            34 => 
+            33 => 
             array (
                 'id' => 44,
                 'couleur_res_id' => 11,
@@ -332,7 +323,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 => 
+            34 => 
             array (
                 'id' => 45,
                 'couleur_res_id' => 11,
@@ -341,7 +332,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 => 
+            35 => 
             array (
                 'id' => 46,
                 'couleur_res_id' => 14,
@@ -350,7 +341,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            37 => 
+            36 => 
             array (
                 'id' => 47,
                 'couleur_res_id' => 14,
@@ -359,7 +350,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 => 
+            37 => 
             array (
                 'id' => 48,
                 'couleur_res_id' => 26,
@@ -368,7 +359,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            39 => 
+            38 => 
             array (
                 'id' => 49,
                 'couleur_res_id' => 26,
@@ -377,7 +368,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            40 => 
+            39 => 
             array (
                 'id' => 50,
                 'couleur_res_id' => 31,
@@ -386,7 +377,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            41 => 
+            40 => 
             array (
                 'id' => 51,
                 'couleur_res_id' => 31,
@@ -395,7 +386,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 => 
+            41 => 
             array (
                 'id' => 52,
                 'couleur_res_id' => 37,
@@ -404,7 +395,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 => 
+            42 => 
             array (
                 'id' => 53,
                 'couleur_res_id' => 37,
@@ -413,7 +404,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 => 
+            43 => 
             array (
                 'id' => 54,
                 'couleur_res_id' => 39,
@@ -422,7 +413,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            45 => 
+            44 => 
             array (
                 'id' => 55,
                 'couleur_res_id' => 39,
@@ -431,7 +422,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            46 => 
+            45 => 
             array (
                 'id' => 56,
                 'couleur_res_id' => 45,
@@ -440,7 +431,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            47 => 
+            46 => 
             array (
                 'id' => 57,
                 'couleur_res_id' => 45,
@@ -449,7 +440,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            48 => 
+            47 => 
             array (
                 'id' => 58,
                 'couleur_res_id' => 139,
@@ -458,7 +449,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            49 => 
+            48 => 
             array (
                 'id' => 59,
                 'couleur_res_id' => 139,
@@ -467,7 +458,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            50 => 
+            49 => 
             array (
                 'id' => 60,
                 'couleur_res_id' => 139,
@@ -476,7 +467,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            51 => 
+            50 => 
             array (
                 'id' => 63,
                 'couleur_res_id' => 140,
@@ -485,7 +476,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            52 => 
+            51 => 
             array (
                 'id' => 64,
                 'couleur_res_id' => 141,
@@ -494,7 +485,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            53 => 
+            52 => 
             array (
                 'id' => 65,
                 'couleur_res_id' => 164,
@@ -503,7 +494,7 @@ class AssoCouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            54 => 
+            53 => 
             array (
                 'id' => 66,
                 'couleur_res_id' => 189,
