@@ -406,8 +406,8 @@ class ReproductionController extends Controller
                         // break;
 
                         default:
-                        $couleur = Couleur::Find($couleur);
-                        $couleur = Couleur::where('nom', $couleur->nom.'2')->first();
+                        $coul = Couleur::Find($couleur);
+                        $couleur = Couleur::where('nom', $coul->nom.'2')->first();
                         if (isset($couleur))
                          {
                               $animal->Couleur()->attach($couleur->id);
@@ -420,7 +420,7 @@ class ReproductionController extends Controller
                                 }
                           }
                           else{//si pa de double prendre la dilution normale
-                            $couleur = Couleur::where('nom', $couleur->nom)->first();
+                            $couleur = Couleur::where('nom', $coul->nom)->first();
                             if (isset($couleur))
                              {
                                   $animal->Couleur()->attach($couleur->id);
