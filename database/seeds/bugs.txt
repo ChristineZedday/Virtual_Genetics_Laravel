@@ -2,6 +2,8 @@ poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
 statut femelles mortes
 mortalité à baisser qd bugs résolus?
 
+empecher resaillir juments en retournant sur la page de choix ou conf (expiration page)
+
 epona copain alz cl
 toinette: date naissance à rajouter
 
