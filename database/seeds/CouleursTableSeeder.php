@@ -1737,6 +1737,16 @@ class CouleursTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            172 => 
+            array (
+                'id' => 189,
+                'nom' => 'smoky black',
+                'base_couleur' => 0,
+                'est_motif' => 0,
+                'est_dilution' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
