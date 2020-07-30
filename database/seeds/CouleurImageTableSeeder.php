@@ -1953,6 +1953,14 @@ class CouleurImageTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            242 => 
+            array (
+                'id' => 289,
+                'couleur_id' => 182,
+                'image_id' => 167,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
