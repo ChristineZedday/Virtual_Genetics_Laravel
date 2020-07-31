@@ -52,6 +52,10 @@ if (isset($images)) {
 @endif
 
 </span>
+<?php 
+$date = \App\Gamedata::date();
+?>
+@if ($jument->Statut->date_saillie != $date)
 <div id='boutons'>
 <a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id])}}">
 			<button>Confirmer le croisement</button></a>
@@ -59,6 +63,7 @@ if (isset($images)) {
 			<button>Changer d'étalon</button></a>
 
 			</div>
+			@endif
 <span id = 'femelle' class='par'>
 <div class='rens'>
 	<div class='texte'>
