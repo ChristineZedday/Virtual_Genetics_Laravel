@@ -527,7 +527,8 @@ class ReproductionController extends Controller
                     {
                       $mushroom = Couleur::where('nom','mushroom')->first();
                       $champagne = Couleur::where('nom','champagneor')->first();
-                      if (in_array($mushroom, $dilue_couleurs) || in_array($champagne, $dilue_couleurs))
+                      $abricot =  Couleur::where('nom','abricot')->first();
+                      if (in_array($mushroom, $dilue_couleurs) || in_array($champagne, $dilue_couleurs) || in_array($abricot, $dilue_couleurs))
                       {
                       $image = Image::where('chemin','crinsblancs')->first();
                       $animal->Image()->attach($image->id);

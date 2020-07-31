@@ -4,16 +4,10 @@ mortalité à baisser qd bugs résolus?
 
 empecher resaillir juments en retournant sur la page de choix ou conf (expiration page)
 
-epona copain alz cl
-toinette: date naissance à rajouter
-
 pouliche LP pas marmoré blanc = 1
 
 attacher les images à l'affichage slt?
 
-poulain tovero pas image tobiano alors que frame oui
-images ok, couleur_image ok
-TOn toTO? vérifier doublons db animal 207 vient de Faery TOn au lieu de Toto
 
 sabots des dilués? cremello, etc...
 éclaircir museaurose
@@ -23,9 +17,6 @@ triple dilutes?
 enlever bouton faire saillir pour femelles saillies dans le mois
 liste faire saillir qd pas saison
 
-
-
-poney bai mushroom nd1 n'a pas l'image nondun mais a bien mushroom2
 
 doublons dans race proposées
 
@@ -51,5 +42,3 @@ faire payer approbation étalons? primes approuvés?
 trier? (javascript sur table? nvlle requête)
 
 contrôles stérilisation jument pleine?
-
-vieille femelle sterilisée donnée tronquée: oubli enum, corrigé
