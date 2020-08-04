@@ -14,4 +14,8 @@ class statutsFemelle extends Model
     {
         return $this->belongsTo('App\Animal');
     }
+    public function Male()
+    {
+        return $this->hasOne('App\Animal', 'id', 'etalon_id');
+    }
 }

@@ -27,7 +27,7 @@ class Couleur extends Model
 
     public function Associee1()
     {
-       return $this->hasOne('App\AssoCouleur', 'couleur2_id', 'id');
+       return $this->hasOne('App\AssoCouleur', 'couleur1_id', 'id');
    }
      
    

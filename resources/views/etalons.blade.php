@@ -11,6 +11,9 @@
 <p>par {{$jument->Sire->NomComplet()}}</p>
 <p>et {{$jument->Dam->NomComplet()}}</p>
 @endif
+@isset ($jument->Statut->etalon_id)
+<p>Dernière saillie: {{$jument->Statut->Male->NomComplet()}}</p>
+@endisset
 <h3 >Mes Etalons:</h3>
 <table>
 <tr>
