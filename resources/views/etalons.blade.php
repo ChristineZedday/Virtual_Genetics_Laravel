@@ -13,6 +13,9 @@
 @endif
 @isset ($jument->Statut->etalon_id)
 <p>Dernière saillie: {{$jument->Statut->Male->NomComplet()}}</p>
+@if (App\Animal::find($jument->Statut->etalon_id)->elevage_id == $elevage->id)
+<a href="{{route('etalon',[$elevage->id, $jument->Statut->etalon_id, $jument->id])}}"><button>Réutiliser?</button></a>
+@endif
 @endisset
 <h3 >Mes Etalons:</h3>
 <table>
