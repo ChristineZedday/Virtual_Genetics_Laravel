@@ -43,6 +43,8 @@ class ReproductionController extends Controller
       $statutM->save();
 
     }
+    $jument = Animal::Find($jument);
+    $elevage = Elevage::Find($elevage);
     //controle pas déjà saillie
     $dateS = Gamedata::date();
     if ($statut->date_saillie != $dateS )
@@ -54,14 +56,13 @@ class ReproductionController extends Controller
         $statut->terme = $date;
         $statut->save();
         $etalon = Animal::Find($etalon);
-        $jument = Animal::Find($jument);
+        
         srand((float) microtime()*1000000);
       
         $fertilite = ($etalon->StatutMale->fertilite * $jument->Statut->fertilite)/100 ;
         $success = rand(1,$fertilite);
 
       
-        $elevage = Elevage::Find($elevage);
 
           if ($etalon->elevage->id != $elevage->id)
           {
@@ -227,7 +228,7 @@ class ReproductionController extends Controller
               $animal->modele_allures = $animal->modele_allures_additifs + rand (-1,1);
 
               $animal->save();
-//partie purement génétique
+      //partie purement génétique
               Genome::mixGenes($etalon->id, $jument->id, $animal->id);
               $genotypes = Genotype::where('animal_id',$animal->id)->get();
               $base_couleurs = [];
