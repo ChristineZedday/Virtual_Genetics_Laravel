@@ -27,7 +27,7 @@ class ReproductionController extends Controller
 {
    static function croisement($elevage, $etalon, $jument)
    {
-    
+    //vérification du statut des reproducteurs
     $statut = statutsFemelle::where('animal_id',$jument)->first(); //fondateurs
     if (!isset($statut))
     {
@@ -43,388 +43,388 @@ class ReproductionController extends Controller
       $statutM->save();
 
     }
-    $statut->pres_pleine = true; 
-    $statut->etalon_id = $etalon;
-    $statut->date_saillie = Gamedata::date();
-    $date = Gamedata::ElevenMonths();
-    $statut->terme = $date;
-    $statut->save();
-    $etalon = Animal::Find($etalon);
-    $jument = Animal::Find($jument);
-    srand((float) microtime()*1000000);
-   
-    $fertilite = ($etalon->StatutMale->fertilite * $jument->Statut->fertilite)/100 ;
-    $success = rand(1,$fertilite);
-
-  
-    $elevage = Elevage::Find($elevage);
-
-      if ($etalon->elevage->id != $elevage->id)
+    //controle pas déjà saillie
+    $dateS = Gamedata::date();
+    if ($statut->date_saillie != $dateS )
       {
-        $elevage->budget = $elevage->budget - $etalon->StatutMale->prix;
-        $elevage->save();
+        $statut->pres_pleine = true; 
+        $statut->etalon_id = $etalon;
+        $statut->date_saillie = $dateS;
+        $date = Gamedata::ElevenMonths();
+        $statut->terme = $date;
+        $statut->save();
+        $etalon = Animal::Find($etalon);
+        $jument = Animal::Find($jument);
+        srand((float) microtime()*1000000);
+      
+        $fertilite = ($etalon->StatutMale->fertilite * $jument->Statut->fertilite)/100 ;
+        $success = rand(1,$fertilite);
 
-        $etalonnier = $etalon->Elevage;
-        $etalonnier->budget = $etalonnier->budget + $etalon->StatutMale->prix;
-        $etalonnier->save();
-      }
-       if ($success > 50)
-       {
-          $statut->vide = false; 
-          $statut->save();
-         
-          $animal = new Animal;
-          $animal->foetus = true;
-          $animal->fondateur = false;
-         
-          $animal->date_naissance = $date;
-          $animal->sire_id = $etalon->id;
-          $animal->dam_id = $jument->id;
-          $dam = Animal::Find($animal->dam_id);
-          
-          if ($elevage->role == 'Vendeur') {
-            $aff = rand(1,5);
-            switch ($aff)
-            {
-              case 1:
-              case 2:
-              case 3:
-                if (isset($dam->affixe_id))
-               { $animal->affixe_id = $dam->affixe_id;}
-              break;
+      
+        $elevage = Elevage::Find($elevage);
 
-              case 4:
-                if (isset($animal->Sire->affixe_id))
-               { $animal->affixe_id = $animal->Sire->affixe_id;}
-              break;
+          if ($etalon->elevage->id != $elevage->id)
+          {
+            $elevage->budget = $elevage->budget - $etalon->StatutMale->prix;
+            $elevage->save();
 
-              case 5:
-                if (isset($elevage->Affixe))
-                {
-                  $animal->affixe_id = $elevage->affixe_id;
-                }
-              break;
-
-
-            }
-           
+            $etalonnier = $etalon->Elevage;
+            $etalonnier->budget = $etalonnier->budget + $etalon->StatutMale->prix;
+            $etalonnier->save();
           }
-          else {
-           
-              if (isset($elevage->Affixe) && $elevage->role == 'Joueur')
-              {
-                $animal->affixe_id = $elevage->affixe_id;
-              }
-          }
-          
-          $lettre = Gamedata::checkLettre($date);
-          $animal->nom = crenom($lettre);
-          
-          $animal->elevage_id = $elevage->id;
-          $sexe = rand(1,2);
-          $animal->sexe = $sexe==1? 'jeune poulain' : 'jeune pouliche';
-         
-
-          $animal->taille_additive = (int) (($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2)) ;
-          $animal->taille_cm = $animal->taille_additive + rand(-2,2);
-
-         
-                if ($etalon->race_id == $jument->race_id && ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  ))
+          if ($success > 50)
+          {
+            //gestion statut maternel et identité administrative
+              $statut->vide = false; 
+              $statut->save();
+            
+              $animal = new Animal;
+              $animal->foetus = true;
+              $animal->fondateur = false;
+            
+              $animal->date_naissance = $date;
+              $animal->sire_id = $etalon->id;
+              $animal->dam_id = $jument->id;
+              $dam = Animal::Find($animal->dam_id);
+              
+              if ($elevage->role == 'Vendeur') {
+                $aff = rand(1,5);
+                switch ($aff)
                 {
-                  $animal->race_id = $etalon->race_id;
-                }
-                else if ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  )
+                  case 1:
+                  case 2:
+                  case 3:
+                    if (isset($dam->affixe_id))
+                  { $animal->affixe_id = $dam->affixe_id;}
+                   else if (isset($elevage->Affixe))
+                   {
+                     $animal->affixe_id = $elevage->affixe_id;
+                   }
+                  break;
+
+                  case 4:
+                    if (isset($animal->Sire->affixe_id))
+                  { $animal->affixe_id = $animal->Sire->affixe_id;}
+                  else if (isset($elevage->Affixe))
+                   {
+                     $animal->affixe_id = $elevage->affixe_id;
+                   }
+                  break;
+
+                  case 5:
+                    if (isset($elevage->Affixe))
                     {
-                     
-                      $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first(); //pas true, 1?
+                      $animal->affixe_id = $elevage->affixe_id;
+                    }
+                  break;
 
-                      if (isset ($race))
-                      {
-                        $race = Race::Find($race->race_produit_id);
-                        $animal->race_id = $race->id;
-                        $animal->save();
-                      }
-                      else 
-                      {
-                        $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',1)->get();
 
-                        if (sizeof($races)>0)
+                }
+              
+              }
+              else {
+              
+                  if (isset($elevage->Affixe) && $elevage->role == 'Joueur')
+                  {
+                    $animal->affixe_id = $elevage->affixe_id;
+                  }
+              }
+              
+              $lettre = Gamedata::checkLettre($date);
+              $animal->nom = crenom($lettre);
+              
+              $animal->elevage_id = $elevage->id;
+              $sexe = rand(1,2);
+              $animal->sexe = $sexe==1? 'jeune poulain' : 'jeune pouliche';
+            
+
+              $animal->taille_additive = (int) (($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2)) ;
+              $animal->taille_cm = $animal->taille_additive + rand(-2,2);
+
+            
+                    if ($etalon->race_id == $jument->race_id && ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  ))
+                    {
+                      $animal->race_id = $etalon->race_id;
+                    }
+                    else if ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  )
                         {
-                          foreach ($races as $race)
+                        
+                          $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first(); //pas true, 1?
+
+                          if (isset ($race))
                           {
-                           
-                              $race = Race::Find($race->race_produit_id);
-                              
-  
-                              if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
-                              {
-                                $animal->race_id = $race->id;
-                                $animal->save();
-                              }
-                            
-                          }
-                          if ($animal->race_id == null)
-                          {
-                            $animal->race_id = 1;
+                            $race = Race::Find($race->race_produit_id);
+                            $animal->race_id = $race->id;
                             $animal->save();
                           }
-
-
-                        }
-                    
-                        else //croisement non prévu 
+                          else 
                           {
-                          $animal->race_id = 1;
+                            $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',1)->get();
+
+                            if (sizeof($races)>0)
+                            {
+                              foreach ($races as $race)
+                              {
+                              
+                                  $race = Race::Find($race->race_produit_id);
+                                  
+      
+                                  if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
+                                  {
+                                    $animal->race_id = $race->id;
+                                    $animal->save();
+                                  }
+                                
+                              }
+                              if ($animal->race_id == null)
+                              {
+                                $animal->race_id = 1;
+                                $animal->save();
+                              }
+
+
+                            }
+                        
+                            else //croisement non prévu 
+                              {
+                              $animal->race_id = 1;
+                            }
                         }
-                     }
-                  
-                }
-                else //etalon pas autorisé
-                {
-                  $animal->race_id = 1;
-                }
-        
-          $animal->consang = calculConsang($etalon->id, $jument->id);
-         
-
-          switch(true)
-          {
-            case $animal->consang < 6.25:
-              $n = 2;
-              $m = 2;
-            break;
-
-            case $animal->consang < 12.5:
-              $n = 2;
-              $m = 1;
-            break;
-
-            case $animal->consang < 25:
-              $n = 3;
-              $m = 1;
-            break;
-
-            default:
-            $n =4;
-            $m =0;
-          }
-
-          $animal->modele_allures_additifs = ($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m);
-
-          $animal->modele_allures = $animal->modele_allures_additifs + rand (-1,1);
-
-          $animal->save();
-
-          Genome::mixGenes($etalon->id, $jument->id, $animal->id);
-          $genotypes = Genotype::where('animal_id',$animal->id)->get();
-          $base_couleurs = [];
-          $dilue_couleurs =[];
-          $motif_couleurs =[];
-          $modif_couleurs = [];
-          $blanc =0;
-          $embryoletal = false;
-          
-          foreach ($genotypes as $genotype)
-            {
-              $p = $genotype->allele_p_id;
-              $m = $genotype->allele_m_id;
-
-              $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
-              if (isset($phenotype)) {
-                
-                // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
-
-                if ($phenotype->pathologie_id != NULL)
-                {
-                  if ($phenotype->pathologie_id == 5) //mort embryon
-                  {
-                    $statut->vide = true; 
-                    $statut->save();
-                    $embryoletal = true;
-                    $animal->delete();
-                    $statut->terme = Gamedata::date();;
-                   
-                  }
-                  else
-                  {$animal->Pathologie()->attach($phenotype->pathologie_id);}
-                }
-
-                if (! $embryoletal)
-                {
-                  if (isset($phenotype->effet_m_a))
-                  {
-                    $animal->modele_allures = $animal->modele_allures + $phenotype->effet_m_a; 
-                    $animal->save();
-                  }
-
-                  if (isset($phenotype->effet_taille))
-                    {
-                      $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
-                      $animal->save();
+                      
                     }
-                 
-                    if (isset($phenotype->couleur_id) ) {
-                      $couleur = Couleur::Find($phenotype->couleur_id);
-                      if ($phenotype->effet_blanc <> null)
-                      {
-                        $blanc += $phenotype->effet_blanc;
-                      }
-                      switch (true) {
-                        case $couleur->base_couleur:
-                          $base_couleurs[]= $couleur;
-                        break;
-
-                        case $couleur->est_motif:
-                          $motif_couleurs[] =$couleur;
-                        break;
-                      
-                        case $couleur->est_dilution:
-
-                          $dilue_couleurs[] =$couleur;
-                        break;
-
-                        default:
-                          $modif_couleurs[] =$couleur;
-                      }
-                    
-                      
-                    } //end pheno couleur
-                  } // end pas létal
-                  
-                }//endisset phenotype
-
-              
-            } //foreach genotype
-
-            if (! $embryoletal)
-            {
-              $alezan = Couleur::where('nom','alezan')->first();
-              $noirbai = Couleur::where('nom','noirbai')->first();
-              $bai = Couleur::where('nom','bai')->first();
-              $noir = Couleur::where('nom','noir')->first();
-              $alezanbai = Couleur::where('nom','alezanbai')->first();
-              $alezannoir = Couleur::Where('nom','alezannoir')->first();
+                    else //etalon pas autorisé
+                    {
+                      $animal->race_id = 1;
+                    }
             
-              switch (true)
+              $animal->consang = calculConsang($etalon->id, $jument->id);
+            
+
+              switch(true)
               {
-                case in_array($alezan, $base_couleurs) && in_array($alezanbai, $base_couleurs):
-
-                  $animal->base = 'alezan agouti';
-                  $animal->save();
-                  
-                    $animal->Couleur()->attach($alezan->id);
-                    foreach ($alezan->Images as $image)
-                  { $animal->Image()->attach($image->id);}
-                    
+                case $animal->consang < 6.25:
+                  $n = 2;
+                  $m = 2;
                 break;
 
-                case in_array($alezan, $base_couleurs) && !(in_array($alezanbai, $base_couleurs)):
-
-                  $animal->base = 'alezan aa';
-                  $animal->save();
-                  
-                    $animal->Couleur()->attach($alezan->id);
-                    foreach ($alezan->Images as $image)
-                  { $animal->Image()->attach($image->id);}
-                    
+                case $animal->consang < 12.5:
+                  $n = 2;
+                  $m = 1;
                 break;
 
-                case in_array($alezanbai, $base_couleurs) && in_array($noirbai, $base_couleurs):
-
-                  $animal->base = 'bai';
-                  $animal->save();
-                  
-                  $animal->Couleur()->attach($bai->id);
-                  
-                  foreach ($bai->Images as $image)
-                  { $animal->Image()->attach($image->id);}
-                    
-                break;
-
-                case in_array($alezannoir, $base_couleurs) && in_array($noirbai, $base_couleurs):
-
-                  $animal->base = 'noir';
-                  $animal->save();
-                  
-                  $animal->Couleur()->attach($noir->id);
-                  
-                  foreach ($noir->Images as $image)
-                  { $animal->Image()->attach($image->id);}
-                    
+                case $animal->consang < 25:
+                  $n = 3;
+                  $m = 1;
                 break;
 
                 default:
-
-                  $animal->base = 'bai';
-                  $animal->save();
-                    
-                  $animal->Couleur()->attach($bai->id);
-                  foreach ($bai->Images as $image)
-                  { $animal->Image()->attach($image->id);}
-                    
-                break;
-
-
+                $n =4;
+                $m =0;
               }
-              $size = sizeof($dilue_couleurs);
-              $debug = new Debug();
-              $debug->locus1 = $animal->nom;
-              $debug->locsuivs = sizeof($dilue_couleurs);
-              $debug->save();
 
-            
-              foreach ($dilue_couleurs as $coul)
-              {
-                  $base = Couleur::where('nom', $animal->base)->first();
-                  $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
-                  if (isset($couleur))
+              $animal->modele_allures_additifs = ($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m);
+
+              $animal->modele_allures = $animal->modele_allures_additifs + rand (-1,1);
+
+              $animal->save();
+//partie purement génétique
+              Genome::mixGenes($etalon->id, $jument->id, $animal->id);
+              $genotypes = Genotype::where('animal_id',$animal->id)->get();
+              $base_couleurs = [];
+              $dilue_couleurs =[];
+              $motif_couleurs =[];
+              $modif_couleurs = [];
+              $blanc =0;
+              $embryoletal = false;
+              
+              foreach ($genotypes as $genotype)
+                {
+                  $p = $genotype->allele_p_id;
+                  $m = $genotype->allele_m_id;
+
+                  $phenotype = Phenotype::where(function($query1) use ($p,$m) {return $query1->where('allele1_id', $p)->where('allele2_id', $m);})->orWhere(function($query2) use ($p,$m) {return $query2->where('allele1_id', $m)->where('allele2_id', $p);})->first();
+                  if (isset($phenotype)) {
+                    
+                    // $animal->Phenotype()->attach($phenotype->id);//pas forcément?
+
+                    if ($phenotype->pathologie_id != NULL)
                     {
-                      $couleur = $couleur->couleur_res_id;
-                      switch(true)
+                      if ($phenotype->pathologie_id == 5) //mort embryon
                       {
-                        case $size == 1:
-                          $animal->Couleur()->attach($couleur);
+                        $statut->vide = true; 
+                        $statut->save();
+                        $embryoletal = true;
+                        $animal->elevage_id =2; //part chez l'Ankou
+                        $statut->terme = Gamedata::date();
+                      
+                      }
+                      else
+                      {$animal->Pathologie()->attach($phenotype->pathologie_id);}
+                    }
 
-                          $images = Couleur::Find($couleur)->Images;
-                          foreach ($images as $image)
-                          { 
-                            if ($image <> null)
-                            {$animal->Image()->attach($image->id);}
+                    if (! $embryoletal)
+                    {
+                      if (isset($phenotype->effet_m_a))
+                      {
+                        $animal->modele_allures = $animal->modele_allures + $phenotype->effet_m_a; 
+                        $animal->save();
+                      }
+
+                      if (isset($phenotype->effet_taille))
+                        {
+                          $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
+                          $animal->save();
+                        }
+                    
+                        if (isset($phenotype->couleur_id) ) {
+                          $couleur = Couleur::Find($phenotype->couleur_id);
+                          if ($phenotype->effet_blanc <> null)
+                          {
+                            $blanc += $phenotype->effet_blanc;
                           }
-                        break;
+                          switch (true) {
+                            case $couleur->base_couleur:
+                              $base_couleurs[]= $couleur;
+                            break;
 
-                        // case $size ==2:
-                        //   $couleur = Couleur::where('nom',$couleur->nom.'2')->first()->id;
-                        //   $animal->Couleur()->attach($couleur);
+                            case $couleur->est_motif:
+                              $motif_couleurs[] =$couleur;
+                            break;
+                          
+                            case $couleur->est_dilution:
 
-                        //   $images = Couleur::Find($couleur)->Images;
-                        //   foreach ($images as $image)
-                        //   { 
-                        //     if ($image <> null)
-                        //     {$animal->Image()->attach($image->id);}
-                        //   }
-                        // break;
+                              $dilue_couleurs[] =$couleur;
+                            break;
 
-                        default:
-                        $coul = Couleur::Find($couleur);
-                        $couleur = Couleur::where('nom', $coul->nom.'2')->first();
-                        if (isset($couleur))
-                         {
-                              $animal->Couleur()->attach($couleur->id);
-
-                              $images = $couleur->Images;
-                                foreach ($images as $image)
-                                { 
-                                  if ($image <> null)
-                                  {$animal->Image()->attach($image->id);}
-                                }
+                            default:
+                              $modif_couleurs[] =$couleur;
                           }
-                          else{//si pa de double prendre la dilution normale
-                            $couleur = Couleur::where('nom', $coul->nom)->first();
+                        
+                          
+                        } //end pheno couleur
+                      } // end pas létal
+                      
+                    }//endisset phenotype
+
+                  
+                } //foreach genotype
+
+                if (! $embryoletal)
+                {
+                  $alezan = Couleur::where('nom','alezan')->first();
+                  $noirbai = Couleur::where('nom','noirbai')->first();
+                  $bai = Couleur::where('nom','bai')->first();
+                  $noir = Couleur::where('nom','noir')->first();
+                  $alezanbai = Couleur::where('nom','alezanbai')->first();
+                  $alezannoir = Couleur::Where('nom','alezannoir')->first();
+                
+                  switch (true)
+                  {
+                    case in_array($alezan, $base_couleurs) && in_array($alezanbai, $base_couleurs):
+
+                      $animal->base = 'alezan agouti';
+                      $animal->save();
+                      
+                        $animal->Couleur()->attach($alezan->id);
+                        foreach ($alezan->Images as $image)
+                      { $animal->Image()->attach($image->id);}
+                        
+                    break;
+
+                    case in_array($alezan, $base_couleurs) && !(in_array($alezanbai, $base_couleurs)):
+
+                      $animal->base = 'alezan aa';
+                      $animal->save();
+                      
+                        $animal->Couleur()->attach($alezan->id);
+                        foreach ($alezan->Images as $image)
+                      { $animal->Image()->attach($image->id);}
+                        
+                    break;
+
+                    case in_array($alezanbai, $base_couleurs) && in_array($noirbai, $base_couleurs):
+
+                      $animal->base = 'bai';
+                      $animal->save();
+                      
+                      $animal->Couleur()->attach($bai->id);
+                      
+                      foreach ($bai->Images as $image)
+                      { $animal->Image()->attach($image->id);}
+                        
+                    break;
+
+                    case in_array($alezannoir, $base_couleurs) && in_array($noirbai, $base_couleurs):
+
+                      $animal->base = 'noir';
+                      $animal->save();
+                      
+                      $animal->Couleur()->attach($noir->id);
+                      
+                      foreach ($noir->Images as $image)
+                      { $animal->Image()->attach($image->id);}
+                        
+                    break;
+
+                    default:
+
+                      $animal->base = 'bai';
+                      $animal->save();
+                        
+                      $animal->Couleur()->attach($bai->id);
+                      foreach ($bai->Images as $image)
+                      { $animal->Image()->attach($image->id);}
+                        
+                    break;
+
+
+                  }
+                  $size = sizeof($dilue_couleurs);
+                  $debug = new Debug();
+                  $debug->locus1 = $animal->nom;
+                  $debug->locsuivs = sizeof($dilue_couleurs);
+                  $debug->save();
+
+                
+                  foreach ($dilue_couleurs as $coul)
+                  {
+                      $base = Couleur::where('nom', $animal->base)->first();
+                      $couleur = AssoCouleur::where('couleur1_id', $base->id)->where('couleur2_id', $coul->id)->first();
+                      if (isset($couleur))
+                        {
+                          $couleur = $couleur->couleur_res_id;
+                          switch(true)
+                          {
+                            case $size == 1:
+                              $animal->Couleur()->attach($couleur);
+
+                              $images = Couleur::Find($couleur)->Images;
+                              foreach ($images as $image)
+                              { 
+                                if ($image <> null)
+                                {$animal->Image()->attach($image->id);}
+                              }
+                            break;
+
+                            // case $size ==2:
+                            //   $couleur = Couleur::where('nom',$couleur->nom.'2')->first()->id;
+                            //   $animal->Couleur()->attach($couleur);
+
+                            //   $images = Couleur::Find($couleur)->Images;
+                            //   foreach ($images as $image)
+                            //   { 
+                            //     if ($image <> null)
+                            //     {$animal->Image()->attach($image->id);}
+                            //   }
+                            // break;
+
+                            default:
+                            $coul = Couleur::Find($couleur);
+                            $couleur = Couleur::where('nom', $coul->nom.'2')->first();
                             if (isset($couleur))
-                             {
+                            {
                                   $animal->Couleur()->attach($couleur->id);
-    
+
                                   $images = $couleur->Images;
                                     foreach ($images as $image)
                                     { 
@@ -432,142 +432,156 @@ class ReproductionController extends Controller
                                       {$animal->Image()->attach($image->id);}
                                     }
                               }
+                              else{//si pa de double prendre la dilution normale
+                                $couleur = Couleur::where('nom', $coul->nom)->first();
+                                if (isset($couleur))
+                                {
+                                      $animal->Couleur()->attach($couleur->id);
+        
+                                      $images = $couleur->Images;
+                                        foreach ($images as $image)
+                                        { 
+                                          if ($image <> null)
+                                          {$animal->Image()->attach($image->id);}
+                                        }
+                                  }
 
+                              }
                           }
+                      
+
+                      
                       }
-                   
 
-                  
+                    
+                    
                   }
-
-                
-                
-              }
-              //gérer les dilutions multiples au moyen de couches d'images?
-              $LP = false;
-              $LPLP = false;
-              foreach ($motif_couleurs as $coul)
-              {
-                switch (true)
-                {
-                  case $blanc < 0:
-                  break;
-
-                  case $blanc > 9 || $coul->nom =='Blanc':
-                    $couleur = Couleur::where('nom','Blanc')->first();
-                    $images = $couleur->Images;
-                    foreach ($images as $image)
+                  //gérer les dilutions multiples au moyen de couches d'images?
+                  $LP = false;
+                  $LPLP = false;
+                  foreach ($motif_couleurs as $coul)
+                  {
+                    switch (true)
                     {
-                      $animal->Image()->attach($image->id);
-                    }
-                  break;
+                      case $blanc < 0:
+                      break;
 
-                  case $coul->nom == 'marmoré' || $coul->nom == 'doubleLP':
-                    $LP = true;
-                    foreach ($coul->Images as $image)
-                    {
-                      $animal->Image()->attach($image->id);
-                    }
-                  break;
+                      case $blanc > 9 || $coul->nom =='Blanc':
+                        $couleur = Couleur::where('nom','Blanc')->first();
+                        $images = $couleur->Images;
+                        foreach ($images as $image)
+                        {
+                          $animal->Image()->attach($image->id);
+                        }
+                      break;
 
-                  case $coul->nom ==  'doubleLP':
-                    $LPLP = true;
-                    foreach ($coul->Images as $image)
-                    {
-                      $animal->Image()->attach($image->id);
-                    }
+                      case $coul->nom == 'marmoré' || $coul->nom == 'doubleLP':
+                        $LP = true;
+                        foreach ($coul->Images as $image)
+                        {
+                          $animal->Image()->attach($image->id);
+                        }
+                      break;
 
-                  break;
-
-                  case $coul->nom == 'couverture':
-                    if ($LP)
-                    {
-                      $images = Couleur::where('nom', 'couverture tachetée'.$blanc)->first()->Images;
-                          foreach ($images as $image)
+                      case $coul->nom ==  'doubleLP':
+                        $LPLP = true;
+                        foreach ($coul->Images as $image)
                         {
                           $animal->Image()->attach($image->id);
                         }
 
-                    }
-                    else if ($LPLP)
+                      break;
+
+                      case $coul->nom == 'couverture':
+                        if ($LP)
+                        {
+                          $images = Couleur::where('nom', 'couverture tachetée'.$blanc)->first()->Images;
+                              foreach ($images as $image)
+                            {
+                              $animal->Image()->attach($image->id);
+                            }
+
+                        }
+                        else if ($LPLP)
+                        {
+                          $images = Couleur::where('nom', 'couverture blanche'.$blanc)->first()->Images;
+                            foreach ($images as $image)
+                          {
+                            $animal->Image()->attach($image->id);
+                          }
+                        }
+                      break;
+
+
+                      default:
+                      $couleur = Couleur::where('nom',$coul->nom.$blanc)->first();
+                      $images = $couleur->Images;
+                    
+                          foreach ($images as $image)
+                            { 
+                              if ($image <> null)
+                            
+                            { $animal->Image()->attach($image->id);}
+                            }
+                          
+                    
+                    } //end switch
+                      
+                  } //end foreach
+                  
+                  foreach ($modif_couleurs as $coul) 
+                  {
+                    $base =  $animal->base;
+                    switch ($coul->nom)
                     {
-                      $images = Couleur::where('nom', 'couverture blanche'.$blanc)->first()->Images;
-                        foreach ($images as $image)
-                      {
-                        $animal->Image()->attach($image->id);
-                      }
-                    }
-                  break;
+                      case 'crins lavés':
+                      
+                        if ($base == 'alezan aa' || $base == 'alezan agouti')
+                        {
+                          $mushroom = Couleur::where('nom','mushroom')->first();
+                          $champagne = Couleur::where('nom','champagneor')->first();
+                          $abricot =  Couleur::where('nom','abricot')->first();
+                          if (in_array($mushroom, $dilue_couleurs) || in_array($champagne, $dilue_couleurs) || in_array($abricot, $dilue_couleurs))
+                          {
+                          $image = Image::where('chemin','crinsblancs')->first();
+                          $animal->Image()->attach($image->id);
+                          }
+                          else
+                          {
+                            $image = Image::where('chemin','flaxen')->first();
+                            $animal->Image()->attach($image->id);
+                          }
+                        }
+                      break;
 
-
-                  default:
-                  $couleur = Couleur::where('nom',$coul->nom.$blanc)->first();
-                  $images = $couleur->Images;
-                
-                      foreach ($images as $image)
-                        { 
-                          if ($image <> null)
+                      case 'pangaré':
                         
-                        { $animal->Image()->attach($image->id);}
+                        if ($base == 'bai' || $base == 'alezan agouti')
+                        { 
+                          
+                          $image = Image::where('chemin','pangare')->first();
+                          $animal->Image()->attach($image->id);
                         }
                       
-                
-                } //end switch
-                  
-              } //end foreach
-              
-              foreach ($modif_couleurs as $coul) 
-              {
-                $base =  $animal->base;
-                switch ($coul->nom)
-                {
-                  case 'crins lavés':
-                  
-                    if ($base == 'alezan aa' || $base == 'alezan agouti')
-                    {
-                      $mushroom = Couleur::where('nom','mushroom')->first();
-                      $champagne = Couleur::where('nom','champagneor')->first();
-                      $abricot =  Couleur::where('nom','abricot')->first();
-                      if (in_array($mushroom, $dilue_couleurs) || in_array($champagne, $dilue_couleurs) || in_array($abricot, $dilue_couleurs))
-                      {
-                      $image = Image::where('chemin','crinsblancs')->first();
-                      $animal->Image()->attach($image->id);
-                      }
-                      else
-                      {
-                        $image = Image::where('chemin','flaxen')->first();
+                      break;
+
+                      default:
+                        $image = Image::where('chemin',$coul->nom)->first();
                         $animal->Image()->attach($image->id);
-                      }
+                      break;
+
                     }
-                  break;
 
-                  case 'pangaré':
-                    
-                    if ($base == 'bai' || $base == 'alezan agouti')
-                    { 
-                      
-                      $image = Image::where('chemin','pangare')->first();
-                      $animal->Image()->attach($image->id);
-                    }
-                  
-                  break;
-
-                  default:
-                    $image = Image::where('chemin',$coul->nom)->first();
-                    $animal->Image()->attach($image->id);
-                  break;
-
-                }
-
-              } //end foreach
-            }//end pas embryo létal
-    
-      } //end if succès
-      else{
-           $statut->vide = true;
-           $statut->save();
-          
-      }
+                  } //end foreach
+                }//end pas embryo létal
+        
+          } //end if succès
+          else{
+              $statut->vide = true;
+              $statut->save();
+              
+          }
+        } //end pas déjà saillie
    
    if ($jument->Elevage->role != 'Vendeur')
   {  return redirect()->route('reproduction.jument',[$elevage->id]);}
