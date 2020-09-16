@@ -138,6 +138,17 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 120,
                 'taille_max' => 149,
             ),
+            11 => 
+            array (
+                'id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'facteur de FS',
+                'prix_moyen' => 900,
+                'frais_enregistrement' => 100,
+                'taille_min' => 120,
+                'taille_max' => 149,
+            ),
         ));
         
         
