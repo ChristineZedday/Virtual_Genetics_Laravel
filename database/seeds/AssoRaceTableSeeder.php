@@ -666,6 +666,61 @@ class AssoRaceTableSeeder extends Seeder
                 'taille_conditions' => 0,
                 'automatique' => 1,
             ),
+            59 => 
+            array (
+                'id' => 60,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 8,
+                'race_mere_id' => 12,
+                'race_produit_id' => 11,
+                'taille_conditions' => 0,
+                'automatique' => 1,
+            ),
+            60 => 
+            array (
+                'id' => 61,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 7,
+                'race_mere_id' => 12,
+                'race_produit_id' => 11,
+                'taille_conditions' => 0,
+                'automatique' => 1,
+            ),
+            61 => 
+            array (
+                'id' => 62,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 6,
+                'race_mere_id' => 12,
+                'race_produit_id' => 11,
+                'taille_conditions' => 0,
+                'automatique' => 1,
+            ),
+            62 => 
+            array (
+                'id' => 63,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 5,
+                'race_mere_id' => 12,
+                'race_produit_id' => 11,
+                'taille_conditions' => 0,
+                'automatique' => 1,
+            ),
+            63 => 
+            array (
+                'id' => 64,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 4,
+                'race_mere_id' => 12,
+                'race_produit_id' => 11,
+                'taille_conditions' => 0,
+                'automatique' => 1,
+            ),
         ));
         
         

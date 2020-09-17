@@ -1,14 +1,17 @@
 fenwick lily smoky black tobiano
-vérifier uesale homozygote blanc? oui
+
+mettre date de mort sur fiches ankou (date achat qd mort)
+
+réutiliser: vérif pas castré!!!
+
+ajouter à v ds liste juments
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
 statut femelles mortes
 mortalité à baisser qd bugs résolus?
 
-empecher resaillir juments en retournant sur la page de choix ou conf (expiration page)
 
 attacher les images à l'affichage slt?
-
 
 enlever bouton faire saillir pour femelles saillies dans le mois
 liste faire saillir qd pas saison
