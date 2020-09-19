@@ -5,9 +5,6 @@ statut femelles mortes
 mortalité à baisser qd bugs résolus?
 
 
-enlever bouton faire saillir pour femelles saillies dans le mois
-liste faire saillir qd pas saison
-
 doublons dans race proposées
 
 vente pleines: pas chgt d'affixe?
