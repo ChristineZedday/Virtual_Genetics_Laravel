@@ -13,6 +13,7 @@
     <th>Date de naissance</th>
     <th>Père</th>
 	<th>Mère</th>
+	<th>A Vendre?</th>
 
     
   </tr>
@@ -44,6 +45,8 @@ if (isset($images)) {
 	<td> {{$animal->date_naissance}} </td>
 	<td>@isset($animal->Sire) {{ $animal->Sire->NomComplet() }} @endisset </td>
 	<td>@isset($animal->Dam) {{ $animal->Dam->NomComplet()}} @endisset </td>
+		<td> {{ $animal->a_vendre ? "à vendre" : ""  }} </td>
+
 
 	
 </tr>
