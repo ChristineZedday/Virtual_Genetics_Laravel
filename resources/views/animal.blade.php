@@ -102,7 +102,7 @@
 			</figure>
 		</div>
 		<div id='boutonsa'>
-			<p>{{$animal->elevage_id == $elevage->id? "acheté le: ".$animal->date_achat : ""}}</p>
+			<p>{{isset ($animal->date_achat)? "acheté le: ".$animal->date_achat : ""}}</p>
 			<p>prix: {{$animal->prix}} achetoires</p>		
 			<p>{{$animal->a_vendre? "à vendre" : ""}}</p>
 					

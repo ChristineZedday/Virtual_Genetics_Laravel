@@ -1,8 +1,5 @@
 fenwick lily smoky black tobiano
 
-mettre date de mort sur fiches ankou (date achat qd mort)
-
-
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
 statut femelles mortes
 mortalité à baisser qd bugs résolus?
