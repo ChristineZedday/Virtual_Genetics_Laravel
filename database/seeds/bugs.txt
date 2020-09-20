@@ -1,5 +1,7 @@
 fenwick lily smoky black tobiano
 
+contrôles stérilisation jument pleine?
+
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
 statut femelles mortes
 mortalité à baisser qd bugs résolus?
@@ -24,4 +26,4 @@ pouvoir retirer de la liste des femelles à faire saillir ou des étalons
 faire payer approbation étalons? primes approuvés?
 trier? (javascript sur table? nvlle requête)
 
-contrôles stérilisation jument pleine?
+
