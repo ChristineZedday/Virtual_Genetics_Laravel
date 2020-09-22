@@ -61,6 +61,8 @@ Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}', 'AnimalController
 
 Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}', 'ReproductionController@croisement')->name('croisement');
 
+Route::get('/reproduction/consang/{elevage}/{etalon}/{jument}', 'ReproductionController@devoileConsang')->name('consang');
+
 Route::get('/reproduction/etalon/{elevage}/{etalon}', 'ElevageController@commissionEtalons')->name('commission');
 
 Route::get('/reproduction/monte/{elevage}/{etalon}', 'ElevageController@proposerMonte')->name('monte');

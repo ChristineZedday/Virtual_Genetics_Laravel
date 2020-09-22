@@ -61,7 +61,9 @@ $date = \App\Gamedata::date();
 			<button>Confirmer le croisement</button></a>
 <a href="{{route('saillir',[$elevage->id,$jument->id])}}">
 			<button>Changer d'étalon</button></a>
-
+<a href="{{route('consang',[$elevage->id,$etalon->id,$jument->id])}}">
+			<button>Connaître la consanguinité (10 achetoires)</button></a>
+<p id="consang">@if  (session('alert')) {{session ('alert')}}@endif</p>
 			</div>
 			@endif
 <span id = 'femelle' class='par'>

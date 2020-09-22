@@ -587,8 +587,19 @@ class ReproductionController extends Controller
    if ($jument->Elevage->role != 'Vendeur')
   {  return redirect()->route('reproduction.jument',[$elevage->id]);}
    } //end function croisement
+
+   static function devoileConsang($el, $S, $D)
+{
+  $cons = calculConsang($S,$D);
+  $el = Elevage::Find($el);
+  $el->budget = $el->budget -10;
+  $el->save();
+  return redirect()->back()->with('alert', $cons);
+}
+
   
 } //end class ReproductionController
+
 
 function calculConsang($S, $D)
 {
