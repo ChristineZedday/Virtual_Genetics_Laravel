@@ -63,7 +63,7 @@ $date = \App\Gamedata::date();
 			<button>Changer d'étalon</button></a>
 <a href="{{route('consang',[$elevage->id,$etalon->id,$jument->id])}}">
 			<button>Connaître la consanguinité (10 achetoires)</button></a>
-<p id="consang">@if  (session('alert')) {{session ('alert')}}@endif</p>
+<p id="consang"> {{session ('message')}}</p>
 			</div>
 			@endif
 <span id = 'femelle' class='par'>

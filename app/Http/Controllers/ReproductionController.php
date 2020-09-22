@@ -594,7 +594,7 @@ class ReproductionController extends Controller
   $el = Elevage::Find($el);
   $el->budget = $el->budget -10;
   $el->save();
-  return redirect()->back()->with('alert', $cons);
+  return redirect()->back()->with('message', $cons);
 }
 
   

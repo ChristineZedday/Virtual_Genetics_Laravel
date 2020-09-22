@@ -63,7 +63,7 @@ $date = $game->date();
 	</nav>
 @if (session('alert'))
     <div class="alert" }>
-        {{ session('alert') }}
+       {{ session('alert') }}
     </div>
 @endif
 </div>
