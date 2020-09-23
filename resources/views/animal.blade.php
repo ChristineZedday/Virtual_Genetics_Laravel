@@ -138,7 +138,7 @@
 					<input type="hidden" id ="sexe" value ="{{$animal->sexe}}">
 					<input type="hidden" id ="budget" value ="{{$elevage->budget}}">
 					
-					<input type="hidden" id ="pleine" @isset ($animal->Statut) value ="{{$animal->Statut->pleine}}" @else value= "0" @endisset >
+					<input type="hidden" id ="vide" @isset ($animal->Statut) value ="{{$animal->Statut->vide}}"  @else value="1" @endisset >
 					
 					<input type="hidden" id ="route" value ="{{route('steriliser',[$elevage->id,$animal->id])}}">
 				
@@ -197,13 +197,13 @@
 		sexe = document.getElementById('sexe').value;
 		budget = document.getElementById('budget').value;
 		route = document.getElementById('route').value;
-		pleine = document.getElementById('pleine').value
+		vide = document.getElementById('vide').value
 		conf = confirm('Opération irréversible!');
 		if (conf)
 		{
 			switch (true)
 			{
-				case (pleine == 1):
+				case (vide == 0):
 					alert ('femelle pleine, attendons la mise bas');
 				break;
 
@@ -211,7 +211,7 @@
 					alert('Déjà fait!');
 				break;
 
-				case (sexe == 'jeune mâle' || sexe == 'jeune femelle'):
+				case (sexe == 'jeune mâle' || sexe == 'jeune femelle' || sexe== 'jeune poulain' || sexe=='jeune pouliche'):
 					alert('Trop jeune!');
 				break;
 
