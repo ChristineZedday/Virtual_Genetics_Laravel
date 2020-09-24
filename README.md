@@ -1,5 +1,9 @@
 <h2>Simulateur d'élevage </h2>
-<p>En construction...</h2>
+<p>Dernière phase de debug en cours</p>
+<p>Rédaction du mode d'emploi en cours</p>
+<p>Ce dossier présente le code source, avec des seeders pour la base de données:
+Gènes, races (Shetland, Welsh, Arabe et Miniature), chevaux fondateurs avec de chouettes affixes authentiques pour les poneys...
+Et des images pour représenter les gènes de couleur.</p>
 <p>Conception sur https://github.com/christineZedday/Virtual-Genetics-conception</p>
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
