@@ -721,6 +721,72 @@ class AssoRaceTableSeeder extends Seeder
                 'taille_conditions' => 0,
                 'automatique' => 1,
             ),
+            64 => 
+            array (
+                'id' => 65,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 12,
+                'race_mere_id' => 11,
+                'race_produit_id' => 12,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+            ),
+            65 => 
+            array (
+                'id' => 66,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 12,
+                'race_mere_id' => 4,
+                'race_produit_id' => 12,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+            ),
+            66 => 
+            array (
+                'id' => 67,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 12,
+                'race_mere_id' => 5,
+                'race_produit_id' => 12,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+            ),
+            67 => 
+            array (
+                'id' => 68,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 12,
+                'race_mere_id' => 6,
+                'race_produit_id' => 12,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+            ),
+            68 => 
+            array (
+                'id' => 69,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 12,
+                'race_mere_id' => 7,
+                'race_produit_id' => 12,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+            ),
+            69 => 
+            array (
+                'id' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 12,
+                'race_mere_id' => 8,
+                'race_produit_id' => 12,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+            ),
         ));
         
         
