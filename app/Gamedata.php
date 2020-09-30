@@ -272,7 +272,7 @@ static function checkVieux ($date)
                     $statut = statutsFemelle::where('animal_id', $animal->id)->first();
                     if (isset($statut))
                     {
-                        if ($statut->pleine)
+                        if (!($statut->vide))
                         {
                             $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
                             $produit->elevage_id =2;//pour effacer faudrait effacer genotypes et images
