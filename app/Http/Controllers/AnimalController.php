@@ -178,7 +178,7 @@ class AnimalController extends Controller
             $statut = statutsFemelle::where('animal_id', $animal->id)->first();
             if (isset($statut) )
             {
-               if ($statut->pleine)
+               if ($statut->vide == false)
                 {
                     $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
                     $produit->elevage_id = $elevage->id;
