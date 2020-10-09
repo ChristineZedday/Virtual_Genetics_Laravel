@@ -253,10 +253,12 @@ class ReproductionController extends Controller
                       if ($phenotype->pathologie_id == 5) //mort embryon
                       {
                         $statut->vide = true; 
-                        $statut->save();
+                       
                         $embryoletal = true;
                         $animal->elevage_id =2; //part chez l'Ankou
+                        $animal->save();
                         $statut->terme = Gamedata::date();
+                        $statut->save();
                       
                       }
                       else
