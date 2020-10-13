@@ -17,8 +17,8 @@ class CreateElevagesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('affixe_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->string('nom_elevage');
-            $table->string('nom_eleveur');
+            $table->string('nom_elevage')->unique();
+            $table->string('nom_eleveur')->unique();
             $table->bigInteger('budget');
             $table->enum('role',['Joueur','Vendeur', 'Acheteur', 'Haras', 'Mort', 'Retraite']);
             $table->bigInteger('user_id')->unsigned();

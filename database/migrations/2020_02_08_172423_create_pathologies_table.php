@@ -15,7 +15,7 @@ class CreatePathologiesTable extends Migration
     {
         Schema::create('pathologies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nom');
+            $table->string('nom')->unique();
             $table->string('description')->nullable();
             $table->boolean('letal')->default(FALSE);
             $table->boolean('letal_foetus')->default(FALSE);

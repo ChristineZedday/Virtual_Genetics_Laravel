@@ -15,7 +15,7 @@ class CreateCouleursTable extends Migration
     {
         Schema::create('couleurs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nom');
+            $table->string('nom')->unique();
           
             $table->boolean('base_couleur')->nullable();
             $table->boolean('est_motif')->nullable();

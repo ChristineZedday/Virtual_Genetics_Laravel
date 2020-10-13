@@ -15,7 +15,7 @@ class CreateAffixesTable extends Migration
     {
         Schema::create('affixes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('libelle');
+            $table->string('libelle')->unique();
             $table->boolean('affixe_pre')->default(false);
             $table->timestamps();
         });

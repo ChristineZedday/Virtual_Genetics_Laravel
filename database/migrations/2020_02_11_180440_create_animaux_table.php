@@ -18,6 +18,7 @@ class CreateAnimauxTable extends Migration
             $table->timestamps();
             $table->string('nom')->nullable();
             $table->bigInteger('affixe_id')->unsigned()->nullable();
+            $table->unique(['affixe_id', 'nom']);
             $table->string('couleur')->nullable();
             $table->enum('base',['bai','noir', 'alezan aa', 'alezan agouti'])->nullable();
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
