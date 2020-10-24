@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -10968,20 +10968,27 @@ a.text-dark:focus {
   color: #2f2429;
 }
 
-.animaux table tr {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 .animaux table tr th {
   font-weight: bold;
   background-color: #c6a99a;
+  margin: 10px;
   padding: 5px;
 }
 
 .animaux table tr td {
   background-color: #ebe1db;
+  margin: 10px;
   padding: 5px;
+}
+
+.animaux table tr .photo td {
+  height: 70px;
+  width: 90px;
+}
+
+.animaux table tr .photo td a {
+  height: 60px;
+  width: 80px;
 }
 
 .pedigree {
@@ -11054,7 +11061,7 @@ a {
   width: 80px;
   height: 60px;
   padding: 0px;
-  margin: 30px;
+  margin: 0px;
   z-index: 0;
 }
 
@@ -11063,17 +11070,10 @@ a {
   left: 0px;
   width: 80px;
   height: 60px;
+  margin: 0;
+  padding: 0;
   position: absolute !important;
   display: block;
-}
-
-.imagee table tr {
-  height: 70px;
-}
-
-.photo td {
-  height: 70px;
-  width: 90px;
 }
 
 #parents {

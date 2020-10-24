@@ -114,7 +114,7 @@ static function checkSevres()
     $animaux = Animal::where('elevage_id', '!=', 2)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
     foreach ($animaux as $animal)
     {
-        if (Gamedata::ageMonths($animal->date_naissance) > 6)
+        if (Gamedata::ageMonths($animal->date_naissance) >= 6)
         {
             if ($animal->sexe == 'jeune poulain')
             {
@@ -232,7 +232,7 @@ static function checkVieux ($date)
         $letal->elevage_id =2;//chez l'Ankou!
         $letal->date_achat = Gamedata::date();
         $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
-        if ($letal->foetus)
+        if ($letal->Pathologie->letal_foetus)
         {
             $dam = $letal->Dam;
             $letal->foetus = false;
@@ -243,9 +243,10 @@ static function checkVieux ($date)
             $letal->date_achat = $date;
             $letal->save();
         }
+      
     }
 
-    $animaux = Animal::where('sexe','LIKE','vie%')->get();
+    $animaux = Animal::where('elevage_id', '!=', 2)->where('sexe','LIKE','vie%')->get();
     foreach ($animaux as $animal)
     {
         
@@ -253,18 +254,18 @@ static function checkVieux ($date)
             switch ($age)
             {
                 case $age<20:
-                    $var = 300;
+                    $var = 30;
                 break;
                 case $age<25:
-                    $var = 200;
+                    $var = 20;
                 break;
                 case $age<30:
-                    $var =150;
+                    $var =10;
                 break;
                 default:
-                $var = 50;
+                $var = 5;
             }
-                if (rand(1,$var))
+                if (rand(1,$var)==1)
                 {
                     $animal->elevage_id =2;//chez l'Ankou!
                     $animal->date_achat = Gamedata::date();

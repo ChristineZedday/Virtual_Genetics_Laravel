@@ -72,6 +72,7 @@ if (isset($images)) {
 </tr>
 @endforeach
 </table>
+</br>
 <h3>Etalons extérieurs</h3>
 <table>
 <tr>

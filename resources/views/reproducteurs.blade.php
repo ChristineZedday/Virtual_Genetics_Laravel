@@ -61,8 +61,9 @@ $date = \App\Gamedata::date();
 			<button>Confirmer le croisement</button></a>
 <a href="{{route('saillir',[$elevage->id,$jument->id])}}">
 			<button>Changer d'étalon</button></a>
-<a href="{{route('consang',[$elevage->id,$etalon->id,$jument->id])}}">
-			<button>Connaître la consanguinité (10 achetoires)</button></a>
+<input type="hidden" id="budget" value="{{$elevage->budget}}" />
+<input type="hidden" id ="route" value ="{{route('consang',[$elevage->id,$etalon->id,$jument->id])}}"/>
+			<button onclick="checkBudget()">Connaître la consanguinité (10 achetoires)</button>
 <p id="consang"> {{session ('message')}}</p>
 			</div>
 			@endif
@@ -117,6 +118,22 @@ if (isset($images)) {
 @endif
 </span>
 </div>
+<script>
+function checkBudget() 
+	{
+		budget = document.getElementById('budget').value;	
+		route = document.getElementById('route').value;
+	if (budget < 10)
+	{
+		alert("Sans flouze, il vous faudra la calculer vous mêmes");
+	}
+	else
+	{
+		document.location.href=route; 
+	}
+}
+
+	</script>
 
 
 @endsection

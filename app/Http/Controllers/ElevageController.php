@@ -304,6 +304,6 @@ class ElevageController extends Controller
     {
         $elevage = Elevage::Find($id);
         $budget = $elevage->budget;
-        return redirect()->back()->with('alert', $budget);
+        return redirect()->back()->with('alert', 'Votre budget: '.$budget);
     }
 }
