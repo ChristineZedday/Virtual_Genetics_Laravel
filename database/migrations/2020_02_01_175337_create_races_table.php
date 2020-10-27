@@ -16,7 +16,7 @@ class CreateRacesTable extends Migration
         Schema::create('races', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('nom')->unique();
+            $table->string('nom');
             $table->smallInteger('prix_moyen');
             $table->tinyInteger('frais_enregistrement')->unsigned()->nullable();
             $table->tinyInteger('taille_min')->unsigned()->nullable();

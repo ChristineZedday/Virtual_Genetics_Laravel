@@ -140,14 +140,14 @@ class RacesTableSeeder extends Seeder
             ),
             11 => 
             array (
-                'id' => 12,
+                'id' => 13,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'facteur de FS',
-                'prix_moyen' => 900,
-                'frais_enregistrement' => 100,
-                'taille_min' => 120,
-                'taille_max' => 149,
+                'nom' => 'Welsh Part Bred',
+                'prix_moyen' => 500,
+                'frais_enregistrement' => 50,
+                'taille_min' => 30,
+                'taille_max' => 215,
             ),
         ));
         

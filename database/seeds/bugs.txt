@@ -1,14 +1,20 @@
-fenwick lily smoky black tobiano
+
+
+liste descendants pas père pour mâles
+w1w1 continuent à pas mourir!
+overo avortés au lieu de mourir à la naissance
+
+poulains nés des juments mortes pas changer proprio!!
+
+pas m^me nom et prénom pour user ou éleveur
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
 statut femelles mortes
-mortalité à baisser qd bugs résolus?
+mortalité à baisser qd bugs résolus 2000 pour <20, 800 <25, 100<30, 25<35, 10
 
 doublons dans race proposées
 
-vente pleines: pas chgt d'affixe?
-
-vérifier le budget pour enregistrement
+vérifier le budget pour enregistrement 
 
 ajouter fondateurs (actuel: 16 arabes, 22 shetland, 7 welsh D, 3 Welsh C, 14 Welsh B, 19 Welsh A dont 1 pour produire Welsh C, 16 miniatures)
 images à faire: 
@@ -16,11 +22,10 @@ robes varnish?
 rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
 
-
 pas donner le m^me nom + m^me affixe
+$table->unique(['affixe_id', 'nom']);controles javascript et php?
 
-pouvoir retirer de la liste des femelles à faire saillir ou des étalons
-faire payer approbation étalons? primes approuvés?
-trier? (javascript sur table? nvlle requête)
+décalage image texte dans les tables
+
 
 

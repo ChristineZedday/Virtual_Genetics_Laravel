@@ -27,6 +27,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 5,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             1 => 
             array (
@@ -38,6 +40,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 5,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             2 => 
             array (
@@ -49,6 +53,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             3 => 
             array (
@@ -60,6 +66,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             4 => 
             array (
@@ -71,6 +79,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             5 => 
             array (
@@ -82,6 +92,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             6 => 
             array (
@@ -93,6 +105,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             7 => 
             array (
@@ -104,6 +118,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 0,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             8 => 
             array (
@@ -115,6 +131,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             9 => 
             array (
@@ -126,6 +144,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             10 => 
             array (
@@ -137,6 +157,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 7,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             11 => 
             array (
@@ -148,6 +170,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 7,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
             12 => 
             array (
@@ -159,6 +183,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 9,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'DSA 50% min',
+                'approbation' => 0,
             ),
             13 => 
             array (
@@ -170,6 +196,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 9,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'DSA 50% min',
+                'approbation' => 0,
             ),
             14 => 
             array (
@@ -181,6 +209,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             15 => 
             array (
@@ -192,6 +222,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             16 => 
             array (
@@ -203,6 +235,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             17 => 
             array (
@@ -214,6 +248,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             18 => 
             array (
@@ -225,6 +261,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             19 => 
             array (
@@ -236,6 +274,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             20 => 
             array (
@@ -247,6 +287,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             21 => 
             array (
@@ -258,6 +300,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             22 => 
             array (
@@ -269,6 +313,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             23 => 
             array (
@@ -280,6 +326,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             24 => 
             array (
@@ -291,6 +339,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             25 => 
             array (
@@ -302,6 +352,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB 50% ',
+                'approbation' => 0,
             ),
             26 => 
             array (
@@ -313,6 +365,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             27 => 
             array (
@@ -324,6 +378,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             28 => 
             array (
@@ -335,6 +391,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             29 => 
             array (
@@ -346,6 +404,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             30 => 
             array (
@@ -357,6 +417,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             31 => 
             array (
@@ -368,6 +430,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             32 => 
             array (
@@ -379,6 +443,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             33 => 
             array (
@@ -390,6 +456,8 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             34 => 
             array (
@@ -401,19 +469,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
             35 => 
-            array (
-                'id' => 36,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 11,
-                'race_mere_id' => 9,
-                'race_produit_id' => 12,
-                'taille_conditions' => 0,
-                'automatique' => 0,
-            ),
-            36 => 
             array (
                 'id' => 37,
                 'created_at' => NULL,
@@ -423,8 +482,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
-            37 => 
+            36 => 
             array (
                 'id' => 38,
                 'created_at' => NULL,
@@ -434,8 +495,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 3,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'miniature',
+                'approbation' => 0,
             ),
-            38 => 
+            37 => 
             array (
                 'id' => 39,
                 'created_at' => NULL,
@@ -445,8 +508,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 3,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'miniature',
+                'approbation' => 0,
             ),
-            39 => 
+            38 => 
             array (
                 'id' => 40,
                 'created_at' => NULL,
@@ -455,9 +520,11 @@ class AssoRaceTableSeeder extends Seeder
                 'race_mere_id' => 9,
                 'race_produit_id' => 9,
                 'taille_conditions' => 0,
-                'automatique' => 1,
+                'automatique' => 0,
+                'commentaire' => 'DSA > 50%',
+                'approbation' => 0,
             ),
-            40 => 
+            39 => 
             array (
                 'id' => 41,
                 'created_at' => NULL,
@@ -466,9 +533,11 @@ class AssoRaceTableSeeder extends Seeder
                 'race_mere_id' => 8,
                 'race_produit_id' => 9,
                 'taille_conditions' => 0,
-                'automatique' => 1,
+                'automatique' => 0,
+                'commentaire' => 'DSA > 50%',
+                'approbation' => 0,
             ),
-            41 => 
+            40 => 
             array (
                 'id' => 42,
                 'created_at' => NULL,
@@ -477,9 +546,11 @@ class AssoRaceTableSeeder extends Seeder
                 'race_mere_id' => 4,
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
-                'automatique' => 1,
+                'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            42 => 
+            41 => 
             array (
                 'id' => 43,
                 'created_at' => NULL,
@@ -488,9 +559,11 @@ class AssoRaceTableSeeder extends Seeder
                 'race_mere_id' => 5,
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
-                'automatique' => 1,
+                'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            43 => 
+            42 => 
             array (
                 'id' => 44,
                 'created_at' => NULL,
@@ -499,9 +572,11 @@ class AssoRaceTableSeeder extends Seeder
                 'race_mere_id' => 6,
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
-                'automatique' => 1,
+                'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            44 => 
+            43 => 
             array (
                 'id' => 45,
                 'created_at' => NULL,
@@ -510,9 +585,11 @@ class AssoRaceTableSeeder extends Seeder
                 'race_mere_id' => 7,
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
-                'automatique' => 1,
+                'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            45 => 
+            44 => 
             array (
                 'id' => 46,
                 'created_at' => NULL,
@@ -522,8 +599,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            46 => 
+            45 => 
             array (
                 'id' => 47,
                 'created_at' => NULL,
@@ -533,8 +612,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            47 => 
+            46 => 
             array (
                 'id' => 48,
                 'created_at' => NULL,
@@ -544,8 +625,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            48 => 
+            47 => 
             array (
                 'id' => 49,
                 'created_at' => NULL,
@@ -555,8 +638,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 10,
                 'taille_conditions' => 0,
                 'automatique' => 0,
+                'commentaire' => 'WPB > 50%',
+                'approbation' => 0,
             ),
-            49 => 
+            48 => 
             array (
                 'id' => 50,
                 'created_at' => NULL,
@@ -566,8 +651,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 7,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
-            50 => 
+            49 => 
             array (
                 'id' => 51,
                 'created_at' => NULL,
@@ -577,8 +664,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 7,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
-            51 => 
+            50 => 
             array (
                 'id' => 52,
                 'created_at' => NULL,
@@ -588,8 +677,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
-            52 => 
+            51 => 
             array (
                 'id' => 53,
                 'created_at' => NULL,
@@ -599,19 +690,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 6,
                 'taille_conditions' => 1,
                 'automatique' => 1,
+                'commentaire' => 'Welsh toutes sections',
+                'approbation' => 0,
             ),
-            53 => 
-            array (
-                'id' => 54,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 11,
-                'race_mere_id' => 1,
-                'race_produit_id' => 1,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            54 => 
+            52 => 
             array (
                 'id' => 55,
                 'created_at' => NULL,
@@ -621,8 +703,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
-            55 => 
+            53 => 
             array (
                 'id' => 56,
                 'created_at' => NULL,
@@ -632,173 +716,23 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
-            56 => 
-            array (
-                'id' => 57,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 9,
-                'race_mere_id' => 11,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            57 => 
+            54 => 
             array (
                 'id' => 58,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'race_pere_id' => 10,
                 'race_mere_id' => 11,
-                'race_produit_id' => 12,
-                'taille_conditions' => 0,
-                'automatique' => 0,
-            ),
-            58 => 
-            array (
-                'id' => 59,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 11,
-                'race_mere_id' => 12,
                 'race_produit_id' => 11,
                 'taille_conditions' => 0,
-                'automatique' => 1,
-            ),
-            59 => 
-            array (
-                'id' => 60,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 8,
-                'race_mere_id' => 12,
-                'race_produit_id' => 11,
-                'taille_conditions' => 0,
-                'automatique' => 1,
-            ),
-            60 => 
-            array (
-                'id' => 61,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 7,
-                'race_mere_id' => 12,
-                'race_produit_id' => 11,
-                'taille_conditions' => 0,
-                'automatique' => 1,
-            ),
-            61 => 
-            array (
-                'id' => 62,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 6,
-                'race_mere_id' => 12,
-                'race_produit_id' => 11,
-                'taille_conditions' => 0,
-                'automatique' => 1,
-            ),
-            62 => 
-            array (
-                'id' => 63,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 5,
-                'race_mere_id' => 12,
-                'race_produit_id' => 11,
-                'taille_conditions' => 0,
-                'automatique' => 1,
-            ),
-            63 => 
-            array (
-                'id' => 64,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 4,
-                'race_mere_id' => 12,
-                'race_produit_id' => 11,
-                'taille_conditions' => 0,
-                'automatique' => 1,
-            ),
-            64 => 
-            array (
-                'id' => 65,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 12,
-                'race_mere_id' => 11,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
-            65 => 
-            array (
-                'id' => 66,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 12,
-                'race_mere_id' => 4,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            66 => 
-            array (
-                'id' => 67,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 12,
-                'race_mere_id' => 5,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            67 => 
-            array (
-                'id' => 68,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 12,
-                'race_mere_id' => 6,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            68 => 
-            array (
-                'id' => 69,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 12,
-                'race_mere_id' => 7,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            69 => 
-            array (
-                'id' => 70,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 12,
-                'race_mere_id' => 8,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            70 => 
-            array (
-                'id' => 71,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 12,
-                'race_mere_id' => 9,
-                'race_produit_id' => 12,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-            ),
-            71 => 
+            55 => 
             array (
                 'id' => 72,
                 'created_at' => NULL,
@@ -808,8 +742,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
-            72 => 
+            56 => 
             array (
                 'id' => 73,
                 'created_at' => NULL,
@@ -819,8 +755,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
-            73 => 
+            57 => 
             array (
                 'id' => 74,
                 'created_at' => NULL,
@@ -830,8 +768,10 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
             ),
-            74 => 
+            58 => 
             array (
                 'id' => 75,
                 'created_at' => NULL,
@@ -841,6 +781,34 @@ class AssoRaceTableSeeder extends Seeder
                 'race_produit_id' => 11,
                 'taille_conditions' => 1,
                 'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
+            ),
+            59 => 
+            array (
+                'id' => 76,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 10,
+                'race_mere_id' => NULL,
+                'race_produit_id' => 13,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'WPB 25%',
+                'approbation' => 0,
+            ),
+            60 => 
+            array (
+                'id' => 77,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => NULL,
+                'race_mere_id' => 10,
+                'race_produit_id' => 13,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'WPB 25%',
+                'approbation' => 0,
             ),
         ));
         

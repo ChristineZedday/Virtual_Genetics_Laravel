@@ -518,7 +518,7 @@ class AnimauxTableSeeder extends Seeder
                 'updated_at' => '2020-06-22 16:08:31',
                 'nom' => 'Lily',
                 'affixe_id' => 15,
-                'couleur' => 'noir tobiano',
+                'couleur' => 'smoky black tobiano',
                 'base' => NULL,
                 'taille_cm' => 87,
                 'race_id' => 2,
