@@ -143,7 +143,7 @@ class RacesTableSeeder extends Seeder
                 'id' => 13,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Welsh Part Bred',
+                'nom' => 'Welsh Part Bred 25%',
                 'prix_moyen' => 500,
                 'frais_enregistrement' => 50,
                 'taille_min' => 30,

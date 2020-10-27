@@ -23,7 +23,7 @@ rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
 
 pas donner le m^me nom + m^me affixe
-$table->unique(['affixe_id', 'nom']);controles javascript et php?
+$table->unique(['affixe_id', 'nom']);controles javascript et récup erreurs php?
 
 décalage image texte dans les tables
 
