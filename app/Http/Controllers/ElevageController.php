@@ -10,7 +10,7 @@ use App\Elevage;
 use App\Animal;
 use App\Gamedata;
 use App\Affixe;
-
+use Illuminate\Validation\Rules\Unique;
 
 class ElevageController extends Controller
 {
@@ -53,7 +53,11 @@ class ElevageController extends Controller
      */
     public function store(Request $request)
     {
-        $validated =  $request->validate(['nom_elevage'=>'string|required', 'nom_eleveur'=>'string|required']);
+        $validated =  $request->validate([
+            'nom_elevage'=>'string|required|unique:elevages', 
+            'nom_eleveur'=>'string|required|unique:elevages',
+            
+            ]);
         $elevage = new Elevage;
         $elevage->fill($validated);
 
@@ -67,7 +71,14 @@ class ElevageController extends Controller
                 $affixe->save();
                 $elevage->affixe_id=$affixe->id;
                 }
+            else
+            {
+                $request->session()->flash('status',"votre élevage n'a pu être enregistré, affixe déjà déposé");
+                $request->session()->flash('alert-class',"alert-danger");
+                return redirect()->back();
             }
+        }
+            
         
         $user = Auth::user();
         if (isset($user)) {
@@ -86,6 +97,11 @@ class ElevageController extends Controller
                 $request->session()->flash('status',"elevage enregistrée avec succès");
                 $request->session()->flash('alert-class',"alert-success");
                 return redirect()->action('HomeController@index');
+            }
+            else{
+                $request->session()->flash('status',"votre élevage n'a pu être enregistré, nom déjà pris?");
+                $request->session()->flash('alert-class',"alert-danger");
+                return redirect()->back();
             }
     }
 

@@ -5,6 +5,9 @@
 <form action="{{route('elevage.store')}}" method="POST">
         @csrf
 	<h2>Création d'un élevage</h2>
+	@if(Session::has('message'))
+<p >{{ Session::get('message') }}</p>
+@endif
 	<div>
 	<label for="nom_elevage">Entrez le nom que vous avez choisi pour votre élevage</label><br/>
 	<input type="text" name="nom_elevage" required />
