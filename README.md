@@ -6,7 +6,7 @@ Gènes, races (Shetland, Welsh, Arabe et Miniature), chevaux fondateurs avec de 
 Et des images pour représenter les gènes de couleur.</p>
 <p>Conception sur https://github.com/christineZedday/Virtual-Genetics-conception</p>
 
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="Screenshot.png"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
