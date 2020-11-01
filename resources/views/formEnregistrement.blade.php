@@ -6,6 +6,9 @@
 		@method('PUT')
         @csrf
 	<h2 class='form'>Enregistrer votre produit</h2>
+	@if(Session::has('status'))
+<p class="{{ Session::get('alert-class')}}" >{{ Session::get('status') }}</p>
+@endif
 	<div class='form'>
 	<label for="nom">Entrez le nom que vous avez choisi pour votre animal (sans l'affixe si vous en avez un)</label><br/>
 	<input type="text" name="nom" value="@isset($animal->nom) {{$animal->nom}}  @endisset"/>
@@ -31,7 +34,7 @@
 </select> 
 	@endisset
 	<div class='form'> 
-		<button type="submit">Valider</button>
+		<button onclick="checkBudget">Valider</button>
 		</div>
 	</form>
 </div>
@@ -42,7 +45,18 @@ function checkBudget()
 		select = document.getElementsByTag('select[0]');
 		route = document.getElementById('route').value;
 		//recup l'option selectionnée
+		opt = select.options[select.selectedIndex].text;
 		//split extraire frais
+		tab = opt.split(" ");
+		frais =tab[length-1];
+		if (frais > budget)
+		{
+			alert("vous devrez attendre d'être en fonds pour procéder à l'enregistrement")
+		}
+		else
+		{
+			document.location.href=route; 
+		}
 	}
 	</script>
 

@@ -132,7 +132,10 @@ class ReproductionController extends Controller
               }
               
               $lettre = Gamedata::checkLettre($date);
-              $animal->nom = crenom($lettre);
+              do {
+                $animal->nom = crenom($lettre);
+              }
+             while (Animal::checkNom($animal->nom, $animal->affixe_id) === false);
               
               $animal->elevage_id = $elevage->id;
               $sexe = rand(1,2);

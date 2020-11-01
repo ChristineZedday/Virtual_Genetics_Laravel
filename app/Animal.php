@@ -93,5 +93,14 @@ class Animal extends Model
             return $this->nom;
         }
     }
+
+    static function checkNom($nom, $affixe)
+    {
+        $query = Animal::where('nom',$nom)->where('affixe_id',$affixe)->get();
+        if ($query->count() == 0)
+        {return true;}
+        else
+         {return false;}
+    }
  
 }
