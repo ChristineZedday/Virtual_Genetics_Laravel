@@ -317,7 +317,7 @@ class AnimalController extends Controller
             $request->session()->flash('status',"nom déjà pris pour cet affixe");
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back();
-             }
+             } //ne pas enregistrer 2 animaux m^me nom+affixe
         $animal->couleur = $validated['couleur'];
         if (($animal->race_id == 1) && ($validated['race']!==null))
         {

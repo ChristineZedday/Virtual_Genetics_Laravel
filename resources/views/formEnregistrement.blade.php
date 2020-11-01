@@ -17,10 +17,28 @@
 	<label for="couleur">Entrez la couleur de votre animal.</label><br/>
 	<input type="text" name="couleur" value="@isset($animal->couleur) {{$animal->couleur}}  @endisset"/>
 	</div>
-	<div class='form'>
-	Les animaux de pure race sont automatiquement enregistrés dans le livre généalogique de la race sans frais supplémentaires, sous réserve que le père soit autorisé ou approuvé. Les animaux issus de croisement ou d'étalons non autorisés sont enregistrés comme Origine Constatée (OC), gratuitement, mais vous avez la possibité sous certaines conditions de les faire enregistrer dans un stud book ouvert (acceptant des animaux dont les deux parents ne sont pas inscrits), moyennant paiement d'un droit d'inscription.
+	
+	<div id='imb'>					
+		<div id='image'>
+			<figure class='jeu'>
+			<?php
+			$images = $animal->Image;
+			if (isset($images)) {
+				$path0 ="'/img/fond.png'";
+				echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:600px; height:450px;" >';
+					foreach ($images as $image) {
+						$path = "'/img/".$image->chemin.".png'";
+						$style = "position:absolute; width:600px; height:450px; z-index:".$image->z_index; 
+						echo"<img src=".$path. " style ='" . $style."'>";
+					}
+			}
+			?>
+			</figure>
+		</div>
+		<div class='form'>
+	<p>Les animaux de pure race sont automatiquement enregistrés dans le livre généalogique de la race sans frais supplémentaires, sous réserve que le père soit autorisé ou approuvé. Les animaux issus de croisement ou d'étalons non autorisés sont enregistrés comme Origine Constatée (OC), gratuitement, mais vous avez la possibité sous certaines conditions de les faire enregistrer dans un stud book ouvert (acceptant des animaux dont les deux parents ne sont pas inscrits), moyennant paiement d'un droit d'inscription.
 	Dans ce cas veuillez trouver la liste ci-dessous. Si l'animal est inscriptible dans plusieurs registres, un seul peut-être choisi, conformémént au règlement des Haras Nationaux.
-	@isset($races)
+	@isset($races)</p>
 	<input type="hidden" id ="budget" value ="{{$elevage->budget}}"/>
 	<label for="race">Vous avez la possibilité d'enregistrer votre produit, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
 	<select  name="race">
