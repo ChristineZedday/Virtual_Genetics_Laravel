@@ -2,3 +2,14 @@ form, .form {
 	margin: 20px;
 	padding: 20px;
 }
+#content {
+	display: flex;
+	flex-direction: row;
+	#enr {
+		flex: 2;
+	}
+	#image {
+		margin-top: 100px;
+		flex:1;
+	}
+}

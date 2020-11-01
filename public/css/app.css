@@ -11159,3 +11159,17 @@ form,
   padding: 20px;
 }
 
+#content {
+  display: flex;
+  flex-direction: row;
+}
+
+#content #enr {
+  flex: 2;
+}
+
+#content #image {
+  margin-top: 100px;
+  flex: 1;
+}
+
