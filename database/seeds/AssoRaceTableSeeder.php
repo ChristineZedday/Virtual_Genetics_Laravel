@@ -784,6 +784,71 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
             ),
+            59 => 
+            array (
+                'id' => 76,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 4,
+                'race_mere_id' => 8,
+                'race_produit_id' => 11,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
+            ),
+            60 => 
+            array (
+                'id' => 77,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 5,
+                'race_mere_id' => 8,
+                'race_produit_id' => 11,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
+            ),
+            61 => 
+            array (
+                'id' => 78,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 6,
+                'race_mere_id' => 8,
+                'race_produit_id' => 11,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
+            ),
+            62 => 
+            array (
+                'id' => 79,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 7,
+                'race_mere_id' => 8,
+                'race_produit_id' => 11,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'FS',
+                'approbation' => 1,
+            ),
+            63 => 
+            array (
+                'id' => 80,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 10,
+                'race_mere_id' => 8,
+                'race_produit_id' => 11,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => NULL,
+                'approbation' => 1,
+            ),
         ));
         
         
