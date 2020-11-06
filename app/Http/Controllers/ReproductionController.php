@@ -135,7 +135,7 @@ class ReproductionController extends Controller
               do {
                 $animal->nom = crenom($lettre);
               }
-             while (Animal::checkNom($animal->nom, $animal->affixe_id) === false);
+             while (Animal::checkNom($animal->id, $animal->nom, $animal->affixe_id) === false);
              //vérifier nom pas déjà pris
               
               $animal->elevage_id = $elevage->id;

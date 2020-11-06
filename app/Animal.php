@@ -94,13 +94,24 @@ class Animal extends Model
         }
     }
 
-    static function checkNom($nom, $affixe) //nom + affixe ou nom sans affixe pas pris
+    static function checkNom($animal, $nom, $affixe) //nom + affixe ou nom sans affixe pas pris
     {
-        $query = Animal::where('nom',$nom)->where('affixe_id',$affixe)->get();
-        if ($query->count() == 0)
+        $query = Animal::where('nom',$nom)->where('affixe_id',$affixe)->first();
+        if (!isset($query))
         {return true;}
         else
-         {return false;}
+         {
+             if ($query->id === $animal)
+             {
+                return true;
+             }
+            else
+            {
+                    return false;
+            }
+        }
+             
+            
     }
  
 }

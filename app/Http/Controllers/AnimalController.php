@@ -312,7 +312,7 @@ class AnimalController extends Controller
         $validated = $request->validate([ 'nom'=>'string','couleur'=>'string','race'=>'integer']); 
 
         $animal->nom = $validated['nom'];
-        if (Animal::checkNom($animal->nom, $animal->affixe_id)===false)
+        if (Animal::checkNom($animal->id, $animal->nom, $animal->affixe_id)===false)
         {
             $request->session()->flash('status',"nom déjà pris pour cet affixe");
             $request->session()->flash('alert-class',"alert-danger");
