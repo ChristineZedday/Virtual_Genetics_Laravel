@@ -36,7 +36,7 @@
 			@endisset
 			</div>
 			<div class='form'> 
-				<button onclick="checkBudget">Valider</button>
+				<button onclick="checkBudget()">Valider</button>
 				</div>
 		</form>
 	</div>
@@ -69,6 +69,7 @@ function checkBudget()
 		route = document.getElementById('route').value;
 		//recup l'option selectionnée
 		opt = select.options[select.selectedIndex].text;
+		alert(opt);
 		//split extraire frais
 		tab = opt.split(" ");
 		frais =tab[length-1];
