@@ -1,12 +1,11 @@
-enregistrement si pas d'argent?
+verif javascript des forms
 
+probleme progeny! enum problem?
 
-w1w1 continuent à pas mourir!
-overo avortés au lieu de mourir à la naissance
+w1w1 continuent à pas mourir?
+overo avortés au lieu de mourir à la naissance?
 
-poulains nés des juments mortes pas changer proprio!!
-
-pas m^me nom et prénom pour user ou éleveur
+poulains nés des juments mortes pas changer proprio?
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
 statut femelles mortes
@@ -14,16 +13,11 @@ mortalité à baisser qd bugs résolus 2000 pour <20, 800 <25, 100<30, 25<35, 10
 
 doublons dans race proposées
 
-vérifier le budget pour enregistrement 
-
 ajouter fondateurs (actuel: 16 arabes, 22 shetland, 7 welsh D, 3 Welsh C, 14 Welsh B, 19 Welsh A dont 1 pour produire Welsh C, 16 miniatures)
 images à faire: 
 robes varnish?
 rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
-
-pas donner le m^me nom + m^me affixe
-$table->unique(['affixe_id', 'nom']);controles javascript et récup erreurs php?
 
 décalage image texte dans les tables
 

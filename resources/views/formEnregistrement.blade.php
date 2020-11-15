@@ -3,7 +3,7 @@
 @section('content')
 <div id="content">
 	<div id="enr">
-		<form action="{{route('registration',[$animal->id])}}" method="POST">
+		<form action="{{route('registration',[$animal->id])}}" method="POST" onSubmit="return checkBudget()">
 			@method('PUT')
 			@csrf
 			<h2 class='form'>Enregistrer votre produit</h2>
@@ -25,8 +25,9 @@
 			Dans ce cas veuillez trouver la liste ci-dessous. Si l'animal est inscriptible dans plusieurs registres, un seul peut-être choisi, conformémént au règlement des Haras Nationaux.
 			@isset($races)</p>
 			<input type="hidden" id ="budget" value ="{{$elevage->budget}}"/>
+			
 			<label for="race">Vous avez la possibilité d'enregistrer votre produit, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
-			<select  name="race">
+			<select  name="race" id="race">
 				<option value="1">OC 0</option>
 					@foreach ($races as $race)
 					<option value="{{$race->id}}">{{$race->nom}} {{$race->frais_enregistrement}}</option>	
@@ -36,7 +37,7 @@
 			@endisset
 			</div>
 			<div class='form'> 
-				<button onclick="checkBudget()">Valider</button>
+				<button type="submit">Valider</button>
 				</div>
 		</form>
 	</div>
@@ -65,21 +66,23 @@
 function checkBudget() 
 	{
 		budget = document.getElementById('budget').value;	
-		select = document.getElementsByTag('select[0]');
-		route = document.getElementById('route').value;
-		//recup l'option selectionnée
+		select = document.getElementById('race');
+		
+		
 		opt = select.options[select.selectedIndex].text;
-		alert(opt);
 		//split extraire frais
 		tab = opt.split(" ");
-		frais =tab[length-1];
+	
+		frais =tab[tab.length-1];
+		
 		if (frais > budget)
 		{
-			alert("vous devrez attendre d'être en fonds pour procéder à l'enregistrement")
+			alert("vous devrez attendre d'être en fonds pour procéder à l'enregistrement");
+			return false;
 		}
 		else
 		{
-			document.location.href=route; 
+			return true;
 		}
 	}
 	</script>
