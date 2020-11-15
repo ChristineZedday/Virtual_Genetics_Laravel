@@ -184,8 +184,10 @@
 			<h3>Descendants: </h3>
 				@foreach ($animal->Progeny() as $petit)
 				<p> <a href="{{route('animal',[$elevage->id, $petit->id])}}"> {{$petit->NomComplet()}} </a>
-				 @unless (strpos($animal->sexe,"mâle")== false) <span> par {{$petit->Sire->NomComplet()}} </span
-				 >@endunless
+			
+				 @if ( ($animal->sexe === 'femelle') || ($animal->sexe === 'vieille femelle') || ($animal->sexe === 'femelle stérilisée') || ($animal->sexe === 'vieille femelle stérilisée')) <span> par {{$petit->Sire->NomComplet()}} </span>
+	
+				 @endif
 				</p>
 				@endforeach
 			</div>
