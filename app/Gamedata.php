@@ -225,26 +225,28 @@ static function checkVieux ($date)
 
   static function checkMorts()
 {
-    $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal',1)->orWhere('letal_foetus', 1);})->get();
+    $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal_foetus',1);})->get(); //avortés
    
     foreach ($letaux as $letal)
     {
-        $letal->elevage_id =2;//chez l'Ankou!
-        $letal->date_achat = Gamedata::date();
-        $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
-        if ($letal->Pathologie->letal_foetus)
-        {
             $dam = $letal->Dam;
             $letal->foetus = false;
             $date= date('Y-m-d',strtotime('+7 month',strtotime($dam->statut->date_saillie)));
             $dam->statut->terme = $date;
+            $letal->elevage_id =2;//chez l'Ankou!
             $dam->statut->save();
             $letal->date_naissance = $date;
             $letal->date_achat = $date;
-            $letal->save();
-        }
+     
       
     }
+    $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal',1);})->get(); //morts peu de temps après la naissance
+        foreach ($letaux as $letal)
+        {
+            $letal->elevage_id =2;//chez l'Ankou!
+            $letal->date_achat = Gamedata::date();
+            $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
+        }
 
     $animaux = Animal::where('elevage_id', '!=', 2)->where('sexe','LIKE','vie%')->get();
     foreach ($animaux as $animal)

@@ -12,7 +12,7 @@
 			@endif
 			<div class='form'>
 			<label for="nom">Entrez le nom que vous avez choisi pour votre animal (sans l'affixe si vous en avez un)</label><br/>
-			<input type="text" name="nom" id="nom" value="@isset($animal->nom){{$animal->nom}}  @endisset" pattern="[^\s][A-Za-z '\.\s]{3,18}"/>
+			<input type="text" name="nom" id="nom" value="@isset($animal->nom){{$animal->nom}}  @endisset" pattern="[^\s][A-Za-z '\.\s]{2,18}"/>
 			</div>
 			<div class='form'>
 			<label for="couleur">Entrez la couleur de votre animal.</label><br/>
