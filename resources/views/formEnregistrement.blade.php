@@ -16,7 +16,7 @@
 			</div>
 			<div class='form'>
 			<label for="couleur">Entrez la couleur de votre animal.</label><br/>
-			<input type="text" name="couleur" id="couleur" value="@isset($animal->couleur) {{$animal->couleur}}  @endisset"/>
+			<input type="text" name="couleur" id="couleur" value="@isset($animal->couleur) {{$animal->couleur}}  @endisset"  pattern="[^\s][A-zÀ-ž\s]{2,}"/>
 			</div>
 			
 			
@@ -73,7 +73,7 @@ function checkForm()
 		//split extraire frais
 		tab = opt.split(" ");
 	
-		frais =number(tab[tab.length-1]);
+		frais =parseInt(tab[tab.length-1]);
 		if (frais > budget)
 		{
 			alert("vous devrez attendre d'être en fonds pour procéder à l'enregistrement");
