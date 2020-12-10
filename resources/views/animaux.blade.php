@@ -20,16 +20,16 @@
 @foreach ($animaux as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
-<a href="{{route('animal',[$elevage->id, $animal->id])}}">
-<figure class='petite'>
+<figure class="petite">
+<a  href="{{route('animal',[$elevage->id, $animal->id])}}">
 <?php
 $images = $animal->Image;
 if (isset($images)) {
 	$path0 ="'/img/fond.png'";
-	echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:80px; height:60px;" >';
+	echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:80px; height:60px; display:block; vertical-align:middle;" >';
 		foreach ($images as $image) {
 			$path = "'/img/".$image->chemin.".png'";
-			$style = "position:absolute; width:80px; height:60px; z-index:".$image->z_index; 
+			$style = "position:absolute; display:block; width:80px; height:60px; z-index:".$image->z_index; 
 			echo"<img src=".$path. " style ='" . $style."'>";
 		}
 }

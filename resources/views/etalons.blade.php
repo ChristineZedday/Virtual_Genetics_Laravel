@@ -35,8 +35,9 @@
 @foreach ($etalons as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
-<a href="{{route('animal',[$elevage->id, $animal->id])}}">
 <figure class='petite'>
+<a href="{{route('animal',[$elevage->id, $animal->id])}}">
+
 <?php
 $images = $animal->Image;
 if (isset($images)) {
@@ -49,9 +50,9 @@ if (isset($images)) {
 		}
 }
 ?>
-</figure>
-</a>
 
+</a>
+</figure>
 	</td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>

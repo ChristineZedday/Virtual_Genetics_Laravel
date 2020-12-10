@@ -18,27 +18,39 @@
 	display: block;
   }
 }
-.petite figure {
-	position: relative !important;
-	display: block;
-	top: 0px;
-	left: 0px;
-	width: 80px;
-	height: 60px;
+.petite figure
+{
+	display: inline;
+	vertical-align: middle;
 	padding: 0px;
-	margin: 0px; 
-	z-index: 0;
-  
-  img {
-	top: 0px;
-	left: 0px;
-	width: 80px;
-	height: 60px;
-	margin: 0;
-	padding:0;
-	position: absolute !important;
-	display: block;
-  }	
+		margin: 0px; 
+		top: 0px;
+		left: 0px;
+		width: 80px;
+		height: 60px;
+	a {
+		position: relative !important;
+		display: block;
+		
+		top: 0px;
+		left: 0px;
+		width: 80px;
+		height: 60px;
+		padding: 0px;
+		margin: 0px; 
+		z-index: 0;
+	
+		img {
+			top: 0px;
+			left: 0px;
+			width: 80px;
+			height: 60px;
+			margin: 0;
+			padding:0;
+			position: absolute !important;
+			display: block;
+		
+		}	
+	}
 }
-
 

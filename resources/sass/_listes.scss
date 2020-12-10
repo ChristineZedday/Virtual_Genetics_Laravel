@@ -10,21 +10,24 @@
 			margin-left: 20px;
 			margin-right: 10px;
 			color: $black;
+			table-layout: fixed;
 		tr{
-		
+			height: 70px;
 			
 			
 			th {
 				font-weight: bold;
 				background-color: $grey;
-				margin: 10px;
+				margin: 5px;
 				padding: 5px;
+				text-align: middle;
 				
 			}
 			td {
 				background-color: lighten($grey,20%);
-				margin: 10px;
+				margin: 5px;
 				padding: 5px;
+				text-align: middle;
 			
 				
 			}
