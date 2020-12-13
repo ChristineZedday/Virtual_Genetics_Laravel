@@ -11,7 +11,7 @@
 			<p class="{{ Session::get('alert-class')}}" >{{ Session::get('status') }}</p>
 			@endif
 			<div class='form'>
-			<label for="nom">Entrez le nom que vous avez choisi pour votre animal (sans l'affixe si vous en avez un)</label><br/>
+			<label for="nom">Entrez le nom que vous avez choisi pour votre animal (sans l'affixe si vous en avez un), sans accent ou caractère spécial.</label><br/>
 			<input type="text" name="nom" id="nom" value="@isset($animal->nom){{$animal->nom}}  @endisset" pattern="[^\s][A-Za-z '\.\s]{2,18}"/>
 			</div>
 			<div class='form'>

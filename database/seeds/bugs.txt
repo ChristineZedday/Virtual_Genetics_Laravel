@@ -1,5 +1,4 @@
-verif javascript des forms
-budget enregistrement?
+
 
 tache grise sur une tov min
 
@@ -14,7 +13,6 @@ poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
 statut femelles mortes
 mortalité à baisser qd bugs résolus 2000 pour <20, 800 <25, 100<30, 25<35, 10
 
-doublons dans race proposées
 
 ajouter fondateurs (actuel: 16 arabes, 22 shetland, 7 welsh D, 3 Welsh C, 14 Welsh B, 19 Welsh A dont 1 pour produire Welsh C, 16 miniatures)
 images à faire: 
