@@ -240,7 +240,7 @@ static function checkVieux ($date)
      
       
     }
-    $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal',1);})->get(); //morts peu de temps après la naissance
+    $letaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->whereHas('Pathologie', function ($query) {$query->where('letal',1);})->get(); //morts peu de temps après la naissance
         foreach ($letaux as $letal)
         {
             $letal->elevage_id =2;//chez l'Ankou!

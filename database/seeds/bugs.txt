@@ -4,9 +4,6 @@ tache grise sur une tov min
 
 probleme progeny! enum problem?
 
-w1w1 continuent à pas mourir?
-overo avortés au lieu de mourir à la naissance?
-
 poulains nés des juments mortes pas changer proprio?
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images
