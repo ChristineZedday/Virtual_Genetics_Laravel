@@ -11,4 +11,9 @@ class Genotype extends Model
 
         return $this->hasOne('App\locus', 'id', 'locus_id');
     }
+
+    public function Animal()
+    {
+        return $this->BelongsTo('App\animal');
+    }
 }

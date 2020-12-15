@@ -65,7 +65,7 @@ class AnimalController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
@@ -88,7 +88,18 @@ class AnimalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $animal = Animal::find($id);
+        $genotypes = $animal->Genotypes();
+        foreach ($genotypes as $genotype)
+        {
+            $genotype->delete();
+        }
+        $images = $animal->Image();
+        foreach ($images as $imagee)
+        {
+            //detach les imeges du poney
+        }
+
     }
 
     /**

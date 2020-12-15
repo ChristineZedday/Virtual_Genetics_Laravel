@@ -12,6 +12,10 @@ class Animal extends Model
     protected $table ='animaux';
     protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'prix', 'sexe', 'date_achat', 'date_naissance', 'a_vandre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id'];
 
+    public function Genotypes()
+    {
+        return $this->hasMany('App\Genotypes');
+    }
 
     public function Elevage()
     {
