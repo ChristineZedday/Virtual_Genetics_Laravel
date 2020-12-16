@@ -17,6 +17,7 @@ class CreateAnimalImageTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('animal_id')->unsigned();
             $table->bigInteger('image_id')->unsigned();
+            $table->smallInteger('hauteur')->unsigned()->default('600');
             $table->foreign('animal_id')->references('id')->on('animaux');
             $table->foreign('image_id')->references('id')->on('images');
             $table->timestamps();

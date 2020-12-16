@@ -22,7 +22,7 @@ class CreateAssoRaceTable extends Migration
             $table->boolean('taille_conditions')->default(FALSE);
             $table->boolean('automatique')->default(FALSE);
             $table->string('commentaire')->nullable();
-            $table->boolean('approbation')->default(FALSE);
+           $table->boolean('approbation')->default(FALSE);
            
             $table->foreign('race_pere_id')->references('id')->on('races');
             $table->foreign('race_mere_id')->references('id')->on('races');
