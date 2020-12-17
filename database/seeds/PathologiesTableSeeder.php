@@ -46,7 +46,7 @@ class PathologiesTableSeeder extends Seeder
                 'description' => NULL,
                 'letal' => 0,
                 'letal_foetus' => 0,
-                'redhibitoire'  => 1,
+                'redhibitoire'  => 0,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

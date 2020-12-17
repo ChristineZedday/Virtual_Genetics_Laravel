@@ -121,7 +121,7 @@
 			</div>
 
 			<div id='saillie'>
-				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe='vieille femelle') && ( isset($animal->Statut) && ($animal->Statut->vide == true && $animal->Statut->date_saillie != App\Gamedata::date()) ) )
+				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe=='vieille femelle') && ( isset($animal->Statut) && ($animal->Statut->vide == true && $animal->Statut->date_saillie != App\Gamedata::date()) ) )
 					@if (App\Gamedata::saison())
 					
 					<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
@@ -184,9 +184,9 @@
 			<h3>Descendants: </h3>
 				@foreach ($animal->Progeny() as $petit)
 				<p> <a href="{{route('animal',[$elevage->id, $petit->id])}}"> {{$petit->NomComplet()}} </a>
-			
-				 @if ( ($animal->sexe === 'femelle') || ($animal->sexe === 'vieille femelle') || ($animal->sexe === 'femelle stérilisée') || ($animal->sexe === 'vieille femelle stérilisée')) <span> par {{$petit->Sire->NomComplet()}} </span>
-	
+				<?php $pos= strpos($animal->sexe,'mâle');
+			 ?>
+				 @if ( $pos === false) <span> par {{$petit->Sire->NomComplet()}} </span>
 				 @endif
 				</p>
 				@endforeach

@@ -153,7 +153,7 @@ static function checkPuberes()
                 {
                     $statut->qualite = 'approuvé';
                 }
-                else if ($animal->modele_allures > 10)
+                else if ($animal->modele_allures > 9)
                 {
                     $statut->qualite = 'autorisé';
                 }
