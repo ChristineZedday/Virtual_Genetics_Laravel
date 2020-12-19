@@ -145,62 +145,10 @@ class ReproductionController extends Controller
 
               $animal->taille_additive = (int) (($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2)) ;
               $animal->taille_cm = $animal->taille_additive + rand(-2,2);
-
+              $qualite = $etalon->StatutMale->qualite;
             
-                    if ($etalon->race_id == $jument->race_id && ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  ))
-                    {
-                      $animal->race_id = $etalon->race_id;
-                    }
-                    else if ($etalon->StatutMale->qualite == 'autorisé' || $etalon->StatutMale->qualite == 'approuvé'  )
-                        {
-                        
-                          $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first(); //pas true, 1?
-
-                          if (isset ($race))
-                          {
-                            $race = Race::Find($race->race_produit_id);
-                            $animal->race_id = $race->id;
-                            $animal->save();
-                          }
-                          else 
-                          {
-                            $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',1)->get();
-
-                            if (sizeof($races)>0)
-                            {
-                              foreach ($races as $race)
-                              {
-                              
-                                  $race = Race::Find($race->race_produit_id);
-                                  
-      
-                                  if (($animal->taille_cm >= $race->taille_min) && ($animal->taille_cm <= $race->taille_max))
-                                  {
-                                    $animal->race_id = $race->id;
-                                    $animal->save();
-                                  }
-                                
-                              }
-                              if ($animal->race_id == null)
-                              {
-                                $animal->race_id = 1;
-                                $animal->save();
-                              }
-
-
-                            }
-                        
-                            else //croisement non prévu 
-                              {
-                              $animal->race_id = 1;
-                            }
-                        }
-                      
-                    }
-                    else //etalon pas autorisé
-                    {
-                      $animal->race_id = 1;
-                    }
+              $animal->race_id = Animal::chercheRaces($etalon->race_id,$jument->race_id,$animal->taille_cm, $qualite);
+              $animal->save();
             
               $animal->consang = calculConsang($etalon->id, $jument->id);
             
@@ -593,6 +541,8 @@ class ReproductionController extends Controller
    if ($jument->Elevage->role != 'Vendeur')
   {  return redirect()->route('reproduction.jument',[$elevage->id]);}
    } //end function croisement
+
+  
 
    static function devoileConsang($el, $S, $D)
 {

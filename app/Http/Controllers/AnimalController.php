@@ -294,6 +294,7 @@ class AnimalController extends Controller
         {
             $rDam = $animal->Dam->Race->id;
             $rSire = $animal->Sire->Race->id;
+            $qualite = $animal->Sire->StatutMale->qualite;
             $taille = $animal->taille_cm;
             $races = AssoRace::where(function ($query) use ($rSire,$rDam) {
                 $query->where(function ($qp) use ($rSire) {
@@ -304,7 +305,19 @@ class AnimalController extends Controller
                 }
             )
             ;}
-            )->join('races','races.id', 'asso_race.race_produit_id')->where(function ($qu) use ($taille) {$qu->where('taille_min', '<=', $taille)->where('taille_max', '>=', $taille);})->get()->unique();
+            )->join('races','races.id', 'asso_race.race_produit_id')->where(function ($qu) use ($taille) {$qu->where('taille_min', '<=', $taille)->where('taille_max', '>=', $taille);})->get()->unique()->all();
+            if ($qualite != 'approuvé')
+            {
+                foreach ($races as $race)
+                {
+                    if ($race->approbation)
+                    {
+                       
+                       $i= array_search($race,$races);
+                       array_splice($races, $i);
+                    }
+                }
+            }
          
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }

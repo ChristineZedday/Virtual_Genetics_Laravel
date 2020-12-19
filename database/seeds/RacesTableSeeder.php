@@ -27,6 +27,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
+                'approbation' =>FALSE,
             ),
             1 => 
             array (
@@ -38,6 +39,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 65,
                 'taille_max' => 107,
+                'approbation' =>FALSE,
             ),
             2 => 
             array (
@@ -49,6 +51,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 100,
                 'taille_min' => 30,
                 'taille_max' => 86,
+                'approbation' =>FALSE,
             ),
             3 => 
             array (
@@ -60,6 +63,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 90,
                 'taille_max' => 121,
+                'approbation' =>FALSE,
             ),
             4 => 
             array (
@@ -71,6 +75,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 122,
                 'taille_max' => 137,
+                'approbation' =>FALSE,
             ),
             5 => 
             array (
@@ -82,6 +87,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 122,
                 'taille_max' => 137,
+                'approbation' =>FALSE,
             ),
             6 => 
             array (
@@ -92,7 +98,8 @@ class RacesTableSeeder extends Seeder
                 'prix_moyen' => 2000,
                 'frais_enregistrement' => NULL,
                 'taille_min' => 138,
-                'taille_max' => 165,
+                'taille_max' => 167,
+                'approbation' =>FALSE,
             ),
             7 => 
             array (
@@ -104,6 +111,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
+                'approbation' =>FALSE,
             ),
             8 => 
             array (
@@ -115,6 +123,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 150,
                 'taille_min' => 30,
                 'taille_max' => 215,
+                'approbation' =>FALSE,
             ),
             9 => 
             array (
@@ -126,6 +135,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 50,
                 'taille_min' => 30,
                 'taille_max' => 215,
+                'approbation' =>FALSE,
             ),
             10 => 
             array (
@@ -137,6 +147,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 100,
                 'taille_min' => 120,
                 'taille_max' => 149,
+                'approbation' =>TRUE,
             ),
         ));
         

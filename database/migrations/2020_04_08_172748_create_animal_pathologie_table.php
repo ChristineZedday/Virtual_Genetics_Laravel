@@ -17,6 +17,7 @@ class CreateAnimalPathologieTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('animal_id')->unsigned();
             $table->bigInteger('pathologie_id')->unsigned();
+            
             $table->timestamps();
             $table->foreign('animal_id')->references('id')->on('animaux');
             $table->foreign('pathologie_id')->references('id')->on('pathologies');

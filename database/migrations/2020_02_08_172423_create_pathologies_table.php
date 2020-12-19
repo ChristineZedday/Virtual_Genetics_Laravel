@@ -19,6 +19,7 @@ class CreatePathologiesTable extends Migration
             $table->string('description')->nullable();
             $table->boolean('letal')->default(FALSE);
             $table->boolean('letal_foetus')->default(FALSE);
+            $table->boolean('redhibitoire')->default(FALSE); //empêche approbation
             $table->timestamps();
         });
     }

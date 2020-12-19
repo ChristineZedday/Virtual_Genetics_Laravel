@@ -153,7 +153,7 @@ static function checkPuberes()
                 {
                     $statut->qualite = 'approuvé';
                 }
-                else if ($animal->modele_allures > 10)
+                else if ($animal->modele_allures > 9)
                 {
                     $statut->qualite = 'autorisé';
                 }
@@ -256,16 +256,19 @@ static function checkVieux ($date)
             switch ($age)
             {
                 case $age<20:
-                    $var = 30;
+                    $var = 1000;
                 break;
                 case $age<25:
-                    $var = 20;
+                    $var = 500;
                 break;
                 case $age<30:
-                    $var =10;
+                    $var =100;
+                break;
+                case $age<35:
+                    $var =50;
                 break;
                 default:
-                $var = 5;
+                $var = 10;
             }
                 if (rand(1,$var)==1)
                 {
