@@ -86,15 +86,19 @@
 	</div>
 	<div id='imb'>					
 		<div id='image'>
-			<figure class='jeu'>
+			<figure class='jeu' style="position: relative;">
 			<?php
 			$images = $animal->Image;
 			if (isset($images)) {
 				$path0 ="'/img/fond.png'";
-				echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:600px; height:450px;" >';
+				$hauteur = $animal->taille_cm * 3.5;
+				$haut = 450-$hauteur;
+				$largeur =4/3 * $hauteur;
+				$gauche= 0;
+				echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:600px; height:450px; top:0; left:0; " >';
 					foreach ($images as $image) {
 						$path = "'/img/".$image->chemin.".png'";
-						$style = "position:absolute; width:600px; height:450px; z-index:".$image->z_index; 
+						$style = "position:absolute; overflow:hidden; top:".$haut."px ; left:".$gauche."px; width:".$largeur ."px; height:".$hauteur ."px; z-index:".$image->z_index; 
 						echo"<img src=".$path. " style ='" . $style."'>";
 					}
 			}
