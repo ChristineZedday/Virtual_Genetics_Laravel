@@ -94,7 +94,7 @@
 				$hauteur = $animal->taille_cm * 3.5;
 				$haut = 450-$hauteur;
 				$largeur =4/3 * $hauteur;
-				$gauche= 0;
+				$gauche= 550-$largeur;
 				echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:600px; height:450px; top:0; left:0; " >';
 					foreach ($images as $image) {
 						$path = "'/img/".$image->chemin.".png'";
