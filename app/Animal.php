@@ -52,7 +52,8 @@ class Animal extends Model
 
     public function Statut()
     {
-        return $this->HasOne('App\statutsFemelle', 'animal_id');
+       return $this->HasOne('App\statutsFemelle', 'animal_id');
+
     }
 
     public function StatutMale()

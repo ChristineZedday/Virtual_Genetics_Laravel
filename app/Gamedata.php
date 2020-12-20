@@ -275,12 +275,20 @@ static function checkVieux ($date)
                     $animal->elevage_id =2;//chez l'Ankou!
                     $animal->date_achat = Gamedata::date();
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
-                    $statut = statutsFemelle::where('animal_id', $animal->id)->first();
+                    
+                    if ($animal->sexe == 'vieille femelle')
+                  {  $statut = $animal->Statut()->first();
+                   
+                    
                     if (isset($statut))
+                  
                     {
+                       
                         if (!($statut->vide))
                         {
+                           
                             $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
+                           
                             $produit->elevage_id =2;//pour effacer faudrait effacer genotypes et images
                             $produit->save();
                             $statut->delete();
@@ -293,9 +301,9 @@ static function checkVieux ($date)
                         }
                       
                     }
-                   
+                   }
                        
-                    if (isset($animal->StatutMale))
+                    if ($animal->sexe == 'vieux mâle'  && isset($animal->StatutMale))
                     {
                         $animal->StatutMale->delete();
                     }
