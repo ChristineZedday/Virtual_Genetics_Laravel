@@ -3,7 +3,7 @@
 
 <div class='animaux'>
 <h3>Jument à faire saillir:</h3>
-<p>{{$jument->NomComplet()}}</p>
+<p class='nom'>{{$jument->NomComplet()}}</p>
 <p>{{$jument->Race->nom}}</p>
 <p>{{$jument->couleur}}</p>
 <P>{{$jument->taille_cm}}</P>
@@ -12,7 +12,7 @@
 <p>et {{$jument->Dam->NomComplet()}}</p>
 @endif
 @isset ($jument->Statut->etalon_id)
-<p>Dernière saillie: {{$jument->Statut->Male->NomComplet()}}</p>
+<p class='nom'>Dernière saillie: {{$jument->Statut->Male->NomComplet()}}</p>
 @if ((App\Animal::find($jument->Statut->etalon_id)->elevage_id == $elevage->id) && (isset(App\Animal::find($jument->Statut->etalon_id)->StatutMale)))
 <a href="{{route('etalon',[$elevage->id, $jument->Statut->etalon_id, $jument->id])}}"><button>Réutiliser?</button></a>
 @endif
@@ -37,7 +37,7 @@
 <td class='photo' style="height:70px; width:90px;">
 @include('includes.petiteImage')
 	</td>
-	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
+	<td class='nom'> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>
 	<td> {{$animal->Race->nom}} </td>
 
@@ -77,7 +77,7 @@
 <td class='photo' style="height:70px; width:90px;">
 @include('includes.petiteImage')
 	</td>
-	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
+	<td class='nom'> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>

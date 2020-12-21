@@ -1,4 +1,8 @@
+bug date saillie overo vieille jument (poulain qui meurt après sa mère?)
 
+jument morte à 13 ans?
+
+bug chx prlprl alezans? corrigé 16 (doublepearl) et pas 24 (noir perle) ds phenotypes
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
 
@@ -9,5 +13,5 @@ robes varnish?
 rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
 
-
+nom long: photo reproducteurs décalée
 

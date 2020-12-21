@@ -10973,6 +10973,10 @@ a.text-dark:focus {
   color: #e3342f;
 }
 
+.nom {
+  font-variant: small-caps;
+}
+
 .animaux h3 {
   color: #701f1e;
   margin-top: 20px;
