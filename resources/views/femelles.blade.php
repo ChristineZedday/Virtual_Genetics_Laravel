@@ -20,7 +20,7 @@
 @foreach ($juments as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
-@include('petiteImage')
+@include('includes.petiteImage')
 </figure>
 	</td>
  <td> <a href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a> </td>
