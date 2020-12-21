@@ -35,7 +35,7 @@
 @foreach ($etalons as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
-@include('petiteImage')
+@include('includes.petiteImage')
 	</td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>
@@ -75,7 +75,7 @@
 @foreach ($exterieurs as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
-@include('petiteImage')
+@include('includes.petiteImage')
 	</td>
 	<td> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>
