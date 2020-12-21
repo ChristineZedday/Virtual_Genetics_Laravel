@@ -10,7 +10,4 @@ rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
 
 
-décalage image texte dans les tables
-
-
 
