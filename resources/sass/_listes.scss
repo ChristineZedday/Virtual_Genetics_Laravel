@@ -19,21 +19,21 @@
 				font-weight: bold;
 				background-color: $grey;
 				margin: 5px;
-				padding: 5px;
+			
 				text-align: middle;
 				
 			}
 			td {
 				background-color: lighten($grey,20%);
 				margin: 5px;
-				padding: 5px;
+			
 				text-align: middle;
 			
 				
 			}
 			.photo td {
-				height: 70px;
-				width: 90px;
+				height: 60px;
+				width: 80px;
 				
 				a {
 					height: 60px;

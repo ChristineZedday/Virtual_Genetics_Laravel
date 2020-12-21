@@ -6,6 +6,7 @@
 	<div class='texte'>
 <h1>{{$etalon->NomComplet()}}</h1>
 <h3>{{$etalon->Race->nom}}</h3>
+<p>{{$etalon->StatutMale->qualite}}</p>
 <p>{{$etalon->couleur}}</p>
 <p>{{$etalon->taille_cm}}</p>
 
@@ -15,8 +16,6 @@
 <?php
 $images = $etalon->Image;
 if (isset($images)) {
-	$path0 ="'/img/fond.png'";
-	echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:80px; height:60px;" >';
 		foreach ($images as $image) {
 			$path = "'/img/".$image->chemin.".png'";
 			$style = "position:absolute; width:80px; height:60px; z-index:".$image->z_index; 
@@ -74,18 +73,16 @@ $date = \App\Gamedata::date();
 <h3>{{$jument->race->nom}}</h3>
 <p>{{$jument->couleur}}</p>
 <p>{{$jument->taille_cm}}</p>
-
+<p>&nbsp;</p>
 <p>{{$jument->date_naissance}}</p>
 </div>
 <figure class='petite'>
 <?php
 $images = $jument->Image;
 if (isset($images)) {
-	$path0 ="'/img/fond.png'";
-	echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:80px; height:60px;" >';
 		foreach ($images as $image) {
 			$path = "'/img/".$image->chemin.".png'";
-			$style = "position:absolute; width:80px; height:60px; z-index:".$image->z_index; 
+			$style = "position:absolute; width:100px; height:75px; z-index:".$image->z_index; 
 			echo"<img src=".$path. " style ='" . $style."'>";
 		}
 }
