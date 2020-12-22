@@ -10999,13 +10999,13 @@ a.text-dark:focus {
 .animaux table tr th {
   font-weight: bold;
   background-color: #c6a99a;
-  margin: 5px;
+  padding: 5px 20px;
   text-align: middle;
 }
 
 .animaux table tr td {
   background-color: #ebe1db;
-  margin: 5px;
+  padding: 2px 12px;
   text-align: middle;
 }
 
