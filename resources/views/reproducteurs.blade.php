@@ -4,7 +4,7 @@
 <span id='male' class='par'>
 <div class='rens'>
 	<div class='texte'>
-<h1>{{$etalon->NomComplet()}}</h1>
+<h1 class='nom'>{{$etalon->NomComplet()}}</h1>
 <h3>{{$etalon->Race->nom}}</h3>
 <p>{{$etalon->StatutMale->qualite}}</p>
 <p>{{$etalon->couleur}}</p>
@@ -50,7 +50,7 @@ $date = \App\Gamedata::date();
 <span id = 'femelle' class='par'>
 <div class='rens'>
 	<div class='texte'>
-<h1>{{$jument->NomComplet()}}</h1>
+<h1 class='nom'>{{$jument->NomComplet()}}</h1>
 <h3>{{$jument->race->nom}}</h3>
 <p>{{$jument->couleur}}</p>
 <p>{{$jument->taille_cm}}</p>

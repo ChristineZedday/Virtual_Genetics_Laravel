@@ -23,7 +23,7 @@
 @include('includes.petiteImage')
 </figure>
 	</td>
- <td> <a href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a> </td>
+ <td> <a class='nom' href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a> </td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille_cm}} </td>

@@ -45,20 +45,7 @@
 
 					
 	<div id='image'>	
-			<figure class='jeu'>
-			<?php
-			$images = $animal->Image;
-			if (isset($images)) {
-				$path0 ="'/img/fond.png'";
-				echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:400px; height:300px;" >';
-					foreach ($images as $image) {
-						$path = "'/img/".$image->chemin.".png'";
-						$style = "position:absolute; width:400px; height:300px; z-index:".$image->z_index; 
-						echo"<img src=".$path. " style ='" . $style."'>";
-					}
-			}
-			?>
-			</figure>
+			@include('includes.image')
 	</div>
 
 </div>

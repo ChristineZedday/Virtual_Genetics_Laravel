@@ -286,7 +286,7 @@ class PhenotypesTableSeeder extends Seeder
                 'effet_rouge' => 2,
                 'effet_noir' => 2,
                 'effet_noir_extremites' => 1,
-                'couleur_id' => 24,
+                'couleur_id' => 16,
                 'pathologie_id' => NULL,
             ),
             17 => 
