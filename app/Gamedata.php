@@ -237,6 +237,7 @@ static function checkVieux ($date)
             $dam->statut->save();
             $letal->date_naissance = $date;
             $letal->date_achat = $date;
+            $letal->save();
      
       
     }
