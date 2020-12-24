@@ -1,5 +1,5 @@
 <h2>Simulateur d'élevage </h2>
-<p>Dernière phase de debug en cours</p>
+<p>v1.0 disponible, fonctionnelle, pas de bugs majeurs</p>
 <p>Mode d'emploi (installation et jeu): <a href ="ModeEmploi.pdf" target="_blank">ModeEmploi.pdf</a></p>
 <p>Ce dossier présente le code source, avec des seeders pour la base de données:
 Gènes, races (Shetland, Welsh, Arabe et Miniature), chevaux fondateurs avec de chouettes affixes authentiques pour les poneys...
