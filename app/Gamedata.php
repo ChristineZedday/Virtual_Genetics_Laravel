@@ -237,6 +237,7 @@ static function checkVieux ($date)
             $dam->statut->save();
             $letal->date_naissance = $date;
             $letal->date_achat = $date;
+            $letal->save();
      
       
     }
@@ -256,16 +257,16 @@ static function checkVieux ($date)
             switch ($age)
             {
                 case $age<20:
-                    $var = 1000;
+                    $var = 1500;
                 break;
                 case $age<25:
-                    $var = 500;
+                    $var = 750;
                 break;
                 case $age<30:
-                    $var =100;
+                    $var =150;
                 break;
                 case $age<35:
-                    $var =50;
+                    $var =75;
                 break;
                 default:
                 $var = 10;
