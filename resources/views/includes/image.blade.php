@@ -5,7 +5,7 @@
 			$images = $animal->Image;
 			if (isset($images)) {
 				$path0 ="'/img/fond.png'";
-				$hauteur = $animal->taille_cm * 3.5;
+				$hauteur = $animal->taille() * 3.5;
 				$haut = 450-$hauteur;
 				$largeur =4/3 * $hauteur;
 				$gauche= 550-$largeur;
