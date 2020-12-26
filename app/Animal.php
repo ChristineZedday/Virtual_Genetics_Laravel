@@ -99,6 +99,23 @@ class Animal extends Model
         }
     }
 
+    public function taille()
+    {
+        $age = Gamedata::ageMonths($this->date_naissance);
+        switch (true)
+        {
+            case $age<3:
+                return (int) ($this->taille_cm * 73/100);
+            case $age<12:
+                return (int) ($this->taille_cm * 80/100);
+            case $age<24:
+                return (int) ($this->taille_cm * 90/100);
+            default:
+                return $this->taille_cm;
+            
+        }
+    }
+
     static function checkNom($animal, $nom, $affixe) //nom + affixe ou nom sans affixe pas pris
     {
         $query = Animal::where('nom',$nom)->where('affixe_id',$affixe)->first();
@@ -201,6 +218,38 @@ class Animal extends Model
         return 1;
        }    
        
+    }
+    static function pourCentRace($animal, $bred) //$bred: id bred
+    {
+        $animal = Animal::Find($animal);
+        if ($animal->race_id == $bred)
+        {
+            return 100;
+        }
+        else if ($animal->fondateur)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Animal::pourCentRace($animal->sire_id,$bred) + Animal::pourCentRace($animal->dam_id,$bred))/2;
+        }
+    }
+    static function pourCentWelsh($animal)
+    {
+        $animal = Animal::Find($animal);
+        if ($animal->race_id == 4 || $animal->race_id == 5 || $animal->race_id == 6 || $animal->race_id == 7 )
+        {
+            return 100;
+        }
+        else if ($animal->fondateur)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Animal::pourCentWelsh($animal->sire_id) + Animal::pourCentWelsh($animal->dam_id))/2;
+        }
     }
  
 }
