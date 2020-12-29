@@ -16,7 +16,7 @@
 			</div>
 			<div class='form'>
 			<label for="couleur">Entrez la couleur de votre animal.</label><br/>
-			<input type="text" name="couleur" id="couleur" value="@isset($animal->couleur) {{$animal->couleur}}  @endisset"  pattern="[^\s][A-zÀ-ž\s]{2,}"/>
+			<input type="text" name="couleur" id="couleur" value="@isset($animal->couleur){{$animal->couleur}}  @endisset"  pattern="[^\s][A-zÀ-ž\s]{2,}"/>
 			</div>
 			
 			

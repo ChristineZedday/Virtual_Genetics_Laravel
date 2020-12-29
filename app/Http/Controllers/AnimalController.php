@@ -242,7 +242,6 @@ class AnimalController extends Controller
                 case 'mâle':
                     $animal->sexe = 'mâle stérilisé';
                     $animal->save();
-                    $animal->StatutMale->delete();
                     $elevage->budget -= $prixM;
                     $elevage->save();
                 break;
