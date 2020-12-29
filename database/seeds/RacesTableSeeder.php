@@ -28,8 +28,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'approbation' =>FALSE, 
-                'pcArabe' => 0,
-                'pcWelsh' => 0,
+               
                
             ),
             1 => 
@@ -43,8 +42,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 65,
                 'taille_max' => 107,
                 'approbation' =>FALSE, 
-                'pcArabe' => 0,
-                'pcWelsh' => 0,
+               
             ),
             2 => 
             array (
@@ -57,8 +55,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 30,
                 'taille_max' => 89,
                 'approbation' =>FALSE,
-                 'pcArabe' => 0,
-                 'pcWelsh' => 0,
+               
             ),
             3 => 
             array (
@@ -71,8 +68,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 90,
                 'taille_max' => 121,
                 'approbation' =>FALSE,
-                 'pcArabe' => 0,
-                'pcWelsh' => 100,
+               
             ),
             4 => 
             array (
@@ -85,8 +81,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 122,
                 'taille_max' => 137,
                 'approbation' =>FALSE,
-                 'pcArabe' => 0,
-                'pcWelsh' => 100,
+               
             ),
             5 => 
             array (
@@ -99,8 +94,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 122,
                 'taille_max' => 137,
                 'approbation' =>FALSE, 
-                'pcArabe' => 0,
-                'pcWelsh' => 100,
+               
             ),
             6 => 
             array (
@@ -113,8 +107,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 138,
                 'taille_max' => 167,
                 'approbation' =>FALSE, 
-                'pcArabe' => 0,
-                'pcWelsh' => 100,
+                
             ),
             7 => 
             array (
@@ -127,8 +120,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'approbation' =>FALSE,
-                 'pcArabe' =>100,
-                'pcWelsh' => 0,
+                 
             ),
             8 => 
             array (
@@ -141,8 +133,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 30,
                 'taille_max' => 215,
                 'approbation' =>FALSE, 
-                'pcArabe' => 50,
-                'pcWelsh' => 0,
+               
             ),
             9 => 
             array (
@@ -155,8 +146,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 30,
                 'taille_max' => 215,
                 'approbation' =>FALSE,
-                 'pcArabe' => 0,
-                'pcWelsh' => 12.5,
+                 
             ),
             10 => 
             array (
@@ -166,11 +156,10 @@ class RacesTableSeeder extends Seeder
                 'nom' => 'Français de Selle',
                 'prix_moyen' => 1300,
                 'frais_enregistrement' => 100,
-                'taille_min' => 120,
+                'taille_min' => 100,
                 'taille_max' => 149,
                 'approbation' =>TRUE,
-                'pcArabe' => 0,
-                'pcWelsh' => 0,
+               
             ),
         ));
         

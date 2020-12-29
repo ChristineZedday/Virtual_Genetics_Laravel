@@ -8,7 +8,7 @@
 <h3>{{$etalon->Race->nom}}</h3>
 <p>{{$etalon->StatutMale->qualite}}</p>
 <p>{{$etalon->couleur}}</p>
-<p>{{$etalon->taille_cm}}</p>
+<p>{{$etalon->taille()}}</p>
 
 <p>{{$etalon->date_naissance}}</p>
 </div>
@@ -53,7 +53,7 @@ $date = \App\Gamedata::date();
 <h1 class='nom'>{{$jument->NomComplet()}}</h1>
 <h3>{{$jument->race->nom}}</h3>
 <p>{{$jument->couleur}}</p>
-<p>{{$jument->taille_cm}}</p>
+<p>{{$jument->taille() }}</p>
 <p>&nbsp;</p>
 <p>{{$jument->date_naissance}}</p>
 </div>

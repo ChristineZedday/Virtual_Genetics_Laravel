@@ -259,6 +259,15 @@ class ElevageController extends Controller
                 $etalon->StatutMale->qualite ='refusé';
             }
         }
+        $mini = Race::where('nom', 'Miniature')->first();
+        if ($etalon->Race == $mini)
+        {
+           
+            if ($etalon->taille_cm > $mini->taille_max )
+            {
+                $etalon->StatutMale->qualite ='refusé';
+            }
+        }
 
         $etalon->StatutMale->save();
         return redirect()->back();

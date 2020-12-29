@@ -22,6 +22,8 @@ class CreateRacesTable extends Migration
             $table->tinyInteger('taille_min')->unsigned()->nullable();
             $table->tinyInteger('taille_max')->unsigned()->nullable();
             $table->boolean('approbation')->default(FALSE); //approbation étalons requise
+            $table->tinyInteger('pcArabe')->default(0);
+            $table->float('pcWelsh')->default(0);
 
         });
     }
