@@ -87,13 +87,17 @@ static function ElevenMonths()
 
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance',  $date)->where('elevage_id', '!=', 2)->get();
+    $animaux = Animal::where('date_naissance',  $date)->get();
 
     foreach ($animaux as $animal)
     {
             $animal->foetus = false;
-            $animal->elevage_id = $animal->Dam->elevage_id;
-            $animal->save();
+            if ($animal->elevage_id != 2)
+            {
+                $animal->elevage_id = $animal->Dam->elevage_id;
+                $animal->save();
+            }
+            
             $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
             if (isset($statut))
             {  $statut->vide = true;
