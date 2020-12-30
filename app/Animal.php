@@ -105,11 +105,17 @@ class Animal extends Model
         switch (true)
         {
             case $age<3:
-                return (int) ($this->taille_cm * 73/100);
-            case $age<12:
+                return (int) ($this->taille_cm * 70/100);
+            case $age<9:
                 return (int) ($this->taille_cm * 80/100);
-            case $age<24:
+            case $age<15:
                 return (int) ($this->taille_cm * 90/100);
+            case $age<21:
+                return (int) ($this->taille_cm * 95/100);
+            case $age<30:
+                return (int) ($this->taille_cm * 97/100);
+            case $age<48:
+                return (int) ($this->taille_cm * 99/100);
             default:
                 return $this->taille_cm;
             

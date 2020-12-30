@@ -34,7 +34,7 @@
 					@endif	
 				
 				
-				<p>{{$animal->taille()}} cm</p>
+				<p>{{ $animal->taille() }} cm</p>
 				<?php $pathos = $animal->Pathologie()->get() ?>
 				<p>@isset($animal->Pathologie)
 					@foreach($pathos as $patho)

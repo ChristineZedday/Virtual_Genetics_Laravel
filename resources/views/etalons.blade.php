@@ -6,7 +6,7 @@
 <p class='nom'>{{$jument->NomComplet()}}</p>
 <p>{{$jument->Race->nom}}</p>
 <p>{{$jument->couleur}}</p>
-<P>{{$jument->taille_cm}}</P>
+<P>{{$jument->taille()}}</P>
 @if (! $jument->fondateur)
 <p>par {{$jument->Sire->NomComplet()}}</p>
 <p>et {{$jument->Dam->NomComplet()}}</p>
@@ -42,7 +42,7 @@
 	<td> {{$animal->Race->nom}} </td>
 
 	<td> {{$animal->couleur}} </td>
-	<td> {{$animal->taille_cm}} </td>
+	<td> {{$animal->taille()}} </td>
 	<td> {{$animal->date_naissance}} </td>
 	@if (! $animal->fondateur)
 	<td> {{ $animal->Sire->NomComplet() }} </td>
@@ -81,7 +81,7 @@
 	<td> &Eacute;talon {{$animal->StatutMale->qualite}}</td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
-	<td> {{$animal->taille_cm}} </td>
+	<td> {{$animal->taille() }} </td>
 	<td> {{$animal->date_naissance}} </td>
 	@if (! $animal->fondateur)
 	<td> {{ $animal->Sire->NomComplet() }} </td>
