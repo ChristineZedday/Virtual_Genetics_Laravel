@@ -12,3 +12,4 @@ sooty?
 
 nom long: photo reproducteurs décalée
 
+bug castration déjà fait mais toujours étalon

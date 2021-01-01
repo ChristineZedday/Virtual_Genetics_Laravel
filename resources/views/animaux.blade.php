@@ -25,9 +25,8 @@
 	</td>
 	<td> <a class='nom' href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a></td>
 	<td> {{$animal->Race->nom}} </td>
-	<td>@isset ($animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
-		@else {{$animal->sexe}}
-		 @endisset </td>
+	<td> {{$animal->Sexe()}}
+		 </td>
   <td> {{$animal->couleur}} </td>
  
   <td> {{ $animal->taille() }}  </td>

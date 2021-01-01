@@ -81,6 +81,20 @@ class Animal extends Model
         return $this->belongsToMany('App\Couleur');
     }
 
+    public function Sexe()
+    {
+        if (isset($this->StatutMale) && $this->StatutMale->fertilite > 0 )
+        {
+            return 'Étalon '.$this->StatutMale->qualite;
+        }
+        else
+        {
+            return $this->sexe;
+        }
+        
+    }
+
+
     public function NomComplet()
     {
         if (isset($this->Affixe))
