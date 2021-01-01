@@ -6,8 +6,7 @@
 			<h1 class='nom'>{{$animal->NomComplet()}}</h1>
 				<h3>{{$animal->Race->nom}}</h3>
 				<p>@if ($animal->elevage_id != $elevage->id) Propriétaire: {{$animal->Elevage->nom_eleveur}} @endif</p>
-				<p>@isset ($animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
-					 @else {{$animal->sexe}} @endisset</p>
+				<p>{{ $animal->Sexe() }}</p>
 				@isset($animal->couleur)
 					<p>{{ $animal->couleur }}</p>
 				@else

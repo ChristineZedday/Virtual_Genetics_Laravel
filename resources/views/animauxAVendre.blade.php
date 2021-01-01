@@ -24,7 +24,7 @@
 	</td>
 	<td class='nom'><a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
 	<td> {{$animal->Race->nom}} </td>
-	<td> {{$animal->sexe}} </td>
+	<td> {{$animal->Sexe()}} </td>
 	<td> {{$animal->taille()}}</td>
 	<td>{{$animal->prix}}</td>
 	<?php 
