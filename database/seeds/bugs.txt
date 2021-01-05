@@ -1,5 +1,5 @@
 
-juments qui avortent ne peuvent plus être resaillies?
+
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
 
@@ -11,5 +11,5 @@ rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
 
 nom long: photo reproducteurs décalée
-
-bug castration déjà fait mais toujours étalon
+faireregex php en plud des js
+qd qqch pas conforme ne pas effacer form, why on earth old doesn't work?

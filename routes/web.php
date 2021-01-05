@@ -23,6 +23,10 @@ Route::get('/elevage.create', 'ElevageController@create')->name('elevage.create'
 
 Route::post('/elevage.store', 'ElevageController@store')->name('elevage.store');
 
+Route::get('/animal.create/{elevage}', 'AnimalController@create')->name('animal.create');
+
+Route::post('/animal.store/{elevage}', 'AnimalController@store')->name('animal.store');
+
 //routes générales élevage
 
 Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');

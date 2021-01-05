@@ -129,7 +129,7 @@ static function checkSevres()
                 $animal->sexe = 'jeune femelle';
             }
                 $animal->save();
-                if ($animal->Dam->elevage_id !=2)
+                if (isset($animal->Dam) && $animal->Dam->elevage_id !=2)
              {   $statut = $animal->Dam->Statut;
                 if (isset ($statut))
                { $statut->suitee = false;
