@@ -87,7 +87,7 @@ static function ElevenMonths()
 
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance',  $date)->get();
+    $animaux = Animal::where('date_naissance',  $date)->where('fondateur',0)->get();
 
     foreach ($animaux as $animal)
     {

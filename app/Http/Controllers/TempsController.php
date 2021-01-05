@@ -24,7 +24,7 @@ class TempsController extends Controller
         $game = Gamedata::Find(1);
         if ($date == $game->date_debut )
         {
-            $animaux = Animal::all();
+            $animaux = Animal::where('fondateur',1)->get();
             foreach ($animaux as $animal)
             {
                 Genome::readGenes($animal->id);

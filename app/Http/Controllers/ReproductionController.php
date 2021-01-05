@@ -177,11 +177,11 @@ class ReproductionController extends Controller
            
 
               $animal->save();
-      //partie purement génétique
+      
               Genome::mixGenes($etalon->id, $jument->id, $animal->id);
               Genome::readGenes($animal->id);
-              $animal->taille_cm = $animal->taille_cm + rand(-2,2);
-              $animal->modele_allures = $animal->modele_allures + rand (-1,1);
+
+
               $animal->save();
               $qualite = $etalon->StatutMale->qualite;
             
