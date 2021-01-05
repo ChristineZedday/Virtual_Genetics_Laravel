@@ -172,19 +172,15 @@ class ReproductionController extends Controller
                 $m =0;
               }
 
-              $animal->modele_allures_additifs = ($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m);
-
-           
-
+              $animal->modele_allures_additifs = (int)(($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m));
               $animal->save();
       
               Genome::mixGenes($etalon->id, $jument->id, $animal->id);
               Genome::readGenes($animal->id);
-
-
-              $animal->save();
+              $animal = Animal::find($animal->id); //pour mettre à jour modif effectuées ds Genome!
               $qualite = $etalon->StatutMale->qualite;
             
+
               $animal->race_id = Animal::chercheRaces($etalon->race_id,$jument->race_id,$animal->taille_cm, $qualite);
               
               $animal->save();

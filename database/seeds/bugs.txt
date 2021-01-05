@@ -3,7 +3,7 @@
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
 
-ajouter fondateurs (actuel: 16 arabes, 22 shetland, 7 welsh D, 3 Welsh C, 14 Welsh B, 19 Welsh A dont 1 pour produire Welsh C, 16 miniatures)
+ajouter fondateurs (actuel: 17 arabes, 22 shetland, 10 welsh D, 3 Welsh C, 14 Welsh B, 20 Welsh A dont 2 pour produire Welsh C, 18 miniatures)
 ajouter 4 arabes, 4 mini, 3 WD 2 WC, 2 WA
 images à faire: 
 robes varnish?
@@ -14,4 +14,4 @@ nom long: photo reproducteurs décalée
 faireregex php en plud des js
 qd qqch pas conforme ne pas effacer form, why on earth old doesn't work?
 
-pb naissances animaux à ma négatifs?
+affixes à utilise: nerwyn llanelyn wa
