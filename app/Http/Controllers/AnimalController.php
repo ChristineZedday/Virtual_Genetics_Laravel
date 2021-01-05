@@ -118,25 +118,22 @@ class AnimalController extends Controller
                     }
                    $genotype->save();
                    
-                   
                 }
-                if (Genome::readGenes($animal->id))
-                {
-                    $request->session()->flash('status',"votre animal a été enregistré ainsi que ces gènes et leurs effets");
-                    $request->session()->flash('alert-class',"alert-sucess");
-                    return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
-                }
+              
            }
-            
+           if (Genome::readGenes($animal->id))
+           {
+               $request->session()->flash('status',"votre animal a été enregistré ainsi que ces gènes et leurs effets");
+               $request->session()->flash('alert-class',"alert-sucess");
+               return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+           }
         }
         else{
             $request->session()->flash('status',"votre animal n'a pu être enregistré");
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back();
         }
-        $request->session()->flash('status',"votre animal a été enregistré");
-        $request->session()->flash('alert-class',"alert-sucess");
-        return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+     
     }
 
     /**

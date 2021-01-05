@@ -144,11 +144,8 @@ class ReproductionController extends Controller
             
 
               $animal->taille_additive = (int) (($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2)) ;
-              $animal->taille_cm = $animal->taille_additive + rand(-2,2);
-              $qualite = $etalon->StatutMale->qualite;
+              
             
-              $animal->race_id = Animal::chercheRaces($etalon->race_id,$jument->race_id,$animal->taille_cm, $qualite);
-              $animal->save();
             
               $animal->consang = calculConsang($etalon->id, $jument->id);
             
@@ -177,13 +174,20 @@ class ReproductionController extends Controller
 
               $animal->modele_allures_additifs = ($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m);
 
-              $animal->modele_allures = $animal->modele_allures_additifs + rand (-1,1);
+           
 
               $animal->save();
       //partie purement génétique
               Genome::mixGenes($etalon->id, $jument->id, $animal->id);
               Genome::readGenes($animal->id);
+              $animal->taille_cm = $animal->taille_cm + rand(-2,2);
+              $animal->modele_allures = $animal->modele_allures + rand (-1,1);
+              $animal->save();
+              $qualite = $etalon->StatutMale->qualite;
+            
+              $animal->race_id = Animal::chercheRaces($etalon->race_id,$jument->race_id,$animal->taille_cm, $qualite);
               
+              $animal->save();
           } //end if succès
           else{
               $statut->vide = true;

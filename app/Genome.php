@@ -271,6 +271,8 @@ class Genome extends Model
               $modif_couleurs = [];
               $blanc =0;
               $embryoletal = false;
+              $plus =0;
+              $ma =0;
               
               foreach ($genotypes as $genotype)
                 {
@@ -286,14 +288,16 @@ class Genome extends Model
                     {
                       if ($phenotype->pathologie_id == 5) //mort embryon
                       {
-                        $statut = $animal->Dam()->statut();
+                        if (!$animal->fondateur)
+                       { $statut = $animal->Dam()->statut();
                         $statut->vide = true; 
+                        $statut->terme = Gamedata::date();
+                        $statut->save();}
                        
                         $embryoletal = true;
                         $animal->elevage_id =2; //part chez l'Ankou
                         $animal->save();
-                        $statut->terme = Gamedata::date();
-                        $statut->save();
+                       
                       
                       }
                       else
@@ -304,16 +308,14 @@ class Genome extends Model
                     {
                       if (isset($phenotype->effet_m_a))
                       {
-                        $animal->modele_allures = $animal->modele_allures + $phenotype->effet_m_a; 
-                        $animal->save();
+                        $ma = $ma + $phenotype->effet_m_a;
                       }
 
                       if (isset($phenotype->effet_taille))
                         {
-                          $animal->taille_cm = $animal->taille_cm + $phenotype->effet_taille; 
-                          $animal->save();
-                        }
-                    
+                         $plus = $plus + $phenotype->effet_taille;
+                        }       
+                   
                         if (isset($phenotype->couleur_id) ) {
                           $couleur = Couleur::Find($phenotype->couleur_id);
                           if ($phenotype->effet_blanc <> null)
@@ -340,12 +342,18 @@ class Genome extends Model
                         
                           
                         } //end pheno couleur
-                      } // end pas létal
+                    } // end pas létal
                       
-                    }//endisset phenotype
+                  }//endisset phenotype
 
                   
                 } //foreach genotype
+
+                $animal->taille_cm = $animal->taille_additive + $plus;
+                $animal->save();
+
+                $animal->modele_allures = $animal->modele_allures_additifs + $ma;
+                $animal->save();
 
                 if (! $embryoletal)
                 {
