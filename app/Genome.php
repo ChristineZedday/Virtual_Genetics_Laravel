@@ -9,7 +9,7 @@ class Genome extends Model
 {
     static function mixGenes($male,$female,$produit)
     {
-        $genome = array();
+        
         $genomeM = Genotype::where('animal_id', $female)->get();
         $genomeP = Genotype::where('animal_id', $male)->get();
        
@@ -314,14 +314,15 @@ class Genome extends Model
                       if (isset($phenotype->effet_taille))
                         {
                          $plus = $plus + $phenotype->effet_taille;
-                        }       
+                        }   
+                        if ($phenotype->effet_blanc <> null)
+                        {
+                          $blanc = $blanc + $phenotype->effet_blanc;
+                        }    
                    
-                        if (isset($phenotype->couleur_id) ) {
+                      if (isset($phenotype->couleur_id) ) {
                           $couleur = Couleur::Find($phenotype->couleur_id);
-                          if ($phenotype->effet_blanc <> null)
-                          {
-                            $blanc += $phenotype->effet_blanc;
-                          }
+                       
                           switch (true) {
                             case $couleur->base_couleur:
                               $base_couleurs[]= $couleur;
@@ -349,14 +350,16 @@ class Genome extends Model
                   
                 } //foreach genotype
 
-                $animal->taille_cm = $animal->taille_additive + $plus;
-                $animal->save();
-
-                $animal->modele_allures = $animal->modele_allures_additifs + $ma;
-                $animal->save();
+               
 
                 if (! $embryoletal)
                 {
+                  $animal->taille_cm = $animal->taille_additive + $plus;
+                  $animal->save();
+  
+                  $animal->modele_allures = $animal->modele_allures_additifs + $ma;
+                  $animal->save();
+
                   $alezan = Couleur::where('nom','alezan')->first();
                   $noirbai = Couleur::where('nom','noirbai')->first();
                   $bai = Couleur::where('nom','bai')->first();
@@ -619,6 +622,7 @@ class Genome extends Model
                     }
 
                   } //end foreach
+                  return true;
                 }//end pas embryo létal
         
     }

@@ -127,6 +127,11 @@ class AnimalController extends Controller
                $request->session()->flash('alert-class',"alert-sucess");
                return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
            }
+           else{
+            $request->session()->flash('status',"le genôme n'a pu être enregistré");
+            $request->session()->flash('alert-class',"alert-danger");
+            return redirect()->back();
+           }
         }
         else{
             $request->session()->flash('status',"votre animal n'a pu être enregistré");
