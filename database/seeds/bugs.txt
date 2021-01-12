@@ -1,15 +1,22 @@
 
-juments qui avortent ne peuvent plus être resaillies?
+poulains blancs?
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
 
-ajouter fondateurs (actuel: 16 arabes, 22 shetland, 7 welsh D, 3 Welsh C, 14 Welsh B, 19 Welsh A dont 1 pour produire Welsh C, 16 miniatures)
-ajouter 4 arabes, 4 mini, 3 WD 2 WC, 2 WA
+garder le statut male des étalons morts poue enregistrer leurs produits!
+
+ajouter fondateurs? (actuel: 20 arabes, 22 shetland, 10 welsh D, 4 Welsh C, 16 Welsh B, 24 Welsh A dont 2 pour produire Welsh C, 18 miniatures)
+
+
 images à faire: 
+
+
 robes varnish?
 rabicano après ajout locus/allèle/phénotype/couleur/image
 sooty?
+appaloosa: trait blanc sur jambe LpPatn8
 
 nom long: photo reproducteurs décalée
+faireregex php en plud des js
+qd qqch pas conforme ne pas effacer form, why on earth old doesn't work?
 
-bug castration déjà fait mais toujours étalon

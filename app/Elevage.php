@@ -7,7 +7,7 @@ use Orangehill\IseedServiceProvider\elevages;
 
 class Elevage extends Model
 {
-    protected $fillable = ['nom_elevage','nom_eleveur','affixe','affixe_pre'];
+    protected $fillable = ['nom_elevage','nom_eleveur','affixe_id','affixe_pre'];
 
     public function User()
     {
@@ -21,7 +21,7 @@ class Elevage extends Model
 
     public function Affixe()
     {
-        return $this->belongsTo('App\Affixe');
+        return $this->belongsTo('App\Affixe'); //hasMany si un élevage peut déposer plusieurs affixes
     }
 
     public function Image()

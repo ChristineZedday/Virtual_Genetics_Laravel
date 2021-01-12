@@ -87,7 +87,7 @@ static function ElevenMonths()
 
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance',  $date)->get();
+    $animaux = Animal::where('date_naissance',  $date)->where('fondateur',0)->get();
 
     foreach ($animaux as $animal)
     {
@@ -129,7 +129,7 @@ static function checkSevres()
                 $animal->sexe = 'jeune femelle';
             }
                 $animal->save();
-                if ($animal->Dam->elevage_id !=2)
+                if (isset($animal->Dam) && $animal->Dam->elevage_id !=2)
              {   $statut = $animal->Dam->Statut;
                 if (isset ($statut))
                { $statut->suitee = false;
@@ -310,7 +310,7 @@ static function checkVieux ($date)
                        
                     if ($animal->sexe == 'vieux mâle'  && isset($animal->StatutMale))
                     {
-                        $animal->StatutMale->delete();
+                        $animal->StatutMale->fertilite = 0;
                     }
                 }
             
