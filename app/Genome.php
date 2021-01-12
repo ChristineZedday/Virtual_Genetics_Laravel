@@ -350,7 +350,8 @@ class Genome extends Model
                   
                 } //foreach genotype
 
-               
+               if ($blanc == 10 || $blanc == 11)
+               { $blanc = 9;}
 
                 if (! $embryoletal)
                 {
