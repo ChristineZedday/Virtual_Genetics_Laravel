@@ -449,6 +449,126 @@ class AffixesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            54 => 
+            array (
+                'id' => 56,
+                'libelle' => 'Leam',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            55 => 
+            array (
+                'id' => 57,
+                'libelle' => 'Carna',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            56 => 
+            array (
+                'id' => 58,
+                'libelle' => 'Tulira',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            57 => 
+            array (
+                'id' => 59,
+                'libelle' => 'Clifden',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            58 => 
+            array (
+                'id' => 60,
+                'libelle' => 'Errislannon',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            59 => 
+            array (
+                'id' => 61,
+                'libelle' => 'Knockadreen',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            60 => 
+            array (
+                'id' => 62,
+                'libelle' => 'Kilmore',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            61 => 
+            array (
+                'id' => 63,
+                'libelle' => 'Kilfenora',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            62 => 
+            array (
+                'id' => 64,
+                'libelle' => 'Ballintemple',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            63 => 
+            array (
+                'id' => 65,
+                'libelle' => 'Cloonisle',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            64 => 
+            array (
+                'id' => 66,
+                'libelle' => 'Bennekerry',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            65 => 
+            array (
+                'id' => 67,
+                'libelle' => 'Ballyerk',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            66 => 
+            array (
+                'id' => 68,
+                'libelle' => 'Ballysheil',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            67 => 
+            array (
+                'id' => 69,
+                'libelle' => 'Killeenfarna',
+                'affixe_pre' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            68 => 
+            array (
+                'id' => 70,
+                'libelle' => 'Dannan',
+                'affixe_pre' => 1,
+                'created_at' => '2021-01-14 20:01:29',
+                'updated_at' => '2021-01-14 20:01:29',
+            ),
         ));
         
         

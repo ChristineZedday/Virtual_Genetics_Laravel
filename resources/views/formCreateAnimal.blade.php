@@ -10,7 +10,7 @@
 		@endif
 	<div>
 	<label for="nom">Entrez le nom que vous avez choisi pour votre animal</label><br/>
-	<input type="text" name="nom" pattern="[^\s][A-za-z\s '\.\-]{2,25}" value="{{old('nom')}}" required />
+	<input type="text" name="nom" pattern="[^\s][A-za-z\s '\.\-]{2,24}" value="{{old('nom')}}" required />
 	</div>
 	<div>
 	<label for="sexe">Entrez le sexe</label><br/>
