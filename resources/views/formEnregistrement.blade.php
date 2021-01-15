@@ -13,7 +13,7 @@
 			<div class='form-group'>
 			<label for="nom">Entrez le nom que vous avez choisi pour votre animal (sans l'affixe si vous en avez un), sans accent ou caractère spécial. La longueur doit être au maximum de 25 carctères espaces et affixe compris.</label><br/>
 		
-			<input type="text" name="nom" id="nom" value="{{old('nom',$animal->nom)}} " pattern="[^\s][A-Za-z '\.\s]{1,24}"/>
+			<input type="text" name="nom" id="nom" value="{{old('nom',$animal->nom)}} " pattern="[^\s][A-Za-z '\.\s]{1,25}"/>
 			</div>
 			<div class='form-group'>
 			<label for="couleur">Entrez la couleur de votre animal.</label><br/>
