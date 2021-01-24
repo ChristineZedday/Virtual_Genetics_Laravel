@@ -87,7 +87,8 @@ static function ElevenMonths()
 
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance',  $date)->where('fondateur',0)->get();
+    $animaux = Animal::where('date_naissance', '<='  ,$date)->where('foetus',1)->get();
+    // <= au lieu de  =: rattrapper le coup s'il y a eu bug et que ça n'a pas tourné au mois d'avant
 
     foreach ($animaux as $animal)
     {
@@ -97,7 +98,7 @@ static function checkNouveaux($date)
                 $animal->elevage_id = $animal->Dam->elevage_id;
                 $animal->save();
             }
-            
+
             $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
             if (isset($statut))
             {  $statut->vide = true;

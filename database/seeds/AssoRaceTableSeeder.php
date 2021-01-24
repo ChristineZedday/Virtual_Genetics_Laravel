@@ -964,21 +964,6 @@ class AssoRaceTableSeeder extends Seeder
             ),
             63 => 
             array (
-                'id' => 80,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'race_pere_id' => 10,
-                'race_mere_id' => 8,
-                'race_produit_id' => 11,
-                'taille_conditions' => 1,
-                'automatique' => 0,
-                'commentaire' => 'FS',
-                'approbation' => 1,
-                'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
-            ),
-            64 => 
-            array (
                 'id' => 81,
                 'created_at' => NULL,
                 'updated_at' => NULL,
@@ -992,7 +977,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
             ),
-            65 => 
+            64 => 
             array (
                 'id' => 82,
                 'created_at' => NULL,
@@ -1007,7 +992,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => 50,
                 'pourCentWelsh' => NULL,
             ),
-            66 => 
+            65 => 
             array (
                 'id' => 83,
                 'created_at' => NULL,
@@ -1022,7 +1007,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            67 => 
+            66 => 
             array (
                 'id' => 84,
                 'created_at' => NULL,
@@ -1037,7 +1022,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            68 => 
+            67 => 
             array (
                 'id' => 85,
                 'created_at' => NULL,
@@ -1052,7 +1037,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            69 => 
+            68 => 
             array (
                 'id' => 86,
                 'created_at' => NULL,
@@ -1067,7 +1052,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            70 => 
+            69 => 
             array (
                 'id' => 87,
                 'created_at' => NULL,
@@ -1082,7 +1067,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            71 => 
+            70 => 
             array (
                 'id' => 88,
                 'created_at' => NULL,
@@ -1097,7 +1082,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            72 => 
+            71 => 
             array (
                 'id' => 89,
                 'created_at' => NULL,
@@ -1112,7 +1097,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            73 => 
+            72 => 
             array (
                 'id' => 90,
                 'created_at' => NULL,
@@ -1127,7 +1112,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            74 => 
+            73 => 
             array (
                 'id' => 91,
                 'created_at' => NULL,
@@ -1142,7 +1127,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            75 => 
+            74 => 
             array (
                 'id' => 92,
                 'created_at' => NULL,
@@ -1157,7 +1142,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            76 => 
+            75 => 
             array (
                 'id' => 93,
                 'created_at' => NULL,
@@ -1172,7 +1157,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            77 => 
+            76 => 
             array (
                 'id' => 94,
                 'created_at' => NULL,
@@ -1187,7 +1172,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            78 => 
+            77 => 
             array (
                 'id' => 95,
                 'created_at' => NULL,
@@ -1202,7 +1187,7 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
-            79 => 
+            78 => 
             array (
                 'id' => 96,
                 'created_at' => NULL,
