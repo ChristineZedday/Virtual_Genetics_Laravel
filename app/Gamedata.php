@@ -87,7 +87,8 @@ static function ElevenMonths()
 
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance',  $date)->where('fondateur',0)->get();
+    $animaux = Animal::where('date_naissance', '<='  ,$date)->where('foetus',1)->get();
+    // <= au lieu de  =: rattrapper le coup s'il y a eu bug et que ça n'a pas tourné au mois d'avant
 
     foreach ($animaux as $animal)
     {
@@ -97,7 +98,7 @@ static function checkNouveaux($date)
                 $animal->elevage_id = $animal->Dam->elevage_id;
                 $animal->save();
             }
-            
+
             $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
             if (isset($statut))
             {  $statut->vide = true;
@@ -237,6 +238,9 @@ static function checkVieux ($date)
             $letal->foetus = false;
             $date= date('Y-m-d',strtotime('+7 month',strtotime($dam->statut->date_saillie)));
             $dam->statut->terme = $date;
+            $dam->statut->vide = true;
+            $dam->statut->conf_vide = true;
+            $dam->satut->pres_pleine = false;
             $letal->elevage_id =2;//chez l'Ankou!
             $dam->statut->save();
             $letal->date_naissance = $date;

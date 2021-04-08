@@ -27,9 +27,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
-                'approbation' =>FALSE, 
-               
-               
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             1 => 
             array (
@@ -41,8 +41,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 65,
                 'taille_max' => 107,
-                'approbation' =>FALSE, 
-               
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             2 => 
             array (
@@ -54,8 +55,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 100,
                 'taille_min' => 30,
                 'taille_max' => 89,
-                'approbation' =>FALSE,
-               
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             3 => 
             array (
@@ -67,8 +69,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 90,
                 'taille_max' => 121,
-                'approbation' =>FALSE,
-               
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             4 => 
             array (
@@ -80,8 +83,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 122,
                 'taille_max' => 137,
-                'approbation' =>FALSE,
-               
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             5 => 
             array (
@@ -93,8 +97,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 122,
                 'taille_max' => 137,
-                'approbation' =>FALSE, 
-               
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             6 => 
             array (
@@ -106,8 +111,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => 138,
                 'taille_max' => 167,
-                'approbation' =>FALSE, 
-                
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             7 => 
             array (
@@ -119,8 +125,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => NULL,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
-                'approbation' =>FALSE,
-                 
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             8 => 
             array (
@@ -132,8 +139,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 150,
                 'taille_min' => 30,
                 'taille_max' => 215,
-                'approbation' =>FALSE, 
-               
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             9 => 
             array (
@@ -145,8 +153,9 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 50,
                 'taille_min' => 30,
                 'taille_max' => 215,
-                'approbation' =>FALSE,
-                 
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
             10 => 
             array (
@@ -154,12 +163,27 @@ class RacesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'Français de Selle',
-                'prix_moyen' => 1300,
+                'prix_moyen' => 1500,
                 'frais_enregistrement' => 100,
                 'taille_min' => 100,
                 'taille_max' => 149,
-                'approbation' =>TRUE,
-               
+                'approbation' => 1,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Connemara',
+                'prix_moyen' => 1500,
+                'frais_enregistrement' => NULL,
+                'taille_min' => 128,
+                'taille_max' => 148,
+                'approbation' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
             ),
         ));
         
