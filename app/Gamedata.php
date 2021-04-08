@@ -87,13 +87,17 @@ static function ElevenMonths()
 
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance',  $date)->where('elevage_id', '!=', 2)->get();
+    $animaux = Animal::where('date_naissance',  $date)->where('fondateur',0)->get();
 
     foreach ($animaux as $animal)
     {
             $animal->foetus = false;
-            $animal->elevage_id = $animal->Dam->elevage_id;
-            $animal->save();
+            if ($animal->elevage_id != 2)
+            {
+                $animal->elevage_id = $animal->Dam->elevage_id;
+                $animal->save();
+            }
+            
             $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
             if (isset($statut))
             {  $statut->vide = true;
@@ -125,7 +129,7 @@ static function checkSevres()
                 $animal->sexe = 'jeune femelle';
             }
                 $animal->save();
-                if ($animal->Dam->elevage_id !=2)
+                if (isset($animal->Dam) && $animal->Dam->elevage_id !=2)
              {   $statut = $animal->Dam->Statut;
                 if (isset ($statut))
                { $statut->suitee = false;
@@ -153,7 +157,7 @@ static function checkPuberes()
                 {
                     $statut->qualite = 'approuvé';
                 }
-                else if ($animal->modele_allures > 10)
+                else if ($animal->modele_allures > 9)
                 {
                     $statut->qualite = 'autorisé';
                 }
@@ -237,6 +241,7 @@ static function checkVieux ($date)
             $dam->statut->save();
             $letal->date_naissance = $date;
             $letal->date_achat = $date;
+            $letal->save();
      
       
     }
@@ -256,28 +261,39 @@ static function checkVieux ($date)
             switch ($age)
             {
                 case $age<20:
-                    $var = 30;
+                    $var = 1500;
                 break;
                 case $age<25:
-                    $var = 20;
+                    $var = 750;
                 break;
                 case $age<30:
-                    $var =10;
+                    $var =150;
+                break;
+                case $age<35:
+                    $var =75;
                 break;
                 default:
-                $var = 5;
+                $var = 10;
             }
                 if (rand(1,$var)==1)
                 {
                     $animal->elevage_id =2;//chez l'Ankou!
                     $animal->date_achat = Gamedata::date();
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
-                    $statut = statutsFemelle::where('animal_id', $animal->id)->first();
+                    
+                    if ($animal->sexe == 'vieille femelle')
+                  {  $statut = $animal->Statut()->first();
+                   
+                    
                     if (isset($statut))
+                  
                     {
+                       
                         if (!($statut->vide))
                         {
+                           
                             $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible
+                           
                             $produit->elevage_id =2;//pour effacer faudrait effacer genotypes et images
                             $produit->save();
                             $statut->delete();
@@ -290,11 +306,11 @@ static function checkVieux ($date)
                         }
                       
                     }
-                   
+                   }
                        
-                    if (isset($animal->StatutMale))
+                    if ($animal->sexe == 'vieux mâle'  && isset($animal->StatutMale))
                     {
-                        $animal->StatutMale->delete();
+                        $animal->StatutMale->fertilite = 0;
                     }
                 }
             

@@ -10973,6 +10973,10 @@ a.text-dark:focus {
   color: #e3342f;
 }
 
+.nom {
+  font-variant: small-caps;
+}
+
 .animaux h3 {
   color: #701f1e;
   margin-top: 20px;
@@ -10995,21 +10999,19 @@ a.text-dark:focus {
 .animaux table tr th {
   font-weight: bold;
   background-color: #c6a99a;
-  margin: 5px;
-  padding: 5px;
+  padding: 5px 20px;
   text-align: middle;
 }
 
 .animaux table tr td {
   background-color: #ebe1db;
-  margin: 5px;
-  padding: 5px;
+  padding: 2px 12px;
   text-align: middle;
 }
 
 .animaux table tr .photo td {
-  height: 70px;
-  width: 90px;
+  height: 60px;
+  width: 80px;
 }
 
 .animaux table tr .photo td a {
@@ -11061,6 +11063,7 @@ a {
 .jeu figure {
   position: relative !important;
   display: block;
+  background-image: url("/img/fond.png");
   top: 0px;
   left: 0px;
   width: 600px;
@@ -11071,16 +11074,12 @@ a {
 }
 
 .jeu figure img {
-  top: 0px;
-  left: 0px;
-  width: 600px;
-  height: 450px;
   position: absolute !important;
   display: block;
 }
 
 .petite figure {
-  display: inline;
+  display: inline-block;
   vertical-align: middle;
   padding: 0px;
   margin: 0px;
@@ -11166,6 +11165,7 @@ a {
 }
 
 #animal #imb {
+  flex-grow: 2;
   margin: 50px;
 }
 

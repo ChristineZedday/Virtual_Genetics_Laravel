@@ -39,6 +39,8 @@ class CreateAnimauxTable extends Migration
             $table->foreign('dam_id')->references('id')->on('animaux');
             $table->foreign('affixe_id')->references('id')->on('affixes');
             $table->foreign('race_id')->references('id')->on('races');
+            $table->tinyInteger('modele_allures')->unsigned()->nullable();
+            $table->tinyInteger('modele_allures_additifs')->unsigned()->default(12);
         });
     }
 

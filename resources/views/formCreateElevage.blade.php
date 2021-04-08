@@ -18,7 +18,7 @@
 	</div>
 	<div>
 	<label for="affixe">Vous pouvez, si vous le souhaitez, déposer un affixe pour votre élevage (prix: 500)</label><br/>
-	<input type="text" name="affixe"/>
+	<input type="text" name="affixe" pattern="[^\s][A-za-z\s '\.]{5,17}"/>
 	</div>
 	<div>
 	<label for="affixe_pre">L'affixe peur précéder (mode anglo-saxon) ou suivre le nom (mode Français)</label><br/>

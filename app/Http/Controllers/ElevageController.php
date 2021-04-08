@@ -10,6 +10,7 @@ use App\Elevage;
 use App\Animal;
 use App\Gamedata;
 use App\Affixe;
+use App\Race;
 use Illuminate\Validation\Rules\Unique;
 
 class ElevageController extends Controller
@@ -234,18 +235,38 @@ class ElevageController extends Controller
 
     public function commissionEtalons ($id, $etalon)
     {
+       
         $etalon = Animal::Find($etalon);
+        $race = Race::Find($etalon->race_id);
+        $pathos = $etalon->Pathologie;
+        
         if ($etalon->modele_allures > 14)
         {
             $etalon->StatutMale->qualite ='approuvé';
         }
-        else if ($etalon->modele_allures > 10)
+        else if ($etalon->modele_allures > 9 && $race->approbation == false)
         {
             $etalon->StatutMale->qualite = 'autorisé';
         }
         else 
         { 
             $etalon->StatutMale->qualite ='refusé';
+        }
+        foreach ($pathos as $patho)
+        {
+            if ($patho->redhibitoire)
+            {
+                $etalon->StatutMale->qualite ='refusé';
+            }
+        }
+        $mini = Race::where('nom', 'Miniature')->first();
+        if ($etalon->Race == $mini)
+        {
+           
+            if ($etalon->taille_cm > $mini->taille_max )
+            {
+                $etalon->StatutMale->qualite ='refusé';
+            }
         }
 
         $etalon->StatutMale->save();

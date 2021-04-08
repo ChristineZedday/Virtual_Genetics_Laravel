@@ -1,6 +1,7 @@
 .jeu figure {
 	position: relative !important;
 	display: block;
+	background-image: url('/img/fond.png');
 	top: 0px;
 	left: 0px;
 	width: 600px;
@@ -10,17 +11,14 @@
 	z-index: 0;
   
   img {
-	top: 0px;
-	left: 0px;
-	width: 600px;
-	height: 450px;
+
 	position: absolute !important;
 	display: block;
   }
 }
 .petite figure
 {
-	display: inline;
+	display: inline-block;
 	vertical-align: middle;
 	padding: 0px;
 		margin: 0px; 

@@ -10,6 +10,12 @@ use App\Http\Controllers\TempsController;
 use App\statutsFemelle;
 use App\AssoRace;
 use App\Race;
+use App\Affixe;
+use App\Locus;
+use App\Genotype;
+use App\Allele;
+use App\Genome;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class AnimalController extends Controller
 {
@@ -28,9 +34,13 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($elevage)
     {
-        //
+        $affixes = Affixe::all();
+        $races = Race::all();
+        $elevage = Elevage::find($elevage);
+        $loci = Locus::all();
+        return view('formCreateAnimal', ['elevage'=>$elevage, 'races'=>$races, 'affixes' =>$affixes, 'loci' => $loci]);
     }
 
     /**
@@ -39,9 +49,96 @@ class AnimalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $elevage)
     {
-        //
+        
+        $validated =  $request->validate([
+            'nom'=>'string|required', 
+            'race_id' =>'integer',   
+            'sexe' =>'string|required',
+            'taille_additive' =>'integer|required',
+            'modele_allures_additifs' => 'integer|required',
+            'couleur'=>'string|required'
+            
+            ]);
+      
+        $animal = new Animal;
+        $animal->fill($validated);
+        $affixe = $request->input('affixe_id');
+        if ($affixe != 0)
+        {
+            $animal->affixe_id = $affixe;
+        }
+        else 
+        {
+            $animal->affixe_id = NULL;
+        }
+       
+        if (!Animal::checkNom($animal, $animal->nom, $animal->affixe_id))
+        {
+            $request->session()->flash('status',"votre animal n'a pu être enregistré car le nom donné est déjà pris pour cet affixe");
+            $request->session()->flash('alert-class',"alert-danger");
+            return redirect()->back(); 
+        }
+        $animal->elevage_id = $elevage;
+        $animal->date_naissance = Gamedata::date();
+        $animal->taille_cm = $animal->taille_additive;
+        $animal->modele_allures = $animal->modele_allures_additifs;
+        $animal->fondateur = true;
+       
+        if ($animal->save())
+        {
+           
+            $loci = Locus::all();
+            foreach ($loci as $locus)
+           {
+            $allp = 'p'.$locus->id;
+            $allm = 'm'.$locus->id;
+            if ($request->has($allp) or $request->has($allm))
+                { 
+
+                 $genotype = new Genotype;
+                 $genotype->animal_id = $animal->id;
+                 $genotype->locus_id = $locus->id;
+               
+                 $def = Allele::where('locus_id', $locus->id)->where('is_default',1)->first()->id;
+                 if ($request->has($allp) && $request->has($allm) )
+                    {
+                    $genotype->allele_p_id = $request->input($allp);
+                    $genotype->allele_m_id = $request->input($allm);
+                     }
+                 else if  ($request->has($allp))
+                    {
+                    $genotype->allele_p_id = $request->input($allp);
+                    $genotype->allele_m_id = $def;
+                    }
+                else{
+                    $genotype->allele_m_id = $request->input($allm);
+                    $genotype->allele_p_id = $def;
+                    }
+                   $genotype->save();
+                   
+                }
+              
+           }
+           if (Genome::readGenes($animal->id))
+           {
+               $request->session()->flash('status',"votre animal a été enregistré ainsi que ces gènes et leurs effets");
+               $request->session()->flash('alert-class',"alert-sucess");
+               return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+           }
+           else{
+            $request->session()->flash('status',"le genôme n'a pu être enregistré");
+            $request->session()->flash('alert-class',"alert-danger");
+            return redirect()->back();
+           }
+        }
+        else{
+            $request->session()->flash('status',"votre animal n'a pu être enregistré");
+            $request->session()->flash('alert-class',"alert-danger");
+            return redirect()->back();
+        }
+     
     }
 
     /**
@@ -242,7 +339,8 @@ class AnimalController extends Controller
                 case 'mâle':
                     $animal->sexe = 'mâle stérilisé';
                     $animal->save();
-                    $animal->StatutMale->delete();
+                    $animal->StatutMale->fertilite = 0;
+                    $animal->StatutMale->save();
                     $elevage->budget -= $prixM;
                     $elevage->save();
                 break;
@@ -250,7 +348,8 @@ class AnimalController extends Controller
                 case 'vieux mâle':
                     $animal->sexe = 'vieux mâle stérilisé';
                     $animal->save();
-                    $animal->StatutMale->delete();
+                    $animal->StatutMale->fertilite = 0;
+                    $animal->StatutMale->save();
                     $elevage->budget -= $prixM;
                     $elevage->save();
                 break;
@@ -288,23 +387,50 @@ class AnimalController extends Controller
      */
     public function enregistrer($animal)
     {
+
         $animal = Animal::Find($animal);
-      
         if ($animal->Race->nom == 'OC')
         {
+            $ar = Race::where('nom', 'Pur-sang Arabe')->first()->id;
+            $arabe = Animal::pourCentRace($animal->id,$ar);
+            $welsh = Animal::pourCentWelsh($animal->id);
             $rDam = $animal->Dam->Race->id;
             $rSire = $animal->Sire->Race->id;
+            $qualite = $animal->Sire->StatutMale->qualite;
             $taille = $animal->taille_cm;
-            $races = AssoRace::where(function ($query) use ($rSire,$rDam) {
-                $query->where(function ($qp) use ($rSire) {
-                    $qp->where('race_pere_id', $rSire)->orWhere('race_pere_id', null);
+            $races = AssoRace::where
+            (
+                function ($query) use ($rSire,$rDam,$arabe,$welsh)
+                 {
+                        $query->where(function ($qp) use ($rSire,$rDam) {
+                            $qp->where('race_pere_id', $rSire)->where('race_mere_id',$rDam);
+                        }
+                    )->orWhere(function ($qr) use ($arabe) { 
+                        $qr->where('pourCentArabe', '!=', NULL)->where('pourCentArabe', '<=', $arabe);
+
+                    })->orWhere(function ($qr) use ($welsh) { 
+                        $qr->where('pourCentWelsh', '!=', NULL)->where('pourCentWelsh', '<=', $welsh);
+                    }
+                    )
+                   
+                    
+                ;}
+            ) ->orWhere('race_produit_id', '3')     
+            ->join('races','races.id', 'asso_race.race_produit_id')->where(function ($qu) use ($taille) {$qu->where('taille_min', '<=', $taille)->where('taille_max', '>=', $taille);})->get()->unique()->all();
+            if ($qualite != 'approuvé')
+            {
+                foreach ($races as $race)
+                {
+                    if ($race->approbation)
+                    {
+                       
+                       $i= array_search($race,$races);
+                       array_splice($races, $i);
+                    }
                 }
-                )->where(function ($qm) use ($rDam) {
-                    $qm->where('race_mere_id',$rDam)->orWhere('race_mere_id',null);
-                }
-            )
-            ;}
-            )->join('races','races.id', 'asso_race.race_produit_id')->where(function ($qu) use ($taille) {$qu->where('taille_min', '<=', $taille)->where('taille_max', '>=', $taille);})->get()->unique();
+             
+            }
+            
          
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }
@@ -320,7 +446,9 @@ class AnimalController extends Controller
     {
         $animal = Animal::Find($animal);
         
-        $validated = $request->validate([ 'nom'=>'string','couleur'=>'string','race'=>'integer']); 
+        $validated = $request->validate([ 'nom'=> ['string', 'required'],
+        'couleur'=> ['string', 'required' ],
+        'race'=>'integer']); 
 
         $animal->nom = $validated['nom'];
         if (Animal::checkNom($animal->id, $animal->nom, $animal->affixe_id)===false)
@@ -328,7 +456,22 @@ class AnimalController extends Controller
             $request->session()->flash('status',"nom déjà pris pour cet affixe");
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back();
-             } //ne pas enregistrer 2 animaux m^me nom+affixe
+        } //ne pas enregistrer 2 animaux m^me nom+affixe
+             
+             $affixe = Affixe::find($animal->affixe_id);
+             if (isset($affixe))
+            {            
+                 $long =strlen($affixe->libelle);
+                }
+            else {  $long =0;}
+
+            if ((strlen($animal->nom) + $long) > 25)
+
+        {
+            $request->session()->flash('status',"nom trop long  pour cet affixe");
+            $request->session()->flash('alert-class',"alert-danger");
+            return redirect()->back();
+             }
         $animal->couleur = $validated['couleur'];
         if (($animal->race_id == 1) && ($validated['race']!==null))
         {

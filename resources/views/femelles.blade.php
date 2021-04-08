@@ -20,29 +20,13 @@
 @foreach ($juments as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
-<figure class='petite'>
-<a href="{{route('animal',[$elevage->id, $animal->id])}}">
-
-<?php
-$images = $animal->Image;
-if (isset($images)) {
-	$path0 ="'/img/fond.png'";
-	echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:80px; height:60px;" >';
-		foreach ($images as $image) {
-			$path = "'/img/".$image->chemin.".png'";
-			$style = "position:absolute; width:80px; height:60px; z-index:".$image->z_index; 
-			echo"<img src=".$path. " style ='" . $style."'>";
-		}
-}
-?>
-
-</a>
+@include('includes.petiteImage')
 </figure>
 	</td>
- <td> <a href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a> </td>
+ <td> <a class='nom' href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a> </td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
-	<td> {{$animal->taille_cm}} </td>
+	<td> {{$animal->taille() }} </td>
 	<td> {{$animal->date_naissance}} </td>
 	<td>@isset($animal->Sire) {{ $animal->Sire->NomComplet() }} @endisset </td>
 	<td>@isset($animal->Dam) {{ $animal->Dam->NomComplet()}} @endisset </td>

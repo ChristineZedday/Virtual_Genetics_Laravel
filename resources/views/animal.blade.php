@@ -3,11 +3,10 @@
 <div id='animal'>
 	<div id='rensa'>
 		<div class='texte'>
-			<h1>{{$animal->NomComplet()}}</h1>
+			<h1 class='nom'>{{$animal->NomComplet()}}</h1>
 				<h3>{{$animal->Race->nom}}</h3>
 				<p>@if ($animal->elevage_id != $elevage->id) Propriétaire: {{$animal->Elevage->nom_eleveur}} @endif</p>
-				<p>@isset ($animal->StatutMale) &Eacute;talon {{$animal->StatutMale->qualite}}
-					 @else {{$animal->sexe}} @endisset</p>
+				<p>{{ $animal->Sexe() }}</p>
 				@isset($animal->couleur)
 					<p>{{ $animal->couleur }}</p>
 				@else
@@ -33,8 +32,8 @@
 					</p>
 					@endif	
 				
-
-				<p>{{$animal->taille_cm}} cm</p>
+				
+				<p>{{ $animal->taille() }} cm</p>
 				<?php $pathos = $animal->Pathologie()->get() ?>
 				<p>@isset($animal->Pathologie)
 					@foreach($pathos as $patho)
@@ -47,59 +46,11 @@
 					
 		</div>
 	
-		<div class='pedigree'>
-				@if (! $animal->fondateur)
-						<span class='generation'>
-							<span class='male'>
-								<a href="{{route('animal',[$elevage->id, $animal->Sire->id])}}"> 
-									{{$animal->Sire->NomComplet()}}</a>
-							 {{$animal->Sire->Race->nom}}</span>
-							
-							<span class='femelle'><a href="{{route('animal',[$elevage->id, $animal->Dam->id])}}">
-								 {{$animal->Dam->NomComplet()}}</a>
-								{{$animal->Dam->Race->nom}}</span>
-						</span>
-						<span class='generation'>
-							<span class='male'>@isset($animal->Sire->Sire)<a href="{{route('animal',[$elevage->id, $animal->Sire->Sire->id])}}">  {{$animal->Sire->Sire->NomComplet()}} </a>
-							{{$animal->Sire->Sire->Race->nom}}@else gpp @endisset </span>
-							<span class='femelle'>@isset($animal->Sire->Dam)<a href="{{route('animal',[$elevage->id, $animal->Sire->Dam->id])}}">  {{$animal->Sire->Dam->NomComplet()}} </a>{{$animal->Sire->Dam->Race->nom}}@else gmp @endisset </span>
-							<span class='male'>@isset($animal->Dam->Sire) <a href="{{route('animal',[$elevage->id, $animal->Dam->Sire->id])}}">  {{$animal->Dam->Sire->NomComplet()}} </a>
-							{{$animal->Dam->Sire->Race->nom}}@else gpm @endisset </span>
-							<span class='femelle'> @isset($animal->Dam->Dam) <a href="{{route('animal',[$elevage->id, $animal->Dam->Dam->id])}}"> {{$animal->Dam->Dam->NomComplet()}} </a>{{$animal->Dam->Dam->Race->nom}} @else gmm @endisset </span>
-						</span>
-						<span class='generation'>
-							<span class='male'>@isset($animal->Sire->Sire->Sire) <a href="{{route('animal',[$elevage->id, $animal->Sire->Sire->Sire->id])}}"> {{$animal->Sire->Sire->Sire->NomComplet()}} </a> @else agpp @endisset </span>
-							<span class='femelle'>@isset($animal->Sire->Sire->Dam)  <a href="{{route('animal',[$elevage->id, $animal->Sire->Sire->Dam->id])}}">  {{$animal->Sire->Sire->Dam->NomComplet()}} </a> @else agmp @endisset </span>
-							<span class='male'>	@isset($animal->Sire->Dam->Sire)  <a href="{{route('animal',[$elevage->id, $animal->Sire->Dam->Sire->id])}}">  {{$animal->Sire->Dam->Sire->NomComplet()}} </a> @else agpp @endisset </span>	
-							<span class='femelle'>@isset($animal->Sire->Dam->Dam) 
-							<a href="{{route('animal',[$elevage->id, $animal->Sire->Dam->Dam->id])}}"> {{$animal->Sire->Dam->Dam->NomComplet()}}  </a> @else agmp @endisset </span>
-							<span class='male'>	@isset($animal->Dam->Sire->Sire)  <a href="{{route('animal',[$elevage->id, $animal->Dam->Sire->Sire->id])}}"> {{$animal->Dam->Sire->Sire->NomComplet()}} </a>  @else agpm @endisset </span>
-							<span class='femelle'>@isset($animal->Dam->Sire->Dam)  <a href="{{route('animal',[$elevage->id, $animal->Dam->Sire->Dam->id])}}"> {{$animal->Dam->Sire->Dam->NomComplet()}} </a> @else agmm @endisset </span>
-							<span class='male'>@isset($animal->Dam->Dam->Sire)
-							<a href="{{route('animal',[$elevage->id, $animal->Dam->Dam->Sire->id])}}">  {{$animal->Dam->Dam->Sire->NomComplet()}} </a> @else agmp @endisset </span>
-							<span class='femelle'>@isset($animal->Dam->Dam->Dam) <a href="{{route('animal',[$elevage->id, $animal->Dam->Dam->Dam->id])}}">  {{$animal->Dam->Dam->Dam->NomComplet()}} </a>  @else agmm @endisset </span>
-						</span>	
-						
-				@endif
-				
-		</div>
+	@include('includes.pedigree')
 	</div>
 	<div id='imb'>					
 		<div id='image'>
-			<figure class='jeu'>
-			<?php
-			$images = $animal->Image;
-			if (isset($images)) {
-				$path0 ="'/img/fond.png'";
-				echo '<img src='.$path0. ' style="z-index:0; position:absolute; width:600px; height:450px;" >';
-					foreach ($images as $image) {
-						$path = "'/img/".$image->chemin.".png'";
-						$style = "position:absolute; width:600px; height:450px; z-index:".$image->z_index; 
-						echo"<img src=".$path. " style ='" . $style."'>";
-					}
-			}
-			?>
-			</figure>
+			@include('includes.image')
 		</div>
 		<div id='boutonsa'>
 			<p>{{isset ($animal->date_achat)? "acheté le: ".$animal->date_achat : ""}}</p>
@@ -121,7 +72,7 @@
 			</div>
 
 			<div id='saillie'>
-				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe='vieille femelle') && ( isset($animal->Statut) && ($animal->Statut->vide == true && $animal->Statut->date_saillie != App\Gamedata::date()) ) )
+				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe=='vieille femelle') && ( isset($animal->Statut) && ($animal->Statut->vide == true && $animal->Statut->date_saillie != App\Gamedata::date()) ) )
 					@if (App\Gamedata::saison())
 					
 					<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
@@ -184,9 +135,9 @@
 			<h3>Descendants: </h3>
 				@foreach ($animal->Progeny() as $petit)
 				<p> <a href="{{route('animal',[$elevage->id, $petit->id])}}"> {{$petit->NomComplet()}} </a>
-			
-				 @if ( ($animal->sexe === 'femelle') || ($animal->sexe === 'vieille femelle') || ($animal->sexe === 'femelle stérilisée') || ($animal->sexe === 'vieille femelle stérilisée')) <span> par {{$petit->Sire->NomComplet()}} </span>
-	
+				<?php $pos= strpos($animal->sexe,'mâle');
+			 ?>
+				 @if ( $pos === false) <span> par {{$petit->Sire->NomComplet()}} </span>
 				 @endif
 				</p>
 				@endforeach

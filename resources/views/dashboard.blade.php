@@ -2,5 +2,5 @@
 
 @section('content')
 
-<img src="#"/>
+
 @endsection

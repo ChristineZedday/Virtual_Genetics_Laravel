@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Gamedata;
 use App\statutsFemelle;
 use App\Animal;
+use App\Genome;
 use App\Elevage;
 use App\Race;
 use App\StatutMale;
@@ -20,15 +21,23 @@ class TempsController extends Controller
     {
        
         $date = Gamedata::date();
-      
+        $game = Gamedata::Find(1);
+        if ($date == $game->date_debut )
+        {
+            $animaux = Animal::where('fondateur',1)->get();
+            foreach ($animaux as $animal)
+            {
+                Genome::readGenes($animal->id);
+            }
+        }
        
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
-        $game = Gamedata::Find(1);
+      
         $game->date_courante = $date;
         $game->save();
 
         // checkFemellesTerme($date);
-        Gamedata::checkNouveaux($date);
+        
         Gamedata::checkPuberes();
         Gamedata::checkSevres();
         Gamedata::VenteJeunes();
@@ -36,6 +45,8 @@ class TempsController extends Controller
        
         Gamedata::achete();
         Gamedata::checkMorts();
+        Gamedata::checkNouveaux($date);
+        
         $dateM = date('m',strtotime($date));
         if ($dateM == 01) {
             $game->lettre = Gamedata::checkLettre($date);

@@ -10,7 +10,7 @@ use App\Affixe;
 class Animal extends Model
 {
     protected $table ='animaux';
-    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'prix', 'sexe', 'date_achat', 'date_naissance', 'a_vandre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id'];
+    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'prix', 'sexe', 'date_achat', 'date_naissance', 'a_vendre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id', 'taille_additive', 'modele_allures_additifs', 'modele_allures' ];
 
     public function Genotypes()
     {
@@ -52,7 +52,8 @@ class Animal extends Model
 
     public function Statut()
     {
-        return $this->HasOne('App\statutsFemelle', 'animal_id');
+       return $this->HasOne('App\statutsFemelle', 'animal_id');
+
     }
 
     public function StatutMale()
@@ -80,6 +81,20 @@ class Animal extends Model
         return $this->belongsToMany('App\Couleur');
     }
 
+    public function Sexe()
+    {
+        if (isset($this->StatutMale) && $this->StatutMale->fertilite > 0 )
+        {
+            return 'Étalon '.$this->StatutMale->qualite;
+        }
+        else
+        {
+            return $this->sexe;
+        }
+        
+    }
+
+
     public function NomComplet()
     {
         if (isset($this->Affixe))
@@ -95,6 +110,29 @@ class Animal extends Model
         }
         else {
             return $this->nom;
+        }
+    }
+
+    public function taille()
+    {
+        $age = Gamedata::ageMonths($this->date_naissance);
+        switch (true)
+        {
+            case $age<3:
+                return (int) ($this->taille_cm * 70/100);
+            case $age<9:
+                return (int) ($this->taille_cm * 80/100);
+            case $age<15:
+                return (int) ($this->taille_cm * 90/100);
+            case $age<21:
+                return (int) ($this->taille_cm * 95/100);
+            case $age<30:
+                return (int) ($this->taille_cm * 97/100);
+            case $age<48:
+                return (int) ($this->taille_cm * 99/100);
+            default:
+                return $this->taille_cm;
+            
         }
     }
 
@@ -116,6 +154,122 @@ class Animal extends Model
         }
              
             
+    }
+
+    static function chercheRaces($etalon,$jument,$taille,$qualite)
+    {
+        $appro = Race::find($etalon)->approbation;
+     
+        switch(true)
+       {
+           case $etalon==$jument:
+            switch(true)
+            {
+                case $qualite == 'approuvé':
+                    return $etalon;
+
+                case $qualite == 'autorisé' && $appro == false:
+                    return $etalon;
+                   
+                
+                default:
+                return 1; //OC si étalon non autorisé ou refusé, ou non approuvé pour FS
+            }
+            case $qualite == 'approuvé':
+              $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->first();
+
+                if (isset ($race))
+                {
+                    return $race->race_produit_id;
+                   
+                }
+                else 
+                {
+                  $races = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions', 1)->get();
+  
+                  if (sizeof($races)>0)
+                  {
+                    foreach ($races as $race)
+                    {
+                        $race = Race::Find($race->race_produit_id);             
+  
+                        if (($taille >= $race->taille_min) && ($taille <= $race->taille_max))
+                        {
+                         return $race->id;
+                        }
+                       
+                      
+                    }
+                  }
+                   
+                }
+              
+           
+
+            case $qualite == 'autorisé':
+       
+                $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->where('approbation', 0)->first(); 
+
+                if (isset ($race))
+                {
+                  return $race->race_produit_id;
+                }
+                else 
+                {
+                    $races = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',1)->get();
+
+                    if (sizeof($races)>0)
+                    {
+                    foreach ($races as $race)
+                    {
+                    
+                        $race = Race::Find($race->race_produit_id);
+                        
+
+                        if (($taille >= $race->taille_min) && ($taille <= $race->taille_max))
+                        {
+                            return $race->id;
+                        
+                        }
+                        }
+                    }
+                }  
+        default:
+        return 1;
+       }    
+       
+    }
+    static function pourCentRace($animal, $bred) //$bred: id bred
+    {
+        $animal = Animal::Find($animal);
+        if ($animal->race_id == $bred)
+        {
+            return 100;
+        }
+        else if ($animal->fondateur)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Animal::pourCentRace($animal->sire_id,$bred) + Animal::pourCentRace($animal->dam_id,$bred))/2;
+        }
+    }
+    static function pourCentWelsh($animal)
+    {
+        $animal = Animal::Find($animal);
+        if ($animal->race_id == 4 || $animal->race_id == 5 || $animal->race_id == 6 || $animal->race_id == 7 )
+        {
+            return 100;
+        }
+        else if ($animal->fondateur)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Animal::pourCentWelsh($animal->sire_id) + Animal::pourCentWelsh($animal->dam_id))/2;
+        }
     }
  
 }
