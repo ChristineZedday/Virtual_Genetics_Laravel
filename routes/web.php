@@ -27,6 +27,10 @@ Route::get('/animal.create/{elevage}', 'AnimalController@create')->name('animal.
 
 Route::post('/animal.store/{elevage}', 'AnimalController@store')->name('animal.store');
 
+Route::get('/animal.edit/{animal}', 'AnimalController@edit')->name('animal.edit');
+
+Route::post('/animal.update/{animal}', 'AnimalController@update')->name('animal.update');
+
 //routes générales élevage
 
 Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');

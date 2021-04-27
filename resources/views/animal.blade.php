@@ -56,7 +56,12 @@
 			<p>{{isset ($animal->date_achat)? "acheté le: ".$animal->date_achat : ""}}</p>
 			<p>prix: {{$animal->prix}} achetoires</p>		
 			<p>{{$animal->a_vendre? "à vendre" : ""}}</p>
-					
+			@if (Auth::user()->name == 'admin')
+			<div >
+			<a href="{{route('animal.edit',[$animal->id])}}">
+								<button >Modifier</button></a>
+			</div>	
+			@endif
 			<div id='vente'>
 				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && (App\Gamedata::ageMonths($animal->date_naissance)>7))
 

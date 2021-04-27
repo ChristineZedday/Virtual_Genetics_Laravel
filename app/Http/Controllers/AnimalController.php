@@ -162,7 +162,15 @@ class AnimalController extends Controller
      */
     public function edit($id)
     {
-       
+       $animal = Animal::find($id);
+       $affixes = Affixe::all();
+       $races = Race::all();
+       $elevage = $animal->elevage;
+       $loci = Locus::all();
+
+
+       return view('formEditAnimal', [
+        'animal'=> $animal, 'affixes'=> $affixes, 'races' => $races, 'loci' => $loci, 'elevage'=>$elevage ]);
     }
 
     /**
@@ -174,7 +182,24 @@ class AnimalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated =  $request->validate([
+            'nom'=>'string|required', 
+            'race_id' =>'integer',   
+            'sexe' =>'string|required',
+            'taille_additive' =>'integer|required',
+            'modele_allures_additifs' => 'integer|required',
+            'couleur'=>'string|required'
+            
+            ]);
+
+            $animal = Animal::find($id);
+            $animal->fill($validated);
+
+            if ($animal->save()) {
+                $request->session()->flash('status',"animal modifiée avec succès");
+                $request->session()->flash('alert-class',"alert-success");
+                return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal]);
+            }
     }
 
     /**
