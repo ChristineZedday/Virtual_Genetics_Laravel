@@ -2,7 +2,7 @@
 bug bizarre pour une naissance? 244x501 pas de g létaux chez père, mère jeune, date terme pas effacée alors que pas pleine????
 floppée de foetus pas nés!!!
 bug patty poulain mort terme pas effacé donc tjrs pres pleine
-
+cte conflit alors!
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
 
