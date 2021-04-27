@@ -6,6 +6,7 @@ bug patty poulain mort terme pas effacé donc tjrs pres pleine
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
 
+
 affixe 5 car min pas 6
 
 FS par wpb et ar
