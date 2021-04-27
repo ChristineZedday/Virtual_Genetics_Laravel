@@ -14,21 +14,21 @@
 	</div>
 	<div>
 	<label for="sexe">Sexe</label><br/>
-	<input type="radio"  name="sexe" value="jeune poulain">mâle
-	<input type="radio"  name="sexe" value="jeune pouliche">femelle 			
+	<input type="radio"  name="sexe" value="jeune poulain" checked="{{$animal->sexe==='jeune poulain'}}">mâle
+	<input type="radio"  name="sexe" value="jeune pouliche" checked="{{$animal->sexe==='jeune pouliche'}}">femelle 			
 	</div>
 	<div>
 	<label for="race_id">Race</label><br/>
 	<select  name="race_id" id="race">
 				<option value="1">OC</option>
 					@foreach ($races as $race)
-					<option value="{{$race->id}}">{{$race->nom}} </option>	
+					<option value="{{$race->id}}" selected="{{ $race === $animal->race}}">{{$race->nom}} </option>	
 					@endforeach
 			</select> 
 	</div>
 	<div>
 	<label for="couleur">Indiquez la robe</label><br/>
-	<input type="text" name="couleur" id="couleur" value="{{ $animal->robe }}"  pattern="[^\s][A-zÀ-ž\s]{2,}"/>
+	<input type="text" name="couleur" id="couleur" value="{{ $animal->couleur }}"  pattern="[^\s][A-zÀ-ž\s]{2,}"/>
 	</div>
 
 	<div>
@@ -36,7 +36,7 @@
 	<select  name="affixe_id" id="affixe_id">
 				<option value="0">pas d'affixe</option>
 					@foreach ($affixes as $affixe)
-					<option value="{{$affixe->id}}">{{$affixe->libelle}} </option>	
+					<option value="{{$affixe->id}}" selected="{{ $affixe === $animal->Affixe}}">{{$affixe->libelle}} </option>	
 					@endforeach
 			</select> 
 	</div>
@@ -50,32 +50,7 @@
 	<input type="number" name="modele_allures_additifs" pattern="[0-9]" min="1" max="20" value="{{$animal->modele_allures_additifs}}" required />
 	
 	</div>
-	<div>
-	<label>Choisissez les gènes (si vous choisissez les allèles par defaut, vous n'avez pas besoin de les renseigner)</label><br/>
-	
-					@foreach ($loci as $locus)
-					<h3>{{$locus->nom}} </h3>
-					<p>
-						@php
-						 $alleles = $locus->Allele()->get();
-						 @endphp
-						Allèle paternel:<br/>
-						@foreach ($alleles as $allele)
-						<input type="radio"  name="{{'p'.$locus->id}}" value="{{$allele->id}}"
-						 />{{$allele->abbrev}}
-						
-						@endforeach
-						<br/>
-						Allèle maternel:<br/>
-						@foreach ($alleles as $allele)
-						<input type="radio"  name="{{'m'.$locus->id}}" value="{{$allele->id}}"
-						 />{{$allele->abbrev}}
-						
-						@endforeach
-					</p>	
-					@endforeach
-	</select> 
-	</div>
+
 
 	<button type="submit">Valider</button>
 	</form>
