@@ -5,7 +5,7 @@ bug patty poulain mort terme pas effacé donc tjrs pres pleine
 cte conflit alors!
 
 poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
-
+fem conf vides pas vides
 
 affixe 5 car min pas 6
 

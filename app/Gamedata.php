@@ -235,14 +235,15 @@ static function checkVieux ($date)
     foreach ($letaux as $letal)
     {
             $dam = $letal->Dam;
+            $statut = $dam->statut;
             $letal->foetus = false;
-            $date= date('Y-m-d',strtotime('+7 month',strtotime($dam->statut->date_saillie)));
-            $dam->statut->terme = $date;
-            $dam->statut->vide = true;
-            $dam->statut->conf_vide = true;
-            $dam->satut->pres_pleine = false;
+            $date= date('Y-m-d',strtotime('+7 month',strtotime($statut->date_saillie)));
+            $statut->terme = $date;
+            $statut->vide = true;
+            $statut->conf_vide = true;
+            $statut->pres_pleine = false;
             $letal->elevage_id =2;//chez l'Ankou!
-            $dam->statut->save();
+            $statut->save();
             $letal->date_naissance = $date;
             $letal->date_achat = $date;
             $letal->save();
