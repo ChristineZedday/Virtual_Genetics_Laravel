@@ -521,6 +521,16 @@ class AnimalController extends Controller
         }
       
        
-    }    
+    }   
+    public function updateNotes(Request $request, $animal) 
+    {
+        $animal = Animal::Find($animal);
+
+        $validated = $request->validate([ 'notes'=> ['string']]
+       ); 
+        $animal->notes = $validated['notes'];
+        $animal->save();
+        return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+    }
     
 }

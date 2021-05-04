@@ -31,6 +31,8 @@ Route::get('/animal.edit/{animal}', 'AnimalController@edit')->name('animal.edit'
 
 Route::post('/animal.update/{animal}', 'AnimalController@update')->name('animal.update');
 
+Route::post('/update.notes/{animal}', 'AnimalController@updateNotes')->name('update_notes');
+
 //routes générales élevage
 
 Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');
