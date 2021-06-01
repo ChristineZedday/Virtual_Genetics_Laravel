@@ -30,6 +30,20 @@ class TempsController extends Controller
                 Genome::readGenes($animal->id);
             }
         }
+        $elevages = Elevage::where('role','Joueur')->get();
+        foreach ($elevages as $elevage)
+        {
+            $elevage->budget +=1000;
+           
+            $fraisveto = 0;
+            $animaux = Animal::where('elevage_id', $elevage->id)->get();
+             
+                foreach ($animaux as $animal) {
+                    $fraisveto += 25;
+                }
+                $elevage->budget -= $fraisveto;
+            $elevage->save();
+        }
        
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
       
@@ -51,12 +65,8 @@ class TempsController extends Controller
         if ($dateM == 01) {
             $game->lettre = Gamedata::checkLettre($date);
             $game->save();
-            $elevages = Elevage::where('role','Joueur')->get();
-            foreach ($elevages as $elevage)
-            {
-                $elevage->budget +=1000;
-                $elevage->save();
-            }
+           
+          
             Gamedata::checkVieux ($date);
             Gamedata::VenteSaillies();   
         }
