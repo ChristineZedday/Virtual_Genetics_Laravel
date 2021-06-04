@@ -147,6 +147,19 @@
 				</p>
 				@endforeach
 			</div>
+			<div id="notes">
+			
+				
+				 @if ($animal->elevage_id == $elevage->id ) 
+				 <h3>Notes</h3>
+				 <form action="{{route('update_notes',[$animal->id])}}" method="POST">
+				 @csrf
+				 <textarea cols=36 rows=10 name="notes" >{{$animal->notes}}</textarea>
+				 <button type="submit">Modifier</submit>
+				 </form>
+				 @endif
+				
+			</div>
 		</div>
 
 	</div>

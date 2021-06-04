@@ -271,5 +271,40 @@ class Animal extends Model
             return (Animal::pourCentWelsh($animal->sire_id) + Animal::pourCentWelsh($animal->dam_id))/2;
         }
     }
+
+    public function acheter($elevage)
+    {
+       
+        $elevage = Elevage::Find($elevage);
+       
+        $date =  Gamedata::date();
+       
+            $this->a_vendre = false;
+            $this->date_achat = $date;
+            $this->elevage_id = $elevage->id;
+            $statut = statutsFemelle::where('animal_id', $this->id)->first();
+            if (isset($statut) )
+            {
+               if ($statut->vide == false)
+                {
+                    $produit = Animal::where('foetus', true)->where('dam_id',$this->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
+                    $produit->elevage_id = $elevage->id;
+                    $produit->affixe_id = $elevage->Affixe->id;
+                    $produit->save();
+                }
+               if ($statut->suitee)
+               {
+                $produit = Animal::where('dam_id',$this->id)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->first(); 
+                $produit->elevage_id = $elevage->id; 
+                $produit->save();
+               }
+            }
+            
+           
+        }
+        
+
+        
+    
  
 }
