@@ -39,7 +39,7 @@ class TempsController extends Controller
             $animaux = Animal::where('elevage_id', $elevage->id)->get();
              
                 foreach ($animaux as $animal) {
-                    $fraisveto += 25;
+                    $fraisveto += 20;
                 }
                 $elevage->budget -= $fraisveto;
             $elevage->save();

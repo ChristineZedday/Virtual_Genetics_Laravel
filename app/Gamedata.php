@@ -442,9 +442,7 @@ static function achete ()
             $vendeur = Elevage::Find($av->elevage_id);
             $vendeur->budget += $av->prix;
             $vendeur->save();
-            $av->elevage_id = $acheteur->id;
-            $av->date_achat = Gamedata::date();
-            $av->a_vendre = false;
+            $av->acheter($acheteur->id);
             $av->save();
 
           }
