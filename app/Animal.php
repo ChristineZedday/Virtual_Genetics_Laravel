@@ -289,7 +289,8 @@ class Animal extends Model
                 {
                     $produit = Animal::where('foetus', true)->where('dam_id',$this->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
                     $produit->elevage_id = $elevage->id;
-                    $produit->affixe_id = $elevage->Affixe->id;
+                    if (isset($elevage->Affixe->id))
+                  {  $produit->affixe_id = $elevage->Affixe->id;}
                     $produit->save();
                 }
                if ($statut->suitee)
