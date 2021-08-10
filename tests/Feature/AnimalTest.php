@@ -35,4 +35,12 @@ class AnimalTest extends TestCase
         $this->assertEquals(98, $animal->taille());
 
     }
+
+    public function testNomComplet()
+    {
+        $animal = new Animal;
+        $animal->nom = "Toto";
+        $animal->affixe_id = 1;
+        $this->assertEquals("Toto of Marshwood", $animal->NomComplet());
+    }
 }
