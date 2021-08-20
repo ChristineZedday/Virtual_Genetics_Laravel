@@ -90,3 +90,11 @@ Route::put('/registration/{animal}', 'AnimalController@registration')->name('reg
 //Stériliser
 
 Route::get('/steriliser/{elevage}/{animal}', 'AnimalController@steriliser')->name('steriliser');
+
+//routes compétiton
+
+Route::get('/competition/', 'CompetitionController@index')->name('competition');
+
+Route::get('/competitions/', 'CompetitionController@aVenir')->name('competitions');
+
+Route::get('/resultats/', 'CompetitionController@resultats')->name('resultats');
