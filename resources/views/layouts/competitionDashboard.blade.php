@@ -27,13 +27,13 @@ $date = $game->date();
 				</li>
 				<li class='deroule'><a href="{{route('resultats',['toutes'])}}">Résultats des compétitions</a>
 					<ul class='sousmenu'>
-						<li><a href="{{route('résultats',['MA'])}}">Modèles et allures</a></li>
+						<li><a href="{{route('resultats',['MA'])}}">Modèles et allures</a></li>
 						
 					</ul>
 				</li>
 				<li><a href="{{route('budget',[$elevage])}}">Voir mon budget</a></li>
 			
-				<li><a href="{{route('home')}}">Changer d'élevage</a>
+				<li><a href="{{route('dashboard',[$elevage],  'ElevageController@index')}}">Retour à l'élevage</a>
 				</li>
 			
 			</ul>
