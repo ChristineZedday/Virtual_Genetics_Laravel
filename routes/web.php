@@ -101,5 +101,5 @@ Route::get('/resultats/{elevage}', 'CompetitionController@resultats')->name('res
 
 Route::get('/competitions/{elevage}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
 
-Route::get('/inscription/{competition}/{animal}', 'CompetitionController@inscription')->name('inscription');
+Route::post('/inscription/{epreuve}/{animal}', 'CompetitionController@inscription')->name('inscription');
 
