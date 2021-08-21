@@ -19,15 +19,15 @@ $date = $game->date();
 
 	<nav>
 			<ul>
-				<li class='deroule'><a href="{{route('competitions',['toutes'])}}">Compétitions à venir</a>
+				<li class='deroule'><a href="{{route('competitions', [$elevage])}}">Compétitions à venir</a>
 					<ul class='sousmenu'>
-						<li><a href="{{route('competitions',['MA'])}}">Modèles et allures</a></li>
+						<li><a href="{{route('competitions', [$elevage])}}">Modèles et allures</a></li>
 						
 					</ul>
 				</li>
-				<li class='deroule'><a href="{{route('resultats',['toutes'])}}">Résultats des compétitions</a>
+				<li class='deroule'><a href="{{route('resultats', [$elevage])}}">Résultats des compétitions</a>
 					<ul class='sousmenu'>
-						<li><a href="{{route('resultats',['MA'])}}">Modèles et allures</a></li>
+						<li><a href="{{route('resultats', [$elevage])}}">Modèles et allures</a></li>
 						
 					</ul>
 				</li>

@@ -95,6 +95,6 @@ Route::get('/steriliser/{elevage}/{animal}', 'AnimalController@steriliser')->nam
 
 Route::get('/competition/{elevage}', 'CompetitionController@index')->name('competition');
 
-Route::get('/competitions/', 'CompetitionController@aVenir')->name('competitions');
+Route::get('/competitions/{elevage}', 'CompetitionController@aVenir')->name('competitions');
 
-Route::get('/resultats/', 'CompetitionController@resultats')->name('resultats');
+Route::get('/resultats/{elevage}', 'CompetitionController@resultats')->name('resultats');
