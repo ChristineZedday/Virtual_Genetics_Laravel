@@ -98,3 +98,8 @@ Route::get('/competition/{elevage}', 'CompetitionController@index')->name('compe
 Route::get('/competitions/{elevage}', 'CompetitionController@aVenir')->name('competitions');
 
 Route::get('/resultats/{elevage}', 'CompetitionController@resultats')->name('resultats');
+
+Route::get('/competitions/{elevage}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
+
+Route::get('/inscription/{competition}/{animal}', 'CompetitionController@inscription')->name('inscription');
+
