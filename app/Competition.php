@@ -10,4 +10,9 @@ class Competition extends Model
     {
         return $this->morphedByMany(ModeleAllures::class, 'competitionable');
     }
+
+    public function Competitionable()
+    {
+        return $this->morphTo('competitionable');
+    }
 }

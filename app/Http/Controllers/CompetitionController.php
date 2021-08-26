@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Elevage;
 use App\Competition;
+use App\Competitionables;
 use App\Animal;
 
 class CompetitionController extends Controller
@@ -44,11 +45,13 @@ class CompetitionController extends Controller
     public function inscrire($elevage, $competition)
     {
         $elevage = Elevage::Find($elevage);
-        $competitions = Competition::Find($competition);
+        $competition = Competition::Find($competition);
+        $epreuves = $competition->Competitionables;
+        dd($epreuves);
         $animaux = Animal::Where('elevage_id', $elevage->id);
    
     
-       return view('inscription', ['elevage' => $elevage, 'competition'=>$competition, 'animaux' =>$animaux]);
+       return view('inscription', ['elevage' => $elevage, 'epreuves'=>$epreuves, 'animaux' =>$animaux]);
        
     }
 

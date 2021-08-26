@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ModeleAllures extends Model
+class ModeleAllures extends Competitionable
 {
     public function competition() {
 
