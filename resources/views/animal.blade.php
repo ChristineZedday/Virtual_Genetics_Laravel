@@ -63,7 +63,7 @@
 			</div>	
 			@endif
 			<div id='vente'>
-				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && (App\Gamedata::ageMonths($animal->date_naissance)>7))
+				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && ($animal->ageMonths>=6))
 
 					<a href="{{route('vendre',[$elevage->id,$animal->id])}}">
 								<button >Mettre en vente</button></a>

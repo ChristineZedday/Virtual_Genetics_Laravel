@@ -113,9 +113,36 @@ class Animal extends Model
         }
     }
 
+    public function ageMonths()
+    {
+        
+        $date = Gamedata::date();
+        $date = strToTime($date);
+        $date_naissance = strToTime($this->date_naissance);
+        $age = $date - $date_naissance;
+       
+        $age = $age/(24*60*60*30);
+
+        
+        return $age;
+    }
+
+    public function ageYears()
+    {
+        $date = Gamedata::date();
+        $date = strToTime($date);
+        $date_naissance = strToTime($this->date_naissance);
+        $age = $date - $date_naissance;
+       
+        $age = $age/(24*60*60*30*12);
+
+        
+        return $age;
+    }
+
     public function taille()
     {
-        $age = Gamedata::ageMonths($this->date_naissance);
+        $age = $this->ageMonths;
         switch (true)
         {
             case $age<3:

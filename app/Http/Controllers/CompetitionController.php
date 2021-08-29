@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Elevage;
 use App\Competition;
-use App\Competitionables;
 use App\Animal;
 
 class CompetitionController extends Controller
@@ -45,8 +44,10 @@ class CompetitionController extends Controller
     public function inscrire($elevage, $competition)
     {
         $elevage = Elevage::Find($elevage);
-        $competition = Competition::Find($competition);
-        $epreuves = $competition->Competitionables;
+        // $competition = Competition::Find($competition);
+        $epreuves = Competition::WhereAsMorph('competitionable','*', function (Builder $query) use ($competition) {
+            $query->where('competition_id',  $competition);
+        })->get();
         dd($epreuves);
         $animaux = Animal::Where('elevage_id', $elevage->id);
    

@@ -216,13 +216,13 @@ function calculConsang($S, $D)
   $SS = Animal::find($S);
   if (isset ($SS))
   {
-    $ageS = Gamedata::ageMonths($SS->date_naissance);
+    $ageS = $SS->ageMonths;
   }
  
   $DD = Animal::find($D);
   if (isset ($DD))
   {
-    $ageD = Gamedata::ageMonths($DD->date_naissance);
+    $ageD = $DD->ageMonths;
   }
 
   switch (true)

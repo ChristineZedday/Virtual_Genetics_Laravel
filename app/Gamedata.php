@@ -24,33 +24,7 @@ class Gamedata extends Model
         return  Gamedata::find(1)->date_debut;
     }
 
-    static function ageMonths($date_naissance)
-    {
-        
-        $date = Gamedata::date();
-        $date = strToTime($date);
-        $date_naissance = strToTime($date_naissance);
-        $age = $date - $date_naissance;
-       
-        $age = $age/(24*60*60*30);
-
-        
-        return $age;
-    }
-
-    static function ageYears($date_naissance)
-    {
-        $date = Gamedata::date();
-        $date = strToTime($date);
-        $date_naissance = strToTime($date_naissance);
-        $age = $date - $date_naissance;
-       
-        $age = $age/(24*60*60*30*12);
-
-        
-        return $age;
-    }
-
+    
     static function checkLettre($date)
     {
         $lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'];
@@ -119,7 +93,7 @@ static function checkSevres()
     $animaux = Animal::where('elevage_id', '!=', 2)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
     foreach ($animaux as $animal)
     {
-        if (Gamedata::ageMonths($animal->date_naissance) >= 6)
+        if ($animal->ageMonths >= 6)
         {
             if ($animal->sexe == 'jeune poulain')
             {
@@ -145,7 +119,7 @@ static function checkPuberes()
     $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
-        if (Gamedata::ageMonths($animal->date_naissance) >= 24)
+        if ($animal->ageMonths >= 24)
         { 
            $animal->sexe = 'mâle';
             $animal->save();
@@ -177,7 +151,7 @@ static function checkPuberes()
     $animaux = Animal::where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
-        if (Gamedata::ageMonths($animal->date_naissance) >= 24)
+        if ($animal->ageMonths >= 24)
         { $animal->sexe = 'femelle';
          $animal->save();
          $statut = new statutsFemelle();
@@ -195,7 +169,7 @@ static function checkVieux ($date)
     $animaux = Animal::whereIn('sexe',$cas)->get();
     foreach ($animaux as $animal)
     {
-        $age = Gamedata::ageYears($animal->date_naissance);
+        $age = $animal->ageYears;
         if ($age > 15)
         {
             switch ($animal->sexe) 
@@ -262,7 +236,7 @@ static function checkVieux ($date)
     foreach ($animaux as $animal)
     {
         
-        $age = Gamedata::ageMonths($animal->date_naissance);
+        $age = $animal->ageYears;
             switch ($age)
             {
                 case $age<20:
@@ -371,7 +345,7 @@ static function VenteJeunes ()
 
         foreach ($animaux as $animal)
         {
-            if ((Gamedata::ageMonths($animal->date_naissance) >= 7) && (! $animal->fondateur) )
+            if (($animal->ageYears >= 7) && (! $animal->fondateur) )
         { 
             $animal->a_vendre = true;
             $race = Race::find($animal->race_id);

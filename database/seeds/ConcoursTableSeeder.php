@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CompetitionsTableSeeder extends Seeder
+class ConcoursTableSeeder extends Seeder
 {
 
     /**
@@ -14,26 +14,29 @@ class CompetitionsTableSeeder extends Seeder
     {
         
 
-        \DB::table('competitions')->delete();
+        \DB::table('Concours')->delete();
         
-        \DB::table('competitions')->insert(array (
+        \DB::table('Concours')->insert(array (
             0 => 
             array (
                 'id' => 1,
+                'nom' => 'Modèle et Allures',
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Concours Modèles et Allures Welsh ',
-                'niveau' => 'départemental',
-                
             ),
             1 => 
             array (
                 'id' => 2,
+                'nom' => 'CSO',
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Concours Modèles et Allures Shetland' ,
-                'niveau' => 'départemental',
-                
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'nom' => 'Dressage',
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
         ));
         

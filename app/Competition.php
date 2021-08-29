@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Competition extends Model
 {
-    public function ModeleAllures()
+   
+    public function Concours()
     {
-        return $this->morphedByMany(ModeleAllures::class, 'competitionable');
+        return $this->HasMany('App\concours');
     }
 
-    public function Competitionable()
-    {
-        return $this->morphTo('competitionable');
-    }
+  
+
 }

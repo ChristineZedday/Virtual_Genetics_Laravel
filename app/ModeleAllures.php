@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ModeleAllures extends Competitionable
+class ModeleAllures extends Model
 {
-    public function competition() {
+    public function competitions() {
 
-        return $this->morphToMany(Competition::class, 'competitionable');
+        return $this->morphToMany('App\Competitionable', 'competitionable');
     }
 }
