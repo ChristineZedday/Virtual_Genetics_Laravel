@@ -19,8 +19,10 @@ class CreateCategoriesTable extends Migration
             $table->string('nom');
             $table->bigInteger('concours_id')->unsigned();
             $table->foreign('concours_id')->references('id')->on('concours');
-            $table->enum('sexe',['mâle','femelle'] )->nullable();
-            $table->enum('age', ['0', '1', '2', '3', '>= 4'])->nullable();
+            $table->enum('sexe',['jeune poulain', 'jeune pouliche', 'mâle','femelle', 'jeune mâle', 'jeune femelle',  'vieille femelle', 'vieux mâle'] )->nullable();
+            $table->enum('ageYears', ['0', '1', '2', '3', '4', '>4'])->nullable();
+            $table->bigInteger('race_id')->unsigned()->nullable();
+            $table->foreign('race_id')->references('id')->on('races');
         });
     }
 
