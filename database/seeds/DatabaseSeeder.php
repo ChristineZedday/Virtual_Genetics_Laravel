@@ -26,21 +26,11 @@ class DatabaseSeeder extends Seeder
         $this->call(PathologiesTableSeeder::class);
         $this->call(PhenotypesTableSeeder::class);
         $this->call(CompetitionsTableSeeder::class);
-        $this->call(ModeleAlluresTableSeeder::class);
-        $this->call(CompetitionablesTableSeeder::class);
-        
-       
-       
-       
+
         $this->call(AssoCouleursTableSeeder::class);
         $this->call(AssoRaceTableSeeder::class);
         $this->call(CouleurImageTableSeeder::class);
 
-
-       
-       
-       
-        $this->call(CompetitionableRaceTableSeeder::class);
         $this->call(ConcoursTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
     }
