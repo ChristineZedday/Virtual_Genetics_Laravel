@@ -9,7 +9,12 @@ class Competition extends Model
    
     public function Concours()
     {
-        return $this->HasMany('App\concours');
+        return $this->HasMany('App\Concours');
+    }
+
+    public function Evenement()
+     {
+        return $this->HasMany('App\Evenement');
     }
 
   
