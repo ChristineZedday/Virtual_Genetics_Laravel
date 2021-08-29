@@ -50,6 +50,7 @@ $date = $game->date();
 				@if (app\Gamedata::saison())
 				<li><a href="{{route('reproduction.jument',[$elevage])}}">Faire saillir une jument</a></li>
 				@endif
+				<li><a href="{{route('competition',[$elevage])}}">Gérer mes compétitions</a></li>
 				@if (Auth::user()->name == "admin")
 				<li><a href="{{route('animal.create',[$elevage])}}">Créer un nouveau fondateur</a></li>
 				@endif
