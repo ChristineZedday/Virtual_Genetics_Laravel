@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Elevage;
 use App\Competition;
+use App\Evenement;
 use App\Animal;
 
 class CompetitionController extends Controller
@@ -34,7 +35,7 @@ class CompetitionController extends Controller
         //     $competitions = Competition::All();
 
         // }
-        $competitions = Competition::All();
+        $competitions = Evenement::all();
    
     
        return view('competitions', ['elevage' => $elevage, 'competitions'=>$competitions]);

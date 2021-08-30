@@ -12,7 +12,7 @@
 </tr>
 @foreach ($competitions as $competition)
 <tr>
-	<td>{{$competition->nom}}</td>
+	<td>{{$competition->nom()}}</td>
     <td>{{$competition->date_competition}} </td>
     <td>{{$competition->niveau}}</td>
     <td><a href="{{route('inscrire',[$elevage, $competition])}}">Inscrire</a></td>
