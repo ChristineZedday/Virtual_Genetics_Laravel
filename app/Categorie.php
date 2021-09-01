@@ -6,13 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categorie extends Model
 {
-   public function Concours()
-   {
-       return $this->BelongsTo('App\Concours');
-   }
+   
 
    public function Competitions() 
    {
-       return $this->BelongsToMany('App\Competition', 'categorie_competition');
+       return $this->BelongsToMany('App\Competition', 'categorie_competition', 'competition_id', 'categorie_id');
    }
 }

@@ -47,7 +47,11 @@ class CompetitionController extends Controller
     {
         $elevage = Elevage::Find($elevage);
        $evenement = Evenement::Find($evenement);
-        $epreuves = $evenement->Competition->Categories;
+    //    dd($evenement->Competition)=OK
+        $epreuves = $evenement->Competition->Categories()->get(); //ok
+       
+       
+     
         $animaux = Animal::Where('elevage_id', $elevage->id);
    
     
@@ -55,10 +59,10 @@ class CompetitionController extends Controller
        
     }
 
-    public function inscription($elevage, $epreuve, $animal)
+    public function inscription($epreuve, $animal)
     {
        
-       
+       dd('ds inscription');
     }
 
 }

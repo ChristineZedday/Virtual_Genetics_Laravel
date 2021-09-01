@@ -6,16 +6,16 @@
 <h3>{{$competition->nom}}</h3>
 <div class ='form'>
 <label for="epreuve">Sélectionner l'épreuve</label>
-<select name="epreuves">
+<select name="epreuve" id="epreuve_id">
 	@foreach ($epreuves as $epreuve)
-  <option value="{{$epreuve}}">$epreuve->nom</option>
+  <option value="{{$epreuve->id}}">$epreuve->nom</option>
   @endforeach
 </select>
 
 <label for="animal">Sélectionner l'animal</label>
-<select name="animaux">
+<select name="animal">
 	@foreach ($animaux as $animal)
-  <option value="{{$animal}}">$animal->nomComplet()</option>
+  <option value="{{$animal->id}}">$animal->nomComplet()</option>
   @endforeach
 </select>
 
