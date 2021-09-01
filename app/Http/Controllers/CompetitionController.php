@@ -48,18 +48,18 @@ class CompetitionController extends Controller
         $elevage = Elevage::Find($elevage);
        $evenement = Evenement::Find($evenement);
     //    dd($evenement->Competition)=OK
-        $epreuves = $evenement->Competition->Categories()->get(); //ok
-       
+        $categories = $evenement->Competition->Categories()->get(); //ok
+      
        
      
-        $animaux = Animal::Where('elevage_id', $elevage->id);
+        $animaux = Animal::Where('elevage_id', $elevage->id)->get();
    
     
-       return view('inscription', ['elevage' => $elevage, 'epreuves'=>$epreuves, 'animaux' =>$animaux]);
+       return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'categories'=> $categories, 'animaux' => $animaux]);
        
     }
 
-    public function inscription($epreuve, $animal)
+    public function inscription()
     {
        
        dd('ds inscription');

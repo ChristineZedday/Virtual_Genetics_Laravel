@@ -1,21 +1,23 @@
 @extends('layouts.competitionDashboard')
 @section('content')
-<form action="{{route('inscription', [$epreuve, $animal])}}" method="POST" >
+<form action="{{route('inscription')}}" method="POST" >
 						@csrf
 						@method('POST')
-<h3>{{$competition->nom}}</h3>
+<h3>{{$evenement->Nom()}}</h3>
 <div class ='form'>
-<label for="epreuve">Sélectionner l'épreuve</label>
-<select name="epreuve" id="epreuve_id">
-	@foreach ($epreuves as $epreuve)
-  <option value="{{$epreuve->id}}">$epreuve->nom</option>
+<label for="categorie_id">Sélectionner l'épreuve</label>
+
+<select name="categorie_id" >
+	@foreach ($categories as $categorie)
+	
+  <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
   @endforeach
 </select>
 
-<label for="animal">Sélectionner l'animal</label>
-<select name="animal">
+<label for="animal_id">Sélectionner l'animal</label>
+<select name="animal_id">
 	@foreach ($animaux as $animal)
-  <option value="{{$animal->id}}">$animal->nomComplet()</option>
+  <option value="{{$animal->id}}">{{$animal->nomComplet()}}</option>
   @endforeach
 </select>
 
