@@ -17,9 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nom');
-            $table->bigInteger('concours_id')->unsigned();
-            $table->foreign('concours_id')->references('id')->on('concours');
-            $table->enum('type',['en main', 'monté', 'loisir'])->nullable();
+            $table->enum('type',['Modèle et Allures Race', 'loisir', 'Modèle et Allures dressage', 'Modèles et Allures CSO'])->nullable();
             $table->enum('sexe',['mâle','femelle'] )->nullable();
             $table->tinyInteger('age_min')->unsigned()->nullable();
             $table->tinyInteger('age_max')->unsigned()->nullable();

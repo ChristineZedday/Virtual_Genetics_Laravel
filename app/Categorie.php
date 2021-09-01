@@ -10,4 +10,9 @@ class Categorie extends Model
    {
        return $this->BelongsTo('App\Concours');
    }
+
+   public function Competitions() 
+   {
+       return $this->BelongsToMany('App\Competitions', 'categories_competitions');
+   }
 }

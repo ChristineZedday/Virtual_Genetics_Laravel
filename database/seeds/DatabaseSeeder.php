@@ -31,7 +31,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AssoRaceTableSeeder::class);
         $this->call(CouleurImageTableSeeder::class);
 
-        $this->call(ConcoursTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
         $this->call(EvenementsTableSeeder::class);
     }
