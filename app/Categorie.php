@@ -13,6 +13,6 @@ class Categorie extends Model
 
    public function Competitions() 
    {
-       return $this->BelongsToMany('App\Competitions', 'categories_competitions');
+       return $this->BelongsToMany('App\Competition', 'categorie_competition');
    }
 }

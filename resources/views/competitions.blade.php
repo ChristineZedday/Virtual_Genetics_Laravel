@@ -8,14 +8,14 @@
 	<th>Nom</th>
     <th>Date </th>
     <th>Niveau</th>
-    <th>Inscrire un animal</th>
+    <th>Actions</th>
 </tr>
-@foreach ($competitions as $competition)
+@foreach ($evenements as $evenement)
 <tr>
-	<td>{{$competition->nom()}}</td>
-    <td>{{$competition->date_competition}} </td>
-    <td>{{$competition->niveau}}</td>
-    <td><a href="{{route('inscrire',[$elevage, $competition])}}">Inscrire</a></td>
+	<td>{{$evenement->nom()}}</td>
+    <td>{{$evenement->date}} </td>
+    <td>{{$evenement->competition->niveau}}</td>
+    <td><a href="{{route('inscrire',[$elevage, $evenement])}}">Inscrire</a></td>
 </tr>
 @endforeach
 </div>

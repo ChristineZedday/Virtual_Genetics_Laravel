@@ -7,6 +7,7 @@ use App\Elevage;
 use App\Competition;
 use App\Evenement;
 use App\Animal;
+use App\Categorie;
 
 class CompetitionController extends Controller
 {
@@ -35,25 +36,28 @@ class CompetitionController extends Controller
         //     $competitions = Competition::All();
 
         // }
-        $competitions = Evenement::all();
+        $evenements = Evenement::all();
    
     
-       return view('competitions', ['elevage' => $elevage, 'competitions'=>$competitions]);
+       return view('competitions', ['elevage' => $elevage, 'evenements'=>$evenements]);
        
     }
 
-    public function inscrire($elevage, $competition)
+    public function inscrire($elevage, $evenement)
     {
         $elevage = Elevage::Find($elevage);
-        // $competition = Competition::Find($competition);
-        $epreuves = Competition::WhereAsMorph('competitionable','*', function (Builder $query) use ($competition) {
-            $query->where('competition_id',  $competition);
-        })->get();
-        dd($epreuves);
+       $evenement = Evenement::Find($evenement);
+        $epreuves = $evenement->Competition->Categories;
         $animaux = Animal::Where('elevage_id', $elevage->id);
    
     
        return view('inscription', ['elevage' => $elevage, 'epreuves'=>$epreuves, 'animaux' =>$animaux]);
+       
+    }
+
+    public function inscription($elevage, $epreuve, $animal)
+    {
+       
        
     }
 

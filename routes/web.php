@@ -99,7 +99,7 @@ Route::get('/competitions/{elevage}', 'CompetitionController@aVenir')->name('com
 
 Route::get('/resultats/{elevage}', 'CompetitionController@resultats')->name('resultats');
 
-Route::get('/competitions/{elevage}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
+Route::get('/competitions/{elevage}/{evenement}', 'CompetitionController@inscrire')->name('inscrire');
 
 Route::post('/inscription/{epreuve}/{animal}', 'CompetitionController@inscription')->name('inscription');
 
