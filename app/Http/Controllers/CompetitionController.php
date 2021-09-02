@@ -8,6 +8,7 @@ use App\Competition;
 use App\Evenement;
 use App\Animal;
 use App\Categorie;
+use App\Resultat;
 
 class CompetitionController extends Controller
 {
@@ -59,10 +60,19 @@ class CompetitionController extends Controller
        
     }
 
-    public function inscription()
+    public function inscription(Request $request, $evenement)
     {
-       
-       dd('ds inscription');
+        $validated =  $request->validate([
+             
+            'animal_id' =>'integer|required',   
+            'categorie_id' =>'integer|required',
+            
+            ]);
+      
+        $resultat = new Resultat;
+        $resultat->fill($validated);
+        $resultat->evenement_id = $evenement;
+        dd($resultat);
     }
 
 }

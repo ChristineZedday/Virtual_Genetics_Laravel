@@ -1,6 +1,6 @@
 @extends('layouts.competitionDashboard')
 @section('content')
-<form action="{{route('inscription')}}" method="POST" >
+<form action="{{route('inscription', [$evenement])}}" method="POST" >
 						@csrf
 						@method('POST')
 <h3>{{$evenement->Nom()}}</h3>
