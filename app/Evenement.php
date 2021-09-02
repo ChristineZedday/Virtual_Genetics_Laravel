@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Competition;
 
 
 class Evenement extends Model
@@ -12,6 +13,12 @@ class Evenement extends Model
     public function Competition () 
     {
         return $this->BelongsTo('App\Competition');
+    }
+
+    public function Categories()
+    {
+        $compet = $this->Competition()->get();
+        return $compet->Categories()->get();
     }
 
     public function Nom() 

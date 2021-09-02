@@ -72,7 +72,24 @@ class CompetitionController extends Controller
         $resultat = new Resultat;
         $resultat->fill($validated);
         $resultat->evenement_id = $evenement;
-        dd($resultat);
+
+        $animal = Animal::Find($resultat->animal_id);
+        $animaux= Elevage::Find($animal->elevage_id)->Animaux()->get();
+        $evenement = Evenement::Find($evenement);
+        
+        $categorie = Categorie::Find($resultat->categorie_id);
+        if ($categorie->verification($resultat->animal_id)) {
+            if ($resultat->save()) {
+                $request->session()->flash('status',"votre animal a été inscrit dans sa catégorie");
+                $request->session()->flash('alert-class',"alert-sucess");
+                
+               
+                return redirect()->route('competitions',[$animal->elevage_id, $evenement->id]);
+            }
+        }
+        else {
+            redirect()->route('inscription', ['elevage' => $animal->elevage_id, 'evenement' => $evenement->id, 'categories'=> $evenement->Categories, 'animaux' => $animaux]);
+        }
     }
 
 }
