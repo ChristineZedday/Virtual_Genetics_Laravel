@@ -59,6 +59,14 @@ static function ElevenMonths()
    return $date;
 }
 
+static function HowManyMonths($datefutur)
+{
+    $maintenant = Gamedata::date();
+    $diff= abs($datefutur - $maintenant);
+    return $diff/(60*60*24*30);
+
+}
+
 static function checkNouveaux($date)
 {
     $animaux = Animal::where('date_naissance', '<='  ,$date)->where('foetus',1)->get();

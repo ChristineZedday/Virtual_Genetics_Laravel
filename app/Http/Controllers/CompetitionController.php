@@ -79,7 +79,7 @@ class CompetitionController extends Controller
         $evenement = Evenement::Find($evenement);
         
         $categorie = Categorie::Find($resultat->categorie_id);
-        if ($categorie->verification($resultat->animal_id)) {
+        if ($categorie->verification($resultat->animal_id, $evenement->date)) {
             if ($resultat->save()) {
                 $request->session()->flash('status',"votre animal a été inscrit dans sa catégorie");
                 $request->session()->flash('alert-class',"alert-sucess");

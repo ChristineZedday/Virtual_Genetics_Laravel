@@ -13,14 +13,27 @@ class Categorie extends Model
        return $this->BelongsToMany('App\Competition', 'categorie_competition', 'competition_id', 'categorie_id');
    }
 
-   public function verification($animal) : bool
+   public function verification($animal, $date) : bool
    {
     $animal = Animal::Find($animal);
-    if ($this->type="Modèle et Allures Race") {
-        if ($this->race_id != $animal->race_id) {
-            return false;
+    $nbMonths = Gamedata::HowManyMonths($date); 
+    switch (true) {
+    case $this->type==="Modèle et Allures Race" :
+        switch(true) {
+            case $this->race_id != $animal->race_id:
+                return false;
+            case $this->age_min < $animal->ageMonths + $nbMonths:
+                return false;
+            case $this->age_max > $animal->ageMonths + $nbMonths:
+                return false;
         }
-       }
+        return true;
+
+    }
+    
+      
+        
+       
        return true;
    }
 }

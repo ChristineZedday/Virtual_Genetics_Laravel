@@ -143,6 +143,7 @@ class Animal extends Model
     public function taille()
     {
         $age = $this->ageMonths();
+        
         switch (true)
         {
             case $age<3:
