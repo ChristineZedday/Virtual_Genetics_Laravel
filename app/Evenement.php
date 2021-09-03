@@ -17,8 +17,8 @@ class Evenement extends Model
 
     public function Categories()
     {
-        $compet = $this->Competition()->get();
-        return $compet->Categories()->get();
+        $compet = $this->Competition;
+        return $compet->Categories;
     }
 
     public function Nom() 

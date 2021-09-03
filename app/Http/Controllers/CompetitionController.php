@@ -74,7 +74,8 @@ class CompetitionController extends Controller
         $resultat->evenement_id = $evenement;
 
         $animal = Animal::Find($resultat->animal_id);
-        $animaux= Elevage::Find($animal->elevage_id)->Animaux()->get();
+        $elevage= Elevage::Find($animal->elevage_id);
+        $animaux= $elevage->Animaux()->get();
         $evenement = Evenement::Find($evenement);
         
         $categorie = Categorie::Find($resultat->categorie_id);
@@ -88,7 +89,11 @@ class CompetitionController extends Controller
             }
         }
         else {
-            redirect()->route('inscription', ['elevage' => $animal->elevage_id, 'evenement' => $evenement->id, 'categories'=> $evenement->Categories, 'animaux' => $animaux]);
+           
+            $request->session()->flash('status',"Pas la bonne catégorie");
+            $request->session()->flash('alert-class',"alert-danger");
+            return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'categories'=> $evenement->Categories(), 'animaux' => $animaux]);
+            
         }
     }
 
