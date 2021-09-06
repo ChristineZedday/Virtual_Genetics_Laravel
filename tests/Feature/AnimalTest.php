@@ -23,24 +23,32 @@ class AnimalTest extends TestCase
      static function createGameData() 
      {
         $gamedata = New GameData;
-        $gamedata->date_debut = strtotime("1 may 1970");
-        $gamedata->date_courante = strtotime("10 may 1970");
+        $gamedata->date_debut = "1970-02-01";
+        $gamedata->date_courante = "1970-05-10";
         $gamedata->budget = 20000;
         $gamedata->save();
      }
 
-    public function testTailleAdulte()
-    {
+     public function testAgeMonthsAdulte () 
+     {
         AnimalTest::createGameData();
         $animal = New Animal;
-        $animal->taille_cm = 140;
-        $animal->date_naissance = strtotime("10 may 1965");
-        dd($animal->ageMonths());
+        $animal->date_naissance = "1966-05-10";
         
 
-        $this->assertEquals(140, $animal->taille());
+        $this->assertEquals(48, $animal->ageMonths());
+     }
 
-    }
+    // public function testTailleAdulte()
+    // {
+    //     AnimalTest::createGameData();
+    //     $animal = New Animal;
+    //     $animal->date_naissance = strtotime("10 may 1965");
+        
+
+    //     $this->assertEquals(140, $animal->taille());
+
+    // }
     public function testTailleNewborn()
     {
         AnimalTest::createGameData();

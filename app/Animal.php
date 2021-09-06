@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\animaux;
 use App\Http\Controllers\ReproductionController;
 use App\Affixe;
+use DateTime;
 
 class Animal extends Model
 {
@@ -116,12 +117,16 @@ class Animal extends Model
     public function ageMonths()
     {
         
-        $date = Gamedata::date();
-        $date = strToTime($date);
-        $date_naissance = strToTime($this->date_naissance);
-        $age = $date - $date_naissance;
+        $date = DateTime::createFromFormat('Y-m-d', Gamedata::date());
+        
+        $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
+      
+        $age = $date_naissance->diff($date);
+        $age = 12 * $age->y + $age->m; //ppfffiou!
+        
+        
        
-        $age = $age/(24*60*60*30);
+        
 
         
         return $age;
@@ -130,11 +135,11 @@ class Animal extends Model
     public function ageYears()
     {
         $date = Gamedata::date();
-        $date = strToTime($date);
-        $date_naissance = strToTime($this->date_naissance);
-        $age = $date - $date_naissance;
+        $date = DateTime($date);
+        $date_naissance = DateTime($this->date_naissance);
+        $age = $date_naissance->diff($date)->years;
        
-        $age = $age/(24*60*60*30*12);
+        // $age = $age/(24*60*60*30*12);
 
         
         return $age;
