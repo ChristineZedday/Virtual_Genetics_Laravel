@@ -134,10 +134,11 @@ class Animal extends Model
 
     public function ageYears()
     {
-        $date = Gamedata::date();
-        $date = DateTime($date);
-        $date_naissance = DateTime($this->date_naissance);
-        $age = $date_naissance->diff($date)->years;
+        $date = DateTime::createFromFormat('Y-m-d', Gamedata::date());
+        
+        $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
+      
+        $age = $date_naissance->diff($date)->y;
        
         // $age = $age/(24*60*60*30*12);
 
