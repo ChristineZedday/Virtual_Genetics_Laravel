@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\gamedatas;
+use DateTime;
 
 
 class Gamedata extends Model
@@ -61,9 +62,10 @@ static function ElevenMonths()
 
 static function HowManyMonths($datefutur)
 {
-    $maintenant = Gamedata::date();
-    $diff= abs($datefutur - $maintenant);
-    return $diff/(60*60*24*30);
+    $maintenant = New DateTime(Gamedata::date());
+    $datefutur = New DateTime($datefutur);
+    $diff= $datefutur->diff($maintenant);
+    return 12 * $diff->y + $diff->m;;
 
 }
 
