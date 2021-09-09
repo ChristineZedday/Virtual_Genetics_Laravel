@@ -22,10 +22,13 @@ class Categorie extends Model
         switch(true) {
             case $this->race_id != $animal->race_id:
                 return false;
-            case $this->age_min < $animal->ageMonths() + $nbMonths:
+            case $this->age_min < ($animal->ageMonths() + $nbMonths):
                 return false;
-            case $this->age_max > $animal->ageMonths() + $nbMonths:
+            case $this->age_max > ($animal->ageMonths() + $nbMonths):
                 return false;
+            case $this->sexe != $animal->genre():
+                return false;
+            default: return true;
         }
         return true;
 
