@@ -31,7 +31,7 @@ class AnimalTest extends TestCase
 
      public function testAgeMonthsAdulte () 
      {
-        AnimalTest::createGameData();
+        GamedataTest::createGameData();
         $animal = New Animal;
         $animal->date_naissance = "1966-05-10";
         
@@ -41,7 +41,7 @@ class AnimalTest extends TestCase
 
      public function testAgeMonthsFoal () 
      {
-        AnimalTest::createGameData();
+        GameDataTest::createGameData();
         $animal = New Animal;
         $animal->date_naissance = "1970-07-01";
         
@@ -51,7 +51,7 @@ class AnimalTest extends TestCase
 
      public function testAgeYearsAdulte () 
      {
-        AnimalTest::createGameData();
+        GamedataTest::createGameData();
         $animal = New Animal;
         $animal->date_naissance = "1966-05-10";
         
@@ -62,7 +62,7 @@ class AnimalTest extends TestCase
 
     public function testTailleAdulte()
     {
-        AnimalTest::createGameData();
+        GamedataTest::createGameData();
         $animal = New Animal;
         $animal->taille_cm = 140;
         $animal->date_naissance = '1965-05-10';
@@ -73,7 +73,7 @@ class AnimalTest extends TestCase
     }
     public function testTailleNewborn()
     {
-        AnimalTest::createGameData();
+        GamedataTest::createGameData();
         $animal = New Animal;
         $animal->taille_cm = 140;
         $animal->date_naissance = '1970-05-10';
