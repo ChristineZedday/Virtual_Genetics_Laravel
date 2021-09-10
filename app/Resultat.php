@@ -14,7 +14,7 @@ class Resultat extends Model
       $res = DB::table('resultats')
       ->join('animaux', function ($j) use ($elevage) {
         $j->on('animal_id','animaux.id')->where('elevage_id', $elevage); })->get();
-dd($res);
+
       return $res;
       
    }
