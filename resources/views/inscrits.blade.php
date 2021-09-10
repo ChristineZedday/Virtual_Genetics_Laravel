@@ -12,9 +12,9 @@
 </tr>
 @foreach ($inscrits as $inscrit)
 <tr>
-	<td>{{$inscrit->animal->nomComplet()}}</td>
-	<td>{{$inscrit->evenement->nom()}}</td>
-    <td>{{$inscrit->categorie->nom}} </td>
+	<td>{{$inscrit->animal()->nomComplet()}}</td>
+	<td>{{$inscrit->evenement()->nom()}}</td>
+    <td>{{$inscrit->categorie()->nom}} </td>
    
     <td><a href="#">désinscrire</a></td>
 </tr>
