@@ -61,15 +61,15 @@ $date = $game->date();
 				<span class= 'rouge'>Irréversible!</span>
 			</span>
 								
-
+			@if (session('alert'))
+    <span class="alert" }>
+       {{ session('alert') }}
+</span>
+@endif
 									
 		
 	</nav>
-@if (session('alert'))
-    <div class="alert" }>
-       {{ session('alert') }}
-    </div>
-@endif
+
 </div>
 <div id="main">
 @yield('content')
