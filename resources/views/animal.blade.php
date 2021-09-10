@@ -36,9 +36,9 @@
 				<p>{{ $animal->taille() }} cm</p>
 				<?php $pathos = $animal->Pathologie()->get() ?>
 				<p>@isset($animal->Pathologie)
-					@foreach($pathos as $patho)
-					{{$patho->nom}}
-					@endforeach
+						@foreach($pathos as $patho)
+						{{$patho->nom}}
+						@endforeach
 					@endisset
 				</p> 
 				<p>né le: {{$animal->date_naissance}}</p>
@@ -63,7 +63,7 @@
 			</div>	
 			@endif
 			<div id='vente'>
-				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && ($animal->ageMonths>=6))
+				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && ($animal->ageMonths()>=6))
 
 					<a href="{{route('vendre',[$elevage->id,$animal->id])}}">
 								<button >Mettre en vente</button></a>
