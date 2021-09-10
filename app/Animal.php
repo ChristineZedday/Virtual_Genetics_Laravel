@@ -137,11 +137,6 @@ class Animal extends Model
         $age = $date_naissance->diff($date);
         $age = 12 * $age->y + $age->m; //ppfffiou!
         
-        
-       
-        
-
-        
         return $age;
     }
 
@@ -153,8 +148,6 @@ class Animal extends Model
       
         $age = $date_naissance->diff($date)->y;
        
-        // $age = $age/(24*60*60*30*12);
-
         
         return $age;
     }

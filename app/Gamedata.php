@@ -355,7 +355,7 @@ static function VenteJeunes ()
 
         foreach ($animaux as $animal)
         {
-            if (($animal->ageYears >= 7) && (! $animal->fondateur) )
+            if (($animal->ageMonths() >= 6) && (! $animal->fondateur) )
         { 
             $animal->a_vendre = true;
             $race = Race::find($animal->race_id);
