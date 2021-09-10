@@ -103,7 +103,7 @@ static function checkSevres()
     $animaux = Animal::where('elevage_id', '!=', 2)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths >= 6)
+        if ($animal->ageMonths() >= 6)
         {
             if ($animal->sexe == 'jeune poulain')
             {
@@ -129,7 +129,7 @@ static function checkPuberes()
     $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths >= 24)
+        if ($animal->ageMonths() >= 24)
         { 
            $animal->sexe = 'mâle';
             $animal->save();
@@ -161,7 +161,7 @@ static function checkPuberes()
     $animaux = Animal::where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths >= 24)
+        if ($animal->ageMonths() >= 24)
         { $animal->sexe = 'femelle';
          $animal->save();
          $statut = new statutsFemelle();
@@ -179,7 +179,7 @@ static function checkVieux ($date)
     $animaux = Animal::whereIn('sexe',$cas)->get();
     foreach ($animaux as $animal)
     {
-        $age = $animal->ageYears;
+        $age = $animal->ageYears();
         if ($age > 15)
         {
             switch ($animal->sexe) 
@@ -246,7 +246,7 @@ static function checkVieux ($date)
     foreach ($animaux as $animal)
     {
         
-        $age = $animal->ageYears;
+        $age = $animal->ageYears();
             switch ($age)
             {
                 case $age<20:
