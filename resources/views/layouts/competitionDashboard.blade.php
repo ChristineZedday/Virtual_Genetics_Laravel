@@ -25,6 +25,12 @@ $date = $game->date();
 						
 					</ul>
 				</li>
+				<li class='deroule'><a href="{{route('inscrits', [$elevage])}}">Vos animaux inscrits</a>
+					<ul class='sousmenu'>
+						<li><a href="{{route('inscrits', [$elevage])}}">Modèles et allures</a></li>
+						
+					</ul>
+				</li>
 				<li class='deroule'><a href="{{route('resultats', [$elevage])}}">Résultats des compétitions</a>
 					<ul class='sousmenu'>
 						<li><a href="{{route('resultats', [$elevage])}}">Modèles et allures</a></li>

@@ -97,4 +97,20 @@ class CompetitionController extends Controller
         }
     }
 
+    public function inscrits( $elevage)
+    {
+       Resultat::inscrits($elevage);
+
+        
+        
+    }
+
+    public function resultats( $elevage)
+    {
+       
+        Resultat::resultats($elevage);
+        
+        
+    }
+
 }
