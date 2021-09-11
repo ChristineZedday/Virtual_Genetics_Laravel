@@ -15,16 +15,19 @@ class Resultat extends Model
    public function Animal() 
    {
       $animal = Animal::find($this->animal_id);
+      return $animal;
    }
 
    public function Categorie() 
    {
       $catogorie = Animal::find($this->categorie_id);
+      return $categorie;
    }
 
    public function Evenement()
    {
       $evenement = Evenement::find($this->evenement_id);
+      return $evenement;
    }
 
    static function inscrits($elevage)
