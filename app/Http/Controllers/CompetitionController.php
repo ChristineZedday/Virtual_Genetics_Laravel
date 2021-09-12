@@ -112,6 +112,7 @@ class CompetitionController extends Controller
     {
        
         Resultat::resultats($elevage);
+        $elevage =Elevage::Find($elevage);
         
         
     }

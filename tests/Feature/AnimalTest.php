@@ -59,6 +59,16 @@ class AnimalTest extends TestCase
         $this->assertEquals(4, $animal->ageYears());
      }
 
+     public function testAgeAdministratif () 
+     {
+        GamedataTest::createGameData();
+        $animal = New Animal;
+        $animal->date_naissance = "1966-08-10";
+        
+
+        $this->assertEquals(4, $animal->ageAdministratif());
+     }
+
 
     public function testTailleAdulte()
     {
