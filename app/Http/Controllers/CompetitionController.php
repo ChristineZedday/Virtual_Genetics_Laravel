@@ -75,6 +75,7 @@ class CompetitionController extends Controller
 
         $animal = Animal::Find($resultat->animal_id);
         $elevage= Elevage::Find($animal->elevage_id);
+       
         $animaux= $elevage->Animaux()->get();
         $evenement = Evenement::Find($evenement);
         
@@ -85,7 +86,7 @@ class CompetitionController extends Controller
                 $request->session()->flash('alert-class',"alert-sucess");
                 
                
-                return redirect()->route('competitions',[$animal->elevage_id, $evenement->id])->with('status',"votre animal a été inscrit dans sa catégorie");
+                return redirect()->route('competitions',[ $elevage, $evenement->id])->with('status',"votre animal a été inscrit dans sa catégorie");
             }
         }
         else {
@@ -100,6 +101,7 @@ class CompetitionController extends Controller
     public function inscrits( $elevage)
     {
        $inscrits = Resultat::inscrits($elevage);
+       $elevage =Elevage::Find($elevage);
        return view('inscrits', ['elevage' => $elevage, 'inscrits' => $inscrits]);
 
         

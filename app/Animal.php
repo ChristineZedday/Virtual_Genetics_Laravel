@@ -344,7 +344,10 @@ class Animal extends Model
            
         }
         
-
+public function Evenements() 
+{
+    return $this->BelongsToMany('App\Evenement')->using('App\Resultat');
+}
         
     
  

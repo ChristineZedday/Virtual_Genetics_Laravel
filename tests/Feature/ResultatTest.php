@@ -27,8 +27,9 @@ class ResultatTest extends TestCase
         $animal = factory(Animal::class)->create();
        $res->animal_id = $animal->id;
       
-        $this->assertEquals('mâle', $res->Animal()->sexe);
-        $this->assertEquals('bai', $res->Animal()->couleur);
+        $this->assertEquals('mâle', $res->Animal->sexe);
+        $this->assertEquals('bai', $res->Animal->couleur);
         
     }
+
 }
