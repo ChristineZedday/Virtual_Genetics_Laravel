@@ -14,20 +14,19 @@ class CategoriesTableSeeder extends Seeder
     {
         
 
-        \DB::table('Categories')->delete();
+        \DB::table('categories')->delete();
         
-        \DB::table('Categories')->insert(array (
+        \DB::table('categories')->insert(array (
             0 => 
             array (
                 'id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -43,11 +42,10 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâle 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -63,11 +61,10 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'étalons',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 41,
-                'age_max' => 255,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -83,11 +80,10 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -103,11 +99,10 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 3,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -123,11 +118,10 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -143,11 +137,10 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -157,19 +150,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 2,
             ),
-        ));
-        \DB::table('Categories')->insert(array (
-            0 => 
+            7 => 
             array (
                 'id' => 8,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -179,17 +169,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 4,
             ),
-            1 => 
+            8 => 
             array (
                 'id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâle 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -199,17 +188,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 4,
             ),
-            2 => 
+            9 => 
             array (
                 'id' => 10,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'étalons',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 41,
-                'age_max' => 255,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -219,17 +207,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 4,
             ),
-            3 => 
+            10 => 
             array (
                 'id' => 11,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -239,17 +226,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 4,
             ),
-            4 => 
+            11 => 
             array (
                 'id' => 12,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 3,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -259,17 +245,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 4,
             ),
-            5 => 
+            12 => 
             array (
                 'id' => 13,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -279,17 +264,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 4,
             ),
-            6 => 
+            13 => 
             array (
                 'id' => 14,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -299,19 +283,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 4,
             ),
-        ));
-        \DB::table('Categories')->insert(array (
-            0 => 
+            14 => 
             array (
                 'id' => 15,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -321,17 +302,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 5,
             ),
-            1 => 
+            15 => 
             array (
                 'id' => 16,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâle 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -341,17 +321,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 5,
             ),
-            2 => 
+            16 => 
             array (
                 'id' => 17,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'étalons',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 41,
-                'age_max' => 255,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -361,17 +340,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 5,
             ),
-            3 => 
+            17 => 
             array (
                 'id' => 18,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -381,17 +359,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 5,
             ),
-            4 => 
+            18 => 
             array (
                 'id' => 19,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 3,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -401,17 +378,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 5,
             ),
-            5 => 
+            19 => 
             array (
                 'id' => 20,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -421,17 +397,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 5,
             ),
-            6 => 
+            20 => 
             array (
                 'id' => 21,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -441,19 +416,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 5,
             ),
-        ));
-        \DB::table('Categories')->insert(array (
-            0 => 
+            21 => 
             array (
                 'id' => 22,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -463,17 +435,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 6,
             ),
-            1 => 
+            22 => 
             array (
                 'id' => 23,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâle 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -483,17 +454,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 6,
             ),
-            2 => 
+            23 => 
             array (
                 'id' => 24,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'étalons',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 41,
-                'age_max' => 255,
+                'age_min' => 4,
+                'age_max' => 4,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -503,17 +473,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 6,
             ),
-            3 => 
+            24 => 
             array (
                 'id' => 25,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -523,17 +492,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 6,
             ),
-            4 => 
+            25 => 
             array (
                 'id' => 26,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 3,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -543,17 +511,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 6,
             ),
-            5 => 
+            26 => 
             array (
                 'id' => 27,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -563,17 +530,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 6,
             ),
-            6 => 
+            27 => 
             array (
                 'id' => 28,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 4,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -583,19 +549,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 6,
             ),
-        ));
-        \DB::table('Categories')->insert(array (
-            0 => 
+            28 => 
             array (
                 'id' => 29,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -605,17 +568,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 7,
             ),
-            1 => 
+            29 => 
             array (
-                'id' =>30,
+                'id' => 30,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâle 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -625,17 +587,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 7,
             ),
-            2 => 
+            30 => 
             array (
                 'id' => 31,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'étalons',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 41,
-                'age_max' => 255,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -645,17 +606,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 7,
             ),
-            3 => 
+            31 => 
             array (
                 'id' => 32,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -665,17 +625,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 7,
             ),
-            4 => 
+            32 => 
             array (
                 'id' => 33,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 3,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -685,17 +644,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 7,
             ),
-            5 => 
+            33 => 
             array (
                 'id' => 34,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -705,17 +663,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 7,
             ),
-            6 => 
+            34 => 
             array (
                 'id' => 35,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -725,19 +682,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 7,
             ),
-        ));
-        \DB::table('Categories')->insert(array (
-            0 => 
+            35 => 
             array (
                 'id' => 36,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -747,17 +701,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 10,
             ),
-            1 => 
+            36 => 
             array (
                 'id' => 37,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâle 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 29,
-                'age_max' => 47,
+                'age_min' => 3,
+                'age_max' => 3,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -767,17 +720,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 10,
             ),
-            2 => 
+            37 => 
             array (
                 'id' => 38,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'étalons',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'mâle',
-                'age_min' => 41,
-                'age_max' => 255,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -787,17 +739,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 10,
             ),
-            3 => 
+            38 => 
             array (
                 'id' => 39,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 2 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 17,
-                'age_max' => 35,
+                'age_min' => 2,
+                'age_max' => 2,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => NULL,
@@ -807,17 +758,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 10,
             ),
-            4 => 
+            39 => 
             array (
                 'id' => 40,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 3,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -827,17 +777,16 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 10,
             ),
-            5 => 
+            40 => 
             array (
                 'id' => 41,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'ponettes suitées',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 41,
-                'age_max' => 216,
+                'age_min' => 4,
+                'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'saillie' => 1,
@@ -847,13 +796,12 @@ class CategoriesTableSeeder extends Seeder
                 'approuvé' => NULL,
                 'race_id' => 10,
             ),
-            6 => 
+            41 => 
             array (
                 'id' => 42,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans',
-               
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
                 'age_min' => 29,

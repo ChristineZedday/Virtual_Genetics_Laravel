@@ -16,15 +16,15 @@ class Categorie extends Model
    public function verification($animal, $date) : bool
    {
     $animal = Animal::Find($animal);
-    $nbMonths = Gamedata::HowManyMonths($date); 
+  
     switch (true) {
     case $this->type==="Modèle et Allures Race" :
         switch(true) {
             case $this->race_id != $animal->race_id:
                 return false;
-            case $this->age_min > ($animal->ageMonths() + $nbMonths):
+            case $this->age_min > $animal->ageAdministratif($date) :
                 return false;
-            case $this->age_max < ($animal->ageMonths() + $nbMonths):
+            case $this->age_max < $animal->ageAdministratif($date) :
                 return false;
             case $this->sexe != $animal->genre():
                 return false;

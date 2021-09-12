@@ -152,9 +152,12 @@ class Animal extends Model
         return $age;
     }
 
-    public function ageAdministratif()
+    public function ageAdministratif($date = null)
     {
-        $date = DateTime::createFromFormat('Y-m-d', Gamedata::date());
+        if ($date != null)
+       { $date = DateTime::createFromFormat('Y-m-d', $date);}
+       else
+       { $date = DateTime::createFromFormat('Y-m-d', Gamedata::date());}
         
         $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
         $annee = explode("-",$this->date_naissance)[0];
