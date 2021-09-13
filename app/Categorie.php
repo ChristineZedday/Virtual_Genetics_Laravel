@@ -15,6 +15,7 @@ class Categorie extends Model
 
    public function verification($animal, $date) : bool
    {
+      
     $animal = Animal::Find($animal);
   
     switch (true) {

@@ -7,7 +7,6 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Categorie;
 use App\Animal;
-use App\Race;
 
 class CategorieTest extends TestCase
 {
@@ -19,17 +18,35 @@ class CategorieTest extends TestCase
      */
     public function testVerification()
     {
-        $animal = New Animal();
-        $animal->date_naissance ="04-06-1970";
+        $animal = factory(Animal::class)->create();
+        $animal->date_naissance ="1971-06-04";
         $animal->sexe ="jeune pouliche";
-        $animal->race = factory(Race::class)->create();
+        $animal->save();
+      
 
         $categorie = New Categorie();
+        $categorie->type ="Modèle et Allures Race";
         $categorie->sexe ="femelle";
         $categorie->age_min = 2;
         $categorie->age_max = 2;
-        $categorie->race = $animal->race;
+        $categorie->race_id = 1;
 
-        $this->assertTrue($categorie->verification($animal, '03-03-1972'));
+        $date_event = "1973-03-03";
+
+        $this->assertTrue($categorie->verification($animal->id, $date_event));
+
+        $categorie->sexe ="mâle";
+        
+        $this->assertFalse($categorie->verification($animal->id, $date_event));
+
+        $categorie->sexe ="femelle";
+        $categorie->age_min = 3;
+        $categorie->age_max = 3;
+        $this->assertFalse($categorie->verification($animal->id, $date_event));
+
+        $categorie->age_min = 2;
+        $categorie->age_max = 2;
+        $categorie->race_id = 2;
+        $this->assertFalse($categorie->verification($animal->id, $date_event));
     }
 }
