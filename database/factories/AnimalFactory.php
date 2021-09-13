@@ -12,7 +12,11 @@ $factory->define(Animal::class, function (Faker $faker) {
         'sexe' =>'mâle',
         'couleur' => 'bai',
         'race_id' =>factory(App\Race::class), 
-        'id' => 1,
+        'date_naissance' => '1965-05-15',
        
     ];
+    $factory->state(App\Animal::class, 'femelle', [
+        'sexe' => 'femelle',
+       
+    ]);
 });
