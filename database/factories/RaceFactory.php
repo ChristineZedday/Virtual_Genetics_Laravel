@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Race::class, function (Faker $faker) {
     return [
-        'nom' => $faker->name,
-        'prix_moyen' => 2000,
+        'nom' => 'Shetland',
+        'prix_moyen' => 700,
         
     ];
 });
