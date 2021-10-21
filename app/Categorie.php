@@ -13,11 +13,20 @@ class Categorie extends Model
        return $this->BelongsToMany('App\Competition', 'categorie_competition', 'competition_id', 'categorie_id');
    }
 
-   public function verification($animal, $date) : bool
+   public function verification($animal, $evenement) : bool
    {
       
     $animal = Animal::Find($animal);
-  
+    $date = Evenement::Find($evenement)->date;
+
+    $results = Resultat::Where('animal_id', $animal->id)->get();
+    foreach ($results as $result) {
+        $event = Evenement::Find($result->evenement->id);
+        if ($event->date === $date) {
+            return false;
+        }
+    }
+    
     switch (true) {
     case $this->type==="Modèle et Allures Race" :
         switch(true) {
