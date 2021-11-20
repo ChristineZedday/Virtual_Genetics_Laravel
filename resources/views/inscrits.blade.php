@@ -16,7 +16,7 @@
 	<td>{{$inscrit->Evenement->nom()}}</td>
     <td>{{$inscrit->Categorie->nom}} </td>
    
-    <td><a href="#">désinscrire</a></td>
+    <td><a href="{{route('desinscrire',['evenement'=>$inscrit->Evenement->id, 'categorie'=>$inscrit->Categorie->id, $inscrit->Animal->id])}}">désinscrire</a></td>
 </tr>
 @endforeach
 </div>

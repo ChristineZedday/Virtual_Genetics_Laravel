@@ -105,3 +105,6 @@ Route::get('/competitions/{elevage}/{evenement}', 'CompetitionController@inscrir
 
 Route::post('/inscription/{evenement}', 'CompetitionController@inscription')->name('inscription');
 
+Route::get('/desinscrire/{evenement}/{categorie}/{animal}', 'CompetitionController@desinscrire')->name('desinscrire');
+
+

@@ -121,4 +121,19 @@ class CompetitionController extends Controller
         
     }
 
+    public function desinscrire($evenement, $categorie, $animal)
+    {
+   
+       $resultat = Resultat::where('animal_id',$animal)->where('evenement_id',$evenement)->where('categorie_id', $categorie);
+    
+       if ($resultat->delete()) {
+       
+       
+        return redirect()->back()->with('status',"votre animal a été désinscrit");
+    }
+       
+    }
+
+  
+
 }
