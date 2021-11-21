@@ -140,6 +140,15 @@ static function reproNPC()
             }    
         
 }
+
+static function regCompetNPC() 
+{
+    $competiteurs = Elevage::where('role','Vendeur')->orWhere('role','Acheteur')->get();
+    foreach($competiteurs as $competiteur) {
+        //selectionner chevaux dont la note MA>15
+        //inscrire dans la bonne catégorie
+    }
+}
 }
 
 
