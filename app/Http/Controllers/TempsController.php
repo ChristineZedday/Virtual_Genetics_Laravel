@@ -145,8 +145,22 @@ static function regCompetNPC()
 {
     $competiteurs = Elevage::where('role','Vendeur')->orWhere('role','Acheteur')->get();
     foreach($competiteurs as $competiteur) {
-        //selectionner chevaux dont la note MA>15
+        //selectionner chevaux dont la note MA>10
+        $chevaux = Animaux::where('modele_allures', '>=', 11)->get();
         //inscrire dans la bonne catégorie
+        foreach ($chevaux as $cheval) {
+            switch(true) {
+                case $cheval->Genre() === 'mâle':
+                switch(true) {
+
+                }
+                case $cheval->Genre() === 'femelle':
+                    switch(true) {
+    
+                    }
+            }
+            
+        }
     }
 }
 }
