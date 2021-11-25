@@ -35,6 +35,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 2,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
             ),
             1 => 
             array (
@@ -54,6 +56,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 2,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
             ),
             2 => 
             array (
@@ -73,6 +77,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => 1,
                 'approuvé' => NULL,
                 'race_id' => 2,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
             ),
             3 => 
             array (
@@ -92,6 +98,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 2,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
             ),
             4 => 
             array (
@@ -111,6 +119,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 2,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
             ),
             5 => 
             array (
@@ -130,6 +140,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 2,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
             ),
             6 => 
             array (
@@ -149,6 +161,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 2,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
             ),
             7 => 
             array (
@@ -168,6 +182,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 4,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             8 => 
             array (
@@ -187,6 +203,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 4,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             9 => 
             array (
@@ -206,6 +224,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => 1,
                 'approuvé' => NULL,
                 'race_id' => 4,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             10 => 
             array (
@@ -225,6 +245,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 4,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             11 => 
             array (
@@ -244,6 +266,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 4,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             12 => 
             array (
@@ -263,6 +287,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 4,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             13 => 
             array (
@@ -282,6 +308,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 4,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             14 => 
             array (
@@ -301,6 +329,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 5,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             15 => 
             array (
@@ -320,6 +350,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 5,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             16 => 
             array (
@@ -339,6 +371,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => 1,
                 'approuvé' => NULL,
                 'race_id' => 5,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             17 => 
             array (
@@ -358,6 +392,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 5,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             18 => 
             array (
@@ -377,6 +413,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 5,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             19 => 
             array (
@@ -396,6 +434,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 5,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             20 => 
             array (
@@ -415,6 +455,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 5,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             21 => 
             array (
@@ -434,6 +476,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 6,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             22 => 
             array (
@@ -453,6 +497,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 6,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             23 => 
             array (
@@ -472,6 +518,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => 1,
                 'approuvé' => NULL,
                 'race_id' => 6,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             24 => 
             array (
@@ -491,6 +539,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 6,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             25 => 
             array (
@@ -510,6 +560,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 6,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             26 => 
             array (
@@ -529,6 +581,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 6,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             27 => 
             array (
@@ -548,6 +602,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 6,
+                'prix_inscription' => 10,
+                'prix_premier' => 100,
             ),
             28 => 
             array (
@@ -567,6 +623,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 7,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             29 => 
             array (
@@ -586,6 +644,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 7,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             30 => 
             array (
@@ -605,6 +665,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => 1,
                 'approuvé' => NULL,
                 'race_id' => 7,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             31 => 
             array (
@@ -624,6 +686,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 7,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             32 => 
             array (
@@ -643,6 +707,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 7,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             33 => 
             array (
@@ -662,6 +728,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 7,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             34 => 
             array (
@@ -681,6 +749,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 7,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             35 => 
             array (
@@ -700,6 +770,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 10,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             36 => 
             array (
@@ -719,6 +791,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 10,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             37 => 
             array (
@@ -738,6 +812,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => 1,
                 'approuvé' => NULL,
                 'race_id' => 10,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             38 => 
             array (
@@ -757,6 +833,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 10,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             39 => 
             array (
@@ -776,6 +854,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 10,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             40 => 
             array (
@@ -795,6 +875,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 10,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
             41 => 
             array (
@@ -814,6 +896,8 @@ class CategoriesTableSeeder extends Seeder
                 'autorisé' => NULL,
                 'approuvé' => NULL,
                 'race_id' => 10,
+                'prix_inscription' => 15,
+                'prix_premier' => 200,
             ),
         ));
         

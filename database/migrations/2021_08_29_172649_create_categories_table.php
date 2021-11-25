@@ -30,6 +30,9 @@ class CreateCategoriesTable extends Migration
             $table->boolean('approuvé')->nullable();
             $table->bigInteger('race_id')->unsigned()->nullable();
             $table->foreign('race_id')->references('id')->on('races');
+            $table->smallInteger('prix_inscription')->unsigned()->nullable();
+            $table->MediumInteger('prix_premier')->unsigned()->nullable();
+
         });
     }
 

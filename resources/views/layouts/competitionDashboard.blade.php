@@ -45,9 +45,9 @@ $date = $game->date();
 			</ul>
 			
 								
-			@if (session('status'))
+			@if (session('alert'))
     <span class="alert" }>
-       {{ session('status') }}
+       {{ session('alert') }}
 </span>
 @endif
 									
