@@ -85,7 +85,7 @@ class CompetitionController extends Controller
         if ($categorie->verification($resultat->animal_id, $evenement->id)) {
            
                 if ($resultat->save()) {
-                $elevage->budget -= 10;
+                $elevage->budget -= $categorie->prix_inscription;
                 $elevage->save();
                 $request->session()->flash('status');
                 $request->session()->flash('alert-class',"alert-sucess");
