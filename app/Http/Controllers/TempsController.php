@@ -12,6 +12,9 @@ use App\Race;
 use App\StatutMale;
 use App\Pathologie;
 use App\Debug;
+use App\Evenement;
+use App\Categorie;
+use App\Competition;
 
 class TempsController extends Controller
 {
@@ -39,7 +42,8 @@ class TempsController extends Controller
             $animaux = Animal::where('elevage_id', $elevage->id)->get();
              
                 foreach ($animaux as $animal) {
-                    $fraisveto += 20;
+                    //on rajoutera plus tard un traitement différent selon la santé de l'animal
+                    $fraisveto += 10;
                 }
                 $elevage->budget -= $fraisveto;
             $elevage->save();
@@ -72,6 +76,7 @@ class TempsController extends Controller
         }
         if ( Gamedata::saison())
        { TempsController::reproNPC();}
+       TempsController::regCompetNPC();
         // $elevage = Elevage::Find($elevage);
         // return view('dashboard',['elevage' =>$elevage]);
         return redirect()->back();
@@ -144,21 +149,26 @@ static function reproNPC()
 static function regCompetNPC() 
 {
     $competiteurs = Elevage::where('role','Vendeur')->orWhere('role','Acheteur')->get();
+    $date = Gamedata::date();
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>10
-        $chevaux = Animaux::where('modele_allures', '>=', 11)->get();
-        //inscrire dans la bonne catégorie
+        $chevaux = Animal::where('modele_allures', '>=', 11)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //so far so good
+        //inscrire dans la bonne compétition et catégorie
         foreach ($chevaux as $cheval) {
-            switch(true) {
-                case $cheval->Genre() === 'mâle':
-                switch(true) {
-
-                }
-                case $cheval->Genre() === 'femelle':
-                    switch(true) {
-    
-                    }
+            $race = $cheval->race->id;
+            if (strpos($cheval->sexe,'stérilisé') != false){
+                break;//à déplacer quand autre que MA
             }
+            $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $cheval->ageAdministratif($date))->where('age_max', '>=', $cheval->ageAdministratif($date))->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+            //faut rajouter suitée, et autorisé pour les étalons
+          //so far so good
+          $competition = Competition::whereHas('categories', function ($query) use($categorie) {$query->where('categorie_id', $categorie);})->first();
+          dd($competition);//null
+        $evenement = Evenement::where('date', $date)->where ('competition_id', $competition)->first();
+           
+                dd($cheval->nom.' '.$evenement);
+            
+
             
         }
     }
