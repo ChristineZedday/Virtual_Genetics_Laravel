@@ -161,14 +161,20 @@ static function regCompetNPC()
             }
             $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $cheval->ageAdministratif($date))->where('age_max', '>=', $cheval->ageAdministratif($date))->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
             //faut rajouter suitée, et autorisé pour les étalons
-          //so far so good
+          if ($categorie != null){
+            $categorie = $categorie->id;
           $competition = Competition::whereHas('categories', function ($query) use($categorie) {$query->where('categorie_id', $categorie);})->first();
-          dd($competition);
-        $evenement = Evenement::where('date', $date)->where ('competition_id', $competition)->first();
-           
-                dd($cheval->nom.' '.$evenement);
-            
-
+         //so far so good
+         
+          if ($competition != null) {
+            $competition = $competition->id;
+        $evenement = Evenement::where('competition_id', $competition)->first(); //pb avec $date?
+       
+     if (isset($evenement)) {
+                    dd($cheval->nom.' '.$evenement->nom());
+            }
+        } 
+    }
             
         }
     }
