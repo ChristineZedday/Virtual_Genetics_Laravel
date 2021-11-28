@@ -163,7 +163,7 @@ static function regCompetNPC()
             //faut rajouter suitée, et autorisé pour les étalons
           //so far so good
           $competition = Competition::whereHas('categories', function ($query) use($categorie) {$query->where('categorie_id', $categorie);})->first();
-          dd($competition);//null
+          dd($competition);
         $evenement = Evenement::where('date', $date)->where ('competition_id', $competition)->first();
            
                 dd($cheval->nom.' '.$evenement);
