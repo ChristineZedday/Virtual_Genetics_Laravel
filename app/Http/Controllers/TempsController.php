@@ -15,6 +15,7 @@ use App\Debug;
 use App\Evenement;
 use App\Categorie;
 use App\Competition;
+use App\Resultat;
 
 class TempsController extends Controller
 {
@@ -152,7 +153,7 @@ static function regCompetNPC()
     $date = Gamedata::date();
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>10
-        $chevaux = Animal::where('modele_allures', '>=', 11)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //so far so good
+        $chevaux = Animal::where('modele_allures', '>=', 12)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //so far so good
         //inscrire dans la bonne compétition et catégorie
         foreach ($chevaux as $cheval) {
             $race = $cheval->race->id;
@@ -162,8 +163,9 @@ static function regCompetNPC()
             $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $cheval->ageAdministratif($date))->where('age_max', '>=', $cheval->ageAdministratif($date))->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
             //faut rajouter suitée, et autorisé pour les étalons
           if ($categorie != null){
-            $categorie = $categorie->id;
-          $competition = Competition::whereHas('categories', function ($query) use($categorie) {$query->where('categorie_id', $categorie);})->first();
+              $prix = $categorie->prix_inscription;
+            $categorie_id = $categorie->id;
+          $competition = Competition::whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
          //so far so good
          
           if ($competition != null) {
@@ -171,11 +173,17 @@ static function regCompetNPC()
         $evenement = Evenement::where('competition_id', $competition)->first(); //pb avec $date?
        
      if (isset($evenement)) {
-                    dd($cheval->nom.' '.$evenement->nom());
+                   
             }
         } 
     }
-            
+            $resultat = New Resultat;
+            $resultat->animal_id = $cheval->id;
+            $resultat->evenement_id = $evenement->id;
+            $resultat->categorie_id = $categorie_id;
+            $competiteur->budget -= $prix;
+            $resultat->save();
+            $competiteur->save();
         }
     }
 }
