@@ -152,41 +152,43 @@ static function regCompetNPC()
     $competiteurs = Elevage::where('role','Vendeur')->orWhere('role','Acheteur')->get();
     $date = Gamedata::date();
     foreach($competiteurs as $competiteur) {
-        //selectionner chevaux dont la note MA>10
+        //selectionner chevaux dont la note MA>11
         $chevaux = Animal::where('modele_allures', '>=', 12)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //so far so good
         //inscrire dans la bonne compétition et catégorie
         foreach ($chevaux as $cheval) {
-            $race = $cheval->race->id;
+            // $race = $cheval->race->id;
             if (strpos($cheval->sexe,'stérilisé') != false){
                 break;//à déplacer quand autre que MA
             }
             $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $cheval->ageAdministratif($date))->where('age_max', '>=', $cheval->ageAdministratif($date))->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
             //faut rajouter suitée, et autorisé pour les étalons
           if ($categorie != null){
+            
               $prix = $categorie->prix_inscription;
             $categorie_id = $categorie->id;
           $competition = Competition::whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
-         //so far so good
+       
          
           if ($competition != null) {
             $competition = $competition->id;
         $evenement = Evenement::where('competition_id', $competition)->first(); //pb avec $date?
-       
+      
      if (isset($evenement)) {
-                   
-            }
-        } 
-    }
+              
             $resultat = New Resultat;
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
             $resultat->categorie_id = $categorie_id;
             $competiteur->budget -= $prix;
+          
             $resultat->save();
-            $competiteur->save();
-        }
+            $competiteur->save();     
+            }
+        } 
     }
-}
+        }
+    } //end foreach competiteurs
+} //end function regNPC
 }
 
 
