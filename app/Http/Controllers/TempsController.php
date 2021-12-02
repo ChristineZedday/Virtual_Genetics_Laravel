@@ -17,6 +17,7 @@ use App\Categorie;
 use App\Competition;
 use App\Resultat;
 
+
 class TempsController extends Controller
 {
    
@@ -150,7 +151,10 @@ static function reproNPC()
 static function regCompetNPC() 
 {
     $competiteurs = Elevage::where('role','Vendeur')->orWhere('role','Acheteur')->get();
-    $date = Gamedata::date();
+    $date =Gamedata::date();
+    $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
+   
+   
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>11
         $chevaux = Animal::where('modele_allures', '>=', 12)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //so far so good
@@ -160,7 +164,8 @@ static function regCompetNPC()
             if (strpos($cheval->sexe,'stérilisé') != false){
                 break;//à déplacer quand autre que MA
             }
-            $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $cheval->ageAdministratif($date))->where('age_max', '>=', $cheval->ageAdministratif($date))->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+            $age = $cheval->ageAdministratif($date);
+            $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
             //faut rajouter suitée, et autorisé pour les étalons
           if ($categorie != null){
             
@@ -171,8 +176,8 @@ static function regCompetNPC()
          
           if ($competition != null) {
             $competition = $competition->id;
-        $evenement = Evenement::where('competition_id', $competition)->first(); //pb avec $date?
-      
+        $evenement = Evenement::whereDate('date','<', $date)->where('competition_id', $competition)->first(); 
+     
      if (isset($evenement)) {
               
             $resultat = New Resultat;
