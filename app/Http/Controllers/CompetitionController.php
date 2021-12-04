@@ -9,6 +9,7 @@ use App\Evenement;
 use App\Animal;
 use App\Categorie;
 use App\Resultat;
+use App\Gamedata;
 
 class CompetitionController extends Controller
 {
@@ -37,7 +38,9 @@ class CompetitionController extends Controller
         //     $competitions = Competition::All();
 
         // }
-        $evenements = Evenement::all();
+        $date = Gamedata::date();
+        $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
+        $evenements = Evenement::where('date', '>=', $date)->get();
    
     
        return view('competitions', ['elevage' => $elevage, 'evenements'=>$evenements]);
@@ -48,8 +51,8 @@ class CompetitionController extends Controller
     {
         $elevage = Elevage::Find($elevage);
        $evenement = Evenement::Find($evenement);
-    //    dd($evenement->Competition)=OK
-        $categories = $evenement->Competition->Categories()->get(); //ok
+   
+        $categories = $evenement->Competition->Categories()->get(); 
       
        
      
