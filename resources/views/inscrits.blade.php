@@ -12,7 +12,7 @@
 </tr>
 @foreach ($inscrits as $inscrit)
 <tr>
-	<td>{{$inscrit->Animal->NomComplet()}}</td>
+	<td><a href="{{route('animal', ['elevage'=>$inscrit->Animal->elevage_id, 'animal'=>$inscrit->Animal->id])}}">{{$inscrit->Animal->NomComplet()}}</a></td>
 	<td>{{$inscrit->Evenement->nom()}}</td>
     <td>{{$inscrit->Categorie->nom}} </td>
    
