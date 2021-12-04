@@ -157,8 +157,9 @@ static function regCompetNPC()
    
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>11
-        $chevaux = Animal::where('modele_allures', '>=', 12)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //so far so good
+        $chevaux = Animal::where('modele_allures', '>=', 12)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //pas les OC
         //inscrire dans la bonne compétition et catégorie
+      
         foreach ($chevaux as $cheval) {
             // $race = $cheval->race->id;
             if (strpos($cheval->sexe,'stérilisé') != false){
@@ -167,18 +168,21 @@ static function regCompetNPC()
             $age = $cheval->ageAdministratif($date);
             $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
             //faut rajouter suitée, et autorisé pour les étalons
+         
+           
           if ($categorie != null){
+         
             
               $prix = $categorie->prix_inscription;
             $categorie_id = $categorie->id;
           $competition = Competition::whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
        
-         
+       
           if ($competition != null) {
-            $competition = $competition->id;
+           
         $evenement = Evenement::whereDate('date','<', $date)->where('competition_id', $competition)->first(); 
      
-     if (isset($evenement)) {
+            if (isset($evenement)) {
               
             $resultat = New Resultat;
             $resultat->animal_id = $cheval->id;
@@ -190,9 +194,11 @@ static function regCompetNPC()
             $competiteur->save();     
             }
         } 
-    }
+    
+        }
         }
     } //end foreach competiteurs
+  
 } //end function regNPC
 }
 
