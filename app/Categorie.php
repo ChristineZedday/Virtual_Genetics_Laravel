@@ -58,25 +58,39 @@ class Categorie extends Model
     $date =Gamedata::date();
     $age = $cheval->ageAdministratif($date);
    
-    $suitee = 0;
-    if ($cheval->Statut) {
-        if ($cheval->Statut->suitee)
-        $suitee = 1;
-    } 
+   if ($cheval->Genre() === 'mâle') {
     $autorise = 0;
     if ($cheval->StatutMale) {
         if ($cheval->StatutMale->qualite == "autorisé"
         || $cheval->StatutMale->qualite == "approuvé") {
             $autorise = 1;
         }
-    }  
-    $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
-    //->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})
+    }
+        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+        //)
+       
+
+   }
+   else {
+    $suitee = 0;
+    if ($cheval->Statut) {
+        if ($cheval->Statut->suitee){
+        $suitee = 1;
+        }
+    }
+        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->where(function ($q) use ($suitee){$q->whereNull('suitee')->orWhere('suitee', $suitee);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+        //)
+
+   }
+   
+   
  if (isset($categorie)) {
   return $categorie;
  }
  else {
      return false;
  }
-   }
 }
+   
+}
+   
