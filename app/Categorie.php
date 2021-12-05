@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Animal;
+use App\Evenement;
 
 class Categorie extends Model
 {
@@ -12,7 +14,7 @@ class Categorie extends Model
    {
        return $this->BelongsToMany('App\Competition', 'categorie_competition', 'competition_id', 'categorie_id');
    }
-
+/**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
    public function verification($animal, $evenement) : bool
    {
       
@@ -48,5 +50,33 @@ class Categorie extends Model
         
        
        return true;
+   }
+
+   /**Fonction qui cherche la catégorie  pour un cheval de PNJ */
+   public static function recherche(Animal $cheval) 
+   {
+    $date =Gamedata::date();
+    $age = $cheval->ageAdministratif($date);
+   
+    $suitee = 0;
+    if ($cheval->Statut) {
+        if ($cheval->Statut->suitee)
+        $suitee = 1;
+    } 
+    $autorise = 0;
+    if ($cheval->StatutMale) {
+        if ($cheval->StatutMale->qualite == "autorisé"
+        || $cheval->StatutMale->qualite == "approuvé") {
+            $autorise = 1;
+        }
+    }  
+    $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+    //->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})
+ if (isset($categorie)) {
+  return $categorie;
+ }
+ else {
+     return false;
+ }
    }
 }

@@ -161,28 +161,16 @@ static function regCompetNPC()
         //inscrire dans la bonne compétition et catégorie
       
         foreach ($chevaux as $cheval) {
-            // $race = $cheval->race->id;
+            
             if (strpos($cheval->sexe,'stérilisé') != false){
                 break;//à déplacer quand autre que MA
             }
-            $age = $cheval->ageAdministratif($date);
-            $suitee = 0;
-            if ($cheval->Statut) {
-                if ($cheval->Statut->suitee)
-                $suitee = 1;
-            } 
-            $autorise = 0;
-            if ($cheval->StatutMale) {
-                if ($cheval->StatutMale->qualite == "autorisé"
-                || $cheval->StatutMale->qualite == "approuvé") {
-                    $autorise = 1;
-                }
-            }  
-            $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
-            //faut rajouter suitée, et autorisé pour les étalons
-         
+            if ($cheval->ageAdministratif($date) < 2) {
+                break; //pas de compétitions poulains
+            }
+          $categorie = Categorie::recherche($cheval);
            
-          if ($categorie != null){
+          if ($categorie != false){
          
             
               $prix = $categorie->prix_inscription;
@@ -191,11 +179,11 @@ static function regCompetNPC()
        
        
           if ($competition != null) {
-           
+         //Une occurence de cette compétition ce mois-ci?  
         $evenement = Evenement::whereDate('date','<', $date)->where('competition_id', $competition)->first(); 
-     
+        dd($categorie.' '.$competition.' '.$evenement) ; 
             if (isset($evenement)) {
-              
+           
             $resultat = New Resultat;
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
