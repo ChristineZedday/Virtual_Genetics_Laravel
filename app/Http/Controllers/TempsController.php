@@ -176,12 +176,12 @@ static function regCompetNPC()
               $prix = $categorie->prix_inscription;
             $categorie_id = $categorie->id;
           $competition = Competition::whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
-       
+         
        
           if ($competition != null) {
          //Une occurence de cette compétition ce mois-ci?  
-        $evenement = Evenement::whereDate('date','<', $date)->where('competition_id', $competition)->first(); 
-        dd($categorie.' '.$competition.' '.$evenement) ; 
+        $evenement = Evenement::whereDate('date','<', $date)->where('competition_id', $competition->id)->first(); 
+        
             if (isset($evenement)) {
            
             $resultat = New Resultat;
