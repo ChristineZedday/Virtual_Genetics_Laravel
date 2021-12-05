@@ -166,7 +166,19 @@ static function regCompetNPC()
                 break;//à déplacer quand autre que MA
             }
             $age = $cheval->ageAdministratif($date);
-            $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+            $suitee = 0;
+            if ($cheval->Statut) {
+                if ($cheval->Statut->suitee)
+                $suitee = 1;
+            } 
+            $autorise = 0;
+            if ($cheval->StatutMale) {
+                if ($cheval->StatutMale->qualite == "autorisé"
+                || $cheval->StatutMale->qualite == "approuvé") {
+                    $autorise = 1;
+                }
+            }  
+            $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
             //faut rajouter suitée, et autorisé pour les étalons
          
            
