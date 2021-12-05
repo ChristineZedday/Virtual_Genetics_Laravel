@@ -79,8 +79,7 @@ class TempsController extends Controller
         if ( Gamedata::saison())
        { TempsController::reproNPC();}
        TempsController::regCompetNPC();
-        // $elevage = Elevage::Find($elevage);
-        // return view('dashboard',['elevage' =>$elevage]);
+       TempsController::runCompetitions();
         return redirect()->back();
     }
 
@@ -200,6 +199,19 @@ static function regCompetNPC()
     } //end foreach competiteurs
   
 } //end function regNPC
+static function runCompetitions() {
+    $date =Gamedata::date();
+    $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
+   
+  $evenements = Evenement::whereDate('date','<', $date)->get();
+  foreach ($evenements as $evenement){
+     
+     $categories = Categorie::where('evenement_id', $evenement->id)->get();
+     foreach ($categories as $categorie) {
+         $inscrits = Resultat::where('evenement_id', $evenement->id)->where('animal_id',$inscrits->animal_id)->get();
+     }
+  }
+}
 }
 
 

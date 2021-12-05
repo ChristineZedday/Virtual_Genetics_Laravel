@@ -10,6 +10,7 @@ use App\Animal;
 use App\Categorie;
 use App\Evenement;
 
+
 class Resultat extends Pivot
 {
    protected $table = 'resultats';
