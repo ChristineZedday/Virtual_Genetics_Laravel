@@ -34,7 +34,6 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => NULL,
                 'approuve' => NULL,
-               
             ),
             1 => 
             array (
@@ -53,7 +52,6 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => NULL,
                 'approuve' => NULL,
-              
             ),
             2 => 
             array (
@@ -72,7 +70,6 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => 1,
                 'approuve' => NULL,
-              
             ),
             3 => 
             array (
@@ -91,17 +88,16 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => NULL,
                 'approuve' => NULL,
-               
             ),
             4 => 
             array (
                 'id' => 5,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'ponettes',
+                'nom' => 'juments',
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
-                'age_min' => 3,
+                'age_min' => 4,
                 'age_max' => 18,
                 'taille_min' => NULL,
                 'taille_max' => NULL,
@@ -110,14 +106,13 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => NULL,
                 'approuve' => NULL,
-               
             ),
             5 => 
             array (
                 'id' => 6,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'ponettes suitées',
+                'nom' => 'juments suitées',
                 'type' => 'Modèle et Allures Race',
                 'sexe' => 'femelle',
                 'age_min' => 4,
@@ -129,7 +124,6 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => NULL,
                 'approuve' => NULL,
-               
             ),
             6 => 
             array (
@@ -148,47 +142,8 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => NULL,
                 'approuve' => NULL,
-               
             ),
             7 => 
-            array (
-                'id' => 8,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'nom' => 'pouliches 4 ans suitées',
-                'type' => 'Modèle et Allures Race',
-                'sexe' => 'femelle',
-                'age_min' => 4,
-                'age_max' => 4,
-                'taille_min' => NULL,
-                'taille_max' => NULL,
-                'saillie' => NULL,
-                'suitee' => 1,
-                'entier' => 1,
-                'autorise' => NULL,
-                'approuve' => NULL,
-                
-            ),
-            8 => 
-            array (
-                'id' => 9,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'nom' => 'juments',
-                'type' => 'Modèle et Allures Race',
-                'sexe' => 'femelle',
-                'age_min' => 4,
-                'age_max' => 18,
-                'taille_min' => NULL,
-                'taille_max' => NULL,
-                'saillie' => 1,
-                'suitee' => NULL,
-                'entier' => 1,
-                'autorise' => NULL,
-                'approuve' => NULL,
-                
-            ),
-            9 => 
             array (
                 'id' => 10,
                 'created_at' => NULL,
@@ -205,10 +160,7 @@ class CategoriesTableSeeder extends Seeder
                 'entier' => 1,
                 'autorise' => NULL,
                 'approuve' => NULL,
-               
             ),
-           
-          
         ));
         
         
