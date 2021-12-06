@@ -18,6 +18,10 @@ class Competition extends Model
     {
         return $this->BelongsToMany('App\Categorie');
     }
+    public function Races() 
+    {
+        return $this->BelongsToMany('App\Race')->withPivot('prix_inscription', 'prix_premier');
+    }
 
   
 

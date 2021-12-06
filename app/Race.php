@@ -10,4 +10,9 @@ class Race extends Model
    {
 	   return $this->hasMany('App\AssoRace', 'race_produit_id', 'id');
    }
+
+   public function Competitions() 
+   {
+      return $this->belongsToMany('App\Competition')->withPivot('prix_inscription', 'prix_premier');
+   }
 }

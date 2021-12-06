@@ -19,7 +19,8 @@ class Categorie extends Model
    {
       
     $animal = Animal::Find($animal);
-    $date = Evenement::Find($evenement)->date;
+    $evenement = Evenement::Find($evenement);
+    $date = $evenement->date;
 
     $results = Resultat::Where('animal_id', $animal->id)->get();
     foreach ($results as $result) {
@@ -28,12 +29,16 @@ class Categorie extends Model
             return false;
         }
     }
-    
+   
+    $races = $evenement->competition->races;
+
     switch (true) {
     case $this->type==="Modèle et Allures Race" :
         switch(true) {
-            case $this->race_id != $animal->race_id:
+            case !empty($races):
+                if (false == $races->contains($animal->race)) {
                 return false;
+            }
             case $this->age_min > $animal->ageAdministratif($date) :
                 return false;
             case $this->age_max < $animal->ageAdministratif($date) :
@@ -66,7 +71,7 @@ class Categorie extends Model
             $autorise = 1;
         }
     }
-        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
         //)
        
 
@@ -78,7 +83,7 @@ class Categorie extends Model
         $suitee = 1;
         }
     }
-        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where('race_id', $cheval->race_id)->where(function ($q) use ($suitee){$q->whereNull('suitee')->orWhere('suitee', $suitee);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where(function ($q) use ($suitee){$q->whereNull('suitee')->orWhere('suitee', $suitee);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
         //)
 
    }

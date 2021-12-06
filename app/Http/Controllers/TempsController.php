@@ -172,9 +172,9 @@ static function regCompetNPC()
           if ($categorie != false){
          
             
-              $prix = $categorie->prix_inscription;
-            $categorie_id = $categorie->id;
-          $competition = Competition::whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
+            //   $prix = $categorie->prix_inscription;
+            // $categorie_id = $categorie->id;
+          $competition = Competition::where(function ($q) use ($race){$q->whereDoesntHave('Races')->orWhereHas('races', function ($req) use ($race){$req->where('race-id', $race);});})->whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
          
        
           if ($competition != null) {
