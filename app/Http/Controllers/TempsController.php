@@ -168,26 +168,26 @@ static function regCompetNPC()
                 break; //pas de compétitions poulains
             }
           $categorie = Categorie::recherche($cheval);
-           
+          $race = $cheval->race; 
           if ($categorie != false){
          
             
-            //   $prix = $categorie->prix_inscription;
-            // $categorie_id = $categorie->id;
-          $competition = Competition::where(function ($q) use ($race){$q->whereDoesntHave('Races')->orWhereHas('races', function ($req) use ($race){$req->where('race-id', $race);});})->whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
+            
+            $categorie_id = $categorie->id;
+          $competition = Competition::where(function ($q) use ($race){$q->whereDoesntHave('Races')->orWhereHas('races', function ($req) use ($race){$req->where('race_id', $race);});})->whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
          
        
           if ($competition != null) {
          //Une occurence de cette compétition ce mois-ci?  
         $evenement = Evenement::whereDate('date','<', $date)->where('competition_id', $competition->id)->first(); 
-        
+        $prix = $competition->race->pivot->prix_inscription;
             if (isset($evenement)) {
            
             $resultat = New Resultat;
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
             $resultat->categorie_id = $categorie_id;
-            $competiteur->budget -= $prix;
+            $competiteur->budget = $prix;
           
             $resultat->save();
             $competiteur->save();     
