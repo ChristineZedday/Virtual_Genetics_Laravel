@@ -11,7 +11,7 @@ $factory->define(Categorie::class, function (Faker $faker) {
        'sexe' => 'femelle',
        'age_min' => 3,
        'age_max' => 18,
-       'race_id' =>factory(App\Race::class),
+      
 
     ];
 });
