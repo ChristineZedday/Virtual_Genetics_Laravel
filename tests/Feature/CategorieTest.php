@@ -21,7 +21,7 @@ class CategorieTest extends TestCase
     {
         $animal = factory(Animal::class)->create();
         $animal->date_naissance ="1968-06-04";
-        $animal->sexe ="jeune pouliche";
+        $animal->sexe ="femelle";
         $animal->save();
       
 
@@ -34,7 +34,7 @@ class CategorieTest extends TestCase
 
         $event = factory(Evenement::class)->create();;
 
-        $this->assertTrue($categorie->verification($animal->id, $event));
+        $this->assertTrue($categorie->verification($animal, $event));
 
         $categorie->sexe ="mâle";
         

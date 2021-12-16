@@ -18,8 +18,7 @@ class Categorie extends Model
    public function verification($animal, $evenement) : bool
    {
       
-    $animal = Animal::Find($animal);
-    $evenement = Evenement::Find($evenement);
+   
     $date = $evenement->date;
 
     $results = Resultat::Where('animal_id', $animal->id)->get();

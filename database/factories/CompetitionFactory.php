@@ -6,9 +6,10 @@
 use App\Competition;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Competition::class, function (Faker $faker) {
     return [
         'nom' => 'concours général',
+        'niveau' => 'régional',
         
     ];
 });
