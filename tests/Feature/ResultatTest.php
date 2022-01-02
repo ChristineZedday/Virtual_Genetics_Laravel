@@ -19,25 +19,27 @@ class ResultatTest extends TestCase
      *
      * @return void
      */
-    public function testAnimal()
-    {
-        $res = factory(Resultat::class)->make();
+    // public function testAnimal()
+    // {
+    //     $res = factory(Resultat::class)->create();
       
-       
-        $this->assertEquals('mâle', $res->Animal->sexe);
-        $this->assertEquals('bai', $res->Animal->couleur);
+     
+    //     $this->assertEquals('mâle', $res->Animal->sexe);
+    //     $this->assertEquals('bai', $res->Animal->couleur);
         
-    }
-    public function testInscrits()
-    {
-        $categorie = factory(Categorie::class)->create();
-        $ponettes = factory(Animal::class,3)->states('femelle')->create();
-        foreach ($ponettes as $ponette)
-        {
-            $res = factory(Resultat::class)->create();
-            $res->animal_id = $ponette->id;
-        }
-        dd(Resultat::inscrits(1));
-    }
+    // }
+    // public function testInscrits()
+    // {
+    //     $categorie = factory(Categorie::class)->create();
+    //     $ponettes = factory(Animal::class,3)->states('femelle')->create();
+    //     foreach ($ponettes as $ponette)
+    //     {
+            
+    //         $res = factory(Resultat::class)->create();
+         
+    //         $res->Animal = $ponette;
+    //     }
+    //     dd(Resultat::inscrits(1));
+    // }
 
 }
