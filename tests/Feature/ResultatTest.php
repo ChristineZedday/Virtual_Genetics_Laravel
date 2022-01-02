@@ -21,13 +21,9 @@ class ResultatTest extends TestCase
      */
     public function testAnimal()
     {
-        $res = New Resultat();
-       
-       
-
-        $animal = factory(Animal::class)->create();
-       $res->animal_id = $animal->id;
+        $res = factory(Resultat::class)->make();
       
+       
         $this->assertEquals('mâle', $res->Animal->sexe);
         $this->assertEquals('bai', $res->Animal->couleur);
         

@@ -9,5 +9,6 @@ $factory->define(Resultat::class, function (Faker $faker) {
     return [
         'evenement_id' => 1,
         'categorie_id' => factory(App\Categorie::class),
+        'animal_id' =>factory(App\Animal::class),
     ];
 });

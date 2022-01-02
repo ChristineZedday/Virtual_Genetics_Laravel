@@ -14,7 +14,7 @@ use App\Evenement;
 class Resultat extends Pivot
 {
    protected $table = 'resultats';
-   protected $fillable=['animal_id', 'categorie_id'] ;
+   protected $fillable=['animal_id', 'categorie_id', 'evenement_id'] ;
    public $incrementing = true;
 
    public function Animal() 
