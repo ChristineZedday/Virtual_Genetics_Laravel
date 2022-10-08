@@ -79,7 +79,7 @@ class TempsController extends Controller
         if ( Gamedata::saison())
        { TempsController::reproNPC();}
        TempsController::regCompetNPC();
-       TempsController::runCompetitions();
+       //TempsController::runCompetitions();
         return redirect()->back();
     }
 
