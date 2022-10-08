@@ -100,7 +100,7 @@ static function checkNouveaux($date)
 
 static function checkSevres()
 {
-    $animaux = Animal::where('elevage_id', '!=', 2)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
+    $animaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
     foreach ($animaux as $animal)
     {
         if ($animal->ageMonths() >= 6)

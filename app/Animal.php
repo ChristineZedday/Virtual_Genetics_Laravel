@@ -347,7 +347,7 @@ class Animal extends Model
             $this->a_vendre = false;
             $this->date_achat = $date;
             $this->elevage_id = $elevage->id;
-            $this.save();
+            $this->save();
             $statut = statutsFemelle::where('animal_id', $this->id)->first();
             if (isset($statut) )
             {
