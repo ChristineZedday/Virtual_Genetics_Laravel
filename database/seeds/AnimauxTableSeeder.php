@@ -42,6 +42,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
                 'taille_additive' => 99,
+                'notes' => NULL,
             ),
             1 => 
             array (
@@ -68,6 +69,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 102,
+                'notes' => NULL,
             ),
             2 => 
             array (
@@ -94,6 +96,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 114,
+                'notes' => NULL,
             ),
             3 => 
             array (
@@ -120,6 +123,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 106,
+                'notes' => NULL,
             ),
             4 => 
             array (
@@ -146,6 +150,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 117,
+                'notes' => NULL,
             ),
             5 => 
             array (
@@ -172,6 +177,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 121,
+                'notes' => NULL,
             ),
             6 => 
             array (
@@ -198,6 +204,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 104,
+                'notes' => NULL,
             ),
             7 => 
             array (
@@ -224,6 +231,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 118,
+                'notes' => NULL,
             ),
             8 => 
             array (
@@ -250,6 +258,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 113,
+                'notes' => NULL,
             ),
             9 => 
             array (
@@ -276,6 +285,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 120,
+                'notes' => NULL,
             ),
             10 => 
             array (
@@ -302,6 +312,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 119,
+                'notes' => NULL,
             ),
             11 => 
             array (
@@ -328,6 +339,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
                 'taille_additive' => 129,
+                'notes' => NULL,
             ),
             12 => 
             array (
@@ -354,6 +366,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 122,
+                'notes' => NULL,
             ),
             13 => 
             array (
@@ -380,6 +393,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 101,
+                'notes' => NULL,
             ),
             14 => 
             array (
@@ -406,6 +420,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
                 'taille_additive' => 99,
+                'notes' => NULL,
             ),
             15 => 
             array (
@@ -432,6 +447,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 112,
+                'notes' => NULL,
             ),
             16 => 
             array (
@@ -458,6 +474,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 103,
+                'notes' => NULL,
             ),
             17 => 
             array (
@@ -484,6 +501,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 105,
+                'notes' => NULL,
             ),
             18 => 
             array (
@@ -510,6 +528,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 98,
+                'notes' => NULL,
             ),
             19 => 
             array (
@@ -536,6 +555,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 109,
+                'notes' => NULL,
             ),
             20 => 
             array (
@@ -562,6 +582,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 114,
+                'notes' => NULL,
             ),
             21 => 
             array (
@@ -588,6 +609,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 107,
+                'notes' => NULL,
             ),
             22 => 
             array (
@@ -614,6 +636,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 101,
+                'notes' => NULL,
             ),
             23 => 
             array (
@@ -640,6 +663,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 113,
+                'notes' => NULL,
             ),
             24 => 
             array (
@@ -666,6 +690,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 111,
+                'notes' => NULL,
             ),
             25 => 
             array (
@@ -692,6 +717,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 9,
                 'modele_allures_additifs' => 9,
                 'taille_additive' => 106,
+                'notes' => NULL,
             ),
             26 => 
             array (
@@ -718,6 +744,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 108,
+                'notes' => NULL,
             ),
             27 => 
             array (
@@ -744,6 +771,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 103,
+                'notes' => NULL,
             ),
             28 => 
             array (
@@ -770,6 +798,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 98,
+                'notes' => NULL,
             ),
             29 => 
             array (
@@ -796,6 +825,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 107,
+                'notes' => NULL,
             ),
             30 => 
             array (
@@ -822,6 +852,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 105,
+                'notes' => NULL,
             ),
             31 => 
             array (
@@ -848,6 +879,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 108,
+                'notes' => NULL,
             ),
             32 => 
             array (
@@ -874,6 +906,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
                 'taille_additive' => 105,
+                'notes' => NULL,
             ),
             33 => 
             array (
@@ -900,6 +933,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 98,
+                'notes' => NULL,
             ),
             34 => 
             array (
@@ -926,6 +960,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 5,
                 'modele_allures_additifs' => 20,
                 'taille_additive' => 93,
+                'notes' => NULL,
             ),
             35 => 
             array (
@@ -952,6 +987,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 91,
+                'notes' => NULL,
             ),
             36 => 
             array (
@@ -978,6 +1014,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 85,
+                'notes' => NULL,
             ),
             37 => 
             array (
@@ -1004,6 +1041,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 125,
+                'notes' => NULL,
             ),
             38 => 
             array (
@@ -1030,6 +1068,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 119,
+                'notes' => NULL,
             ),
             39 => 
             array (
@@ -1056,6 +1095,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 135,
+                'notes' => NULL,
             ),
             40 => 
             array (
@@ -1082,6 +1122,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 132,
+                'notes' => NULL,
             ),
             41 => 
             array (
@@ -1108,6 +1149,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 116,
+                'notes' => NULL,
             ),
             42 => 
             array (
@@ -1134,6 +1176,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 120,
+                'notes' => NULL,
             ),
             43 => 
             array (
@@ -1160,6 +1203,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 110,
+                'notes' => NULL,
             ),
             44 => 
             array (
@@ -1186,6 +1230,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 136,
+                'notes' => NULL,
             ),
             45 => 
             array (
@@ -1212,6 +1257,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 133,
+                'notes' => NULL,
             ),
             46 => 
             array (
@@ -1238,6 +1284,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 151,
+                'notes' => NULL,
             ),
             47 => 
             array (
@@ -1264,6 +1311,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 114,
+                'notes' => NULL,
             ),
             48 => 
             array (
@@ -1290,6 +1338,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 148,
+                'notes' => NULL,
             ),
             49 => 
             array (
@@ -1316,6 +1365,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 153,
+                'notes' => NULL,
             ),
             50 => 
             array (
@@ -1342,6 +1392,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 154,
+                'notes' => NULL,
             ),
             51 => 
             array (
@@ -1368,6 +1419,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 156,
+                'notes' => NULL,
             ),
             52 => 
             array (
@@ -1394,6 +1446,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 153,
+                'notes' => NULL,
             ),
             53 => 
             array (
@@ -1420,6 +1473,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 149,
+                'notes' => NULL,
             ),
             54 => 
             array (
@@ -1446,6 +1500,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 95,
+                'notes' => NULL,
             ),
             55 => 
             array (
@@ -1472,6 +1527,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 101,
+                'notes' => NULL,
             ),
             56 => 
             array (
@@ -1498,6 +1554,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 104,
+                'notes' => NULL,
             ),
             57 => 
             array (
@@ -1524,6 +1581,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 102,
+                'notes' => NULL,
             ),
             58 => 
             array (
@@ -1550,6 +1608,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 100,
+                'notes' => NULL,
             ),
             59 => 
             array (
@@ -1576,6 +1635,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 80,
+                'notes' => NULL,
             ),
             60 => 
             array (
@@ -1602,6 +1662,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 127,
+                'notes' => NULL,
             ),
             61 => 
             array (
@@ -1628,6 +1689,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 115,
+                'notes' => NULL,
             ),
             62 => 
             array (
@@ -1654,6 +1716,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
                 'taille_additive' => 126,
+                'notes' => NULL,
             ),
             63 => 
             array (
@@ -1680,6 +1743,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 134,
+                'notes' => NULL,
             ),
             64 => 
             array (
@@ -1706,6 +1770,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 136,
+                'notes' => NULL,
             ),
             65 => 
             array (
@@ -1732,6 +1797,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 137,
+                'notes' => NULL,
             ),
             66 => 
             array (
@@ -1758,6 +1824,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
                 'taille_additive' => 133,
+                'notes' => NULL,
             ),
             67 => 
             array (
@@ -1784,6 +1851,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 135,
+                'notes' => NULL,
             ),
             68 => 
             array (
@@ -1810,6 +1878,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 132,
+                'notes' => NULL,
             ),
             69 => 
             array (
@@ -1836,6 +1905,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
                 'taille_additive' => 129,
+                'notes' => NULL,
             ),
             70 => 
             array (
@@ -1862,6 +1932,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 148,
+                'notes' => NULL,
             ),
             71 => 
             array (
@@ -1888,6 +1959,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 134,
+                'notes' => NULL,
             ),
             72 => 
             array (
@@ -1914,6 +1986,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 151,
+                'notes' => NULL,
             ),
             73 => 
             array (
@@ -1940,6 +2013,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 147,
+                'notes' => NULL,
             ),
             74 => 
             array (
@@ -1966,6 +2040,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 142,
+                'notes' => NULL,
             ),
             75 => 
             array (
@@ -1992,6 +2067,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 155,
+                'notes' => NULL,
             ),
             76 => 
             array (
@@ -2018,6 +2094,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 89,
+                'notes' => NULL,
             ),
             77 => 
             array (
@@ -2044,6 +2121,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 95,
+                'notes' => NULL,
             ),
             78 => 
             array (
@@ -2070,6 +2148,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 105,
+                'notes' => NULL,
             ),
             79 => 
             array (
@@ -2096,6 +2175,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 74,
+                'notes' => NULL,
             ),
             80 => 
             array (
@@ -2122,6 +2202,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 150,
+                'notes' => NULL,
             ),
             81 => 
             array (
@@ -2148,6 +2229,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 149,
+                'notes' => NULL,
             ),
             82 => 
             array (
@@ -2174,6 +2256,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 152,
+                'notes' => NULL,
             ),
             83 => 
             array (
@@ -2200,6 +2283,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 147,
+                'notes' => NULL,
             ),
             84 => 
             array (
@@ -2226,6 +2310,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 152,
+                'notes' => NULL,
             ),
             85 => 
             array (
@@ -2252,6 +2337,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 154,
+                'notes' => NULL,
             ),
             86 => 
             array (
@@ -2278,6 +2364,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 145,
+                'notes' => NULL,
             ),
             87 => 
             array (
@@ -2304,6 +2391,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 144,
+                'notes' => NULL,
             ),
             88 => 
             array (
@@ -2330,6 +2418,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 128,
+                'notes' => NULL,
             ),
             89 => 
             array (
@@ -2356,6 +2445,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 124,
+                'notes' => NULL,
             ),
             90 => 
             array (
@@ -2382,6 +2472,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 116,
+                'notes' => NULL,
             ),
             91 => 
             array (
@@ -2408,6 +2499,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 118,
+                'notes' => NULL,
             ),
             92 => 
             array (
@@ -2434,6 +2526,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 138,
+                'notes' => NULL,
             ),
             93 => 
             array (
@@ -2460,6 +2553,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 145,
+                'notes' => NULL,
             ),
             94 => 
             array (
@@ -2486,6 +2580,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 149,
+                'notes' => NULL,
             ),
             95 => 
             array (
@@ -2512,6 +2607,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 131,
+                'notes' => NULL,
             ),
             96 => 
             array (
@@ -2538,6 +2634,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
                 'taille_additive' => 85,
+                'notes' => NULL,
             ),
             97 => 
             array (
@@ -2564,6 +2661,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 92,
+                'notes' => NULL,
             ),
             98 => 
             array (
@@ -2590,6 +2688,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 89,
+                'notes' => NULL,
             ),
             99 => 
             array (
@@ -2616,6 +2715,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 151,
+                'notes' => NULL,
             ),
             100 => 
             array (
@@ -2642,6 +2742,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 147,
+                'notes' => NULL,
             ),
             101 => 
             array (
@@ -2668,6 +2769,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 139,
+                'notes' => NULL,
             ),
             102 => 
             array (
@@ -2694,6 +2796,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 112,
+                'notes' => NULL,
             ),
             103 => 
             array (
@@ -2720,6 +2823,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 152,
+                'notes' => NULL,
             ),
             104 => 
             array (
@@ -2746,6 +2850,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 116,
+                'notes' => NULL,
             ),
             105 => 
             array (
@@ -2772,6 +2877,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 119,
+                'notes' => NULL,
             ),
             106 => 
             array (
@@ -2798,6 +2904,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
                 'taille_additive' => 122,
+                'notes' => NULL,
             ),
             107 => 
             array (
@@ -2824,6 +2931,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 119,
+                'notes' => NULL,
             ),
             108 => 
             array (
@@ -2850,6 +2958,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 128,
+                'notes' => NULL,
             ),
             109 => 
             array (
@@ -2876,6 +2985,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 132,
+                'notes' => NULL,
             ),
             110 => 
             array (
@@ -2902,6 +3012,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 135,
+                'notes' => NULL,
             ),
             111 => 
             array (
@@ -2928,6 +3039,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 152,
+                'notes' => NULL,
             ),
             112 => 
             array (
@@ -2954,6 +3066,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 148,
+                'notes' => NULL,
             ),
             113 => 
             array (
@@ -2980,6 +3093,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 155,
+                'notes' => NULL,
             ),
             114 => 
             array (
@@ -3006,6 +3120,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 139,
+                'notes' => NULL,
             ),
             115 => 
             array (
@@ -3032,6 +3147,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
                 'taille_additive' => 147,
+                'notes' => NULL,
             ),
             116 => 
             array (
@@ -3058,6 +3174,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 142,
+                'notes' => NULL,
             ),
             117 => 
             array (
@@ -3084,6 +3201,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
                 'taille_additive' => 137,
+                'notes' => NULL,
             ),
             118 => 
             array (
@@ -3110,6 +3228,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 138,
+                'notes' => NULL,
             ),
             119 => 
             array (
@@ -3136,6 +3255,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 145,
+                'notes' => NULL,
             ),
             120 => 
             array (
@@ -3162,6 +3282,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 19,
                 'modele_allures_additifs' => 19,
                 'taille_additive' => 130,
+                'notes' => NULL,
             ),
             121 => 
             array (
@@ -3188,6 +3309,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
                 'taille_additive' => 128,
+                'notes' => NULL,
             ),
             122 => 
             array (
@@ -3214,6 +3336,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
                 'taille_additive' => 136,
+                'notes' => NULL,
             ),
             123 => 
             array (
@@ -3240,6 +3363,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
                 'taille_additive' => 129,
+                'notes' => NULL,
             ),
             124 => 
             array (
@@ -3266,6 +3390,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
                 'taille_additive' => 144,
+                'notes' => NULL,
             ),
             125 => 
             array (
@@ -3292,6 +3417,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 140,
+                'notes' => NULL,
             ),
             126 => 
             array (
@@ -3318,6 +3444,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
                 'taille_additive' => 127,
+                'notes' => NULL,
             ),
             127 => 
             array (
@@ -3344,6 +3471,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 9,
                 'modele_allures_additifs' => 9,
                 'taille_additive' => 129,
+                'notes' => NULL,
             ),
             128 => 
             array (
@@ -3370,6 +3498,7 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
                 'taille_additive' => 145,
+                'notes' => NULL,
             ),
             129 => 
             array (
@@ -3396,6 +3525,115 @@ class AnimauxTableSeeder extends Seeder
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
                 'taille_additive' => 147,
+                'notes' => NULL,
+            ),
+            130 => 
+            array (
+                'id' => 156,
+                'created_at' => '2022-10-14 17:47:58',
+                'updated_at' => '2022-10-14 17:47:58',
+                'nom' => 'Altzo',
+                'affixe_id' => NULL,
+                'couleur' => 'alezan',
+                'base' => 'alezan aa',
+                'taille_cm' => 115,
+                'race_id' => 13,
+                'sexe' => 'jeune poulain',
+                'date_achat' => NULL,
+                'date_naissance' => '1970-03-01',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 13,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'modele_allures' => 16,
+                'modele_allures_additifs' => 16,
+                'taille_additive' => 125,
+                'notes' => NULL,
+            ),
+            131 => 
+            array (
+                'id' => 157,
+                'created_at' => '2022-10-14 17:49:41',
+                'updated_at' => '2022-10-14 17:49:43',
+                'nom' => 'Amaia',
+                'affixe_id' => NULL,
+                'couleur' => 'bai',
+                'base' => 'bai',
+                'taille_cm' => 130,
+                'race_id' => 13,
+                'sexe' => 'jeune pouliche',
+                'date_achat' => NULL,
+                'date_naissance' => '1970-03-01',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 13,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'modele_allures' => 12,
+                'modele_allures_additifs' => 12,
+                'taille_additive' => 130,
+                'notes' => NULL,
+            ),
+            132 => 
+            array (
+                'id' => 158,
+                'created_at' => '2022-10-14 17:54:59',
+                'updated_at' => '2022-10-14 17:55:01',
+                'nom' => 'Balduin',
+                'affixe_id' => NULL,
+                'couleur' => 'bai tobiano',
+                'base' => 'bai',
+                'taille_cm' => 122,
+                'race_id' => 13,
+                'sexe' => 'jeune poulain',
+                'date_achat' => NULL,
+                'date_naissance' => '1970-03-01',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 13,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'modele_allures' => 15,
+                'modele_allures_additifs' => 15,
+                'taille_additive' => 132,
+                'notes' => NULL,
+            ),
+            133 => 
+            array (
+                'id' => 159,
+                'created_at' => '2022-10-14 17:56:51',
+                'updated_at' => '2022-10-14 17:56:52',
+                'nom' => 'Bikareggi',
+                'affixe_id' => NULL,
+                'couleur' => 'noir',
+                'base' => 'noir',
+                'taille_cm' => 137,
+                'race_id' => 13,
+                'sexe' => 'jeune pouliche',
+                'date_achat' => NULL,
+                'date_naissance' => '1970-03-01',
+                'a_vendre' => 0,
+                'prix' => NULL,
+                'elevage_id' => 13,
+                'fondateur' => 1,
+                'foetus' => 0,
+                'consang' => 0.0,
+                'sire_id' => NULL,
+                'dam_id' => NULL,
+                'modele_allures' => 13,
+                'modele_allures_additifs' => 13,
+                'taille_additive' => 137,
+                'notes' => NULL,
             ),
         ));
         
