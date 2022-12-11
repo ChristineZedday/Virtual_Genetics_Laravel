@@ -161,6 +161,18 @@ class ElevagesTableSeeder extends Seeder
                 'role' => 'Vendeur',
                 'user_id' => 1,
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'affixe_id' => NULL,
+                'created_at' => '2021-01-14 20:01:29',
+                'updated_at' => '2021-01-22 17:46:50',
+                'nom_elevage' => 'Pottokak',
+                'nom_eleveur' => 'Pierre Etcheverry',
+                'budget' => 10000,
+                'role' => 'Vendeur',
+                'user_id' => 1,
+            ),
         ));
         
         

@@ -71,7 +71,7 @@ class RacesTableSeeder extends Seeder
                 'taille_max' => 121,
                 'approbation' => 0,
                 'pcArabe' => 0,
-                'pcWelsh' => 0.0,
+                'pcWelsh' => 100.0,
             ),
             4 => 
             array (
@@ -85,7 +85,7 @@ class RacesTableSeeder extends Seeder
                 'taille_max' => 137,
                 'approbation' => 0,
                 'pcArabe' => 0,
-                'pcWelsh' => 0.0,
+                'pcWelsh' => 100.0,
             ),
             5 => 
             array (
@@ -99,7 +99,7 @@ class RacesTableSeeder extends Seeder
                 'taille_max' => 137,
                 'approbation' => 0,
                 'pcArabe' => 0,
-                'pcWelsh' => 0.0,
+                'pcWelsh' => 100.0,
             ),
             6 => 
             array (
@@ -113,7 +113,7 @@ class RacesTableSeeder extends Seeder
                 'taille_max' => 167,
                 'approbation' => 0,
                 'pcArabe' => 0,
-                'pcWelsh' => 0.0,
+                'pcWelsh' => 100.0,
             ),
             7 => 
             array (
@@ -126,7 +126,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => NULL,
                 'taille_max' => NULL,
                 'approbation' => 0,
-                'pcArabe' => 0,
+                'pcArabe' => 100,
                 'pcWelsh' => 0.0,
             ),
             8 => 
@@ -140,7 +140,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 30,
                 'taille_max' => 215,
                 'approbation' => 0,
-                'pcArabe' => 0,
+                'pcArabe' => 50,
                 'pcWelsh' => 0.0,
             ),
             9 => 
@@ -154,7 +154,7 @@ class RacesTableSeeder extends Seeder
                 'taille_min' => 30,
                 'taille_max' => 215,
                 'approbation' => 0,
-                'pcArabe' => 0,
+                'pcArabe' => 13,
                 'pcWelsh' => 0.0,
             ),
             10 => 
@@ -206,7 +206,7 @@ class RacesTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Pottok Livre B',
                 'prix_moyen' => 1000,
-                'frais_enregistrement' => NULL,
+                'frais_enregistrement' => 50,
                 'taille_min' => 115,
                 'taille_max' => 150,
                 'approbation' => 0,
