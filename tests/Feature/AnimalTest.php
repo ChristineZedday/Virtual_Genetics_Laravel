@@ -67,6 +67,8 @@ class AnimalTest extends TestCase
         
 
         $this->assertEquals(5, $animal->ageAdministratif("1971-01-01"));
+        $this->assertEquals(3, $animal->ageAdministratif("1969-05-01"));
+        $this->assertEquals(2, $animal->ageAdministratif("1968-08-11"));
      }
 
 

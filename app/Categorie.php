@@ -26,7 +26,6 @@ class Categorie extends Model
     foreach ($results as $result) {
         $event = Evenement::Find($result->evenement->id);
         if ($event->date === $date) {
-        
             return false;
         }
     }
@@ -39,7 +38,6 @@ class Categorie extends Model
         switch(true) {
             case $races->isNotEmpty():
                 if (false == $races->contains($animal->race)) {
-                    
                 return false;
             }
             case $this->age_min > $animal->ageAdministratif($date) :

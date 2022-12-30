@@ -86,7 +86,7 @@ class CompetitionController extends Controller
         $categorie = Categorie::Find($resultat->categorie_id);
         
         if ($categorie->verification($resultat->animal, $evenement)) {
-            dd('verifié');
+          
            
                 if ($resultat->save()) {
                 $elevage->budget -= $categorie->prix_inscription;
@@ -100,7 +100,7 @@ class CompetitionController extends Controller
           }
         
         else {
-           
+         
             $request->session()->flash('status',"Pas la bonne catégorie, ou déjà inscrit quelque part à cette date!");
             $request->session()->flash('alert-class',"alert-danger");
             return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'categories'=> $evenement->Categories(), 'animaux' => $animaux])->with('status');

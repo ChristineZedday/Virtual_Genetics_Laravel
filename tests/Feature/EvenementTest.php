@@ -31,5 +31,17 @@ class EvenementTest extends TestCase
         $resultat->fill(['animal_id'=>$animal->id, 'categorie_id' =>$categorie->id]);
         $resultat->evenement_id = $evenement->id;
         $this->assertTrue($resultat->categorie->verification($resultat->animal, $resultat->evenement));
+
+        $evenement->date ="1966-01-05";
+        $evenement->save();
+
+       $this->assertFalse($resultat->categorie->verification($resultat->animal, $evenement));
+
+        $animal->date_naissance = "1963-06-15";
+        $animal->save();
+        $this->assertTrue($resultat->categorie->verification($animal, $evenement));
+
+
+
     }
 }
