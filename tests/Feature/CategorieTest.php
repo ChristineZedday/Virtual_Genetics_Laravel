@@ -20,15 +20,12 @@ class CategorieTest extends TestCase
     public function testVerification()
     {
         $animal = factory(Animal::class)->create();
-        $animal->date_naissance ="1968-06-04";
-        $animal->sexe ="femelle";
+        $animal->sexe = "femelle";
         $animal->save();
+      
    
-        $categorie = New Categorie();
-        $categorie->type ="Modèle et Allures Race";
-        $categorie->sexe ="femelle";
-        $categorie->age_min = 2;
-        $categorie->age_max = 2;
+        $categorie = factory(Categorie::class)->create();
+        
         
         $event = factory(Evenement::class)->create();
 
