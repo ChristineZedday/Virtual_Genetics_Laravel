@@ -86,6 +86,7 @@ class CompetitionController extends Controller
         $categorie = Categorie::Find($resultat->categorie_id);
         
         if ($categorie->verification($resultat->animal, $evenement)) {
+            dd('verifié');
            
                 if ($resultat->save()) {
                 $elevage->budget -= $categorie->prix_inscription;
