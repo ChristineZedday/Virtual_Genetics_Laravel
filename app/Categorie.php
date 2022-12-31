@@ -21,7 +21,6 @@ class Categorie extends Model
     $date = $evenement->date;
 
     $results = Resultat::Where('animal_id', $animal->id)->get();
-
     
     foreach ($results as $result) {
         $event = Evenement::Find($result->evenement->id);
@@ -40,11 +39,12 @@ class Categorie extends Model
                 if (false == $races->contains($animal->race)) {
                 return false;
             }
-            case $this->age_min > $animal->ageAdministratif($date) :
+          case $this->age_min > $animal->ageAdministratif($date) :
                 return false;
-            case $this->age_max < $animal->ageAdministratif($date) :
+           case $this->age_max < $animal->ageAdministratif($date) :
                 return false;
-            case $this->sexe != $animal->genre():
+         case $this->sexe != $animal->genre():
+           
                 return false;
             default: return true;
         }

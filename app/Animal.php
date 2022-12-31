@@ -95,16 +95,16 @@ class Animal extends Model
         
     }
 
-    public function Genre() //sexe pour les catégories élevage
+    public function Genre() //sexe pour les catégories élevage 1 mâle 0 femelle
     {
         switch ($this->sexe) {
             case 'jeune poulain':
             case 'jeune mâle':
             case 'mâle':
             case 'vieux mâle':
-                return 'mâle';
+                return 1;
             default:
-            return 'femelle';
+            return 0;
         }
     }
 

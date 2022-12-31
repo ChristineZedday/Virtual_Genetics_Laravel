@@ -31,11 +31,11 @@ class CategorieTest extends TestCase
 
         $this->assertTrue($categorie->verification($animal, $event));
 
-        $categorie->sexe ="mâle";
+        $categorie->sexe =1;
         
         $this->assertFalse($categorie->verification($animal, $event));
 
-        $categorie->sexe ="femelle";
+        $categorie->sexe =2;
         $categorie->age_min = 3;
         $categorie->age_max = 3;
         $this->assertFalse($categorie->verification($animal, $event));

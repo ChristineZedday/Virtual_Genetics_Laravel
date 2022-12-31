@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
             $table->string('nom');
             $table->enum('type',['Modèle et Allures Race', 'loisir', 'Modèle et Allures dressage', 'Modèles et Allures CSO'])->nullable();
-            $table->enum('sexe',['mâle','femelle'] )->nullable();
+            $table->boolean('sexe')->nullable();
             $table->tinyInteger('age_min')->unsigned()->nullable();
             $table->tinyInteger('age_max')->unsigned()->nullable();
             $table->tinyInteger('taille_min')->unsigned()->nullable();
