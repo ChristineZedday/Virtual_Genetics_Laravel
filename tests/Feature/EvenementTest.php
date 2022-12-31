@@ -71,7 +71,9 @@ class EvenementTest extends TestCase
             $elevage->budget -= $categorie->prix_inscription;
             $elevage->save(); }
         $this->assertTrue($elevage->budget == $budget - $categorie->prix_inscription);
-
+       $inscrits = Resultat::inscrits($elevage->id);
+      
+    $this->assertTrue($inscrits->first()->animal_id==2);
         
     }
 }

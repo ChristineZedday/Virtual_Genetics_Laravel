@@ -40,6 +40,7 @@ class Resultat extends Pivot
       
      
       $res = Resultat::whereHas('Animal', function (Builder $q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->get();
+     //dd($res);
       return $res;
       
    }
