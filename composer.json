@@ -39,7 +39,8 @@
         },
         "classmap": [
             "database/seeds",
-            "database/factories"
+            "database/factories",
+            "tests"
         ]
     },
     "autoload-dev": {

@@ -9,6 +9,10 @@ use App\Categorie;
 use App\Animal;
 use App\Evenement;
 use App\Resultat;
+/*use Database\Seeders\UsersTableSedder;
+use Database\Seeders\ElevagesTableSedder;
+use Database\Seeders\AffixesTableSedder;
+use Database\Seeders\AnimauxTableSedder;*/
 
 class EvenementTest extends TestCase
 {
@@ -43,5 +47,31 @@ class EvenementTest extends TestCase
 
 
 
+    }
+   public function testInscriptionSeed() 
+    {
+        $this->seed('UsersTableSeederTest');
+        $this->seed('AffixesTableSeederTest');
+        $this->seed('ElevagesTableSeederTest');
+        $this->seed('RacesTableSeederTest');
+        $this->seed('AnimauxTableSeederTest');
+        $animal = Animal::find(2); //Migonne of Marshwood Shetland 2 ans
+        $categorie = factory(Categorie::class)->create(); //ponettes
+        $evenement = factory(Evenement::class)->create();//
+        $resultat = new Resultat;
+        $resultat->fill(['animal_id'=>$animal->id, 'categorie_id' =>$categorie->id]);
+        $resultat->evenement_id = $evenement->id;
+        $this->assertFalse($resultat->categorie->verification($resultat->animal, $evenement));//elle a pas 3 ans en 70
+        $evenement->date = "1971-03-15"; //administrativement elle les aura
+        $evenement->save();
+        $this->assertTrue($resultat->categorie->verification($resultat->animal, $evenement));
+        $elevage = $animal->elevage;
+        $budget = $elevage->budget;
+        if ($resultat->save()) {
+            $elevage->budget -= $categorie->prix_inscription;
+            $elevage->save(); }
+        $this->assertTrue($elevage->budget == $budget - $categorie->prix_inscription);
+
+        
     }
 }
