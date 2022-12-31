@@ -55,7 +55,7 @@ class EvenementTest extends TestCase
         $this->seed('ElevagesTableSeederTest');
         $this->seed('RacesTableSeederTest');
         $this->seed('AnimauxTableSeederTest');
-        $animal = Animal::find(2); //Migonne of Marshwood Shetland 2 ans
+        $animal = Animal::Find(2); //Migonne of Marshwood Shetland 2 ans
         $categorie = factory(Categorie::class)->create(); //ponettes
         $evenement = factory(Evenement::class)->create();//
         $resultat = new Resultat;

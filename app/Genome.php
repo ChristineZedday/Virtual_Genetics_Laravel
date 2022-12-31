@@ -359,6 +359,9 @@ class Genome extends Model
                   $animal->save();
   
                   $animal->modele_allures = $animal->modele_allures_additifs + $ma;
+                  if ($animal->modele_allures < 1) {
+                    $animal->modele_allures =1;
+                  }
                   $animal->save();
 
                   $alezan = Couleur::where('nom','alezan')->first();

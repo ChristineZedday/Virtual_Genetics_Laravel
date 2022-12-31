@@ -81,10 +81,10 @@ class CompetitionController extends Controller
         $elevage= Elevage::Find($animal->elevage_id);
        
         $animaux= $elevage->Animaux()->get();
-        $evenement = Evenement::Find($evenement);
+        $evenement = Evenement::Find($resultat->evenement_id);
         
         $categorie = Categorie::Find($resultat->categorie_id);
-       
+
         if ($categorie->verification($resultat->animal, $evenement)) {
           
            
