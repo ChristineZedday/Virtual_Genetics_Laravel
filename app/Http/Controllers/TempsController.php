@@ -219,7 +219,8 @@ static function runCompetitions() {
      $categories = Categorie::whereHas('competitions', function ($q) use ($evid){$q->where('competition_id',$evid);})->get();
      //dd('catégories :' . $categories); so far, so good
      foreach ($categories as $categorie) {
-         $inscrits = Resultat::where('evenement_id', $evenement->id)->where('animal_id',$inscrits->animal_id)->get();
+         $inscrits = Resultat::where('evenement_id', $evenement->id)->get();
+         //dd($inscrits);//so far so good
          $note1 = 0;
          $note2 = 0;
          $note3 = 0;
@@ -241,11 +242,14 @@ static function runCompetitions() {
                 $troisieme = $inscrit->animal_id;
 
             }
+          $inscrit->note_synthese =   $inscrit->animal->modele_allures;
+          $inscrit->save(); 
 
          }
          if ($premier != 0) {
          $res1 = Resultat::where('animal_id', '=', $premier);
          $res1->classement = 1;
+         $res1->note_synthese = 
          $res1->save();
          }
          if ($deuxieme != 0 && $inscrits->count() > 3) {

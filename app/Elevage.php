@@ -36,7 +36,7 @@ class Elevage extends Model
        $res = [];
        $i =0;
        foreach ($animaux as $animal) {
-            $resultat = $animal->Resultats;
+            $resultat = $animal->Resultats();
             if (!empty($resultat)) {
                 $res[i] = $resultat;
                 $i++;
