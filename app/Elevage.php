@@ -31,6 +31,18 @@ class Elevage extends Model
 
     public function Resultats()
     {
-        return $this->HasMany('App\Resultat')->using('App\Animal');
+        
+       $animaux = $this->HasMany('App\Animal');
+       $res = [];
+       $i =0;
+       foreach ($animaux as $animal) {
+            $resultat = $animal->Resultats;
+            if (!empty($resultat)) {
+                $res[i] = $resultat;
+                $i++;
+            }
+       }
+        return $res;
+
     }
 }

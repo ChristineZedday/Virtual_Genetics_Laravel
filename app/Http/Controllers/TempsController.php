@@ -213,10 +213,11 @@ static function runCompetitions() {
   $evenements = Evenement::where(function ($q) use ($m, $y) {
     $q->whereMonth('date', $m)->whereYear('date',$y); })->get();
   
- //dd($evenements); so far, so good
+ //dd($evenements); 
   foreach ($evenements as $evenement){
-     
-     $categories = Categorie::where('evenement_id', $evenement->id)->get();
+     $evid= $evenement->competition->id;
+     $categories = Categorie::whereHas('competitions', function ($q) use ($evid){$q->where('competition_id',$evid);})->get();
+     //dd('catégories :' . $categories); so far, so good
      foreach ($categories as $categorie) {
          $inscrits = Resultat::where('evenement_id', $evenement->id)->where('animal_id',$inscrits->animal_id)->get();
          $note1 = 0;
