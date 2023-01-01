@@ -209,6 +209,45 @@ static function runCompetitions() {
      $categories = Categorie::where('evenement_id', $evenement->id)->get();
      foreach ($categories as $categorie) {
          $inscrits = Resultat::where('evenement_id', $evenement->id)->where('animal_id',$inscrits->animal_id)->get();
+         $note1 = 0;
+         $note2 = 0;
+         $note3 = 0;
+         $premier =0;
+         $deuxieme = 0;
+         $troisieme=0;
+         foreach ($inscrits as $inscrit) {
+            if ($inscrit->animal->modele_allures > $note1 ) {
+                $note1 = $inscrit->animal->modele_allures;
+                $premier = $inscrit->animal_id;
+            }
+            else if ($inscrit->animal->modele_allures > $note2 ) {
+                $note2 = $inscrit->animal->modele_allures;
+                $deuxieme = $inscrit->animal_id;
+
+            }
+            else if ($inscrit->animal->modele_allures > $note3 ) {
+                $note3 = $inscrit->animal->modele_allures;
+                $troisieme = $inscrit->animal_id;
+
+            }
+
+         }
+         if ($premier != 0) {
+         $res1 = Resultat::where('animal_id', '=', $premier);
+         $res1->classement = 1;
+         $res1->save();
+         }
+         if ($deuxieme != 0 && $inscrits->count() > 3) {
+            $res2 = Resultat::where('animal_id', '=', $deuxieme);
+            $res2->classement = 2;
+            $res2->save();
+            }
+        if ($troisieme != 0 && $inscrits->count() > 6) {
+            $res3 = Resultat::where('animal_id', '=', $troisieme);
+            $res3->classement = 3;
+            $res3->save();
+            }
+
      }
   }
 }

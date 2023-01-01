@@ -28,4 +28,9 @@ class Elevage extends Model
     {
         return $this->hasOne('App\Image');
     }
+
+    public function Resultats()
+    {
+        return $this->HasMany('App\Resultat')->using('App\Animal');
+    }
 }

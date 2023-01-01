@@ -374,6 +374,10 @@ public function Evenements()
 {
     return $this->BelongsToMany('App\Evenement')->using('App\Resultat');
 }
+public function Resultats() 
+{
+    return $this->BelongsToMany('App\Resultat');
+}
         
     
  
