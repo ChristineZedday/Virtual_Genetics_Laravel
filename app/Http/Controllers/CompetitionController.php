@@ -100,7 +100,7 @@ class CompetitionController extends Controller
           }
         
         else {
-         dd('pas inscrit, pas bonne cat');
+         
             $request->session()->flash('status',"Pas la bonne catégorie, ou déjà inscrit quelque part à cette date!");
             $request->session()->flash('alert-class',"alert-danger");
             return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'categories'=> $evenement->Categories(), 'animaux' => $animaux])->with('status');

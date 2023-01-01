@@ -14,6 +14,8 @@ class Categorie extends Model
    {
        return $this->BelongsToMany('App\Competition', 'categorie_competition', 'competition_id', 'categorie_id');
    }
+
+   
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
    public function verification($animal, $evenement) : bool
    {
@@ -30,33 +32,34 @@ class Categorie extends Model
     }
    
     $races = $evenement->competition->races;
-
-
-    switch (true) {
-    case $this->type==="Modèle et Allures Race" :
-        switch(true) {
-            case $races->isNotEmpty():
+           
+    if ($this->type==="Modèle et Allures Race" ) {
+        if ($races->isNotEmpty()) {
+               
                 if (false == $races->contains($animal->race)) {
+                
+                return false;
+                }
+        }
+        if  ($animal->ageAdministratif ($date) < $this->age_min) {
+           // dd('< age min:'. ($this->age_min < $animal->ageAdministratif($date)? 'true' : 'false'));
                 return false;
             }
-          case $this->age_min > $animal->ageAdministratif($date) :
+        if ($this->age_max < $animal->ageAdministratif($date)) {
+          //  dd('> age max:'.$this->age_max < $animal->ageAdministratif($date));
+                return false; 
+            }
+        if ($this->sexe != $animal->genre()) {
+          //  dd('other sexe: '.$this->sexe < $animal->genre());
                 return false;
-           case $this->age_max < $animal->ageAdministratif($date) :
-                return false;
-         case $this->sexe != $animal->genre():
-           
-                return false;
-            default: return true;
         }
+           
+    }
         return true;
 
-    }
-    
-      
+}
         
-       
-       return true;
-   }
+    
 
    /**Fonction qui cherche la catégorie  pour un cheval de PNJ */
    public static function recherche(Animal $cheval) 
