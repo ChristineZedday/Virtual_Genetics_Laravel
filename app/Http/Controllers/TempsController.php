@@ -16,6 +16,7 @@ use App\Evenement;
 use App\Categorie;
 use App\Competition;
 use App\Resultat;
+use DateTime;
 
 
 class TempsController extends Controller
@@ -79,7 +80,7 @@ class TempsController extends Controller
         if ( Gamedata::saison())
        { TempsController::reproNPC();}
        TempsController::regCompetNPC();
-       //TempsController::runCompetitions();
+       TempsController::runCompetitions();
         return redirect()->back();
     }
 
@@ -187,7 +188,7 @@ static function regCompetNPC()
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
             $resultat->categorie_id = $categorie_id;
-            $competiteur->budget = $prix;
+            $competiteur->budget -= $prix;
           
             $resultat->save();
             $competiteur->save();     
@@ -199,11 +200,20 @@ static function regCompetNPC()
     } //end foreach competiteurs
   
 } //end function regNPC
+
 static function runCompetitions() {
-    $date =Gamedata::date();
-    $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
-   
-  $evenements = Evenement::whereDate('date','<', $date)->get();
+    $date =new DateTime(Gamedata::date());
+    $m = $date->format('m');
+    $y = $date->format('Y');
+    
+ 
+  //  $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
+  //hum...  
+  //$evenements = Evenement::whereDate('date','<', $date)->get();
+  $evenements = Evenement::where(function ($q) use ($m, $y) {
+    $q->whereMonth('date', $m)->whereYear('date',$y); })->get();
+  
+ //dd($evenements); so far, so good
   foreach ($evenements as $evenement){
      
      $categories = Categorie::where('evenement_id', $evenement->id)->get();
