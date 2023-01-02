@@ -79,7 +79,9 @@ class TempsController extends Controller
         }
         if ( Gamedata::saison())
        { TempsController::reproNPC();}
+       //so far so good
        TempsController::regCompetNPC();
+       //y a un bug dans l'enregistrement PNJ
        TempsController::runCompetitions();
         return redirect()->back();
     }
@@ -150,10 +152,13 @@ static function reproNPC()
 
 static function regCompetNPC() 
 {
+    $date =new DateTime(Gamedata::date());
+    $m = $date->format('m');
+    $y = $date->format('Y');
+    
+  
     $competiteurs = Elevage::where('role','Vendeur')->orWhere('role','Acheteur')->get();
-    $date =Gamedata::date();
-    $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
-   
+  
    
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>11
@@ -162,39 +167,52 @@ static function regCompetNPC()
       
         foreach ($chevaux as $cheval) {
             
-            if (strpos($cheval->sexe,'stérilisé') != false){
+          if (strpos($cheval->sexe,'stérilisé') != false){
                 break;//à déplacer quand autre que MA
             }
-            if ($cheval->ageAdministratif($date) < 2) {
+            if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
                 break; //pas de compétitions poulains
             }
           $categorie = Categorie::recherche($cheval);
           $race = $cheval->race; 
+         //dd($categorie);//so far so good
           if ($categorie != false){
-         
-            
-            
-            $categorie_id = $categorie->id;
-          $competition = Competition::where(function ($q) use ($race){$q->whereDoesntHave('Races')->orWhereHas('races', function ($req) use ($race){$req->where('race_id', $race);});})->whereHas('categories', function ($query) use($categorie_id) {$query->where('categorie_id', $categorie_id);})->first();
-         
+          $catid = $categorie->id;
+          $competitions = Competition::where(function ($q) use ($race)
+            {
+            $q->WhereHas('races', function ($req) use ($race)  {
+                $req->where('race_id', $race);
+                })->orWhereDoesntHave('races');
+            })->get();/*->whereHas('categories', function ($query) use($catid) {$query->where('categorie_id', $catid);})->first();whereDoesntHave('races');})  
+            */
+         //dd($competitions); //problème avec les races
        
-          if ($competition != null) {
-         //Une occurence de cette compétition ce mois-ci?  
-        $evenement = Evenement::whereDate('date','<', $date)->where('competition_id', $competition->id)->first(); 
-        $prix = $competition->race->pivot->prix_inscription;
-            if (isset($evenement)) {
-           
-            $resultat = New Resultat;
+          if ( !empty($competitions)) {
+         //Une occurence d'une de ces compétition ce mois-ci? 
+         foreach ($competitions as $competition) {
+        $evenements = Evenement::whereMonth('date',$m)->whereYear('date', $y)->where('competition_id', $competition->id);
+        $evenement =$evenements->first(); 
+      //dd($evenement);//OK
+      if (!empty($competition->races)) {
+         //   $prix = $competition->race->pivot->prix_inscription;
+         }
+        else {
+            $prix =50;
+       }
+     
+       if ($evenement != null) {
+        
+            $resultat = New Resultat();
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
-            $resultat->categorie_id = $categorie_id;
-            $competiteur->budget -= $prix;
+            $resultat->categorie_id = $catid;//verifier qu'elle est proposée!
+           // dd($resultat);//OK;
           
             $resultat->save();
             $competiteur->save();     
-            }
-        } 
-    
+           }
+        } // end foreach compet
+          }//end compets pas vide
         }
         }
     } //end foreach competiteurs
@@ -202,6 +220,7 @@ static function regCompetNPC()
 } //end function regNPC
 
 static function runCompetitions() {
+    
     $date =new DateTime(Gamedata::date());
     $m = $date->format('m');
     $y = $date->format('Y');
@@ -210,17 +229,17 @@ static function runCompetitions() {
   //  $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
   //hum...  
   //$evenements = Evenement::whereDate('date','<', $date)->get();
-  $evenements = Evenement::where(function ($q) use ($m, $y) {
-    $q->whereMonth('date', $m)->whereYear('date',$y); })->get();
-  
- //dd($evenements); 
+ /* $evenements = Evenement::where(function ($q) use ($m, $y) {
+    $q->whereMonth('date', $m)->whereYear('date',$y); })->get();*/
+    $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->get(); 
+//dd($evenements); //OK
   foreach ($evenements as $evenement){
      $evid= $evenement->competition->id;
      $categories = Categorie::whereHas('competitions', function ($q) use ($evid){$q->where('competition_id',$evid);})->get();
-     //dd('catégories :' . $categories); so far, so good
+     //dd('catégories :' . $categories);// so far, so good
      foreach ($categories as $categorie) {
          $inscrits = Resultat::where('evenement_id', $evenement->id)->get();
-         //dd($inscrits);//so far so good
+         dd($inscrits);
          $note1 = 0;
          $note2 = 0;
          $note3 = 0;
@@ -228,6 +247,7 @@ static function runCompetitions() {
          $deuxieme = 0;
          $troisieme=0;
          foreach ($inscrits as $inscrit) {
+            dd($inscrit);
             if ($inscrit->animal->modele_allures > $note1 ) {
                 $note1 = $inscrit->animal->modele_allures;
                 $premier = $inscrit->animal_id;
@@ -249,17 +269,19 @@ static function runCompetitions() {
          if ($premier != 0) {
          $res1 = Resultat::where('animal_id', '=', $premier);
          $res1->classement = 1;
-         $res1->note_synthese = 
+         $res1->note_synthese = $note1;
          $res1->save();
          }
          if ($deuxieme != 0 && $inscrits->count() > 3) {
             $res2 = Resultat::where('animal_id', '=', $deuxieme);
             $res2->classement = 2;
+            $res2->note_synthese = $note2;
             $res2->save();
             }
         if ($troisieme != 0 && $inscrits->count() > 6) {
             $res3 = Resultat::where('animal_id', '=', $troisieme);
             $res3->classement = 3;
+            $res3->note_synthese = $note3;
             $res3->save();
             }
 

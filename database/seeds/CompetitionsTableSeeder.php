@@ -65,6 +65,14 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Français de Selle',
                 'niveau' => 'départemental',
             ),
+            6 => 
+            array (
+                'id' => 7,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Poneys et Chevaux de sport',
+                'niveau' => 'départemental',
+            ),
         ));
         
         
