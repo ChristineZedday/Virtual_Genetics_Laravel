@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 use App\Animal;
 use App\Categorie;
 use App\Evenement;
+use DateTime;
 
 
 class Resultat extends Pivot

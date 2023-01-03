@@ -113,13 +113,21 @@ public function run($evenement) {
     $inscrit->save();
     //dd($inscrit);//ouais!!
    }
-   arsort($notes); //tri décroissant
+   arsort($notes); //tri décroissant des valeurs
    $i =1;
    do {//toujours au moins un classé
    foreach ($notes as $key => $value){
     $res= Resultat::where('animal_id', $key);
     $res->classement = $i;
     $res->save();
+    $animal = Animal::find($key);
+    $elevage = Elevage::find($animal->elevage_id);
+    if ($i == 1) {
+        $elevage->budget += prix_premier;
+    }
+    else  {
+        $elevage->budget += (int)(prix_premier/$i);
+    }
     $i++; }
    } while ($i <= $classes);
 
