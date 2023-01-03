@@ -25,7 +25,7 @@ class CreateResultatsTable extends Migration
             $table->TinyInteger('classement')->nullable();
             $table->TinyInteger('note_modele')->nullable();
             $table->TinyInteger('note_allures')->nullable();
-            $table->TinyInteger('note_synthese')->nullable();//vaut aussi pour note dressage ou note comportement en épreuve loisir, ou autre note compétition
+            $table->float('note_synthese')->nullable();//vaut aussi pour note dressage ou note comportement en épreuve loisir, ou autre note compétition
         });
     }
 

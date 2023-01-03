@@ -124,6 +124,7 @@ class CompetitionController extends Controller
         
         $elevage =Elevage::Find($elevage);
         $resultats = Resultat::resultats($elevage);
+        dd($resultats);
         return view('resultats', ['elevage' => $elevage, 'resultats' => $resultats]);
         
         
