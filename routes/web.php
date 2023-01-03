@@ -107,4 +107,4 @@ Route::post('/inscription/{evenement}', 'CompetitionController@inscription')->na
 
 Route::get('/desinscrire/{evenement}/{categorie}/{animal}', 'CompetitionController@desinscrire')->name('desinscrire');
 
-
+Route::get('palmares/{elevage}/{animal}/{resultat}', 'AnimalController@palmare')->name('palmares');

@@ -51,6 +51,14 @@ class Animal extends Model
         return $animaux;
     }
 
+    public function Palmares()
+    {
+        $date =  Gamedata::date();
+        $resultats =  Resultat::where('animal_id', $this->id)->whereHas('evenement', function ($q) use ($date) {$q->where('date', '<', $date);})->get();
+        return $resultats;
+    }
+
+
     public function Statut()
     {
        return $this->HasOne('App\statutsFemelle', 'animal_id');
