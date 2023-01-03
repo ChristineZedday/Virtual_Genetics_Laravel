@@ -224,22 +224,20 @@ static function runCompetitions() {
     $date =new DateTime(Gamedata::date());
     $m = $date->format('m');
     $y = $date->format('Y');
-    
+
  
-  //  $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
-  //hum...  
-  //$evenements = Evenement::whereDate('date','<', $date)->get();
- /* $evenements = Evenement::where(function ($q) use ($m, $y) {
-    $q->whereMonth('date', $m)->whereYear('date',$y); })->get();*/
     $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->get(); 
 //dd($evenements); //OK
   foreach ($evenements as $evenement){
+    
      $evid= $evenement->competition->id;
      $categories = Categorie::whereHas('competitions', function ($q) use ($evid){$q->where('competition_id',$evid);})->get();
      //dd('catégories :' . $categories);// so far, so good
      foreach ($categories as $categorie) {
-         $inscrits = Resultat::where('evenement_id', $evenement->id)->get();
-         dd($inscrits);
+        
+         $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $categorie->id)->get();
+         
+         //dd($inscrits);//OK
          $note1 = 0;
          $note2 = 0;
          $note3 = 0;
@@ -247,10 +245,10 @@ static function runCompetitions() {
          $deuxieme = 0;
          $troisieme=0;
          foreach ($inscrits as $inscrit) {
-            dd($inscrit);
             if ($inscrit->animal->modele_allures > $note1 ) {
                 $note1 = $inscrit->animal->modele_allures;
                 $premier = $inscrit->animal_id;
+                
             }
             else if ($inscrit->animal->modele_allures > $note2 ) {
                 $note2 = $inscrit->animal->modele_allures;
@@ -266,20 +264,20 @@ static function runCompetitions() {
           $inscrit->save(); 
 
          }
-         if ($premier != 0) {
-         $res1 = Resultat::where('animal_id', '=', $premier);
+         if ($premier != 0) {//tient pas compte des catégories!!!
+         $res1 = Resultat::where('animal_id', '=', $premier)->first();
          $res1->classement = 1;
          $res1->note_synthese = $note1;
          $res1->save();
          }
          if ($deuxieme != 0 && $inscrits->count() > 3) {
-            $res2 = Resultat::where('animal_id', '=', $deuxieme);
+            $res2 = Resultat::where('animal_id', '=', $deuxieme)->first();
             $res2->classement = 2;
             $res2->note_synthese = $note2;
             $res2->save();
             }
         if ($troisieme != 0 && $inscrits->count() > 6) {
-            $res3 = Resultat::where('animal_id', '=', $troisieme);
+            $res3 = Resultat::where('animal_id', '=', $troisieme)->first();
             $res3->classement = 3;
             $res3->note_synthese = $note3;
             $res3->save();

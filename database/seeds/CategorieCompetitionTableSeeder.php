@@ -337,6 +337,70 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 5,
                 'categorie_id' => 10,
             ),
+            40 => 
+            array (
+                'id' => 41,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 1,
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 2,
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 3,
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 4,
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 5,
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 6,
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 7,
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'categorie_id' => 10,
+            ),
         ));
         
         
