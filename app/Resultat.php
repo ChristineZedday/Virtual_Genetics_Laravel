@@ -53,8 +53,7 @@ class Resultat extends Pivot
       $m = $date->format('m');
       $y = $date->format('Y');
       
-     
-      $res = Resultat::whereHas('Animal', function (Builder $q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($m, $y) {$query->whereMonth('date','<=', $m)->whereYear('date', '<=', $y);})->get();
+      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($m, $y) {$query->whereMonth('date','<=', $m)->whereYear('date', '<=', $y);})->get();// 
      //dd($res);
       return $res;
       

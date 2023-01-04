@@ -116,6 +116,7 @@ public function run($evenement) {
     //dd($inscrit);//ouais!!
    }
    arsort($notes); //tri décroissant des valeurs
+   //dd($notes);
    $i =1;
    do {//toujours au moins un classé
    foreach ($notes as $key => $value){
