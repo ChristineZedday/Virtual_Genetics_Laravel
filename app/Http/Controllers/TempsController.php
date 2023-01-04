@@ -230,9 +230,14 @@ static function runCompetitions() {
 //dd($evenements); //OK
   foreach ($evenements as $evenement){
     
+
+//User::whereHas('submissions', $filterTask)->with(['submissions' => $filterTask])->get();*/
      $evid= $evenement->competition->id;
-     $categories = Categorie::whereHas('competitions', function ($q) use ($evid){$q->where('competition_id',$evid);})->get();
-     //dd('catégories :' . $categories);// so far, so good
+     $filter = function($query) use ($evid) {
+    $query->where('competition_id', $evid);
+};
+     $categories = Categorie::with(['competitions' =>$filter])->get();
+     //dd($categories);//with et pas whereHas sinon 1 seule catégorie
      foreach ($categories as $categorie) {
      $categorie->run($evenement->id) ;  
        
