@@ -116,10 +116,10 @@ public function run($evenement) {
     //dd($inscrit);//ouais!!
    }
    arsort($notes); //tri décroissant des valeurs
-   //dd($notes);
+   $notes = array_slice($notes,0,$classes,true);//on garde les classés
+  
    $i =1;
-   do {//toujours au moins un classé
-   foreach ($notes as $key => $value){
+   foreach ($notes as $key => $value){ //pour tous les classés
     $res= Resultat::where('animal_id', $key)->first();
     //dd($res);//c'est ça
     $res->classement = $i;
@@ -127,7 +127,7 @@ public function run($evenement) {
     //dd($res);//Oui-da.
     $animal = Animal::Find($key);
     //dd($animal->nomComplet());// Chouette!
-    $elevage = Elevage::find($animal->elevage_id);
+    $elevage = Elevage::Find($animal->elevage_id);
    
     if ($i == 1) {
         $elevage->budget += 50; // prix_premier, mettre en f compète et pas race;
@@ -138,52 +138,8 @@ public function run($evenement) {
     $elevage->save();
     //dd($elevage);//OK
     $i++; }
-   } while ($i <= $classes);
 
-  /*  $note1 = 0;
-    $note2 = 0;
-    $note3 = 0;
-    $premier =0;
-    $deuxieme = 0;
-    $troisieme=0;
-    foreach ($inscrits as $inscrit) {
-       if ($inscrit->animal->modele_allures > $note1 ) {
-           $note1 = $inscrit->animal->modele_allures;
-           $premier = $inscrit->animal_id;
-           
-       }
-       else if ($inscrit->animal->modele_allures > $note2 ) {
-           $note2 = $inscrit->animal->modele_allures;
-           $deuxieme = $inscrit->animal_id;
 
-       }
-       else if ($inscrit->animal->modele_allures > $note3 ) {
-           $note3 = $inscrit->animal->modele_allures;
-           $troisieme = $inscrit->animal_id;
-
-       }
-     $inscrit->note_synthese =   $inscrit->animal->modele_allures;
-     $inscrit->save(); 
-
-    }
-    if ($premier != 0) {//tient pas compte des catégories!!!
-    $res1 = Resultat::where('animal_id', '=', $premier)->first();
-    $res1->classement = 1;
-    $res1->note_synthese = $note1;
-    $res1->save();
-    }
-    if ($deuxieme != 0 && $inscrits->count() > 3) {
-       $res2 = Resultat::where('animal_id', '=', $deuxieme)->first();
-       $res2->classement = 2;
-       $res2->note_synthese = $note2;
-       $res2->save();
-       }
-   if ($troisieme != 0 && $inscrits->count() > 6) {
-       $res3 = Resultat::where('animal_id', '=', $troisieme)->first();
-       $res3->classement = 3;
-       $res3->note_synthese = $note3;
-       $res3->save();
-       }*/
 
 }  
 }
