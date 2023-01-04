@@ -127,6 +127,26 @@ class CompetitionRaceTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 200,
             ),
+            11 => 
+            array (
+                'id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'race_id' => 14,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 7,
+                'race_id' => 13,
+                'prix_inscription' => 5,
+                'prix_premier' => 50,
+            ),
         ));
         
         

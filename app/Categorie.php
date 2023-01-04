@@ -102,6 +102,8 @@ class Categorie extends Model
 }
 public function run($evenement) {
     $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->get();
+    $evenement = Evenement::Find($evenement);
+    $races = $evenement->competition->Races;
     $nb = $inscrits->count();
     //dd($inscrits); //ça marche quand il ya des animaux du bon âge
    $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;

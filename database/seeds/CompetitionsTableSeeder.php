@@ -70,7 +70,7 @@ class CompetitionsTableSeeder extends Seeder
                 'id' => 7,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Concours Poneys et Chevaux de sport',
+                'nom' => 'Concours Modèles et Allures Pottok',
                 'niveau' => 'départemental',
             ),
         ));

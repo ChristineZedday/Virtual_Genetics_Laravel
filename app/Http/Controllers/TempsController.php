@@ -178,14 +178,16 @@ static function regCompetNPC()
          //dd($categorie);//so far so good
           if ($categorie != false){
           $catid = $categorie->id;
-          $competitions = Competition::where(function ($q) use ($race)
-            {
-            $q->WhereHas('races', function ($req) use ($race)  {
-                $req->where('race_id', $race);
-                })->orWhereDoesntHave('races');
-            })->get();/*->whereHas('categories', function ($query) use($catid) {$query->where('categorie_id', $catid);})->first();whereDoesntHave('races');})  
+          $racid = $race->id;
+        
+          $filter1 = function($query) use ($catid) {
+         $query->where('categorie_id', $catid);};
+         $filter2 = function($query2) use ($racid) {
+            $query2->where('race_id', $racid)->orWhere('race_id',1); // ouvert aux OC, ouvert à tous!
+     };
+          $competitions = Competition::with( ['races' => $filter2])->with(['categories'=> $filter1])->get();/*->whereHas('categories', function ($query) use($catid) {$query->where('categorie_id', $catid);})->first();whereDoesntHave('races');})  ->orWhereDoesntHave('races')
             */
-         //dd($competitions); //problème avec les races
+        // dd($competitions); //problème si pas de races
        
           if ( !empty($competitions)) {
          //Une occurence d'une de ces compétition ce mois-ci? 
