@@ -231,7 +231,6 @@ static function runCompetitions() {
   foreach ($evenements as $evenement){
     
 
-//User::whereHas('submissions', $filterTask)->with(['submissions' => $filterTask])->get();*/
      $evid= $evenement->competition->id;
      $filter = function($query) use ($evid) {
     $query->where('competition_id', $evid);

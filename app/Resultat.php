@@ -47,6 +47,24 @@ class Resultat extends Pivot
       return $res;
       
    }
+
+   public function texteClassement() 
+   {
+switch ($this->classement) {
+   case null:
+      return "non classé";
+   case 1:
+      return "premier";
+   case 2:
+      return "deuxième";
+   case 3: 
+      return "troisième";
+   default:
+    return $this->classement."ème";
+
+}
+   }
+
    static function resultats($elevage_id)
    {
       $date =new DateTime(Gamedata::date());

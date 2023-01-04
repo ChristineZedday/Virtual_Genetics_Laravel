@@ -152,9 +152,10 @@
 			<h3>Palmarès: </h3>
 				@foreach ($animal->Palmares() as $palm)
 				<p> {{$palm->evenement->Nom()}} 
-				@isset($palm->classement){{$palm->classement }}
+				@isset($palm->classement){{$palm->texteClassement() }}
 				 @else non classé
 				@endisset
+				note:
 				{{$palm->note_synthese}} 
 				
 				</p>
