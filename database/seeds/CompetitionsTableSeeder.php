@@ -22,7 +22,7 @@ class CompetitionsTableSeeder extends Seeder
                 'id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Concours Modèles et Allures Welsh ',
+                'nom' => 'Concours Modèles et Allures Welsh Mountain',
                 'niveau' => 'départemental',
             ),
             1 => 
@@ -70,7 +70,55 @@ class CompetitionsTableSeeder extends Seeder
                 'id' => 7,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Concours Modèles et Allures Pottok',
+                'nom' => 'Concours Modèles et Allures Pottok A',
+                'niveau' => 'départemental',
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Pony',
+                'niveau' => 'départemental',
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Pony Type Cob',
+                'niveau' => 'départemental',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Cob',
+                'niveau' => 'départemental',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
+                'niveau' => 'départemental',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Pottok B',
+                'niveau' => 'départemental',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
                 'niveau' => 'départemental',
             ),
         ));

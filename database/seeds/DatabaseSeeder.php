@@ -35,5 +35,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EvenementsTableSeeder::class);
         $this->call(CategorieCompetitionTableSeeder::class);
         $this->call(CompetitionRaceTableSeeder::class);
+        $this->call(CompetitionEvenementTableSeeder::class);
     }
 }

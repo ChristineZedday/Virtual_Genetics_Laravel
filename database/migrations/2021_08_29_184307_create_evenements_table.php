@@ -17,8 +17,8 @@ class CreateEvenementsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->date('date');
-            $table->bigInteger('competition_id')->unsigned();
-            $table->foreign('competition_id')->references('id')->on('competitions');
+           
+           
         });
     }
 

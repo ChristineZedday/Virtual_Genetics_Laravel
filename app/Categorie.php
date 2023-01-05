@@ -100,7 +100,7 @@ class Categorie extends Model
      return false;
  }
 }
-public function run($evenement) {
+public function run($competition) {
     $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->get();
     $evenement = Evenement::Find($evenement);
     $races = $evenement->competition->Races;

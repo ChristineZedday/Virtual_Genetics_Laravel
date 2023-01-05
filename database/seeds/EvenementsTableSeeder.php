@@ -23,7 +23,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-04-28',
-                'competition_id' => 1,
+                
             ),
             1 => 
             array (
@@ -31,7 +31,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-04-14',
-                'competition_id' => 7,
+                
             ),
             2 => 
             array (
@@ -39,7 +39,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-05-02',
-                'competition_id' => 7,
+                
             ),
             3 => 
             array (
@@ -47,7 +47,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-05-02',
-                'competition_id' => 1,
+               
             ),
             4 => 
             array (
@@ -55,7 +55,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-06-02',
-                'competition_id' => 7,
+               
             ),
             5 => 
             array (
@@ -63,7 +63,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-06-07',
-                'competition_id' => 1,
+               
             ),
             6 => 
             array (
@@ -71,7 +71,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-07-07',
-                'competition_id' => 7,
+               
             ),
             7 => 
             array (
@@ -79,7 +79,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1970-07-02',
-                'competition_id' => 1,
+               
             ),
         ));
         

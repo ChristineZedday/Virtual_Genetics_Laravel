@@ -10,9 +10,9 @@ class Evenement extends Model
 {
     protected $fillable = ['date', 'competition_id'];
 
-    public function Competition () 
+    public function Competitions () 
     {
-        return $this->BelongsTo('App\Competition');
+        return $this->BelongsToMany('App\Competition');
     }
 
     public function Categories()

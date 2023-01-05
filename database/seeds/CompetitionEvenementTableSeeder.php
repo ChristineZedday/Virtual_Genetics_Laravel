@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CompetitionRaceTableSeeder extends Seeder
+class CompetitionEvenementTableSeeder extends Seeder
 {
 
     /**
@@ -14,18 +14,16 @@ class CompetitionRaceTableSeeder extends Seeder
     {
         
 
-        \DB::table('competition_race')->delete();
+        \DB::table('competition_evenement')->delete();
         
-        \DB::table('competition_race')->insert(array (
+        \DB::table('competition_evenement')->insert(array (
             0 => 
             array (
                 'id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 1,
-                'race_id' => 4,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+                'evenement_id' => 1,
             ),
             1 => 
             array (
@@ -33,9 +31,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 8,
-                'race_id' => 5,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+                'evenement_id' => 1,
             ),
             2 => 
             array (
@@ -43,9 +39,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 9,
-                'race_id' => 6,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+                'evenement_id' => 1,
             ),
             3 => 
             array (
@@ -53,9 +47,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 10,
-                'race_id' => 7,
-                'prix_inscription' => 20,
-                'prix_premier' => 100,
+                'evenement_id' => 1,
             ),
             4 => 
             array (
@@ -63,9 +55,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 11,
-                'race_id' => 10,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+                'evenement_id' => 1,
             ),
             5 => 
             array (
@@ -73,9 +63,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 2,
-                'race_id' => 2,
-                'prix_inscription' => 5,
-                'prix_premier' => 30,
+                'evenement_id' => 2,
             ),
             6 => 
             array (
@@ -83,49 +71,39 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 3,
-                'race_id' => 12,
-                'prix_inscription' => 10,
-                'prix_premier' => 60,
+                'evenement_id' => 3,
             ),
             7 => 
             array (
                 'id' => 8,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 5,
-                'race_id' => 3,
-                'prix_inscription' => 10,
-                'prix_premier' => 40,
+                'competition_id' => 4,
+                'evenement_id' => 4,
             ),
             8 => 
             array (
                 'id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 4,
-                'race_id' => 8,
-                'prix_inscription' => 25,
-                'prix_premier' => 200,
+                'competition_id' => 13,
+                'evenement_id' => 4,
             ),
             9 => 
             array (
                 'id' => 10,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 13,
-                'race_id' => 9,
-                'prix_inscription' => 20,
-                'prix_premier' => 100,
+                'competition_id' => 6,
+                'evenement_id' => 5,
             ),
             10 => 
             array (
                 'id' => 11,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 6,
-                'race_id' => 11,
-                'prix_inscription' => 20,
-                'prix_premier' => 200,
+                'competition_id' => 7,
+                'evenement_id' => 6,
             ),
             11 => 
             array (
@@ -133,21 +111,16 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 12,
-                'race_id' => 14,
-                'prix_inscription' => 5,
-                'prix_premier' => 50,
+                'evenement_id' => 6,
             ),
             12 => 
             array (
                 'id' => 13,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 7,
-                'race_id' => 13,
-                'prix_inscription' => 5,
-                'prix_premier' => 50,
+                'competition_id' => 5,
+                'evenement_id' => 7,
             ),
-           
         ));
         
         

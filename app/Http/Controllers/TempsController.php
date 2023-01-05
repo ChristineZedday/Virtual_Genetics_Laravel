@@ -152,12 +152,13 @@ static function reproNPC()
 
 static function regCompetNPC() 
 {
+    //Note: pour les PNJ, on ne réclame pas les frais d'inscriptions
     $date =new DateTime(Gamedata::date());
     $m = $date->format('m');
     $y = $date->format('Y');
     
   
-    $competiteurs = Elevage::where('role','Vendeur')->orWhere('role','Acheteur')->get();
+    $competiteurs = Elevage::where('role','Vendeur')->get();
   
    
     foreach($competiteurs as $competiteur) {
@@ -166,57 +167,44 @@ static function regCompetNPC()
         //inscrire dans la bonne compétition et catégorie
       
         foreach ($chevaux as $cheval) {
-            
+           $race_id = $cheval->race_id; 
           if (strpos($cheval->sexe,'stérilisé') != false){
                 break;//à déplacer quand autre que MA
             }
             if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
                 break; //pas de compétitions poulains
             }
-          $categorie = Categorie::recherche($cheval);
-          $race = $cheval->race; 
-         //dd($categorie);//so far so good
-          if ($categorie != false){
-          $catid = $categorie->id;
-          $racid = $race->id;
+        $competition = Competition::whereHas('races', function ($q) use ($race_id) {
+            $q->where('race_id', $race_id);
+        })->first();
+        if ( $competition != null) {
+      //  dd($competitions); //oooKKKK!
+     
+        $categorie = Categorie::recherche($cheval);
+     
+        $categories = $competition->Categories;
+        //dd ($categories);
+        if ($categorie != false && $categories->contains(Categorie::Find($categorie->id))){
+        $comp = $competition->id;
         
-          $filter1 = function($query) use ($catid) {
-         $query->where('categorie_id', $catid);};
-         $filter2 = function($query2) use ($racid) {
-            $query2->where('race_id', $racid)->orWhere('race_id',1); // ouvert aux OC, ouvert à tous!
-     };
-          $competitions = Competition::with( ['races' => $filter2])->with(['categories'=> $filter1])->get();/*->whereHas('categories', function ($query) use($catid) {$query->where('categorie_id', $catid);})->first();whereDoesntHave('races');})  ->orWhereDoesntHave('races')
-            */
-        // dd($competitions); //problème si pas de races
-       
-          if ( !empty($competitions)) {
-         //Une occurence d'une de ces compétition ce mois-ci? 
-         foreach ($competitions as $competition) {
-        $evenements = Evenement::whereMonth('date',$m)->whereYear('date', $y)->where('competition_id', $competition->id);
-        $evenement =$evenements->first(); 
+        $evenement = Evenement::whereMonth('date',$m)->whereYear('date', $y)->whereHas('competitions', function ($q) use ($comp) { $q->where('competition_id',$comp);})->first(); 
       //dd($evenement);//OK
-      if (!empty($competition->races)) {
-         //   $prix = $competition->race->pivot->prix_inscription;
-         }
-        else {
-            $prix =50;
-       }
+      
      
        if ($evenement != null) {
         
             $resultat = New Resultat();
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
-            $resultat->categorie_id = $catid;//verifier qu'elle est proposée!
-           // dd($resultat);//OK;
+            $resultat->categorie_id = $categorie->id;
+           //dd($resultat);//OK;
           
             $resultat->save();
-            $competiteur->save();     
+          //  $competiteur->save();     
            }
-        } // end foreach compet
-          }//end compets pas vide
         }
-        }
+        }// cat not false
+        } //foreach cheval
     } //end foreach competiteurs
   
 } //end function regNPC
@@ -230,20 +218,25 @@ static function runCompetitions() {
  
     $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->get(); 
 //dd($evenements); //OK
-  foreach ($evenements as $evenement){
-    
 
-     $evid= $evenement->competition->id;
-     $filter = function($query) use ($evid) {
-    $query->where('competition_id', $evid);
-};
-     $categories = Categorie::with(['competitions' =>$filter])->get();
-     //dd($categories);//with et pas whereHas sinon 1 seule catégorie
-     foreach ($categories as $categorie) {
-     $categorie->run($evenement->id) ;  
-       
-     }
+  foreach ($evenements as $evenement){
+    $competitions = $evenement->Competitions;
+    foreach ($competitions as $competition) {
+        $comp= $competition->id;
+        $filter = function($query) use ($comp) {
+       $query->where('competition_id', $comp);
+   };
+        $categories = Categorie::with(['competitions' =>$filter])->get();
+        //dd($categories);//with et pas whereHas sinon 1 seule catégorie
+        foreach ($categories as $categorie) {
+            $categorie->run($competition->id) ;  
+              
+            }
+    }
+   
+    
   }
+
 }
 }
 
