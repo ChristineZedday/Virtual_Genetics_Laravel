@@ -229,7 +229,7 @@ static function runCompetitions() {
         $categories = Categorie::with(['competitions' =>$filter])->get();
         //dd($categories);//with et pas whereHas sinon 1 seule catégorie
         foreach ($categories as $categorie) {
-            $categorie->run($competition->id) ;  
+            $categorie->run($competition->id,$evenement->id) ;  
               
             }
     }

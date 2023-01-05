@@ -23,8 +23,9 @@ class Evenement extends Model
 
     public function Nom() 
     {
-        
-        return $this->Competition->nom.' '.$this->Competition->niveau.' du '.$this->date;
+        $date = $this->date;
+        $competition = Competition::whereHas('evenements', function ($q) use ($date) {$q->where('date',$date);})->first();
+        return $competition->nom.' '.$competition->niveau.' du '.$date;
     }
     static function isSameMonth($d1, $d2) 
     {
