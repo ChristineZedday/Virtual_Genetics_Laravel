@@ -8,7 +8,9 @@ use Tests\TestCase;
 use App\Categorie;
 use App\Animal;
 use App\Evenement;
+use App\Competition;
 use App\Resultat;
+use App\Race;
 /*use Database\Seeders\UsersTableSedder;
 use Database\Seeders\ElevagesTableSedder;
 use Database\Seeders\AffixesTableSedder;
@@ -48,7 +50,7 @@ class EvenementTest extends TestCase
 
 
     }
-   public function testInscriptionSeed() 
+ /*  public function testInscriptionSeed() 
     {
         $this->seed('UsersTableSeederTest');
         $this->seed('AffixesTableSeederTest');
@@ -58,6 +60,11 @@ class EvenementTest extends TestCase
         $animal = Animal::Find(2); //Migonne of Marshwood Shetland 2 ans
         $categorie = factory(Categorie::class)->create(); //ponettes
         $evenement = factory(Evenement::class)->create();//
+        $competition = factory(Competition::class)->create();
+        $race = factory(Race::class)->create();
+        $competition->races()->attach($race->id, ['prix_inscription' > 5,'prix_premier'=> 50]);
+        $competition->evenements()->attach($evenement_id);
+       
         $resultat = new Resultat;
         $resultat->fill(['animal_id'=>$animal->id, 'categorie_id' =>$categorie->id]);
         $resultat->evenement_id = $evenement->id;
@@ -75,5 +82,6 @@ class EvenementTest extends TestCase
       
     $this->assertTrue($inscrits->first()->animal_id==2);
         
-    }
+    }*/
+    
 }

@@ -19,7 +19,6 @@ class Categorie extends Model
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
    public function verification($animal, $evenement) : bool
    {
-      
     $date = $evenement->date;
 
     $results = Resultat::Where('animal_id', $animal->id)->get();
@@ -27,11 +26,15 @@ class Categorie extends Model
     foreach ($results as $result) {
         $event = Evenement::Find($result->evenement->id);
         if ($event->date === $date) {
-            return false;
+            return false; //déjà inscrit ailleurs
         }
     }
+    $evid = $evenement->id;
    
-    $races = $evenement->competition->races;
+   $competition = Competition::wereHas('evenements', function ($q) use ($evid) {$q->where('evenement_id',$evid);})->first();
+   //dd($competition);
+    $races = $competition->races;
+   // dd($races);
            
     if ($this->type==="Modèle et Allures Race" ) {
         if ($races->isNotEmpty()) {
