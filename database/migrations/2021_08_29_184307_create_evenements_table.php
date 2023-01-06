@@ -17,6 +17,7 @@ class CreateEvenementsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->date('date');
+            $table->string('nom');
            
            
         });
