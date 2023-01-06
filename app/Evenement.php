@@ -21,10 +21,12 @@ class Evenement extends Model
         return $compet->Categories;
     }
 
-    public function Nom() 
+    public function Nom($race) 
     {
+        $id = $this->id;
         $date = $this->date;
-        $competition = Competition::whereHas('evenements', function ($q) use ($date) {$q->where('date',$date);})->first();
+        $competition = Competition::whereHas('evenements', function ($q) use ($id) {$q->where('evenement_id',$id);})->whereHas('races', function ($query) use ($race){$query->where('race_id',$race);})->first();
+       
         return $competition->nom.' '.$competition->niveau.' du '.$date;
     }
     static function isSameMonth($d1, $d2) 

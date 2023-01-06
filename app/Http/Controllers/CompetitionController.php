@@ -10,6 +10,7 @@ use App\Animal;
 use App\Categorie;
 use App\Resultat;
 use App\Gamedata;
+use App\Race;
 
 class CompetitionController extends Controller
 {
@@ -29,21 +30,14 @@ class CompetitionController extends Controller
     public function aVenir($elevage)
     {
         $elevage = Elevage::Find($elevage);
-        // switch ($filtre) {
-           
-        //     case 'MA':
-        //         $competitions = Competition::All();
-        //     break;
-        //     default:
-        //     $competitions = Competition::All();
-
-        // }
+        
         $date = Gamedata::date();
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
         $evenements = Evenement::where('date', '>=', $date)->get();
+        $races = Race::get();
    
     
-       return view('competitions', ['elevage' => $elevage, 'evenements'=>$evenements]);
+       return view('competitions', ['elevage' => $elevage, 'evenements'=>$evenements, 'races' =>$races]);
        
     }
 

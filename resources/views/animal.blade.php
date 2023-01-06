@@ -151,10 +151,8 @@
 			<div id="palmares">
 			<h3>Palmarès: </h3>
 				@foreach ($animal->Palmares() as $palm)
-				<p> {{$palm->evenement->Nom()}} 
-				@isset($palm->classement){{$palm->texteClassement() }}
-				 @else non classé
-				@endisset
+				<p> {{$palm->evenement->Nom($animal->race_id)}} 
+				{{$palm->texteClassement() }}
 				note:
 				{{$palm->note_synthese}} 
 				

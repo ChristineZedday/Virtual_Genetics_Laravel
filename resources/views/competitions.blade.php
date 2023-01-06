@@ -7,16 +7,18 @@
 <tr>
 	<th>Nom</th>
     <th>Date </th>
-    <th>Niveau</th>
+  
     <th>Actions</th>
 </tr>
 @foreach ($evenements as $evenement)
+@foreach ($races as $race)
 <tr>
-	<td>{{$evenement->nom()}}</td>
+	<td>{{$evenement->nom($race)}}</td>
     <td>{{$evenement->date}} </td>
-    <td>{{$evenement->competition->niveau}}</td>
+   
     <td><a href="{{route('inscrire',[$elevage, $evenement])}}">Inscrire</a></td>
 </tr>
+@endforeach
 @endforeach
 </div>
 

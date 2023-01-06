@@ -54,7 +54,7 @@ class Animal extends Model
     public function Palmares()
     {
         $date =  Gamedata::date();
-        $resultats =  Resultat::where('animal_id', $this->id)->whereHas('evenement', function ($q) use ($date) {$q->where('date', '<', $date);})->get();
+        $resultats =  Resultat::where('animal_id', $this->id)->where('classement', '!=', null)->get();
         return $resultats;
     }
 
