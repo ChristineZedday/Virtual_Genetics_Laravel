@@ -34,10 +34,22 @@ class CompetitionController extends Controller
         $date = Gamedata::date();
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
         $evenements = Evenement::where('date', '>=', $date)->get();
-        $races = Race::get();
-   
+        $competitions = [];
+        $ids = [];
+        foreach ($evenements as $evenement) {
+            $comps = $evenement->Competitions;
+          
+            foreach ($comps as $competition) {
+                $competitions[] = $competition;
+                $ids[] = $competition->id;
+            }
+           
+        }
+       
+        $races = Race::whereHas('competitions', function ($q) use ($ids) {$q->where('competition_id', $ids);})->get();
+   dd($races);
     
-       return view('competitions', ['elevage' => $elevage, 'evenements'=>$evenements, 'races' =>$races]);
+       return view('competitions', ['elevage' => $elevage, 'evenements'=>$evenements, 'competitions'=> $competitions, 'races' =>$races]);
        
     }
 

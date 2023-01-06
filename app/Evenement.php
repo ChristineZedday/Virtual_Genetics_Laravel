@@ -25,8 +25,9 @@ class Evenement extends Model
     {
         $id = $this->id;
         $date = $this->date;
-        $competition = Competition::whereHas('evenements', function ($q) use ($id) {$q->where('evenement_id',$id);})->whereHas('races', function ($query) use ($race){$query->where('race_id',$race);})->first();
+        $competition = Competition::whereHas('races', function ($q) use ($race) {$q->where('race_id',$race);})->whereHas('evenements', function ($qu) use ($id){$qu->where('evenement_id',$id);})->first();
        
+       //dd($competition);
         return $competition->nom.' '.$competition->niveau.' du '.$date;
     }
     static function isSameMonth($d1, $d2) 

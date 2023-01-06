@@ -14,8 +14,8 @@
 @foreach ($resultats as $resultat)
 <tr>
 
-	<td><a href="{{route('animal', ['elevage'=>$resultat->Animal->elevage_id, 'animal'=>$resultat->Animal->id])}}">{{$resultat->Animal->NomComplet()}}</a></td>
-	<td>{{$resultat->Evenement->nom()}}</td>
+	<td><a href="{{route('animal', ['elevage'=>$resultat->Animal->elevage_id, 'animal'=>$resultat->animal_id])}}">{{$resultat->Animal->NomComplet()}}</a></td>
+	<td>{{$resultat->Evenement->nom($resultat->Animal->race_id)}}</td>
     <td>{{$resultat->Categorie->nom}} </td>
 	<td>{{$resultat->texteClassement()}} </td>
 	<td>{{$resultat->note_synthese}} </td>
