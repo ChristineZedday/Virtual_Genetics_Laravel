@@ -234,7 +234,7 @@ static function runCompetitions() {
             }
     }
    
-    
+    $evenement->nextYear();
   }
 
 }

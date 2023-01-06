@@ -8,7 +8,7 @@ use App\Competition;
 
 class Evenement extends Model
 {
-    protected $fillable = ['date', 'competition_id'];
+    protected $fillable = ['date'];
 
     public function Competitions () 
     {
@@ -44,5 +44,16 @@ class Evenement extends Model
         else {
             return false;
         }
+    }
+    public function nextYear() {
+$date = date('Y-m-d',strtotime('+12 month',strtotime($this->date)));
+$evenement = New Evenement();
+$competes = $this->Competitions;
+$evenement->date = $date;
+$evenement->save();
+foreach ($competes as $comp) {
+    $evenement->Competitions()->attach($comp);
+}
+
     }
 }
