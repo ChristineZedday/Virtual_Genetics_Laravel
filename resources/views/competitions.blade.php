@@ -30,7 +30,7 @@ $races = App\Race::whereHas('competitions', function ($q) use ($id){$q->where('c
 	<td>{{$competition->nom}}</td>
    
    
-    <td><a href="{{route('inscrire',[$elevage, $evenement])}}">Inscrire</a></td>
+    <td><a href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</a></td>
 </tr>
 @endforeach
 @endforeach

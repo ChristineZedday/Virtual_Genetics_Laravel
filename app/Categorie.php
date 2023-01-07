@@ -31,9 +31,9 @@ class Categorie extends Model
     }
     $evid = $evenement->id;
    
-   
+   $competition = Competition::Find($competition);
     $races = $competition->races;
-   // dd($races);
+   //dd($races);
            
     if ($this->type==="Modèle et Allures Race" ) {
         if ($races->isNotEmpty()) {

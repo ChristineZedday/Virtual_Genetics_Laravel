@@ -1,9 +1,9 @@
 @extends('layouts.competitionDashboard')
 @section('content')
-<form action="{{route('inscription', [$evenement])}}" method="POST" >
+<form action="{{route('inscription', [$evenement,$competition])}}" method="POST" >
 						@csrf
 						@method('POST')
-<h3>{{$evenement->Nom()}}</h3>
+<h3>{{$evenement->nom}}</h3>
 <div class ='form'>
 <label for="categorie_id">Sélectionner l'épreuve</label>
 
