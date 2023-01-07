@@ -151,7 +151,9 @@
 			<div id="palmares">
 			<h3>Palmarès: </h3>
 				@foreach ($animal->Palmares() as $palm)
-				<p> {{$palm->evenement->nom()}} 
+				
+				<p> {{$palm->evenement->nom}} du{{$palm->evenement->date}} 
+				{{$palm->competition->nom}} 
 				{{$palm->texteClassement() }}
 				note:
 				{{$palm->note_synthese}} 

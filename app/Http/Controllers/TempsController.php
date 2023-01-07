@@ -197,6 +197,7 @@ static function regCompetNPC()
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
             $resultat->categorie_id = $categorie->id;
+            $resultat->competition_id = $competition->id;
            //dd($resultat);//OK;
           
             $resultat->save();

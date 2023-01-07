@@ -35,6 +35,12 @@ class Resultat extends Pivot
       return $this->BelongsTo('App\Evenement', 'evenement_id');
    }
 
+   
+   public function Competition()
+   {
+      return $this->BelongsTo('App\Competition', 'evenement_id');
+   }
+
    static function inscrits($elevage_id)
    {
       $date =new DateTime(Gamedata::date());

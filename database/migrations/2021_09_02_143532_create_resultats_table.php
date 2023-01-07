@@ -19,9 +19,11 @@ class CreateResultatsTable extends Migration
             $table->bigInteger('evenement_id')->unsigned();
             $table->bigInteger('animal_id')->unsigned();
             $table->bigInteger('categorie_id')->unsigned();
+            $table->bigInteger('competition_id')->unsigned();
             $table->foreign('evenement_id')->references('id')->on('evenements');
             $table->foreign('animal_id')->references('id')->on('animaux');
             $table->foreign('categorie_id')->references('id')->on('categories');
+            $table->foreign('competition_id')->references('id')->on('competitions');
             $table->TinyInteger('classement')->nullable();
             $table->TinyInteger('note_modele')->nullable();
             $table->TinyInteger('note_allures')->nullable();
