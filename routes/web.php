@@ -101,10 +101,10 @@ Route::get('/resultats/{elevage}', 'CompetitionController@resultats')->name('res
 
 Route::get('/inscrits/{elevage}', 'CompetitionController@inscrits')->name('inscrits');
 
-Route::get('/competitions/{elevage}/{evenement}', 'CompetitionController@inscrire')->name('inscrire');
+Route::get('/competitions/{elevage}/{evenement}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
 
-Route::post('/inscription/{evenement}', 'CompetitionController@inscription')->name('inscription');
+Route::post('/inscription/{evenement}/{competition}', 'CompetitionController@inscription')->name('inscription');
 
-Route::get('/desinscrire/{evenement}/{categorie}/{animal}', 'CompetitionController@desinscrire')->name('desinscrire');
+Route::get('/desinscrire/{evenement}/{competition}/{categorie}/{animal}', 'CompetitionController@desinscrire')->name('desinscrire');
 
 Route::get('palmares/{elevage}/{animal}/{resultat}', 'AnimalController@palmare')->name('palmares');
