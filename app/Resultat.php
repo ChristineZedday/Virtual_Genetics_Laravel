@@ -82,4 +82,16 @@ switch ($this->classement) {
       return $res;
       
    }
+
+   static function tousResultats()
+   {
+      $date =new DateTime(Gamedata::date());
+      $m = $date->format('m');
+      $y = $date->format('Y');
+      
+      $res = Resultat::whereHas('evenement', function ($q) use ($m, $y) {$q->whereMonth('date','<=', $m)->whereYear('date', '<=', $y);})->get();// 
+     //dd($res);
+      return $res;
+      
+   }
 }

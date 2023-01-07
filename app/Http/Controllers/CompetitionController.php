@@ -126,6 +126,18 @@ class CompetitionController extends Controller
         
     }
 
+    public function tousResultats($elevage )
+    {
+       
+        
+        
+        $resultats = Resultat::tousResultats();
+        //dd($resultats);
+        return view('tous_resultats',['elevage'=>$elevage, 'resultats' =>$resultats]);
+        
+        
+    }
+
     public function desinscrire($resultat)
     {
         
