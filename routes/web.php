@@ -105,6 +105,6 @@ Route::get('/competitions/{elevage}/{evenement}/{competition}', 'CompetitionCont
 
 Route::post('/inscription/{evenement}/{competition}', 'CompetitionController@inscription')->name('inscription');
 
-Route::get('/desinscrire/{evenement}/{competition}/{categorie}/{animal}', 'CompetitionController@desinscrire')->name('desinscrire');
+Route::get('/desinscrire/{resultat}', 'CompetitionController@desinscrire')->name('desinscrire');
 
 Route::get('palmares/{elevage}/{animal}/{resultat}', 'AnimalController@palmare')->name('palmares');

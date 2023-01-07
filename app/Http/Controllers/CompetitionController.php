@@ -83,7 +83,7 @@ class CompetitionController extends Controller
         
         $categorie = Categorie::Find($resultat->categorie_id);
 
-        if ($categorie->verification($animal, $evenement,$competition)) {
+        if ($categorie->verification($animal, $evenement, $competition)) {
           
            
                 if ($resultat->save()) {
@@ -98,10 +98,11 @@ class CompetitionController extends Controller
           }
         
         else {
-         
+            $comp = Competition::Find($competition);
+            $categories = $comp->Categories;
             $request->session()->flash('status',"Pas la bonne catégorie, ou déjà inscrit quelque part à cette date!");
             $request->session()->flash('alert-class',"alert-danger");
-            return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'categories'=> $evenement->Categories(), 'animaux' => $animaux])->with('status');
+            return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'categories'=> $categories, 'animaux' => $animaux])->with('status');
             
         }
     }
@@ -129,11 +130,12 @@ class CompetitionController extends Controller
         
     }
 
-    public function desinscrire($evenement, $categorie, $animal)
+    public function desinscrire($resultat)
     {
         
-       $resultat = Resultat::where('animal_id',$animal)->where('evenement_id',$evenement)->where('categorie_id', $categorie);
-       $date = $resultat->evenement->date_create_immutable;
+       $resultat = Resultat::Find($resultat);
+       
+       $date = $resultat->evenement->date;
        if (Gamedata::date() >= $date){
             if ($resultat->delete()) {
        

@@ -15,11 +15,11 @@ class Evenement extends Model
         return $this->BelongsToMany('App\Competition');
     }
 
-    public function Categories()
+  /* public function Categories()
     {
         $compet = $this->Competition;
         return $compet->Categories;
-    }
+    }*/
 
   
     public function nextYear() {
