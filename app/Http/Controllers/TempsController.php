@@ -157,10 +157,8 @@ static function regCompetNPC()
     $m = $date->format('m');
     $y = $date->format('Y');
     
-  
     $competiteurs = Elevage::where('role','Vendeur')->get();
   
-   
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>11
         $chevaux = Animal::where('modele_allures', '>=', 12)->where('race_id', '!=' , 1)->where('elevage_id', $competiteur->id)->get(); //pas les OC
@@ -178,7 +176,7 @@ static function regCompetNPC()
             $q->where('race_id', $race_id);
         })->first();
         if ( $competition != null) {
-      //  dd($competitions); //oooKKKK!
+      //dd($competition); //oooKKKK!
      
         $categorie = Categorie::recherche($cheval);
      
@@ -197,7 +195,7 @@ static function regCompetNPC()
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
             $resultat->categorie_id = $categorie->id;
-            $resultat->competition_id = $competition->id;
+            $resultat->competition_id = $comp;
            //dd($resultat);//OK;
           
             $resultat->save();
