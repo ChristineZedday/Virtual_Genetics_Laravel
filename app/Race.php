@@ -13,6 +13,6 @@ class Race extends Model
 
    public function Competitions() 
    {
-      return $this->belongsToMany('App\Competition')-;
+      return $this->belongsToMany('App\Competition');
    }
 }
