@@ -18,6 +18,8 @@ class CreateCompetitionsTable extends Migration
             $table->timestamps();
             $table->string('nom');
             $table->enum('niveau',['local','départemental','régional', 'national', 'Européen', 'mondial']);
+            $table->mediumInteger('prix_insciption');
+            $table->mediumInteger('prix_premier');
             
         });
     }

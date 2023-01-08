@@ -24,6 +24,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Welsh Mountain',
                 'niveau' => 'départemental',
+                'prix_inscription' => 10,
+                'prix_premier' =>100,
             ),
             1 => 
             array (
@@ -32,6 +34,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Shetland',
                 'niveau' => 'départemental',
+                'prix_inscription' => 5,
+                'prix_premier' =>50,
             ),
             2 => 
             array (
@@ -40,6 +44,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Connemara',
                 'niveau' => 'départemental',
+                'prix_inscription' => 10,
+                'prix_premier' =>100,
             ),
             3 => 
             array (
@@ -48,6 +54,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
                 'niveau' => 'départemental',
+                'prix_inscription' => 50,
+                'prix_premier' =>500,
             ),
             4 => 
             array (
@@ -56,6 +64,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèle Et Allures Miniature',
                 'niveau' => 'départemental',
+                'prix_inscription' => 5,
+                'prix_premier' =>50,
             ),
             5 => 
             array (
@@ -64,6 +74,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Français de Selle',
                 'niveau' => 'départemental',
+                'prix_inscription' => 20,
+                'prix_premier' =>200,
             ),
             6 => 
             array (
@@ -72,6 +84,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Pottok A',
                 'niveau' => 'départemental',
+                'prix_inscription' => 5,
+                'prix_premier' =>100,
             ),
             7 => 
             array (
@@ -80,6 +94,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Welsh Pony',
                 'niveau' => 'départemental',
+                'prix_inscription' => 10,
+                'prix_premier' =>100,
             ),
             8 => 
             array (
@@ -88,6 +104,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Welsh Pony Type Cob',
                 'niveau' => 'départemental',
+                'prix_inscription' => 10,
+                'prix_premier' =>100,
             ),
             9 => 
             array (
@@ -96,6 +114,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Welsh Cob',
                 'niveau' => 'départemental',
+                'prix_inscription' => 20,
+                'prix_premier' =>200,
             ),
             10 => 
             array (
@@ -104,6 +124,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
                 'niveau' => 'départemental',
+                'prix_inscription' => 10,
+                'prix_premier' =>100,
             ),
             11 => 
             array (
@@ -112,6 +134,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Pottok B',
                 'niveau' => 'départemental',
+                'prix_inscription' => 10,
+                'prix_premier' =>100,
             ),
             12 => 
             array (
@@ -120,6 +144,8 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
                 'niveau' => 'départemental',
+                'prix_inscription' => 20,
+                'prix_premier' =>200,
             ),
         ));
         

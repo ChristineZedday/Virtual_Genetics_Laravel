@@ -13,6 +13,6 @@ class Race extends Model
 
    public function Competitions() 
    {
-      return $this->belongsToMany('App\Competition')->withPivot('prix_inscription', 'prix_premier');
+      return $this->belongsToMany('App\Competition')-;
    }
 }

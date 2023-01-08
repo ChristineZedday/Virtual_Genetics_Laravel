@@ -24,8 +24,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 1,
                 'race_id' => 4,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+            
             ),
             1 => 
             array (
@@ -34,8 +33,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 8,
                 'race_id' => 5,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+              
             ),
             2 => 
             array (
@@ -44,8 +42,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 9,
                 'race_id' => 6,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+               
             ),
             3 => 
             array (
@@ -54,8 +51,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 10,
                 'race_id' => 7,
-                'prix_inscription' => 20,
-                'prix_premier' => 100,
+               
             ),
             4 => 
             array (
@@ -64,8 +60,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 11,
                 'race_id' => 10,
-                'prix_inscription' => 10,
-                'prix_premier' => 50,
+              
             ),
             5 => 
             array (
@@ -74,8 +69,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 2,
                 'race_id' => 2,
-                'prix_inscription' => 5,
-                'prix_premier' => 30,
+              
             ),
             6 => 
             array (
@@ -84,8 +78,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 3,
                 'race_id' => 12,
-                'prix_inscription' => 10,
-                'prix_premier' => 60,
+              
             ),
             7 => 
             array (
@@ -94,8 +87,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 5,
                 'race_id' => 3,
-                'prix_inscription' => 10,
-                'prix_premier' => 40,
+              
             ),
             8 => 
             array (
@@ -104,8 +96,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 4,
                 'race_id' => 8,
-                'prix_inscription' => 25,
-                'prix_premier' => 200,
+               
             ),
             9 => 
             array (
@@ -114,8 +105,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 13,
                 'race_id' => 9,
-                'prix_inscription' => 20,
-                'prix_premier' => 100,
+               
             ),
             10 => 
             array (
@@ -124,8 +114,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 6,
                 'race_id' => 11,
-                'prix_inscription' => 20,
-                'prix_premier' => 200,
+               
             ),
             11 => 
             array (
@@ -134,8 +123,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 12,
                 'race_id' => 14,
-                'prix_inscription' => 5,
-                'prix_premier' => 50,
+              
             ),
             12 => 
             array (
@@ -144,8 +132,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 7,
                 'race_id' => 13,
-                'prix_inscription' => 5,
-                'prix_premier' => 50,
+               
             ),
            
         ));

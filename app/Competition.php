@@ -26,7 +26,7 @@ Dans cette version, un seul type d'épreuve, le concours de Modèle et Allures.
     }
     public function Races() 
     {
-        return $this->BelongsToMany('App\Race')->withPivot('prix_inscription', 'prix_premier');
+        return $this->BelongsToMany('App\Race');
     }
     public function Resultats()
     {

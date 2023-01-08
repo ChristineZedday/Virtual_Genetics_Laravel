@@ -20,8 +20,7 @@ class CreateCompetitionRaceTable extends Migration
             $table->bigInteger('race_id')->unsigned()->nullable();
             $table->foreign('competition_id')->references('id')->on('competitions');
             $table->foreign('race_id')->references('id')->on('races');
-            $table->smallInteger('prix_inscription')->unsigned();
-            $table->mediumInteger('prix_premier')->unsigned();
+          
         });
     }
 

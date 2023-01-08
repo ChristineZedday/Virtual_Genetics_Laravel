@@ -105,9 +105,8 @@ class Categorie extends Model
 public function run($competition, $evenement) {
     
     $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-    $evenement = Evenement::Find($evenement);
-    $competition = Competition::Find($competition);
-    $races = $competition->Races;
+  $prix = $Competition::Find($competition)->prix_premier;
+  
     $nb = $inscrits->count();
     //dd($inscrits); //ça marche quand il ya des animaux du bon âge
    $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
@@ -127,7 +126,7 @@ public function run($competition, $evenement) {
   
    $i =1;
    foreach ($notes as $key => $value){ //pour tous les classés
-    $res= Resultat::where('animal_id', $key)->first();
+    $res= Resultat::where('evenement_id',$evenement)->where('competitom_id', $competition)->where('animal_id', $key)->first();
     //dd($res);//c'est ça
     $res->classement = $i;
     $res->save();
@@ -137,10 +136,10 @@ public function run($competition, $evenement) {
     $elevage = Elevage::Find($animal->elevage_id);
    
     if ($i == 1) {
-        $elevage->budget += 50; // prix_premier, mettre en f compète et pas race;
+        $elevage->budget += $prix; // prix_premier, mettre en f compète et pas race;
     }
     else  {
-        $elevage->budget += (int) (50/$i);//prix_premier/$i);
+        $elevage->budget += (int) ($prix/$i);//prix_premier/$i);
     }
     $elevage->save();
     //dd($elevage);//OK
