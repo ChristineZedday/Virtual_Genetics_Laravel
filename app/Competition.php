@@ -33,6 +33,23 @@ Dans cette version, un seul type d'épreuve, le concours de Modèle et Allures.
         return $this->BelongsToMany('App\Resultat');  
     }
 
+    static function Recherche(Animal $cheval) 
+    {
+        $racid = $cheval->race->id;
+        $competition = Competition::whereHas('races', function ($q) use ($racid) {
+            $q->where('race_id', $racid);
+        })->first();
+        return $competition;
+    }
+    public function verification($race)
+    {
+        $race = Race::Find($race);
+        if ($this->Races->contains('race_id',$race)) {
+            dd($this->Races->contains('race_id',$race));
+            return true;
+        }
+    }
+
   
 
 }

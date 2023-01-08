@@ -103,6 +103,7 @@ class Categorie extends Model
  }
 }
 public function run($competition, $evenement) {
+    
     $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
     $evenement = Evenement::Find($evenement);
     $competition = Competition::Find($competition);
@@ -111,6 +112,7 @@ public function run($competition, $evenement) {
     //dd($inscrits); //ça marche quand il ya des animaux du bon âge
    $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
    $notes = [];
+   //dd('inscrits: '.$nb.' classés: '.$classes);
    foreach ($inscrits as $inscrit) {
     $animal = $inscrit->animal;
     //dd($animal->nomComplet());//vi vi vi

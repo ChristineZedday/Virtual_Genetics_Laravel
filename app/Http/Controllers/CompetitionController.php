@@ -79,7 +79,7 @@ class CompetitionController extends Controller
         
         $categorie = Categorie::Find($resultat->categorie_id);
 
-        if ($categorie->verification($animal, $evenement, $competition)) {
+        if ($categorie->verification($animal, $evenement, $competition) and $competition->verification($animal->race_id)) {
           
            
                 if ($resultat->save()) {

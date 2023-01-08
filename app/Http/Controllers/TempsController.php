@@ -172,9 +172,8 @@ static function regCompetNPC()
             if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
                 break; //pas de compétitions poulains
             }
-        $competition = Competition::whereHas('races', function ($q) use ($race_id) {
-            $q->where('race_id', $race_id);
-        })->first();
+        $competition = Competition::recherche($cheval);
+       
         if ( $competition != null) {
       //dd($competition); //oooKKKK!
      

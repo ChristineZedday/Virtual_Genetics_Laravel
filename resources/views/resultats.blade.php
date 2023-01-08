@@ -17,8 +17,8 @@
 <tr>
 
 	<td><a href="{{route('animal', ['elevage'=>$elevage, 'animal'=>$resultat->animal_id])}}">{{$resultat->Animal->NomComplet()}}</a></td>
-	<td>{{$resultat->Evenement->nom}}</td>
-	<td>{{$resultat->competition->nom }}</td>
+	<td>{{$resultat->Evenement->nom}} {{$resultat->Evenement->date}}</td>
+	<td>{{$resultat->Competition->nom }}</td>
     <td>{{$resultat->Categorie->nom}}</td>
 	<td>{{$resultat->texteClassement()}} </td>
 	<td>{{$resultat->note_synthese}} </td>
