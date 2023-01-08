@@ -119,6 +119,8 @@ public function run($competition, $evenement) {
     //dd($notes); //TB
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
+   
+
     //dd($inscrit);//ouais!!
    }
    arsort($notes); //tri décroissant des valeurs
@@ -131,8 +133,20 @@ public function run($competition, $evenement) {
     $res->classement = $i;
     $res->save();
     //dd($res);//Oui-da.
+    $debug = New Debug();
+    $eve= Evenement::Find($evenement);
+    $comp = Competition::Find($competition);
+    $debug->evenement = $eve->nom.' '.$eve->date;
+    $debug->competition = $comp->nom;
+    $debug->categorie = $this->nom;
+    $debug->cheval = $animal->nomComplet();
+    $debug->classement = $res->classement;
+    $debug->note = $inscrit->note_synthese;
+    $debug->save();
+
     $animal = Animal::Find($key);
     //dd($animal->nomComplet());// Chouette!
+    
     $elevage = Elevage::Find($animal->elevage_id);
    
     if ($i == 1) {

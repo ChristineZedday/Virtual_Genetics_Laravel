@@ -15,8 +15,12 @@ class CreateDebugTable extends Migration
     {
         Schema::create('debugs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('locus1')->nullable();
-            $table->string('locsuivs')->nullable();
+            $table->string('evenement')->nullable();
+            $table->string('competition')->nullable();
+            $table->string('categorie')->nullable();
+            $table->string('cheval')->nullable();
+            $table->string('note')->nullable();
+            $table->string('classement')->nullable();
             $table->timestamps();
         });
     }

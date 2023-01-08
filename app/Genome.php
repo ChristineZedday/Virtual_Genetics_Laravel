@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Debug;
+//use App\Debug;
 
 class Genome extends Model
 {
@@ -13,7 +13,7 @@ class Genome extends Model
         $genomeM = Genotype::where('animal_id', $female)->get();
         $genomeP = Genotype::where('animal_id', $male)->get();
        
-        $debug = $male.' x '.$female. ' ';
+       // $debug = $male.' x '.$female. ' ';
 
             foreach ($genomeP as $genotypeP)
             {
@@ -122,15 +122,15 @@ class Genome extends Model
                        }
                     else {
                            $genotype->allele_m_id = $alleleDefaut;
-                           $debug = $debug.' def';
+                         //  $debug = $debug.' def';
                            $patM = true;
                     }
 
                   
-                    $deb = new Debug;
+             /*       $deb = new Debug;
                     $deb->locus1 = $debug;
                     $deb->save();
-                    $debug ='';
+                    $debug ='';*/
                      
                     if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut  ) or ($genotype->Locus->obligatoire)) {
                         $genotype->save();   
@@ -143,7 +143,7 @@ class Genome extends Model
                         if ($tauxP > 50) {$tauxP = 50;}
                         $tauxM = $tauxM + $loc->taux_recomb_next;
                         if ($tauxM > 50) {$tauxM = 50;}
-                        $debug = $debug.' tauxP: '.$tauxP. ' tauxM: '.$tauxM;
+                     //   $debug = $debug.' tauxP: '.$tauxP. ' tauxM: '.$tauxM;
                         $locus = Locus::Find($loc->next_linked_id); //on passe au suivant de la chaine
                         $genotype = new Genotype; 
                         $genotype->animal_id = $produit;
@@ -155,20 +155,20 @@ class Genome extends Model
 
                         $genotypeP = Genotype::where('animal_id', $male)->where('locus_id', $locus->id)->first();
                         if (isset($genotypeP)) {
-                            $debug = $debug.' '.$locus->abbrev.' paternel: ';
-                            $debug = $debug.$genotypeP->allele_p_id.' '.$genotypeP->allele_m_id;
+                         //   $debug = $debug.' '.$locus->abbrev.' paternel: ';
+                          //  $debug = $debug.$genotypeP->allele_p_id.' '.$genotypeP->allele_m_id;
                             if ($patP)
                              {
                                 $recomb = (rand(1, 100) <= $tauxP); //on a bien absence de recomb avec un taux de 0%
                                 if ($recomb) {
                                     $genotype->allele_p_id = $genotypeP->allele_m_id;
                                     $patP = false;
-                                    $debug = $debug.' recomb';
+                                  //  $debug = $debug.' recomb';
                                 }
                                 else {
                                     $genotype->allele_p_id = $genotypeP->allele_p_id;
                                     $patP = true;
-                                    $debug = $debug.' pas recomb';
+                                //    $debug = $debug.' pas recomb';
                                 }
                             }
                             else {  //cas ou l'on avait allèle mat précédent locus
@@ -176,12 +176,12 @@ class Genome extends Model
                                 if ($recomb) {
                                     $genotype->allele_p_id = $genotypeP->allele_p_id;
                                     $patP = true;
-                                    $debug = $debug.' recomb';
+                                 //   $debug = $debug.' recomb';
                                 }
                                 else {
                                     $genotype->allele_p_id = $genotypeP->allele_m_id;
                                     $patP = false;
-                                    $debug = $debug.' pas recomb';
+                                //    $debug = $debug.' pas recomb';
                                 }
                             }
                             $tauxP = 0; //recombinaison à partir de celui-ci et pas le premier
@@ -190,11 +190,11 @@ class Genome extends Model
                         }
                         else { //pas de génotypeP
                             $genotype->allele_p_id = $alleleDefaut;
-                            $debug = $debug.' def ';
+                          //  $debug = $debug.' def ';
                            
                         }
 
-                        $debug = $debug.$genotype->allele_p_id;
+                    //    $debug = $debug.$genotype->allele_p_id;
 
                         
 
@@ -208,7 +208,7 @@ class Genome extends Model
                                 if ($recomb) {
                                     $genotype->allele_m_id = $genotypeM->allele_m_id;
                                     $patM = false;
-                                    $debug= $debug.' recomb ';
+                                 //   $debug= $debug.' recomb ';
                                 }
                                 else {
                                     $genotype->allele_m_id = $genotypeM->allele_p_id;
@@ -220,7 +220,7 @@ class Genome extends Model
                                 if ($recomb) {
                                     $genotype->allele_m_id = $genotypeM->allele_p_id;
                                     $patM = true;
-                                    $debug= $debug.' recomb ';
+                                  //  $debug= $debug.' recomb ';
                                 }
                                 else {
                                     $genotype->allele_m_id = $genotypeM->allele_m_id;
@@ -232,10 +232,10 @@ class Genome extends Model
                         }
                         else { //pas de génotypeM
                             $genotype->allele_m_id = $alleleDefaut;
-                            $debug = $debug.' def ';  
+                          //  $debug = $debug.' def ';  
                         }
 
-                        $debug = $debug.$genotype->allele_m_id;
+                      //  $debug = $debug.$genotype->allele_m_id;
                         if ( !($genotype->allele_p_id == $alleleDefaut && $genotype->allele_m_id == $alleleDefaut or ($genotype->Locus->obligatoire) )) {
                             $genotype->save();   
                         }
@@ -248,8 +248,8 @@ class Genome extends Model
                         }
                         $loc = $locus; //sinon boucle infinie sur le premier
 
-                        $deb->locsuivs = $debug;
-                        $deb->save();
+                       // $deb->locsuivs = $debug;
+                       // $deb->save();
                          
                     }//fin du while
                     
@@ -433,10 +433,10 @@ class Genome extends Model
 
                   }
                   $size = sizeof($dilue_couleurs);
-                  $debug = new Debug();
+                /*  $debug = new Debug();
                   $debug->locus1 = $animal->nom;
                   $debug->locsuivs = sizeof($dilue_couleurs);
-                  $debug->save();
+                  $debug->save();*/
 
                 
                   foreach ($dilue_couleurs as $coul)
