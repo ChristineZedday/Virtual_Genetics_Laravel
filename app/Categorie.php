@@ -105,7 +105,7 @@ class Categorie extends Model
 public function run($competition, $evenement) {
     
     $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-  $prix = $Competition::Find($competition)->prix_premier;
+  $prix = Competition::Find($competition)->prix_premier;
   
     $nb = $inscrits->count();
     //dd($inscrits); //ça marche quand il ya des animaux du bon âge
