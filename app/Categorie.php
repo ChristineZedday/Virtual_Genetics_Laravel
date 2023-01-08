@@ -126,7 +126,7 @@ public function run($competition, $evenement) {
   
    $i =1;
    foreach ($notes as $key => $value){ //pour tous les classés
-    $res= Resultat::where('evenement_id',$evenement)->where('competitom_id', $competition)->where('animal_id', $key)->first();
+    $res= Resultat::where('evenement_id',$evenement)->where('competition_id', $competition)->where('animal_id', $key)->first();
     //dd($res);//c'est ça
     $res->classement = $i;
     $res->save();
