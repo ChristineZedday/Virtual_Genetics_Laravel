@@ -4,7 +4,7 @@
 compétitions:
 
 résultats précédents qui disparaissent de l'affichage (pas des tables)
-compétitions sans aucun classé (welsh pony, shetland, classés ds table debug, ou pas du tout (shet))
+compétitions sans aucun classé (welsh pony, shetland, classés ds table debug, ou pas du tout (shet, pas notés))
 doublons dans la table debug, et pas le m^me classement et notes
 doublons: les inscrits manuels ont été réinscrits automatiquement
 
