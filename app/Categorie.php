@@ -114,6 +114,17 @@ public function run($competition, $evenement) {
    //dd('inscrits: '.$nb.' classés: '.$classes);
    foreach ($inscrits as $inscrit) {
     $animal = $inscrit->animal;
+  /*  if ($animal->genre() == 0) {//passer les juments qui viennent de pouliner dans leur catégorie suitées
+        if ($animal->Statut) {
+            if ($animal->Statut->suitee){
+            if (! strpos($this->nom,'suitées') ) {
+                $cat = Categorie::where('nom', $this->nom.' suitées')->first();
+                $inscrit->Categorie = $cat;
+                $inscrit->save();
+            }
+            }
+        }
+    }*/
     //dd($animal->nomComplet());//vi vi vi
     $notes[$animal->id] = $animal->modele_allures  + rand(1,1000)/1000; //éviter les ex-aequo
     //dd($notes); //TB
