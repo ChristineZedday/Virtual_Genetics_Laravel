@@ -3,7 +3,6 @@
 
 compétitions:
 désinscription ne fonctionne plus
-animaux conccourent dans la bonne compétition, mais son affichés dans une autre race dans blade
 résultats qui disparaissent 
 doublons dans la table debug, et pas le m^me classement et notes
 problèmes avec résultats tous chevaux

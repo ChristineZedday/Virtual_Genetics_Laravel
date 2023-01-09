@@ -80,10 +80,11 @@ class CompetitionController extends Controller
         $categorie = Categorie::Find($resultat->categorie_id);
 
         if ($categorie->verification($animal, $evenement, $competition) ) { //and $competition->verification($animal->race->id)
-          
+            $comp = Competition::Find($competition);  
            
                 if ($resultat->save()) {
-                $elevage->budget -= $categorie->prix_inscription;
+                 
+                $elevage->budget -= $comp->prix_inscription;
                 $elevage->save();
                 $request->session()->flash('status');
                 $request->session()->flash('alert-class',"alert-sucess");

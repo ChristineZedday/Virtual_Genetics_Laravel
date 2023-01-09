@@ -38,7 +38,7 @@ class Resultat extends Pivot
    
    public function Competition()
    {
-      return $this->BelongsTo('App\Competition', 'evenement_id');
+      return $this->BelongsTo('App\Competition', 'competition_id');
    }
 
    static function inscrits($elevage_id)
