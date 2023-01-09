@@ -132,7 +132,7 @@ class CompetitionController extends Controller
     {
        
         
-        
+        $elevage =Elevage::Find($elevage);
         $resultats = Resultat::tousResultats();
         //dd($resultats);
         return view('tous_resultats',['elevage'=>$elevage, 'resultats' =>$resultats]);
@@ -145,8 +145,7 @@ class CompetitionController extends Controller
         
        $resultat = Resultat::Find($resultat);
        
-       $date = $resultat->evenement->date;
-       if (Gamedata::date() >= $date){
+      
             if ($resultat->delete()) {
        
        
@@ -155,7 +154,7 @@ class CompetitionController extends Controller
     else {
         return redirect()->back()->with('status',"Trop tard, la compétition a eu lieu");
     }
-}
+
        
     }
 

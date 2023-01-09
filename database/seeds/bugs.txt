@@ -2,10 +2,11 @@
 
 
 compétitions:
-désinscription ne fonctionne plus
-résultats qui disparaissent 
+
+résultats précédents qui disparaissent de l'affichage (pas des tables)
+compétitions sans aucun classé (welsh pony, shetland, classés ds table debug, ou pas du tout (shet))
 doublons dans la table debug, et pas le m^me classement et notes
-problèmes avec résultats tous chevaux
+doublons: les inscrits manuels ont été réinscrits automatiquement
 
 
 
