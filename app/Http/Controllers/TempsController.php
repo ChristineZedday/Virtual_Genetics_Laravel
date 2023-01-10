@@ -172,32 +172,36 @@ static function regCompetNPC()
             if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
                 break; //pas de compétitions poulains
             }
-        $competition = Competition::recherche($cheval);
+        $competitions = Competition::recherche($cheval);
        
-        if ( $competition != null) {
+        if ( $competitions != null) {
       //dd($competition); //oooKKKK!
      
         $categorie = Categorie::recherche($cheval);
      
-        $categories = $competition->Categories;
+        foreach ($competitions as $competition)
+       {
+         $categories = $competition->Categories;
         //dd ($categories);
         if ($categorie != false && $categories->contains(Categorie::Find($categorie->id))){
         $comp = $competition->id;
         
-        $evenement = Evenement::whereMonth('date',$m)->whereYear('date', $y)->whereHas('competitions', function ($q) use ($comp) { $q->where('competition_id',$comp);})->first(); 
+        $evenement = Evenement::whereMonth('date',$m)->whereYear('date', $y)->whereHas('competitions', function ($q) use ($comp) { $q->where('competition_id',$comp);})->first();
+     }
       //dd($evenement);//OK
       
      
        if ($evenement != null) {
-        
-            $resultat = New Resultat();
+        $deja = Resultat::where('evenement_id',$evenement_id)->where('animal_id', $cheval->id)->first();
+        if (null == $deja)
+          {  $resultat = New Resultat();
             $resultat->animal_id = $cheval->id;
             $resultat->evenement_id = $evenement->id;
             $resultat->categorie_id = $categorie->id;
             $resultat->competition_id = $comp;
            //dd($resultat);//OK;
           
-            $resultat->save();
+            $resultat->save();}
           //  $competiteur->save();     
            }
         }
