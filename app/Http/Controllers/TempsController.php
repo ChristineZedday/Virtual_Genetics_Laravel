@@ -192,7 +192,7 @@ static function regCompetNPC()
       
      
        if ($evenement != null) {
-        $deja = Resultat::where('evenement_id',$evenement_id)->where('animal_id', $cheval->id)->first();
+        $deja = Resultat::where('evenement_id',$evenement->id)->where('animal_id', $cheval->id)->first();
         if (null == $deja)
           {  $resultat = New Resultat();
             $resultat->animal_id = $cheval->id;
