@@ -17,7 +17,6 @@ class UsersTableSeeder extends Seeder
         \DB::table('users')->delete();
         
         \DB::table('users')->insert(array (
-           
             0 => 
             array (
                 'id' => 1,
@@ -39,6 +38,17 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => NULL,
                 'created_at' => '2020-02-10 12:15:45',
                 'updated_at' => '2020-02-10 12:15:45',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Christine Z',
+                'email' => 'c@z',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$L1jCbHdA4.Tn/8a4AVaxEONwjMepYCSLOw55bMjHIIv6Suni2Dx9G',
+                'remember_token' => NULL,
+                'created_at' => '2023-01-10 18:19:32',
+                'updated_at' => '2023-01-10 18:19:32',
             ),
         ));
         

@@ -569,6 +569,14 @@ class AffixesTableSeeder extends Seeder
                 'created_at' => '2021-01-14 20:01:29',
                 'updated_at' => '2021-01-14 20:01:29',
             ),
+            69 => 
+            array (
+                'id' => 71,
+                'libelle' => 'Landelle',
+                'affixe_pre' => 0,
+                'created_at' => '2023-01-10 18:19:52',
+                'updated_at' => '2023-01-10 18:19:52',
+            ),
         ));
         
         
