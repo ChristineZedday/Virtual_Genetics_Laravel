@@ -332,7 +332,7 @@ static function VenteSaillies ()
                 if (rand(1,3)== 1)
                 {
                     $statut->disponible = true;
-                    if ($statut->qualite = 'approuvé')
+                    if ($statut->qualite == 'approuvé')
                    { $statut->prix = $animal->Race->prix_moyen/10;}
                    else
                    {$statut->prix = $animal->Race->prix_moyen/20;}
