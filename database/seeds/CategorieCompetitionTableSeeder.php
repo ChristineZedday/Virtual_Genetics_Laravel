@@ -769,6 +769,70 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 9,
                 'categorie_id' => 1,
             ),
+            94 => 
+            array (
+                'id' => 95,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 2,
+            ),
+            95 => 
+            array (
+                'id' => 96,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 1,
+            ),
+            96 => 
+            array (
+                'id' => 97,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 3,
+            ),
+            97 => 
+            array (
+                'id' => 98,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 4,
+            ),
+            98 => 
+            array (
+                'id' => 99,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 5,
+            ),
+            99 => 
+            array (
+                'id' => 100,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 6,
+            ),
+            100 => 
+            array (
+                'id' => 101,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 7,
+            ),
+            101 => 
+            array (
+                'id' => 102,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'categorie_id' => 10,
+            ),
         ));
         
         
