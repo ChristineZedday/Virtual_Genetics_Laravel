@@ -20,11 +20,6 @@ $id = $evenement->id;
 $competitions = App\Competition::whereHas('evenements', function ($q) use ($id){$q->where('evenement_id',$id);})->get();
 ?>
 @foreach ($competitions as $competition)
-<?php 
-$id = $competition->id;
-$races = App\Race::whereHas('competitions', function ($q) use ($id){$q->where('competition_id',$id);})->get();
-?>
-@foreach ($races as $race)
 
 <tr>
 	<td>{{$competition->nom}}</td>
@@ -32,7 +27,7 @@ $races = App\Race::whereHas('competitions', function ($q) use ($id){$q->where('c
    
     <td><a href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</a></td>
 </tr>
-@endforeach
+
 @endforeach
 @endforeach
 </div>
