@@ -134,6 +134,78 @@ class CompetitionRaceTableSeeder extends Seeder
                 'race_id' => 13,
                
             ),
+            13 =>
+            array (
+                'id' => 14,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 14,
+               
+            ),
+            14 =>
+            array (
+                'id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 5,
+               
+            ),
+            15 =>
+            array (
+                'id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 6,
+               
+            ),
+            16 =>
+            array (
+                'id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 7,
+               
+            ),
+            17 =>
+            array (
+                'id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 6,
+               
+            ),
+            18 =>
+            array (
+                'id' => 19,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 10,
+               
+            ),
+            19 =>
+            array (
+                'id' => 20,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 11,
+               
+            ),
+            20 =>
+            array (
+                'id' => 21,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 12,
+               
+            ),
            
         ));
         

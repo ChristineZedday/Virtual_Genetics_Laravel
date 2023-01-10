@@ -147,6 +147,16 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' =>200,
             ),
+            13 => 
+            array (
+                'id' => 14,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Poneys de Sport',
+                'niveau' => 'départemental',
+                'prix_inscription' => 20,
+                'prix_premier' =>200,
+            ),
         ));
         
         
