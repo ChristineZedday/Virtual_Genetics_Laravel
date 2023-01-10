@@ -138,11 +138,11 @@ static function checkPuberes()
             $statut->fertilite = 100 - $animal->consang/2 ;
             if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1)
             {
-                if ($animal->modele_allures > 14)
+                if ($animal->modele_allures >= 15)
                 {
                     $statut->qualite = 'approuvé';
                 }
-                else if ($animal->modele_allures > 9)
+                else if ($animal->modele_allures >= 10)
                 {
                     $statut->qualite = 'autorisé';
                 }
