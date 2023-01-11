@@ -1,6 +1,6 @@
 <h2>Simulateur d'élevage </h2>
 <p>v2.0 disponible, fonctionnelle pour la partie reproduction, achat, vente, pas de bugs majeurs.</p>
-<p>Le volet compétition est en cours de développement, pour l'instant il ne fonctionne pas de manière 100% satisfaisante. A suivre!</p>
+<p>Le volet compétition est enfin fonctionnel pour les concours de modèles et allures. Inscrivez vos chevaux contre ceux des élevages fondateurs ou ceux d'autres joueurs!</p>
 <p>Mode d'emploi (installation et jeu): <a href ="ModeEmploi.pdf" target="_blank">ModeEmploi.pdf</a></p>
 <p>Ce dossier présente le code source, avec des seeders pour la base de données:
 Gènes, races (Shetland, Welsh, Arabe, Connemara, Pottok et Miniature), chevaux fondateurs avec de chouettes affixes authentiques pour les poneys...
