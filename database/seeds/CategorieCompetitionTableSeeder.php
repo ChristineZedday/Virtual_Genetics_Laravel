@@ -833,6 +833,70 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 14,
                 'categorie_id' => 10,
             ),
+            102 => 
+            array (
+                'id' => 103,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 1,
+            ),
+            103 => 
+            array (
+                'id' => 104,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 2,
+            ),
+            104 => 
+            array (
+                'id' => 105,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 3,
+            ),
+            105 => 
+            array (
+                'id' => 106,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 4,
+            ),
+            106 => 
+            array (
+                'id' => 107,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 5,
+            ),
+            107 => 
+            array (
+                'id' => 108,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 6,
+            ),
+            108 => 
+            array (
+                'id' => 109,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 7,
+            ),
+            109 => 
+            array (
+                'id' => 110,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 6,
+                'categorie_id' => 10,
+            ),
         ));
         
         
