@@ -126,7 +126,7 @@ public function run($competition, $evenement) {
         }
     }*/
     //dd($animal->nomComplet());//vi vi vi
-    $notes[$animal->id] = $animal->modele_allures  + rand(1,1000)/1000; //éviter les ex-aequo
+    $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
     //dd($notes); //TB
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
