@@ -48,7 +48,7 @@ class CompetitionController extends Controller
       
        
      
-        $animaux = Animal::Where('elevage_id', $elevage->id)->get();
+        $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
    
     
        return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition,'categories'=> $categories, 'animaux' => $animaux]);

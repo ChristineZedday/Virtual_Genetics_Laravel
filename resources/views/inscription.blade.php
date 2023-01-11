@@ -17,7 +17,7 @@
 <label for="animal_id">Sélectionner l'animal</label>
 <select name="animal_id">
 	@foreach ($animaux as $animal)
-  <option value="{{$animal->id}}">{{$animal->nomComplet()}}</option>
+  <option value="{{$animal->id}}">{{$animal->nomComplet()}} {{$animal->race->nom}}</option>
   @endforeach
 </select>
 
