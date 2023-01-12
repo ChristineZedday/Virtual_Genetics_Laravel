@@ -15,7 +15,7 @@ use DateTime;
 class Resultat extends Pivot
 {
    protected $table = 'resultats';
-   protected $fillable=['animal_id', 'categorie_id', 'evenement_id'] ;
+   protected $fillable=['animal_id', 'categorie_id', 'evenement_id', 'competition_id'] ;
    public $incrementing = true;
 
    public function Animal() 

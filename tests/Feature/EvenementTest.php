@@ -30,12 +30,15 @@ class EvenementTest extends TestCase
         $animal->sexe = "femelle";
         $animal->save();
 
+        $race = factory(Race::class)->create();
+
         $evenement = factory(Evenement::class)->create();
-        $competition = factory(Competition::class)->create();
+        $competition = factory(Competition::class)->create()->each(function ($comp) use ($race) {$comp->Races()->sync($race->id);});
+      //  $competition->Races()->saveMany(factory(Race::class, 1)->make());
         $categorie = factory(Categorie::class)->create();
 
        $resultat = new Resultat;
-        $resultat->fill(['animal_id'=>$animal->id, 'categorie_id' =>$categorie->id]);
+        $resultat->fill(['animal_id'=>$animal->id, 'categorie_id' =>$categorie->id, 'competition_id' =>$competition->id]);
         $resultat->evenement_id = $evenement->id;
         $this->assertTrue($resultat->categorie->verification($resultat->animal, $resultat->evenement, $resultat->competition));
 
