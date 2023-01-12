@@ -10,6 +10,8 @@ $factory->define(Competition::class, function (Faker $faker) {
     return [
         'nom' => 'concours général',
         'niveau' => 'régional',
+        'prix_inscription' => 10,
+        'prix_premier' => 100,
         
     ];
 });

@@ -31,12 +31,13 @@ class EvenementTest extends TestCase
         $animal->save();
 
         $evenement = factory(Evenement::class)->create();
+        $competition = factory(Competition::class)->create();
         $categorie = factory(Categorie::class)->create();
 
        $resultat = new Resultat;
         $resultat->fill(['animal_id'=>$animal->id, 'categorie_id' =>$categorie->id]);
         $resultat->evenement_id = $evenement->id;
-        $this->assertTrue($resultat->categorie->verification($resultat->animal, $resultat->evenement));
+        $this->assertTrue($resultat->categorie->verification($resultat->animal, $resultat->evenement, $resultat->competition));
 
         $evenement->date ="1966-01-05";
         $evenement->save();

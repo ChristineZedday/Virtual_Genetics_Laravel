@@ -28,12 +28,13 @@ class CategorieTest extends TestCase
         
         
         $event = factory(Evenement::class)->create();
+        $comp = factory(Competition::class)->create();
 
-        $this->assertTrue($categorie->verification($animal, $event));
+        $this->assertTrue($categorie->verification($animal, $event,$comp));
 
         $categorie->sexe =1;
         
-        $this->assertFalse($categorie->verification($animal, $event));
+        $this->assertFalse($categorie->verification($animal, $event,$comp));
 
         $categorie->sexe =2;
         $categorie->age_min = 3;
