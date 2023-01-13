@@ -74,10 +74,10 @@ switch ($this->classement) {
    static function resultats($elevage_id)
    {
       $date =new DateTime(Gamedata::date());
-      /*$m = $date->format('m');
-      $y = $date->format('Y');*/
+  
+     
       
-      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
+      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date, $y) {$query->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
      //dd($res);
       return $res;
       
@@ -86,10 +86,9 @@ switch ($this->classement) {
    static function tousResultats()
    {
       $date =new DateTime(Gamedata::date());
-     /* $m = $date->format('m');
-      $y = $date->format('Y');*/
+      $y = $date->format('Y');
       
-      $res = Resultat::whereHas('evenement', function ($q) use ($date) {$q->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
+      $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
      //dd($res);
       return $res;
       
