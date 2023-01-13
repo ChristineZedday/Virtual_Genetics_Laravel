@@ -9,6 +9,7 @@ use App\Categorie;
 use App\Competition;
 use App\Animal;
 use App\Evenement;
+use App\Race;
 
 class CategorieTest extends TestCase
 {
@@ -26,10 +27,11 @@ class CategorieTest extends TestCase
       
    
         $categorie = factory(Categorie::class)->create();
-        
+        $race = factory(Race::class)->create();
         
         $event = factory(Evenement::class)->create();
         $comp = factory(Competition::class)->create();
+        $comp->Races()->attach($race->id);
 
         $this->assertTrue($categorie->verification($animal, $event,$comp));
 
@@ -40,12 +42,12 @@ class CategorieTest extends TestCase
         $categorie->sexe =2;
         $categorie->age_min = 3;
         $categorie->age_max = 3;
-        $this->assertFalse($categorie->verification($animal, $event));
+        $this->assertFalse($categorie->verification($animal, $event,$comp));
 
         $categorie->age_min = 2;
         $categorie->age_max = 2;
         
-        $this->assertFalse($categorie->verification($animal, $event));
+        $this->assertFalse($categorie->verification($animal, $event,$comp));
     }
 
    
