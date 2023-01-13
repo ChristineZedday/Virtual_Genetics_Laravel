@@ -31,10 +31,14 @@ class EvenementTest extends TestCase
         $animal->save();
 
         $race = factory(Race::class)->create();
-
+       
         $evenement = factory(Evenement::class)->create();
-        $competition = factory(Competition::class)->create()->each(function ($comp) use ($race) {$comp->Races()->sync($race->id);});
+        $competition = factory(Competition::class)->create();
+        $competition->Races()->attach($race->id);
+        //->each(function ($comp) use ($race) {$comp->Races()->sync($race->id);});
+       
       //  $competition->Races()->saveMany(factory(Race::class, 1)->make());
+      
         $categorie = factory(Categorie::class)->create();
 
        $resultat = new Resultat;
@@ -45,11 +49,11 @@ class EvenementTest extends TestCase
         $evenement->date ="1966-01-05";
         $evenement->save();
 
-       $this->assertFalse($resultat->categorie->verification($resultat->animal, $evenement));
+       $this->assertFalse($resultat->categorie->verification($resultat->animal, $evenement, $competition));
 
         $animal->date_naissance = "1963-06-15";
         $animal->save();
-        $this->assertTrue($resultat->categorie->verification($animal, $evenement));
+        $this->assertTrue($resultat->categorie->verification($animal, $evenement, $competition));
 
 
 
