@@ -77,7 +77,7 @@ switch ($this->classement) {
   
      
       
-      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date, $y) {$query->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
+      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
      //dd($res);
       return $res;
       
