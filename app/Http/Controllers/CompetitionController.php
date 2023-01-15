@@ -76,15 +76,16 @@ class CompetitionController extends Controller
        
         $animaux= $elevage->Animaux()->get();
         $evenement = Evenement::Find($resultat->evenement_id);
-        
+        $competition = Competition::Find($competition);
         $categorie = Categorie::Find($resultat->categorie_id);
 
-        if ($categorie->verification($animal, $evenement, $competition) ) { //and $competition->verification($animal->race->id)
-            $comp = Competition::Find($competition);  
+        
+        if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal->race->id))  { //and $competition->verification($animal->race->id)
+            
            
                 if ($resultat->save()) {
                  
-                $elevage->budget -= $comp->prix_inscription;
+                $elevage->budget -= $competition->prix_inscription;
                 $elevage->save();
                 $request->session()->flash('status');
                 $request->session()->flash('alert-class',"alert-sucess");
@@ -95,8 +96,8 @@ class CompetitionController extends Controller
           }
         
         else {
-            $comp = Competition::Find($competition);
-            $categories = $comp->Categories;
+            
+            $categories = $competition->Categories;
             $request->session()->flash('status',"Pas la bonne catégorie, ou déjà inscrit quelque part à cette date!");
             $request->session()->flash('alert-class',"alert-danger");
             return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'categories'=> $categories, 'animaux' => $animaux])->with('status');

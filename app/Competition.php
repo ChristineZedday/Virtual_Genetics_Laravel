@@ -43,9 +43,9 @@ Dans cette version, un seul type d'épreuve, le concours de Modèle et Allures.
     }
     public function verification($race)
     {
-        $race = Race::Find($race);
-        if ($this->Races->contains('race_id',$race)) {
-            dd($this->Races->contains('race_id',$race));
+        $hasRace = $this->Races->find($race);
+        if ($hasRace) {
+          
             return true;
         }
     }
