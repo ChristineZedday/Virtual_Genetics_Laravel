@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Genotype extends Model
-{
+{ 
+    /*Genotype: père d'allèles d'un locus donné pour un cheval donné */
     public function Locus()
     {
 

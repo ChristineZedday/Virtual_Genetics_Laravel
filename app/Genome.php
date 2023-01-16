@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genome extends Model
 {
+  /*classe qui travaille sur les génômes (ensemble des génotypes) des chevaux pour la reproduction
+  Le programme tient compte de l'existences de gènes liés, c'est à dire situés sur le m^me chromosomes et suffisemment proches pour que la probabilité d'être transmis ensemble soit de celle d'être transmis séparemment
+  ça concerne le gène Extension et le gène KIT
+  ça a été une grosse prise de tête pour un seul cas connu jusqu'à présent, mais ce sont des gènes répandus*/
     static function mixGenes($male,$female,$produit)
     {
         
@@ -269,10 +273,10 @@ class Genome extends Model
               $dilue_couleurs =[];
               $motif_couleurs =[];
               $modif_couleurs = [];
-              $blanc =0;
+              $blanc =0; //pourcentage de surface des taches blanches
               $embryoletal = false;
-              $plus =0;
-              $ma =0;
+              $plus =0; //augmente la taille
+              $ma =0; //Modèle et Allures
               
               foreach ($genotypes as $genotype)
                 {
@@ -296,7 +300,7 @@ class Genome extends Model
                        
                         $embryoletal = true;
                         $animal->elevage_id =2; //part chez l'Ankou
-                        $animal->save();
+                        $animal->save();//non on le sauve pas on le tue ;)
                        
                       
                       }
@@ -363,6 +367,9 @@ class Genome extends Model
                     $animal->modele_allures =1;
                   }
                   $animal->save();
+
+                  /* Il faudra un jour transférer le traitement de la couleur de base à la BDD si on veut paser à un jeu multispécifique, ou changer les noms... Rouge/Noir/Agouti communs à beaucoup d'espèces
+                  C'est encore pire pour le complexe léopard les dilutions plus bas*/
 
                   $alezan = Couleur::where('nom','alezan')->first();
                   $noirbai = Couleur::where('nom','noirbai')->first();

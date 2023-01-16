@@ -9,9 +9,13 @@ class Competition extends Model
    /* Une compétition est un type d'évènement sportif par exemple concours d'élevage, saut d'obstacles,  et relevant d'un niveau donné (local, régional, national...).
    Un évènement est l'instanciation d'une ou plusieurs compétitions à une date précise.
 
-Les catégories concernent le sexe, la race et l'âge administratif du cheval d'une part, et le tpe d'épreuve, d'autre part.
+Les catégories concernent le sexe et l'âge administratif du cheval d'une part.
+
+Les compétitions peuvent être ouvertes à une ou plusieurs races. Si Elles sont ouvertes aux "Origine Constatée", elles sont ouverte à toutes, mais ce n'est pas le cas des concours d'élevage.
 
 Dans cette version, un seul type d'épreuve, le concours de Modèle et Allures.
+
+Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour une compétition et pour une catégorie données, directement dans la table "résultats", dans laquelle seront ajoutés la note et le classement après le concours. 
     */
   
 
@@ -35,6 +39,7 @@ Dans cette version, un seul type d'épreuve, le concours de Modèle et Allures.
 
     static function Recherche(Animal $cheval) 
     {
+        //recherche la bonne catégorie pour un cheval de PNJ (les joueurs doivent l'indiquer eux-mêmes!)
         $racid = $cheval->race->id;
         $competitions = Competition::whereHas('races', function ($q) use ($racid) {
             $q->where('race_id', $racid);
@@ -43,8 +48,10 @@ Dans cette version, un seul type d'épreuve, le concours de Modèle et Allures.
     }
     public function verification($race)
     {
+        //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race
         $hasRace = $this->Races->find($race);
-        if ($hasRace) {
+        $hasOC = $this->Races->find(1);
+        if ($hasRace || $hasOC ) {
           
             return true;
         }

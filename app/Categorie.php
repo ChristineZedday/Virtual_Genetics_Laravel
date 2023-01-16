@@ -8,7 +8,7 @@ use App\Evenement;
 
 class Categorie extends Model
 {
-   
+   /*Catégorie (liée au sexe, âge...) dans laquelle peut concourrir un cheval. Voir à Compétitions pour le fonctionnement. */
 
    public function Competitions() 
    {
@@ -32,31 +32,31 @@ class Categorie extends Model
     $evid = $evenement->id;
    
    $competition = Competition::Find($competition);
-    $races = $competition->races;
+   // $races = $competition->races;
    //dd($races);
            
-    if ($this->type==="Modèle et Allures Race" ) {
+  /*  if ($this->type==="Modèle et Allures Race" ) {
         if ($races->isNotEmpty()) {
                
                 if (false == $races->contains($animal->race)) {
                 
                 return false;
                 }
-        }
+        }*/
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
-           // dd('< age min:'. ($this->age_min < $animal->ageAdministratif($date)? 'true' : 'false'));
+
                 return false;
             }
         if ($this->age_max < $animal->ageAdministratif($date)) {
-          //  dd('> age max:'.$this->age_max < $animal->ageAdministratif($date));
+         
                 return false; 
             }
         if ($this->sexe != $animal->genre()) {
-          //  dd('other sexe: '.$this->sexe < $animal->genre());
+        
                 return false;
         }
            
-    }
+   // }
         return true;
 
 }

@@ -16,12 +16,12 @@ class Locus extends Model
         return $this->hasMany('App\Allele');
     }
 
-    public function NextLocus()
+    public function NextLocus() //gène lié suivant
     {
         return $this->hasOne('App\Locus', 'loci', 'next_linked_id', 'id');
     }
 
-    public function PrevLocus()
+    public function PrevLocus() //gène lié précédant
     {
         return $this->hasOne('App\Locus', 'loci', 'prev_linked_id', 'id');
     }

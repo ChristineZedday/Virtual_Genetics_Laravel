@@ -14,6 +14,8 @@ use DateTime;
 
 class Resultat extends Pivot
 {
+   /*Résultat d'une compétition/cheval/catégorie voir  Competition*/
+   
    protected $table = 'resultats';
    protected $fillable=['animal_id', 'categorie_id', 'evenement_id', 'competition_id'] ;
    public $incrementing = true;
@@ -71,7 +73,7 @@ switch ($this->classement) {
 }
    }
 
-   static function resultats($elevage_id)
+   static function resultats($elevage_id) //Les résultats des chevaux d'un élevage
    {
       $date =new DateTime(Gamedata::date());
   
@@ -83,7 +85,7 @@ switch ($this->classement) {
       
    }
 
-   static function tousResultats()
+   static function tousResultats() //les résultats de tous les chevaux y compris ceux des autres joueurs et PNJ
    {
       $date =new DateTime(Gamedata::date());
       $y = $date->format('Y');

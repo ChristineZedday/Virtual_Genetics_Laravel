@@ -16,6 +16,7 @@ class Animal extends Model
     public function Genotypes()
     {
         return $this->hasMany('App\Genotypes');
+        /*chaque génotype est une père d'allèles pour un gène donné, un allèle provenant du père, l'autre de la mère*/
     }
 
     public function Elevage()
@@ -34,24 +35,24 @@ class Animal extends Model
     }
 
     
-    public function Sire()
+    public function Sire() //le père
     {
         return $this->HasOne('App\Animal', 'id', 'sire_id');
     }
 
-    public function Dam()
+    public function Dam() //la mère
     {
         return $this->HasOne('App\Animal', 'id', 'dam_id');
     }
 
-    public function Progeny()
+    public function Progeny() //les enfants
     {
         $animal = $this;
         $animaux =  Animal::where('foetus', 0)->where(function ($q) use ($animal) { $q->where('dam_id', $animal->id)->orWhere('sire_id', $animal->id);})->get();
         return $animaux;
     }
 
-    public function Palmares()
+    public function Palmares() 
     {
         $date =  Gamedata::date();
         $resultats =  Resultat::where('animal_id', $this->id)->where('classement', '!=', null)->get();
@@ -59,18 +60,18 @@ class Animal extends Model
     }
 
 
-    public function Statut()
+    public function Statut() //femelle en âge de se reproduire, fertilité, gestante, suitée
     {
        return $this->HasOne('App\statutsFemelle', 'animal_id');
 
     }
 
-    public function StatutMale()
+    public function StatutMale() //male en âge de se reproduire, fertilité, qualité (autorisé, approuvé)
     {
         return $this->HasOne('App\StatutMale', 'animal_id');
     }
 
-    public function Phenotype()
+    public function Phenotype() //Effet tangible d'un génotype ou d'une association de génotypes
     {
         return $this->belongsToMany('App\Phenotype');
     }
@@ -90,7 +91,7 @@ class Animal extends Model
         return $this->belongsToMany('App\Couleur');
     }
 
-    public function Sexe()
+    public function Sexe() //Sexe et stade de développement, en fait...
     {
         if (isset($this->StatutMale) && $this->StatutMale->fertilite > 0 )
         {
@@ -161,7 +162,7 @@ class Animal extends Model
     }
 
     public function ageAdministratif($date = "1960-01-01")
-    {
+    { //Chaque cheval prend un an au premier janvier qui suit sa naissance 
         
         if ($date != "1960-01-01")
        { $date = DateTime::createFromFormat('Y-m-d', $date);
@@ -185,7 +186,7 @@ class Animal extends Model
         return $age;
     }
 
-    public function taille()
+    public function taille() //évolution de la taille (enregistrée en BDD ) en fonction de l'âge
     {
         $age = $this->ageMonths();
         
@@ -209,7 +210,7 @@ class Animal extends Model
         }
     }
 
-    static function checkNom($animal, $nom, $affixe) //nom + affixe ou nom sans affixe pas pris
+    static function checkNom($animal, $nom, $affixe) //nom + affixe ou nom sans affixe pas déjà pris
     {
         $query = Animal::where('nom',$nom)->where('affixe_id',$affixe)->first();
         if (!isset($query))
@@ -229,7 +230,7 @@ class Animal extends Model
             
     }
 
-    static function chercheRaces($etalon,$jument,$taille,$qualite)
+    static function chercheRaces($etalon,$jument,$taille,$qualite) //Race d'un produit dont les parents sont de races différentes
     {
         $appro = Race::find($etalon)->approbation;
      
@@ -313,6 +314,7 @@ class Animal extends Model
        
     }
     static function pourCentRace($animal, $bred) //$bred: id bred
+    //Pour les races de croisement ou un % de telle ou telle race est requis
     {
         $animal = Animal::Find($animal);
         if ($animal->race_id == $bred)
@@ -329,7 +331,7 @@ class Animal extends Model
         }
     }
     static function pourCentWelsh($animal)
-    {
+    { //le Welsh est divisé en 4 sections traitées ici comme des races 
         $animal = Animal::Find($animal);
         if ($animal->race_id == 4 || $animal->race_id == 5 || $animal->race_id == 6 || $animal->race_id == 7 )
         {
@@ -378,11 +380,11 @@ class Animal extends Model
            
         }
         
-public function Evenements() 
+public function Evenements() //les évènements auquel le cheval a participé, voir à Competition
 {
     return $this->BelongsToMany('App\Evenement')->using('App\Resultat');
 }
-public function Resultats() 
+public function Resultats() //Resultats en compète, mais c'est la fonction Palmares qui est utilisée sur le template individuel
 {
     return $this->BelongsToMany('App\Resultat');
 }
