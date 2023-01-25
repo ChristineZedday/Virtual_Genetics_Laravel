@@ -34,6 +34,13 @@ class Animal extends Model
         return $this->BelongsTo('App\Affixe');
     }
 
+    public function Performance()
+    {
+        return $this->hasOne('App\Performance');
+    }
+
+
+
     
     public function Sire() //le père
     {

@@ -36,6 +36,10 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
     {
         return $this->BelongsToMany('App\Resultat');  
     }
+    public function Niveau()
+    {
+        return $this->BelongsTo('App\Niveau');  
+    }
 
     static function Recherche(Animal $cheval) 
     {

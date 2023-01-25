@@ -6,11 +6,13 @@
 <table>
 <tr>
 	<th>Nom</th>
+    <th>Niveau</th>
     <th>Date </th>
+   
   
 </tr>
 @foreach ($evenements as $evenement)
-<tr> <td>
+<tr> <td colspan="2">
     {{$evenement->nom}}
 </td>
 <td>{{$evenement->date}} </td>
@@ -23,6 +25,7 @@ $competitions = App\Competition::whereHas('evenements', function ($q) use ($id){
 
 <tr>
 	<td>{{$competition->nom}}</td>
+    <td>{{$competition->Niveau->libelle}}</td>
    
    
     <td><a href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</a></td>
