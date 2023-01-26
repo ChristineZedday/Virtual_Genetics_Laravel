@@ -16,6 +16,7 @@ use App\Evenement;
 use App\Categorie;
 use App\Competition;
 use App\Resultat;
+use App\Performance;
 use DateTime;
 
 
@@ -34,6 +35,7 @@ class TempsController extends Controller
             foreach ($animaux as $animal)
             {
                 Genome::readGenes($animal->id);
+                Performance::initialize($animal->id);
             }
         }
         $elevages = Elevage::where('role','Joueur')->get();

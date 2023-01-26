@@ -14,4 +14,12 @@ class Performance extends Model
     {
         return $this->belongsTo('App\Niveau');  
     }
+    static function initialize($animalid)
+    {
+        $perf = new Performance();
+        $perf->animal_id = $animalid;
+        $perf->sante = 100;
+        $perf->niveau_id = 1;
+        $perf->save();
+    }
 }
