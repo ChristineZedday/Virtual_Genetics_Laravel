@@ -913,6 +913,38 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 11,
                 'categorie_id' => 1,
             ),
+            112 => 
+            array (
+                'id' => 113,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 15,
+                'categorie_id' => 3,
+            ),
+            113 => 
+            array (
+                'id' => 114,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 15,
+                'categorie_id' => 5,
+            ),
+            114 => 
+            array (
+                'id' => 115,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 15,
+                'categorie_id' => 2,
+            ),
+            115 => 
+            array (
+                'id' => 116,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 15,
+                'categorie_id' => 10,
+            ),
         ));
         
         

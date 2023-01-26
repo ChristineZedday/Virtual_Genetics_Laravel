@@ -55,7 +55,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-03-02',
-                'nom' => 'Français de selle'
+                'nom' => 'Français de selle',
             ),
             5 => 
             array (
@@ -87,7 +87,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-09-06',
-                'nom' =>'Welsh',
+                'nom' => 'Welsh',
             ),
             9 => 
             array (
@@ -144,6 +144,14 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '1971-12-16',
                 'nom' => 'Poneys de Sport',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-04-26',
+                'nom' => 'entrainement Shet',
             ),
         ));
         
