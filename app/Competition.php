@@ -43,27 +43,31 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
 
     static function Recherche(Animal $cheval) 
     {
-        //recherche la bonne catégorie pour un cheval de PNJ (les joueurs doivent l'indiquer eux-mêmes!)
+        //recherche la bonne catégorie et le bon niveau pour un cheval de PNJ (les joueurs doivent l'indiquer eux-mêmes!)
         $racid = $cheval->race->id;
        
         $nivid = $cheval->Performance->niveau_id;
         $competitions = Competition::whereHas('races', function ($q) use ($racid) {
             $q->where('race_id', $racid);
         })->whereHas('niveau', function ($q) use ($nivid) {
-            $q->where('niveau_id', $nivid)->orWhere('open',true);
+            $q->where('id', $nivid)->orWhere('open',true);
         })->get();
        
         return $competitions;
     }
-    public function verification($race)
+    public function verification($animal)
     {
-        //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race
+        //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
+    
+        $race = $animal->race_id;
         $hasRace = $this->Races->find($race);
         $hasOC = $this->Races->find(1);
         if ($hasRace || $hasOC ) {
-          
-            return true;
+           if ($animal->Niveau == $this->Niveau)
+            {return true;}
+            else {return false;}
         }
+        else {return false};
     }
 
   
