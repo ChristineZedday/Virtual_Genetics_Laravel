@@ -143,8 +143,10 @@ public function run($competition, $evenement) {
     //dd($res);//c'est ça
     $res->classement = $i;
     $res->save();
+    $perf = $animal->Performance;
+    $perf->upgrade($animal->id);
     //dd($res);//Oui-da.
-    $debug = New Debug();
+   /* $debug = New Debug();
     $eve= Evenement::Find($evenement);
     $comp = Competition::Find($competition);
     $debug->evenement = $eve->nom.' '.$eve->date;
@@ -153,7 +155,7 @@ public function run($competition, $evenement) {
     $debug->cheval = $animal->nomComplet();
     $debug->classement = $res->classement;
     $debug->note = $inscrit->note_synthese;
-    $debug->save();
+    $debug->save();*/
 
     $animal = Animal::Find($key);
     //dd($animal->nomComplet());// Chouette!
