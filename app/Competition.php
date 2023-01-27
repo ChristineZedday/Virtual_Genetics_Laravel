@@ -67,7 +67,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
             {return true;}
             else {return false;}
         }
-        else {return false};
+        else {return false;}
     }
 
   
