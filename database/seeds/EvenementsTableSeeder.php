@@ -161,6 +161,54 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1971-06-27',
                 'nom' => 'Régional Welsh',
             ),
+            18 => 
+            array (
+                'id' => 19,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1972-12-27',
+                'nom' => 'Salon du cheval',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-07-25',
+                'nom' => 'Royal Welsh Show',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-08-14',
+                'nom' => 'National Connemara de Pompadour',
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-08-24',
+                'nom' => 'Connemara Pony Show of Clifden',
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-06-26',
+                'nom' => 'National Welsh Saumur',
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-08-18',
+                'nom' => 'Sologn\' Pony',
+            ),
         ));
         
         

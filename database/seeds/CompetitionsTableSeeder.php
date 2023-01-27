@@ -307,6 +307,246 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 35,
                 'prix_premier' => 400,
             ),
+            29 => 
+            array (
+                'id' => 30,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Mountain',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 4000,
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Shetland',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 3000,
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Connemara',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 5000,
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Shetland',
+                'niveau_id' => 4,
+                'prix_inscription' => 200,
+                'prix_premier' => 7000,
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Mountain',
+                'niveau_id' => 4,
+                'prix_inscription' => 100,
+                'prix_premier' => 10000,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Connemara',
+                'niveau_id' => 4,
+                'prix_inscription' => 100,
+                'prix_premier' => 10000,
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
+                'niveau_id' => 3,
+                'prix_inscription' => 200,
+                'prix_premier' => 20000,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
+                'niveau_id' => 4,
+                'prix_inscription' => 500,
+                'prix_premier' => 50000,
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèle Et Allures Miniature',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 4000,
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèle Et Allures Miniature',
+                'niveau_id' => 4,
+                'prix_inscription' => 200,
+                'prix_premier' => 10000,
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Français de Selle',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 6000,
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Riding Pony Breeds',
+                'niveau_id' => 4,
+                'prix_inscription' => 150,
+                'prix_premier' => 12000,
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Pottok A',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 10000,
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Pottok B',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 10000,
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
+                'niveau_id' => 3,
+                'prix_inscription' => 150,
+                'prix_premier' => 7000,
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
+                'niveau_id' => 4,
+                'prix_inscription' => 300,
+                'prix_premier' => 15000,
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Pony',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 5000,
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Pony',
+                'niveau_id' => 4,
+                'prix_inscription' => 100,
+                'prix_premier' => 10000,
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Pony Type Cob',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 5000,
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Pony Type Cob',
+                'niveau_id' => 4,
+                'prix_inscription' => 100,
+                'prix_premier' => 10000,
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Cob',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 7000,
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Cob',
+                'niveau_id' => 4,
+                'prix_inscription' => 150,
+                'prix_premier' => 15000,
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'prix_premier' => 3000,
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
+                'niveau_id' => 4,
+                'prix_inscription' => 150,
+                'prix_premier' => 10000,
+            ),
         ));
         
         
