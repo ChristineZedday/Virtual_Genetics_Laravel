@@ -23,7 +23,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-04-28',
-                'nom' => 'Welsh',
+                'nom' => 'Printemps du Welsh',
             ),
             1 => 
             array (
@@ -31,7 +31,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-05-14',
-                'nom' => 'Shetland',
+                'nom' => 'Shetland en Folie',
             ),
             2 => 
             array (
@@ -86,8 +86,8 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-09-06',
-                'nom' => 'Welsh',
+                'date' => '1971-10-06',
+                'nom' => 'Welsh Rare Bits',
             ),
             9 => 
             array (
@@ -126,7 +126,7 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 14,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-10-23',
+                'date' => '1971-09-23',
                 'nom' => 'Pottokak',
             ),
             14 => 
@@ -152,6 +152,14 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '1971-04-26',
                 'nom' => 'entrainement Shet',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-06-27',
+                'nom' => 'Régional Welsh',
             ),
         ));
         
