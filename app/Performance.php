@@ -26,7 +26,7 @@ class Performance extends Model
     {
         $actid = $this->niveau_id;
         $act = Niveau::find($actid);
-        $results = Resultat::where('animal_id',$animalid)->whereNotNull('classement')->whereHas('competition', function ($q) use ($actid) { $q->where('niveau_id',$act);})->count();
+        $results = Resultat::where('animal_id',$animalid)->whereNotNull('classement')->whereHas('competition', function ($q) use ($actid) { $q->where('niveau_id',$actid);})->count();
         switch (true) {
             case $act->libelle = "départemental" && $results >=3:
                 $niveau = Niveau::where('libelle','régional')->first();
