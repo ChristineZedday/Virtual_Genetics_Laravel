@@ -146,11 +146,11 @@ public function run($competition, $evenement) {
     $perf = $animal->Performance;
     switch($i) {
         case 1:
-            $perf->points = 5;
+            $perf->points += 5;
         case 2:
-            $perf->points = 2;
+            $perf->points += 2;
         default:
-            $perf->points =1;
+            $perf->points +=1;
 
     }
     $perf->save();
