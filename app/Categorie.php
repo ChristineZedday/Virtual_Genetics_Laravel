@@ -154,7 +154,7 @@ public function run($competition, $evenement) {
 
     }
     $perf->save();
-    $erf->upgrade();
+    $perf->upgrade();
     //dd($res);//Oui-da.
    /* $debug = New Debug();
     $eve= Evenement::Find($evenement);
