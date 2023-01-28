@@ -154,6 +154,8 @@
 				
 				<p> {{$palm->evenement->nom}} du{{$palm->evenement->date}} 
 				{{$palm->competition->nom}} 
+				{{$palm->competition->Niveau->libelle}} 
+				{{$palm->categorie->nom}} 
 				{{$palm->texteClassement() }}
 				note:
 				{{$palm->note_synthese}} 
