@@ -144,7 +144,17 @@ public function run($competition, $evenement) {
     $res->classement = $i;
     $res->save();
     $perf = $animal->Performance;
-    $perf->upgrade($animal->id);
+    switch($i) {
+        case 1:
+            $perf->points = 5;
+        case 2:
+            $perf->points = 2;
+        default:
+            $perf->points =1;
+
+    }
+    $perf->save();
+    $erf->upgrade();
     //dd($res);//Oui-da.
    /* $debug = New Debug();
     $eve= Evenement::Find($evenement);
