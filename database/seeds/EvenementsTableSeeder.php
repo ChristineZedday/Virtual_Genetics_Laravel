@@ -209,6 +209,86 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1973-08-18',
                 'nom' => 'Sologn\' Pony',
             ),
+            24 => 
+            array (
+                'id' => 25,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-09-28',
+                'nom' => 'National Shetland de Lamotte-Beuvron',
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-08-12',
+                'nom' => 'Championnat de France Arabe de Vichy',
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-08-06',
+                'nom' => 'Championnat du cheval miniature Français Vichy',
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1973-09-02',
+                'nom' => 'Championnat du monde de Fort Worth Texas',
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'created_at' => '2023-01-28 12:23:17',
+                'updated_at' => '2023-01-28 12:23:17',
+                'date' => '1972-02-02',
+                'nom' => 'Arabe et demi-sang arabe',
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'created_at' => '2023-01-28 12:25:27',
+                'updated_at' => '2023-01-28 12:25:27',
+                'date' => '1972-03-02',
+                'nom' => 'Français de selle',
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'created_at' => '2023-01-28 12:26:06',
+                'updated_at' => '2023-01-28 12:26:06',
+                'date' => '1972-04-28',
+                'nom' => 'Printemps du Welsh',
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'created_at' => '2023-01-28 12:26:07',
+                'updated_at' => '2023-01-28 12:26:07',
+                'date' => '1972-04-02',
+                'nom' => 'Connemara',
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'created_at' => '2023-01-28 12:26:08',
+                'updated_at' => '2023-01-28 12:26:08',
+                'date' => '1972-04-07',
+                'nom' => 'Great Mini Show',
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'created_at' => '2023-01-28 12:26:08',
+                'updated_at' => '2023-01-28 12:26:08',
+                'date' => '1972-04-26',
+                'nom' => 'entrainement Shet',
+            ),
         ));
         
         

@@ -159,16 +159,6 @@ class CompetitionsTableSeeder extends Seeder
             ),
             14 => 
             array (
-                'id' => 15,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'nom' => 'Entrainement Shetland',
-                'niveau_id' => 5,
-                'prix_inscription' => 1,
-                'prix_premier' => 10,
-            ),
-            15 => 
-            array (
                 'id' => 16,
                 'created_at' => NULL,
                 'updated_at' => NULL,
@@ -177,7 +167,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 200,
             ),
-            16 => 
+            15 => 
             array (
                 'id' => 17,
                 'created_at' => NULL,
@@ -187,7 +177,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 10,
                 'prix_premier' => 100,
             ),
-            17 => 
+            16 => 
             array (
                 'id' => 18,
                 'created_at' => NULL,
@@ -197,7 +187,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 200,
             ),
-            18 => 
+            17 => 
             array (
                 'id' => 19,
                 'created_at' => NULL,
@@ -207,7 +197,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 1000,
             ),
-            19 => 
+            18 => 
             array (
                 'id' => 20,
                 'created_at' => NULL,
@@ -217,7 +207,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 10,
                 'prix_premier' => 100,
             ),
-            20 => 
+            19 => 
             array (
                 'id' => 21,
                 'created_at' => NULL,
@@ -227,7 +217,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 50,
                 'prix_premier' => 500,
             ),
-            21 => 
+            20 => 
             array (
                 'id' => 22,
                 'created_at' => NULL,
@@ -237,7 +227,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 10,
                 'prix_premier' => 200,
             ),
-            22 => 
+            21 => 
             array (
                 'id' => 23,
                 'created_at' => NULL,
@@ -247,7 +237,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 200,
             ),
-            23 => 
+            22 => 
             array (
                 'id' => 24,
                 'created_at' => NULL,
@@ -257,7 +247,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 200,
             ),
-            24 => 
+            23 => 
             array (
                 'id' => 25,
                 'created_at' => NULL,
@@ -267,7 +257,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 35,
                 'prix_premier' => 400,
             ),
-            25 => 
+            24 => 
             array (
                 'id' => 26,
                 'created_at' => NULL,
@@ -277,7 +267,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 200,
             ),
-            26 => 
+            25 => 
             array (
                 'id' => 27,
                 'created_at' => NULL,
@@ -287,7 +277,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 200,
             ),
-            27 => 
+            26 => 
             array (
                 'id' => 28,
                 'created_at' => NULL,
@@ -297,7 +287,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 35,
                 'prix_premier' => 400,
             ),
-            28 => 
+            27 => 
             array (
                 'id' => 29,
                 'created_at' => NULL,
@@ -307,7 +297,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 35,
                 'prix_premier' => 400,
             ),
-            29 => 
+            28 => 
             array (
                 'id' => 30,
                 'created_at' => NULL,
@@ -317,7 +307,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 4000,
             ),
-            30 => 
+            29 => 
             array (
                 'id' => 31,
                 'created_at' => NULL,
@@ -327,7 +317,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 3000,
             ),
-            31 => 
+            30 => 
             array (
                 'id' => 32,
                 'created_at' => NULL,
@@ -337,7 +327,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 5000,
             ),
-            32 => 
+            31 => 
             array (
                 'id' => 33,
                 'created_at' => NULL,
@@ -347,7 +337,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 200,
                 'prix_premier' => 7000,
             ),
-            33 => 
+            32 => 
             array (
                 'id' => 34,
                 'created_at' => NULL,
@@ -357,7 +347,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 10000,
             ),
-            34 => 
+            33 => 
             array (
                 'id' => 35,
                 'created_at' => NULL,
@@ -367,7 +357,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 10000,
             ),
-            35 => 
+            34 => 
             array (
                 'id' => 36,
                 'created_at' => NULL,
@@ -377,7 +367,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 200,
                 'prix_premier' => 20000,
             ),
-            36 => 
+            35 => 
             array (
                 'id' => 37,
                 'created_at' => NULL,
@@ -387,7 +377,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 500,
                 'prix_premier' => 50000,
             ),
-            37 => 
+            36 => 
             array (
                 'id' => 38,
                 'created_at' => NULL,
@@ -397,7 +387,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 4000,
             ),
-            38 => 
+            37 => 
             array (
                 'id' => 39,
                 'created_at' => NULL,
@@ -407,7 +397,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 200,
                 'prix_premier' => 10000,
             ),
-            39 => 
+            38 => 
             array (
                 'id' => 40,
                 'created_at' => NULL,
@@ -417,7 +407,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 6000,
             ),
-            40 => 
+            39 => 
             array (
                 'id' => 41,
                 'created_at' => NULL,
@@ -427,7 +417,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 150,
                 'prix_premier' => 12000,
             ),
-            41 => 
+            40 => 
             array (
                 'id' => 42,
                 'created_at' => NULL,
@@ -437,7 +427,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 10000,
             ),
-            42 => 
+            41 => 
             array (
                 'id' => 43,
                 'created_at' => NULL,
@@ -447,7 +437,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 10000,
             ),
-            43 => 
+            42 => 
             array (
                 'id' => 44,
                 'created_at' => NULL,
@@ -457,7 +447,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 150,
                 'prix_premier' => 7000,
             ),
-            44 => 
+            43 => 
             array (
                 'id' => 45,
                 'created_at' => NULL,
@@ -467,7 +457,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 300,
                 'prix_premier' => 15000,
             ),
-            45 => 
+            44 => 
             array (
                 'id' => 46,
                 'created_at' => NULL,
@@ -477,7 +467,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 5000,
             ),
-            46 => 
+            45 => 
             array (
                 'id' => 47,
                 'created_at' => NULL,
@@ -487,7 +477,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 10000,
             ),
-            47 => 
+            46 => 
             array (
                 'id' => 48,
                 'created_at' => NULL,
@@ -497,7 +487,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 5000,
             ),
-            48 => 
+            47 => 
             array (
                 'id' => 49,
                 'created_at' => NULL,
@@ -507,7 +497,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 10000,
             ),
-            49 => 
+            48 => 
             array (
                 'id' => 50,
                 'created_at' => NULL,
@@ -517,7 +507,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 7000,
             ),
-            50 => 
+            49 => 
             array (
                 'id' => 51,
                 'created_at' => NULL,
@@ -527,7 +517,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 150,
                 'prix_premier' => 15000,
             ),
-            51 => 
+            50 => 
             array (
                 'id' => 52,
                 'created_at' => NULL,
@@ -537,7 +527,7 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 100,
                 'prix_premier' => 3000,
             ),
-            52 => 
+            51 => 
             array (
                 'id' => 53,
                 'created_at' => NULL,
