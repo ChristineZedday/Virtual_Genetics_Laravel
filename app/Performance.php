@@ -23,27 +23,27 @@ class Performance extends Model
         $perf->niveau_id = 1;
         $perf->save();
     }
-    public function upgrade()
+    static function upgrade($perf)
     {
-        $actid = $this->niveau_id;
+        $actid = $perf->niveau_id;
         $act = Niveau::find($actid);
     
-        switch (true) {
-            case $act->libelle = "départemental" && $this->points >= 3:
-                $niveau = Niveau::where('libelle','régional')->first();
-                $this->niveau_id = $niveau->id;
-                $this->points = 0;
-                $this->save();
-            case $act->libelle = "régional" && $this->points >=5:
-                $niveau = Niveau::where('libelle','national')->first();
-                $this->niveau_id = $niveau->id;
-                $this->points = 0;
-                $this->save();
-            case $act->libelle = "national" && $this->points >=10:
-                    $niveau = Niveau::where('libelle','mondial')->first();
-                    $this->niveau_id = $niveau->id;
-                    $this->points = 0;
-                    $this->save();
+        
+            if ($act->libelle = "départemental" && $perf->points >= 3)
+               { $niveau = Niveau::where('libelle','régional')->first();
+                $perf->niveau_id = $niveau->id;
+                $perf->points = 0;
+                $perf->save();}
+            if ($act->libelle = "régional" && $perf->points >=5)
+             {   $niveau = Niveau::where('libelle','national')->first();
+                $perf->niveau_id = $niveau->id;
+                $perf->points = 0;
+                $perf->save();}
+          if ($act->libelle = "national" && $perf->points >=10)
+                 {   $niveau = Niveau::where('libelle','mondial')->first();
+                    $perf->niveau_id = $niveau->id;
+                    $perf->points = 0;
+                    $perf->save();
         }
        
     }

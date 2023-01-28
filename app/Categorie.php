@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Animal;
 use App\Evenement;
+use App\Performance;
 
 class Categorie extends Model
 {
@@ -154,7 +155,7 @@ public function run($competition, $evenement) {
 
     }
     $perf->save();
-    $perf->upgrade();
+    Performance::upgrade($perf);
     //dd($res);//Oui-da.
    /* $debug = New Debug();
     $eve= Evenement::Find($evenement);
