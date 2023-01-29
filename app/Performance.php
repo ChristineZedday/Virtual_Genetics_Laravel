@@ -29,17 +29,17 @@ class Performance extends Model
         $act = Niveau::find($actid);
     
         
-            if ($act->libelle = "départemental" && $perf->points >= 3)
+            if ($act->libelle == "départemental" && $perf->points >= 3)
                { $niveau = Niveau::where('libelle','régional')->first();
                 $perf->niveau_id = $niveau->id;
                 $perf->points = 0;
                 $perf->save();}
-            if ($act->libelle = "régional" && $perf->points >=5)
+            if ($act->libelle == "régional" && $perf->points >=5)
              {   $niveau = Niveau::where('libelle','national')->first();
                 $perf->niveau_id = $niveau->id;
                 $perf->points = 0;
                 $perf->save();}
-          if ($act->libelle = "national" && $perf->points >=10)
+          if ($act->libelle == "national" && $perf->points >=10)
                  {   $niveau = Niveau::where('libelle','mondial')->first();
                     $perf->niveau_id = $niveau->id;
                     $perf->points = 0;
