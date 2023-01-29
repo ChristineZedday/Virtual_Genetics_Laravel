@@ -158,8 +158,46 @@ static function regCompetNPC()
     $date =new DateTime(Gamedata::date());
     $m = $date->format('m');
     $y = $date->format('Y');
+
+    $competitions = Competition::RechercheParDate($m,$y);
+    foreach ($competitions as $comp) {
+        $races = $comp->Races;
+        $compid = $comp->id;
+        $races = $races->modelKeys();
+        $niveau = $comp->Niveau->id;
+        $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
+        
+
+        $engageables = Animal::where('modele_allures', '>=', 12)->whereIn('race_id', $races)->whereHas('elevage', function ($q) {$q->where('role','Vendeur');})->whereHas('performance', function ($q) use ($niveau) {$q->where('niveau_id', $niveau);})->get();
+
+        foreach ($engageables as $cheval) {
+            $race_id = $cheval->race_id; 
+          
+            if (strpos($cheval->sexe,'stérilisé') != false){
+                  break;//à déplacer quand autre que MA
+              }
+            if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
+                  break; //pas de compétitions poulains
+              }
+
+            $categorie = Categorie::recherche($cheval);
+            $cats = $comp->Categories;
+            if ($categorie != false && $cats->contains(Categorie::Find($categorie->id))) {
+                $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
+                if (null == $deja)
+                  {  $resultat = New Resultat();
+                    $resultat->animal_id = $cheval->id;
+                    $resultat->evenement_id = $evenement->id;
+                    $resultat->categorie_id = $categorie->id;
+                    $resultat->competition_id = $comp->id;
+                   //dd($resultat);//OK;
+                  
+                    $resultat->save();}
+            }
+        }
+    }
     
-    $competiteurs = Elevage::where('role','Vendeur')->get();
+/*    $competiteurs = Elevage::where('role','Vendeur')->get();
   
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>11
@@ -168,6 +206,7 @@ static function regCompetNPC()
       
         foreach ($chevaux as $cheval) {
            $race_id = $cheval->race_id; 
+          
           if (strpos($cheval->sexe,'stérilisé') != false){
                 break;//à déplacer quand autre que MA
             }
@@ -209,7 +248,7 @@ static function regCompetNPC()
         }
         }// cat not false
         } //foreach cheval
-    } //end foreach competiteurs
+    } //end foreach competiteurs */
   
 } //end function regNPC
 

@@ -41,6 +41,15 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         return $this->BelongsTo('App\Niveau');  
     }
 
+    static function RechercheparDate($m,$y) 
+    {
+       
+
+        $competitions = Competition::whereHas('evenements', function ($q) use ($m,$y) {$q->whereMonth('date',$m)->whereYear('date',$y);})->get();
+       
+        return $competitions;
+    }
+
     static function Recherche(Animal $cheval) 
     {
         //recherche la bonne catégorie et le bon niveau pour un cheval de PNJ (les joueurs doivent l'indiquer eux-mêmes!)
@@ -55,6 +64,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
        
         return $competitions;
     }
+
     public function verification($animal)
     {
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau

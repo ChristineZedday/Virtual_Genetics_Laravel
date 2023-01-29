@@ -27,10 +27,9 @@ class Performance extends Model
     {
         $actid = $perf->niveau_id;
         $act = Niveau::find($actid);
-    
-        
-            if ($act->libelle == "départemental" && $perf->points >= 3)
-               { $niveau = Niveau::where('libelle','régional')->first();
+       
+            if ($act->libelle == "départemental" && $perf->points >= 3)  {
+                $niveau = Niveau::where('libelle','régional')->first();
                 $perf->niveau_id = $niveau->id;
                 $perf->points = 0;
                 $perf->save();}
