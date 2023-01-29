@@ -169,7 +169,7 @@ static function regCompetNPC()
         
 
         $engageables = Animal::where('modele_allures', '>=', 12)->whereIn('race_id', $races)->whereHas('elevage', function ($q) {$q->where('role','Vendeur');})->whereHas('performance', function ($q) use ($niveau) {$q->where('niveau_id', $niveau);})->get();
-
+//bug: marche que niveau 1
         foreach ($engageables as $cheval) {
             $race_id = $cheval->race_id; 
           
