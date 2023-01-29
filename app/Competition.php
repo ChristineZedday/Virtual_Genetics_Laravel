@@ -46,8 +46,9 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
        
 
         $competitions = Competition::whereHas('evenements', function ($q) use ($m,$y) {$q->whereMonth('date',$m)->whereYear('date',$y);})->get();
-       
+        
         return $competitions;
+       
     }
 
     static function Recherche(Animal $cheval) 

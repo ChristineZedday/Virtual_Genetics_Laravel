@@ -185,14 +185,16 @@ static function regCompetNPC()
             if ($categorie != false && $cats->contains(Categorie::Find($categorie->id))) {
                 $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
                 if (null == $deja)
-                  {  $resultat = New Resultat();
+                  { 
+                     $resultat = New Resultat();
                     $resultat->animal_id = $cheval->id;
                     $resultat->evenement_id = $evenement->id;
                     $resultat->categorie_id = $categorie->id;
                     $resultat->competition_id = $comp->id;
                    //dd($resultat);//OK;
                   
-                    $resultat->save();}
+                    $resultat->save();
+                }
             }
         }
     }
