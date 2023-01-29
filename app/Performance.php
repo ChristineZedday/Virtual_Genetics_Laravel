@@ -23,26 +23,25 @@ class Performance extends Model
         $perf->niveau_id = 1;
         $perf->save();
     }
-    static function upgrade($perf)
+    public function upgrade()
     {
-        $actid = $perf->niveau_id;
-        $act = Niveau::find($actid);
-       
-            if ($act->libelle == "départemental" && $perf->points >= 3)  {
+        $actuel = $this->Niveau;
+        
+            if ($actuel->libelle == "départemental" && $this->points >= 3)  {
                 $niveau = Niveau::where('libelle','régional')->first();
-                $perf->niveau_id = $niveau->id;
-                $perf->points = 0;
-                $perf->save();}
-            if ($act->libelle == "régional" && $perf->points >=5)
+                $this->niveau_id = $niveau->id;
+                $this->points = 0;
+                $this->save();}
+            if ($actuel->libelle == "régional" && $this->points >=5)
              {   $niveau = Niveau::where('libelle','national')->first();
-                $perf->niveau_id = $niveau->id;
-                $perf->points = 0;
-                $perf->save();}
-          if ($act->libelle == "national" && $perf->points >=10)
+                $this->niveau_id = $niveau->id;
+                $this->points = 0;
+                $this->save();}
+          if ($actuel->libelle == "national" && $this->points >=10)
                  {   $niveau = Niveau::where('libelle','mondial')->first();
-                    $perf->niveau_id = $niveau->id;
-                    $perf->points = 0;
-                    $perf->save();
+                    $this->niveau_id = $niveau->id;
+                    $this->points = 0;
+                    $this->save();
         }
        
     }

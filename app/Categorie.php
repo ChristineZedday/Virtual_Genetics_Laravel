@@ -144,6 +144,7 @@ public function run($competition, $evenement) {
     //dd($res);//c'est ça
     $res->classement = $i;
     $res->save();
+    $animal = Animal::find($key);
     $perf = $animal->Performance;
     switch($i) {
         case 1:
@@ -155,7 +156,7 @@ public function run($competition, $evenement) {
 
     }
     $perf->save();
-    Performance::upgrade($perf);
+    $perf->upgrade();
     //dd($res);//Oui-da.
    /* $debug = New Debug();
     $eve= Evenement::Find($evenement);
