@@ -287,7 +287,7 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 17,
-                'evenement_id' => 2,
+                'evenement_id' => 29,
             ),
             34 => 
             array (
@@ -295,7 +295,7 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 19,
-                'evenement_id' => 4,
+                'evenement_id' => 30,
             ),
             35 => 
             array (
@@ -303,7 +303,7 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 28,
-                'evenement_id' => 4,
+                'evenement_id' => 30,
             ),
             36 => 
             array (
@@ -311,7 +311,7 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 18,
-                'evenement_id' => 3,
+                'evenement_id' => 31,
             ),
             37 => 
             array (
@@ -319,7 +319,7 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 20,
-                'evenement_id' => 7,
+                'evenement_id' => 32,
             ),
             38 => 
             array (
@@ -529,7 +529,6 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'competition_id' => 38,
                 'evenement_id' => 27,
             ),
-           
         ));
         
         

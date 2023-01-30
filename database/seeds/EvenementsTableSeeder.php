@@ -38,7 +38,7 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 3,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-04-02',
+                'date' => '1971-03-02',
                 'nom' => 'Connemara',
             ),
             3 => 
@@ -233,7 +233,38 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1973-09-02',
                 'nom' => 'Championnat du monde de Fort Worth Texas',
             ),
-           
+            27 => 
+            array (
+                'id' => 29,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-07-24',
+                'nom' => 'Tout Rennes Shet',
+            ),
+            28 => 
+            array (
+                'id' => 30,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-06-12',
+                'nom' => 'Arabesques',
+            ),
+            29 => 
+            array (
+                'id' => 31,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-04-25',
+                'nom' => 'Foire de Rennes spécial Connemara',
+            ),
+            30 => 
+            array (
+                'id' => 32,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-10-08',
+                'nom' => 'Grand Branle-Bas dans Landerneau',
+            ),
         ));
         
         
