@@ -79,7 +79,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-06-02',
-                'nom' => 'Poneys de Sport',
+                'nom' => 'Pony Super Show',
             ),
             8 => 
             array (
@@ -134,7 +134,7 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 15,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-10-30',
+                'date' => '1971-07-30',
                 'nom' => 'Français de Selle',
             ),
             15 => 
@@ -143,7 +143,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-12-16',
-                'nom' => 'Poneys de Sport',
+                'nom' => 'Concours Poneys Toutes Races',
             ),
             16 => 
             array (
@@ -264,6 +264,22 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '1971-10-08',
                 'nom' => 'Grand Branle-Bas dans Landerneau',
+            ),
+            31 => 
+            array (
+                'id' => 33,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-08-30',
+                'nom' => 'Régional Pottokak',
+            ),
+            32 => 
+            array (
+                'id' => 34,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-11-20',
+                'nom' => 'Régional Français de Selle',
             ),
         ));
         
