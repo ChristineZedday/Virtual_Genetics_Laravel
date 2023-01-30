@@ -32,12 +32,12 @@ class Performance extends Model
                 $this->niveau_id = $niveau->id;
                 $this->points = 0;
                 $this->save();}
-            if ($actuel->libelle == "régional" && $this->points >=5)
+            else if ($actuel->libelle == "régional" && $this->points >=5)
              {   $niveau = Niveau::where('libelle','national')->first();
                 $this->niveau_id = $niveau->id;
                 $this->points = 0;
                 $this->save();}
-          if ($actuel->libelle == "national" && $this->points >=10)
+          else if ($actuel->libelle == "national" && $this->points >=10)
                  {   $niveau = Niveau::where('libelle','mondial')->first();
                     $this->niveau_id = $niveau->id;
                     $this->points = 0;
