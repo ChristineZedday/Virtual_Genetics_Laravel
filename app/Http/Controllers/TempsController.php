@@ -17,6 +17,7 @@ use App\Categorie;
 use App\Competition;
 use App\Resultat;
 use App\Performance;
+
 use DateTime;
 
 
@@ -168,11 +169,16 @@ static function regCompetNPC()
         $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
         
 
-        $engageables = Animal::whereHas('performance' ,function ($q) use ($niveau) {$q->where('niveau_id', $niveau);})->whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
+        $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
 //bug: marche que niveau 1
 //dd($engageables);
         foreach ($engageables as $cheval) {
             $race_id = $cheval->race_id; 
+
+        
+            if ($cheval->Performance->Niveau->id != $niveau){
+                break;
+            }
           
             if (strpos($cheval->sexe,'stérilisé') != false){
                   break;//à déplacer quand autre que MA
@@ -180,6 +186,15 @@ static function regCompetNPC()
             if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
                   break; //pas de compétitions poulains
               }
+
+              $debug = New Debug();
+   
+              $debug->evenement = $evenement->nom;
+              $debug->competition = $comp->nom;
+             $debug->categorie = $niveau;
+              $debug->cheval = $cheval->nomComplet();
+              
+              $debug->save();
 
             $categorie = Categorie::recherche($cheval);
             $cats = $comp->Categories;
