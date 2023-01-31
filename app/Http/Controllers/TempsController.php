@@ -173,7 +173,7 @@ static function regCompetNPC()
 //bug: marche que niveau 1
 //dd($engageables);
         foreach ($engageables as $cheval) {
-            $race_id = $cheval->race_id; 
+          
 
         
             if ($cheval->Performance->Niveau->id != $niveau){
