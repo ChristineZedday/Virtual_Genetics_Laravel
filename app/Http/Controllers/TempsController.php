@@ -168,7 +168,7 @@ static function regCompetNPC()
         $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
         
 
-        $engageables = Animal::with(['performance' => function ($q) use ($niveau) {$q->where('niveau_id', $niveau);}])->with(['elevage' => function ($q) {$q->where('role','Vendeur');}])->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
+        $engageables = Animal::whereHas('performance' ,function ($q) use ($niveau) {$q->where('niveau_id', $niveau);})->whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
 //bug: marche que niveau 1
 //dd($engageables);
         foreach ($engageables as $cheval) {
