@@ -159,7 +159,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 14,
-                'race_id' => 6,
+                'race_id' => 2,
             ),
             18 => 
             array (
@@ -376,6 +376,206 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 49,
                 'race_id' => 6,
+            ),
+            45 => 
+            array (
+                'id' => 47,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 16,
+                'race_id' => 4,
+            ),
+            46 => 
+            array (
+                'id' => 48,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 17,
+                'race_id' => 2,
+            ),
+            47 => 
+            array (
+                'id' => 49,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 18,
+                'race_id' => 12,
+            ),
+            48 => 
+            array (
+                'id' => 50,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 19,
+                'race_id' => 8,
+            ),
+            49 => 
+            array (
+                'id' => 51,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 20,
+                'race_id' => 3,
+            ),
+            50 => 
+            array (
+                'id' => 52,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 21,
+                'race_id' => 11,
+            ),
+            51 => 
+            array (
+                'id' => 53,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 22,
+                'race_id' => 13,
+            ),
+            52 => 
+            array (
+                'id' => 54,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 23,
+                'race_id' => 5,
+            ),
+            53 => 
+            array (
+                'id' => 55,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 24,
+                'race_id' => 6,
+            ),
+            54 => 
+            array (
+                'id' => 56,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 25,
+                'race_id' => 7,
+            ),
+            55 => 
+            array (
+                'id' => 57,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 26,
+                'race_id' => 10,
+            ),
+            56 => 
+            array (
+                'id' => 58,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 27,
+                'race_id' => 14,
+            ),
+            57 => 
+            array (
+                'id' => 59,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 28,
+                'race_id' => 9,
+            ),
+            58 => 
+            array (
+                'id' => 60,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 2,
+            ),
+            59 => 
+            array (
+                'id' => 61,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 12,
+            ),
+            60 => 
+            array (
+                'id' => 62,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 11,
+            ),
+            61 => 
+            array (
+                'id' => 63,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 4,
+            ),
+            62 => 
+            array (
+                'id' => 64,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 5,
+            ),
+            63 => 
+            array (
+                'id' => 65,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 6,
+            ),
+            64 => 
+            array (
+                'id' => 66,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 7,
+            ),
+            65 => 
+            array (
+                'id' => 67,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 10,
+            ),
+            66 => 
+            array (
+                'id' => 68,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 13,
+            ),
+            67 => 
+            array (
+                'id' => 69,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 29,
+                'race_id' => 14,
+            ),
+            68 => 
+            array (
+                'id' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 13,
+            ),
+            69 => 
+            array (
+                'id' => 71,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 14,
+                'race_id' => 4,
             ),
         ));
         
