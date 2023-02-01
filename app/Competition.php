@@ -75,7 +75,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         $hasOC = $this->Races->find(1);
         
         if ($hasRace || $hasOC ) {
-           if ($animal->Niveau == $this->Niveau || $this->Niveau->open)
+           if ($animal->Niveau->id == $this->Niveau->id || $this->Niveau->open)
             {return true;}
             else {return false;}
         }
