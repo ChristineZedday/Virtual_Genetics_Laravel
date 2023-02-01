@@ -174,10 +174,9 @@ static function regCompetNPC()
 //dd($engageables);
         foreach ($engageables as $cheval) {
           
-
-        
+ 
             if ($cheval->Performance->Niveau->id != $niveau){
-                break;
+                break;//rajouter plus tard open
             }
           
             if (strpos($cheval->sexe,'stérilisé') != false){
@@ -187,7 +186,7 @@ static function regCompetNPC()
                   break; //pas de compétitions poulains
               }
 
-          /*    $debug = New Debug();
+           /*  $debug = New Debug();
    
               $debug->evenement = $evenement->nom;
               $debug->competition = $comp->nom;
@@ -197,8 +196,10 @@ static function regCompetNPC()
               $debug->save();*/
 
             $categorie = Categorie::recherche($cheval);
+           // dd($categorie);OK
             $cats = $comp->Categories;
             if ($categorie != false && $cats->contains(Categorie::Find($categorie->id))) {
+                dd('ici');
                 $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
               if (null == $deja)
                   { 
@@ -288,7 +289,7 @@ static function runCompetitions() {
        $query->where('competition_id', $comp);
    };
         $categories = Categorie::with(['competitions' =>$filter])->get();
-        //dd($categories);//with et pas whereHas sinon 1 seule catégorie
+        //dd($categories);//with et pas whereHas sinon 1 seule catégorie???
         foreach ($categories as $categorie) {
             $categorie->run($competition->id,$evenement->id) ;  
               
