@@ -187,20 +187,20 @@ static function regCompetNPC()
                   break; //pas de compétitions poulains
               }
 
-              $debug = New Debug();
+          /*    $debug = New Debug();
    
               $debug->evenement = $evenement->nom;
               $debug->competition = $comp->nom;
              $debug->categorie = $niveau;
               $debug->cheval = $cheval->nomComplet();
               
-              $debug->save();
+              $debug->save();*/
 
             $categorie = Categorie::recherche($cheval);
             $cats = $comp->Categories;
             if ($categorie != false && $cats->contains(Categorie::Find($categorie->id))) {
                 $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
-                if (null == $deja)
+              if (null == $deja)
                   { 
                      $resultat = New Resultat();
                     $resultat->animal_id = $cheval->id;
@@ -210,7 +210,7 @@ static function regCompetNPC()
                    //dd($resultat);//OK;
                   
                     $resultat->save();
-                }
+               }
             }
         }
     }
