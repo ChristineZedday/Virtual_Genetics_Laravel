@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Animal;
 use App\Evenement;
+use App\Performance;
 
 class Categorie extends Model
 {
@@ -143,8 +144,21 @@ public function run($competition, $evenement) {
     //dd($res);//c'est ça
     $res->classement = $i;
     $res->save();
+    $animal = Animal::find($key);
+    $perf = $animal->Performance;
+    switch($i) {
+        case 1:
+            $perf->points += 5;
+        case 2:
+            $perf->points += 2;
+        default:
+            $perf->points +=1;
+
+    }
+    $perf->save();
+    $perf->upgrade();
     //dd($res);//Oui-da.
-    $debug = New Debug();
+   /* $debug = New Debug();
     $eve= Evenement::Find($evenement);
     $comp = Competition::Find($competition);
     $debug->evenement = $eve->nom.' '.$eve->date;
@@ -153,7 +167,7 @@ public function run($competition, $evenement) {
     $debug->cheval = $animal->nomComplet();
     $debug->classement = $res->classement;
     $debug->note = $inscrit->note_synthese;
-    $debug->save();
+    $debug->save();*/
 
     $animal = Animal::Find($key);
     //dd($animal->nomComplet());// Chouette!

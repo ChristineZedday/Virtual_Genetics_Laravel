@@ -16,6 +16,8 @@ use App\Evenement;
 use App\Categorie;
 use App\Competition;
 use App\Resultat;
+use App\Performance;
+
 use DateTime;
 
 
@@ -34,6 +36,7 @@ class TempsController extends Controller
             foreach ($animaux as $animal)
             {
                 Genome::readGenes($animal->id);
+                Performance::initialize($animal->id);
             }
         }
         $elevages = Elevage::where('role','Joueur')->get();
@@ -156,8 +159,65 @@ static function regCompetNPC()
     $date =new DateTime(Gamedata::date());
     $m = $date->format('m');
     $y = $date->format('Y');
+
+    $competitions = Competition::RechercheParDate($m,$y);
+    foreach ($competitions as $comp) {
+        $races = $comp->Races;
+        $compid = $comp->id;
+        $races = $races->modelKeys();
+        $niveau = $comp->Niveau->id;
+        $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
+        
+
+        $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
+//bug: marche que niveau 1
+//dd($engageables);
+        foreach ($engageables as $cheval) {
+          
+ 
+            if ($cheval->Performance->Niveau->id != $niveau){
+                break;//rajouter plus tard open
+            }
+          
+            if (strpos($cheval->sexe,'stérilisé') != false){
+                  break;//à déplacer quand autre que MA
+              }
+            if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
+                  break; //pas de compétitions poulains
+              }
+
+           /*  $debug = New Debug();
+   
+              $debug->evenement = $evenement->nom;
+              $debug->competition = $comp->nom;
+             $debug->categorie = $niveau;
+              $debug->cheval = $cheval->nomComplet();
+              
+              $debug->save();*/
+
+            $categorie = Categorie::recherche($cheval);
+           // dd($categorie);OK
+            $cats = $comp->Categories->modelKeys(); //OK
+          
+            if (in_array($categorie->id,$cats)) {
+       
+                $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
+              if (null == $deja)
+                  { 
+                     $resultat = New Resultat();
+                    $resultat->animal_id = $cheval->id;
+                    $resultat->evenement_id = $evenement->id;
+                    $resultat->categorie_id = $categorie->id;
+                    $resultat->competition_id = $comp->id;
+                   //dd($resultat);//OK;
+                  
+                    $resultat->save();
+               }
+            }
+        }
+    }
     
-    $competiteurs = Elevage::where('role','Vendeur')->get();
+/*    $competiteurs = Elevage::where('role','Vendeur')->get();
   
     foreach($competiteurs as $competiteur) {
         //selectionner chevaux dont la note MA>11
@@ -166,6 +226,7 @@ static function regCompetNPC()
       
         foreach ($chevaux as $cheval) {
            $race_id = $cheval->race_id; 
+          
           if (strpos($cheval->sexe,'stérilisé') != false){
                 break;//à déplacer quand autre que MA
             }
@@ -207,7 +268,7 @@ static function regCompetNPC()
         }
         }// cat not false
         } //foreach cheval
-    } //end foreach competiteurs
+    } //end foreach competiteurs */
   
 } //end function regNPC
 
@@ -229,7 +290,7 @@ static function runCompetitions() {
        $query->where('competition_id', $comp);
    };
         $categories = Categorie::with(['competitions' =>$filter])->get();
-        //dd($categories);//with et pas whereHas sinon 1 seule catégorie
+        //dd($categories);//with et pas whereHas sinon 1 seule catégorie???
         foreach ($categories as $categorie) {
             $categorie->run($competition->id,$evenement->id) ;  
               

@@ -4,49 +4,61 @@ use Illuminate\Database\Seeder;
 
 class NiveauxTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
+        
+
+        \DB::table('niveaux')->delete();
+        
         \DB::table('niveaux')->insert(array (
             0 => 
             array (
                 'id' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
                 'libelle' => 'départemental',
-                'open' => true,
-
+                'open' => 0,
             ),
             1 => 
             array (
                 'id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
                 'libelle' => 'régional',
-                'open' => false,
-
+                'open' => 0,
             ),
             2 => 
             array (
                 'id' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
                 'libelle' => 'national',
-                'open' => false,
-
+                'open' => 0,
             ),
             3 => 
             array (
                 'id' => 4,
+                'created_at' => NULL,
+                'updated_at' => NULL,
                 'libelle' => 'mondial',
-                'open' => false,
-
+                'open' => 0,
             ),
             4 => 
             array (
                 'id' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
                 'libelle' => 'entrainement',
-                'open' => true,
-
+                'open' => 1,
             ),
         ));
+        
+        
     }
 }

@@ -19,6 +19,7 @@ class CreatePerformancesTable extends Migration
             $table->smallInteger('sante');
             $table->bigInteger('animal_id')->unsigned();
             $table->tinyInteger('niveau_id')->unsigned();
+            $table->tinyInteger('points')->unsigned();
             $table->foreign('niveau_id')->references('id')->on('niveaux');
             $table->foreign('animal_id')->references('id')->on('animaux');
             

@@ -18,6 +18,7 @@ use App\Race;
 use App\AssoRace;
 use App\Image;
 use App\Debug;
+use App\Performance;
 use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
@@ -174,6 +175,8 @@ class ReproductionController extends Controller
 
               $animal->modele_allures_additifs = (int)(($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m));
               $animal->save();
+
+              Performance::initialize($animal->id);
       
               Genome::mixGenes($etalon->id, $jument->id, $animal->id);
               Genome::readGenes($animal->id);
