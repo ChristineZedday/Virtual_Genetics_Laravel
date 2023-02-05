@@ -152,7 +152,7 @@
 			<h3>Palmarès: </h3>
 				@foreach ($animal->Palmares() as $palm)
 				
-				<p> {{$palm->evenement->nom}} du{{$palm->evenement->date}} 
+				<p> {{$palm->evenement->nom}} du &nbsp;{{$palm->evenement->date}} 
 				{{$palm->competition->nom}} 
 				{{$palm->competition->Niveau->libelle}} 
 				{{$palm->categorie->nom}} 
