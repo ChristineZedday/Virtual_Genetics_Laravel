@@ -2,7 +2,7 @@
 @section('content')
 
 <div class='animaux'>
-<h3 >Mes animaux:</h3>
+<h3 >Mes chevaux et poneys:</h3>
 <table>
 <tr>
 	<th>Photo</th>

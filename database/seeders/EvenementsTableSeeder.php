@@ -1,8 +1,9 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class CompetitionEvenementTableSeeder extends Seeder
+class EvenementsTableSeeder extends Seeder
 {
 
     /**
@@ -14,232 +15,272 @@ class CompetitionEvenementTableSeeder extends Seeder
     {
         
 
-        \DB::table('competition_evenement')->delete();
+        \DB::table('evenements')->delete();
         
-        \DB::table('competition_evenement')->insert(array (
+        \DB::table('evenements')->insert(array (
             0 => 
             array (
                 'id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 1,
-                'evenement_id' => 1,
+                'date' => '1971-04-28',
+                'nom' => 'Printemps du Welsh',
             ),
             1 => 
             array (
                 'id' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 8,
-                'evenement_id' => 1,
+                'date' => '1971-05-14',
+                'nom' => 'Shetland en Folie',
             ),
             2 => 
             array (
                 'id' => 3,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 9,
-                'evenement_id' => 1,
+                'date' => '1971-03-02',
+                'nom' => 'Connemara',
             ),
             3 => 
             array (
                 'id' => 4,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 10,
-                'evenement_id' => 1,
+                'date' => '1971-02-02',
+                'nom' => 'Arabe et demi-sang arabe',
             ),
             4 => 
             array (
                 'id' => 5,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 11,
-                'evenement_id' => 1,
+                'date' => '1971-03-02',
+                'nom' => 'Français de selle',
             ),
             5 => 
             array (
                 'id' => 6,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 2,
-                'evenement_id' => 2,
+                'date' => '1971-05-07',
+                'nom' => 'Pottokak',
             ),
             6 => 
             array (
                 'id' => 7,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 3,
-                'evenement_id' => 3,
+                'date' => '1971-04-07',
+                'nom' => 'Great Mini Show',
             ),
             7 => 
             array (
                 'id' => 8,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 4,
-                'evenement_id' => 4,
+                'date' => '1971-06-02',
+                'nom' => 'Pony Super Show',
             ),
             8 => 
             array (
                 'id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 13,
-                'evenement_id' => 4,
+                'date' => '1971-10-06',
+                'nom' => 'Welsh Rare Bits',
             ),
             9 => 
             array (
                 'id' => 10,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 6,
-                'evenement_id' => 5,
+                'date' => '1971-09-12',
+                'nom' => 'Shetland',
             ),
             10 => 
             array (
                 'id' => 11,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 7,
-                'evenement_id' => 6,
+                'date' => '1971-09-22',
+                'nom' => 'Connemara',
             ),
             11 => 
             array (
                 'id' => 12,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 12,
-                'evenement_id' => 6,
+                'date' => '1971-11-17',
+                'nom' => 'Arabes et demi-sangs',
             ),
             12 => 
             array (
                 'id' => 13,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 5,
-                'evenement_id' => 7,
+                'date' => '1971-12-14',
+                'nom' => 'Minatures',
             ),
             13 => 
             array (
                 'id' => 14,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 1,
-                'evenement_id' => 9,
+                'date' => '1971-09-23',
+                'nom' => 'Pottokak',
             ),
             14 => 
             array (
                 'id' => 15,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 8,
-                'evenement_id' => 9,
+                'date' => '1971-07-30',
+                'nom' => 'Français de Selle',
             ),
             15 => 
             array (
                 'id' => 16,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 9,
-                'evenement_id' => 9,
+                'date' => '1971-12-16',
+                'nom' => 'Concours Poneys Toutes Races',
             ),
             16 => 
-            array (
-                'id' => 17,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 10,
-                'evenement_id' => 9,
-            ),
-            17 => 
             array (
                 'id' => 18,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 11,
-                'evenement_id' => 9,
+                'date' => '1971-06-27',
+                'nom' => 'Régional Welsh',
             ),
-            18 => 
+            17 => 
             array (
                 'id' => 19,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 2,
-                'evenement_id' => 10,
+                'date' => '1972-12-27',
+                'nom' => 'Salon du cheval',
             ),
-            19 => 
+            18 => 
             array (
                 'id' => 20,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 3,
-                'evenement_id' => 11,
+                'date' => '1973-07-25',
+                'nom' => 'Royal Welsh Show',
             ),
-            20 => 
+            19 => 
             array (
                 'id' => 21,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 4,
-                'evenement_id' => 12,
+                'date' => '1973-08-14',
+                'nom' => 'National Connemara de Pompadour',
             ),
-            21 => 
+            20 => 
             array (
                 'id' => 22,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 5,
-                'evenement_id' => 13,
+                'date' => '1973-08-24',
+                'nom' => 'Connemara Pony Show of Clifden',
             ),
-            22 => 
+            21 => 
             array (
                 'id' => 23,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 7,
-                'evenement_id' => 14,
+                'date' => '1973-06-26',
+                'nom' => 'National Welsh Saumur',
             ),
-            23 => 
+            22 => 
             array (
                 'id' => 24,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 12,
-                'evenement_id' => 14,
+                'date' => '1973-08-18',
+                'nom' => 'Sologn\' Pony',
             ),
-            24 => 
+            23 => 
             array (
                 'id' => 25,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 6,
-                'evenement_id' => 15,
+                'date' => '1973-09-28',
+                'nom' => 'National Shetland de Lamotte-Beuvron',
             ),
-            25 => 
+            24 => 
             array (
                 'id' => 26,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 13,
-                'evenement_id' => 12,
+                'date' => '1973-08-12',
+                'nom' => 'Championnat de France Arabe de Vichy',
             ),
-            26 => 
+            25 => 
             array (
                 'id' => 27,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 14,
-                'evenement_id' => 8,
+                'date' => '1973-08-06',
+                'nom' => 'Championnat du cheval miniature Français Vichy',
             ),
-            27 => 
+            26 => 
             array (
                 'id' => 28,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 14,
-                'evenement_id' => 16,
+                'date' => '1973-09-02',
+                'nom' => 'Championnat du monde de Fort Worth Texas',
+            ),
+            27 => 
+            array (
+                'id' => 29,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-07-24',
+                'nom' => 'Tout Rennes Shet',
+            ),
+            28 => 
+            array (
+                'id' => 30,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-06-12',
+                'nom' => 'Arabesques',
+            ),
+            29 => 
+            array (
+                'id' => 31,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-04-25',
+                'nom' => 'Foire de Rennes spécial Connemara',
+            ),
+            30 => 
+            array (
+                'id' => 32,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-10-08',
+                'nom' => 'Grand Branle-Bas dans Landerneau',
+            ),
+            31 => 
+            array (
+                'id' => 33,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-08-30',
+                'nom' => 'Régional Pottokak',
+            ),
+            32 => 
+            array (
+                'id' => 34,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-11-20',
+                'nom' => 'Régional Français de Selle',
             ),
         ));
         
