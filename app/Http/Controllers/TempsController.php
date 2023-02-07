@@ -273,7 +273,7 @@ static function regCompetNPC()
         } //foreach cheval
     } //end foreach competiteurs
   
-} //end function regNPC
+} //end function regNPC*/
 
 static function runCompetitions() {
     
@@ -303,7 +303,7 @@ static function runCompetitions() {
     $evenement->nextYear();
   }
 
-}*/
+}
 
 }
 
