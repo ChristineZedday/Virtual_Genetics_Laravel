@@ -33,7 +33,7 @@ class CompetitionController extends Controller
         
         $date = Gamedata::date();
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
-        $evenements = Evenement::with('competitions.races')->where('date', '>=', $date)->get();
+        $evenements = Evenement::with('competitions.races')->where('date', '>=', $date)->orderBy('date')->get();
     
        return view('competitions',['evenements' =>$evenements, 'elevage' =>$elevage]);
        
