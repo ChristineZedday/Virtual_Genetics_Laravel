@@ -213,7 +213,7 @@ static function regCompetNPC()
             }
         }
     }
-
+}
 /*static function regCompetNPC() 
 {
     //Note: pour les PNJ, on ne réclame pas les frais d'inscriptions
@@ -304,9 +304,8 @@ static function runCompetitions() {
   }
 
 }*/
+
 }
-
-
 
 
 
