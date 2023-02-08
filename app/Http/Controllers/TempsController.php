@@ -172,8 +172,8 @@ static function regCompetNPC()
 //dd($engageables);
         foreach ($engageables as $cheval) {
           if (is_null ($cheval->Performance)) {
-            Performance::initialize($cheval->id);
-        
+            $cheval->Performance = Performance::initialize($cheval->id);
+       
           }
  
             if ($cheval->Performance->niveau_id != $niveau){

@@ -23,6 +23,7 @@ class Performance extends Model
         $perf->points = 0;
         $perf->niveau_id = 1;
         $perf->save();
+        return ($perf);
     }
     public function upgrade()
     {
