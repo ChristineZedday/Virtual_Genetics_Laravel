@@ -1,0 +1,48 @@
+
+étalons approuvés alors qu'ils n'ont pas la note?
+
+compétitions:
+prix non encaissés? si
+
+compétitions sans aucun classé (welsh pony, shetland, classés ds table debug, ou pas du tout (shet, pas notés))
+doublons dans la table debug, et pas le m^me classement et notes
+doublons: les inscrits manuels ont été réinscrits automatiquement mais pas que (c'est peut-être quand je passe deux mois d'un coup!!)
+
+
+
+
+
+
+
+
+
+poulain pas vendu avec sa mère
+
+bug bizarre pour une naissance? 244x501 pas de g létaux chez père, mère jeune, date terme pas effacée alors que pas pleine????
+floppée de foetus pas nés!!!
+bug patty poulain mort terme pas effacé donc tjrs pres pleine
+cte conflit alors!
+
+poulains des juments mortes pas effacés? effacer d'abord les genotypes+images+statut 
+fem conf vides pas vides
+
+affixe 5 car min pas 6
+
+FS par wpb et ar
+
+
+ajouter fondateurs? (actuel: 20 arabes, 22 shetland, 10 welsh D, 4 Welsh C, 16 Welsh B, 24 Welsh A dont 2 pour produire Welsh C, 18 miniatures)
+
+
+images à faire: 
+
+
+robes varnish?
+rabicano après ajout locus/allèle/phénotype/couleur/image
+sooty?
+appaloosa: trait blanc sur jambe LpPatn8
+
+nom long: photo reproducteurs décalée
+faireregex php en plud des js
+qd qqch pas conforme ne pas effacer form, why on earth old doesn't work?
+
