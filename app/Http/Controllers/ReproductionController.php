@@ -18,6 +18,7 @@ use App\Race;
 use App\AssoRace;
 use App\Image;
 use App\Debug;
+use App\Performance;
 use App\Http\Controllers\TempsController;
 
 class ReproductionController extends Controller
