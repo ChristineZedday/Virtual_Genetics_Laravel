@@ -258,7 +258,7 @@ static function regCompetNPC()
              $debug->categorie = $niveau;
               $debug->cheval = $cheval->nomComplet();
               
-              $debug->save();*/
+              $debug->save();
 
             $categorie = Categorie::recherche($cheval);
            // dd($categorie);OK
@@ -333,7 +333,7 @@ static function regCompetNPC()
         }
         }// cat not false
         } //foreach cheval
-    } //end foreach competiteurs */
+    } //end foreach competiteurs 
   
 } //end function regNPC*/
 
