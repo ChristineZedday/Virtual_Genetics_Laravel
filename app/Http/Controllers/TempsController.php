@@ -171,11 +171,12 @@ static function regCompetNPC()
 //bug: marche que niveau 1
 //dd($engageables);
         foreach ($engageables as $cheval) {
-          if (null == $cheval->Performance) {
+          if (is_null ($cheval->Performance)) {
             Performance::initialize($cheval->id);
+        
           }
  
-            if ($cheval->Performance->Niveau->id != $niveau){
+            if ($cheval->Performance->niveau_id != $niveau){
                 break;//rajouter plus tard open
             }
           
