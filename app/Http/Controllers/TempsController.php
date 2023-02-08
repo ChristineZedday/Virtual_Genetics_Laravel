@@ -16,6 +16,7 @@ use App\Evenement;
 use App\Categorie;
 use App\Competition;
 use App\Resultat;
+use App\Performance;
 use DateTime;
 
 
