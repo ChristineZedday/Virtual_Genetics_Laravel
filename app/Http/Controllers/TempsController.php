@@ -178,14 +178,14 @@ static function regCompetNPC()
           }
  
             if ($cheval->Performance->niveau_id != $niveau){
-                break;//rajouter plus tard open
+                continue;//rajouter plus tard open
             }
           
             if (strpos($cheval->sexe,'stérilisé') != false){
-                  break;//à déplacer quand autre que MA
+                  continue;//à déplacer quand autre que MA
               }
             if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
-                  break; //pas de compétitions poulains
+                  continue; //pas de compétitions poulains
               }
 
            /*  $debug = New Debug();
