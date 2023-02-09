@@ -41,6 +41,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         return $this->BelongsTo('App\Niveau');  
     }
 
+    
     static function RechercheparDate($m,$y) 
     {
        

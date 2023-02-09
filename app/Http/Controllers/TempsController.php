@@ -17,7 +17,6 @@ use App\Categorie;
 use App\Competition;
 use App\Resultat;
 use App\Performance;
-
 use DateTime;
 
 
@@ -106,15 +105,15 @@ static function reproNPC()
                 switch (true)
                 {
                     case $count < 25:
-                        $var = 3;
+                        $var = 2;
                     break;
 
                     case $count < 50:
-                        $var = 4;
+                        $var = 3;
                     break;
 
                     default:
-                    $var = 5;
+                    $var = 4;
                 }
                 
                 foreach ($juments as $jument)
@@ -173,6 +172,73 @@ static function regCompetNPC()
 //bug: marche que niveau 1
 //dd($engageables);
         foreach ($engageables as $cheval) {
+          if (is_null ($cheval->Performance)) {
+            $cheval->Performance = Performance::initialize($cheval->id);
+       
+          }
+ 
+            if ($cheval->Performance->niveau_id != $niveau){
+                continue;//rajouter plus tard open
+            }
+          
+            if (strpos($cheval->sexe,'stérilisé') != false){
+                  continue;//à déplacer quand autre que MA
+              }
+            if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
+                  continue; //pas de compétitions poulains
+              }
+
+           /*  $debug = New Debug();
+   
+              $debug->evenement = $evenement->nom;
+              $debug->competition = $comp->nom;
+             $debug->categorie = $niveau;
+              $debug->cheval = $cheval->nomComplet();
+              
+              $debug->save();*/
+
+            $categorie = Categorie::recherche($cheval);
+           // dd($categorie);OK
+            $cats = $comp->Categories->modelKeys(); //OK
+          
+            if (in_array($categorie->id,$cats)) {
+       
+                $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
+              if (null == $deja)
+                  { 
+                     $resultat = New Resultat();
+                    $resultat->animal_id = $cheval->id;
+                    $resultat->evenement_id = $evenement->id;
+                    $resultat->categorie_id = $categorie->id;
+                    $resultat->competition_id = $comp->id;
+                   //dd($resultat);//OK;
+                  
+                    $resultat->save();
+               }
+            }
+        }
+    }
+}
+/*static function regCompetNPC() 
+{
+    //Note: pour les PNJ, on ne réclame pas les frais d'inscriptions
+    $date =new DateTime(Gamedata::date());
+    $m = $date->format('m');
+    $y = $date->format('Y');
+
+    $competitions = Competition::RechercheParDate($m,$y);
+    foreach ($competitions as $comp) {
+        $races = $comp->Races;
+        $compid = $comp->id;
+        $races = $races->modelKeys();
+        $niveau = $comp->Niveau->id;
+        $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
+        
+
+        $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
+//bug: marche que niveau 1
+//dd($engageables);
+        foreach ($engageables as $cheval) {
           
  
             if ($cheval->Performance->Niveau->id != $niveau){
@@ -193,7 +259,7 @@ static function regCompetNPC()
              $debug->categorie = $niveau;
               $debug->cheval = $cheval->nomComplet();
               
-              $debug->save();*/
+              $debug->save();
 
             $categorie = Categorie::recherche($cheval);
            // dd($categorie);OK
@@ -268,9 +334,9 @@ static function regCompetNPC()
         }
         }// cat not false
         } //foreach cheval
-    } //end foreach competiteurs */
+    } //end foreach competiteurs 
   
-} //end function regNPC
+} //end function regNPC*/
 
 static function runCompetitions() {
     
@@ -301,9 +367,8 @@ static function runCompetitions() {
   }
 
 }
+
 }
-
-
 
 
 

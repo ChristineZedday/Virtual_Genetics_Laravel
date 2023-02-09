@@ -159,6 +159,7 @@ public function run($competition, $evenement) {
     $perf->upgrade();
     //dd($res);//Oui-da.
    /* $debug = New Debug();
+ /*   $debug = New Debug();
     $eve= Evenement::Find($evenement);
     $comp = Competition::Find($competition);
     $debug->evenement = $eve->nom.' '.$eve->date;

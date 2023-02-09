@@ -14,6 +14,7 @@ class Performance extends Model
     {
         return $this->belongsTo('App\Niveau');  
     }
+
     static function initialize($animalid)
     {
         $perf = new Performance();
@@ -22,6 +23,7 @@ class Performance extends Model
         $perf->points = 0;
         $perf->niveau_id = 1;
         $perf->save();
+        return ($perf);
     }
     public function upgrade()
     {

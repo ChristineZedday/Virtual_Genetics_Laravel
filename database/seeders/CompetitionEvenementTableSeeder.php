@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class CompetitionEvenementTableSeeder extends Seeder
@@ -520,6 +522,22 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 38,
                 'evenement_id' => 27,
+            ),
+            63 => 
+            array (
+                'id' => 66,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 42,
+                'evenement_id' => 36,
+            ),
+            64 => 
+            array (
+                'id' => 67,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 43,
+                'evenement_id' => 36,
             ),
         ));
         
