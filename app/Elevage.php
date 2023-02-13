@@ -120,7 +120,7 @@ class Elevage extends Model
 }
 
 static function terresAVendre() {
-    $rand = rand(100);
+    $rand = rand(0,100);
     switch (true) {
         case $rand < 50:
             return 0;
@@ -128,7 +128,7 @@ static function terresAVendre() {
             return 1;
         case $rand <80:
             return 1.5;
-        case rand <90:
+        case $rand <90:
             return 2;
         case $rand <95:
             return 3;
@@ -142,8 +142,9 @@ static function terresAVendre() {
 }
 public function acheteTerres($surface) {
     $prix = $surface * self::PRIX_HECTARE;
-    if ($budget > $prix) {  
+    if ($this->budget > $prix) {  
         $this->budget -= $prix;
+        $this->surface += $surface;
     $this->save();
     }   
 }

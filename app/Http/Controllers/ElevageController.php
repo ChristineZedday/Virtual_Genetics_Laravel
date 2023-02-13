@@ -354,7 +354,7 @@ class ElevageController extends Controller
     public function chercheTerres ($id)
     {
        
-            $elevage = Elevage::Find($elevage);
+            $elevage = Elevage::Find($id);
             $surface = Elevage::terresAVendre();
           if ( 0 == $surface) {
             return redirect()->back()->with('alert', 'Rien à vendre pour le moment');
@@ -362,13 +362,19 @@ class ElevageController extends Controller
     
           else
             {
-                return view('achatTerre',['elevage'=>$elevage,'surface'=>$surface]);
+                return view('achatTerres',['elevage'=>$elevage,'surface'=>$surface]);
             }
         
     }
-    public function acheteTerres ($elevage, $surface)
+    public function acheteTerres (request $request)
     {
+        $elevage = $request->input('elevage');
+        $elevage = Elevage::find($elevage);
+        $surface = $request->input('surface');
+       
+        
         $elevage->acheteTerres($surface);
+        return redirect()->route('dashboard',$elevage);
     }
 
 }
