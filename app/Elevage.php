@@ -66,7 +66,7 @@ class Elevage extends Model
         $date = Gamedata::date();
         $mois = date('n',strtotime($date));
         $rendement = Rendement::where('mois',$mois)->first()->foin_tMS_ha;
-        $this->foin = $rendement * $surface;
+        $this->foin += $rendement * $surface;
 
     }
 
@@ -99,7 +99,7 @@ class Elevage extends Model
     $utilise = $UGB_totaux * $charge;
    
     if ($utilise <= $this->surface) {
-        self::faitFoin($this->surface - $utilise);
+        self::faitFoin(min($this->surface/2, $this->surface - $utilise));
       
     }
     else {
