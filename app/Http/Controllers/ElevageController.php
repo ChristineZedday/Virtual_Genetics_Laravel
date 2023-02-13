@@ -351,4 +351,24 @@ class ElevageController extends Controller
         $surface = $elevage->surface;
         return redirect()->back()->with('alert', 'Votre stock de foin '.$foin.' tonnes de Matière Sèche'."\r\n".'Votre surface en herbe '.$surface.' hectares');
     }
+    public function chercheTerres ($id)
+    {
+       
+            $elevage = Elevage::Find($elevage);
+            $surface = Elevage::terresAVendre();
+          if ( 0 == $surface) {
+            return redirect()->back()->with('alert', 'Rien à vendre pour le moment');
+          }
+    
+          else
+            {
+                return view('achatTerre',['elevage'=>$elevage,'surface'=>$surface]);
+            }
+        
+    }
+    public function acheteTerres ($elevage, $surface)
+    {
+        $elevage->acheteTerres($surface);
+    }
+
 }

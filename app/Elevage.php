@@ -12,6 +12,7 @@ class Elevage extends Model
     const COEFF_UGB = 0.37;
     const COEFF_UGP_PLEINE_SUITEE = 0.63 ;//0.37/0.59
     const PRIX_FOIN = 100;
+    const PRIX_HECTARE = 25000;
 
     protected $fillable = ['nom_elevage','nom_eleveur','affixe_id','affixe_pre'];
 
@@ -118,4 +119,32 @@ class Elevage extends Model
     return $fraisVeto + $fraisNourriture;
 }
 
+static function terresAVendre() {
+    $rand = rand(100);
+    switch (true) {
+        case $rand < 50:
+            return 0;
+        case $rand < 75:
+            return 1;
+        case $rand <80:
+            return 1.5;
+        case rand <90:
+            return 2;
+        case $rand <95:
+            return 3;
+        case $rand == 96:
+            return 4;
+        case $rand == 97:
+            return 5;
+        default:
+        return 0.5;
+    }
+}
+public function acheteTerres($surface) {
+    $prix = $surface * self::PRIX_HECTARE;
+    if ($budget > $prix) {  
+        $this->budget -= $prix;
+    $this->save();
+    }   
+}
 }

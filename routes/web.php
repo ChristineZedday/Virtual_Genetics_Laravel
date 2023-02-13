@@ -43,6 +43,10 @@ Route::get('/budget/{elevage}', 'ElevageController@budget')->name('budget');
 
 Route::get('/agricole/{elevage}', 'ElevageController@donneesAgricoles')->name('agricole');
 
+Route::get('/agrandir/{elevage}', 'ElevageController@chercheTerres')->name('agrandir');
+
+Route::post('/terres/{elevage}/{surface}', 'ElevageController@acheteTerres')->name('terres');
+
 Route::get('/temps/{elevage}', 'TempsController@nextMonth')->name('temps');
 
 
