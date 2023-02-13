@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\elevages;
+use App\GameData;
 
 class Elevage extends Model
 {
@@ -52,16 +53,18 @@ class Elevage extends Model
     }
 
     private function chargeHa() 
-    //surface prairie nécessaire pour le cheptel
+    //charge d'animaux à l'hectare possible selon saison
     {
         $date = Gamedata::date();
-        $mois = date('m',strtotime($date));
+        $mois = date('n',strtotime($date));
         $charge = Rendement::where('mois',$mois)->first()->ha_par_UGB;
         return $charge; 
       
     }
 
     private function faitFoin($surface) {
+        $date = Gamedata::date();
+        $mois = date('n',strtotime($date));
         $rendement = Rendement::where('mois',$mois)->first()->foin_tMS_ha;
         $this->foin = $rendement * $surface;
 
@@ -91,14 +94,17 @@ class Elevage extends Model
         }
         $UGB_totaux += $UGB;
     }
-    $charge = chargeHa();
+    //dd($UGB_totaux);
+    $charge = self::chargeHa();
     $utilise = $UGB_totaux * $charge;
-    if ($utilise >= $this->surface) {
-        faitFoin($this->surface - $utilise);
+   
+    if ($utilise <= $this->surface) {
+        self::faitFoin($this->surface - $utilise);
+      
     }
     else {
-        $UGBtrop = $UGB_totaux - (surface * $charge)/$UGB_totaux;
-        $conso = consommeFoin($UGBtrop);
+        $UGBtrop = $UGB_totaux - ($this->surface * $charge)/$UGB_totaux;
+        $conso = self::consommeFoin($UGBtrop);
         if ($conso > $this->foin) {
             $fraisNourriture = ($this->foin - $conso) * self::PRIX_FOIN;
             $this->foin = 0;
