@@ -349,6 +349,6 @@ class ElevageController extends Controller
         $elevage = Elevage::Find($id);
         $foin = $elevage->foin;
         $surface = $elevage->surface;
-        return redirect()->back()->with('alert', 'Votre stock de foin'.$foin.' tonnes de Matière Sèche \n Votre surface en herbe'.$surface.' hectares');
+        return redirect()->back()->with('alert', 'Votre stock de foin '.$foin.' tonnes de Matière Sèche'."\r\n".'Votre surface en herbe '.$surface.' hectares');
     }
 }
