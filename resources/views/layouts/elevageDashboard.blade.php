@@ -34,6 +34,8 @@ $date = $game->date();
 					</ul>
 				</li>
 				<li><a href="{{route('budget',[$elevage])}}">Voir mon budget</a></li>
+
+				<li><a href="{{route('agricole',[$elevage])}}">Voir mes données agricoles</a></li>
 			
 				<li><a href="{{route('home')}}">Changer d'élevage</a>
 				</li>

@@ -343,4 +343,12 @@ class ElevageController extends Controller
         $budget = $elevage->budget;
         return redirect()->back()->with('alert', 'Votre budget: '.$budget);
     }
+
+    public function donneesAgricoles ($id)
+    {
+        $elevage = Elevage::Find($id);
+        $foin = $elevage->foin;
+        $surface = $elevage->surface;
+        return redirect()->back()->with('alert', 'Votre stock de foin'.$foin.' tonnes de Matière Sèche \n Votre surface en herbe'.$surface.' hectares');
+    }
 }
