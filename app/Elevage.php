@@ -75,7 +75,7 @@ class Elevage extends Model
 {
     $fraisNourriture = 0;
     
-    $animaux = Animal::where('$elevage_id',$this->id)->where('foetus',0)->whereNotIn('sexe',['jeune poulain','jeune pouliche'] )->get();
+    $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereNotIn('sexe',['jeune poulain','jeune pouliche'] )->get();
     $UGB_totaux =0;
     $fraisVeto =0;
 
