@@ -10,7 +10,7 @@ class Elevage extends Model
 {
     
     const COEFF_UGB = 0.37;
-    const COEFF_UGP_PLEINE_SUITEE = 0.63 ;//0.37/0.59
+    const COEFF_UGB_PLEINE_SUITEE = 0.63 ;//0.37/0.59
     const PRIX_FOIN = 100;
     const PRIX_HECTARE = 25000;
 
@@ -53,6 +53,7 @@ class Elevage extends Model
 
     }
 
+
     private function chargeHa() 
     //charge d'animaux à l'hectare possible selon saison
     {
@@ -75,42 +76,58 @@ class Elevage extends Model
         return $UGB * 4.75/12;
     }
 
+   
+
     public function calculeFrais() 
 {
+ 
     $fraisNourriture = 0;
+    $UGB_totaux=0;
+    $fraisVeto=0;
     
     $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereNotIn('sexe',['jeune poulain','jeune pouliche'] )->get();
-    $UGB_totaux =0;
-    $fraisVeto =0;
-
+    
     foreach ($animaux as $animal) {
-        if (isset($animal->Statut) && ($animal->Statut->suitee or $animal->Statut->pleine)) {
-            $UGB = (self::COEFF_UGB_PLEINE_SUITEE * $animal->taille())/100;
-            $fraisVeto += 25;
+        if ($animal->Statut?->suitee or $animal->Statut?->pres_pleine) {
             
+            $UGB = (self::COEFF_UGB_PLEINE_SUITEE * $animal->taille())/100;
+            $veto = 25;
+           
+           // dd('véto: '.$veto.' UGB: '.$UGB);// OK
         }
         else {
-            $UGB = (self::COEFF_UGB * $animal->taille())/100;
-           $fraisVeto += 10;
+           
+            $UGB=  (self::COEFF_UGB * $animal->taille())/100;
+            $veto = 10;    
+          // dd('véto: '.$veto.' UGB: '.$UGB); // OK
         }
+        $fraisVeto +=  $veto;
         $UGB_totaux += $UGB;
+      //dd('véto: '.$fraisVeto.' UGB: '.$UGB_totaux);//OK
     }
-    //dd($UGB_totaux);
+   
+ //dd('véto: '.$fraisVeto.' UGB: '.$UGB_totaux);//0 0??????
+
     $charge = self::chargeHa();
-    $utilise = $UGB_totaux * $charge;
+   // dd($UGB_totaux);0
+   $utilise = $UGB_totaux * $charge;
+   //dd($utilise);
    
     if ($utilise <= $this->surface) {
         self::faitFoin(min($this->surface/2, $this->surface - $utilise));
-      
     }
     else {
+       // dd($UGB_totaux); //mais là ils sont revenus?????
         $UGBtrop = $UGB_totaux - ($this->surface * $charge)/$UGB_totaux;
+       // dd($UGBtrop);
         $conso = self::consommeFoin($UGBtrop);
+         
         if ($conso > $this->foin) {
-            $fraisNourriture = ($this->foin - $conso) * self::PRIX_FOIN;
+            $fraisNourriture = ($conso - $this->foin) * self::PRIX_FOIN;
             $this->foin = 0;
         }
         else {
+           
             $this->foin -= $conso;
         }
         $this->save();
