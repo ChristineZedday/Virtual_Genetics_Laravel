@@ -84,7 +84,7 @@ class Elevage extends Model
     $fraisVeto =0;
 
     foreach ($animaux as $animal) {
-        if ($animal->Statut && $animal->Statut->suitee or $animal->Statut->pleine) {
+        if (isset($animal->Statut) && ($animal->Statut->suitee or $animal->Statut->pleine)) {
             $UGB = (self::COEFF_UGB_PLEINE_SUITEE * $animal->taille())/100;
             $fraisVeto += 25;
             
