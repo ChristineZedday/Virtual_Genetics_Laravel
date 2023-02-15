@@ -341,6 +341,44 @@ class ElevageController extends Controller
     {
         $elevage = Elevage::Find($id);
         $budget = $elevage->budget;
-        return redirect()->back()->with('alert', 'Votre budget: '.$budget);
+        $veto = $elevage->calculeFraisVeto();
+        $nourriture = $elevage->calculeFrais() - $veto;
+        return redirect()->back()->with('alert', 'Votre budget: '.$budget."\r\n".'dépenses frais vétérinaires: '.$veto."\r\n".' frais nourriture: '.$nourriture);
     }
+
+    public function donneesAgricoles ($id)
+    {
+        $elevage = Elevage::Find($id);
+        $foin = $elevage->foin;
+        $surface = $elevage->surface;
+        $nb = $elevage->nbAnimaux();
+        $UGB = $elevage->calculeUGB();
+        return redirect()->back()->with('alert', 'Votre stock de foin '.$foin.' tonnes de Matière Sèche'."\r\n".'Votre surface en herbe '.$surface.' hectares '."\r\n".$nb.' animaux pour '.$UGB.' Unités Gros Bétail');
+    }
+    public function chercheTerres ($id)
+    {
+       
+            $elevage = Elevage::Find($id);
+            $surface = Elevage::terresAVendre();
+          if ( 0 == $surface) {
+            return redirect()->back()->with('alert', 'Rien à vendre pour le moment');
+          }
+    
+          else
+            {
+                return view('achatTerres',['elevage'=>$elevage,'surface'=>$surface]);
+            }
+        
+    }
+    public function acheteTerres (request $request)
+    {
+        $elevage = $request->input('elevage');
+        $elevage = Elevage::find($elevage);
+        $surface = $request->input('surface');
+       
+        
+        $elevage->acheteTerres($surface);
+        return redirect()->route('dashboard',$elevage);
+    }
+
 }

@@ -42,15 +42,9 @@ class TempsController extends Controller
         foreach ($elevages as $elevage)
         {
             $elevage->budget +=1000;
+            $elevage->budget -= $elevage->calculeFrais();
            
-            $fraisveto = 0;
-            $animaux = Animal::where('elevage_id', $elevage->id)->get();
-             
-                foreach ($animaux as $animal) {
-                    //on rajoutera plus tard un traitement différent selon la santé de l'animal
-                    $fraisveto += 10;
-                }
-                $elevage->budget -= $fraisveto;
+           
             $elevage->save();
         }
        

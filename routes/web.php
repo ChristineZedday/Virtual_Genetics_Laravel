@@ -19,6 +19,8 @@ Route::get('/', function () { if ( Auth::check() ) {return redirect()->action('H
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//routes de création et mise à jour
+
 Route::get('/elevage.create', 'ElevageController@create')->name('elevage.create');
 
 Route::post('/elevage.store', 'ElevageController@store')->name('elevage.store');
@@ -38,6 +40,12 @@ Route::post('/update.notes/{animal}', 'AnimalController@updateNotes')->name('upd
 Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');
 
 Route::get('/budget/{elevage}', 'ElevageController@budget')->name('budget');
+
+Route::get('/agricole/{elevage}', 'ElevageController@donneesAgricoles')->name('agricole');
+
+Route::get('/agrandir/{elevage}', 'ElevageController@chercheTerres')->name('agrandir');
+
+Route::post('/terres/{elevage}/{surface}', 'ElevageController@acheteTerres')->name('terres');
 
 Route::get('/temps/{elevage}', 'TempsController@nextMonth')->name('temps');
 
