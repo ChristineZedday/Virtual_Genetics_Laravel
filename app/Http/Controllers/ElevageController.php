@@ -341,7 +341,9 @@ class ElevageController extends Controller
     {
         $elevage = Elevage::Find($id);
         $budget = $elevage->budget;
-        return redirect()->back()->with('alert', 'Votre budget: '.$budget);
+        $veto = $elevage->calculeFraisVeto();
+        $nourriture = $elevage->calculeFrais() - $veto;
+        return redirect()->back()->with('alert', 'Votre budget: '.$budget."\r\n".'dépenses frais vétérinaires: '.$veto."\r\n".' frais nourriture: '.$nourriture);
     }
 
     public function donneesAgricoles ($id)
@@ -349,7 +351,9 @@ class ElevageController extends Controller
         $elevage = Elevage::Find($id);
         $foin = $elevage->foin;
         $surface = $elevage->surface;
-        return redirect()->back()->with('alert', 'Votre stock de foin '.$foin.' tonnes de Matière Sèche'."\r\n".'Votre surface en herbe '.$surface.' hectares');
+        $nb = $elevage->nbAnimaux();
+        $UGB = $elevage->calculeUGB();
+        return redirect()->back()->with('alert', 'Votre stock de foin '.$foin.' tonnes de Matière Sèche'."\r\n".'Votre surface en herbe '.$surface.' hectares '."\r\n".$nb.' animaux pour '.$UGB.' Unités Gros Bétail');
     }
     public function chercheTerres ($id)
     {

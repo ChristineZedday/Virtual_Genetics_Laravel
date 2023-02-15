@@ -64,7 +64,8 @@ class Elevage extends Model
       
     }
 
-    private function faitFoin($surface) {
+    private function faitFoin($surface) 
+    {
         $date = Gamedata::date();
         $mois = date('n',strtotime($date));
         $rendement = Rendement::where('mois',$mois)->first()->foin_tMS_ha;
@@ -72,41 +73,60 @@ class Elevage extends Model
 
     }
 
-    private function consommeFoin($UGB) {
+    private function consommeFoin($UGB) 
+    {
         return $UGB * 4.75/12;
     }
 
+    public function nbAnimaux() 
+    {
+        $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->get()->count(); 
+        return $animaux;
+
+    }
+
+    public function calculeFraisVeto()
+    {
+       
+        $poulains = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereIn('sexe',['jeune poulain','jeune pouliche'] )->get()->count();
+
+        $autres = $this->nbAnimaux() - $poulains;
+
+        $frais = $poulains * 25 + $autres *10; 
+
+        return $frais;
+    }
+
+    public function calculeUGB() 
+    {
+        $UGB_totaux=0;
+       
+        $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereNotIn('sexe',['jeune poulain','jeune pouliche'] )->get();
+        
+        foreach ($animaux as $animal) {
+            if ($animal->Statut?->suitee or $animal->Statut?->pres_pleine) {
+                
+                $UGB = (self::COEFF_UGB_PLEINE_SUITEE * $animal->taille())/100;
+            }
+            else {
+               
+                $UGB=  (self::COEFF_UGB * $animal->taille())/100;
+            
+            }
+            
+            $UGB_totaux += $UGB;
+        }
+        return $UGB_totaux;
+    }
    
 
     public function calculeFrais() 
 {
  
     $fraisNourriture = 0;
-    $UGB_totaux=0;
-    $fraisVeto=0;
-    
-    $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereNotIn('sexe',['jeune poulain','jeune pouliche'] )->get();
-    
-    foreach ($animaux as $animal) {
-        if ($animal->Statut?->suitee or $animal->Statut?->pres_pleine) {
-            
-            $UGB = (self::COEFF_UGB_PLEINE_SUITEE * $animal->taille())/100;
-            $veto = 25;
-           
-           // dd('véto: '.$veto.' UGB: '.$UGB);// OK
-        }
-        else {
-           
-            $UGB=  (self::COEFF_UGB * $animal->taille())/100;
-            $veto = 10;    
-          // dd('véto: '.$veto.' UGB: '.$UGB); // OK
-        }
-        $fraisVeto +=  $veto;
-        $UGB_totaux += $UGB;
-      //dd('véto: '.$fraisVeto.' UGB: '.$UGB_totaux);//OK
-    }
-   
- //dd('véto: '.$fraisVeto.' UGB: '.$UGB_totaux);//0 0??????
+    $UGB_totaux= $this->calculeUGB();
+    $fraisVeto=$this->calculeFraisVeto();
+  
 
     $charge = self::chargeHa();
    // dd($UGB_totaux);0
