@@ -1,5 +1,5 @@
 <h2>Simulateur d'élevage </h2>
-<p>v2.0 disponible, fonctionnelle pour la partie reproduction, achat, vente, pas de bugs majeurs.</p>
+<p>v2.2 disponible, fonctionnelle pour la partie reproduction, achat, vente, pas de bugs majeurs.</p>
 <p>Le volet compétition est enfin fonctionnel pour les concours de modèles et allures. Inscrivez vos chevaux contre ceux des élevages fondateurs ou ceux d'autres joueurs!</p>
 <p>Mode d'emploi (installation et jeu): <a href ="ModeEmploi.pdf" target="_blank">ModeEmploi.pdf</a></p>
 <p>Ce dossier présente le code source, avec des seeders pour la base de données:
