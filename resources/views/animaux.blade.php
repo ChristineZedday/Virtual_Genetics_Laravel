@@ -13,6 +13,7 @@
 
 	<th>taille</th>
     <th>Date acquisition</th>
+	<th>Niveau Modèle et Allures</th>
     <th> @isset ($vente) prix @else A Vendre? @endisset</th>
 	
    
@@ -31,6 +32,7 @@
  
   <td> {{ $animal->taille() }}  </td>
 	<td>@isset ($animal->date_achat) {{$animal->date_achat}} @else {{$animal->date_naissance}} @endisset</td>
+	<td>{{$animal->Performance->Niveau->libelle}}</td>
 	<td>@isset ($vente) {{$animal->prix}} @else {{ $animal->a_vendre ? "à vendre" : ""  }} @endisset</td>
 
 </tr>
