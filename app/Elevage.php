@@ -139,7 +139,7 @@ class Elevage extends Model
     else {
        // dd($UGB_totaux); //mais là ils sont revenus?????
         $UGBtrop =  ($utilise - $this->surface)/$charge;
-       // charge en hectares nécessaires par UGB
+       // charge en hectares nécessaires par UGB donc il faut l'inverse pour savoir combien d'UGB n'ont pas pu brouter
         $conso = self::consommeFoin($UGBtrop);
          
         if ($conso > $this->foin) {
