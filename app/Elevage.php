@@ -138,8 +138,8 @@ class Elevage extends Model
     }
     else {
        // dd($UGB_totaux); //mais là ils sont revenus?????
-        $UGBtrop = $UGB_totaux - ($this->surface * $charge)/$UGB_totaux;
-       // dd($UGBtrop);
+        $UGBtrop =  ($utilise - $this->surface)/$charge;
+       // charge en hectares nécessaires par UGB
         $conso = self::consommeFoin($UGBtrop);
          
         if ($conso > $this->foin) {
