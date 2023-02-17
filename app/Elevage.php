@@ -134,7 +134,7 @@ class Elevage extends Model
    //dd($utilise);
    
     if ($utilise <= $this->surface) {
-        self::faitFoin(min($this->surface/2, $this->surface - $utilise));
+        self::faitFoin(min($this->surface/2, $this->surface - $utilise)/2);//on fait faire les foins par un agriculteur qui en prend la moitié
     }
     else {
        // dd($UGB_totaux); //mais là ils sont revenus?????
