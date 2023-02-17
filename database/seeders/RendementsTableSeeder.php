@@ -23,14 +23,14 @@ class RendementsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'mois' => '1',
-                'ha_par_UGB' => 4.0,
+                'ha_par_UGB' => 5.0,
                 'foin_tMS_ha' => 0.0,
             ),
             1 => 
             array (
                 'id' => 2,
                 'mois' => '2',
-                'ha_par_UGB' => 3.0,
+                'ha_par_UGB' => 5.0,
                 'foin_tMS_ha' => 0.0,
             ),
             2 => 
@@ -100,7 +100,7 @@ class RendementsTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'mois' => '12',
-                'ha_par_UGB' => 3.0,
+                'ha_par_UGB' => 5.0,
                 'foin_tMS_ha' => 0.0,
             ),
         ));

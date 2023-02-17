@@ -134,12 +134,12 @@ class Elevage extends Model
    //dd($utilise);
    
     if ($utilise <= $this->surface) {
-        self::faitFoin(min($this->surface/2, $this->surface - $utilise));
+        self::faitFoin(min($this->surface/2, $this->surface - $utilise)/2);//on fait faire les foins par un agriculteur qui en prend la moitié
     }
     else {
        // dd($UGB_totaux); //mais là ils sont revenus?????
-        $UGBtrop = $UGB_totaux - ($this->surface * $charge)/$UGB_totaux;
-       // dd($UGBtrop);
+        $UGBtrop =  ($utilise - $this->surface)/$charge;
+       // charge en hectares nécessaires par UGB donc il faut l'inverse pour savoir combien d'UGB n'ont pas pu brouter
         $conso = self::consommeFoin($UGBtrop);
          
         if ($conso > $this->foin) {
