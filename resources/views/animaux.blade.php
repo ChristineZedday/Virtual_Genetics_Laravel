@@ -9,12 +9,12 @@
 	<th>Photo</th>
     <th><a onclick="tri(1)">Nom </a></th>
     <th><a onclick="tri(2)">Race</a></th>
-    <th>Sexe</th>
-    <th>Couleur</th>
+    <th><a onclick="tri(3)">Sexe</a></th>
+    <th><a onclick="tri(4)">Couleur</a></th>
 
-	<th>taille</th>
-    <th>Date acquisition</th>
-	<th>Niveau Modèle et Allures</th>
+	<th><a onclick="tri(5)">taille</a></th>
+    <th><a onclick="tri(6)">Date acquisition</th>
+	<th><a onclick="tri(7)">Niveau Modèle et Allures</th>
     <th> @isset ($vente) prix @else A Vendre? @endisset</th>
 	
    
