@@ -4,10 +4,11 @@
 <div class='animaux'>
 <h3 >Mes chevaux et poneys:</h3>
 <table>
+<thead>
 <tr>
 	<th>Photo</th>
-    <th>Nom </th>
-    <th>Race</th>
+    <th><a onclick="tri(1)">Nom </a></th>
+    <th><a onclick="tri(2)">Race</a></th>
     <th>Sexe</th>
     <th>Couleur</th>
 
@@ -18,6 +19,8 @@
 	
    
   </tr>
+</thead>
+  <tbody>
 @foreach ($animaux as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
@@ -37,6 +40,42 @@
 
 </tr>
 @endforeach
+</tbody>
 </table>
 </div>
+
+
+<script>
+function tri (cle) {
+
+var table = document.getElementsByTagName('table')[0]
+var myTbody = table.getElementsByTagName('tbody')[0];
+
+var lines = myTbody.getElementsByTagName('tr');
+
+var sorter = new Array();
+
+/*var lineStart = ( table.isClassName("cnxTableScroll") ) ? -1 : 0; //si setScroll() actif est toutes les lignes doivent être filtrées!*/
+
+//si -1 on trie l'ensemble du tableau, si 0 la première ligne n'est pas concernée
+
+var i = -1;
+
+while(lines[++i]){
+
+		sorter.push([lines[i],lines[i].getElementsByTagName('td')[cle].innerHTML]);
+
+};
+
+sorter.sort();
+
+j=-1;
+
+while(sorter[++j]){
+
+		myTbody.appendChild(sorter[j][0]);
+
+}
+}
+</script>
 @endsection
