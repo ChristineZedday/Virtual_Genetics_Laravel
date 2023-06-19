@@ -46,8 +46,16 @@
 
 
 <script>
+b = true; 
+function switcher() {
+	if (b) {
+		b = false;
+	}
+	else { b = true; }
+}
 function tri (cle) {
 
+let sens = (b ? ASC : DESC);
 var table = document.getElementsByTagName('table')[0]
 var myTbody = table.getElementsByTagName('tbody')[0];
 
@@ -67,7 +75,7 @@ while(lines[++i]){
 
 };
 
-sorter.sort();
+sorter.sort(sens);
 
 j=-1;
 
@@ -76,6 +84,44 @@ while(sorter[++j]){
 		myTbody.appendChild(sorter[j][0]);
 
 }
+b = switcher();
 }
+function DESC(a,b){
+
+a=a[1];
+
+b=b[1];
+
+a = parseInt(a) ? parseInt(a) : a; //pour les tris numériques
+
+b = parseInt(b) ? parseInt(b) : b; //pour les tris numériques
+
+if(a > b)       return -1;
+
+if(a < b)       return 1;
+
+return 0;
+
+};
+
+
+
+function ASC(a,b){
+
+a=a[1];
+
+b=b[1];
+
+a = parseInt(a) ? parseInt(a) : a; //pour les tris numériques
+
+b = parseInt(b) ? parseInt(b) : b; //pour les tris numériques
+
+if(a > b)       return 1;
+
+if(a < b)       return -1;
+
+return 0;
+
+};
 </script>
 @endsection
