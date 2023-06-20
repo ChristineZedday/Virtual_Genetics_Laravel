@@ -2,6 +2,13 @@
 	font-variant: small-caps;
 }
 
+.arrow {
+	button {
+		background-color: transparent;
+	}
+		
+}
+
 .animaux {
 	h3 {
 		color: $middle;
@@ -46,6 +53,7 @@
 			}
 		}
 	}
+	
 // 	.imagee table {
 // 		tr {
 // 			height: 70px;

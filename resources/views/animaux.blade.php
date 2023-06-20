@@ -7,10 +7,10 @@
 <thead>
 <tr>
 	<th>Photo</th>
-    <th><a onclick="tri(1)">Nom </a></th>
-    <th><a onclick="tri(2)">Race</a></th>
-    <th><a onclick="tri(3)">Sexe</a></th>
-    <th><a onclick="tri(4)">Couleur</a></th>
+    <th>Nom<button class="arrow" onclick="tri(1, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(1, DESC)"> &#x23F7;</button></th>
+    <th>Race<button class="arrow" onclick="tri(2, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(2, DESC)"> &#x23F7;</button></th>
+    <th>Sexe<button class="arrow" onclick="tri(3, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(3, DESC)"> &#x23F7;</button></th>
+    <th>Couleur<button class="arrow" onclick="tri(4, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(4, DESC)"> &#x23F7;</button></th>
 
 	<th><a onclick="tri(5)">taille</a></th>
     <th><a onclick="tri(6)">Date acquisition</th>
@@ -46,16 +46,9 @@
 
 
 <script>
-b = true; 
-function switcher() {
-	if (b) {
-		b = false;
-	}
-	else { b = true; }
-}
-function tri (cle) {
 
-let sens = (b ? ASC : DESC);
+function tri (cle, sens) {
+
 var table = document.getElementsByTagName('table')[0]
 var myTbody = table.getElementsByTagName('tbody')[0];
 
@@ -84,7 +77,7 @@ while(sorter[++j]){
 		myTbody.appendChild(sorter[j][0]);
 
 }
-b = switcher();
+
 }
 function DESC(a,b){
 
