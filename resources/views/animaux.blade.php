@@ -7,14 +7,14 @@
 <thead>
 <tr>
 	<th>Photo</th>
-    <th>Nom<button class="tbarrow" onclick="tri(1, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(1, DESC)"> &#x23F7;</button></th>
-    <th>Race<button class="tbarrow" onclick="tri(2, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(2, DESC)"> &#x23F7;</button></th>
-    <th>Sexe<button class="tbarrow" onclick="tri(3, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(3, DESC)"> &#x23F7;</button></th>
-    <th>Couleur<button class="tbarrow" onclick="tri(4, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(4, DESC)"> &#x23F7;</button></th>
+    <th>Nom <button onclick="tri(1, ASC)"> &#x23F6;</button><button onclick="tri(1, DESC)"> &#x23F7;</button></th>
+    <th>Race <button onclick="tri(2, ASC)"> &#x23F6;</button><button onclick="tri(2, DESC)"> &#x23F7;</button></th>
+    <th>Sexe <button onclick="tri(3, ASC)"> &#x23F6;</button><button onclick="tri(3, DESC)"> &#x23F7;</button></th>
+    <th>Couleur <button onclick="tri(4, ASC)"> &#x23F6;</button><button onclick="tri(4, DESC)"> &#x23F7;</button></th>
 
-	<th><a onclick="tri(5)">taille</a></th>
-    <th><a onclick="tri(6)">Date acquisition</th>
-	<th><a onclick="tri(7)">Niveau Modèle et Allures</th>
+	<th>Taille <button onclick="tri(5, ASC)"> &#x23F6;</button><button onclick="tri(5, DESC)"> &#x23F7;</button></th>
+    <th>Date acquisition <button onclick="tri(6, ASC)"> &#x23F6;</button><button onclick="tri(6, DESC)"> &#x23F7;</button></th>
+	<th>Niveau Modèle et Allures <button onclick="tri(5, ASC)"> &#x23F6;</button><button onclick="tri(5, DESC)"> &#x23F7;</button></th>
     <th> @isset ($vente) prix @else A Vendre? @endisset</th>
 	
    

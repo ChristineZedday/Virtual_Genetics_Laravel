@@ -2,12 +2,7 @@
 	font-variant: small-caps;
 }
 
-.tbarrow {
-	button {
-		background-color: transparent;
-	}
-		
-}
+
 
 .animaux {
 	h3 {
@@ -32,6 +27,10 @@
 				padding: 5px 20px;
 			
 				text-align: middle;
+				button {
+					background-color: transparent;
+					border: none;
+				}
 				
 			}
 			td {

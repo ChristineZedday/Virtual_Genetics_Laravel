@@ -9991,10 +9991,6 @@ h3 {
   font-variant: small-caps;
 }
 
-.tbarrow button {
-  background-color: transparent;
-}
-
 .animaux h3 {
   color: #701f1e;
   margin-top: 20px;
@@ -10016,6 +10012,10 @@ h3 {
   background-color: #c6a99a;
   padding: 5px 20px;
   text-align: middle;
+}
+.animaux table tr th button {
+  background-color: transparent;
+  border: none;
 }
 .animaux table tr td {
   background-color: #ebe1db;
