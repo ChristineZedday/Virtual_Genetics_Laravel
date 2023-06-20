@@ -7,10 +7,10 @@
 <thead>
 <tr>
 	<th>Photo</th>
-    <th>Nom<button class="arrow" onclick="tri(1, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(1, DESC)"> &#x23F7;</button></th>
-    <th>Race<button class="arrow" onclick="tri(2, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(2, DESC)"> &#x23F7;</button></th>
-    <th>Sexe<button class="arrow" onclick="tri(3, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(3, DESC)"> &#x23F7;</button></th>
-    <th>Couleur<button class="arrow" onclick="tri(4, ASC)"> &#x23F6;</button><button class="arrow" onclick="tri(4, DESC)"> &#x23F7;</button></th>
+    <th>Nom<button class="tbarrow" onclick="tri(1, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(1, DESC)"> &#x23F7;</button></th>
+    <th>Race<button class="tbarrow" onclick="tri(2, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(2, DESC)"> &#x23F7;</button></th>
+    <th>Sexe<button class="tbarrow" onclick="tri(3, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(3, DESC)"> &#x23F7;</button></th>
+    <th>Couleur<button class="tbarrow" onclick="tri(4, ASC)"> &#x23F6;</button><button class="tbarrow" onclick="tri(4, DESC)"> &#x23F7;</button></th>
 
 	<th><a onclick="tri(5)">taille</a></th>
     <th><a onclick="tri(6)">Date acquisition</th>
