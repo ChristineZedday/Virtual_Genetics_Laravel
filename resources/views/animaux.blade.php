@@ -14,7 +14,7 @@
 
 	<th>Taille <button onclick="tri(5, ASC)"> &#x23F6;</button><button onclick="tri(5, DESC)"> &#x23F7;</button></th>
     <th>Date acquisition <button onclick="tri(6, ASC)"> &#x23F6;</button><button onclick="tri(6, DESC)"> &#x23F7;</button></th>
-	<th>Niveau Modèle et Allures <button onclick="tri(5, ASC)"> &#x23F6;</button><button onclick="tri(5, DESC)"> &#x23F7;</button></th>
+	<th>Niveau Modèle et Allures <button onclick="tri(7, AMA)"> &#x23F6;</button><button onclick="tri(7, DMA)"> &#x23F7;</button></th>
     <th> @isset ($vente) prix @else A Vendre? @endisset</th>
 	
    
@@ -35,7 +35,8 @@
  
   <td> {{ $animal->taille() }}  </td>
 	<td>@isset ($animal->date_achat) {{$animal->date_achat}} @else {{$animal->date_naissance}} @endisset</td>
-	<td>{{$animal->Performance->Niveau->libelle}}</td>
+	<td>{{$animal->Performance->Niveau->libelle}}
+		<span hidden>{{$animal->Performance->Niveau->id}}</span></td>
 	<td>@isset ($vente) {{$animal->prix}} @else {{ $animal->a_vendre ? "à vendre" : ""  }} @endisset</td>
 
 </tr>
@@ -46,8 +47,7 @@
 
 
 <script>
-
-function tri (cle, sens) {
+function tri(cle, sens) {
 
 var table = document.getElementsByTagName('table')[0]
 var myTbody = table.getElementsByTagName('tbody')[0];
@@ -78,8 +78,9 @@ while(sorter[++j]){
 
 }
 
-}
-function DESC(a,b){
+};
+
+function DESC(a,b) {
 
 a=a[1];
 
@@ -99,7 +100,8 @@ return 0;
 
 
 
-function ASC(a,b){
+
+function ASC(a,b) {
 
 a=a[1];
 
@@ -116,5 +118,39 @@ if(a < b)       return -1;
 return 0;
 
 };
+
+function AMA(a,b) {
+
+a=a[1];
+ind  = a.indexOf('>');
+a = a[ind+1];
+
+b=b[1];
+ind  = b.indexOf('>');
+b = b[ind+1]
+
+
+return a - b;
+
+
+
+};
+
+function DMA(a,b) {
+
+
+	a=a[1];
+ind  = a.indexOf('>');
+a = a[ind+1];
+
+b=b[1];
+ind  = b.indexOf('>');
+b = b[ind+1]
+
+return b - a;
+
+};
+
+
 </script>
 @endsection
