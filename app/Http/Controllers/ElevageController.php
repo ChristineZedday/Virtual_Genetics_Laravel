@@ -357,11 +357,12 @@ class ElevageController extends Controller
     }
     public function chercheTerres ($id)
     {
-        static $prev = "1970-01-01" ;
-        $date = Gamedata::date();
-        if ($date != $prev)
-{          
-            $prev = $date;
+        $game = GameData::Find(1);
+        
+        if ($game->terres == false)
+        {          
+            $game->terres = true;
+            $game->save();
             $elevage = Elevage::Find($id);
             $surface = Elevage::terresAVendre();
           if ( 0 == $surface) {
@@ -372,6 +373,7 @@ class ElevageController extends Controller
             {
                 return view('achatTerres',['elevage'=>$elevage,'surface'=>$surface]);
             }
+          
         }
         else {
             return redirect()->back()->with('alert', 'Rien à vendre pour le moment');

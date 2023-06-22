@@ -20,6 +20,7 @@ class CreateGamedataTable extends Migration
             $table->date('date_courante');
             $table->date('date_debut');
             $table->string('lettre')->default('E');
+            $table->boolean('terres')->default(FALSE);
         });
     }
 

@@ -38,6 +38,7 @@ class TempsController extends Controller
                 Performance::initialize($animal->id);
             }
         }
+     
         $elevages = Elevage::where('role','Joueur')->get();
         foreach ($elevages as $elevage)
         {
@@ -51,6 +52,7 @@ class TempsController extends Controller
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
       
         $game->date_courante = $date;
+        $game->terres = false;
         $game->save();
 
         // checkFemellesTerme($date);
