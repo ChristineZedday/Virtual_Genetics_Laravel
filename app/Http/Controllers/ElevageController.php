@@ -382,12 +382,15 @@ class ElevageController extends Controller
     
     public function acheteTerres (request $request)
     {
-        $elevage = $request->input('elevage');
-        $elevage = Elevage::find($elevage);
-        $surface = $request->input('surface');
        
+            $elevage = $request->input('elevage');
+            $elevage = Elevage::find($elevage);
+            $surface = $request->input('surface');
+           
+            
+            $elevage->acheteTerres($surface);
         
-        $elevage->acheteTerres($surface);
+       
         return redirect()->route('dashboard',$elevage);
     }
 
