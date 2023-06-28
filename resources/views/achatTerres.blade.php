@@ -23,8 +23,10 @@
 function checkForm() 
 	{
 		valide = true;
-		budget = document.getElementById('budget').value;
-		prix =	document.getElementById('prix').value;
+		budget = parseInt(document.getElementById('budget').value();
+	
+		prix =	parseInt(document.getElementById('prix').value);
+	
 		
 		if (prix > budget)
 		{
