@@ -21,15 +21,15 @@
 <table>
 <tr>
 	<th>Photo</th>
-	<th>Nom </th>
-	<th>Qualité</th>
-	<th>Race</th>
+	<th>Nom <button onclick="tri(1, ASC, 0)"> &#x23F6;</button><button onclick="tri(1, DESC, 0)"> &#x23F7;</button></th>
+	<th>Qualité <button onclick="tri(2, ASC, 0)"> &#x23F6;</button><button onclick="tri(2, DESC, 0)"> &#x23F7;</button></th>
+	<th>Race<button onclick="tri(3, ASC, 0)"> &#x23F6;</button><button onclick="tri(3, DESC, 0)"> &#x23F7;</button></th>
 
-    <th>Couleur</th>
-	<th>taille</th>
-    <th>Date de naissance</th>
-    <th>Père</th>
-	<th>Mère</th>
+    <th>Couleur<button onclick="tri(4, ASC, 0)"> &#x23F6;</button><button onclick="tri(4, DESC, 0)"> &#x23F7;</button></th>
+	<th>taille<button onclick="tri(5, ASC, 0)"> &#x23F6;</button><button onclick="tri(5, DESC, 0)"> &#x23F7;</button></th>
+    <th>Date de naissance<button onclick="tri(6, ASC, 0)"> &#x23F6;</button><button onclick="tri(6, DESC, 0)"> &#x23F7;</button></th>
+    <th>Père<button onclick="tri(7, ASC, 0)"> &#x23F6;</button><button onclick="tri(7, DESC, 0)"> &#x23F7;</button></th>
+	<th>Mère<button onclick="tri(8, ASC, 0 )"> &#x23F6;</button><button onclick="tri(8, DESC, 0)"> &#x23F7;</button></th>
     <th>Voir</th>
   </tr>
 @foreach ($etalons as $animal)
@@ -61,15 +61,15 @@
 <table>
 <tr>
 	<th>Photo</th>
-	<th>Nom </th>
-	<th>Qualité</th>
-    <th>Race</th>
-    <th>Couleur</th>
-	<th>taille</th>
-    <th>Date de naissance</th>
-    <th>Père</th>
-	<th>Mère</th>
-	<th>Prix de la saillie</th>
+	<th>Nom<button onclick="tri(1, ASC, 1)"> &#x23F6;</button><button onclick="tri(1, DESC, 1)"> &#x23F7;</button> </th>
+	<th>Qualité<button onclick="tri(2, ASC, 1)"> &#x23F6;</button><button onclick="tri(2, DESC, 1)"> &#x23F7;</button></th>
+    <th>Race<button onclick="tri(3, ASC, 1)"> &#x23F6;</button><button onclick="tri(3, DESC, 1)"> &#x23F7;</button></th>
+    <th>Couleur<button onclick="tri(4, ASC, 1)"> &#x23F6;</button><button onclick="tri(4, DESC, 1)"> &#x23F7;</button></th>
+	<th>taille<button onclick="tri(5, ASC, 1)"> &#x23F6;</button><button onclick="tri(5, DESC, 1)"> &#x23F7;</button></th>
+    <th>Date de naissance<button onclick="tri(6, ASC, 1)"> &#x23F6;</button><button onclick="tri(6, DESC, 1)"> &#x23F7;</button></th>
+    <th>Père<button onclick="tri(7, ASC, 1)"> &#x23F6;</button><button onclick="tri(7, DESC, 1)"> &#x23F7;</button></th>
+	<th>Mère<button onclick="tri(8, ASC, 1)"> &#x23F6;</button><button onclick="tri(8, DESC, 1)"> &#x23F7;</button></th>
+	<th>Prix de la saillie<button onclick="tri(9, ASC, 1)"> &#x23F6;</button><button onclick="tri(9, DESC, 1)"> &#x23F7;</button></th>
     <th>Voir</th>
   </tr>
 @foreach ($exterieurs as $animal)
@@ -98,4 +98,80 @@
 </table>
 </div>
 
+<script>
+function tri(cle, sens, tab) {
+
+var table = document.getElementsByTagName('table')[tab]
+console.log('table: ' + tab);
+var myTbody = table.getElementsByTagName('tbody')[0];
+
+var lines = myTbody.getElementsByTagName('tr');
+
+var sorter = new Array();
+
+/*var lineStart = ( table.isClassName("cnxTableScroll") ) ? -1 : 0; //si setScroll() actif est toutes les lignes doivent être filtrées!*/
+
+//si -1 on trie l'ensemble du tableau, si 0 la première ligne n'est pas concernée
+
+var i = -1;
+
+while(lines[++i]){
+
+		sorter.push([lines[i],lines[i].getElementsByTagName('td')[cle].innerHTML]);
+
+};
+
+sorter.sort(sens);
+
+j=-1;
+
+while(sorter[++j]){
+
+		myTbody.appendChild(sorter[j][0]);
+
+}
+
+};
+
+function DESC(a,b) {
+
+a=a[1];
+
+b=b[1];
+
+a = parseInt(a) ? parseInt(a) : a; //pour les tris numériques
+
+b = parseInt(b) ? parseInt(b) : b; //pour les tris numériques
+
+if(a > b)       return -1;
+
+if(a < b)       return 1;
+
+return 0;
+
+};
+
+
+
+
+function ASC(a,b) {
+
+a=a[1];
+
+b=b[1];
+
+a = parseInt(a) ? parseInt(a) : a; //pour les tris numériques
+
+b = parseInt(b) ? parseInt(b) : b; //pour les tris numériques
+
+if(a > b)       return 1;
+
+if(a < b)       return -1;
+
+return 0;
+
+};
+
+
+</script>
 @endsection
