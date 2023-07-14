@@ -19,6 +19,7 @@
 @endisset
 <h3 >Mes Etalons:</h3>
 <table>
+	<thead>
 <tr>
 	<th>Photo</th>
 	<th>Nom <button onclick="tri(1, ASC, 0)"> &#x23F6;</button><button onclick="tri(1, DESC, 0)"> &#x23F7;</button></th>
@@ -32,6 +33,8 @@
 	<th>Mère<button onclick="tri(8, ASC, 0 )"> &#x23F6;</button><button onclick="tri(8, DESC, 0)"> &#x23F7;</button></th>
     <th>Voir</th>
   </tr>
+</thead>
+<tbody>
 @foreach ($etalons as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
@@ -55,10 +58,12 @@
 	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>Celui-ci?</button></a> </td>
 </tr>
 @endforeach
+</tbody>
 </table>
 </br>
 <h3>Etalons extérieurs</h3>
 <table>
+	<thead>
 <tr>
 	<th>Photo</th>
 	<th>Nom<button onclick="tri(1, ASC, 1)"> &#x23F6;</button><button onclick="tri(1, DESC, 1)"> &#x23F7;</button> </th>
@@ -72,6 +77,8 @@
 	<th>Prix de la saillie<button onclick="tri(9, ASC, 1)"> &#x23F6;</button><button onclick="tri(9, DESC, 1)"> &#x23F7;</button></th>
     <th>Voir</th>
   </tr>
+</thead>
+  <tbody>
 @foreach ($exterieurs as $animal)
 <tr>
 <td class='photo' style="height:70px; width:90px;">
@@ -95,6 +102,7 @@
 	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>Celui-là?</button></a> </td>
 </tr>
 @endforeach
+</tbody>
 </table>
 </div>
 
@@ -102,9 +110,8 @@
 function tri(cle, sens, tab) {
 
 var table = document.getElementsByTagName('table')[tab]
-console.log('table: ' + tab);
-var myTbody = table.getElementsByTagName('tbody')[0];
 
+var myTbody = table.getElementsByTagName('tbody')[0];
 var lines = myTbody.getElementsByTagName('tr');
 
 var sorter = new Array();
@@ -116,9 +123,9 @@ var sorter = new Array();
 var i = -1;
 
 while(lines[++i]){
-
+	
 		sorter.push([lines[i],lines[i].getElementsByTagName('td')[cle].innerHTML]);
-
+		
 };
 
 sorter.sort(sens);
