@@ -25,7 +25,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 2 ans',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 1,
                 'age_min' => 2,
                 'age_max' => 2,
@@ -43,7 +43,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâle 3 ans',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 1,
                 'age_min' => 3,
                 'age_max' => 3,
@@ -61,7 +61,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'étalons',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 1,
                 'age_min' => 4,
                 'age_max' => 18,
@@ -79,7 +79,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 2 ans',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 0,
                 'age_min' => 2,
                 'age_max' => 2,
@@ -97,7 +97,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'juments',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 0,
                 'age_min' => 4,
                 'age_max' => 18,
@@ -115,7 +115,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'juments suitées',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 0,
                 'age_min' => 4,
                 'age_max' => 18,
@@ -133,7 +133,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans suitées',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 0,
                 'age_min' => 3,
                 'age_max' => 3,
@@ -151,7 +151,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'pouliches 3 ans',
-                'type' => 'Modèle et Allures',
+             
                 'sexe' => 0,
                 'age_min' => 3,
                 'age_max' => 3,
