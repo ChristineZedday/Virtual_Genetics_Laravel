@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -159,6 +160,42 @@ class CategoriesTableSeeder extends Seeder
                 'saillie' => NULL,
                 'suitee' => 0,
                 'entier' => 1,
+                'autorise' => NULL,
+                'approuve' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Poney ',
+                'type' => 'Modèle et Allures dressage',
+                'sexe' => NULL,
+                'age_min' => 4,
+                'age_max' => NULL,
+                'taille_min' => 108,
+                'taille_max' => 149,
+                'saillie' => NULL,
+                'suitee' => NULL,
+                'entier' => NULL,
+                'autorise' => NULL,
+                'approuve' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Poney E',
+                'type' => 'Modèle et Allures dressage',
+                'sexe' => NULL,
+                'age_min' => 4,
+                'age_max' => NULL,
+                'taille_min' => 149,
+                'taille_max' => NULL,
+                'saillie' => NULL,
+                'suitee' => NULL,
+                'entier' => NULL,
                 'autorise' => NULL,
                 'approuve' => NULL,
             ),
