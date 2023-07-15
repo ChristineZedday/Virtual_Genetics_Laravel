@@ -43,7 +43,8 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
-                'taille_additive' => 99,
+                'capacite_apprentissage_additive' => 12,
+                'capacite_dressage_additive' => 12, 'taille_additive' => 99,
                 'notes' => NULL,
             ),
             1 => 
@@ -70,7 +71,8 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 102,
+                'capacite_apprentissage_additive' => 12, 
+                 'capacite_dressage_additive' => 12, 'taille_additive' => 102,
                 'notes' => NULL,
             ),
             2 => 
@@ -97,7 +99,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 114,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 114,
                 'notes' => NULL,
             ),
             3 => 
@@ -124,7 +126,8 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 106,
+                'capacite_apprentissage_additive' => 12,  
+                'capacite_dressage_additive' => 12, 'capacite_dressage_additive' => 12, 'taille_additive'  'capacite_dressage_additive' => 12, 'taille_additive' => 106,
                 'notes' => NULL,
             ),
             4 => 
@@ -151,7 +154,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 117,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 117,
                 'notes' => NULL,
             ),
             5 => 
@@ -178,7 +181,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 121,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 121,
                 'notes' => NULL,
             ),
             6 => 
@@ -205,7 +208,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 104,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 104,
                 'notes' => NULL,
             ),
             7 => 
@@ -232,7 +235,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 118,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 118,
                 'notes' => NULL,
             ),
             8 => 
@@ -259,7 +262,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 113,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 113,
                 'notes' => NULL,
             ),
             9 => 
@@ -286,7 +289,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 120,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 120,
                 'notes' => NULL,
             ),
             10 => 
@@ -313,7 +316,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 119,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 119,
                 'notes' => NULL,
             ),
             11 => 
@@ -340,7 +343,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
-                'taille_additive' => 129,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 129,
                 'notes' => NULL,
             ),
             12 => 
@@ -367,7 +370,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 122,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 122,
                 'notes' => NULL,
             ),
             13 => 
@@ -394,7 +397,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 101,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 101,
                 'notes' => NULL,
             ),
             14 => 
@@ -421,7 +424,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
-                'taille_additive' => 99,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 99,
                 'notes' => NULL,
             ),
             15 => 
@@ -448,7 +451,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 112,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 112,
                 'notes' => NULL,
             ),
             16 => 
@@ -475,7 +478,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 103,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 103,
                 'notes' => NULL,
             ),
             17 => 
@@ -502,7 +505,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 105,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 105,
                 'notes' => NULL,
             ),
             18 => 
@@ -529,7 +532,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 98,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 98,
                 'notes' => NULL,
             ),
             19 => 
@@ -556,7 +559,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 109,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 109,
                 'notes' => NULL,
             ),
             20 => 
@@ -583,7 +586,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 114,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 114,
                 'notes' => NULL,
             ),
             21 => 
@@ -610,7 +613,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 107,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 107,
                 'notes' => NULL,
             ),
             22 => 
@@ -637,7 +640,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 101,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 101,
                 'notes' => NULL,
             ),
             23 => 
@@ -664,7 +667,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 113,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 113,
                 'notes' => NULL,
             ),
             24 => 
@@ -691,7 +694,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 111,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 111,
                 'notes' => NULL,
             ),
             25 => 
@@ -718,7 +721,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 9,
                 'modele_allures_additifs' => 9,
-                'taille_additive' => 106,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 106,
                 'notes' => NULL,
             ),
             26 => 
@@ -745,7 +748,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 108,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 108,
                 'notes' => NULL,
             ),
             27 => 
@@ -772,7 +775,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 103,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 103,
                 'notes' => NULL,
             ),
             28 => 
@@ -799,7 +802,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 98,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 98,
                 'notes' => NULL,
             ),
             29 => 
@@ -826,7 +829,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 107,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 107,
                 'notes' => NULL,
             ),
             30 => 
@@ -853,7 +856,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 105,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 105,
                 'notes' => NULL,
             ),
             31 => 
@@ -880,7 +883,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 108,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 108,
                 'notes' => NULL,
             ),
             32 => 
@@ -907,7 +910,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
-                'taille_additive' => 105,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 105,
                 'notes' => NULL,
             ),
             33 => 
@@ -934,7 +937,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 98,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 98,
                 'notes' => NULL,
             ),
             34 => 
@@ -961,7 +964,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 5,
                 'modele_allures_additifs' => 20,
-                'taille_additive' => 93,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 93,
                 'notes' => NULL,
             ),
             35 => 
@@ -988,7 +991,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 91,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 91,
                 'notes' => NULL,
             ),
             36 => 
@@ -1015,7 +1018,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 85,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 85,
                 'notes' => NULL,
             ),
             37 => 
@@ -1042,7 +1045,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 125,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 125,
                 'notes' => NULL,
             ),
             38 => 
@@ -1069,7 +1072,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 119,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 119,
                 'notes' => NULL,
             ),
             39 => 
@@ -1096,7 +1099,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 135,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 135,
                 'notes' => NULL,
             ),
             40 => 
@@ -1123,7 +1126,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 132,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 132,
                 'notes' => NULL,
             ),
             41 => 
@@ -1150,7 +1153,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 116,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 116,
                 'notes' => NULL,
             ),
             42 => 
@@ -1177,7 +1180,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 120,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 120,
                 'notes' => NULL,
             ),
             43 => 
@@ -1204,7 +1207,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 110,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 110,
                 'notes' => NULL,
             ),
             44 => 
@@ -1231,7 +1234,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 136,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 136,
                 'notes' => NULL,
             ),
             45 => 
@@ -1258,7 +1261,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 133,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 133,
                 'notes' => NULL,
             ),
             46 => 
@@ -1285,7 +1288,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 151,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 151,
                 'notes' => NULL,
             ),
             47 => 
@@ -1312,7 +1315,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 114,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 114,
                 'notes' => NULL,
             ),
             48 => 
@@ -1339,7 +1342,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 148,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 148,
                 'notes' => NULL,
             ),
             49 => 
@@ -1366,7 +1369,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 153,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 153,
                 'notes' => NULL,
             ),
             50 => 
@@ -1393,7 +1396,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 154,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 154,
                 'notes' => NULL,
             ),
             51 => 
@@ -1420,7 +1423,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 156,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 156,
                 'notes' => NULL,
             ),
             52 => 
@@ -1447,7 +1450,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 153,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 153,
                 'notes' => NULL,
             ),
             53 => 
@@ -1474,7 +1477,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 149,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 149,
                 'notes' => NULL,
             ),
             54 => 
@@ -1501,7 +1504,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 95,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 95,
                 'notes' => NULL,
             ),
             55 => 
@@ -1528,7 +1531,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 101,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 101,
                 'notes' => NULL,
             ),
             56 => 
@@ -1555,7 +1558,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 104,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 104,
                 'notes' => NULL,
             ),
             57 => 
@@ -1582,7 +1585,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 102,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 102,
                 'notes' => NULL,
             ),
             58 => 
@@ -1609,7 +1612,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 100,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 100,
                 'notes' => NULL,
             ),
             59 => 
@@ -1636,7 +1639,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 80,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 80,
                 'notes' => NULL,
             ),
             60 => 
@@ -1663,7 +1666,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 127,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 127,
                 'notes' => NULL,
             ),
             61 => 
@@ -1690,7 +1693,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 115,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 115,
                 'notes' => NULL,
             ),
             62 => 
@@ -1717,7 +1720,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
-                'taille_additive' => 126,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 126,
                 'notes' => NULL,
             ),
             63 => 
@@ -1744,7 +1747,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 134,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 134,
                 'notes' => NULL,
             ),
             64 => 
@@ -1771,7 +1774,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 136,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 136,
                 'notes' => NULL,
             ),
             65 => 
@@ -1798,7 +1801,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 137,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 137,
                 'notes' => NULL,
             ),
             66 => 
@@ -1825,7 +1828,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 133,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 133,
                 'notes' => NULL,
             ),
             67 => 
@@ -1852,7 +1855,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 135,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 135,
                 'notes' => NULL,
             ),
             68 => 
@@ -1879,7 +1882,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 132,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 132,
                 'notes' => NULL,
             ),
             69 => 
@@ -1906,7 +1909,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
-                'taille_additive' => 129,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 129,
                 'notes' => NULL,
             ),
             70 => 
@@ -1933,7 +1936,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 148,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 148,
                 'notes' => NULL,
             ),
             71 => 
@@ -1960,7 +1963,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 134,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 134,
                 'notes' => NULL,
             ),
             72 => 
@@ -1987,7 +1990,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 151,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 151,
                 'notes' => NULL,
             ),
             73 => 
@@ -2014,7 +2017,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 147,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 147,
                 'notes' => NULL,
             ),
             74 => 
@@ -2041,7 +2044,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 142,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 142,
                 'notes' => NULL,
             ),
             75 => 
@@ -2068,7 +2071,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 155,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 155,
                 'notes' => NULL,
             ),
             76 => 
@@ -2095,7 +2098,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 89,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 89,
                 'notes' => NULL,
             ),
             77 => 
@@ -2122,7 +2125,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 95,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 95,
                 'notes' => NULL,
             ),
             78 => 
@@ -2149,7 +2152,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 105,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 105,
                 'notes' => NULL,
             ),
             79 => 
@@ -2176,7 +2179,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 74,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 74,
                 'notes' => NULL,
             ),
             80 => 
@@ -2203,7 +2206,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 150,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 150,
                 'notes' => NULL,
             ),
             81 => 
@@ -2230,7 +2233,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 149,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 149,
                 'notes' => NULL,
             ),
             82 => 
@@ -2257,7 +2260,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 152,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 152,
                 'notes' => NULL,
             ),
             83 => 
@@ -2284,7 +2287,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 147,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 147,
                 'notes' => NULL,
             ),
             84 => 
@@ -2311,7 +2314,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 152,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 152,
                 'notes' => NULL,
             ),
             85 => 
@@ -2338,7 +2341,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 154,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 154,
                 'notes' => NULL,
             ),
             86 => 
@@ -2365,7 +2368,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 145,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 145,
                 'notes' => NULL,
             ),
             87 => 
@@ -2392,7 +2395,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 144,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 144,
                 'notes' => NULL,
             ),
             88 => 
@@ -2419,7 +2422,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 128,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 128,
                 'notes' => NULL,
             ),
             89 => 
@@ -2446,7 +2449,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 124,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 124,
                 'notes' => NULL,
             ),
             90 => 
@@ -2473,7 +2476,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 116,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 116,
                 'notes' => NULL,
             ),
             91 => 
@@ -2500,7 +2503,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 118,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 118,
                 'notes' => NULL,
             ),
             92 => 
@@ -2527,7 +2530,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 138,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 138,
                 'notes' => NULL,
             ),
             93 => 
@@ -2554,7 +2557,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 145,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 145,
                 'notes' => NULL,
             ),
             94 => 
@@ -2581,7 +2584,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 149,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 149,
                 'notes' => NULL,
             ),
             95 => 
@@ -2608,7 +2611,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 131,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 131,
                 'notes' => NULL,
             ),
             96 => 
@@ -2635,7 +2638,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
-                'taille_additive' => 85,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 85,
                 'notes' => NULL,
             ),
             97 => 
@@ -2662,7 +2665,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 92,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 92,
                 'notes' => NULL,
             ),
             98 => 
@@ -2689,7 +2692,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 89,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 89,
                 'notes' => NULL,
             ),
             99 => 
@@ -2716,7 +2719,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 151,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 151,
                 'notes' => NULL,
             ),
             100 => 
@@ -2743,7 +2746,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 147,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 147,
                 'notes' => NULL,
             ),
             101 => 
@@ -2770,7 +2773,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 139,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 139,
                 'notes' => NULL,
             ),
             102 => 
@@ -2797,7 +2800,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 112,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 112,
                 'notes' => NULL,
             ),
             103 => 
@@ -2824,7 +2827,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 152,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 152,
                 'notes' => NULL,
             ),
             104 => 
@@ -2851,7 +2854,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 116,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 116,
                 'notes' => NULL,
             ),
             105 => 
@@ -2878,7 +2881,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 119,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 119,
                 'notes' => NULL,
             ),
             106 => 
@@ -2905,7 +2908,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
-                'taille_additive' => 122,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 122,
                 'notes' => NULL,
             ),
             107 => 
@@ -2932,7 +2935,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 119,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 119,
                 'notes' => NULL,
             ),
             108 => 
@@ -2959,7 +2962,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 128,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 128,
                 'notes' => NULL,
             ),
             109 => 
@@ -2986,7 +2989,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 132,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 132,
                 'notes' => NULL,
             ),
             110 => 
@@ -3013,7 +3016,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 135,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 135,
                 'notes' => NULL,
             ),
             111 => 
@@ -3040,7 +3043,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 152,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 152,
                 'notes' => NULL,
             ),
             112 => 
@@ -3067,7 +3070,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 148,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 148,
                 'notes' => NULL,
             ),
             113 => 
@@ -3094,7 +3097,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 155,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 155,
                 'notes' => NULL,
             ),
             114 => 
@@ -3121,7 +3124,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 139,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 139,
                 'notes' => NULL,
             ),
             115 => 
@@ -3148,7 +3151,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 147,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 147,
                 'notes' => NULL,
             ),
             116 => 
@@ -3175,7 +3178,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 142,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 142,
                 'notes' => NULL,
             ),
             117 => 
@@ -3202,7 +3205,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 137,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 137,
                 'notes' => NULL,
             ),
             118 => 
@@ -3229,7 +3232,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 138,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 138,
                 'notes' => NULL,
             ),
             119 => 
@@ -3256,7 +3259,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 145,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 145,
                 'notes' => NULL,
             ),
             120 => 
@@ -3283,7 +3286,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 19,
                 'modele_allures_additifs' => 19,
-                'taille_additive' => 130,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 130,
                 'notes' => NULL,
             ),
             121 => 
@@ -3310,7 +3313,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
-                'taille_additive' => 128,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 128,
                 'notes' => NULL,
             ),
             122 => 
@@ -3337,7 +3340,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 136,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 136,
                 'notes' => NULL,
             ),
             123 => 
@@ -3364,7 +3367,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
-                'taille_additive' => 129,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 129,
                 'notes' => NULL,
             ),
             124 => 
@@ -3391,7 +3394,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 144,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 144,
                 'notes' => NULL,
             ),
             125 => 
@@ -3418,7 +3421,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 140,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 140,
                 'notes' => NULL,
             ),
             126 => 
@@ -3445,7 +3448,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 10,
                 'modele_allures_additifs' => 10,
-                'taille_additive' => 127,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 127,
                 'notes' => NULL,
             ),
             127 => 
@@ -3472,7 +3475,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 9,
                 'modele_allures_additifs' => 9,
-                'taille_additive' => 129,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 129,
                 'notes' => NULL,
             ),
             128 => 
@@ -3499,7 +3502,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 145,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 145,
                 'notes' => NULL,
             ),
             129 => 
@@ -3526,7 +3529,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 147,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 147,
                 'notes' => NULL,
             ),
             130 => 
@@ -3553,7 +3556,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 125,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 125,
                 'notes' => NULL,
             ),
             131 => 
@@ -3580,7 +3583,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 130,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 130,
                 'notes' => NULL,
             ),
             132 => 
@@ -3607,7 +3610,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 132,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 132,
                 'notes' => NULL,
             ),
             133 => 
@@ -3634,7 +3637,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 137,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 137,
                 'notes' => NULL,
             ),
             134 => 
@@ -3661,7 +3664,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 137,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 137,
                 'notes' => NULL,
             ),
             135 => 
@@ -3688,7 +3691,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 126,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 126,
                 'notes' => NULL,
             ),
             136 => 
@@ -3715,7 +3718,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 138,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 138,
                 'notes' => NULL,
             ),
             137 => 
@@ -3742,7 +3745,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 11,
                 'modele_allures_additifs' => 11,
-                'taille_additive' => 119,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 119,
                 'notes' => NULL,
             ),
             138 => 
@@ -3769,7 +3772,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 123,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 123,
                 'notes' => NULL,
             ),
             139 => 
@@ -3796,7 +3799,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 131,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 131,
                 'notes' => NULL,
             ),
             140 => 
@@ -3823,7 +3826,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 15,
                 'modele_allures_additifs' => 15,
-                'taille_additive' => 119,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 119,
                 'notes' => NULL,
             ),
             141 => 
@@ -3850,7 +3853,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 127,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 127,
                 'notes' => NULL,
             ),
             142 => 
@@ -3877,7 +3880,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 134,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 134,
                 'notes' => NULL,
             ),
             143 => 
@@ -3904,7 +3907,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 140,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 140,
                 'notes' => NULL,
             ),
             144 => 
@@ -3931,7 +3934,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 142,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 142,
                 'notes' => NULL,
             ),
             145 => 
@@ -3958,7 +3961,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 14,
                 'modele_allures_additifs' => 14,
-                'taille_additive' => 147,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 147,
                 'notes' => NULL,
             ),
             146 => 
@@ -3985,7 +3988,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 148,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 148,
                 'notes' => NULL,
             ),
             147 => 
@@ -4012,7 +4015,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 17,
                 'modele_allures_additifs' => 17,
-                'taille_additive' => 146,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 146,
                 'notes' => NULL,
             ),
             148 => 
@@ -4039,7 +4042,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 144,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 144,
                 'notes' => NULL,
             ),
             149 => 
@@ -4066,7 +4069,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 138,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 138,
                 'notes' => NULL,
             ),
             150 => 
@@ -4093,7 +4096,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 141,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 141,
                 'notes' => NULL,
             ),
             151 => 
@@ -4120,7 +4123,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 148,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 148,
                 'notes' => NULL,
             ),
             152 => 
@@ -4147,7 +4150,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 18,
                 'modele_allures_additifs' => 18,
-                'taille_additive' => 143,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 143,
                 'notes' => NULL,
             ),
             153 => 
@@ -4174,7 +4177,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 12,
                 'modele_allures_additifs' => 12,
-                'taille_additive' => 133,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 133,
                 'notes' => NULL,
             ),
             154 => 
@@ -4201,7 +4204,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 135,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 135,
                 'notes' => NULL,
             ),
             155 => 
@@ -4228,7 +4231,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 16,
                 'modele_allures_additifs' => 16,
-                'taille_additive' => 134,
+                'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 134,
                 'notes' => NULL,
             ),
             156 => 
@@ -4255,7 +4258,7 @@ class AnimauxTableSeeder extends Seeder
                 'dam_id' => NULL,
                 'modele_allures' => 13,
                 'modele_allures_additifs' => 13,
-                'taille_additive' => 138,
+                'capacite_apprentissage_additive' => 12,  'capacite_apprentissage_additive' => 12,  'capacite_dressage_additive' => 12, 'taille_additive' => 138,
                 'notes' => NULL,
             ),
         ));

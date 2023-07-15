@@ -41,6 +41,8 @@ class CreateAnimauxTable extends Migration
             $table->foreign('race_id')->references('id')->on('races');
             $table->tinyInteger('modele_allures')->unsigned()->nullable();
             $table->tinyInteger('modele_allures_additifs')->unsigned()->default(12);
+            $table->tinyInteger('capacite_apprentissage_additive')->unsigned()->default(12);
+            $table->tinyInteger('capacite_dressage_additive')->unsigned()->default(12);
         });
     }
 
