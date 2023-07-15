@@ -169,7 +169,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'Poney ',
-                'type' => 'Dressage',
+              
                 'sexe' => NULL,
                 'age_min' => 4,
                 'age_max' => NULL,
@@ -187,7 +187,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'Poney E',
-                'type' => 'Dressage',
+              
                 'sexe' => NULL,
                 'age_min' => 4,
                 'age_max' => NULL,
