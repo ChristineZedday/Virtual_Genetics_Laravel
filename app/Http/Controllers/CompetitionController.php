@@ -64,8 +64,12 @@ class CompetitionController extends Controller
             
             
             ]);
-      
-        $resultat = new Resultat;
+            $categorie = Categorie::Find($validated->categorie_id);
+      if ($categorie->type = 'Modele et Allures') {
+        $resultat = new Resultat;}
+        else {
+            $resultat = new Dressage;   
+        }
         $resultat->fill($validated);
         $resultat->evenement_id = $evenement;
         $resultat->competition_id = $competition;
