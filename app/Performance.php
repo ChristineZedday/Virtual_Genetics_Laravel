@@ -22,6 +22,8 @@ class Performance extends Model
         $perf->sante = 100;
         $perf->points = 0;
         $perf->niveau_id = 1;
+        $perf->niveau_dressage = 1;
+        $perf->pourcent_niveau = 0;
         $perf->save();
         return ($perf);
     }
