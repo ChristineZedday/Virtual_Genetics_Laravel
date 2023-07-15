@@ -64,7 +64,7 @@ class CompetitionController extends Controller
             
             
             ]);
-            $categorie = Categorie::Find($validated->categorie_id);
+            $categorie = Categorie::Find($competition->categorie_id);
       if ($categorie->type = 'Modele et Allures') {
         $resultat = new Resultat;}
         else {
@@ -81,7 +81,7 @@ class CompetitionController extends Controller
         $animaux= $elevage->Animaux()->get();
         $evenement = Evenement::Find($resultat->evenement_id);
         $competition = Competition::Find($competition);
-        $categorie = Categorie::Find($resultat->categorie_id);
+       
 
         
         if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal))  { 

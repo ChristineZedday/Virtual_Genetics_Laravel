@@ -48,14 +48,24 @@ class Categorie extends Model
 
                 return false;
             }
-        if ($this->age_max < $animal->ageAdministratif($date)) {
+        if ($this->age_max != null && $this->age_max < $animal->ageAdministratif($date)) {
          
                 return false; 
             }
-        if ($this->sexe != $animal->genre()) {
+        if ($this->sexe != null && $this->sexe != $animal->genre()) {
         
                 return false;
         }
+
+        if ($this->taille_min != null && $this->taille_min > $animal->taille()) {
+        
+            return false;
+    }
+
+    if ($this->taille_max != null && $this->taille_max < $animal->taille()) {
+        
+        return false;
+}
            
    // }
         return true;
@@ -103,10 +113,20 @@ class Categorie extends Model
      return false;
  }
 }
+
 public function run($competition, $evenement) {
     
-    $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-  $prix = Competition::Find($competition)->prix_premier;
+    $competition = Competition::Find($competition);
+
+    if ($competition->type == 'Modèle et Allures') {
+        $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
+    }
+    else {
+        $inscrits = Dressage::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
+    }
+
+   
+  $prix = $competition->prix_premier;
   
     $nb = $inscrits->count();
     //dd($inscrits); //ça marche quand il ya des animaux du bon âge
@@ -140,7 +160,7 @@ public function run($competition, $evenement) {
   
    $i =1;
    foreach ($notes as $key => $value){ //pour tous les classés
-    $res= Resultat::where('evenement_id',$evenement)->where('competition_id', $competition)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
+    $res= Resultat::where('evenement_id',$evenement)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
     //dd($res);//c'est ça
     $res->classement = $i;
     $res->save();
