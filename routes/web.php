@@ -19,6 +19,10 @@ Route::get('/', function () { if ( Auth::check() ) {return redirect()->action('H
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/logout', 'LogoutController@perform')->name('logout');
+
+
+
 //routes de création et mise à jour
 
 Route::get('/elevage.create', 'ElevageController@create')->name('elevage.create');
