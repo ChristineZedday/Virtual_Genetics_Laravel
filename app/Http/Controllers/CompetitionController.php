@@ -9,6 +9,7 @@ use App\Evenement;
 use App\Animal;
 use App\Categorie;
 use App\Resultat;
+use App\Dressage;
 use App\Gamedata;
 use App\Race;
 
@@ -64,24 +65,25 @@ class CompetitionController extends Controller
             
             
             ]);
-            $categorie = Categorie::Find($competition->categorie_id);
-      if ($categorie->type = 'Modele et Allures') {
-        $resultat = new Resultat;}
-        else {
-            $resultat = new Dressage;   
-        }
+       $competition = Competition::Find($competition);   
+    
+     
+        $resultat = new Resultat;
+     
         $resultat->fill($validated);
+        
         $resultat->evenement_id = $evenement;
-        $resultat->competition_id = $competition;
+        $resultat->competition_id = $competition->id;
     
 
         $animal = Animal::Find($resultat->animal_id);
         $elevage= Elevage::Find($animal->elevage_id);
-       
+        
         $animaux= $elevage->Animaux()->get();
         $evenement = Evenement::Find($resultat->evenement_id);
-        $competition = Competition::Find($competition);
-       
+        
+       $categorie = Categorie::Find($resultat->categorie_id);
+
 
         
         if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal))  { 
@@ -111,7 +113,9 @@ class CompetitionController extends Controller
     public function inscrits( $elevage)
     {
        $inscrits = Resultat::inscrits($elevage);
+      
        $elevage =Elevage::Find($elevage);
+       
      
        return view('inscrits', ['elevage' => $elevage, 'inscrits' => $inscrits]);
 
@@ -125,7 +129,8 @@ class CompetitionController extends Controller
         
         $elevage =Elevage::Find($elevage);
         //dd($elevage);
-        $resultats = Resultat::resultats($elevage->id);
+        $resultats  = Resultat::resultats($elevage->id);
+       
         //dd($resultats);
         return view('resultats', ['elevage' => $elevage, 'resultats' => $resultats]);
         

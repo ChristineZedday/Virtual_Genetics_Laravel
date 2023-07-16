@@ -118,12 +118,9 @@ public function run($competition, $evenement) {
     
     $competition = Competition::Find($competition);
 
-    if ($competition->type == 'Modèle et Allures') {
+   
         $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-    }
-    else {
-        $inscrits = Dressage::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-    }
+  
 
    
   $prix = $competition->prix_premier;
@@ -146,15 +143,22 @@ public function run($competition, $evenement) {
             }
         }
     }*/
-    //dd($animal->nomComplet());//vi vi vi
-    $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
-    //dd($notes); //TB
+  switch ($competition->type) {
+    case 'Modèles et Allures':
+        $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
+        //dd($notes); //TB
+        break;
+    case 'Dressage':
+        $notes[$animal->id] = 2  * ($animal->modele_allures  + rand(-100,100)/100 + $animal->capacite_dressage_additive  + rand(-100,100)/100) + $animal->capacite_apprentissage_additive * pourcent_niveau/100 ;
+  }
+}
+   
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
    
 
     //dd($inscrit);//ouais!!
-   }
+
    arsort($notes); //tri décroissant des valeurs
    $notes = array_slice($notes,0,$classes,true);//on garde les classés
   
@@ -166,6 +170,8 @@ public function run($competition, $evenement) {
     $res->save();
     $animal = Animal::find($key);
     $perf = $animal->Performance;
+    switch ($competition->type){
+    case 'Modèle et Allures':
     switch($i) {
         case 1:
             $perf->points += 5;
@@ -173,7 +179,16 @@ public function run($competition, $evenement) {
             $perf->points += 2;
         default:
             $perf->points +=1;
-
+        }
+        case 'Dressage':
+            switch($i) {
+                case 1:
+                    $perf->pourcent_niveau += 20;
+                case 2:
+                    $perf->pourcent_niveau += 15;
+                default:
+                    $perf->pourcent_niveau +=10;
+                }
     }
     $perf->save();
     $perf->upgrade();
