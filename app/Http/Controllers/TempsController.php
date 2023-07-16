@@ -340,31 +340,33 @@ static function runCompetitions() {
     $m = $date->format('m');
     $y = $date->format('Y');
 
- 
     $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->get(); 
-//dd($evenements); //OK
 
-  foreach ($evenements as $evenement){
+    foreach ($evenements as $evenement){
     $competitions = $evenement->Competitions;
-    foreach ($competitions as $competition) {
-        $comp= $competition->id;
-        $filter = function($query) use ($comp) {
-       $query->where('competition_id', $comp);
-   };
-        $categories = Categorie::with(['competitions' =>$filter])->get();
-        //dd($categories);//with et pas whereHas sinon 1 seule catégorie???
-        foreach ($categories as $categorie) {
-            $categorie->run($competition->id,$evenement->id) ;  
-              
+        try {
+        foreach ($competitions as $competition) {
+            $comp= $competition->id;
+            $filter = function($query) use ($comp) {
+                $query->where('competition_id', $comp);
+                };
+            $categories = Categorie::with(['competitions' =>$filter])->get();
+            //with et pas whereHas sinon 1 seule catégorie???
+            foreach ($categories as $categorie) {
+  
+                $categorie->run($competition->id,$evenement->id) ;  
             }
-    }
-   
-    $evenement->nextYear();
+        }
+        }
+  
+finally 
+ {   $evenement->nextYear();}
   }
 
 }
 
 }
+
 
 
 

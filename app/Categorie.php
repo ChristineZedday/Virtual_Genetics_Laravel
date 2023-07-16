@@ -118,12 +118,11 @@ public function run($competition, $evenement) {
     
     
     $competition = Competition::Find($competition);
-
     $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-
+//dd($inscrits);
     $prix = $competition->prix_premier;
     $nb = $inscrits->count();
-   // dd($nb);
+   //dd($nb);
     //ça marche quand il ya des animaux du bon âge
     $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
     $notes = [];
