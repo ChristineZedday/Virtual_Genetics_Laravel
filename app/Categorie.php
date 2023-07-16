@@ -116,22 +116,21 @@ class Categorie extends Model
 
 public function run($competition, $evenement) {
     
+    
     $competition = Competition::Find($competition);
 
-   
-        $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-  
+    $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
 
-   
-  $prix = $competition->prix_premier;
-  
+    $prix = $competition->prix_premier;
     $nb = $inscrits->count();
-    //dd($inscrits); //ça marche quand il ya des animaux du bon âge
-   $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
-   $notes = [];
+   // dd($nb);
+    //ça marche quand il ya des animaux du bon âge
+    $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
+    $notes = [];
    //dd('inscrits: '.$nb.' classés: '.$classes);
-   foreach ($inscrits as $inscrit) {
-    $animal = $inscrit->animal;
+    foreach ($inscrits as $inscrit) {
+        $animal = $inscrit->animal;
+        
   /*  if ($animal->genre() == 0) {//passer les juments qui viennent de pouliner dans leur catégorie suitées
         if ($animal->Statut) {
             if ($animal->Statut->suitee){
@@ -143,19 +142,19 @@ public function run($competition, $evenement) {
             }
         }
     }*/
-  switch ($competition->type) {
-    case 'Modèles et Allures':
-        $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
-        //dd($notes); //TB
-        break;
-    case 'Dressage':
-        $notes[$animal->id] = 2  * ($animal->modele_allures  + rand(-100,100)/100 + $animal->capacite_dressage_additive  + rand(-100,100)/100) + $animal->capacite_apprentissage_additive * pourcent_niveau/100 ;
+   dd('avant notes');
+        if ($competition->type == 'Modèle et Allures')
+           { $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
+          }
+            
+        else
+         {   $notes[$animal->id] = 2  * ($animal->modele_allures  + rand(-100,100)/100 + $animal->capacite_dressage_additive  + rand(-100,100)/100) + $animal->capacite_apprentissage_additive * $animal->performance->pourcent_niveau/100 ;
   }
-}
+
    
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
-   
+}  
 
     //dd($inscrit);//ouais!!
 
@@ -171,13 +170,13 @@ public function run($competition, $evenement) {
     $animal = Animal::find($key);
     $perf = $animal->Performance;
     switch ($competition->type){
-    case 'Modèle et Allures':
-    switch($i) {
-        case 1:
+        case 'Modèle et Allures':
+        switch($i) {
+            case 1:
             $perf->points += 5;
-        case 2:
+            case 2:
             $perf->points += 2;
-        default:
+            default:
             $perf->points +=1;
         }
         case 'Dressage':
@@ -191,7 +190,13 @@ public function run($competition, $evenement) {
                 }
     }
     $perf->save();
+    switch ($competition->type) {
+        case 'Modèle et Allures':
     $perf->upgrade();
+    break;
+            case 'Dressage':
+    $perf->upgradeDressage();
+    }
     //dd($res);//Oui-da.
    /* $debug = New Debug();
  /*   $debug = New Debug();

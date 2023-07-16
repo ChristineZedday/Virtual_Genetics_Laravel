@@ -27,26 +27,11 @@ class Performance extends Model
         $perf->save();
         return ($perf);
     }
-    public function upgrade()
+  
+    public function upgradeDressage()
     {
-        $actuel = $this->Niveau;
-        
-            if ($actuel->libelle == "départemental" && $this->points >= 3)  {
-                $niveau = Niveau::where('libelle','régional')->first();
-                $this->niveau_id = $niveau->id;
-                $this->points = 0;
-                $this->save();}
-            else if ($actuel->libelle == "régional" && $this->points >=5)
-             {   $niveau = Niveau::where('libelle','national')->first();
-                $this->niveau_id = $niveau->id;
-                $this->points = 0;
-                $this->save();}
-          else if ($actuel->libelle == "national" && $this->points >=10)
-                 {   $niveau = Niveau::where('libelle','mondial')->first();
-                    $this->niveau_id = $niveau->id;
-                    $this->points = 0;
-                    $this->save();
+        if ($this->pourcent_niveau >= 60) {
+            $this->niveau_dressage ++;
         }
-       
     }
 }
