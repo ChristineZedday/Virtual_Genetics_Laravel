@@ -116,10 +116,8 @@ class Categorie extends Model
 
 public function run($competition, $evenement) {
     
-    
-    $competition = Competition::Find($competition);
-    $inscrits = Resultat::where('evenement_id', $evenement)->where('categorie_id', $this->id)->where('competition_id', $competition)->get();
-//dd($inscrits);
+    $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();
+
     $prix = $competition->prix_premier;
     $nb = $inscrits->count();
    //dd($nb);
@@ -141,13 +139,13 @@ public function run($competition, $evenement) {
             }
         }
     }*/
-   dd('avant notes');
+   
         if ($competition->type == 'Modèle et Allures')
            { $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
           }
             
         else
-         {   $notes[$animal->id] = 2  * ($animal->modele_allures  + rand(-100,100)/100 + $animal->capacite_dressage_additive  + rand(-100,100)/100) + $animal->capacite_apprentissage_additive * $animal->performance->pourcent_niveau/100 ;
+         {   $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive ;
   }
 
    
@@ -162,7 +160,7 @@ public function run($competition, $evenement) {
   
    $i =1;
    foreach ($notes as $key => $value){ //pour tous les classés
-    $res= Resultat::where('evenement_id',$evenement)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
+    $res= Resultat::where('evenement_id',$evenement->id)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
     //dd($res);//c'est ça
     $res->classement = $i;
     $res->save();
@@ -182,8 +180,10 @@ public function run($competition, $evenement) {
             switch($i) {
                 case 1:
                     $perf->pourcent_niveau += 20;
+                    break;
                 case 2:
                     $perf->pourcent_niveau += 15;
+                    break;
                 default:
                     $perf->pourcent_niveau +=10;
                 }

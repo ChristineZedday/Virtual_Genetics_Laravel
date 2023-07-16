@@ -354,7 +354,7 @@ static function runCompetitions() {
             //with et pas whereHas sinon 1 seule catégorie???
             foreach ($categories as $categorie) {
   
-                $categorie->run($competition->id,$evenement->id) ;  
+                $categorie->run($competition,$evenement) ;  
             }
         }
         }
