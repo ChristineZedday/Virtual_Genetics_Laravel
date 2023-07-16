@@ -53,6 +53,7 @@ class Performance extends Model
     {
         if ($this->pourcent_niveau >= 60) {
             $this->niveau_dressage ++;
+            $this->pourcent_niveau = 0;
         }
     }
 }

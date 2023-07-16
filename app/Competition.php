@@ -28,6 +28,11 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
     {
         return $this->BelongsToMany('App\Categorie');
     }
+
+    public function Reprises()
+    {
+        return $this->BelongsToMany('App\Reprise');
+    }
     public function Races() 
     {
         return $this->BelongsToMany('App\Race');
@@ -58,7 +63,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         $racid = $cheval->race->id;
        
         $nivid = $cheval->Performance->niveau_id;
-        $competitions = Competition::whereHas('races', function ($q) use ($racid) {
+        $competitions = Competition::where('type', 'Mpdèle et Allures')->whereHas('races', function ($q) use ($racid) {
             $q->where('race_id', $racid);
         })->whereHas('niveau', function ($q) use ($nivid) {
             $q->where('id', $nivid)->orWhere('open',true);
@@ -75,6 +80,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         $hasRace = $this->Races->find($race);
         $hasOC = $this->Races->find(1);
         
+        if ($this->type = 'Modèle et Allures') {  
         if ($hasRace || $hasOC ) {
            if ($animal->Performance->Niveau->id == $this->Niveau->id || $this->Niveau->open)
             {return true;}
@@ -82,6 +88,16 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         }
         else {return false;}
     }
+    else {
+        if ($hasRace || $hasOC ) {
+            if ($animal->Performance->niveau_dressage == $this->Niveau->id || $this->Niveau->open)
+             {return true;}
+             else {return false;}
+         }
+         else {return false;}
+     }
+    }
+    
 
   
 

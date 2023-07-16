@@ -546,8 +546,10 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'concours Dressage Poney',
                 'type' => 'Modèle et Allures', 'niveau_id' => 1,
+                
                 'prix_inscription' => 5,
                 'prix_premier' => 50,
+                
             ),
             53 => 
             array (
@@ -556,6 +558,7 @@ class CompetitionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'concours Dressage Poney E',
                 'type' => 'Modèle et Allures', 'niveau_id' => 1,
+                
                 'prix_inscription' => 10,
                 'prix_premier' => 100,
             ),
