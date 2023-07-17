@@ -62,7 +62,7 @@ class CompetitionController extends Controller
              
             'animal_id' =>'integer|required',   
             'categorie_id' =>'integer|required',
-            'reprsie_id' =>'integer',
+            'reprise_id' =>'integer',
             
             
             ]);

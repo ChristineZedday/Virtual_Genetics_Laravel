@@ -228,12 +228,17 @@ static function runCompetitions() {
             $categories = Categorie::with(['competitions' =>$filter])->get();
             //with et pas whereHas sinon 1 seule catégorie???
             foreach ($categories as $categorie) {
-  
+                if ($competition->type == 'Modèle et Allures') {
                 $categorie->run($competition,$evenement) ;  
             }
+                else {
+                    foreach ($competition->Reprises as $reprise) {
+                        $reprise->run($competition,$evenement,$categorie);
+                    }
+                }
         }
         }
-  
+    }
 finally 
  {   $evenement->nextYear();}
   }
