@@ -86,7 +86,7 @@ class CompetitionController extends Controller
 
 
         
-        if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal))  { 
+        if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal, $reprise))  { 
            
                 if ($resultat->save()) {
                  

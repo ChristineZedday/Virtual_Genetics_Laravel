@@ -89,7 +89,7 @@ class Reprise extends Model
         
         //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau
         $niveau = $animal->Performance->niveau_dressage;
-        dd('niveau '.$niveau.' reprise niveau '.$this->niveau_num_global);
+      
         if ($niveau == $this->niveau_num_global ) {
             return true;
         }
