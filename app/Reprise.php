@@ -84,14 +84,13 @@ class Reprise extends Model
     
     }
 
-    static function verification($animal, $competition): bool
+    public function verification($animal): bool
     {
+        
         //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau
         $niveau = $animal->Performance->niveau_dressage;
-        $res = Resultat::where('animal_id', $animal->id)->where('competition_id', $competition->id)->first();
-        $reprise = Reprise::Find($res->reprise_id);
-        dd('niveau '.$niveau.' reprise niveau '.$reprise->niveau_num_global);
-        if ($niveau == $reprise->niveau_num_global ) {
+        dd('niveau '.$niveau.' reprise niveau '.$this->niveau_num_global);
+        if ($niveau == $this->niveau_num_global ) {
             return true;
         }
         else {

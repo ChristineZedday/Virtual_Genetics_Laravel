@@ -12,6 +12,7 @@ use App\Resultat;
 use App\Dressage;
 use App\Gamedata;
 use App\Race;
+use App\Reprise;
 
 class CompetitionController extends Controller
 {
@@ -46,12 +47,9 @@ class CompetitionController extends Controller
        $evenement = Evenement::Find($evenement);
         $competition = Competition::Find($competition);
       //  $categories = $competition->Categories;
-      
-       
      
         $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
-   
-    
+
        return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'animaux' => $animaux]);
        
     }
@@ -80,7 +78,7 @@ class CompetitionController extends Controller
 
         $animal = Animal::Find($resultat->animal_id);
         $elevage= Elevage::Find($animal->elevage_id);
-        
+        $reprise = Reprise::Find($resultat->reprise_id);
         $animaux= $elevage->Animaux()->get();
         $evenement = Evenement::Find($resultat->evenement_id);
         
@@ -89,7 +87,7 @@ class CompetitionController extends Controller
 
         
         if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal))  { 
-            dd('on va vérifier');
+           
                 if ($resultat->save()) {
                  
                 $elevage->budget -= $competition->prix_inscription;
@@ -107,7 +105,7 @@ class CompetitionController extends Controller
             $categories = $competition->Categories;
             $request->session()->flash('status',"Pas la bonne catégorie, ou déjà inscrit quelque part à cette date!");
             $request->session()->flash('alert-class',"alert-danger");
-            return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'categories'=> $categories, 'animaux' => $animaux])->with('status');
+            return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'animaux' => $animaux])->with('status');
             
         }
     }

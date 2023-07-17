@@ -33,19 +33,9 @@ class Categorie extends Model
     $evid = $evenement->id;
    
    $competition = Competition::Find($competition);
-   // $races = $competition->races;
-   //dd($races);
-           
-  /*  if ($this->type==="Modèle et Allures Race" ) {
-        if ($races->isNotEmpty()) {
-               
-                if (false == $races->contains($animal->race)) {
-                
-                return false;
-                }
-        }*/
+  
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
-
+           
                 return false;
             }
         if ($this->age_max != null && $this->age_max < $animal->ageAdministratif($date)) {
@@ -53,12 +43,12 @@ class Categorie extends Model
                 return false; 
             }
         if ($this->sexe != null && $this->sexe != $animal->genre()) {
-        
+            
                 return false;
         }
 
         if ($this->taille_min != null && $this->taille_min > $animal->taille()) {
-        
+           
             return false;
     }
 
@@ -66,9 +56,8 @@ class Categorie extends Model
         
         return false;
 }
-           
-   // }
-        return true;
+   
+    return true;
 
 }
         

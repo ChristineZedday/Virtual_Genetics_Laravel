@@ -72,21 +72,22 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         return $competitions;
     }
 
-    public function verification($animal)
+    public function verification($animal, $reprise = NULL)
     {
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
-    
         $race = $animal->race_id;
         $hasRace = $this->Races->find($race);
         $hasOC = $this->Races->find(1);
         
         if ($hasRace || $hasOC ) {
-            if ($this->type = 'Modèle et Allures') {  
+            if ($this->type == 'Modèle et Allures') {  
                 if ($animal->Performance->Niveau->id ==     $this->Niveau->id || $this->Niveau->open)
                 {return true;}
                 else {return false;}
             }
-            else {return Reprise::verification($animal, $competition);}
+            else {
+                
+                return $reprise->verification($animal );}
         }
         else {
             return false;
