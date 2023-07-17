@@ -10,6 +10,7 @@ use App\Competition;
 use App\Evenement;
 use App\Categorie;
 use App\Performance;
+use App\Resultat;
 
 class Reprise extends Model
 {
@@ -82,4 +83,25 @@ class Reprise extends Model
     
     
     }
+
+    static function verification($animal, $competition)
+    {
+        //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau
+        $niveau = $animal->Performance->niveau_dressage;
+        $res = Resultat::where('animal_id', $animal->id)->where('competition_id', $competition->id)->first();
+        $reprise = Reprise::Find($res->reprise_id);
+        if ($niveau == $reprise->niveau_num_global ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    
+        
+       
+    }
+    
+
+  
+
 }

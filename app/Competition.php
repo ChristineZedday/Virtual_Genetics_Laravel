@@ -63,7 +63,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         $racid = $cheval->race->id;
        
         $nivid = $cheval->Performance->niveau_id;
-        $competitions = Competition::where('type', 'Mpdèle et Allures')->whereHas('races', function ($q) use ($racid) {
+        $competitions = Competition::where('type', 'Modèle et Allures')->whereHas('races', function ($q) use ($racid) {
             $q->where('race_id', $racid);
         })->whereHas('niveau', function ($q) use ($nivid) {
             $q->where('id', $nivid)->orWhere('open',true);
@@ -80,25 +80,20 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         $hasRace = $this->Races->find($race);
         $hasOC = $this->Races->find(1);
         
-        if ($this->type = 'Modèle et Allures') {  
         if ($hasRace || $hasOC ) {
-           if ($animal->Performance->Niveau->id == $this->Niveau->id || $this->Niveau->open)
-            {return true;}
-            else {return false;}
+            if ($this->type = 'Modèle et Allures') {  
+                if ($animal->Performance->Niveau->id ==     $this->Niveau->id || $this->Niveau->open)
+                {return true;}
+                else {return false;}
+            }
+            else {return Reprise::verification($animal, $competition);}
         }
-        else {return false;}
-    }
-    else {
-        if ($hasRace || $hasOC ) {
-            if ($animal->Performance->niveau_dressage == $this->Niveau->id || $this->Niveau->open)
-             {return true;}
-             else {return false;}
-         }
-         else {return false;}
-     }
-    }
+        else {
+            return false;
+        }
+        
     
-
+    }
   
 
 }
