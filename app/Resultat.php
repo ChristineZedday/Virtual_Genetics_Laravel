@@ -17,7 +17,7 @@ class Resultat extends Pivot
    /*Résultat d'une compétition/cheval/catégorie voir  Competition*/
    
    protected $table = 'resultats';
-   protected $fillable=['animal_id', 'categorie_id', 'evenement_id', 'competition_id'] ;
+   protected $fillable=['animal_id', 'categorie_id', 'evenement_id', 'competition_id', 'reprise_id'] ;
    public $incrementing = true;
 
    public function Animal() 
@@ -79,7 +79,7 @@ switch ($this->classement) {
   
      
       
-      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
+      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
      //dd($res);
       return $res;
       
@@ -90,7 +90,7 @@ switch ($this->classement) {
       $date =new DateTime(Gamedata::date());
       $y = $date->format('Y');
       
-      $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
+      $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
      //dd($res);
       return $res;
       

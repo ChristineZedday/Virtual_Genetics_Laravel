@@ -62,6 +62,7 @@ class CompetitionController extends Controller
              
             'animal_id' =>'integer|required',   
             'categorie_id' =>'integer|required',
+            'reprsie_id' =>'integer',
             
             
             ]);
@@ -74,7 +75,7 @@ class CompetitionController extends Controller
         
         $resultat->evenement_id = $evenement;
         $resultat->competition_id = $competition->id;
-    
+       
 
         $animal = Animal::Find($resultat->animal_id);
         $elevage= Elevage::Find($animal->elevage_id);

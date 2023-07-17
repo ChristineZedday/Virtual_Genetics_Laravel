@@ -15,6 +15,15 @@
   @endforeach
 </select>
 
+@if ($competition->type == 'Dressage')
+<label for="reprise_id">Sélectionner la reprise</label>
+<select name="reprise_id">
+	@foreach ($competition->Reprises as $reprise)
+  <option value="{{$reprise->id}}">{{$reprise->nom()}} </option>
+  @endforeach
+</select>
+@endif
+
 <label for="animal_id">Sélectionner l'animal</label>
 <select name="animal_id">
 	@foreach ($animaux as $animal)
