@@ -233,7 +233,7 @@ static function runCompetitions() {
             }
                 else {
                     foreach ($competition->Reprises as $reprise) {
-                        $reprise->run($competition,$evenement,$categorie);
+                        $reprise->run($evenement,$competition,$categorie);
                     }
                 }
         }
