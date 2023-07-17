@@ -45,14 +45,14 @@ class CompetitionController extends Controller
         $elevage = Elevage::Find($elevage);
        $evenement = Evenement::Find($evenement);
         $competition = Competition::Find($competition);
-        $categories = $competition->Categories;
+      //  $categories = $competition->Categories;
       
        
      
         $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
    
     
-       return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition,'categories'=> $categories, 'animaux' => $animaux]);
+       return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'animaux' => $animaux]);
        
     }
 
@@ -73,6 +73,7 @@ class CompetitionController extends Controller
      
         $resultat->fill($validated);
         
+        
         $resultat->evenement_id = $evenement;
         $resultat->competition_id = $competition->id;
        
@@ -88,7 +89,7 @@ class CompetitionController extends Controller
 
         
         if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal))  { 
-            
+            dd('on va vérifier');
                 if ($resultat->save()) {
                  
                 $elevage->budget -= $competition->prix_inscription;

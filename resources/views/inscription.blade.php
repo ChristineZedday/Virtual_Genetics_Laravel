@@ -9,17 +9,17 @@
 <label for="categorie_id">Sélectionner l'épreuve</label>
 
 <select name="categorie_id" >
-	@foreach ($categories as $categorie)
+	@foreach ($competition->Categories as $categorie)
 	
   <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
   @endforeach
 </select>
 
-@if ($competition->type == 'Dressage')
+@if($competition->type == 'Dressage')
 <label for="reprise_id">Sélectionner la reprise</label>
 <select name="reprise_id">
 	@foreach ($competition->Reprises as $reprise)
-  <option value="{{$reprise->id}}">{{$reprise->nom()}} </option>
+  <option value="{{$reprise->id}}">{{$reprise->nom}} </option>
   @endforeach
 </select>
 @endif
