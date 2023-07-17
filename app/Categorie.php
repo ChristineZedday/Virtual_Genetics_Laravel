@@ -157,14 +157,17 @@ public function run($competition, $evenement) {
     $perf = $animal->Performance;
     switch ($competition->type){
         case 'Modèle et Allures':
-        switch($i) {
+            switch($i) {
             case 1:
             $perf->points += 5;
+            break;
             case 2:
             $perf->points += 2;
+            break;
             default:
             $perf->points +=1;
-        }
+            }
+            break;
         case 'Dressage':
             switch($i) {
                 case 1:
