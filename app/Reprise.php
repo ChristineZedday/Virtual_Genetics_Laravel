@@ -50,31 +50,31 @@ class Reprise extends Model
         $res->classement = $i;
         $res->save();
         $animal = Animal::find($key);
+        $note = $notes[key];
         $perf = $animal->Performance;
-        
+        if ($note >= 60) {
                 switch($i) {
                     case 1:
-                        $perf->pourcent_niveau += 20;
+                        $perf->pourcent_niveau += 30;
                         break;
                     case 2:
-                        $perf->pourcent_niveau += 15;
+                        $perf->pourcent_niveau += 20;
                         break;
                     default:
                         $perf->pourcent_niveau +=10;
                     }
-    
+        }
         $perf->save();
       
         $perf->upgradeDressage();
     
-        $animal = Animal::Find($key);
-        //dd($animal->nomComplet());// Chouette!
         $elevage = Elevage::Find($animal->elevage_id);
-       
-        if ($i == 1) {
+      
+       //Pas de dotations pour les notes inférieures à 60%!
+        if ($i == 1 && $note >= 60) {
             $elevage->budget += $prix; // prix_premier, mettre en f compète et pas race;
         }
-        else  {
+        else if ($note >= 60) {
             $elevage->budget += (int) ($prix/$i);//prix_premier/$i);
         }
         $elevage->save();
