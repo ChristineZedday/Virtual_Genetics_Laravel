@@ -33,7 +33,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 55,
-                'reprise_id' => 2,
+                'reprise_id' => 38,
             ),
             2 => 
             array (
@@ -45,21 +45,13 @@ class CompetitionRepriseTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 5,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 55,
-                'reprise_id' => 3,
-            ),
-            4 => 
-            array (
                 'id' => 6,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 54,
                 'reprise_id' => 6,
             ),
-            5 => 
+            4 => 
             array (
                 'id' => 7,
                 'created_at' => NULL,
@@ -67,7 +59,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 55,
                 'reprise_id' => 13,
             ),
-            6 => 
+            5 => 
             array (
                 'id' => 8,
                 'created_at' => NULL,
@@ -75,7 +67,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 56,
                 'reprise_id' => 10,
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 9,
                 'created_at' => NULL,
@@ -83,7 +75,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 56,
                 'reprise_id' => 12,
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 10,
                 'created_at' => NULL,
@@ -91,7 +83,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 57,
                 'reprise_id' => 15,
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 11,
                 'created_at' => NULL,
@@ -99,7 +91,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 57,
                 'reprise_id' => 16,
             ),
-            10 => 
+            9 => 
             array (
                 'id' => 12,
                 'created_at' => NULL,
@@ -107,7 +99,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 56,
                 'reprise_id' => 17,
             ),
-            11 => 
+            10 => 
             array (
                 'id' => 13,
                 'created_at' => NULL,
@@ -115,13 +107,45 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 56,
                 'reprise_id' => 18,
             ),
-            12 => 
+            11 => 
             array (
-                'id' => 14,
+                'id' => 15,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 57,
-                'reprise_id' => 23,
+                'competition_id' => 56,
+                'reprise_id' => 21,
+            ),
+            12 => 
+            array (
+                'id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 22,
+            ),
+            13 => 
+            array (
+                'id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 54,
+                'reprise_id' => 26,
+            ),
+            14 => 
+            array (
+                'id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 55,
+                'reprise_id' => 11,
+            ),
+            15 => 
+            array (
+                'id' => 19,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 39,
             ),
         ));
         
