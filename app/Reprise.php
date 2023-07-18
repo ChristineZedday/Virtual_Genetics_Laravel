@@ -89,6 +89,10 @@ class Reprise extends Model
         
         //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau
         $niveau = $animal->Performance->niveau_dressage;
+        $age = $animal->ageAdministratif();
+        if ($age < $this->age_min) {
+            return false;
+        }
       
         if ($niveau == $this->niveau_num_global ) {
             return true;
