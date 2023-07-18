@@ -67,6 +67,62 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 55,
                 'reprise_id' => 13,
             ),
+            6 => 
+            array (
+                'id' => 8,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 10,
+            ),
+            7 => 
+            array (
+                'id' => 9,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 12,
+            ),
+            8 => 
+            array (
+                'id' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'reprise_id' => 15,
+            ),
+            9 => 
+            array (
+                'id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'reprise_id' => 16,
+            ),
+            10 => 
+            array (
+                'id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 17,
+            ),
+            11 => 
+            array (
+                'id' => 13,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 18,
+            ),
+            12 => 
+            array (
+                'id' => 14,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'reprise_id' => 23,
+            ),
         ));
         
         

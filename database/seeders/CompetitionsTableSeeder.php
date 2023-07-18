@@ -613,6 +613,28 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 10,
                 'prix_premier' => 100,
             ),
+            54 => 
+            array (
+                'id' => 56,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Dressage Poney',
+                'type' => 'Dressage',
+                'niveau_id' => 2,
+                'prix_inscription' => 20,
+                'prix_premier' => 200,
+            ),
+            55 => 
+            array (
+                'id' => 57,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Dressage Poney E',
+                'type' => 'Dressage',
+                'niveau_id' => 2,
+                'prix_inscription' => 25,
+                'prix_premier' => 250,
+            ),
         ));
         
         

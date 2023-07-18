@@ -1155,6 +1155,22 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1971-06-25',
                 'nom' => 'Dressage',
             ),
+            142 => 
+            array (
+                'id' => 145,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-04-19',
+                'nom' => 'Dressage Régional',
+            ),
+            143 => 
+            array (
+                'id' => 146,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-09-18',
+                'nom' => 'Dressage Régional',
+            ),
         ));
         
         
