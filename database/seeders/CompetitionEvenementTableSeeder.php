@@ -619,9 +619,70 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'competition_id' => 2,
                 'evenement_id' => 43,
             ),
-      
-        
-            
+            75 => 
+            array (
+                'id' => 78,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 54,
+                'evenement_id' => 37,
+            ),
+            76 => 
+            array (
+                'id' => 79,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 55,
+                'evenement_id' => 37,
+            ),
+            77 => 
+            array (
+                'id' => 80,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'evenement_id' => 39,
+            ),
+            78 => 
+            array (
+                'id' => 81,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'evenement_id' => 39,
+            ),
+            79 => 
+            array (
+                'id' => 82,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 58,
+                'evenement_id' => 36,
+            ),
+            80 => 
+            array (
+                'id' => 83,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 58,
+                'evenement_id' => 38,
+            ),
+            81 => 
+            array (
+                'id' => 84,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'evenement_id' => 39,
+            ),
+            82 => 
+            array (
+                'id' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 60,
+                'evenement_id' => 42,
+            ),
         ));
         
         
