@@ -223,7 +223,7 @@ static function regCompetNPC()
                     continue;
                     }
                     
-                    foreach ($competition->Categories as $categorie) {
+                    foreach ($comp->Categories as $categorie) {
                         if ($categorie == $categorie_cheval) {
                             $catid = $categorie->id;
                             break;
