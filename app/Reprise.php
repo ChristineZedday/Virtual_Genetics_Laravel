@@ -71,6 +71,7 @@ class Reprise extends Model
         $perf->save();
       
         $perf->upgradeDressage();
+        $perf->save();
     
         $elevage = Elevage::Find($animal->elevage_id);
       
