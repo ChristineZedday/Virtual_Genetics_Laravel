@@ -32,7 +32,11 @@ class Reprise extends Model
         foreach ($inscrits as $inscrit) {
             $animal = $inscrit->animal;
     
-             $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive ;
+             $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + random_int(-20,20);
+
+             if ( $notes[$animal->id] > 100) {
+                $notes[$animal->id] = 100;
+             }
        
         $inscrit->note_synthese = $notes[$animal->id];
         $inscrit->save();
@@ -50,7 +54,7 @@ class Reprise extends Model
         $res->classement = $i;
         $res->save();
         $animal = Animal::find($key);
-        $note = $notes[key];
+        $note = $notes[$key];
         $perf = $animal->Performance;
         if ($note >= 60) {
                 switch($i) {
