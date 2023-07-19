@@ -223,6 +223,23 @@ class CategoriesTableSeeder extends Seeder
                 'autorise' => NULL,
                 'approuve' => NULL,
             ),
+            12 => 
+            array (
+                'id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'cheval ou poney',
+                'sexe' => NULL,
+                'age_min' => NULL,
+                'age_max' => NULL,
+                'taille_min' => 108,
+                'taille_max' => 215,
+                'saillie' => 0,
+                'suitee' => 0,
+                'entier' => NULL,
+                'autorise' => NULL,
+                'approuve' => NULL,
+            ),
         ));
         
         

@@ -3195,6 +3195,46 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 55,
                 'categorie_id' => 12,
             ),
+            397 => 
+            array (
+                'id' => 403,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'categorie_id' => 11,
+            ),
+            398 => 
+            array (
+                'id' => 404,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'categorie_id' => 12,
+            ),
+            399 => 
+            array (
+                'id' => 405,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 58,
+                'categorie_id' => 15,
+            ),
+            400 => 
+            array (
+                'id' => 406,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'categorie_id' => 15,
+            ),
+            401 => 
+            array (
+                'id' => 407,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 60,
+                'categorie_id' => 15,
+            ),
         ));
         
         

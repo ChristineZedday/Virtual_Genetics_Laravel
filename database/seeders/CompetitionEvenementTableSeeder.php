@@ -603,6 +603,94 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'competition_id' => 60,
                 'evenement_id' => 42,
             ),
+            73 => 
+            array (
+                'id' => 86,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 54,
+                'evenement_id' => 36,
+            ),
+            74 => 
+            array (
+                'id' => 87,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 55,
+                'evenement_id' => 36,
+            ),
+            75 => 
+            array (
+                'id' => 88,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 42,
+                'evenement_id' => 35,
+            ),
+            76 => 
+            array (
+                'id' => 89,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 43,
+                'evenement_id' => 35,
+            ),
+            77 => 
+            array (
+                'id' => 90,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'evenement_id' => 8,
+            ),
+            78 => 
+            array (
+                'id' => 91,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'evenement_id' => 8,
+            ),
+            79 => 
+            array (
+                'id' => 92,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'evenement_id' => 40,
+            ),
+            80 => 
+            array (
+                'id' => 93,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'evenement_id' => 40,
+            ),
+            81 => 
+            array (
+                'id' => 94,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'evenement_id' => 40,
+            ),
+            82 => 
+            array (
+                'id' => 95,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'evenement_id' => 41,
+            ),
+            83 => 
+            array (
+                'id' => 96,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 60,
+                'evenement_id' => 43,
+            ),
         ));
         
         
