@@ -103,6 +103,13 @@ class Categorie extends Model
  }
 }
 
+public static function rechercheDressage(Animal $cheval) 
+   {
+    $taille = $cheval->taille();
+    return Categorie::where('taille_max', '>=', $taille)->where('taille_min','<=', $taille)->first();
+   
+   }
+
 public function run($competition, $evenement) {
     
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();

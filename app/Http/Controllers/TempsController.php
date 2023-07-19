@@ -165,49 +165,85 @@ static function regCompetNPC()
         
 
         $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
-//bug: marche que niveau 1
-//dd($engageables);
-        foreach ($engageables as $cheval) {
-          if (is_null ($cheval->Performance)) {
+        //bug: marche que niveau 1
+        //dd($engageables);
+            foreach ($engageables as $cheval) {
+                if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
-       
-          }
- 
-            if ($cheval->Performance->niveau_id != $niveau){
+            }
+                if ($cheval->Performance->niveau_id != $niveau){
                 continue;//rajouter plus tard open
             }
           
-            if (strpos($cheval->sexe,'stérilisé') != false){
+                if (strpos($cheval->sexe,'stérilisé') != false){
                   continue;//à déplacer quand autre que MA
               }
-            if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
+                if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
                   continue; //pas de compétitions poulains
               }
 
 
-            $categorie = Categorie::recherche($cheval);
-           // dd($categorie);OK
-            $cats = $comp->Categories->modelKeys(); //OK
+                $categorie = Categorie::recherche($cheval);
+            // dd($categorie);OK
+                $cats = $comp->Categories->modelKeys(); //OK
           
-            if (in_array($categorie->id,$cats)) {
+                if (in_array($categorie->id,$cats)) {
        
                 $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
-              if (null == $deja)
+                if (null == $deja)
                   { 
-                     $resultat = New Resultat();
+                    $resultat = New Resultat();
                     $resultat->animal_id = $cheval->id;
                     $resultat->evenement_id = $evenement->id;
                     $resultat->categorie_id = $categorie->id;
                     $resultat->competition_id = $comp->id;
                    //dd($resultat);//OK;
-                  
                     $resultat->save();
                }
             }
         }
+
+            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->get();
+                foreach ($dressables as $cheval) {
+                    if (is_null ($cheval->Performance)) {
+                    $cheval->Performance = Performance::initialize($cheval->id); 
+                    }
+                    if ($cheval->ageAdministratif($date->format('Y-m-d')) < 4) {
+                    continue; //pas de compétitions poulains
+                    }
+
+                    if ($cheval->Statut && ($cheval->Statut->pleine || $cheval->Statut->suitee)) {
+                    continue;
+                    }
+                    $categorie = Categorie::rechercheDressage($cheval);
+                    if ($categorie == 'poney A') {
+                    continue;
+                    }
+                    if ($comp->categorie != 'cheval ou poney') {
+                    if ($comp->categorie != $categorie) {
+                    continue;
+                    }
+                    }
+
+                    $niv = $cheval->Performance->niveau_dressage;
+                    foreach ($comp->Reprises as $reprise) {
+                        if ($niv != $reprise->niveau_num_global) {
+                            continue;
+                        }
+                        else {
+                            $resultat = New Resultat();
+                            $resultat->animal_id = $cheval->id;
+                            $resultat->evenement_id = $evenement->id;
+                            $resultat->categorie_id = $categorie->id;
+                            $resultat->competition_id = $comp->id;
+                            $resultat->reprise_id = $reprise->id;
+                            $resultat->save();
+                        }
+                    }   
+
+                } //foreach dressables
     }
 }
-
 
 static function runCompetitions() {
     
