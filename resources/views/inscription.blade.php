@@ -6,7 +6,7 @@
 						
 <h3>{{$evenement->nom}}: {{$competition->nom}}</h3>
 <div class ='form'>
-<label for="categorie_id">Sélectionner l'épreuve</label>
+<label for="categorie_id">Sélectionner la catégorie</label>
 
 <select name="categorie_id" >
 	@foreach ($competition->Categories as $categorie)
