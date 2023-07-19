@@ -164,7 +164,9 @@ static function regCompetNPC()
         $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
         
         if ($comp->type == 'Modèle et Allures')
-            {$engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
+                {
+                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
+               
         //bug: marche que niveau 1
         //dd($engageables);
             foreach ($engageables as $cheval) {
@@ -205,9 +207,10 @@ static function regCompetNPC()
             
         }   
         if ($comp->type != 'Dressage') {
-              
+            
         
             $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->get();
+          
                 foreach ($dressables as $cheval) {
                     if (is_null ($cheval->Performance)) {
                     $cheval->Performance = Performance::initialize($cheval->id); 
