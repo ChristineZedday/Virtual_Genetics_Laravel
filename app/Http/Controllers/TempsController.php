@@ -223,6 +223,7 @@ static function regCompetNPC()
                     continue;
                     }
                     
+                    $catid = null;
                     foreach ($comp->Categories as $categorie) {
                         if ($categorie == $categorie_cheval) {
                             $catid = $categorie->id;
@@ -234,7 +235,9 @@ static function regCompetNPC()
                         }
                        
                     }
-                   
+                   if ($catid == null) {
+                    continue;
+                   }
 
                     $niv = $cheval->Performance->niveau_dressage;
                     
