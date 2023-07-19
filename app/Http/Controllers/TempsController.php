@@ -202,7 +202,10 @@ static function regCompetNPC()
                }
             }
         }
-
+            if ($comp->type != 'Dressage') {
+                continue;
+            }
+            
             $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->get();
                 foreach ($dressables as $cheval) {
                     if (is_null ($cheval->Performance)) {
@@ -211,30 +214,40 @@ static function regCompetNPC()
                     if ($cheval->ageAdministratif($date->format('Y-m-d')) < 4) {
                     continue; //pas de compétitions poulains
                     }
-
+                    
                     if ($cheval->Statut && ($cheval->Statut->pleine || $cheval->Statut->suitee)) {
                     continue;
                     }
-                    $categorie = Categorie::rechercheDressage($cheval);
-                    if ($categorie == 'poney A') {
+                    $categorie_cheval = Categorie::rechercheDressage($cheval);
+                    if ($categorie_cheval == 'poney A') {
                     continue;
                     }
-                    if ($comp->categorie != 'cheval ou poney') {
-                    if ($comp->categorie != $categorie) {
-                    continue;
+                    
+                    foreach ($competition->Categories as $categorie) {
+                        if ($categorie == $categorie_cheval) {
+                            $catid = $categorie->id;
+                            break;
+                        }
+                        else if ($categorie->nom == 'cheval ou poney') {
+                            $catid = $categorie->id;
+                            break;
+                        }
+                       
                     }
-                    }
+                   
 
                     $niv = $cheval->Performance->niveau_dressage;
+                    
                     foreach ($comp->Reprises as $reprise) {
                         if ($niv != $reprise->niveau_num_global) {
                             continue;
                         }
                         else {
+                            
                             $resultat = New Resultat();
                             $resultat->animal_id = $cheval->id;
                             $resultat->evenement_id = $evenement->id;
-                            $resultat->categorie_id = $categorie->id;
+                            $resultat->categorie_id = $catid;
                             $resultat->competition_id = $comp->id;
                             $resultat->reprise_id = $reprise->id;
                             $resultat->save();
