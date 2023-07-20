@@ -206,7 +206,7 @@ static function regCompetNPC()
         }
             
         }   
-        if ($comp->type != 'Dressage') {
+        if ($comp->type == 'Dressage') {
             
         
             $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->get();
@@ -226,9 +226,10 @@ static function regCompetNPC()
                     if ($categories_cheval->first() == 'mini') {
                     continue;
                     }
-                    
+                   
                     $catid = null;
                     foreach ($comp->Categories as $categorie) {
+                       
                         foreach ($categories_cheval as $cat) {
                             if ($cat == $categorie)
                            { $catid = $categorie->id;
