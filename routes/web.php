@@ -19,7 +19,7 @@ Route::get('/', function () { if ( Auth::check() ) {return redirect()->action('H
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/logout', 'LogoutController@perform')->name('logout');
+Route::get('/logout', 'LogoutController@perform')->name('logout');
 
 
 
