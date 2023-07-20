@@ -234,17 +234,20 @@ static function regCompetNPC()
                    
                     $catid = null;
                     foreach ($comp->Categories as $categorie) {
-                       
-                        foreach ($categories_cheval as $cat) {
-                            if ($cat == $categorie)
-                           { $catid = $categorie->id;
-                            break;}
+                       if (array_search($categorie->id,$categories_cheval->modelKeys())) {
+                         $catid = $categorie->id;
+                         break;
+                       }
+                        // foreach ($categories_cheval as $cat) {
+                        //     if ($cat == $categorie)
+                        //    { $catid = $categorie->id;
+                        //     break;}
                         
-                            else if ($categorie->nom == 'cheval ou poney' && $cheval->taille() >= 108) {
-                            $catid = $categorie->id;
-                            break;
-                            }
-                        }
+                        //     else if ($categorie->nom == 'cheval ou poney' && $cheval->taille() >= 108) {
+                        //     $catid = $categorie->id;
+                        //     break;
+                        //     }
+                        // }
                        
                     }
                    if ($catid == null) {
