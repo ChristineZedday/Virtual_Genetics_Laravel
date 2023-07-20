@@ -155,7 +155,11 @@
 				<p> {{$palm->evenement->nom}} du &nbsp;{{$palm->evenement->date}} 
 				{{$palm->competition->nom}} 
 				{{$palm->competition->Niveau->libelle}} 
+				@if ($palm->competition->type == 'Dressage')
+				{{$palm->Reprise->nom}} 
+				@else
 				{{$palm->categorie->nom}} 
+				@endif
 				{{$palm->texteClassement() }}
 				note:
 				{{$palm->note_synthese}} 
