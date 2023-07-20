@@ -223,7 +223,7 @@ static function regCompetNPC()
                     continue;
                     }
                     $categories_cheval = Categorie::rechercheDressage($cheval);
-                    if ($categorie_cheval->first() == 'mini') {
+                    if ($categories_cheval->first() == 'mini') {
                     continue;
                     }
                     
