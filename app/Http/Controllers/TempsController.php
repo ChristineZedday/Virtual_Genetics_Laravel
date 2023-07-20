@@ -223,7 +223,7 @@ static function regCompetNPC()
                     continue;
                     }
                     $categorie_cheval = Categorie::rechercheDressage($cheval);
-                    if ($categorie_cheval == 'poney A' || $categorie_cheval == 'mini') {
+                    if ($categorie_cheval == 'mini') {
                     continue;
                     }
                     
@@ -244,7 +244,7 @@ static function regCompetNPC()
                    }
 
                     $niv = $cheval->Performance->niveau_dressage;
-                    dd($niv);
+                    
                     foreach ($comp->Reprises as $reprise) {
                         if ($niv != $reprise->niveau_num_global) {
                             continue;
