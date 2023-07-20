@@ -222,20 +222,22 @@ static function regCompetNPC()
                     if ($cheval->Statut && ($cheval->Statut->pleine || $cheval->Statut->suitee)) {
                     continue;
                     }
-                    $categorie_cheval = Categorie::rechercheDressage($cheval);
-                    if ($categorie_cheval == 'mini') {
+                    $categories_cheval = Categorie::rechercheDressage($cheval);
+                    if ($categorie_cheval->first() == 'mini') {
                     continue;
                     }
                     
                     $catid = null;
                     foreach ($comp->Categories as $categorie) {
-                        if ($categorie == $categorie_cheval) {
+                        foreach ($categories_cheval as $cat) {
+                            if ($cat == $categorie)
+                           { $catid = $categorie->id;
+                            break;}
+                        
+                            else if ($categorie->nom == 'cheval ou poney' || $cheval->taille() >= 108) {
                             $catid = $categorie->id;
                             break;
                         }
-                        else if ($categorie->nom == 'cheval ou poney') {
-                            $catid = $categorie->id;
-                            break;
                         }
                        
                     }
