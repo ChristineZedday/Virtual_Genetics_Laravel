@@ -223,7 +223,6 @@ static function regCompetNPC()
                     continue;
                     }
                     $categorie_cheval = Categorie::rechercheDressage($cheval);
-                   
                     if ($categorie_cheval == 'poney A' || $categorie_cheval == 'mini') {
                     continue;
                     }

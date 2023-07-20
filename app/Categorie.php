@@ -106,7 +106,7 @@ class Categorie extends Model
 public static function rechercheDressage(Animal $cheval) 
    {
     $taille = $cheval->taille();
-    return Categorie::where('taille_max', '>=', $taille)->where('taille_min','<=', $taille)->first();
+    return Categorie::whereNotNull('taille_max')->where('taille_max', '>=', $taille)->where('taille_min','<=', $taille)->first();
    
    }
 
