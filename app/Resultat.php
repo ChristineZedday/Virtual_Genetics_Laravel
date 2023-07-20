@@ -25,11 +25,16 @@ class Resultat extends Pivot
      return $this->BelongsTo('App\Animal', 'animal_id');
    }
 
-  
 
    public function Categorie() 
    {
       return $this->BelongsTo('App\Categorie', 'categorie_id');
+   }
+
+   
+   public function Reprise() 
+   {
+      return $this->BelongsTo('App\Reprise', 'reprise_id');
    }
 
    public function Evenement()
