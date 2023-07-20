@@ -244,7 +244,7 @@ static function regCompetNPC()
                    }
 
                     $niv = $cheval->Performance->niveau_dressage;
-                    
+                    dd($niv);
                     foreach ($comp->Reprises as $reprise) {
                         if ($niv != $reprise->niveau_num_global) {
                             continue;

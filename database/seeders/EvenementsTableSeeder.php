@@ -315,7 +315,7 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1971-06-25',
                 'nom' => 'Dressage',
             ),
-           37 => 
+            37 => 
             array (
                 'id' => 39,
                 'created_at' => NULL,
@@ -331,7 +331,7 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1971-09-18',
                 'nom' => 'Dressage Régional',
             ),
-            39 =>
+            39 => 
             array (
                 'id' => 41,
                 'created_at' => NULL,
@@ -339,7 +339,7 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1971-11-22',
                 'nom' => 'Dressage Régional',
             ),
-            40 =>
+            40 => 
             array (
                 'id' => 42,
                 'created_at' => NULL,
@@ -347,13 +347,29 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '1972-06-22',
                 'nom' => 'Dressage National',
             ),
-            41 =>
+            41 => 
             array (
                 'id' => 43,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1972-09-15',
                 'nom' => 'Dressage National',
+            ),
+            42 => 
+            array (
+                'id' => 44,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-02-20',
+                'nom' => 'Dressage Poneys',
+            ),
+            43 => 
+            array (
+                'id' => 45,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-04-20',
+                'nom' => 'Dressage Poneys',
             ),
         ));
         

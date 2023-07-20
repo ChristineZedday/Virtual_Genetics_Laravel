@@ -257,6 +257,40 @@ class CategoriesTableSeeder extends Seeder
                 'autorise' => NULL,
                 'approuve' => NULL,
             ),
+            14 => 
+            array (
+                'id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Poney A ou B',
+                'sexe' => NULL,
+                'age_min' => NULL,
+                'age_max' => NULL,
+                'taille_min' => 80,
+                'taille_max' => 130,
+                'saillie' => 0,
+                'suitee' => 0,
+                'entier' => NULL,
+                'autorise' => NULL,
+                'approuve' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Poney C ou D',
+                'sexe' => NULL,
+                'age_min' => NULL,
+                'age_max' => NULL,
+                'taille_min' => 131,
+                'taille_max' => 149,
+                'saillie' => 0,
+                'suitee' => 0,
+                'entier' => NULL,
+                'autorise' => NULL,
+                'approuve' => NULL,
+            ),
         ));
         
         
