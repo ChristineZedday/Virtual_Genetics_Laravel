@@ -218,6 +218,11 @@ static function regCompetNPC()
                     if ($cheval->ageAdministratif($date->format('Y-m-d')) < 4) {
                     continue; //pas de compétitions poulains
                     }
+
+                    $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first();
+                    if ($deja != NULL) {
+                        continue;
+                    }
                     
                     if ($cheval->Statut && ($cheval->Statut->pleine || $cheval->Statut->suitee)) {
                     continue;
@@ -235,10 +240,10 @@ static function regCompetNPC()
                            { $catid = $categorie->id;
                             break;}
                         
-                            else if ($categorie->nom == 'cheval ou poney' || $cheval->taille() >= 108) {
+                            else if ($categorie->nom == 'cheval ou poney' && $cheval->taille() >= 108) {
                             $catid = $categorie->id;
                             break;
-                        }
+                            }
                         }
                        
                     }
