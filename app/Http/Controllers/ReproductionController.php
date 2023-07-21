@@ -46,11 +46,11 @@ class ReproductionController extends Controller
       $statutM->save();
 
     }
-    $jument = Animal::Find($jument);
+    
     $elevage = Elevage::Find($elevage);
     //controle pas déjà saillie
     $dateS = Gamedata::date();
-    if ($statut->date_saillie != $dateS )
+    if ($statut->vide )
       {
         $statut->pres_pleine = true; 
         $statut->etalon_id = $etalon->id;
