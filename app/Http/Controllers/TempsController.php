@@ -224,7 +224,7 @@ static function regCompetNPC()
                         continue;
                     }
                     
-                    if ($cheval->Statut && ($cheval->StatutFemelle->pleine || $cheval->StatutFemelle->suitee)) {
+                    if ($cheval->StatutFemelle && ($cheval->StatutFemelle->pleine || $cheval->StatutFemelle->suitee)) {
                     continue;
                     }
                     $categories_cheval = Categorie::rechercheDressage($cheval);

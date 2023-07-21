@@ -29,7 +29,7 @@ class ReproductionController extends Controller
    static function croisement($elevage, $etalon, $jument)
    {
     //vérification du statut des reproducteurs
-    $statut = StatutFemelle::where('animal_id',$jument)->first(); //fondateurs
+    $statut = $jument->StatutFemelle; //fondateurs
     if (!isset($statut))
     {
       $statut = new StatutFemelle();
@@ -60,7 +60,7 @@ class ReproductionController extends Controller
         
         srand((float) microtime()*1000000);
       
-        $fertilite = ($etalon->StatutMale->fertilite * $jument->Statut->fertilite)/100 ;
+        $fertilite = ($etalon->StatutMale->fertilite * $jument->$satut->fertilite)/100 ;
         $success = rand(1,$fertilite);
 
       

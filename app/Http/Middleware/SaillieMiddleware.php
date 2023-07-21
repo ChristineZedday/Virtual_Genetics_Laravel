@@ -18,7 +18,7 @@ class SaillieMiddleware
     public function handle($request, Closure $next)
     {
         $jument = Animal::find($request->jument);
-        if ($jument->Statut->date_saillie == Gamedata::date())
+        if ($jument->StatutFemelle->date_saillie == Gamedata::date())
         {
             return redirect('home');
         }
