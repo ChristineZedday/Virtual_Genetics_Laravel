@@ -284,7 +284,7 @@ class CategoriesTableSeeder extends Seeder
                 'age_min' => NULL,
                 'age_max' => NULL,
                 'taille_min' => 131,
-                'taille_max' => 149,
+                'taille_max' => 148,
                 'saillie' => 0,
                 'suitee' => 0,
                 'entier' => NULL,

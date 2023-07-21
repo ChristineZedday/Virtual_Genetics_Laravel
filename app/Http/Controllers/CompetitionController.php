@@ -29,14 +29,18 @@ class CompetitionController extends Controller
        return view('competition', ['elevage'=>$elevage]);
     }
 
-    public function aVenir($elevage)
+    public function aVenir($elevage, $type)
     {
         $elevage = Elevage::Find($elevage);
-        
         $date = Gamedata::date();
-        $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
-        $evenements = Evenement::with('competitions.races')->where('date', '>=', $date)->orderBy('date')->get();
-    
+        $date= date('Y-m-d',strtotime('+1 month',strtotime($date))); 
+        if ($type == 'toutes') {
+            $evenements = Evenement::with('competitions.races')->where('date', '>=', $date)->orderBy('date')->get();
+        }
+        else {
+            $evenements = Evenement::where('date', '>=', $date)->whereHas('competitions', function ($query) use($type) { $query->Where('type',$type);})->orderBy('date')->get(); 
+        }
+       
        return view('competitions',['evenements' =>$evenements, 'elevage' =>$elevage]);
        
     }
