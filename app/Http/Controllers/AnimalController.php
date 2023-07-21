@@ -381,7 +381,7 @@ class AnimalController extends Controller
                 case 'femelle':
                     $animal->sexe = 'femelle stérilisée';
                     $animal->save();
-                    $animal->Statut->delete();
+                    $animal->StatutFemelle->delete();
                     $elevage->budget -= $prixF;
                     $elevage->save();
                 break;
@@ -389,7 +389,7 @@ class AnimalController extends Controller
                 case 'vieille femelle':
                     $animal->sexe = 'vieille femelle stérilisée';
                     $animal->save();
-                    $animal->Statut->delete();
+                    $animal->StatutFemelle->delete();
                     $elevage->budget -= $prixF;
                     $elevage->save();
                 break;

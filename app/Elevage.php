@@ -104,7 +104,7 @@ class Elevage extends Model
         $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereNotIn('sexe',['jeune poulain','jeune pouliche'] )->get();
         
         foreach ($animaux as $animal) {
-            if ($animal->Statut?->suitee or $animal->Statut?->pres_pleine) {
+            if ($animal->StatutFemelle?->suitee or $animal->StatutFemelle?->pres_pleine) {
                 
                 $UGB = (self::COEFF_UGB_PLEINE_SUITEE * $animal->taille())/100;
             }

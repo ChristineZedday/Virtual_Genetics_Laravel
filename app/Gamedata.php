@@ -115,7 +115,7 @@ static function checkSevres()
             }
                 $animal->save();
                 if (isset($animal->Dam) && $animal->Dam->elevage_id !=2)
-             {   $statut = $animal->Dam->Statut;
+             {   $statut = $animal->Dam->StatutFemelle;
                 if (isset ($statut))
                { $statut->suitee = false;
                 $statut->save();}}
@@ -219,7 +219,7 @@ static function checkVieux ($date)
     foreach ($letaux as $letal)
     {
             $dam = $letal->Dam;
-            $statut = $dam->statut;
+            $statut = $dam->StatutFemelle;
             $letal->foetus = false;
             $date= date('Y-m-d',strtotime('+7 month',strtotime($statut->date_saillie)));
             $statut->terme = $date;
@@ -271,7 +271,7 @@ static function checkVieux ($date)
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     
                     if ($animal->sexe == 'vieille femelle')
-                  {  $statut = $animal->Statut()->first();
+                  {  $statut = $animal->StatutFemelle;
                    
                     
                     if (isset($statut))
