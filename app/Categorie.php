@@ -120,6 +120,17 @@ public function run($competition, $evenement) {
     
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();
 
+    foreach ($inscrits as $inscrit) {
+    $elevage = $inscrit->animal->elevage;
+        if ($elevage->budget > $competition->frais_voyage) {
+            $elevage->budget -= $competition->frais_voyage;
+            $elevage->save();
+        } 
+        else {
+            $inscrits->forget($inscrit->id);
+    }
+    }   
+
     $prix = $competition->prix_premier;
     $nb = $inscrits->count();
    //dd($nb);
@@ -129,26 +140,14 @@ public function run($competition, $evenement) {
    //dd('inscrits: '.$nb.' classés: '.$classes);
     foreach ($inscrits as $inscrit) {
         $animal = $inscrit->animal;
-        $elevage = $animal->elevage;
-        $elevage->budget -= $competition->frais_voyage; 
-        
-  /*  if ($animal->genre() == 0) {//passer les juments qui viennent de pouliner dans leur catégorie suitées
-        if ($animal->Statut) {
-            if ($animal->Statut->suitee){
-            if (! strpos($this->nom,'suitées') ) {
-                $cat = Categorie::where('nom', $this->nom.' suitées')->first();
-                $inscrit->Categorie = $cat;
-                $inscrit->save();
-            }
-            }
-        }
-    }*/
+      
+
    
         if ($competition->type == 'Modèle et Allures')
            { $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
           }
             
-        else
+        else//ça serait un bug
          {   $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive ;
   }
 
@@ -203,18 +202,7 @@ public function run($competition, $evenement) {
             case 'Dressage':
     $perf->upgradeDressage();
     }
-    //dd($res);//Oui-da.
-   /* $debug = New Debug();
- /*   $debug = New Debug();
-    $eve= Evenement::Find($evenement);
-    $comp = Competition::Find($competition);
-    $debug->evenement = $eve->nom.' '.$eve->date;
-    $debug->competition = $comp->nom;
-    $debug->categorie = $this->nom;
-    $debug->cheval = $animal->nomComplet();
-    $debug->classement = $res->classement;
-    $debug->note = $inscrit->note_synthese;
-    $debug->save();*/
+  
 
     $animal = Animal::Find($key);
     //dd($animal->nomComplet());// Chouette!
@@ -222,7 +210,7 @@ public function run($competition, $evenement) {
     $elevage = Elevage::Find($animal->elevage_id);
    
     if ($i == 1) {
-        $elevage->budget += $prix; // prix_premier, mettre en f compète et pas race;
+        $elevage->budget += $prix; 
     }
     else  {
         $elevage->budget += (int) ($prix/$i);//prix_premier/$i);

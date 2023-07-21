@@ -23,6 +23,17 @@ class Reprise extends Model
     {
         $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $categorie->id)->where('competition_id', $competition->id)->where('reprise_id', $this->id)->get();
 
+        foreach ($inscrits as $inscrit) {
+            $elevage = $inscrit->animal->elevage;
+                if ($elevage->budget > $competition->frais_voyage) {
+                    $elevage->budget -= $competition->frais_voyage;
+                    $elevage->save();
+                } 
+                else {
+                    $inscrits->forget($inscrit->id);
+            }
+            }   
+
         $prix = $competition->prix_premier;
         $nb = $inscrits->count();
     
