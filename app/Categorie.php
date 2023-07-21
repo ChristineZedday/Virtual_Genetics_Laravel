@@ -129,6 +129,8 @@ public function run($competition, $evenement) {
    //dd('inscrits: '.$nb.' classés: '.$classes);
     foreach ($inscrits as $inscrit) {
         $animal = $inscrit->animal;
+        $elevage = $animal->elevage;
+        $elevage->budget -= $competition->frais_voyage; 
         
   /*  if ($animal->genre() == 0) {//passer les juments qui viennent de pouliner dans leur catégorie suitées
         if ($animal->Statut) {
