@@ -114,11 +114,11 @@ static function reproNPC()
                 
                 foreach ($juments as $jument)
                 {
-                    $statut = StatutFemelle::where('animal_id',$jument->id)->first();
+                    $statut = $jument->StatutFemelle;
                    
                     if ($statut==null)
                     {
-                        $statut = new StatutsFemelle();
+                        $statut = new StatutFemelle();
                         $statut->animal_id = $jument->id;
                         $statut->save();
                     }

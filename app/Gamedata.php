@@ -83,7 +83,7 @@ static function checkNouveaux($date)
                 $animal->save();
             }
 
-            $statut = StatutsFemelle::where('animal_id', $animal->dam_id)->first();
+            $statut = StatutFemelle::where('animal_id', $animal->dam_id)->first();
             if (isset($statut))
             {  $statut->vide = true;
                 $statut->suitee = true;
