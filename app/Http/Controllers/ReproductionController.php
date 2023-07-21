@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gamedata;
-use App\statutsFemelle;
+use App\StatutFemelle;
 use App\StatutMale;
 use App\Animal;
 use App\Elevage;
@@ -29,10 +29,10 @@ class ReproductionController extends Controller
    static function croisement($elevage, $etalon, $jument)
    {
     //vérification du statut des reproducteurs
-    $statut = statutsFemelle::where('animal_id',$jument)->first(); //fondateurs
+    $statut = StatutFemelle::where('animal_id',$jument)->first(); //fondateurs
     if (!isset($statut))
     {
-      $statut = new statutsFemelle();
+      $statut = new StatutFemelle();
       $statut->animal_id = $jument;
     }
     $statutM = StatutMale::where('animal_id',$etalon)->first(); //fondateurs

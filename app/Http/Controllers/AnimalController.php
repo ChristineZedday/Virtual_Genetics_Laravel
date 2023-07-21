@@ -7,7 +7,7 @@ use App\Elevage;
 use App\Animal;
 use App\Gamedata;
 use App\Http\Controllers\TempsController;
-use App\statutsFemelle;
+use App\StatutFemelle;
 use App\AssoRace;
 use App\Race;
 use App\Affixe;
@@ -307,7 +307,7 @@ class AnimalController extends Controller
             // $animal->a_vendre = false;
             // $animal->date_achat = $date;
             // $animal->elevage_id = $elevage->id;
-            // $statut = statutsFemelle::where('animal_id', $animal->id)->first();
+            // $statut = StatutFemelle::where('animal_id', $animal->id)->first();
             // if (isset($statut) )
             // {
             //    if ($statut->vide == false)

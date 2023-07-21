@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gamedata;
-use App\statutsFemelle;
+use App\StatutFemelle;
 use App\Animal;
 use App\Genome;
 use App\Elevage;
@@ -114,7 +114,7 @@ static function reproNPC()
                 
                 foreach ($juments as $jument)
                 {
-                    $statut = statutsFemelle::where('animal_id',$jument->id)->first();
+                    $statut = StatutFemelle::where('animal_id',$jument->id)->first();
                    
                     if ($statut==null)
                     {
@@ -224,7 +224,7 @@ static function regCompetNPC()
                         continue;
                     }
                     
-                    if ($cheval->Statut && ($cheval->Statut->pleine || $cheval->Statut->suitee)) {
+                    if ($cheval->Statut && ($cheval->StatutFemelle->pleine || $cheval->StatutFemelle->suitee)) {
                     continue;
                     }
                     $categories_cheval = Categorie::rechercheDressage($cheval);

@@ -14,6 +14,7 @@ use App\Gamedata;
 use App\Race;
 use App\Reprise;
 
+
 class CompetitionController extends Controller
 {
     public function __construct()

@@ -69,7 +69,7 @@ class Animal extends Model
 
     public function Statut() //femelle en âge de se reproduire, fertilité, gestante, suitée
     {
-       return $this->HasOne('App\statutsFemelle', 'animal_id');
+       return $this->HasOne('App\StatutFemelle', 'animal_id');
 
     }
 
@@ -365,7 +365,7 @@ class Animal extends Model
             $this->date_achat = $date;
             $this->elevage_id = $elevage->id;
             $this->save();
-            $statut = statutsFemelle::where('animal_id', $this->id)->first();
+            $statut = StatutFemelle::where('animal_id', $this->id)->first();
             if (isset($statut) )
             {
                if ($statut->vide == false)

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Animal;
 use App\Evenement;
 use App\Performance;
+use App\StatutFemelle;
 
 class Categorie extends Model
 {
@@ -33,6 +34,11 @@ class Categorie extends Model
     $evid = $evenement->id;
    
    $competition = Competition::Find($competition);
+
+        if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && ($animal>StatutFemelle->pleine || $animal>StatutFemelle->suitee ))
+        {
+            return false;
+        }
   
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
            
@@ -84,8 +90,8 @@ class Categorie extends Model
    }
    else {
     $suitee = 0;
-    if ($cheval->Statut) {
-        if ($cheval->Statut->suitee){
+    if ($cheval->StatutFemelle) {
+        if ($cheval->StatutFemelle->suitee){
         $suitee = 1;
         }
     }

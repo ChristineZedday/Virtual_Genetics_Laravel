@@ -164,7 +164,7 @@ static function checkPuberes()
         if ($animal->ageMonths() >= 24)
         { $animal->sexe = 'femelle';
          $animal->save();
-         $statut = new statutsFemelle();
+         $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
          $statut->fertilite = 100 - $animal->consang/2 ;
          $statut->save();
