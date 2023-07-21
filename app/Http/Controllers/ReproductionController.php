@@ -30,14 +30,14 @@ class ReproductionController extends Controller
    {
     //vérification du statut des reproducteurs
     $jument = Animal::Find($jument);
-    $statut = $jument->StatutFemelle();
+    $statut = $jument->StatutFemelle;
     if ($statut == NULL)
     {
-      $statut = new StatutFemelle();
+      $statut = new StatutFemelle;
       $statut->animal_id = $jument->id;
     }
     $etalon = Animal::Find($etalon);
-    $statutM = $etalon->StatutMale(); //fondateurs
+    $statutM = $etalon->StatutMale; //fondateurs
     if (!isset($statutM)) //à supprimer? normalement tous les animaux ont un statut avec checkPuberes
     {
       $statutM = new StatutMale();
@@ -61,7 +61,7 @@ class ReproductionController extends Controller
   
         srand((float) microtime()*1000000);
       
-        $fertilite = ($statutM->fertilite * $$satut->fertilite)/100 ;
+        $fertilite = ($statutM->fertilite * $statut->fertilite)/100 ;
         $success = rand(1,$fertilite);
 
       

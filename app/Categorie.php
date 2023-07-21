@@ -35,7 +35,7 @@ class Categorie extends Model
    
    $competition = Competition::Find($competition);
 
-        if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle() && (!$animal>StatutFemelle()->vide || $animal>StatutFemelle()->suitee ))
+        if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal>StatutFemelle->vide || $animal>StatutFemelle->suitee ))
         {
             return false;
         }
