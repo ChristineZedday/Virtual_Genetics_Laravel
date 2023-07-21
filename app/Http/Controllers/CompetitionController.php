@@ -99,7 +99,7 @@ class CompetitionController extends Controller
                 $request->session()->flash('status');
                 $request->session()->flash('alert-class',"alert-sucess");
                
-                return redirect()->route('competitions',[ $elevage, $evenement->id])->with('status',"votre animal a été inscrit dans sa catégorie");
+                return redirect()->route('competitions',[ $elevage, $competition->type] )->with('status',"votre animal a été inscrit dans sa catégorie");
             }
             
           }
