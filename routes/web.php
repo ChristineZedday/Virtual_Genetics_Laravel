@@ -109,9 +109,9 @@ Route::get('/competition/{elevage}', 'CompetitionController@index')->name('compe
 
 Route::get('/competitions/{elevage}/{type}', 'CompetitionController@aVenir')->name('competitions');
 
-Route::get('/resultats/{elevage}', 'CompetitionController@resultats')->name('resultats');
+Route::get('/resultats/{elevage}/{type}', 'CompetitionController@resultats')->name('resultats');
 
-Route::get('/tous_resultats/{elevage}', 'CompetitionController@tousResultats')->name('tous_resultats');
+Route::get('/tous_resultats/{elevage}/{type}', 'CompetitionController@tousResultats')->name('tous_resultats');
 
 Route::get('/inscrits/{elevage}', 'CompetitionController@inscrits')->name('inscrits');
 

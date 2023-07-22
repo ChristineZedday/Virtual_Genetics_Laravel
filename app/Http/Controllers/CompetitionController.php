@@ -128,26 +128,27 @@ class CompetitionController extends Controller
         
     }
 
-    public function resultats( $elevage)
+    public function resultats( $elevage, $type)
     {
        
         
         $elevage =Elevage::Find($elevage);
-        //dd($elevage);
-        $resultats  = Resultat::resultats($elevage->id);
-       
+        
+        $resultats  = Resultat::resultats($elevage->id, $type);
+
+
         //dd($resultats);
         return view('resultats', ['elevage' => $elevage, 'resultats' => $resultats]);
         
         
     }
 
-    public function tousResultats($elevage )
+    public function tousResultats($elevage ,$type)
     {
        
         
         $elevage =Elevage::Find($elevage);
-        $resultats = Resultat::tousResultats();
+        $resultats = Resultat::tousResultats($type);
         //dd($resultats);
         return view('tous_resultats',['elevage'=>$elevage, 'resultats' =>$resultats]);
         
