@@ -42,10 +42,12 @@ class Categorie extends Model
         }
 
         $races = $competition->Races;
+      
         if (!empty($races)) {
-            $races = $races->Modelkeys();
-            if (!array_search($animal->race->id, $races) ) {
-                if (!array_search(1,$races)) {
+            $races = $races->modelkeys();
+            if (!in_array($animal->race_id, $races) ) {
+              
+                if (!in_array(1,$races)) {
                     return false;
                 }
             }
