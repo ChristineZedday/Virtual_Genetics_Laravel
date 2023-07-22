@@ -28,41 +28,51 @@ class Categorie extends Model
     foreach ($results as $result) {
         $event = Evenement::Find($result->evenement->id);
         if ($event->date === $date) {
+          
             return false; //déjà inscrit ailleurs
         }
     }
-    $evid = $evenement->id;
+   
    
    $competition = Competition::Find($competition);
 
-        if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal>StatutFemelle->vide || $animal>StatutFemelle->suitee ))
+        if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->StatutFemelle->suitee ))
         {
             return false;
         }
+
+        $races = $competition->Races;
+        if (!empty($races)) {
+            $races = $races->Modelkeys();
+            if (!array_search($animal->race->id, $races) ) {
+                if (!array_search(1,$races)) {
+                    return false;
+                }
+            }
+        }
   
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
-           
+
                 return false;
             }
         if ($this->age_max != null && $this->age_max < $animal->ageAdministratif($date)) {
-         
+        
                 return false; 
             }
         if ($this->sexe != null && $this->sexe != $animal->genre()) {
-            
+           
                 return false;
         }
 
         if ($this->taille_min != null && $this->taille_min > $animal->taille()) {
-           
+         
             return false;
     }
 
     if ($this->taille_max != null && $this->taille_max < $animal->taille()) {
-        
+       
         return false;
 }
-   
     return true;
 
 }

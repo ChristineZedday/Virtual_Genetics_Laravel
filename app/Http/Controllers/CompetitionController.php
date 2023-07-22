@@ -91,7 +91,8 @@ class CompetitionController extends Controller
 
 
         
-        if ($categorie->verification($animal, $evenement, $competition->id) && $competition->verification($animal, $reprise))  { 
+        if ($categorie->verification($animal, $evenement, $competition->id) ) { 
+            if ($reprise == NULL || $reprise->niveau_num_global == $animal->Performance->$niveau_dressage ) {
            
                 if ($resultat->save()) {
                  
@@ -104,6 +105,7 @@ class CompetitionController extends Controller
             }
             
           }
+        }
         
         else {
             
