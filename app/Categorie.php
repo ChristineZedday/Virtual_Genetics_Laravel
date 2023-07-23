@@ -45,6 +45,7 @@ class Categorie extends Model
       
         if (!empty($races)) {
             $races = $races->modelkeys();
+           // dd($races);
             if (!in_array($animal->race_id, $races) ) {
               
                 if (!in_array(1,$races)) {
@@ -54,17 +55,19 @@ class Categorie extends Model
         }
   
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
-
+dd('min '.$this->age_min);
                 return false;
             }
-        if ($this->age_max != null && $this->age_max < $animal->ageAdministratif($date)) {
-        
+        if ($this->age_max != NULL && $this->age_max < $animal->ageAdministratif($date)) {
+                
                 return false; 
             }
-        if ($this->sexe != null && $this->sexe != $animal->genre()) {
-           
+       
+        if ($this->sexe !== NULL) { 
+            if ($this->sexe != $animal->genre()) {
                 return false;
         }
+    }
 
         if ($this->taille_min != null && $this->taille_min > $animal->taille()) {
          
