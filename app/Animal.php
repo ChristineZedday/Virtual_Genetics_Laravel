@@ -118,6 +118,8 @@ class Animal extends Model
             case 'jeune mâle':
             case 'mâle':
             case 'vieux mâle':
+            case 'mâle stérilisé':
+            case 'vieux mâle stérilisé':
                 return 1;
             default:
             return 0;

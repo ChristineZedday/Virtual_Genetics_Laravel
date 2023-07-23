@@ -134,8 +134,12 @@ public function run($competition, $evenement) {
 
     foreach ($inscrits as $inscrit) {
     $elevage = $inscrit->animal->elevage;
-        if ($elevage->budget > $competition->frais_voyage) {
-            $elevage->budget -= $competition->frais_voyage;
+    $frais = $competition->frais_voyage;
+    if (NULL != $inscrit->animal->StatutFemelle && $inscrit->animal->StatutFemelle->suitee ) {
+        $frais += $frais * 0.5;
+    }
+        if ($elevage->budget > $frais ) {
+            $elevage->budget -= $frais;
             $elevage->save();
         } 
         else {

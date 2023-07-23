@@ -234,7 +234,7 @@ static function regCompetNPC()
                    
                     $catid = null;
                     foreach ($comp->Categories as $categorie) {
-                       if (array_search($categorie->id,$categories_cheval->modelKeys())) {
+                       if (in_array($categorie->id,$categories_cheval->modelKeys())) {
                          $catid = $categorie->id;
                          break;
                        }
