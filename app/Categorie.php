@@ -40,6 +40,12 @@ class Categorie extends Model
         {
             return false;
         }
+        if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
+            return false;
+        }
+        if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
+            return false;
+        }
 
         $races = $competition->Races;
       
@@ -78,6 +84,8 @@ class Categorie extends Model
        
         return false;
 }
+
+
     return true;
 
 }
