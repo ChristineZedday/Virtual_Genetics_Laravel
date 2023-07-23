@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -1935,6 +1936,51 @@ class AssoRaceTableSeeder extends Seeder
                 'automatique' => 0,
                 'commentaire' => 'FS',
                 'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL,
+            ),
+            128 => 
+            array (
+                'id' => 146,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 15,
+                'race_mere_id' => 8,
+                'race_produit_id' => 15,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'Pintabian',
+                'approbation' => 0,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL,
+            ),
+            129 => 
+            array (
+                'id' => 147,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 8,
+                'race_mere_id' => 15,
+                'race_produit_id' => 15,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'Pintabian',
+                'approbation' => 0,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL,
+            ),
+            130 => 
+            array (
+                'id' => 148,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 8,
+                'race_mere_id' => 9,
+                'race_produit_id' => 15,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'Pintabian',
+                'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
