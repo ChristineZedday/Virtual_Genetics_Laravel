@@ -55,7 +55,7 @@ class Categorie extends Model
         }
   
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
-dd('min '.$this->age_min);
+
                 return false;
             }
         if ($this->age_max != NULL && $this->age_max < $animal->ageAdministratif($date)) {
