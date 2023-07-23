@@ -7,6 +7,7 @@ use Orangehill\IseedServiceProvider\animaux;
 use App\Http\Controllers\ReproductionController;
 use App\Affixe;
 use DateTime;
+use App\GameData;
 
 class Animal extends Model
 {
@@ -38,9 +39,6 @@ class Animal extends Model
     {
         return $this->hasOne('App\Performance');
     }
-
-
-
     
     public function Sire() //le père
     {
@@ -398,6 +396,28 @@ public function Resultats() //Resultats en compète, mais c'est la fonction Palm
     return $this->BelongsToMany('App\Resultat');
 }
         
-    
+public function seraSuiteeAu($date)   {
+     if ($this->StatutFemelle->suitee) {
+        $foal = Animal::where('dam_id',$this->id)->where('sexe','jeune poulain')->orWhere('sexe','jeune pouliche')->first();
+        $age = $foal->ageMonths();
+        $months = GameData::HowManyMonths($date);
+        if ($age + $months >= 6) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    else if (!$this->StatutFemelle->vide) {
+        $terme = $this->StatutFemelle->terme;
+        if ($terme <= $date) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+} 
  
 }
