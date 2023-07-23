@@ -76,12 +76,13 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
     {
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
         $race = $animal->race_id;
-        $hasRace = $this->Races->find($race);
-        $hasOC = $this->Races->find(1);
+        $races = $this->Races->modelKeys();
+       
         
-        if ($hasRace || $hasOC ) {
+        if (in_array($race, $races) || in_array(1, $races)) {
             if ($this->type == 'Modèle et Allures') {  
-                if ($animal->Performance->Niveau->id ==     $this->Niveau->id || $this->Niveau->open)
+               
+                if ($animal->Performance->Niveau ==     $this->Niveau )
                 {return true;}
                 else {return false;}
             }
