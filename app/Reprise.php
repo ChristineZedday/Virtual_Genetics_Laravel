@@ -73,6 +73,9 @@ class Reprise extends Model
         if ($note >= 60) {
                 switch($i) {
                     case 1:
+                        $perf->pourcent_niveau += 40;
+                        break;
+                    case 2:
                         $perf->pourcent_niveau += 30;
                         break;
                     case 2:

@@ -401,8 +401,8 @@ public function seraSuiteeAu($date)   {
         $foal = Animal::where('dam_id',$this->id)->where('sexe','jeune poulain')->orWhere('sexe','jeune pouliche')->first();
         $age = $foal->ageMonths();
         $months = GameData::HowManyMonths($date);
-        if ($age + $months >= 6) {
-            dd('poulain sevré');
+        if ($age + $months > 6) {
+           // dd('poulain sevré');
             return false;
         }
         else {
