@@ -41,9 +41,11 @@ class Categorie extends Model
             return false;
         }
         if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
+           
             return false;
         }
         if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
+           
             return false;
         }
 

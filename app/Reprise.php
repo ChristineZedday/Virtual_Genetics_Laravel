@@ -43,7 +43,10 @@ class Reprise extends Model
         foreach ($inscrits as $inscrit) {
             $animal = $inscrit->animal;
     
-             $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + random_int(-20,20);
+             $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + 
+             ($animal->Performance->niveau_dressage * $animal->capacite_apprentissage_additive)/100 -
+             $this->niveau_num_global +
+             random_int(-20,20);
 
              if ( $notes[$animal->id] > 100) {
                 $notes[$animal->id] = 100;

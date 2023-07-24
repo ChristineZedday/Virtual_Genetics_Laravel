@@ -402,21 +402,29 @@ public function seraSuiteeAu($date)   {
         $age = $foal->ageMonths();
         $months = GameData::HowManyMonths($date);
         if ($age + $months >= 6) {
+            dd('poulain sevré');
             return false;
         }
         else {
+           // dd('toujours suitée');
             return true;
         }
     }
     else if (!$this->StatutFemelle->vide) {
         $terme = $this->StatutFemelle->terme;
         if ($terme <= $date) {
+            //dd('à nouveau suitée');
             return true;
         }
         else {
+            //dd('pleine pas suitée');
             return false;
         }
 
+    }
+    else {
+        return false;
+        //dd('ni pleine ni suitée');
     }
 } 
  
