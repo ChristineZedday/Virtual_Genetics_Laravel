@@ -24,12 +24,18 @@ class Categorie extends Model
     $date = $evenement->date;
 
     $results = Resultat::Where('animal_id', $animal->id)->get();
-    
+    $count = 0;
     foreach ($results as $result) {
+
         $event = Evenement::Find($result->evenement->id);
         if ($event->date === $date) {
-          
+            $count ++;
+           if ($event != $evenement){
             return false; //déjà inscrit ailleurs
+           }
+           if ($count > 1) {
+            return false; //max 2 épreuves
+           }
         }
     }
    
