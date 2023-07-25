@@ -11,10 +11,10 @@
 <p>par {{$jument->Sire->NomComplet()}}</p>
 <p>et {{$jument->Dam->NomComplet()}}</p>
 @endif
-@isset ($jument->Statut->etalon_id)
-<p class='nom'>Dernière saillie: {{$jument->Statut->Male->NomComplet()}}</p>
-@if ((App\Animal::find($jument->Statut->etalon_id)->elevage_id == $elevage->id) && (isset(App\Animal::find($jument->Statut->etalon_id)->StatutMale) && App\Animal::find($jument->Statut->etalon_id)->StatutMale->fertilite >0))
-<a href="{{route('etalon',[$elevage->id, $jument->Statut->etalon_id, $jument->id])}}"><button>Réutiliser?</button></a>
+@isset ($jument->StatutFemelle->etalon_id)
+<p class='nom'>Dernière saillie: {{$jument->StatutFemelle->Male->NomComplet()}}</p>
+@if ((App\Animal::find($jument->StatutFemelle->etalon_id)->elevage_id == $elevage->id) && (isset(App\Animal::find($jument->StatutFemelle->etalon_id)->StatutMale) && App\Animal::find($jument->StatutFemelle->etalon_id)->StatutMale->fertilite >0))
+<a href="{{route('etalon',[$elevage->id, $jument->StatutFemelle->etalon_id, $jument->id])}}"><button>Réutiliser?</button></a>
 @endif
 @endisset
 <h3 >Mes Etalons:</h3>

@@ -35,7 +35,7 @@ if (isset($images)) {
 <?php 
 $date = \App\Gamedata::date();
 ?>
-@if ($jument->Statut->date_saillie != $date)
+@if ($jument->StatutFemelle->date_saillie != $date)
 <div id='boutons'>
 <a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id])}}">
 			<button>Confirmer le croisement</button></a>

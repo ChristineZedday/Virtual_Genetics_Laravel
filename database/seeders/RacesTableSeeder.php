@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -212,6 +213,20 @@ class RacesTableSeeder extends Seeder
                 'taille_max' => 150,
                 'approbation' => 0,
                 'pcArabe' => 0,
+                'pcWelsh' => 0.0,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Pintabian',
+                'prix_moyen' => 4000,
+                'frais_enregistrement' => NULL,
+                'taille_min' => NULL,
+                'taille_max' => NULL,
+                'approbation' => 0,
+                'pcArabe' => 99,
                 'pcWelsh' => 0.0,
             ),
         ));

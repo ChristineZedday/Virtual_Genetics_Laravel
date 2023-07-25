@@ -7,6 +7,7 @@ use Orangehill\IseedServiceProvider\animaux;
 use App\Http\Controllers\ReproductionController;
 use App\Affixe;
 use DateTime;
+use App\GameData;
 
 class Animal extends Model
 {
@@ -38,9 +39,6 @@ class Animal extends Model
     {
         return $this->hasOne('App\Performance');
     }
-
-
-
     
     public function Sire() //le père
     {
@@ -67,9 +65,9 @@ class Animal extends Model
     }
 
 
-    public function Statut() //femelle en âge de se reproduire, fertilité, gestante, suitée
+    public function StatutFemelle() //femelle en âge de se reproduire, fertilité, gestante, suitée
     {
-       return $this->HasOne('App\statutsFemelle', 'animal_id');
+       return $this->HasOne('App\StatutFemelle', 'animal_id');
 
     }
 
@@ -118,6 +116,8 @@ class Animal extends Model
             case 'jeune mâle':
             case 'mâle':
             case 'vieux mâle':
+            case 'mâle stérilisé':
+            case 'vieux mâle stérilisé':
                 return 1;
             default:
             return 0;
@@ -365,7 +365,7 @@ class Animal extends Model
             $this->date_achat = $date;
             $this->elevage_id = $elevage->id;
             $this->save();
-            $statut = statutsFemelle::where('animal_id', $this->id)->first();
+            $statut = StatutFemelle::where('animal_id', $this->id)->first();
             if (isset($statut) )
             {
                if ($statut->vide == false)
@@ -396,6 +396,36 @@ public function Resultats() //Resultats en compète, mais c'est la fonction Palm
     return $this->BelongsToMany('App\Resultat');
 }
         
-    
+public function seraSuiteeAu($date)   {
+     if ($this->StatutFemelle->suitee) {
+        $foal = Animal::where('dam_id',$this->id)->where('sexe','jeune poulain')->orWhere('sexe','jeune pouliche')->first();
+        $age = $foal->ageMonths();
+        $months = GameData::HowManyMonths($date);
+        if ($age + $months > 6) {
+           // dd('poulain sevré');
+            return false;
+        }
+        else {
+           // dd('toujours suitée');
+            return true;
+        }
+    }
+    else if (!$this->StatutFemelle->vide) {
+        $terme = $this->StatutFemelle->terme;
+        if ($terme <= $date) {
+            //dd('à nouveau suitée');
+            return true;
+        }
+        else {
+            //dd('pleine pas suitée');
+            return false;
+        }
+
+    }
+    else {
+        return false;
+        //dd('ni pleine ni suitée');
+    }
+} 
  
 }

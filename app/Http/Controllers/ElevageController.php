@@ -219,7 +219,7 @@ class ElevageController extends Controller
         
         $elevage = Elevage::Find($id);
         $date = Gamedata::date();
-        $juments = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'femelle')->orWhere('sexe', 'vieille femelle');})->whereHas('Statut', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
+        $juments = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'femelle')->orWhere('sexe', 'vieille femelle');})->whereHas('StatutFemelle', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
        
 
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);

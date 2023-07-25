@@ -285,11 +285,91 @@ class EvenementsTableSeeder extends Seeder
             ),
             33 => 
             array (
-                'id' => 36,
+                'id' => 35,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-09-07',
                 'nom' => 'National Pottok',
+            ),
+            34 => 
+            array (
+                'id' => 36,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-03-14',
+                'nom' => 'Dressage ',
+            ),
+            35 => 
+            array (
+                'id' => 37,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-05-21',
+                'nom' => 'Dressage Poneys',
+            ),
+            36 => 
+            array (
+                'id' => 38,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-06-25',
+                'nom' => 'Dressage',
+            ),
+            37 => 
+            array (
+                'id' => 39,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-04-19',
+                'nom' => 'Dressage Régional',
+            ),
+            38 => 
+            array (
+                'id' => 40,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-09-18',
+                'nom' => 'Dressage Régional',
+            ),
+            39 => 
+            array (
+                'id' => 41,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-11-22',
+                'nom' => 'Dressage Régional',
+            ),
+            40 => 
+            array (
+                'id' => 42,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1972-06-22',
+                'nom' => 'Dressage National',
+            ),
+            41 => 
+            array (
+                'id' => 43,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1972-09-15',
+                'nom' => 'Dressage National',
+            ),
+            42 => 
+            array (
+                'id' => 44,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-02-20',
+                'nom' => 'Dressage Poneys',
+            ),
+            43 => 
+            array (
+                'id' => 45,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '1971-04-20',
+                'nom' => 'Dressage Poneys',
             ),
         ));
         

@@ -21,7 +21,11 @@
 	<td>{{$resultat->Evenement->nom}} {{$resultat->Evenement->date}}</td>
 	<td>{{$resultat->competition->nom }}</td>
 	<td>{{$resultat->Competition->Niveau->libelle }}</td>
-    <td>{{$resultat->Categorie->nom}}</td>
+	@if ($resultat->Competition->type == 'Dressage')
+    <td>{{$resultat->Reprise->nom}}</td>
+	@else
+	<td>{{$resultat->Categorie->nom}}</td>
+	@endif
 	<td>{{$resultat->texteClassement()}} </td>
 	<td>{{$resultat->note_synthese}} </td>
    

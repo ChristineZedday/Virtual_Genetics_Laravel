@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\statutsfemelles;
 
-class statutsFemelle extends Model
+class StatutFemelle extends Model
 {
     protected $table = 'statutsfemelles';
    //Statut de la poulinière 

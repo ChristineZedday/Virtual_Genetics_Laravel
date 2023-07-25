@@ -525,35 +525,187 @@ class CompetitionEvenementTableSeeder extends Seeder
             ),
             63 => 
             array (
-                'id' => 66,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 42,
-                'evenement_id' => 36,
-            ),
-            64 => 
-            array (
-                'id' => 67,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 43,
-                'evenement_id' => 36,
-            ),
-            65 => 
-            array (
                 'id' => 68,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 54,
                 'evenement_id' => 16,
             ),
-            66 => 
+            64 => 
             array (
                 'id' => 69,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 55,
                 'evenement_id' => 16,
+            ),
+            65 => 
+            array (
+                'id' => 78,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 54,
+                'evenement_id' => 37,
+            ),
+            66 => 
+            array (
+                'id' => 79,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 55,
+                'evenement_id' => 37,
+            ),
+            67 => 
+            array (
+                'id' => 80,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'evenement_id' => 39,
+            ),
+            68 => 
+            array (
+                'id' => 81,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'evenement_id' => 39,
+            ),
+            69 => 
+            array (
+                'id' => 82,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 58,
+                'evenement_id' => 36,
+            ),
+            70 => 
+            array (
+                'id' => 83,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 58,
+                'evenement_id' => 38,
+            ),
+            71 => 
+            array (
+                'id' => 84,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'evenement_id' => 39,
+            ),
+            72 => 
+            array (
+                'id' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 60,
+                'evenement_id' => 42,
+            ),
+            73 => 
+            array (
+                'id' => 86,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 54,
+                'evenement_id' => 36,
+            ),
+            74 => 
+            array (
+                'id' => 87,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 55,
+                'evenement_id' => 36,
+            ),
+            75 => 
+            array (
+                'id' => 88,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 42,
+                'evenement_id' => 35,
+            ),
+            76 => 
+            array (
+                'id' => 89,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 43,
+                'evenement_id' => 35,
+            ),
+            77 => 
+            array (
+                'id' => 90,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'evenement_id' => 8,
+            ),
+            78 => 
+            array (
+                'id' => 91,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'evenement_id' => 8,
+            ),
+            79 => 
+            array (
+                'id' => 92,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'evenement_id' => 40,
+            ),
+            80 => 
+            array (
+                'id' => 93,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'evenement_id' => 40,
+            ),
+            81 => 
+            array (
+                'id' => 94,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'evenement_id' => 40,
+            ),
+            82 => 
+            array (
+                'id' => 95,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'evenement_id' => 41,
+            ),
+            83 => 
+            array (
+                'id' => 96,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 60,
+                'evenement_id' => 43,
+            ),
+            84 => 
+            array (
+                'id' => 97,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 61,
+                'evenement_id' => 44,
+            ),
+            85 => 
+            array (
+                'id' => 98,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 61,
+                'evenement_id' => 45,
             ),
         ));
         

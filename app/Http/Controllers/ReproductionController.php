@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gamedata;
-use App\statutsFemelle;
+use App\StatutFemelle;
 use App\StatutMale;
 use App\Animal;
 use App\Elevage;
@@ -29,49 +29,50 @@ class ReproductionController extends Controller
    static function croisement($elevage, $etalon, $jument)
    {
     //vérification du statut des reproducteurs
-    $statut = statutsFemelle::where('animal_id',$jument)->first(); //fondateurs
-    if (!isset($statut))
+    $jument = Animal::Find($jument);
+    $statut = $jument->StatutFemelle;
+    if ($statut == NULL)
     {
-      $statut = new statutsFemelle();
-      $statut->animal_id = $jument;
+      $statut = new StatutFemelle;
+      $statut->animal_id = $jument->id;
     }
-    $statutM = StatutMale::where('animal_id',$etalon)->first(); //fondateurs
+    $etalon = Animal::Find($etalon);
+    $statutM = $etalon->StatutMale; //fondateurs
     if (!isset($statutM)) //à supprimer? normalement tous les animaux ont un statut avec checkPuberes
     {
       $statutM = new StatutMale();
-      $statutM->animal_id = $etalon;
+      $statutM->animal_id = $etalon->id;
       $statutM->qualite = 'autorisé' ;
       $statutM->save();
 
     }
-    $jument = Animal::Find($jument);
+    
     $elevage = Elevage::Find($elevage);
     //controle pas déjà saillie
     $dateS = Gamedata::date();
-    if ($statut->date_saillie != $dateS )
+    if ($statut->vide )
       {
         $statut->pres_pleine = true; 
-        $statut->etalon_id = $etalon;
+        $statut->etalon_id = $etalon->id;
         $statut->date_saillie = $dateS;
         $date = Gamedata::ElevenMonths();
         $statut->terme = $date;
         $statut->save();
-        $etalon = Animal::Find($etalon);
-        
+  
         srand((float) microtime()*1000000);
       
-        $fertilite = ($etalon->StatutMale->fertilite * $jument->Statut->fertilite)/100 ;
+        $fertilite = ($statutM->fertilite * $statut->fertilite)/100 ;
         $success = rand(1,$fertilite);
 
       
 
           if ($etalon->elevage->id != $elevage->id)
           {
-            $elevage->budget = $elevage->budget - $etalon->StatutMale->prix;
+            $elevage->budget = $elevage->budget - $statutM->prix;
             $elevage->save();
 
             $etalonnier = $etalon->Elevage;
-            $etalonnier->budget = $etalonnier->budget + $etalon->StatutMale->prix;
+            $etalonnier->budget = $etalonnier->budget + $statutM->prix;
             $etalonnier->save();
           }
           if ($success > 50)

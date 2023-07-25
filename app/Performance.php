@@ -49,4 +49,11 @@ class Performance extends Model
         }
        
     }
+    public function upgradeDressage()
+    {
+        if ($this->pourcent_niveau >= 90) {
+            $this->niveau_dressage ++;
+            $this->pourcent_niveau = 0;
+        }
+    }
 }

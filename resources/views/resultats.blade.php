@@ -21,7 +21,11 @@
 	<td>{{$resultat->Evenement->nom}} {{$resultat->Evenement->date}}</td>
 	<td>{{$resultat->Competition->nom }}</td>
 	<td>{{$resultat->Competition->Niveau->libelle }}</td>
+	@if ($resultat->Competition->type == 'Modèle et Allures')
     <td>{{$resultat->Categorie->nom}}</td>
+	@else
+	<td>{{$resultat->Reprise->nom}}</td>
+	@endif
 	<td>{{$resultat->texteClassement()}} </td>
 	<td>{{$resultat->note_synthese}} </td>
    

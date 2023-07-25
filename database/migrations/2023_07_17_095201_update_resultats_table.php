@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_dressages', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('resultats', function (Blueprint $table) {
+            $table->bigInteger('reprise_id')->nullable();
+            
+    
         });
     }
 
@@ -26,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_dressages');
+        Schema::table('resultats', function (Blueprint $table) {
+            $table->dropColumn('reprise_id');
+        });
     }
 };
