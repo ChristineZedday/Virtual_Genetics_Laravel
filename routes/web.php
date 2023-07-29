@@ -113,7 +113,7 @@ Route::get('/resultats/{elevage}/{type}', 'CompetitionController@resultats')->na
 
 Route::get('/tous_resultats/{elevage}/{type}', 'CompetitionController@tousResultats')->name('tous_resultats');
 
-Route::get('/inscrits/{elevage}', 'CompetitionController@inscrits')->name('inscrits');
+Route::get('/inscrits/{elevage}/{type}', 'CompetitionController@inscrits')->name('inscrits');
 
 Route::get('/competitions/{elevage}/{evenement}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
 

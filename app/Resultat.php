@@ -48,14 +48,18 @@ class Resultat extends Pivot
       return $this->BelongsTo('App\Competition', 'competition_id');
    }
 
-   static function inscrits($elevage_id)
+   static function inscrits($elevage_id, $type = NULL)
    {
       $date =new DateTime(Gamedata::date());
       $m = $date->format('m');
       $y = $date->format('Y');
       
-     
+     if ($type == NULL) {
       $res = Resultat::whereHas('Animal', function (Builder $q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','>=', $date);})->get();
+    }
+   else {
+      $res = Resultat::whereHas('Animal', function (Builder $q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','>=', $date);})->whereHas('Competition', function (Builder $query2) use ($type) {$query2->where('type','=', $type);})->get();
+   }
      //dd($res);
       return $res;
       
