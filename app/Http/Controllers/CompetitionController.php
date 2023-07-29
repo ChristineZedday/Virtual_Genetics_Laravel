@@ -117,9 +117,15 @@ class CompetitionController extends Controller
         }
     }
 
-    public function inscrits( $elevage)
+    public function inscrits( $elevage, $type)
     {
-       $inscrits = Resultat::inscrits($elevage);
+        if ($type == 'tous') {
+            $inscrits = Resultat::inscrits($elevage);
+        }
+        else {
+            $inscrits = Resultat::inscrits($elevage, $type);
+        }
+       
       
        $elevage =Elevage::Find($elevage);
        
