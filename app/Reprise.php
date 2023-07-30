@@ -106,7 +106,7 @@ class Reprise extends Model
     
     }
 
-    public function verification($animal): bool
+    public function verification($animal)
     {
         
         //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau
@@ -115,10 +115,12 @@ class Reprise extends Model
       
         if ($niveau != $this->niveau_num_global ) {
            
-            return false;
+            return "Reprise pas du bon niveau ";
         }
+        else {
       
-    return true;
+            return "OK";
+        }
     }
     
 

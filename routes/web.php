@@ -15,6 +15,8 @@
 
 Auth::routes();
 
+
+
 Route::get('/', function () { if ( Auth::check() ) {return redirect()->action('HomeController@index');} else {return view('bienvenue');}});
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -121,4 +123,5 @@ Route::post('/inscription/{evenement}/{competition}', 'CompetitionController@ins
 
 Route::get('/desinscrire/{resultat}', 'CompetitionController@desinscrire')->name('desinscrire');
 
-Route::get('palmares/{elevage}/{animal}/{resultat}', 'AnimalController@palmare')->name('palmares');
+//Route::get('palmares/{elevage}/{animal}/{resultat}', 'AnimalController@palmares')->name('palmares');
+
