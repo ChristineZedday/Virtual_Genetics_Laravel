@@ -115,10 +115,12 @@ class Reprise extends Model
       
         if ($niveau != $this->niveau_num_global ) {
            
-            return "Pas le bon niveau";
+            return "Reprise pas du bon niveau ";
         }
+        else {
       
-    return "OK";
+            return "OK";
+        }
     }
     
 
