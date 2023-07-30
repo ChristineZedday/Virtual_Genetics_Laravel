@@ -13,6 +13,7 @@ use App\Dressage;
 use App\Gamedata;
 use App\Race;
 use App\Reprise;
+use Session;
 
 
 class CompetitionController extends Controller
@@ -90,29 +91,33 @@ class CompetitionController extends Controller
        $categorie = Categorie::Find($resultat->categorie_id);
 
 
-        
-        if ($categorie->verification($animal, $evenement, $competition->id) ) { 
-            if ($competition->verification($animal, $reprise) ) {
+        $message = $categorie->verification($animal, $evenement, $competition->id);
+        if ($message == 'OK')  { 
+            if ($competition->verification($animal, $reprise == "OK") ) {
            
                 if ($resultat->save()) {
                  
                 $elevage->budget -= $competition->prix_inscription;
                 $elevage->save();
-                $request->session()->flash('status');
+                $request->session()->flash('message');
                 $request->session()->flash('alert-class',"alert-sucess");
                
-                return redirect()->route('competitions',[ $elevage, $competition->type] )->with('status',"votre animal a été inscrit dans sa catégorie");
+                return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->with('message',"votre animal a été inscrit dans sa catégorie");
             }
-            
+            else {
+               
+               return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->withErrors(['Pas le bon niveau']);
+            }
           }
         }
         
         else {
+            return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->withErrors([$message]);
             
-            $categories = $competition->Categories;
+        /*    $categories = $competition->Categories;
             $request->session()->flash('status',"Pas la bonne catégorie, ou déjà inscrit quelque part à cette date!");
             $request->session()->flash('alert-class',"alert-danger");
-            return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'animaux' => $animaux])->with('status');
+            return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'animaux' => $animaux])->with('status');*/
             
         }
     }

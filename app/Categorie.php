@@ -19,7 +19,7 @@ class Categorie extends Model
 
    
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
-   public function verification($animal, $evenement, $competition) : bool
+   public function verification($animal, $evenement, $competition) 
    {
     $date = $evenement->date;
 
@@ -31,10 +31,10 @@ class Categorie extends Model
         if ($event->date === $date) {
             $count ++;
            if ($event != $evenement){
-            return false; //déjà inscrit ailleurs
+            return 'Inscrit ailleurs à cette date'; //déjà inscrit ailleurs
            }
            if ($count > 1) {
-            return false; //max 2 épreuves
+            return 'Déjà inscrit dans 2 épreuves ce jour'; //max 2 épreuves
            }
         }
     }
@@ -44,15 +44,15 @@ class Categorie extends Model
 
         if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
-            return false;
+            return 'Jument pleine ou suitée';
         }
         if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
            
-            return false;
+            return 'Pas suitée, ou le poulain sera sevré à cette date';
         }
         if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
            
-            return false;
+            return 'Jument ou pouliche suitée à la date du concours';
         }
 
         $races = $competition->Races;
@@ -63,38 +63,38 @@ class Categorie extends Model
             if (!in_array($animal->race_id, $races) ) {
               
                 if (!in_array(1,$races)) {
-                    return false;
+                    return 'Cheval pas de la bonne race pour cette compétition';
                 }
             }
         }
   
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
 
-                return false;
+                return 'trop jeune';
             }
         if ($this->age_max != NULL && $this->age_max < $animal->ageAdministratif($date)) {
                 
-                return false; 
+                return 'trop vieux'; 
             }
        
         if ($this->sexe !== NULL) { 
             if ($this->sexe != $animal->genre()) {
-                return false;
+                return 'Avez-vous bien regardé ses organes génitaux?';
         }
     }
 
         if ($this->taille_min != null && $this->taille_min > $animal->taille()) {
          
-            return false;
+            return 'T\'es bien trop petit mon ami, t\'es bien trop petit, dame oui';
     }
 
     if ($this->taille_max != null && $this->taille_max < $animal->taille()) {
        
-        return false;
+        return 'trop grand pour cette catégorie';
 }
 
 
-    return true;
+    return 'OK';
 
 }
         

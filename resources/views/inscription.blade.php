@@ -1,8 +1,23 @@
 @extends('layouts.competitionDashboard')
 @section('content')
+@if(session('message'))
+                <p class="alert alert-success"> {{ session('message') }}</p>
+            @elseif ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+              
+
 <form action="{{route('inscription', [$evenement,$competition])}}" method="POST" >
 						@csrf
 						@method('POST')
+
+          
 						
 <h3>{{$evenement->nom}}: {{$competition->nom}}</h3>
 <div class ='form'>

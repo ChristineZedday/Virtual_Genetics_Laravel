@@ -79,18 +79,18 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         $races = $this->Races->modelKeys();
        
         if (in_array($race, $races) || in_array(1, $races)) {
-            if ($this->type == 'Modèle et Allures') {  
+            if ($reprise == NULL) {  
                
                 if ($animal->Performance->Niveau ==     $this->Niveau )
-                {return true;}
-                else {return false;}
+                {return 'OK';}
+                else {return 'Pas le bon niveau';}
             }
             else {
                 
                 return $reprise->verification($animal );}
         }
         else {
-            return false;
+            return 'Pas la bonne race';
         }
         
     
