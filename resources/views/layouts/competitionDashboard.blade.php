@@ -54,6 +54,7 @@ $date = $game->date();
 						
 					</ul>
 				</li>
+				<li class='deroule'><a href="{{route('reprises', [$elevage])}}">Liste des reprises de dressage</a></li>
 				<li><a href="{{route('budget',[$elevage])}}">Voir mon budget</a></li>
 			
 				<li><a href="{{route('dashboard',[$elevage],  'ElevageController@index')}}">Retour à l'élevage</a>

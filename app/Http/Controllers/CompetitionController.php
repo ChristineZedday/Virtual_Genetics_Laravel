@@ -178,6 +178,11 @@ class CompetitionController extends Controller
        
     }
 
-  
+  public function reprises($elevage) {
+    $reprises = Reprise::liste();
+    $elevage = Elevage::find($elevage);
+    
+    return view('ReprisesDressage',['elevage'=>$elevage, 'reprises' =>$reprises]);
+  }
 
 }
