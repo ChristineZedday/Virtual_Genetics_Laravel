@@ -123,5 +123,6 @@ Route::post('/inscription/{evenement}/{competition}', 'CompetitionController@ins
 
 Route::get('/desinscrire/{resultat}', 'CompetitionController@desinscrire')->name('desinscrire');
 
+Route::get('/reprises/{elevage}', 'CompetitionController@reprises')->name('reprises');
 //Route::get('palmares/{elevage}/{animal}/{resultat}', 'AnimalController@palmares')->name('palmares');
 

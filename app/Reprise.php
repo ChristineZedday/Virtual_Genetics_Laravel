@@ -123,7 +123,9 @@ class Reprise extends Model
         }
     }
     
-
+static function liste() {
+    return Reprise::all()->sortBy('niveau_num_global');
+}
   
 
 }
