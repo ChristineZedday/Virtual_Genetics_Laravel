@@ -11,7 +11,6 @@
         </ul>
     </div>
 @endif
-              
 
 <form action="{{route('inscription', [$evenement,$competition])}}" method="POST" >
 						@csrf
@@ -50,4 +49,17 @@
 </div>
 </form>
 
+<div class='container'>
+<p>Inscrivez vos chevaux et poneys dans la catégorie qui leur correspond. Peuvent entrer en compte les sexe, l'âge, la taille:<BR/>
+Poney A: 107 cm maximum (les miniatures de moins de 80 cm ne sont pas admis). Dans cette catégorie les poneys concourrent en équipe, ce n'est pas encore implémenté.<BR/>
+Poney A et B: Poneys de 87cm à 130 (Catégorie B + poneys A surclassés pour concourrir en individuel)<BR/>
+Poneys C et D: 131 à 148cm <BR/>
+Poney B: 130 cm maximum<BR/>
+Poney C: 140 cm maximum<BR/>
+Poney D: 148 cm maximum<BR/>
+Poney E: Poneys hors taille, chevaux ayant un parent poney ou arabe, arabes de plus de 148 cm (j'ai fixé arbitrairement la limite à 165 cm)<BR/>
+La catégorie cheval ou poney accepte tout animal de taille minimum 115 cm. C'est en fait la catégorie pour les chevaux mais on y admet les poneys montés par des adultes.<BR/>
+Pour les concours de modèle et allures: une jument suitée est une jument accompagnée d'un poulain de moins de 6 mois.<BR/>
+Pour les concours de dressage, choisissez la reprise qui correspond à leur niveau actuel. Les juments pleines (enceintes) ou suitées ne peuvent concourir qu'en modèle et allures, ainsi que les chevaux et poneys de moins de 4 ans (âge compté selon l'année de naissance sans tenir compte du mois). Il n'y a pas de compétition pour les jeunes en dessous de deux ans.</p>            
+</div>
 @endsection
