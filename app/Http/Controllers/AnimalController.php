@@ -417,6 +417,7 @@ class AnimalController extends Controller
         {
             $ar = Race::where('nom', 'Pur-sang Arabe')->first()->id;
             $arabe = Animal::pourCentRace($animal->id,$ar);
+            
             $welsh = Animal::pourCentWelsh($animal->id);
             $rDam = $animal->Dam->Race->id;
             $rSire = $animal->Sire->Race->id;

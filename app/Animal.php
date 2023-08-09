@@ -237,7 +237,7 @@ class Animal extends Model
             
     }
 
-    static function chercheRaces($etalon,$jument,$taille,$qualite) //Race d'un produit dont les parents sont de races différentes
+    static function chercheRaces($etalon,$jument,$taille,$qualite) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
     {
         $appro = Race::find($etalon)->approbation;
      
