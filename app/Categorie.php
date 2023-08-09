@@ -22,6 +22,7 @@ class Categorie extends Model
    public function verification($animal, $evenement, $competition) 
    {
     $date = $evenement->date;
+    $competition = Competition::Find($competition);
 
     $results = Resultat::Where('animal_id', $animal->id)->get();
     $count = 0;
@@ -33,6 +34,9 @@ class Categorie extends Model
            if ($event != $evenement){
             return 'Inscrit ailleurs à cette date'; //déjà inscrit ailleurs
            }
+           else if ($competition->type == 'Modèle et Allures') {
+            return 'Déjà inscrit';
+           }
            if ($count > 1) {
             return 'Déjà inscrit dans 2 épreuves ce jour'; //max 2 épreuves
            }
@@ -40,7 +44,7 @@ class Categorie extends Model
     }
    
    
-   $competition = Competition::Find($competition);
+  
 
         if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
