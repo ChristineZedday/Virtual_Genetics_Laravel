@@ -111,13 +111,14 @@ class Reprise extends Model
         
         //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau, et pas deux fois dans la m^me
         $niveau = $animal->Performance->niveau_dressage;
-        $deja = Resultat::where('animal_id', $animal->id)->where('evenement_id', $evenement)->where('reprise_id',$this->id)->get();
+        $deja = Resultat::where('animal_id', $animal->id)->where('evenement_id', $evenement)->where('reprise_id',$this->id)->first();
+       
       
         if ($niveau != $this->niveau_num_global ) {
            
             return "Reprise pas du bon niveau ";
         }
-        else if (!empty($deja)) {
+        else if ($deja != NULL) {
             return "Déjà inscrit dans cette reprise";
         }
       
