@@ -72,7 +72,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         return $competitions;
     }
 
-    public function verification($animal, $reprise=NULL)
+    public function verification($animal, $evenement, $reprise=NULL)
     {
         
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
@@ -89,7 +89,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
             }
             else {
               
-                $msg = $reprise->verification($animal );
+                $msg = $reprise->verification($animal, $evenement );
       
                 return $msg;
             }

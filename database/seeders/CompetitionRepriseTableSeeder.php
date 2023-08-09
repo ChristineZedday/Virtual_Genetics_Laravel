@@ -299,6 +299,14 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 61,
                 'reprise_id' => 12,
             ),
+            35 => 
+            array (
+                'id' => 43,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 55,
+                'reprise_id' => 60,
+            ),
         ));
         
         

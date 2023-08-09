@@ -89,7 +89,7 @@ class CompetitionController extends Controller
 
         $message = $categorie->verification($animal, $evenement, $competition->id);
         if ($message == 'OK')  { 
-           $message = $competition->verification($animal, $reprise);
+           $message = $competition->verification($animal, $evenement->id, $reprise);
             if ($message== "OK")  {
           
                 if ($resultat->save()) {
