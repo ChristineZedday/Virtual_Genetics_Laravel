@@ -106,17 +106,22 @@ class Reprise extends Model
     
     }
 
-    public function verification($animal)
+    public function verification($animal, $evenement)
     {
         
-        //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau
+        //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau, et pas deux fois dans la m^me
         $niveau = $animal->Performance->niveau_dressage;
+        $deja = Resultat::where('evenement_id', $evenement)->where('reprise_id',$this->id)->get();
        
       
         if ($niveau != $this->niveau_num_global ) {
            
             return "Reprise pas du bon niveau ";
         }
+        else if (!empty($deja)) {
+            return "Déjà inscrit dans cette reprise";
+        }
+      
         else {
       
             return "OK";
