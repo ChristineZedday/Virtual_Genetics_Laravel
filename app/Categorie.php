@@ -151,6 +151,7 @@ public function run($competition, $evenement) {
     
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();
 
+
     foreach ($inscrits as $inscrit) {
     $elevage = $inscrit->animal->elevage;
     $frais = $competition->frais_voyage;
@@ -178,15 +179,9 @@ public function run($competition, $evenement) {
       
 
    
-        if ($competition->type == 'Modèle et Allures')
-           { $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
-          }
-            
-        else//ça serait un bug
-         {   $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive ;
-  }
+        $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
+          
 
-   
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
 }  
@@ -204,8 +199,8 @@ public function run($competition, $evenement) {
     $res->save();
     $animal = Animal::find($key);
     $perf = $animal->Performance;
-    switch ($competition->type){
-        case 'Modèle et Allures':
+    if ($value >= 12) {
+        
             switch($i) {
             case 1:
             $perf->points += 5;
@@ -217,17 +212,7 @@ public function run($competition, $evenement) {
             $perf->points +=1;
             }
             break;
-        case 'Dressage':
-            switch($i) {
-                case 1:
-                    $perf->pourcent_niveau += 20;
-                    break;
-                case 2:
-                    $perf->pourcent_niveau += 15;
-                    break;
-                default:
-                    $perf->pourcent_niveau +=10;
-                }
+       
     }
     $perf->save();
     switch ($competition->type) {

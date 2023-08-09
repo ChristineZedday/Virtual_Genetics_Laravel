@@ -13,6 +13,7 @@ class Elevage extends Model
     const COEFF_UGB_PLEINE_SUITEE = 0.63 ;//0.37/0.59
     const PRIX_FOIN = 100;
     const PRIX_HECTARE = 25000;
+    const CONSO_FOIN_UGB_AN = 4.75;
 
     protected $fillable = ['nom_elevage','nom_eleveur','affixe_id','affixe_pre'];
 
@@ -75,7 +76,7 @@ class Elevage extends Model
 
     private function consommeFoin($UGB) 
     {
-        return $UGB * 4.75/12;
+        return $UGB * CONSO_FOIN_UGB_AN/12;
     }
 
     public function nbAnimaux() 
@@ -137,7 +138,6 @@ class Elevage extends Model
         self::faitFoin(min($this->surface/2, $this->surface - $utilise)/2);//on fait faire les foins par un agriculteur qui en prend la moitié
     }
     else {
-       // dd($UGB_totaux); //mais là ils sont revenus?????
         $UGBtrop =  ($utilise - $this->surface)/$charge;
        // charge en hectares nécessaires par UGB donc il faut l'inverse pour savoir combien d'UGB n'ont pas pu brouter
         $conso = self::consommeFoin($UGBtrop);
