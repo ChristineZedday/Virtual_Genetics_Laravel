@@ -76,7 +76,7 @@ class Elevage extends Model
 
     private function consommeFoin($UGB) 
     {
-        return $UGB * CONSO_FOIN_UGB_AN/12;
+        return $UGB * self::CONSO_FOIN_UGB_AN/12;
     }
 
     public function nbAnimaux() 
