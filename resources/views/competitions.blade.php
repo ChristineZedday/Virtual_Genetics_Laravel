@@ -6,8 +6,11 @@
 <table>
 <tr>
 	<th>Nom</th>
+    
     <th>Niveau</th>
+   
     <th>Date </th>
+   
    
   
 </tr>
@@ -15,7 +18,7 @@
 <tr> <td colspan="2">
     {{$evenement->nom}}
 </td>
-<td>{{$evenement->date}} </td>
+<td >{{$evenement->date}} </td>
 </tr>
 <?php 
 $id = $evenement->id;
@@ -26,9 +29,16 @@ $competitions = App\Competition::whereHas('evenements', function ($q) use ($id){
 <tr>
 	<td>{{$competition->nom}}</td>
     <td>{{$competition->Niveau->libelle}}</td>
-   
-   
+   @if ($competition->type == "Dressage")
+   <table>
+        @foreach ($competition->reprises as $reprise)
+       <tr> <td>{{$reprise->nom}}</td>
+        <td><a href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</a></td></tr>
+        @endforeach
+    <table>
+   @else
     <td><a href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</a></td>
+    @endif
 </tr>
 
 @endforeach

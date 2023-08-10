@@ -371,6 +371,30 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '2000-04-20',
                 'nom' => 'Dressage Poneys',
             ),
+            44 => 
+            array (
+                'id' => 46,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-01-02',
+                'nom' => 'Concours Dressage Poneys Plabennec',
+            ),
+            45 => 
+            array (
+                'id' => 47,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-02-20',
+                'nom' => 'Concours Dressage Poneys Petite Hublais Betton',
+            ),
+            46 => 
+            array (
+                'id' => 48,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-03-05',
+                'nom' => 'Concours Amateur Epiniac',
+            ),
         ));
         
         
