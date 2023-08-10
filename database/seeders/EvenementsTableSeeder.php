@@ -209,7 +209,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '1971-09-28',
-                'nom' => 'National Shetland de Lamotte-Beuvron',
+                'nom' => 'National Shetland de Lignières-en-Berry',
             ),
             24 => 
             array (
@@ -240,8 +240,8 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 29,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-07-24',
-                'nom' => 'Tout Rennes Shet',
+                'date' => '1971-07-16',
+                'nom' => 'Régional Shetland Landivisiau Plougourvest',
             ),
             28 => 
             array (
