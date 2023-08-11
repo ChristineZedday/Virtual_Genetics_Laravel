@@ -81,8 +81,6 @@ class CompetitionController extends Controller
             'animal_id' =>'integer|required',   
             'categorie_id' =>'integer|required',
             'reprise_id' =>'integer',
-            
-            
             ]);
        $competition = Competition::Find($competition);   
     
@@ -100,7 +98,6 @@ class CompetitionController extends Controller
         
        $categorie = Categorie::Find($resultat->categorie_id);
 
-
         $message = $categorie->verification($animal, $evenement, $competition->id);
         if ($message == 'OK')  { 
            $message = $competition->verification($animal, $evenement->id, $reprise);
@@ -112,21 +109,35 @@ class CompetitionController extends Controller
                 $elevage->save();
                 $request->session()->flash('message');
                 $request->session()->flash('alert-class',"alert-sucess");
-               
+                if ($reprise == NULL) {
                 return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->with('message',"votre animal a été inscrit dans sa catégorie");
+                }
+                else {
+                    return redirect()->route('inscrire_dressage', [$elevage->id,$evenement->id,$competition->id, $reprise->id])->withInput()->with('message',"votre animal a été inscrit dans sa catégorie");   
+                }
+                }
+            }
+            else {
+                if ($reprise == NULL) {
+                return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->withErrors([$message]);
+                }
+                else {
+                    return redirect()->route('inscrire_dressage', [$elevage->id,$evenement->id,$competition->id,$reprise->id])->withInput()->withErrors([$message]);     
+                }
             }
         }
-            else {
-               return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->withErrors([$message]);
-            }
-          }
 
         else {
-            return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->withErrors([$message]);
+            if ($reprise != NULL) {  
+                return redirect()->route('inscrire_dressage', [$elevage->id,$evenement->id,$competition->id,$reprise->id])->withInput()->withErrors([$message]);
+            }
+            else {
+                return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->withErrors([$message]);  
+            }
+            }
+            }
             
-        
-        }
-    }
+
 
     public function inscrits( $elevage, $type)
     {

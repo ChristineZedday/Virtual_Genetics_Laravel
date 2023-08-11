@@ -117,9 +117,10 @@ Route::get('/tous_resultats/{elevage}/{type}', 'CompetitionController@tousResult
 
 Route::get('/inscrits/{elevage}/{type}', 'CompetitionController@inscrits')->name('inscrits');
 
+Route::get('/dressage/{elevage}/{evenement}/{competition}/{reprise}', 'CompetitionController@inscrireDressage')->name('inscrire_dressage');
+
 Route::get('/competitions/{elevage}/{evenement}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
 
-Route::get('/competitions/{elevage}/{evenement}/{competition}/{reprise}', 'CompetitionController@inscrireDressage')->name('inscrire_dressage');
 
 Route::post('/inscription/{evenement}/{competition}', 'CompetitionController@inscription')->name('inscription');
 

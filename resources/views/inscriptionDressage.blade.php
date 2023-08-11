@@ -21,6 +21,7 @@
 <h3>{{$evenement->nom}}: {{$competition->nom}}</h3>
 <h4>{{$reprise->nom}}</h4>
 <div class ='form'>
+
 <label for="categorie_id">Sélectionner la catégorie</label>
 
 <select name="categorie_id" >
@@ -36,6 +37,8 @@
   <option value="{{$animal->id}}">{{$animal->nomComplet()}} {{$animal->race->nom}}</option>
   @endforeach
 </select>
+
+<input hidden name ="reprise_id" value="{{$reprise->id}}"/>
 
 <button type="submit">Valider</button>	
 </div>

@@ -180,7 +180,7 @@ static function regCompetNPC()
                 if (strpos($cheval->sexe,'stérilisé') != false){
                   continue;//à déplacer quand autre que MA
               }
-                if ($cheval->ageAdministratif($date->format('Y-m-d')) < 2) {
+                if ($cheval->ageAdministratif($date->format('Y-m-d')) < 1) {
                   continue; //pas de compétitions poulains
               }
 
