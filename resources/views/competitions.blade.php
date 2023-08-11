@@ -20,12 +20,12 @@ $competitions = App\Competition::whereHas('evenements', function ($q) use ($id){
    <p>
         @foreach ($competition->reprises as $reprise)
        {{$reprise->nom}}
-        <button href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</button><br/>
+        <a href="{{route('inscrire_dressage',[$elevage, $evenement,$competition,$reprise])}}"><button>Inscrire</button></a><br/>
         @endforeach
    
    @else
    <p>
-    <button><a href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</a></button></p>
+    <a href="{{route('inscrire',[$elevage, $evenement,$competition])}}"><button>Inscrire</button></a></p>
     @endif
 </p>
 

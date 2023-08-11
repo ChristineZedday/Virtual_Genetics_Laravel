@@ -60,6 +60,20 @@ class CompetitionController extends Controller
        
     }
 
+    public function inscrireDressage($elevage, $evenement, $competition, $reprise)
+    {
+        $elevage = Elevage::Find($elevage);
+       $evenement = Evenement::Find($evenement);
+        $competition = Competition::Find($competition);
+        $reprise = Reprise::Find($reprise);
+      //  $categories = $competition->Categories;
+     
+        $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
+
+       return view('inscriptionDressage', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'reprise' => $reprise, 'animaux' => $animaux]);
+       
+    }
+
     public function inscription(Request $request, $evenement,$competition)
     {
         $validated =  $request->validate([
