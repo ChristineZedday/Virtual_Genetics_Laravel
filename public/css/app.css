@@ -10209,3 +10209,32 @@ form, .form {
   margin-top: 100px;
   flex: 1;
 }
+
+.concours h1 {
+  color: #701f1e;
+  margin-top: 50px;
+  text-align: center;
+}
+.concours h2 {
+  color: #701f1e;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.concours h3 {
+  margin-top: 20px;
+  margin-left: 60px;
+  text-align: left;
+}
+.concours p {
+  margin-top: 20px;
+  margin-left: 30px;
+  text-align: left;
+}
+.concours hr {
+  color: #701f1e;
+  background-color: #701f1e;
+  line-height: 1px;
+  display: block;
+}
