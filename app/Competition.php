@@ -76,6 +76,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
     {
         
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
+        //Possibilité se zapper le niveau départemental 
         $race = $animal->race_id;
         $races = $this->Races->modelKeys();
       
@@ -83,7 +84,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
            
             if ($this->type == 'Modèle et Allures') {  
               
-                if ($animal->Performance->Niveau->libelle ==     $this->Niveau->libelle )
+                if ($animal->Performance->Niveau->libelle ==     $this->Niveau->libelle || ($animal->Performance->Niveau->id < $this->niveau->id && $this->Niveau->open))
                 {return 'OK';}
                 else {return 'Pas le bon niveau';}
             }

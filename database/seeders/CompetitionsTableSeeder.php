@@ -751,6 +751,18 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 100,
                 'prix_premier' => 500,
             ),
+            61 => 
+            array (
+                'id' => 63,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Dressage Poney E',
+                'type' => 'Dressage',
+                'niveau_id' => 3,
+                'prix_inscription' => 100,
+                'frais_voyage' => 100,
+                'prix_premier' => 500,
+            ),
         ));
         
         
