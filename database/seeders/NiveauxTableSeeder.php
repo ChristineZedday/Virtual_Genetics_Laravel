@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -32,7 +33,7 @@ class NiveauxTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'libelle' => 'régional',
-                'open' => 0,
+                'open' => 1,
             ),
             2 => 
             array (
@@ -49,14 +50,6 @@ class NiveauxTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'libelle' => 'mondial',
                 'open' => 0,
-            ),
-            4 => 
-            array (
-                'id' => 5,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'libelle' => 'entrainement',
-                'open' => 1,
             ),
         ));
         
