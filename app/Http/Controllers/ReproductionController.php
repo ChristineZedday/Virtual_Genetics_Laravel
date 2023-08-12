@@ -38,14 +38,7 @@ class ReproductionController extends Controller
     }
     $etalon = Animal::Find($etalon);
     $statutM = $etalon->StatutMale; //fondateurs
-    if (!isset($statutM)) //à supprimer? normalement tous les animaux ont un statut avec checkPuberes
-    {
-      $statutM = new StatutMale();
-      $statutM->animal_id = $etalon->id;
-      $statutM->qualite = 'autorisé' ;
-      $statutM->save();
-
-    }
+   
     
     $elevage = Elevage::Find($elevage);
     //controle pas déjà saillie

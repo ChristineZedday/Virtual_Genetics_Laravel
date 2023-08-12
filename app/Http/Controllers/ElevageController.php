@@ -240,17 +240,16 @@ class ElevageController extends Controller
         $race = Race::Find($etalon->race_id);
         $pathos = $etalon->Pathologie;
         
-        if ($etalon->modele_allures > 14)
+        if ($etalon->modele_allures > 9 && $race->approbation == false)
         {
-            $etalon->StatutMale->qualite ='approuvé';
+            $etalon->StatutMale->qualite = 'approuvé';
         }
-        else if ($etalon->modele_allures > 9 && $race->approbation == false)
-        {
-            $etalon->StatutMale->qualite = 'autorisé';
-        }
-        else 
+        else if ($etalon->modele_allures < 10)
         { 
             $etalon->StatutMale->qualite ='refusé';
+        }
+        else {
+            $etalon->StatutMale->qualite ='autorisation sanitaire';
         }
         foreach ($pathos as $patho)
         {
@@ -263,9 +262,9 @@ class ElevageController extends Controller
         if ($etalon->Race == $mini)
         {
            
-            if ($etalon->taille_cm > $mini->taille_max )
+            if ($etalon->taille_cm > $mini->taille_max &&  $etalon->StatutMale->qualite ='approuvé')
             {
-                $etalon->StatutMale->qualite ='refusé';
+                $etalon->StatutMale->qualite ='aurorisation sanitaire';
             }
         }
 

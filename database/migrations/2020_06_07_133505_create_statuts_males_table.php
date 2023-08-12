@@ -17,7 +17,8 @@ class CreateStatutsMalesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->boolean('disponible')->default(false);
-            $table->enum('qualite', ['non autorisé','autorisé','approuvé', 'refusé'])->default('non autorisé');
+            $table->enum('qualite', ['entier','autorisation sanitaire','approuvé', 'approbation provisoire','refusé'])->default('entier');
+            $table->string('approuvePFS')->default(false);
             $table->tinyInteger('fertilite')->unsigned()->default(100);
             $table->bigInteger('animal_id')->unsigned()->unique();
             $table->mediumInteger('prix')->unsigned()->nullable();

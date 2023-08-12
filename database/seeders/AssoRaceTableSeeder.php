@@ -2014,6 +2014,51 @@ class AssoRaceTableSeeder extends Seeder
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => NULL,
             ),
+            133 => 
+            array (
+                'id' => 151,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 16,
+                'race_mere_id' => NULL,
+                'race_produit_id' => 1,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => NULL,
+                'approbation' => 0,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL,
+            ),
+            134 => 
+            array (
+                'id' => 152,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 13,
+                'race_mere_id' => 16,
+                'race_produit_id' => 13,
+                'taille_conditions' => 0,
+                'automatique' => 1,
+                'commentaire' => NULL,
+                'approbation' => 0,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL,
+            ),
+            135 => 
+            array (
+                'id' => 153,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 14,
+                'race_mere_id' => 16,
+                'race_produit_id' => 14,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => NULL,
+                'approbation' => 0,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL,
+            ),
         ));
         
         

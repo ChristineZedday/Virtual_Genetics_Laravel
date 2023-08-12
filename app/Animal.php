@@ -71,7 +71,7 @@ class Animal extends Model
 
     }
 
-    public function StatutMale() //male en âge de se reproduire, fertilité, qualité (autorisé, approuvé)
+    public function StatutMale() //male en âge de se reproduire, fertilité, qualité (approuvé)
     {
         return $this->HasOne('App\StatutMale', 'animal_id');
     }
@@ -100,7 +100,12 @@ class Animal extends Model
     {
         if (isset($this->StatutMale) && $this->StatutMale->fertilite > 0 )
         {
+            if ($this->StatutMale->approuvePFS) {
+                return 'Étalon approuvé dans sa race et en Poney Français de Selle';
+            }
+            else {
             return 'Étalon '.$this->StatutMale->qualite;
+            }
         }
         else
         {
@@ -244,19 +249,16 @@ class Animal extends Model
         switch(true)
        {
            case $etalon==$jument:
-            switch(true)
-            {
-                case $qualite == 'approuvé':
-                    return $etalon;
-
-                case $qualite == 'autorisé' && $appro == false:
-                    return $etalon;
-                   
+           if($qualite == 'approuvé') 
+                  {  return $etalon; }
                 
-                default:
-                return 1; //OC si étalon non autorisé ou refusé, ou non approuvé pour FS
+                else {
+                return 1; //OC si étalon non approuvé
+                }
             }
-            case $qualite == 'approuvé':
+            if ($qualite == 'approuvé') {
+
+
               $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->first();
 
                 if (isset ($race))
@@ -284,12 +286,14 @@ class Animal extends Model
                   }
                    
                 }
-              
+            } 
            
 
-            case $qualite == 'autorisé':
+            else {
+                return 1;
+            }
        
-                $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->where('approbation', 0)->first(); 
+               /* $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->where('approbation', 0)->first(); 
 
                 if (isset ($race))
                 {
@@ -314,12 +318,9 @@ class Animal extends Model
                         }
                         }
                     }
-                }  
-        default:
-        return 1;
-       }    
-       
+                }  */  
     }
+
     static function pourCentRace($animal, $bred) //$bred: id bred
     //Pour les races de croisement ou un % de telle ou telle race est requis
     {

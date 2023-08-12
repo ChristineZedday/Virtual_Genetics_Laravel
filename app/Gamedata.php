@@ -138,13 +138,14 @@ static function checkPuberes()
             $statut->fertilite = 100 - $animal->consang/2 ;
             if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1)
             {
-                if ($animal->modele_allures >= 15)
+                if ($animal->modele_allures >= 10)
                 {
-                    $statut->qualite = 'approuvé';
-                }
-                else if ($animal->modele_allures >= 10)
-                {
-                    $statut->qualite = 'autorisé';
+                    if ($animal->race->approbation) {
+                        $statut->qualite = 'autorisation sanitaire';
+                    }
+                    else {
+                        $statut->qualite = 'approuvé';
+                    }
                 }
                 else
                 {
@@ -312,7 +313,7 @@ static function VenteSaillies ()
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur)
     {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'autorisé')->orWhere('qualite', 'approuvé');})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'approuvé');})->get();
         foreach ($animaux as $animal)
       
         {

@@ -113,7 +113,7 @@ class Categorie extends Model
    if ($cheval->Genre() === 'mâle') {
     $autorise = 0;
     if ($cheval->StatutMale) {
-        if ($cheval->StatutMale->qualite == "autorisé"
+        if ($cheval->StatutMale->qualite == "autorisation sanitaire"
         || $cheval->StatutMale->qualite == "approuvé") {
             $autorise = 1;
         }
@@ -230,6 +230,25 @@ public function run($competition, $evenement) {
 
     $animal = Animal::Find($key);
     //dd($animal->nomComplet());// Chouette!
+
+    if ($animal->StatutMale)  {
+        $statut = $animal->StatutMale;
+        if ($competition->niveau->id > 1 && $statut->qualite == 'autorisation sanitaire') {
+            if ($note >= 15) {
+                if ($animal->ageAdministratif($evenement->date) >= 3)
+                {$statut->qualite = 'approuvé';}
+                else {
+                    {$statut->qualite = 'approbation provisoire';}   
+                }
+                $statut->save();
+            }
+        }
+        if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && note >=15) {
+            $statut->approuvePFS;
+            $statut->save();
+        }
+
+    }
     
     $elevage = Elevage::Find($animal->elevage_id);
    
@@ -241,7 +260,7 @@ public function run($competition, $evenement) {
     }
     $elevage->save();
     //dd($elevage);//OK
-    $i++; }
+    $i++; } //animaux classés
 
 
 
