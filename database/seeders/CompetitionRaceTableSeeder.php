@@ -485,21 +485,13 @@ class CompetitionRaceTableSeeder extends Seeder
             ),
             58 => 
             array (
-                'id' => 60,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 29,
-                'race_id' => 2,
-            ),
-            59 => 
-            array (
                 'id' => 61,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 29,
                 'race_id' => 12,
             ),
-            60 => 
+            59 => 
             array (
                 'id' => 62,
                 'created_at' => NULL,
@@ -507,7 +499,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 11,
             ),
-            61 => 
+            60 => 
             array (
                 'id' => 63,
                 'created_at' => NULL,
@@ -515,7 +507,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 4,
             ),
-            62 => 
+            61 => 
             array (
                 'id' => 64,
                 'created_at' => NULL,
@@ -523,7 +515,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 5,
             ),
-            63 => 
+            62 => 
             array (
                 'id' => 65,
                 'created_at' => NULL,
@@ -531,7 +523,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 6,
             ),
-            64 => 
+            63 => 
             array (
                 'id' => 66,
                 'created_at' => NULL,
@@ -539,7 +531,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 7,
             ),
-            65 => 
+            64 => 
             array (
                 'id' => 67,
                 'created_at' => NULL,
@@ -547,7 +539,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 10,
             ),
-            66 => 
+            65 => 
             array (
                 'id' => 68,
                 'created_at' => NULL,
@@ -555,7 +547,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 13,
             ),
-            67 => 
+            66 => 
             array (
                 'id' => 69,
                 'created_at' => NULL,
@@ -563,7 +555,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 29,
                 'race_id' => 14,
             ),
-            68 => 
+            67 => 
             array (
                 'id' => 70,
                 'created_at' => NULL,
@@ -571,7 +563,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 14,
                 'race_id' => 13,
             ),
-            69 => 
+            68 => 
             array (
                 'id' => 71,
                 'created_at' => NULL,
@@ -579,7 +571,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 14,
                 'race_id' => 4,
             ),
-            70 => 
+            69 => 
             array (
                 'id' => 72,
                 'created_at' => NULL,
@@ -587,7 +579,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 54,
                 'race_id' => 1,
             ),
-            71 => 
+            70 => 
             array (
                 'id' => 73,
                 'created_at' => NULL,
@@ -595,7 +587,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 55,
                 'race_id' => 1,
             ),
-            72 => 
+            71 => 
             array (
                 'id' => 74,
                 'created_at' => NULL,
@@ -603,7 +595,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 60,
                 'race_id' => 1,
             ),
-            73 => 
+            72 => 
             array (
                 'id' => 75,
                 'created_at' => NULL,
@@ -611,7 +603,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 58,
                 'race_id' => 1,
             ),
-            74 => 
+            73 => 
             array (
                 'id' => 76,
                 'created_at' => NULL,
@@ -619,7 +611,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 59,
                 'race_id' => 1,
             ),
-            75 => 
+            74 => 
             array (
                 'id' => 77,
                 'created_at' => NULL,
@@ -627,7 +619,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 56,
                 'race_id' => 1,
             ),
-            76 => 
+            75 => 
             array (
                 'id' => 78,
                 'created_at' => NULL,
@@ -635,7 +627,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 57,
                 'race_id' => 1,
             ),
-            77 => 
+            76 => 
             array (
                 'id' => 79,
                 'created_at' => NULL,
