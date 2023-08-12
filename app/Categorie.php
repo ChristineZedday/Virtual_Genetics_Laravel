@@ -241,6 +241,10 @@ public function run($competition, $evenement) {
                     {$statut->qualite = 'approbation provisoire';}   
                 }
                 $statut->save();
+                if ($animal->race_id == 16) {
+                    $animal->race_id = 13;//pour permettre la reproduction hors berceau en pottok sport
+                    $anial->save();
+                }
             }
         }
         if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && note >=15) {

@@ -250,7 +250,10 @@ class Animal extends Model
        {
            case $etalon==$jument:
            if($qualite == 'approuvé') 
-                  {  return $etalon; }
+                  {  
+                    
+                    return $etalon;
+                 }
                 
                 else {
                 return 1; //OC si étalon non approuvé
