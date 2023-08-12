@@ -17,6 +17,7 @@ use App\Categorie;
 use App\Competition;
 use App\Resultat;
 use App\Performance;
+use App\Niveau;
 use DateTime;
 
 
@@ -160,7 +161,7 @@ static function regCompetNPC()
         $races = $comp->Races;
         $compid = $comp->id;
         $races = $races->modelKeys();
-        $niveau = $comp->Niveau->id;
+        $niveau = $comp->Niveau;
         $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
         
         if ($comp->type == 'Modèle et Allures')
@@ -172,7 +173,8 @@ static function regCompetNPC()
                 if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
             }
-                if ($cheval->Performance->niveau_id != $niveau){
+                if ($cheval->Performance->Niveau != $niveau){
+                   
                     if (!$niveau->open) {
                 continue;//rajouter plus tard open
                     }
@@ -187,7 +189,7 @@ static function regCompetNPC()
 
 
                 $categorie = Categorie::recherche($cheval);
-            // dd($categorie);OK
+                
                 $cats = $comp->Categories->modelKeys(); //OK
           
                 if (in_array($categorie->id,$cats)) {
