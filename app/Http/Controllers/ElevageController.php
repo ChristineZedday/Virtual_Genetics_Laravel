@@ -228,8 +228,8 @@ class ElevageController extends Controller
 
     /**
      * Examination of males before use them for reproduction
-     * approuvé: best quality, produce breed registrables offspring
-     * autorisé: produce breed registrables offspring
+     * approuvé: produce breed registrables offspring
+     * autorisation sanitaire: should be approved in a show to produce breed registrables offspring, else produce OC
      * refusé: produce grades (OC)
      */
 
@@ -243,6 +243,9 @@ class ElevageController extends Controller
         if ($etalon->modele_allures > 9 && $race->approbation == false)
         {
             $etalon->StatutMale->qualite = 'approuvé';
+            if ($etalon->race_id == 16 && $etalon->elevage_id != 13) {
+                $etalon->StatutMale->qualite ='autorisation sanitaire';
+            }
         }
         else if ($etalon->modele_allures < 10)
         { 
