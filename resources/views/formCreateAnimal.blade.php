@@ -51,6 +51,16 @@
 	
 	</div>
 	<div>
+	<label for="capacite_dressage_additive">Entrez la note de capacité en dressage (sur 20)</label><br/>
+	<input type="number" name="capacite_dressage_additive" pattern="[0-9]" min="1" max="20" value="{{old('capacite_dressage_additive')}}" required />
+	
+	</div>
+	<div>
+	<label for="capacite_apprentissage_additive">Entrez la note de capacité d'apprentissage (sur 20)</label><br/>
+	<input type="number" name="capacite_apprentissage_additive" pattern="[0-9]" min="1" max="20" value="{{old('capacite_apprentissage_additive')}}" required />
+	
+	</div>
+	<div>
 	<label>Choisissez les gènes (si vous choisissez les allèles par defaut, vous n'avez pas besoin de les renseigner)</label><br/>
 	
 					@foreach ($loci as $locus)
