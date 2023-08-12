@@ -167,14 +167,15 @@ static function regCompetNPC()
                 {
                 $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
                
-        //bug: marche que niveau 1
         //dd($engageables);
             foreach ($engageables as $cheval) {
                 if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
             }
                 if ($cheval->Performance->niveau_id != $niveau){
+                    if (!$niveau->open) {
                 continue;//rajouter plus tard open
+                    }
             }
           
                 if (strpos($cheval->sexe,'stérilisé') != false){
