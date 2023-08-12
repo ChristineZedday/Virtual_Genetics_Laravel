@@ -192,7 +192,7 @@ static function regCompetNPC()
                 
                 $cats = $comp->Categories->modelKeys(); //OK
           
-                if (in_array($categorie->id,$cats)) {
+                if ($categorie && in_array($categorie->id,$cats)) {
        
                 $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first(); //inscrit ailleurs le m^me mois
                 if (null == $deja)
