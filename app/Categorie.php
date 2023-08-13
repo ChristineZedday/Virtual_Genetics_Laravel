@@ -221,6 +221,9 @@ public function run($competition, $evenement) {
     $animal = Animal::find($key);
     $perf = $animal->Performance;
     if ($value >= 12) {
+        if ($perf->niveau->id == 1) {
+            $perf->niveau->id == 2;
+        }
         
             switch($i) {
             case 1:
@@ -232,17 +235,13 @@ public function run($competition, $evenement) {
             default:
             $perf->points +=1;
             }
-            break;
+            
        
     }
     $perf->save();
-    switch ($competition->type) {
-        case 'Modèle et Allures':
+   
     $perf->upgrade();
-    break;
-            case 'Dressage':
-    $perf->upgradeDressage();
-    }
+    
   
 
     $animal = Animal::Find($key);
@@ -267,7 +266,7 @@ public function run($competition, $evenement) {
                 }
             }
         }
-        if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && note >=15) {
+        if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && $note >=15) {
             $statut->approuvePFS;
             $statut->save();
         }
