@@ -242,7 +242,7 @@ public function run($competition, $evenement) {
 
     if ($animal->StatutMale)  {
         $statut = $animal->StatutMale;
-        if ($competition->niveau->id > 1 && ($statut->qualite == 'autorisation sanitaire') || $statut->qualite == 'approbation provisoire' ) {
+        if ($competition->niveau->id > 1 && ($statut->qualite == 'autorisation sanitaire' || $statut->qualite == 'approbation provisoire' )) {
            
             if ($note >= 15) {
                 if ($animal->ageAdministratif($evenement->date) >= 3)
