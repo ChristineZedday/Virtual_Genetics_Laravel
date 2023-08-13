@@ -32,6 +32,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             1 => 
             array (
@@ -46,6 +48,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             2 => 
             array (
@@ -60,6 +64,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 3,
             ),
             3 => 
             array (
@@ -74,6 +80,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 100.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             4 => 
             array (
@@ -88,6 +96,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 100.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             5 => 
             array (
@@ -102,6 +112,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 100.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             6 => 
             array (
@@ -116,6 +128,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 100.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             7 => 
             array (
@@ -130,6 +144,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 100,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 3,
             ),
             8 => 
             array (
@@ -144,6 +160,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 50,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             9 => 
             array (
@@ -158,6 +176,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 13,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             10 => 
             array (
@@ -172,6 +192,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 1,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 3,
             ),
             11 => 
             array (
@@ -186,6 +208,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
             ),
             12 => 
             array (
@@ -200,6 +224,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 1,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 2,
             ),
             13 => 
             array (
@@ -214,6 +240,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 1,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 2,
             ),
             14 => 
             array (
@@ -228,6 +256,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 0,
                 'pcArabe' => 99,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 3,
             ),
             15 => 
             array (
@@ -242,6 +272,8 @@ class RacesTableSeeder extends Seeder
                 'approbation' => 1,
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 2,
             ),
         ));
         

@@ -24,6 +24,8 @@ class CreateRacesTable extends Migration
             $table->boolean('approbation')->default(FALSE); //approbation étalons requise
             $table->tinyInteger('pcArabe')->default(0);
             $table->float('pcWelsh')->default(0);
+            $table->tinyInteger('age_repro_male')->default(3);
+            $table->tinyInteger('age_repro_femelle')->default(2);
 
         });
     }
