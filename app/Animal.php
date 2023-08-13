@@ -8,6 +8,7 @@ use App\Http\Controllers\ReproductionController;
 use App\Affixe;
 use DateTime;
 use App\GameData;
+use App\Race;
 
 class Animal extends Model
 {
@@ -242,15 +243,20 @@ class Animal extends Model
             
     }
 
-    static function chercheRaces($etalon,$jument,$taille,$qualite,$age) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
+    static function chercheRaces($etalon,$jument,$taille) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
     {
-        $appro = Race::find($etalon)->approbation;
-        $ageR = Race::find($jument)->age_repro_femelle;
+        $date = Gamedata::date();
+        $qualite = $etalon->StatutMale->qualite;
+        $appro = Race::find($etalon->id)->approbation;
+        $ageRF = Race::find($jument->id)->age_repro_femelle;
+        $ageF = $jument->ageAdministratif($date);
+        $ageM = $etalon->ageAdministratif($date);
+        $ageRM = Race::find($etalon)->age_repro_male;
      
         switch(true)
        {
            case $etalon==$jument:
-           if($qualite == 'approuvé' && $age >= $ageR) 
+           if($qualite == 'approuvé' && $ageM >= $ageRM && $ageF >= $ageRF) 
                   {  
                     
                     return $etalon;

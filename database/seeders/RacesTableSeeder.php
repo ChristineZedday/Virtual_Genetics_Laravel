@@ -193,7 +193,7 @@ class RacesTableSeeder extends Seeder
                 'pcArabe' => 0,
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
-                'age_repro_femelle' => 3,
+                'age_repro_femelle' => 2,
             ),
             11 => 
             array (

@@ -243,9 +243,7 @@ class ElevageController extends Controller
         if ($etalon->modele_allures > 9 && $race->approbation == false)
         {
             $etalon->StatutMale->qualite = 'approuvé';
-            if ($etalon->race_id == 16 && $etalon->elevage_id != 13) {
-                $etalon->StatutMale->qualite ='autorisation sanitaire';
-            }
+           
         }
         else if ($etalon->modele_allures < 10)
         { 

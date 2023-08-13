@@ -191,19 +191,17 @@ public function run($competition, $evenement) {
 
     if ($animal->StatutMale && ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire') && $animal->race_id == 16 && $inscrit->note_synthese >= 12) {
         if ($animal->ageAdministratif($evenement->date) >= 3)
-        {$animal->StatutMale->qualite = 'approuvé';}
-        else {
-            {$animal->StatutMale->qualite = 'approbation provisoire';}   
-        }
+        {$animal->StatutMale->qualite = 'approuvé';
+      
         $animal->StatutMale->save();
+        }
     }
     if ($animal->StatutMale && ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire') && ($animal->race_id == 13 || $animal->race_id == 14 ) && $inscrit->note_synthese >= 15) {
         if ($animal->ageAdministratif($evenement->date) >= 3)
-        {$animal->StatutMale->qualite = 'approuvé';}
-        else {
-            {$animal->StatutMale->qualite = 'approbation provisoire';}   
-        }
+        {$animal->StatutMale->qualite = 'approuvé';
+      
         $animal->StatutMale->save();
+        }
     }
 }  
 
