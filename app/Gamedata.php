@@ -306,6 +306,10 @@ static function checkVieux ($date)
             
     }
 }
+static function checkApproProvisoire() 
+{
+    $appros = DB::table('statuts_males')->where('qualite','approbation provisoire')->update(['qualite' => 'autorisation sanitaire']);
+}
 
 // 
 static function VenteSaillies ()
