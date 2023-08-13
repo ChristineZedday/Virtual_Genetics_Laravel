@@ -272,8 +272,10 @@ public function run($competition, $evenement) {
             }
         }
         if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && $value >=15) {
+            if ($animal->race_id != 2 && $animal->race_id != 3 ) {
             $statut->approuvePFS;
             $statut->save();
+            }
         }
 
     }

@@ -456,7 +456,7 @@ class AnimalController extends Controller
                 }
              
             }
-
+dd($races);
          
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }
