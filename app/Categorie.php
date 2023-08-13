@@ -241,16 +241,19 @@ public function run($competition, $evenement) {
     //dd($animal->nomComplet());// Chouette!
 
     if ($animal->StatutMale)  {
+        dd('a statut mâle');
         $statut = $animal->StatutMale;
         if ($competition->niveau->id > 1 && ($statut->qualite == 'autorisation sanitaire' || $statut->qualite == 'approbation provisoire' )) {
            
             if ($note >= 15) {
+                dd('a note >= 15');
                 if ($animal->ageAdministratif($evenement->date) >= 3)
                 {$statut->qualite = 'approuvé';}
                 else {
                     {$statut->qualite = 'approbation provisoire';}   
                 }
                 $statut->save();
+                dd($statut);
                 if ($animal->race_id == 16) {
                     $animal->race_id = 13;//pour permettre la reproduction hors berceau en pottok sport
                     $animal->save();

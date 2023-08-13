@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use DB;
 use App\Gamedata;
 use App\StatutFemelle;
 use App\Animal;

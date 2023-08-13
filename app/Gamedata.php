@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\gamedatas;
+use DB;
 use DateTime;
 
 
