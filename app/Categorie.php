@@ -203,6 +203,13 @@ public function run($competition, $evenement) {
         $animal->StatutMale->save();
         }
     }
+    else if ($animal->StatutMale && $animal->StatutMale->qualite == 'autorisation sanitaire' && $inscrit->note_synthese >= 12 && $inscrit->note_synthese < 14 && $animal->race_id = 13 && $animal->taille() < 132 && ($competition->id ==7 || $competition->id ==42) && $animal->elevage_id == 13){
+        $animal->race_id = 16;
+        $animal->StatutMale = 'approuvé';
+        $animal->save();
+        $animal->SatutMale->save();
+
+    }
 }  
 
   
