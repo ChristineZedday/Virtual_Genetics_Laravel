@@ -58,7 +58,7 @@ $date = $game->date();
 				@if (Auth::user()->name == "admin")
 				<li><a href="{{route('animal.create',[$elevage])}}">Créer un nouveau fondateur</a></li>
 				@endif
-				<li><a href="{{route('studbook',[$elevage])}}">Voir les règlements des Studbooks</a></li>
+				<li><a href="{{route('studbooks',[$elevage])}}">Voir les règlements des Studbooks</a></li>
 
 			</ul>
 			<span id='temps'>
