@@ -128,9 +128,10 @@ static function checkSevres()
 static function checkPuberes()
 {
     $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
+    $date = Gamedata::date();
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths() >= 24)
+        if ($animal->ageAdministratif($date) >= 2)
         { 
            $animal->sexe = 'mâle';
             $animal->save();
@@ -163,7 +164,7 @@ static function checkPuberes()
     $animaux = Animal::where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths() >= 24)
+        if ($animal->ageAdministratif($date) >= 2)
         { $animal->sexe = 'femelle';
          $animal->save();
          $statut = new StatutFemelle();
