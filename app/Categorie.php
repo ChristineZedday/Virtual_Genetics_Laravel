@@ -250,7 +250,7 @@ public function run($competition, $evenement) {
         $statut = $animal->StatutMale;
         if ($competition->niveau->id > 1 && ($statut->qualite == 'autorisation sanitaire' || $statut->qualite == 'approbation provisoire' )) {
            
-            if ($note >= 15) {
+            if ($value >= 15) {
 
                 if ($animal->ageAdministratif($evenement->date) >= 3)
                 {$statut->qualite = 'approuvé';}
@@ -264,7 +264,7 @@ public function run($competition, $evenement) {
                 }
             }
         }
-        if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && $note >=15) {
+        if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && $value >=15) {
             $statut->approuvePFS;
             $statut->save();
         }
