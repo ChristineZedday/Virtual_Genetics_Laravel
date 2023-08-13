@@ -396,4 +396,10 @@ class ElevageController extends Controller
         return redirect()->route('dashboard',$elevage);
     }
 
+    public function studbooks() 
+    {
+        $elevage = Elevage::find($elevage);
+        return view('studbooks',['elevage'=>$elevage]);
+    }
+
 }

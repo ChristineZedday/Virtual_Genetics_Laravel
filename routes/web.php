@@ -47,6 +47,9 @@ Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');
 
 Route::get('/budget/{elevage}', 'ElevageController@budget')->name('budget');
 
+Route::get('/studbooks/{elevage}', 'ElevageController@studbook')->name('studbooks');
+
+
 Route::get('/agricole/{elevage}', 'ElevageController@donneesAgricoles')->name('agricole');
 
 Route::get('/agrandir/{elevage}', 'ElevageController@chercheTerres')->name('agrandir');
