@@ -173,11 +173,11 @@ public function run($competition, $evenement) {
 
     $prix = $competition->prix_premier;
     $nb = $inscrits->count();
-   //dd($nb);
+  
     //ça marche quand il ya des animaux du bon âge
     $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
     $notes = [];
-   //dd('inscrits: '.$nb.' classés: '.$classes);
+  
     foreach ($inscrits as $inscrit) {
         $animal = $inscrit->animal;
       
@@ -189,17 +189,25 @@ public function run($competition, $evenement) {
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
 
-    if ($inscrit->StatutMale && ($inscrit->StatutMale->qualite == 'autorisation sanitaire' || $inscrit->StatutMale->qualite == 'approbation provisoire') && $inscrit->race_id == 16 && $inscrit->note_synthese >= 12) {
+    if ($animal->StatutMale && ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire') && $animal->race_id == 16 && $inscrit->note_synthese >= 12) {
         if ($animal->ageAdministratif($evenement->date) >= 3)
-        {$statut->qualite = 'approuvé';}
+        {$animal->StatutMale->qualite = 'approuvé';}
         else {
-            {$statut->qualite = 'approbation provisoire';}   
+            {$animal->StatutMale->qualite = 'approbation provisoire';}   
         }
-        $statut->save();
+        $animal->StatutMale->save();
+    }
+    if ($animal->StatutMale && ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire') && ($animal->race_id == 13 || $animal->race_id == 14 ) && $inscrit->note_synthese >= 15) {
+        if ($animal->ageAdministratif($evenement->date) >= 3)
+        {$animal->StatutMale->qualite = 'approuvé';}
+        else {
+            {$animal->StatutMale->qualite = 'approbation provisoire';}   
+        }
+        $animal->StatutMale->save();
     }
 }  
 
-    //dd($inscrit);//ouais!!
+  
 
    arsort($notes); //tri décroissant des valeurs
    $notes = array_slice($notes,0,$classes,true);//on garde les classés
@@ -238,22 +246,21 @@ public function run($competition, $evenement) {
   
 
     $animal = Animal::Find($key);
-    //dd($animal->nomComplet());// Chouette!
+   
 
-    if ($animal->StatutMale)  {
-        dd('a statut mâle');
+    if ($animal->StatutMale != null)  {
+      
         $statut = $animal->StatutMale;
         if ($competition->niveau->id > 1 && ($statut->qualite == 'autorisation sanitaire' || $statut->qualite == 'approbation provisoire' )) {
            
             if ($note >= 15) {
-                dd('a note >= 15');
+
                 if ($animal->ageAdministratif($evenement->date) >= 3)
                 {$statut->qualite = 'approuvé';}
                 else {
                     {$statut->qualite = 'approbation provisoire';}   
                 }
                 $statut->save();
-                dd($statut);
                 if ($animal->race_id == 16) {
                     $animal->race_id = 13;//pour permettre la reproduction hors berceau en pottok sport
                     $animal->save();

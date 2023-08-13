@@ -82,6 +82,7 @@ class TempsController extends Controller
        //so far so good
        TempsController::regCompetNPC();
        //y a un bug dans l'enregistrement PNJ
+       
        TempsController::runCompetitions();
         return redirect()->back();
     }
@@ -134,7 +135,7 @@ static function reproNPC()
                         
                         if(rand(1,$var)==1)
                         {
-                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite','approuvé');})->get();
+                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite','approuvé')->orWhere('qualite','approbation provisoire');})->get();
                             $nb = sizeof($etalons);
                             if ($nb > 0) {
                                 $choisi = rand(1,$nb) -1;
