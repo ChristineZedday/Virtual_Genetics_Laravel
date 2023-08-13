@@ -234,6 +234,14 @@ public function run($competition, $evenement) {
     if ($animal->StatutMale)  {
         $statut = $animal->StatutMale;
         if ($competition->niveau->id > 1 && $statut->qualite == 'autorisation sanitaire') {
+            if ($note >= 12 && $animal->race_id == 16) {
+                if ($animal->ageAdministratif($evenement->date) >= 3)
+                {$statut->qualite = 'approuvé';}
+                else {
+                    {$statut->qualite = 'approbation provisoire';}   
+                }
+                $statut->save();   
+            }
             if ($note >= 15) {
                 if ($animal->ageAdministratif($evenement->date) >= 3)
                 {$statut->qualite = 'approuvé';}
@@ -243,7 +251,7 @@ public function run($competition, $evenement) {
                 $statut->save();
                 if ($animal->race_id == 16) {
                     $animal->race_id = 13;//pour permettre la reproduction hors berceau en pottok sport
-                    $anial->save();
+                    $animal->save();
                 }
             }
         }

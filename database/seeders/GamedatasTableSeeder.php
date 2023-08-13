@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -24,9 +25,10 @@ class GamedatasTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2020-02-16 18:25:51',
                 'budget' => 20000,
-                'date_courante' => '2000-03-01',
-                'date_debut' => '2000-03-01',
-                'terres' => FALSE,
+                'date_courante' => '1999-12-01',
+                'date_debut' => '1999-12-01',
+                'lettre' => 'L',
+                'terres' => 0,
             ),
         ));
         
