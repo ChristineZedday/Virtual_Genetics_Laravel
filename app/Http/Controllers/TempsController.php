@@ -143,13 +143,16 @@ static function reproNPC()
                             $nb = sizeof($etalons);
                             if ($nb > 0) {
                                 $choisi = rand(1,$nb) -1;
-                                $etalon = $etalons[$choisi]->id;
-                                ReproductionController::croisement($vendeur->id, $etalon, $jument->id);
-                            }                    
+                                $etalon = $etalons[$choisi];
+                                if ($etalon->ageAdministratif($date) >= $etalon->race->age_repro_male) {
+                                ReproductionController::croisement($vendeur->id, $etalon->id, $jument->id);
+                                }
+                            }
+                        }                    
                           
-                        }
-                    }                  
-                }
+                    }
+                }                  
+                
                
             }    
         
