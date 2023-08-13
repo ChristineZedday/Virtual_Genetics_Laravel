@@ -253,11 +253,18 @@ public function run($competition, $evenement) {
             if ($value >= 15) {
 
                 if ($animal->ageAdministratif($evenement->date) >= 3)
-                {$statut->qualite = 'approuvé';}
-                else {
-                    {$statut->qualite = 'approbation provisoire';}   
+                {$statut->qualite = 'approuvé';
+                    $statut->save();
                 }
-                $statut->save();
+                else {
+                    {
+                        if ($animal->race->approbation_provisoire) 
+                        {$statut->qualite = 'approbation provisoire';
+                            $statut->save();
+                        }
+                    }   
+                }
+               
                 if ($animal->race_id == 16) {
                     $animal->race_id = 13;//pour permettre la reproduction hors berceau en pottok sport
                     $animal->save();
