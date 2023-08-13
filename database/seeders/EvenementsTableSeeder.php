@@ -177,7 +177,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '2001-03-18',
-                'nom' => 'Concours des mâles Pottok Ascain',
+                'nom' => 'Concours des mâles Pottok Ascain et Hélette',
             ),
             20 => 
             array (

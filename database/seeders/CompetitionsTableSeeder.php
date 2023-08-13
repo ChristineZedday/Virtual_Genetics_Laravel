@@ -763,6 +763,18 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 100,
                 'prix_premier' => 500,
             ),
+            62 => 
+            array (
+                'id' => 64,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Pottok Montagne Hélette',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 10,
+                'frais_voyage' => 50,
+                'prix_premier' => 100,
+            ),
         ));
         
         
