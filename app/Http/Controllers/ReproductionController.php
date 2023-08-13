@@ -180,8 +180,8 @@ class ReproductionController extends Controller
               $animal = Animal::find($animal->id); //pour mettre à jour modif effectuées ds Genome!
               $qualite = $etalon->StatutMale->qualite;
             
-
-              $animal->race_id = Animal::chercheRaces($etalon->race_id,$jument->race_id,$animal->taille_cm, $qualite);
+$age = $jument->ageAdministratif();
+              $animal->race_id = Animal::chercheRaces($etalon->race_id,$jument->race_id,$animal->taille_cm, $qualite,$age);
               
               $animal->save();
           } //end if succès

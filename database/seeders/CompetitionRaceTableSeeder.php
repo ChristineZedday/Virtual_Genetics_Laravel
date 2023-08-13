@@ -697,7 +697,7 @@ class CompetitionRaceTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 43,
-                'race_id' => NULL,
+                'race_id' => 14,
             ),
         ));
         

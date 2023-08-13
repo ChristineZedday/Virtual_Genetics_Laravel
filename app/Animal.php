@@ -242,24 +242,25 @@ class Animal extends Model
             
     }
 
-    static function chercheRaces($etalon,$jument,$taille,$qualite) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
+    static function chercheRaces($etalon,$jument,$taille,$qualite,$age) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
     {
         $appro = Race::find($etalon)->approbation;
+        $ageR = Race::find($jument)->age_repro_femelle;
      
         switch(true)
        {
            case $etalon==$jument:
-           if($qualite == 'approuvé') 
+           if($qualite == 'approuvé' && $age >= $ageR) 
                   {  
                     
                     return $etalon;
                  }
                 
                 else {
-                return 1; //OC si étalon non approuvé
+                return 1; //OC si étalon non approuvé, jument trop jeune
                 }
             }
-            if ($qualite == 'approuvé') {
+            if ($qualite == 'approuvé' && $age >= $ageR) {
 
 
               $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->first();

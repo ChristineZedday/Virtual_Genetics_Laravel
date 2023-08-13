@@ -117,6 +117,10 @@ static function reproNPC()
                 
                 foreach ($juments as $jument)
                 {
+                    $ageR = Race::find($jument->race_id)->age_repro_femelle;
+                    if ($jument->ageAdministratif < $ageR) {
+                        break;
+                    }
                     $statut = $jument->StatutFemelle;
                    
                     if ($statut==null)
