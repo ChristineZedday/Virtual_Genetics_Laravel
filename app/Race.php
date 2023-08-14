@@ -61,12 +61,12 @@ public function approuveEtalonsClasses($resultat, $animal)
       }
    }
    else {
-      if ($resultat->note_synthese >= $noteAppro  {
-         if ($statut->qualite == 'approuvé') {
+      if ($resultat->note_synthese >= $noteAppro && $statut->qualite == 'approuvé' ) {
+        
          $statut->approuvePFS = 1;
          //il faut d'abord être approuvé dans sa race
          $statut->save();
-         }
+         
    }
 }
 }
