@@ -307,6 +307,24 @@ class RacesTableSeeder extends Seeder
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
             ),
+            16 => 
+            array (
+                'id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'ONC',
+                'prix_moyen' => 300,
+                'frais_enregistrement' => NULL,
+                'taille_min' => NULL,
+                'taille_max' => NULL,
+                'approbation' => 1, 
+                'approbation_provisoire' => 0,
+                'approbation_classes' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
+                'age_repro_male' => 2,
+                'age_repro_femelle' => 2,
+            ),
         ));
         
         

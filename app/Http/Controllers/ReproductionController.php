@@ -178,12 +178,10 @@ class ReproductionController extends Controller
               Genome::mixGenes($etalon->id, $jument->id, $animal->id);
               Genome::readGenes($animal->id);
               $animal = Animal::find($animal->id); //pour mettre à jour modif effectuées ds Genome!
-              $qualite = $etalon->StatutMale->qualite;
-            
-
-              $animal->race_id = Animal::chercheRaces($etalon,$jument,$animal->taille_cm);
-              
               $animal->save();
+              Race::associeRaces($etalon,$jument,$animal,$dateS);
+              
+              
           } //end if succès
           else{
               $statut->vide = true;

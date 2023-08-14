@@ -31,6 +31,11 @@ class Animal extends Model
         return $this->BelongsTo('App\Race');
     }
 
+    public function RacesPossibles() 
+    {
+        return $this->BelongsToMany(Race::class)->using(RacesPossibles::class);
+    }
+
     public function Affixe()
     {
         return $this->BelongsTo('App\Affixe');
