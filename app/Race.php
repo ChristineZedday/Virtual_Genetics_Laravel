@@ -43,7 +43,7 @@ public function approuveEtalonsClasses($resultat, $animal)
 {
    $date = Gamedata::date();
    $noteAppro =  15;
-   $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation_provisoire' : 'autorisation_sanitaire');
+   $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation_provisoire' : 'autorisation sanitaire');
    $statut = $animal->StatutMale;
    $races = $resultat->competition->Races;
    if ($races->count() == 1 && $races->first() == $this) {
