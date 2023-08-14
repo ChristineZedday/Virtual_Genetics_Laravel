@@ -189,27 +189,13 @@ public function run($competition, $evenement) {
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
 
-    if ($animal->StatutMale && ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire') && $animal->race_id == 16 && $inscrit->note_synthese >= 12) {
-        if ($animal->ageAdministratif($evenement->date) >= 3)
-        {$animal->StatutMale->qualite = 'approuvé';
-      
-        $animal->StatutMale->save();
-        }
-    }
-    if ($animal->StatutMale && ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire') && ($animal->race_id == 13 || $animal->race_id == 14 ) && $inscrit->note_synthese >= 15) {
-        if ($animal->ageAdministratif($evenement->date) >= 3)
-        {$animal->StatutMale->qualite = 'approuvé';
-      
-        $animal->StatutMale->save();
-        }
-    }
-    else if ($animal->StatutMale && $animal->StatutMale->qualite == 'autorisation sanitaire' && $inscrit->note_synthese >= 12 && $inscrit->note_synthese < 14 && $animal->race_id = 13 && $animal->taille() < 132 && ($competition->id ==7 || $competition->id ==42) && $animal->elevage_id == 13){
-        $animal->race_id = 16;
-        $animal->StatutMale = 'approuvé';
-        $animal->save();
-        $animal->SatutMale->save();
+    if ($animal->StatutMale->qualite != 'entier' && $animal->StatutMale->qualite != 'refusé') {
+        //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
+        $animal->race->ApprouveEtalon($res, $animal);
+
 
     }
+   
 }  
 
   
@@ -252,37 +238,13 @@ public function run($competition, $evenement) {
     $animal = Animal::Find($key);
    
 
-    if ($animal->StatutMale != null)  {
+    if ($animal->StatutMale != null && !$animal->StatutMale->approuvePFS &&$competition->niveau->id > 1)  {
       
-        $statut = $animal->StatutMale;
-        if ($competition->niveau->id > 1 && ($statut->qualite == 'autorisation sanitaire' || $statut->qualite == 'approbation provisoire' )) {
-           
-            if ($value >= 15) {
+        if ($animal->StatutMale->qualite != 'entier' && $animal->StatutMale->qualite != 'refusé') {
+            //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
+            $animal->race->ApprouveEtalon($res, $animal);
 
-                if ($animal->ageAdministratif($evenement->date) >= 3)
-                {$statut->qualite = 'approuvé';
-                    $statut->save();
-                }
-                else {
-                    {
-                        if ($animal->race->approbation_provisoire) 
-                        {$statut->qualite = 'approbation provisoire';
-                            $statut->save();
-                        }
-                    }   
-                }
-               
-                if ($animal->race_id == 16) {
-                    $animal->race_id = 13;//pour permettre la reproduction hors berceau en pottok sport
-                    $animal->save();
-                }
-            }
-        }
-        if ($competition->niveau->id > 1 && $statut->qualite == 'approuvé' && $animal->ageAdministratif($evenement->date) >= 3 && $value >=15) {
-            if ($animal->race_id != 2 && $animal->race_id != 3 ) {
-            $statut->approuvePFS;
-            $statut->save();
-            }
+
         }
 
     }
