@@ -20,7 +20,7 @@ class Race extends Model
       return $this->belongsToMany('App\Competition');
    }
 
-   public function ApprouveEtalons($resultat, $animal)
+   public function approuveEtalons($resultat, $animal)
    {
       $date = Gamedata::date();
       $noteAppro = $this->id == 16 ? 12 : 15;

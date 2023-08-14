@@ -191,7 +191,7 @@ public function run($competition, $evenement) {
 
     if ($animal->StatutMale->qualite != 'entier' && $animal->StatutMale->qualite != 'refusé') {
         //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
-        $animal->race->ApprouveEtalon($inscrit, $animal);
+        $animal->race->approuveEtalons($inscrit, $animal);
 
 
     }
@@ -237,7 +237,7 @@ public function run($competition, $evenement) {
       
         if ($animal->StatutMale->qualite != 'entier' && $animal->StatutMale->qualite != 'refusé') {
             //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
-            $animal->race->ApprouveEtalon($res, $animal);
+            $animal->race->approuveEtalons($res, $animal);
 
 
         }
