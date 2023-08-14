@@ -25,7 +25,7 @@ class Race extends Model
       $date = Gamedata::date();
       $noteAppro = $this->id == 16 ? 12 : 15;
       $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation_provisoire' : 'autorisation_sanitaire');
-      $races = $resultat->$competition->Races;
+      $races = $resultat->competition->Races;
       if (length($races) == 1 && $races->first() == $this) {
          if ($resultat->note_synthese >= $noteAppro) {
             if ($this->appro_classes) {
