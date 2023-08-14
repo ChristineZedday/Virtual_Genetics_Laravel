@@ -186,7 +186,7 @@ public function run($competition, $evenement) {
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
   //  $msg = 'appel approuveEtalons si';
-    if ($animal->StatutMale->qualite != 'autorisation sanitaire') {
+    if ($animal->StatutMale != NULL &&$animal->StatutMale->qualite != 'autorisation sanitaire') {
         
         $animal->race->approuveEtalons($inscrit, $animal);
       //  $msg = $msg.' '.$animal->StatutMale->qualite;
