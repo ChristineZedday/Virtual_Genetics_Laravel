@@ -82,9 +82,9 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       $produit->race_id =1; 
       $produit->save();
       switch (true) {
-         case Animal::pourCentWelsh($produit) >= 12.5:
+         case Animal::pourCentWelsh($produit->id) >= 12.5:
             $produit->RacesPossibles()->attach(10); //WPB
-         case Animal::pourCentRace($produit,8) >= 50:
+         case Animal::pourCentRace($produit->id,8) >= 50:
             $produit->RacesPossibles()->attach(9); //DSA
          case $produit->taille_cm < 90 && empty($produit->pathologie):
             $produit->RacesPossibles()->attach(3); //miniature
@@ -101,7 +101,7 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
 
    else {
       switch (true) {
-         case Animal::pourCentWelsh($produit) == 100:
+         case Animal::pourCentWelsh($produit->id) == 100:
             $taille = $produit->taille_cm;
             $race =  AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
             if ($race != NULL) {
@@ -153,9 +153,9 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
          case $etalon->race_id == 13:
             $produit->RacesPossibles()->attach(14);
 
-         case Animal::pourCentWelsh($produit) >= 12.5:
+         case Animal::pourCentWelsh($produit->id) >= 12.5:
                $produit->RacesPossibles()->attach(10); //WPB
-         case Animal::pourCentRace($produit, 8) >= 50:
+         case Animal::pourCentRace($produit->id, 8) >= 50:
                $produit->RacesPossibles()->attach(9); //DSA
          case $produit->taille_cm < 90 && empty($produit->pathologie):
                $produit->RacesPossibles()->attach(3); //miniature
