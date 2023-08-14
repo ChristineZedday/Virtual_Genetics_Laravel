@@ -137,7 +137,7 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
             $produit->race_id = 13;
             $produit->save();
          break;
-         case $jument->race_id == 14 || ($etalon->race->id == 13 && $jument->race->id == 14 ) || ($jument->elevage->id == 13 && $etalon->race->id == 14) :
+         case  ($etalon->race->id == 13 && $jument->race->id == 14 ) || ($jument->elevage->id == 13 && $etalon->race->id == 14) :
             $produit->race_id = 14;
             $produit->save();
          break;
@@ -147,9 +147,12 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
 
             }
             if (AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('race_produit_id', 14)->first() != NULL) {
-               $produit->RacesPossibles()->attach(14); //PFS
+               $produit->RacesPossibles()->attach(14); //Pottok B
 
             }
+         case $etalon->race_id == 13:
+            $produit->RacesPossibles()->attach(14);
+
          case pourCentWelsh($produit) >= 12.5:
                $produit->RacesPossibles()->attach(10); //WPB
          case pourCentRace($produit, $arabe) >= 50:
