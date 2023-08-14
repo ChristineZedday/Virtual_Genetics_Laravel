@@ -256,7 +256,7 @@ class Animal extends Model
         switch(true)
        {
            case $etalon==$jument:
-           if($qualite == 'approuvé' && $ageM >= $ageRM && $ageF >= $ageRF) 
+           if(($qualite == 'approuvé' || $qualite == 'approbation provisoire') && $ageM >= $ageRM && $ageF >= $ageRF) 
                   {  
                     
                     return $etalon;
@@ -266,7 +266,7 @@ class Animal extends Model
                 return 1; //OC si étalon non approuvé, jument trop jeune
                 }
             }
-            if ($qualite == 'approuvé' &&  $ageM >= $ageRM && $ageF >= $ageRF) {
+            if (($qualite == 'approuvé' || $qualite == 'approbation provisoire') &&  $ageM >= $ageRM && $ageF >= $ageRF) {
 
 
               $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->first();
@@ -303,32 +303,7 @@ class Animal extends Model
                 return 1;
             }
        
-               /* $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->where('approbation', 0)->first(); 
-
-                if (isset ($race))
-                {
-                  return $race->race_produit_id;
-                }
-                else 
-                {
-                    $races = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',1)->get();
-
-                    if (sizeof($races)>0)
-                    {
-                    foreach ($races as $race)
-                    {
-                    
-                        $race = Race::Find($race->race_produit_id);
-                        
-
-                        if (($taille >= $race->taille_min) && ($taille <= $race->taille_max))
-                        {
-                            return $race->id;
-                        
-                        }
-                        }
-                    }
-                }  */  
+              
     }
 
     static function pourCentRace($animal, $bred) //$bred: id bred
