@@ -26,7 +26,7 @@ class Race extends Model
       $noteAppro = $this->id == 16 ? 12 : 15;
       $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation_provisoire' : 'autorisation_sanitaire');
       $races = $resultat->competition->Races;
-      if (length($races) == 1 && $races->first() == $this) {
+      if ($races->count() == 1 && $races->first() == $this) {
          if ($resultat->note_synthese >= $noteAppro) {
             if ($this->appro_classes) {
                if ($resultat->classement != NULL && $animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
