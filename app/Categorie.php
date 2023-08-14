@@ -180,25 +180,22 @@ public function run($competition, $evenement) {
   
     foreach ($inscrits as $inscrit) {
         $animal = $inscrit->animal;
-      
-
-   
+    
         $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
           
-
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
-
-    if ($animal->StatutMale->qualite != 'entier' && $animal->StatutMale->qualite != 'refusé') {
-        //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
+  //  $msg = 'appel approuveEtalons si';
+    if ($animal->StatutMale->qualite != 'autorisation sanitaire') {
+        
         $animal->race->approuveEtalons($inscrit, $animal);
-
+      //  $msg = $msg.' '.$animal->StatutMale->qualite;
 
     }
-   
+    
 }  
 
-  
+ 
 
    arsort($notes); //tri décroissant des valeurs
    $notes = array_slice($notes,0,$classes,true);//on garde les classés
@@ -233,10 +230,11 @@ public function run($competition, $evenement) {
    
     $perf->upgrade();
 
-    if ($animal->StatutMale != null && !$animal->StatutMale->approuvePFS &&$competition->niveau->id > 1)  {
-      
+    if ($animal->StatutMale != NULL && !$animal->StatutMale->approuvePFS &&$competition->niveau->id > 1)  {
+      //$msg = 'appel approuveEtalons classes si';
         if ($animal->StatutMale->qualite != 'entier' && $animal->StatutMale->qualite != 'refusé') {
             //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
+           // $msg = $msg.' '.$animal->StatutMale->qualite;
             $animal->race->approuveEtalonsClasses($res, $animal);
 
 

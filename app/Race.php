@@ -25,12 +25,14 @@ class Race extends Model
       $date = Gamedata::date();
       $noteAppro = $this->id == 16 ? 12 : 15;
       $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation_provisoire' : 'autorisation_sanitaire');
+      $statut = $animal->StatutMale;
       $races = $resultat->competition->Races;
-      if ($races->count() == 1 && $races->first() == $this) {
+      if ($races->count() == 1 && $races->first()->id == $this->id) {
+      
          if ($resultat->note_synthese >= $noteAppro) {
            
-               $animal->StatutMale->qualite = $appro;
-               $animal->StatutMale->save();
+               $statut->qualite = $appro;
+               $statut->save();
             
             }
          }
@@ -42,6 +44,7 @@ public function approuveEtalonsClasses($resultat, $animal)
    $date = Gamedata::date();
    $noteAppro =  15;
    $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation_provisoire' : 'autorisation_sanitaire');
+   $statut = $animal->StatutMale;
    $races = $resultat->competition->Races;
    if ($races->count() == 1 && $races->first() == $this) {
       if ($resultat->note_synthese >= $noteAppro) {
@@ -51,18 +54,18 @@ public function approuveEtalonsClasses($resultat, $animal)
                $animal->StatutMale->save();
             }
          else {
-            $animal->StatutMale->qualite = $appro;
-            $animal->StatutMale->save();
+            $statut->qualite = $appro;
+            $statut->save();
          }
          }
       }
    }
    else {
-      if ($resultat->note_synthese >= $noteAppro && $animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max) {
-         if ($animal->StatutMale->qualite == 'approuvé') {
-         $animal->StatutMale->approuvePFS;
+      if ($resultat->note_synthese >= $noteAppro  {
+         if ($statut->qualite == 'approuvé') {
+         $statut->approuvePFS = 1;
          //il faut d'abord être approuvé dans sa race
-         $animal->StatutMale->save();
+         $statut->save();
          }
    }
 }
