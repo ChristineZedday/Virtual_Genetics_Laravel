@@ -59,6 +59,9 @@ public function approuveEtalonsClasses($resultat, $animal)
             $animal->StatutMale->save();
          } 
       break;
+      case $this->id == 8 && $animal->StatutMale->qualite == 'approuvé':
+         $animal->StatutMale->approuvePFS =1;
+         $animal->StatutMale->save();
    }
    
 }
