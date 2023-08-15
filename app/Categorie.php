@@ -186,7 +186,7 @@ public function run($competition, $evenement) {
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
   //  $msg = 'appel approuveEtalons si';
-    if ($animal->StatutMale != NULL &&$animal->StatutMale->qualite == 'autorisation sanitaire') {
+    if ($animal->StatutMale != NULL &&$animal->StatutMale->qualite == 'autorisation sanitaire' || 'approbation provispire') {
         
         $animal->race->approuveEtalons($inscrit, $animal);
       //  $msg = $msg.' '.$animal->StatutMale->qualite;
@@ -232,10 +232,16 @@ public function run($competition, $evenement) {
 
     if ($animal->StatutMale != NULL && !$animal->StatutMale->approuvePFS &&$competition->niveau->id > 1)  {
       //$msg = 'appel approuveEtalons classes si';
-        if ($animal->StatutMale->qualite != 'entier' && $animal->StatutMale->qualite != 'refusé') {
+        if ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire' ) {
             //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
            // $msg = $msg.' '.$animal->StatutMale->qualite;
             $animal->race->approuveEtalonsClasses($res, $animal);
+
+
+        }
+        if ($animal->StatutMale->qualite == 'approuvé' && $animal->race_id != 2 && $animal->race_id != 3) {
+           
+            $animal->race->approuveEtalonsPFS($res, $animal);
 
 
         }

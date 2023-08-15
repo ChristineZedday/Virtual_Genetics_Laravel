@@ -45,23 +45,26 @@ public function approuveEtalonsClasses($resultat, $animal)
    $noteAppro =  15;
    $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation provisoire' : 'autorisation sanitaire');
    $statut = $animal->StatutMale;
-   $races = $resultat->competition->Races;
-   switch (true) {
-      case $races->count() == 1 && $resultat->note_synthese >= $noteAppro  :
-         if ($animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
+   
+         if ($resultat->note_synthese >= $noteAppro &&$animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
             $animal->StatutMale->qualite = $appro;
             $animal->StatutMale->save();
-         }
-      break;
-      case $races->count() > 1 && $resultat->note_synthese >= $noteAppro && $this->id != 2 && $this->id != 3 && $animal->StatutMale->qualite == 'approuvé':
-         if ($animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
-            $animal->StatutMale->approuvePFS =1;
+   
+   }
+   
+}
+
+public function approuveEtalonsPFS($resultat, $animal)
+{
+   
+   $noteAppro =  15;
+
+   $statut = $animal->StatutMale;
+   
+         if ($resultat->note_synthese >= $noteAppro &&$animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
+            $animal->StatutMale->approuvePFS;
             $animal->StatutMale->save();
-         } 
-      break;
-      case $this->id == 8 && $animal->StatutMale->qualite == 'approuvé':
-         $animal->StatutMale->approuvePFS =1;
-         $animal->StatutMale->save();
+   
    }
    
 }
