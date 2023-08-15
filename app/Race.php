@@ -58,6 +58,7 @@ public function approuveEtalonsClasses($resultat, $animal)
             $animal->StatutMale->approuvePFS =1;
             $animal->StatutMale->save();
          } 
+      break;
    }
    
 }
