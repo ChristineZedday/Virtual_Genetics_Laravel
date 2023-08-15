@@ -57,7 +57,7 @@ class ReproductionController extends Controller
         $fertilite = ($statutM->fertilite * $statut->fertilite)/100 ;
         $success = rand(1,$fertilite);
 
-      
+        
 
           if ($etalon->elevage->id != $elevage->id)
           {
