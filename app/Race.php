@@ -46,30 +46,22 @@ public function approuveEtalonsClasses($resultat, $animal)
    $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation provisoire' : 'autorisation sanitaire');
    $statut = $animal->StatutMale;
    $races = $resultat->competition->Races;
-   if ($races->count() == 1 && $races->first() == $this) {
-      if ($resultat->note_synthese >= $noteAppro) {
-         if ($this->appro_classes) {
-            if ($animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
-               $animal->StatutMale->qualite = 'approuvé';
-               $animal->StatutMale->save();
-            }
-         else {
-            $statut->qualite = $appro;
-            $statut->save();
+   switch (true) {
+      case $races->count() == 1 && $resultat->note_synthese >= $noteAppro  :
+         if ($animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
+            $animal->StatutMale->qualite = $appro;
+            $animal->StatutMale->save();
          }
-         }
-      }
+      break;
+      case $races->count() > 1 && $resultat->note_synthese >= $noteAppro && $this->id != 2 && $this->id != 3 && $animal->StatutMale->qualite == 'approuvé':
+         if ($animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
+            $animal->StatutMale->approuvePFS =1;
+            $animal->StatutMale->save();
+         } 
    }
-   else {
-      if ($resultat->note_synthese >= $noteAppro && $statut->qualite == 'approuvé' ) {
-        
-         $statut->approuvePFS = 1;
-         //il faut d'abord être approuvé dans sa race
-         $statut->save();
-         
-   }
+   
 }
-}
+
 
 static function associeRaces ($etalon,$jument,$produit,$dateS) 
 {
