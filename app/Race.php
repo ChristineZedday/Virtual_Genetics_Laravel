@@ -111,9 +111,9 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       switch (true) {
          case Animal::pourCentWelsh($produit->id) == 100:
             $taille = $produit->taille_cm;
-            $race =  AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
+            $race =  AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('automatique', 1)->where('taille_conditions', 0)->first();
             if ($race != NULL) {
-            $produit->race_id = $race; 
+            $produit->race_id = $race->id; 
             $produit->save();
             }
             else {
