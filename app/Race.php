@@ -35,6 +35,13 @@ class Race extends Model
                $statut->save();
             
             }
+         else if ($this->id == 13 && $resultat->note_synthese >= 12 && $animal->elevage_id == 13 ) {
+            $animal->race_id = 16;
+            $animal->save();
+            $statut->qualite = $appro;
+            $statut->save();
+         }
+
          }
       }
 
