@@ -69,7 +69,7 @@ public function approuveEtalonsPFS($resultat, $animal)
    $statut = $animal->StatutMale;
    
          if ($resultat->note_synthese >= $noteAppro &&$animal->taille_cm >= $this->taille_min && $animal->taille_cm <= $this->taille_max ) {
-            $animal->StatutMale->approuvePFS;
+            $animal->StatutMale->approuvePFS =1;
             $animal->StatutMale->save();
    
    }
