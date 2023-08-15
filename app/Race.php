@@ -118,6 +118,7 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
             }
             else {
                $races =  AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('automatique', 1)->where('taille_conditions', 1)->get(); 
+               dd($races);
                if (sizeof($races)>0)
                   {
                     foreach ($races as $race)
