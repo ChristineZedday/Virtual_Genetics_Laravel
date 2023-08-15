@@ -111,31 +111,33 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       switch (true) {
          case Animal::pourCentWelsh($produit->id) == 100:
             $taille = $produit->taille_cm;
-            $race =  AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('automatique', 1)->where('taille_conditions', 0)->first();
-            if ($race != NULL) {
-            $produit->race_id = $race->id; 
-            $produit->save();
-            }
-            else {
-               $races =  AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('automatique', 1)->where('taille_conditions', 1)->get(); 
-               dd($races);
-               if (sizeof($races)>0)
-                  {
-                    foreach ($races as $race)
-                    {            
-  
-                        if (($taille >= $race->taille_min) && ($taille <= $race->taille_max))
-                        {
-                         $produit->race_id = $race->id;
-                         $produit->save();
-                         break;
-                        }
-                       
-                      
-                    }
-                   
-                  }
-            }
+           switch (true) {
+            case ($racet == 4 && $raceju == 5) || ($racet == 5 && $raceju == 4):
+               $produit->race_id = 5;
+               $produit->save();
+            break;
+            case ($racet == 4 && $raceju == 6) || ($racet == 6 && $raceju == 4):
+               $produit->race_id = 6;
+               $produit->save();
+            break;
+            case ($racet == 4 && $raceju) == 7 || ($racet == 7 && $raceju == 4):
+               $produit->race_id = 6;
+               $produit->save();
+            break;
+            case ($racet == 5 && $raceju == 6) || ($racet == 6 && $raceju == 5):
+               $produit->race_id = 6;
+               $produit->save();
+            break;
+            case ($racet == 5 && $raceju == 7) || ($racet == 7 && $raceju == 5):
+               if ($taille < 138) {
+                  $produit->race_id = 6;
+               }
+               else {
+                  $produit->race_id = 7;
+               }
+              
+               $produit->save();
+           }
 
          break;
          case ($racet == 13 && $raceju == 16) :
