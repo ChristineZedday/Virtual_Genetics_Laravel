@@ -79,6 +79,8 @@ public function approuveEtalonsPFS($resultat, $animal)
 
 static function associeRaces ($etalon,$jument,$produit,$dateS) 
 {
+   $racet = $etalon->race_id;
+   $raceju = $jument->race_id;
    if ($etalon->StatutMale == 'entier' || $etalon->StatutMale == 'refusé'  ) {
       $produit->race_id = 17;
       $produit->save();
@@ -100,8 +102,8 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       }
     
    }
-   else if ($jument->race_id == $etalon->race_id){
-      $produit->race_id =$etalon->race_id;
+   else if ($raceju == $racet){
+      $produit->race_id =$racet;
       $produit->save();
    }
 
@@ -109,18 +111,17 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       switch (true) {
          case Animal::pourCentWelsh($produit->id) == 100:
             $taille = $produit->taille_cm;
-            $race =  AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
+            $race =  AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
             if ($race != NULL) {
             $produit->race_id = $race; 
             $produit->save();
             }
             else {
-               $races =  AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions', 1)->get()->id; 
+               $races =  AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('automatique', 1)->where('taille_conditions', 1)->get(); 
                if (sizeof($races)>0)
                   {
                     foreach ($races as $race)
-                    {
-                        $race = Race::Find($race->race_produit_id);             
+                    {            
   
                         if (($taille >= $race->taille_min) && ($taille <= $race->taille_max))
                         {
@@ -135,24 +136,24 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
             }
 
          break;
-         case ($etalon->race->id == 13 && $jument->race->id == 16) :
+         case ($racet == 13 && $raceju == 16) :
             $produit->race_id = 13;
             $produit->save();
          break;
-         case ($etalon->race->id == 16 && $jument->race->id == 13 && $jument->elevage->id == 13) :
+         case ($racet == 16 && $raceju== 13 && $jument->elevage->id == 13) :
             $produit->race_id = 13;
             $produit->save();
          break;
-         case  ($etalon->race->id == 13 && $jument->race->id == 14 ) || ($jument->elevage->id == 13 && $etalon->race->id == 14) :
+         case  ($racet == 13 && $raceju == 14 ) || ($jument->elevage->id == 13 && $etalon->race->id == 14) :
             $produit->race_id = 14;
             $produit->save();
          break;
          case $etalon->StatutMale->approuvePFS == 1:
-            if (AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('race_produit_id', 11)->first() != NULL) {
+            if (AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('race_produit_id', 11)->first() != NULL) {
                $produit->RacesPossibles()->attach(11); //PFS
 
             }
-            if (AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('race_produit_id', 14)->first() != NULL) {
+            if (AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('race_produit_id', 14)->first() != NULL) {
                $produit->RacesPossibles()->attach(14); //Pottok B
 
             }
