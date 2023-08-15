@@ -365,7 +365,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 50,
-                'prix_premier' => 4000,
+                'prix_premier' => 1000,
             ),
             29 => 
             array (
@@ -377,7 +377,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 50,
-                'prix_premier' => 3000,
+                'prix_premier' => 800,
             ),
             30 => 
             array (
@@ -389,7 +389,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 80,
-                'prix_premier' => 5000,
+                'prix_premier' => 1000,
             ),
             31 => 
             array (
@@ -399,9 +399,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Shetland',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 200,
+                'prix_inscription' => 100,
                 'frais_voyage' => 50,
-                'prix_premier' => 7000,
+                'prix_premier' => 1500,
             ),
             32 => 
             array (
@@ -413,7 +413,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
                 'frais_voyage' => 120,
-                'prix_premier' => 10000,
+                'prix_premier' => 2000,
             ),
             33 => 
             array (
@@ -425,7 +425,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
                 'frais_voyage' => 150,
-                'prix_premier' => 10000,
+                'prix_premier' => 2000,
             ),
             34 => 
             array (
@@ -435,9 +435,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 200,
+                'prix_inscription' => 100,
                 'frais_voyage' => 150,
-                'prix_premier' => 20000,
+                'prix_premier' => 2000,
             ),
             35 => 
             array (
@@ -447,9 +447,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 500,
+                'prix_inscription' => 100,
                 'frais_voyage' => 120,
-                'prix_premier' => 50000,
+                'prix_premier' => 5000,
             ),
             36 => 
             array (
@@ -461,7 +461,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 80,
-                'prix_premier' => 4000,
+                'prix_premier' => 2000,
             ),
             37 => 
             array (
@@ -471,9 +471,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle Et Allures Miniature',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 200,
+                'prix_inscription' => 100,
                 'frais_voyage' => 500,
-                'prix_premier' => 10000,
+                'prix_premier' => 3000,
             ),
             38 => 
             array (
@@ -485,7 +485,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 100,
-                'prix_premier' => 6000,
+                'prix_premier' => 2000,
             ),
             39 => 
             array (
@@ -507,9 +507,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Pottok A',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
+                'prix_inscription' => 25,
                 'frais_voyage' => 80,
-                'prix_premier' => 10000,
+                'prix_premier' => 500,
             ),
             41 => 
             array (
@@ -519,9 +519,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Pottok B',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
+                'prix_inscription' => 25,
                 'frais_voyage' => 85,
-                'prix_premier' => 10000,
+                'prix_premier' => 500,
             ),
             42 => 
             array (
@@ -531,9 +531,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 150,
+                'prix_inscription' => 100,
                 'frais_voyage' => 150,
-                'prix_premier' => 7000,
+                'prix_premier' => 500,
             ),
             43 => 
             array (
@@ -543,9 +543,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 300,
+                'prix_inscription' => 100,
                 'frais_voyage' => 150,
-                'prix_premier' => 15000,
+                'prix_premier' => 1000,
             ),
             44 => 
             array (
@@ -557,7 +557,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 100,
-                'prix_premier' => 5000,
+                'prix_premier' => 1000,
             ),
             45 => 
             array (
@@ -569,7 +569,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
                 'frais_voyage' => 150,
-                'prix_premier' => 10000,
+                'prix_premier' => 2000,
             ),
             46 => 
             array (
@@ -581,7 +581,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 130,
-                'prix_premier' => 5000,
+                'prix_premier' => 1000,
             ),
             47 => 
             array (
@@ -593,7 +593,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
                 'frais_voyage' => 175,
-                'prix_premier' => 10000,
+                'prix_premier' => 2000,
             ),
             48 => 
             array (
@@ -605,7 +605,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 150,
-                'prix_premier' => 7000,
+                'prix_premier' => 1500,
             ),
             49 => 
             array (
@@ -615,9 +615,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Cob',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 150,
+                'prix_inscription' => 100,
                 'frais_voyage' => 200,
-                'prix_premier' => 15000,
+                'prix_premier' => 3000,
             ),
             50 => 
             array (
@@ -629,7 +629,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 100,
-                'prix_premier' => 3000,
+                'prix_premier' => 800,
             ),
             51 => 
             array (
@@ -639,9 +639,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 150,
+                'prix_inscription' => 100,
                 'frais_voyage' => 150,
-                'prix_premier' => 10000,
+                'prix_premier' => 1500,
             ),
             52 => 
             array (
@@ -653,7 +653,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 1,
                 'prix_inscription' => 5,
                 'frais_voyage' => 8,
-                'prix_premier' => 50,
+                'prix_premier' => 0,
             ),
             53 => 
             array (
@@ -665,7 +665,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
                 'frais_voyage' => 10,
-                'prix_premier' => 100,
+                'prix_premier' => 0,
             ),
             54 => 
             array (
@@ -677,7 +677,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
                 'frais_voyage' => 12,
-                'prix_premier' => 200,
+                'prix_premier' => 0,
             ),
             55 => 
             array (
@@ -689,7 +689,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 2,
                 'prix_inscription' => 25,
                 'frais_voyage' => 15,
-                'prix_premier' => 250,
+                'prix_premier' => 0,
             ),
             56 => 
             array (
@@ -725,7 +725,7 @@ class CompetitionsTableSeeder extends Seeder
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
                 'frais_voyage' => 100,
-                'prix_premier' => 1000,
+                'prix_premier' => 500,
             ),
             59 => 
             array (
@@ -747,9 +747,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Dressage Poney ',
                 'type' => 'Dressage',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
+                'prix_inscription' => 40,
                 'frais_voyage' => 100,
-                'prix_premier' => 500,
+                'prix_premier' => 0,
             ),
             61 => 
             array (
@@ -759,9 +759,9 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Dressage Poney E',
                 'type' => 'Dressage',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
+                'prix_inscription' => 40,
                 'frais_voyage' => 100,
-                'prix_premier' => 500,
+                'prix_premier' => 0,
             ),
             62 => 
             array (
@@ -787,7 +787,7 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 50,
                 'prix_premier' => 100,
             ),
-            64 =>
+            64 => 
             array (
                 'id' => 66,
                 'created_at' => NULL,
@@ -799,7 +799,7 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 50,
                 'prix_premier' => 100,
             ),
-            65 =>
+            65 => 
             array (
                 'id' => 67,
                 'created_at' => NULL,
@@ -811,7 +811,7 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 50,
                 'prix_premier' => 100,
             ),
-            66 =>
+            66 => 
             array (
                 'id' => 68,
                 'created_at' => NULL,
