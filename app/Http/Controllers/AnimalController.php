@@ -415,49 +415,7 @@ class AnimalController extends Controller
         $animal = Animal::Find($animal);
         if ($animal->Race->nom == 'OC')
         {
-            $ar = Race::where('nom', 'Pur-sang Arabe')->first()->id;
-            $arabe = Animal::pourCentRace($animal->id,$ar);
-            
-            $welsh = Animal::pourCentWelsh($animal->id);
-            $rDam = $animal->Dam->Race->id;
-            $rSire = $animal->Sire->Race->id;
-            $qualite = $animal->Sire->StatutMale->qualite;
-            $approPFS = $animal->Sire->StatutMale->approuvePFS;
-            $taille = $animal->taille_cm;
-            $races = AssoRace::where
-            (
-                function ($query) use ($rSire,$rDam,$arabe,$welsh)
-                 {
-                        $query->where(function ($qp) use ($rSire,$rDam) {
-                            $qp->where('race_pere_id', $rSire)->where('race_mere_id',$rDam);
-                        }
-                    )->orWhere(function ($qr) use ($arabe) { 
-                        $qr->where('pourCentArabe', '!=', NULL)->where('pourCentArabe', '<=', $arabe);
-
-                    })->orWhere(function ($qr) use ($welsh) { 
-                        $qr->where('pourCentWelsh', '!=', NULL)->where('pourCentWelsh', '<=', $welsh);
-                    }
-                    )
-                   
-                    
-                ;}
-            ) ->orWhere('race_produit_id', '3')     
-            ->join('races','races.id', 'asso_race.race_produit_id')->where(function ($qu) use ($taille) {$qu->where('taille_min', '<=', $taille)->where('taille_max', '>=', $taille);})->get()->unique()->all();
-            if (!$approPFS)
-            {
-                foreach ($races as $race)
-                {
-                    if ($race->approbation)
-                    {
-                       
-                       $i= array_search($race,$races);
-                       array_splice($races, $i);
-                    }
-                }
-             
-            }
-dd($races);
-         
+            $races = $animal->RacesPossibles();
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }
         else
