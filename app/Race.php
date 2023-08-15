@@ -132,6 +132,7 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
                        
                       
                     }
+                   
                   }
             }
 
@@ -148,10 +149,9 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
             $produit->race_id = 14;
             $produit->save();
          break;
-         case $etalon->StatutMale->approuvePFS == 1:
+         case $etalon->StatutMale->approuvePFS == 1 || $racet == 11:
             if (AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('race_produit_id', 11)->first() != NULL) {
                $produit->RacesPossibles()->attach(11); //PFS
-
             }
             if (AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('race_produit_id', 14)->first() != NULL) {
                $produit->RacesPossibles()->attach(14); //Pottok B
@@ -172,6 +172,8 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
 
       }
    }
-
+ if ($produit->race_id == NULL) {
+                     $produit->race_id = 1;
+                    }
 }
 }
