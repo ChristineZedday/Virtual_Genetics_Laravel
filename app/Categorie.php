@@ -43,7 +43,9 @@ class Categorie extends Model
         }
     }
    
-   
+   if ($animal->Performance->niveau->id > $competition->niveau->id) {
+    return 'Hors Concours';
+   }
   
 
         if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
@@ -70,6 +72,10 @@ class Categorie extends Model
                     return 'Cheval pas de la bonne race pour cette compétition';
                 }
             }
+        }
+
+        if ($animal->race_id == 17) {
+            return 'Les Origine Non Constatée ne sont pas autorisés en compétition';
         }
   
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
