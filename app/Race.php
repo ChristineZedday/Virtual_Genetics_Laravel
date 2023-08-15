@@ -103,13 +103,13 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       switch (true) {
          case Animal::pourCentWelsh($produit->id) == 100:
             $taille = $produit->taille_cm;
-            $race =  AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
+            $race =  AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
             if ($race != NULL) {
             $produit->race_id = $race->id; 
             $produit->save();
             }
             else {
-               $races =  AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions', 1)->get()->id; 
+               $races =  AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('automatique', 1)->where('taille_conditions', 1)->get()->id; 
                if (sizeof($races)>0)
                   {
                     foreach ($races as $race)
@@ -142,11 +142,11 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
             $produit->save();
          break;
          case $etalon->StatutMale->approuvePFS == 1:
-            if (AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('race_produit_id', 11)->first() != NULL) {
+            if (AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('race_produit_id', 11)->first() != NULL) {
                $produit->RacesPossibles()->attach(11); //PFS
 
             }
-            if (AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('race_produit_id', 14)->first() != NULL) {
+            if (AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('race_produit_id', 14)->first() != NULL) {
                $produit->RacesPossibles()->attach(14); //Pottok B
 
             }
