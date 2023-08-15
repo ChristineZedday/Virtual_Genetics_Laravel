@@ -94,8 +94,8 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       }
     
    }
-   else if ($jument->race == $etalon->race){
-      $produit->race_id =$etalon->race->id;
+   else if ($jument->race_id == $etalon->race_id){
+      $produit->race_id =$etalon->race_id;
       $produit->save();
    }
 
@@ -103,13 +103,13 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
       switch (true) {
          case Animal::pourCentWelsh($produit->id) == 100:
             $taille = $produit->taille_cm;
-            $race =  AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
+            $race =  AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions', 0)->first()->id;
             if ($race != NULL) {
-            $produit->race_id = $race->id; 
+            $produit->race_id = $race; 
             $produit->save();
             }
             else {
-               $races =  AssoRace::where('race_pere_id', $etalon->race->id)->where('race_mere_id', $jument->race->id)->where('automatique', 1)->where('taille_conditions', 1)->get()->id; 
+               $races =  AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions', 1)->get()->id; 
                if (sizeof($races)>0)
                   {
                     foreach ($races as $race)
