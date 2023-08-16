@@ -43,7 +43,7 @@ class Categorie extends Model
         }
     }
    
-   if ($animal->Performance->niveau->id > $competition->niveau->id) {
+   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id > $competition->niveau->id) {
     return 'Hors Concours';
    }
   
