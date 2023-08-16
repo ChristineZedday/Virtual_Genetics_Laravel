@@ -415,7 +415,8 @@ class AnimalController extends Controller
         $animal = Animal::Find($animal);
         if ($animal->Race->nom == 'OC')
         {
-            $races = $animal->RacesPossibles();
+            $races = $animal->RacesPossibles()->get();
+           // dd($races);
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }
         else

@@ -16,6 +16,11 @@ class Race extends Model
 	   return $this->hasMany('App\AssoRace', 'race_produit_id', 'id');
    }
 
+   public function Animaux()
+    {
+      return $this->BelongsToMany('App\Animal','races_possibles');
+   }
+
    public function Competitions() //compètes réservées à une ou plusieurs races
    {
       return $this->belongsToMany('App\Competition');
