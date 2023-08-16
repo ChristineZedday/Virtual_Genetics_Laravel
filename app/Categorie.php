@@ -217,6 +217,7 @@ public function run($competition, $evenement) {
     if ($value >= 12) {
         if ($perf->niveau->id == 1) {
             $perf->niveau->id == 2;
+            $perf->save();
         }
         
             switch($i) {
