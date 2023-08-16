@@ -7,6 +7,7 @@ use App\Gamedata;
 use App\Animal;
 use App\Competition;
 use App\StatutMale;
+use App\RacesPossibles;
 
 class Race extends Model
 {
