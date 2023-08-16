@@ -135,7 +135,16 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
                else {
                   $produit->race_id = 7;
                }
-              
+               $produit->save();
+               break;
+
+            case ($racet == 6 && $raceju == 7) || ($racet == 7 && $raceju == 6):
+                  if ($taille < 138) {
+                     $produit->race_id = 6;
+                  }
+                  else {
+                     $produit->race_id = 7;
+                  }
                $produit->save();
            }
 
