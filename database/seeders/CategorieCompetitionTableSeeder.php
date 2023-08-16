@@ -1672,7 +1672,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'id' => 234,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 45,
+                'competition_id' => 21,
                 'categorie_id' => 3,
             ),
             207 => 
@@ -1704,7 +1704,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'id' => 238,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 46,
+                'competition_id' => 9,
                 'categorie_id' => 5,
             ),
             211 => 
@@ -2448,7 +2448,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'id' => 341,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'competition_id' => 42,
+                'competition_id' => 12,
                 'categorie_id' => 2,
             ),
             304 => 
@@ -3522,6 +3522,38 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 53,
                 'categorie_id' => 21,
+            ),
+            438 => 
+            array (
+                'id' => 485,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 45,
+                'categorie_id' => 1,
+            ),
+            439 => 
+            array (
+                'id' => 486,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 45,
+                'categorie_id' => 4,
+            ),
+            440 => 
+            array (
+                'id' => 487,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 47,
+                'categorie_id' => 1,
+            ),
+            441 => 
+            array (
+                'id' => 488,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 47,
+                'categorie_id' => 4,
             ),
         ));
         
