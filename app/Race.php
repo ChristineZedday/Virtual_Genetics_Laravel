@@ -186,12 +186,15 @@ static function associeRaces ($etalon,$jument,$produit,$dateS)
                $produit->RacesPossibles()->attach(3); //miniature
          default:
                $produit->RacesPossibles()->attach(1);
+               $produit->Race_id =1;
+               $produit->save();
          
 
       }
    }
  if ($produit->race_id == NULL) {
                      $produit->race_id = 1;
+                     $produit->save();
                     }
 }
 }
