@@ -2925,21 +2925,13 @@ class CategorieCompetitionTableSeeder extends Seeder
             ),
             363 => 
             array (
-                'id' => 406,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 60,
-                'categorie_id' => 20,
-            ),
-            364 => 
-            array (
                 'id' => 407,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 57,
                 'categorie_id' => 12,
             ),
-            365 => 
+            364 => 
             array (
                 'id' => 408,
                 'created_at' => NULL,
@@ -2947,7 +2939,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 58,
                 'categorie_id' => 15,
             ),
-            366 => 
+            365 => 
             array (
                 'id' => 409,
                 'created_at' => NULL,
@@ -2955,7 +2947,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 59,
                 'categorie_id' => 15,
             ),
-            367 => 
+            366 => 
             array (
                 'id' => 410,
                 'created_at' => NULL,
@@ -2963,7 +2955,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 60,
                 'categorie_id' => 15,
             ),
-            368 => 
+            367 => 
             array (
                 'id' => 411,
                 'created_at' => NULL,
@@ -2971,7 +2963,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 64,
                 'categorie_id' => 1,
             ),
-            369 => 
+            368 => 
             array (
                 'id' => 412,
                 'created_at' => NULL,
@@ -2979,7 +2971,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 64,
                 'categorie_id' => 2,
             ),
-            370 => 
+            369 => 
             array (
                 'id' => 413,
                 'created_at' => NULL,
@@ -2987,7 +2979,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 64,
                 'categorie_id' => 3,
             ),
-            371 => 
+            370 => 
             array (
                 'id' => 415,
                 'created_at' => NULL,
@@ -2995,7 +2987,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 65,
                 'categorie_id' => 4,
             ),
-            372 => 
+            371 => 
             array (
                 'id' => 416,
                 'created_at' => NULL,
@@ -3003,7 +2995,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 67,
                 'categorie_id' => 4,
             ),
-            373 => 
+            372 => 
             array (
                 'id' => 417,
                 'created_at' => NULL,
@@ -3011,7 +3003,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 42,
                 'categorie_id' => 3,
             ),
-            374 => 
+            373 => 
             array (
                 'id' => 418,
                 'created_at' => NULL,
@@ -3019,7 +3011,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 68,
                 'categorie_id' => 1,
             ),
-            375 => 
+            374 => 
             array (
                 'id' => 419,
                 'created_at' => NULL,
@@ -3027,7 +3019,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 68,
                 'categorie_id' => 2,
             ),
-            376 => 
+            375 => 
             array (
                 'id' => 420,
                 'created_at' => NULL,
@@ -3035,7 +3027,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 68,
                 'categorie_id' => 3,
             ),
-            377 => 
+            376 => 
             array (
                 'id' => 421,
                 'created_at' => NULL,
@@ -3043,7 +3035,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 65,
                 'categorie_id' => 6,
             ),
-            378 => 
+            377 => 
             array (
                 'id' => 422,
                 'created_at' => NULL,
@@ -3051,7 +3043,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 65,
                 'categorie_id' => 5,
             ),
-            379 => 
+            378 => 
             array (
                 'id' => 424,
                 'created_at' => NULL,
@@ -3059,7 +3051,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 65,
                 'categorie_id' => 10,
             ),
-            380 => 
+            379 => 
             array (
                 'id' => 425,
                 'created_at' => NULL,
@@ -3067,7 +3059,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 66,
                 'categorie_id' => 4,
             ),
-            381 => 
+            380 => 
             array (
                 'id' => 426,
                 'created_at' => NULL,
@@ -3075,7 +3067,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 66,
                 'categorie_id' => 5,
             ),
-            382 => 
+            381 => 
             array (
                 'id' => 427,
                 'created_at' => NULL,
@@ -3083,7 +3075,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 66,
                 'categorie_id' => 6,
             ),
-            383 => 
+            382 => 
             array (
                 'id' => 428,
                 'created_at' => NULL,
@@ -3091,7 +3083,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 66,
                 'categorie_id' => 10,
             ),
-            384 => 
+            383 => 
             array (
                 'id' => 429,
                 'created_at' => NULL,
@@ -3099,7 +3091,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 67,
                 'categorie_id' => 5,
             ),
-            385 => 
+            384 => 
             array (
                 'id' => 430,
                 'created_at' => NULL,
@@ -3107,7 +3099,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 67,
                 'categorie_id' => 6,
             ),
-            386 => 
+            385 => 
             array (
                 'id' => 431,
                 'created_at' => NULL,
@@ -3115,7 +3107,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 67,
                 'categorie_id' => 10,
             ),
-            387 => 
+            386 => 
             array (
                 'id' => 432,
                 'created_at' => NULL,
@@ -3123,7 +3115,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 1,
                 'categorie_id' => 21,
             ),
-            388 => 
+            387 => 
             array (
                 'id' => 433,
                 'created_at' => NULL,
@@ -3131,7 +3123,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 3,
                 'categorie_id' => 21,
             ),
-            389 => 
+            388 => 
             array (
                 'id' => 434,
                 'created_at' => NULL,
@@ -3139,7 +3131,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 2,
                 'categorie_id' => 21,
             ),
-            390 => 
+            389 => 
             array (
                 'id' => 435,
                 'created_at' => NULL,
@@ -3147,7 +3139,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 4,
                 'categorie_id' => 21,
             ),
-            391 => 
+            390 => 
             array (
                 'id' => 436,
                 'created_at' => NULL,
@@ -3155,7 +3147,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 5,
                 'categorie_id' => 21,
             ),
-            392 => 
+            391 => 
             array (
                 'id' => 437,
                 'created_at' => NULL,
@@ -3163,7 +3155,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 6,
                 'categorie_id' => 21,
             ),
-            393 => 
+            392 => 
             array (
                 'id' => 438,
                 'created_at' => NULL,
@@ -3171,7 +3163,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 8,
                 'categorie_id' => 21,
             ),
-            394 => 
+            393 => 
             array (
                 'id' => 439,
                 'created_at' => NULL,
@@ -3179,7 +3171,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 9,
                 'categorie_id' => 21,
             ),
-            395 => 
+            394 => 
             array (
                 'id' => 440,
                 'created_at' => NULL,
@@ -3187,7 +3179,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 10,
                 'categorie_id' => 21,
             ),
-            396 => 
+            395 => 
             array (
                 'id' => 441,
                 'created_at' => NULL,
@@ -3195,7 +3187,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 11,
                 'categorie_id' => 21,
             ),
-            397 => 
+            396 => 
             array (
                 'id' => 442,
                 'created_at' => NULL,
@@ -3203,7 +3195,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 13,
                 'categorie_id' => 21,
             ),
-            398 => 
+            397 => 
             array (
                 'id' => 443,
                 'created_at' => NULL,
@@ -3211,7 +3203,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 14,
                 'categorie_id' => 21,
             ),
-            399 => 
+            398 => 
             array (
                 'id' => 444,
                 'created_at' => NULL,
@@ -3219,7 +3211,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 16,
                 'categorie_id' => 21,
             ),
-            400 => 
+            399 => 
             array (
                 'id' => 445,
                 'created_at' => NULL,
@@ -3227,7 +3219,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 17,
                 'categorie_id' => 21,
             ),
-            401 => 
+            400 => 
             array (
                 'id' => 446,
                 'created_at' => NULL,
@@ -3235,7 +3227,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 18,
                 'categorie_id' => 21,
             ),
-            402 => 
+            401 => 
             array (
                 'id' => 447,
                 'created_at' => NULL,
@@ -3243,7 +3235,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 19,
                 'categorie_id' => 21,
             ),
-            403 => 
+            402 => 
             array (
                 'id' => 448,
                 'created_at' => NULL,
@@ -3251,7 +3243,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 20,
                 'categorie_id' => 21,
             ),
-            404 => 
+            403 => 
             array (
                 'id' => 449,
                 'created_at' => NULL,
@@ -3259,7 +3251,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 21,
                 'categorie_id' => 21,
             ),
-            405 => 
+            404 => 
             array (
                 'id' => 450,
                 'created_at' => NULL,
@@ -3267,7 +3259,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 23,
                 'categorie_id' => 21,
             ),
-            406 => 
+            405 => 
             array (
                 'id' => 451,
                 'created_at' => NULL,
@@ -3275,7 +3267,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 24,
                 'categorie_id' => 21,
             ),
-            407 => 
+            406 => 
             array (
                 'id' => 452,
                 'created_at' => NULL,
@@ -3283,7 +3275,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 25,
                 'categorie_id' => 21,
             ),
-            408 => 
+            407 => 
             array (
                 'id' => 453,
                 'created_at' => NULL,
@@ -3291,7 +3283,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 26,
                 'categorie_id' => 21,
             ),
-            409 => 
+            408 => 
             array (
                 'id' => 454,
                 'created_at' => NULL,
@@ -3299,7 +3291,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 28,
                 'categorie_id' => 21,
             ),
-            410 => 
+            409 => 
             array (
                 'id' => 455,
                 'created_at' => NULL,
@@ -3307,7 +3299,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 29,
                 'categorie_id' => 21,
             ),
-            411 => 
+            410 => 
             array (
                 'id' => 456,
                 'created_at' => NULL,
@@ -3315,7 +3307,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 30,
                 'categorie_id' => 21,
             ),
-            412 => 
+            411 => 
             array (
                 'id' => 457,
                 'created_at' => NULL,
@@ -3323,7 +3315,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 31,
                 'categorie_id' => 21,
             ),
-            413 => 
+            412 => 
             array (
                 'id' => 458,
                 'created_at' => NULL,
@@ -3331,7 +3323,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 32,
                 'categorie_id' => 21,
             ),
-            414 => 
+            413 => 
             array (
                 'id' => 459,
                 'created_at' => NULL,
@@ -3339,7 +3331,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 33,
                 'categorie_id' => 21,
             ),
-            415 => 
+            414 => 
             array (
                 'id' => 460,
                 'created_at' => NULL,
@@ -3347,7 +3339,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 34,
                 'categorie_id' => 21,
             ),
-            416 => 
+            415 => 
             array (
                 'id' => 461,
                 'created_at' => NULL,
@@ -3355,7 +3347,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 35,
                 'categorie_id' => 21,
             ),
-            417 => 
+            416 => 
             array (
                 'id' => 462,
                 'created_at' => NULL,
@@ -3363,7 +3355,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 36,
                 'categorie_id' => 21,
             ),
-            418 => 
+            417 => 
             array (
                 'id' => 463,
                 'created_at' => NULL,
@@ -3371,7 +3363,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 37,
                 'categorie_id' => 21,
             ),
-            419 => 
+            418 => 
             array (
                 'id' => 464,
                 'created_at' => NULL,
@@ -3379,7 +3371,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 38,
                 'categorie_id' => 21,
             ),
-            420 => 
+            419 => 
             array (
                 'id' => 465,
                 'created_at' => NULL,
@@ -3387,7 +3379,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 39,
                 'categorie_id' => 21,
             ),
-            421 => 
+            420 => 
             array (
                 'id' => 466,
                 'created_at' => NULL,
@@ -3395,7 +3387,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 40,
                 'categorie_id' => 21,
             ),
-            422 => 
+            421 => 
             array (
                 'id' => 468,
                 'created_at' => NULL,
@@ -3403,7 +3395,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 44,
                 'categorie_id' => 21,
             ),
-            423 => 
+            422 => 
             array (
                 'id' => 469,
                 'created_at' => NULL,
@@ -3411,7 +3403,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 45,
                 'categorie_id' => 21,
             ),
-            424 => 
+            423 => 
             array (
                 'id' => 470,
                 'created_at' => NULL,
@@ -3419,7 +3411,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 46,
                 'categorie_id' => 21,
             ),
-            425 => 
+            424 => 
             array (
                 'id' => 471,
                 'created_at' => NULL,
@@ -3427,7 +3419,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 47,
                 'categorie_id' => 21,
             ),
-            426 => 
+            425 => 
             array (
                 'id' => 472,
                 'created_at' => NULL,
@@ -3435,7 +3427,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 48,
                 'categorie_id' => 21,
             ),
-            427 => 
+            426 => 
             array (
                 'id' => 474,
                 'created_at' => NULL,
@@ -3443,7 +3435,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 49,
                 'categorie_id' => 1,
             ),
-            428 => 
+            427 => 
             array (
                 'id' => 475,
                 'created_at' => NULL,
@@ -3451,7 +3443,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 49,
                 'categorie_id' => 4,
             ),
-            429 => 
+            428 => 
             array (
                 'id' => 476,
                 'created_at' => NULL,
@@ -3459,7 +3451,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 50,
                 'categorie_id' => 21,
             ),
-            430 => 
+            429 => 
             array (
                 'id' => 477,
                 'created_at' => NULL,
@@ -3467,7 +3459,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 49,
                 'categorie_id' => 21,
             ),
-            431 => 
+            430 => 
             array (
                 'id' => 478,
                 'created_at' => NULL,
@@ -3475,7 +3467,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 51,
                 'categorie_id' => 21,
             ),
-            432 => 
+            431 => 
             array (
                 'id' => 479,
                 'created_at' => NULL,
@@ -3483,7 +3475,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 51,
                 'categorie_id' => 4,
             ),
-            433 => 
+            432 => 
             array (
                 'id' => 480,
                 'created_at' => NULL,
@@ -3491,7 +3483,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 51,
                 'categorie_id' => 1,
             ),
-            434 => 
+            433 => 
             array (
                 'id' => 481,
                 'created_at' => NULL,
@@ -3499,7 +3491,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 52,
                 'categorie_id' => 21,
             ),
-            435 => 
+            434 => 
             array (
                 'id' => 482,
                 'created_at' => NULL,
@@ -3507,7 +3499,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 53,
                 'categorie_id' => 1,
             ),
-            436 => 
+            435 => 
             array (
                 'id' => 483,
                 'created_at' => NULL,
@@ -3515,7 +3507,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 53,
                 'categorie_id' => 4,
             ),
-            437 => 
+            436 => 
             array (
                 'id' => 484,
                 'created_at' => NULL,
@@ -3523,7 +3515,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 53,
                 'categorie_id' => 21,
             ),
-            438 => 
+            437 => 
             array (
                 'id' => 485,
                 'created_at' => NULL,
@@ -3531,7 +3523,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 45,
                 'categorie_id' => 1,
             ),
-            439 => 
+            438 => 
             array (
                 'id' => 486,
                 'created_at' => NULL,
@@ -3539,7 +3531,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 45,
                 'categorie_id' => 4,
             ),
-            440 => 
+            439 => 
             array (
                 'id' => 487,
                 'created_at' => NULL,
@@ -3547,7 +3539,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 47,
                 'categorie_id' => 1,
             ),
-            441 => 
+            440 => 
             array (
                 'id' => 488,
                 'created_at' => NULL,
@@ -3555,7 +3547,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 47,
                 'categorie_id' => 4,
             ),
-            442 => 
+            441 => 
             array (
                 'id' => 489,
                 'created_at' => NULL,
@@ -3563,7 +3555,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 46,
                 'categorie_id' => 5,
             ),
-            443 => 
+            442 => 
             array (
                 'id' => 490,
                 'created_at' => NULL,
@@ -3571,7 +3563,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 62,
                 'categorie_id' => 17,
             ),
-            444 => 
+            443 => 
             array (
                 'id' => 491,
                 'created_at' => NULL,
@@ -3579,7 +3571,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 62,
                 'categorie_id' => 19,
             ),
-            445 => 
+            444 => 
             array (
                 'id' => 492,
                 'created_at' => NULL,
@@ -3587,7 +3579,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 62,
                 'categorie_id' => 20,
             ),
-            446 => 
+            445 => 
             array (
                 'id' => 493,
                 'created_at' => NULL,
