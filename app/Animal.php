@@ -252,26 +252,9 @@ class Animal extends Model
     {
         $date = Gamedata::date();
         $qualite = $etalon->StatutMale->qualite;
-        $appro = Race::find($etalon->race_id)->approbation;
-        $ageRF = Race::find($jument->race_id)->age_repro_femelle;
-        $ageF = $jument->ageAdministratif($date);
-        $ageM = $etalon->ageAdministratif($date);
-        $ageRM = Race::find($etalon->race_id)->age_repro_male;
-     
-        switch(true)
-       {
-           case $etalon==$jument:
-           if(($qualite == 'approuvé' || $qualite == 'approbation provisoire') && $ageM >= $ageRM && $ageF >= $ageRF) 
-                  {  
-                    
-                    return $etalon;
-                 }
-                
-                else {
-                return 1; //OC si étalon non approuvé, jument trop jeune
-                }
-            }
-            if (($qualite == 'approuvé' || $qualite == 'approbation provisoire') &&  $ageM >= $ageRM && $ageF >= $ageRF) {
+      //  $appro = Race::find($etalon->race_id)->approbation; 
+       
+            if ($qualite == 'approuvé' || $qualite == 'approbation provisoire') {
 
 
               $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->first();
