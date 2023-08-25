@@ -4118,7 +4118,7 @@ class AnimauxTableSeeder extends Seeder
                 'couleur' => 'noir',
                 'base' => 'noir',
                 'taille_cm' => 127,
-                'race_id' => 16,
+                'race_id' => 13,
                 'sexe' => 'jeune pouliche',
                 'date_achat' => NULL,
                 'date_naissance' => '1997-03-01',

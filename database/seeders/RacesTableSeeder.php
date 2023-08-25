@@ -307,6 +307,42 @@ class RacesTableSeeder extends Seeder
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
             ),
+            16 => 
+            array (
+                'id' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Pur Sang Anglais',
+                'prix_moyen' => 5000,
+                'frais_enregistrement' => NULL,
+                'taille_min' => 150,
+                'taille_max' => 185,
+                'approbation' => 0,
+                'approbation_provisoire' => 0,
+                'approbation_classes' => 0,
+                'pcArabe' => 0,
+                'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 2,
+            ),
+            17 => 
+            array (
+                'id' => 19,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Anglo-arabe',
+                'prix_moyen' => 5000,
+                'frais_enregistrement' => NULL,
+                'taille_min' => 140,
+                'taille_max' => 180,
+                'approbation' => 0,
+                'approbation_provisoire' => 0,
+                'approbation_classes' => 0,
+                'pcArabe' => 13,
+                'pcWelsh' => 0.0,
+                'age_repro_male' => 3,
+                'age_repro_femelle' => 2,
+            ),
         ));
         
         
