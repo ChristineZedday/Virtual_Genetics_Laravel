@@ -85,14 +85,16 @@ public function approuveEtalonsPFS($resultat, $animal)
 static function determineRace ($etalon,$jument,$produit,$dateS) {
    $racet = $etalon->race_id;
    $raceju = $jument->race_id;
-   if ($etalon->StatutMale == 'entier' || $etalon->StatutMale == 'refusé'  ) {
+   if ($etalon->StatutMale->qualite == 'entier' || $etalon->StatutMale->qualite == 'refusé'  ) {
       $produit->race_id = 17;
       $produit->save();
      //ONC, point barre.
+     
    }
    else if ($etalon->qualite == 'autorisation sanitaire' || $etalon->ageAdministratif($dateS) < $etalon->race->age_repro_male || $jument->ageAdministratif($dateS) < $jument->race->age_repro_femelle ) {
       $produit->race_id =1; 
       $produit->save();
+      
    } 
    else if ($raceju == $racet) {
       $produit->race_id =$racet;
@@ -104,10 +106,12 @@ static function determineRace ($etalon,$jument,$produit,$dateS) {
       if ($race != NULL) {
          $produit->race_id = $race;
          $produit->save();
+         
       }
       else {
          $produit->race_id = 1;
          $produit->save();
+       
       }
       
    }
@@ -115,6 +119,7 @@ static function determineRace ($etalon,$jument,$produit,$dateS) {
    if (1 == $produit->race_id) {
       Race::associeRaces($etalon,$jument,$produit);
    }
+   
 }
 
 
@@ -124,19 +129,25 @@ static function associeRaces ($etalon,$jument,$produit)
    $raceju = $jument->race_id;
    $taille = $produit->taille_cm;
    $welsh = Animal::PourCentWelsh($produit->id);
-   $arabe = Animal::PourCentWelsh($produit->id, 8);
+   $arabe = Animal::PourCentRace($produit->id, 8);
    $appro = $etalon->StatutMale->approuvePFS;
 
  
  
     if ($appro == false) {
       $possibles = AssoRace::where('automatique', 0)->where(function ($q3) use ($racet){$q3->where('race_pere_id', $racet)->orwhere('race_pere_id', NULL);})->where(function ($q4) use ($raceju){$q4->where('race_mere_id', $raceju)->orwhere('race_mere_id', NULL);})->where('approbation', 0)->where(function ($q1) use ($welsh) { $q1->where('PourCentWelsh', '<=', $welsh)->orWhere('PourCentWelsh', NULL);})->where(function ($q2) use ($arabe) { $q2->where('PourCentArabe', '<=' ,$arabe)->orWhere('PourCentArabe', NULL);})->get();
+      
     }
     else {
       $possibles = AssoRace::where('automatique', 0)->where(function ($q3) use ($racet){$q3->where('race_pere_id', $racet)->orwhere('race_pere_id', NULL);})->where(function ($q4) use ($raceju){$q4->where('race_mere_id', $raceju)->orwhere('race_mere_id', NULL);})->where(function ($q1) use ($welsh) { $q1->where('PourCentWelsh', '<=', $welsh)->orWhere('PourCentWelsh', NULL);})->where(function ($q2) use ($arabe) { $q2->where('PourCentArabe', '<=', $arabe)->orWhere('PourCentArabe', NULL);})->get();
+     
     }
     foreach ($possibles as $possible) {
-      if ($possible->taille_conditions == false) {
+      if ($produit->RacesPossibles()->get()->contains($possible->race_produit_id)) {
+        
+         continue;
+      }
+      if ($possible->taille_conditions == 0) {
       $produit->RacesPossibles()->attach($possible->race_produit_id);
       }
       else {
@@ -148,7 +159,7 @@ static function associeRaces ($etalon,$jument,$produit)
          }
       }
     }
-
+dd($produit->RacesPossibles()->get());
     
     /* switch (true) {
          case Animal::pourCentWelsh($produit->id) >= 12.5:

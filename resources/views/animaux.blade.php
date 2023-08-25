@@ -28,7 +28,7 @@
 @include('includes.petiteImage')
 	</td>
 	<td> <a class='nom' href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a></td>
-	<td> {{$animal->Race->nom}} </td>
+	@isset ($animal->Race)<td> {{$animal->Race->nom}} </td>@endisset
 	<td> {{$animal->Sexe()}}
 		 </td>
   <td> {{$animal->couleur}} </td>

@@ -250,14 +250,12 @@ class Animal extends Model
 
     static function chercheRaces($etalon,$jument,$taille) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
     {
-        $date = Gamedata::date();
         $qualite = $etalon->StatutMale->qualite;
-      //  $appro = Race::find($etalon->race_id)->approbation; 
        
             if ($qualite == 'approuvé' || $qualite == 'approbation provisoire') {
 
 
-              $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->first();
+              $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first();
 
                 if (isset ($race))
                 {
@@ -266,7 +264,7 @@ class Animal extends Model
                 }
                 else 
                 {
-                  $races = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions', 1)->get();
+                  $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions', 1)->get();
   
                   if (sizeof($races)>0)
                   {
