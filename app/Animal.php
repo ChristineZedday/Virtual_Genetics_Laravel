@@ -335,7 +335,7 @@ class Animal extends Model
         else {
             $min = $this->Genre() == 1 ? 12 : 10;
         }
-        $this->$modele_allures_additifs = rand($min, 20);
+        $this->modele_allures_additifs = rand($min, 20);
         $this->capacite_dressage_additive = rand(5,20);
         $this->capacite_apprentissage_additive = rand(5,20);
         $this->save();
