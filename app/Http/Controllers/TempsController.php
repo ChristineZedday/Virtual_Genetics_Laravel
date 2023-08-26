@@ -36,9 +36,10 @@ class TempsController extends Controller
             $animaux = Animal::where('fondateur',1)->get();
             foreach ($animaux as $animal)
             {
+                $animal->Randomize();
                 Genome::readGenes($animal->id);
                 Performance::initialize($animal->id);
-                $animal->Randomize();
+               
             }
         }
      
