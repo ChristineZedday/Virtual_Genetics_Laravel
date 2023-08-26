@@ -635,7 +635,6 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 61,
                 'race_id' => 1,
             ),
-          
             77 => 
             array (
                 'id' => 83,
@@ -667,6 +666,22 @@ class CompetitionRaceTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'competition_id' => 62,
                 'race_id' => 1,
+            ),
+            81 => 
+            array (
+                'id' => 89,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 67,
+                'race_id' => 19,
+            ),
+            82 => 
+            array (
+                'id' => 90,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 69,
+                'race_id' => 19,
             ),
         ));
         

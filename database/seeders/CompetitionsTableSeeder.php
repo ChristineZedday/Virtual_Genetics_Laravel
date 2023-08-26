@@ -763,7 +763,6 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 100,
                 'prix_premier' => 0,
             ),
-          
             62 => 
             array (
                 'id' => 66,
@@ -776,7 +775,30 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 50,
                 'prix_premier' => 100,
             ),
-          
+            63 => 
+            array (
+                'id' => 67,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours 2 et 3 ans AA',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 3,
+                'prix_inscription' => 30,
+                'frais_voyage' => 25,
+                'prix_premier' => 100,
+            ),
+            64 => 
+            array (
+                'id' => 69,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèle et Allures AA',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 25,
+                'frais_voyage' => 20,
+                'prix_premier' => 50,
+            ),
         ));
         
         

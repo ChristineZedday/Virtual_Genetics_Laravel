@@ -331,6 +331,22 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '2001-07-25',
                 'nom' => 'International Shetland Pony Show de Saint Lô',
             ),
+            39 => 
+            array (
+                'id' => 54,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-09-15',
+                'nom' => 'La Grande Semaine de Pompadour International AA',
+            ),
+            40 => 
+            array (
+                'id' => 55,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-07-26',
+                'nom' => 'Modèle et Allures SF et AA Saint Lô',
+            ),
         ));
         
         
