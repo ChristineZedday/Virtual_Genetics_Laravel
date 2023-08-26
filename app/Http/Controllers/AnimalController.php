@@ -79,8 +79,8 @@ class AnimalController extends Controller
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back(); 
         }
-        $animal->Randomize();
         $animal->elevage_id = $elevage;
+        $animal->Randomize();
         $animal->date_naissance = Gamedata::date();
         $animal->taille_cm = $animal->taille_additive;
         $animal->modele_allures = $animal->modele_allures_additifs;
