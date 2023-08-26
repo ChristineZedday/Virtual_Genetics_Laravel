@@ -107,7 +107,7 @@
 					@isset($animal->StatutMale)
 						@if ($animal->StatutMale->qualite == 'entier'  && $animal->elevage_id == $elevage->id)
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
-						<button>  Contrôle vétérinaire d'aptitude à la reproduction</button>
+						<button>  Contrôle vétérinaire d'aptitude à la reproduction (prix 200 euros)</button>
 						</a>
 						@endif
 					@endisset

@@ -239,6 +239,8 @@ class ElevageController extends Controller
         $etalon = Animal::Find($etalon);
         $race = Race::Find($etalon->race_id);
         $pathos = $etalon->Pathologie;
+
+        if ($elevage->budget > 200){
         
         if ($etalon->modele_allures > 9 && $race->approbation == false)
         {
@@ -268,8 +270,10 @@ class ElevageController extends Controller
                 $etalon->StatutMale->qualite ='aurorisation sanitaire';
             }
         }
+        $elevage->budget -= 200;
+        $elevage->save();
 
-        $etalon->StatutMale->save();
+        $etalon->StatutMale->save(); }
         return redirect()->back();
     }
 
