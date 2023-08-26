@@ -43,7 +43,7 @@ class Categorie extends Model
         }
     }
    
-   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id > $competition->niveau->id) {
+   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id > $competition->niveau->id && !$competition->niveau->open_after) {
     return 'Hors Concours';
    }
   
@@ -192,7 +192,7 @@ public function run($competition, $evenement) {
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
   //  $msg = 'appel approuveEtalons si';
-    if ($animal->StatutMale != NULL &&($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite =='approbation provispire')) {
+    if ($competition->niveau->libelle == 'National' && $animal->StatutMale != NULL &&($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite =='approbation provisoire')) {
         
         $animal->race->approuveEtalons($inscrit, $animal);
       //  $msg = $msg.' '.$animal->StatutMale->qualite;
@@ -237,7 +237,7 @@ public function run($competition, $evenement) {
    
     $perf->upgrade();
 
-    if ($animal->StatutMale != NULL && !$animal->StatutMale->approuvePFS &&$competition->niveau->id > 1)  {
+    if ($animal->StatutMale != NULL && !$animal->StatutMale->approuvePFS &&$competition->niveau->id >= 3)  {
       //$msg = 'appel approuveEtalons classes si';
         if ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire' ) {
             //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
@@ -246,7 +246,7 @@ public function run($competition, $evenement) {
 
 
         }
-        if ($animal->StatutMale->qualite == 'approuvé' && $animal->race_id != 2 && $animal->race_id != 3) {
+        if ($animal->StatutMale->qualite == 'approuvé' && $animal->race->poney_sport) {
            
             $animal->race->approuveEtalonsPFS($res, $animal);
 

@@ -66,7 +66,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         $competitions = Competition::where('type', 'Modèle et Allures')->whereHas('races', function ($q) use ($racid) {
             $q->where('race_id', $racid);
         })->whereHas('niveau', function ($q) use ($nivid) {
-            $q->where('id', $nivid)->orWhere('open',true);
+            $q->where('id', $nivid)->orWhere('id', function ($q1) use ($nivid) {$q1->where('id', '<', $nivid)->where('open_before',true);})->orWhere('id', function ($q2) use ($nivid) {$q1->where('id', '>', $nivid)->where('open_after',true);});
         })->get();
        
         return $competitions;
@@ -84,7 +84,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
            
             if ($this->type == 'Modèle et Allures') {  
               
-                if ($animal->Performance->Niveau->libelle ==     $this->Niveau->libelle || ($animal->Performance->Niveau->id < $this->niveau->id && $this->Niveau->open))
+                if ($animal->Performance->Niveau->libelle ==     $this->Niveau->libelle || ($animal->Performance->Niveau->id < $this->niveau->id && $this->Niveau->open_before) || (($animal->Performance->Niveau->id > $this->niveau->id && $this->Niveau->open_after)))
                 {return 'OK';}
                 else {return 'Pas le bon niveau';}
             }

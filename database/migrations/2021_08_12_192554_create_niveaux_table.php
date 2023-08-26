@@ -18,7 +18,8 @@ class CreateNiveauxTable extends Migration
             ();
             $table->timestamps();
             $table->String('libelle');
-            $table->Boolean('open');
+            $table->Boolean('open_before');
+            $table->Boolean('open_after');
         });
     }
 

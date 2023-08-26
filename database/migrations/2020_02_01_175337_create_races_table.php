@@ -28,6 +28,7 @@ class CreateRacesTable extends Migration
             $table->float('pcWelsh')->default(0);
             $table->tinyInteger('age_repro_male')->default(3);
             $table->tinyInteger('age_repro_femelle')->default(2);
+            $table->boolean('poney_sport')->default(true);
 
         });
     }
