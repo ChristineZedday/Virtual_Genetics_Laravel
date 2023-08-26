@@ -38,6 +38,7 @@ class TempsController extends Controller
             {
                 Genome::readGenes($animal->id);
                 Performance::initialize($animal->id);
+                $animal->Randomize();
             }
         }
      

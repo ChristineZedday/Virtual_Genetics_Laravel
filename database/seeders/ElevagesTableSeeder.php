@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -28,6 +29,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Maggie Shettie',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             1 => 
@@ -40,6 +43,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'An Ankou',
                 'budget' => 0,
                 'role' => 'Mort',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             2 => 
@@ -52,6 +57,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Harpagon McKignon',
                 'budget' => 100000,
                 'role' => 'Acheteur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             3 => 
@@ -64,6 +71,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Gwendoline Welsh',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             4 => 
@@ -76,6 +85,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Minnie Small',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             5 => 
@@ -88,6 +99,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Corinne Titoune',
                 'budget' => 54000,
                 'role' => 'Joueur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 2,
             ),
             6 => 
@@ -100,6 +113,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Medhi Déjan',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             7 => 
@@ -112,6 +127,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Nadia Berberian',
                 'budget' => 54000,
                 'role' => 'Joueur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 2,
             ),
             8 => 
@@ -124,6 +141,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Christine Gallo',
                 'budget' => 54000,
                 'role' => 'Joueur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 2,
             ),
             9 => 
@@ -136,6 +155,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Gwladys Davies',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             10 => 
@@ -148,6 +169,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Mary Cobbler',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             11 => 
@@ -160,6 +183,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Fidelma O\'Hara',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             12 => 
@@ -172,6 +197,8 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Pierre Etcheverry',
                 'budget' => 100000,
                 'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 1,
             ),
             13 => 
@@ -184,7 +211,23 @@ class ElevagesTableSeeder extends Seeder
                 'nom_eleveur' => 'Christine Galo',
                 'budget' => 21500,
                 'role' => 'Joueur',
+                'surface' => 10.0,
+                'foin' => 0.0,
                 'user_id' => 3,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'affixe_id' => NULL,
+                'created_at' => '2023-08-26 12:52:06',
+                'updated_at' => '2023-08-26 12:52:06',
+                'nom_elevage' => 'Les Galopins',
+                'nom_eleveur' => 'Speedy Gonzalez',
+                'budget' => 20000,
+                'role' => 'Vendeur',
+                'surface' => 10.0,
+                'foin' => 0.0,
+                'user_id' => 1,
             ),
         ));
         

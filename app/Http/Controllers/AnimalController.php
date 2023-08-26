@@ -57,7 +57,6 @@ class AnimalController extends Controller
             'race_id' =>'integer',   
             'sexe' =>'string|required',
             'taille_additive' =>'integer|required',
-            'modele_allures_additifs' => 'integer|required',
             'couleur'=>'string|required'
             
             ]);
@@ -80,6 +79,7 @@ class AnimalController extends Controller
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back(); 
         }
+        $animal->Randomize();
         $animal->elevage_id = $elevage;
         $animal->date_naissance = Gamedata::date();
         $animal->taille_cm = $animal->taille_additive;
