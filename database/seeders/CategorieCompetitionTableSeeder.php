@@ -2955,46 +2955,9 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 60,
                 'categorie_id' => 15,
             ),
-            367 => 
-            array (
-                'id' => 411,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 64,
-                'categorie_id' => 1,
-            ),
-            368 => 
-            array (
-                'id' => 412,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 64,
-                'categorie_id' => 2,
-            ),
-            369 => 
-            array (
-                'id' => 413,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 64,
-                'categorie_id' => 3,
-            ),
-            370 => 
-            array (
-                'id' => 415,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 65,
-                'categorie_id' => 4,
-            ),
-            371 => 
-            array (
-                'id' => 416,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 67,
-                'categorie_id' => 4,
-            ),
+           
+           
+        
             372 => 
             array (
                 'id' => 417,
@@ -3003,54 +2966,11 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 42,
                 'categorie_id' => 3,
             ),
-            373 => 
-            array (
-                'id' => 418,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 68,
-                'categorie_id' => 1,
-            ),
-            374 => 
-            array (
-                'id' => 419,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 68,
-                'categorie_id' => 2,
-            ),
-            375 => 
-            array (
-                'id' => 420,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 68,
-                'categorie_id' => 3,
-            ),
-            376 => 
-            array (
-                'id' => 421,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 65,
-                'categorie_id' => 6,
-            ),
-            377 => 
-            array (
-                'id' => 422,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 65,
-                'categorie_id' => 5,
-            ),
-            378 => 
-            array (
-                'id' => 424,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 65,
-                'categorie_id' => 10,
-            ),
+          
+        
+          
+          
+           
             379 => 
             array (
                 'id' => 425,
@@ -3083,30 +3003,8 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 66,
                 'categorie_id' => 10,
             ),
-            383 => 
-            array (
-                'id' => 429,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 67,
-                'categorie_id' => 5,
-            ),
-            384 => 
-            array (
-                'id' => 430,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 67,
-                'categorie_id' => 6,
-            ),
-            385 => 
-            array (
-                'id' => 431,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 67,
-                'categorie_id' => 10,
-            ),
+        
+          
             386 => 
             array (
                 'id' => 432,

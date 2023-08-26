@@ -763,31 +763,8 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 100,
                 'prix_premier' => 0,
             ),
+          
             62 => 
-            array (
-                'id' => 64,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'nom' => 'Concours Pottok Montagne Hélette',
-                'type' => 'Modèle et Allures',
-                'niveau_id' => 2,
-                'prix_inscription' => 10,
-                'frais_voyage' => 50,
-                'prix_premier' => 100,
-            ),
-            63 => 
-            array (
-                'id' => 65,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'nom' => 'Concours Pottok A',
-                'type' => 'Modèle et Allures',
-                'niveau_id' => 3,
-                'prix_inscription' => 10,
-                'frais_voyage' => 50,
-                'prix_premier' => 100,
-            ),
-            64 => 
             array (
                 'id' => 66,
                 'created_at' => NULL,
@@ -799,30 +776,7 @@ class CompetitionsTableSeeder extends Seeder
                 'frais_voyage' => 50,
                 'prix_premier' => 100,
             ),
-            65 => 
-            array (
-                'id' => 67,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'nom' => 'Concours Pottok Montagne',
-                'type' => 'Modèle et Allures',
-                'niveau_id' => 3,
-                'prix_inscription' => 10,
-                'frais_voyage' => 50,
-                'prix_premier' => 100,
-            ),
-            66 => 
-            array (
-                'id' => 68,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'nom' => 'Concours Pottok Montagne',
-                'type' => 'Modèle et Allures',
-                'niveau_id' => 3,
-                'prix_inscription' => 10,
-                'frais_voyage' => 50,
-                'prix_premier' => 100,
-            ),
+          
         ));
         
         
