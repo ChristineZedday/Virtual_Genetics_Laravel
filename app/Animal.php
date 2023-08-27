@@ -300,7 +300,7 @@ class Animal extends Model
         {
             return 100;
         }
-        else if ($animal->fondateur)
+        else if ($animal->fondateur || $animal->race_id == 17)
         {
             return 0;
         }
@@ -316,7 +316,7 @@ class Animal extends Model
         {
             return 100;
         }
-        else if ($animal->fondateur)
+        else if ($animal->fondateur || $animal->race_id == 17)
         {
             return 0;
         }
