@@ -26,6 +26,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-05-11',
                 'nom' => 'Concours de Printemps Welsh à Saumur',
+                'distance' => 200,
             ),
             1 => 
             array (
@@ -34,6 +35,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-06-12',
                 'nom' => 'Modèle et Allures Poney Saint-Lô',
+                'distance' => 150,
             ),
             2 => 
             array (
@@ -42,6 +44,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-06-24',
                 'nom' => 'Grand Régional FPPL au Lion d\'Angers',
+                'distance' => 100,
             ),
             3 => 
             array (
@@ -50,6 +53,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-06-25',
                 'nom' => 'Minature Western Show Yssingeaux',
+                'distance' => 760,
             ),
             4 => 
             array (
@@ -58,6 +62,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-07-07',
                 'nom' => 'Modèle et Allures Poney Haras du Pin',
+                'distance' => 200,
             ),
             5 => 
             array (
@@ -66,6 +71,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-06-01',
                 'nom' => 'Régional Welsh du Lion d\'Angers',
+                'distance' => 100,
             ),
             6 => 
             array (
@@ -74,6 +80,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-12-27',
                 'nom' => 'Salon du cheval',
+                'distance' => 350,
             ),
             7 => 
             array (
@@ -82,6 +89,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-07-25',
                 'nom' => 'Royal Welsh Show à Llanelwedd',
+                'distance' => 700,
             ),
             8 => 
             array (
@@ -90,6 +98,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-08-14',
                 'nom' => 'National Connemara de Pompadour',
+                'distance' => 540,
             ),
             9 => 
             array (
@@ -98,6 +107,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-08-24',
                 'nom' => 'Connemara Pony Show of Clifden',
+                'distance' => 1320,
             ),
             10 => 
             array (
@@ -106,6 +116,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-10-01',
                 'nom' => 'National Welsh Saumur',
+                'distance' => 200,
             ),
             11 => 
             array (
@@ -114,6 +125,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-08-18',
                 'nom' => 'Sologn\' Pony',
+                'distance' => 380,
             ),
             12 => 
             array (
@@ -122,6 +134,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-09-28',
                 'nom' => 'National Shetland de Lignières-en-Berry',
+                'distance' => 450,
             ),
             13 => 
             array (
@@ -130,6 +143,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-08-12',
                 'nom' => 'Championnat de France Arabe de Vichy',
+                'distance' => 575,
             ),
             14 => 
             array (
@@ -138,6 +152,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-08-06',
                 'nom' => 'Championnat du cheval miniature Français Vichy',
+                'distance' => 575,
             ),
             15 => 
             array (
@@ -146,6 +161,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-07-16',
                 'nom' => 'Régional Shetland Landivisiau Plougourvest',
+                'distance' => 210,
             ),
             16 => 
             array (
@@ -154,6 +170,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-07-14',
                 'nom' => 'Régional Arabes et DSA Landivisiau',
+                'distance' => 210,
             ),
             17 => 
             array (
@@ -162,6 +179,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-09-09',
                 'nom' => 'Régional Connemara Lamballe',
+                'distance' => 90,
             ),
             18 => 
             array (
@@ -170,14 +188,16 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-03-18',
                 'nom' => 'Concours des mâles Pottok Ascain et Hélette',
+                'distance' => 680,
             ),
             19 => 
             array (
                 'id' => 34,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '2000-07-20',
-                'nom' => 'Régional Français de Selle',
+                'date' => '2000-07-29',
+                'nom' => 'Régional Français de Selle à Lamballe' ,
+                'distance' => 90,
             ),
             20 => 
             array (
@@ -186,6 +206,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2000-07-21',
                 'nom' => 'Concours des juments et pouliches Pottok à Sare',
+                'distance' => 680,
             ),
             21 => 
             array (
@@ -194,6 +215,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-03-05',
                 'nom' => 'Concours Amateur et Poney Epiniac',
+                'distance' => 55,
             ),
             22 => 
             array (
@@ -202,6 +224,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-05-08',
                 'nom' => 'Dressage Poneys Amateur et Pro Mur-de-Bretagne Guerlédan',
+                'distance' => 110,
             ),
             23 => 
             array (
@@ -210,6 +233,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-06-11',
                 'nom' => 'Dressage Championnat Ille-et-Vilaine Amateur et Poney à Montfort-sur-Meu',
+                'distance' => 30,
             ),
             24 => 
             array (
@@ -218,6 +242,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-04-30',
                 'nom' => 'Concours Amateur Etrier de Plerguer',
+                'distance' => 60,
             ),
             25 => 
             array (
@@ -226,6 +251,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-07-15',
                 'nom' => 'Championnat Dressage Bretagne Amateur Poney et  Pro Hennebont Kermat',
+                'distance' => 145,
             ),
             26 => 
             array (
@@ -234,6 +260,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-08-12',
                 'nom' => 'Dressage Amateur Poney Etrier de Plerguer',
+                'distance' => 60,
             ),
             27 => 
             array (
@@ -242,6 +269,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-10-29',
                 'nom' => 'Dressage National Le Mans Boulerie Poney Amateur Pro',
+                'distance' => 140,
             ),
             28 => 
             array (
@@ -250,6 +278,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-10-01',
                 'nom' => 'Dressage Amateur Thorigné-Fouillard',
+                'distance' => 15,
             ),
             29 => 
             array (
@@ -258,6 +287,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-02-20',
                 'nom' => 'Concours Dressage Poneys Petite Hublais Betton',
+                'distance' => 15,
             ),
             30 => 
             array (
@@ -266,6 +296,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-04-23',
                 'nom' => 'Concours Dressage Poneys Plouisy Argoat Equitation',
+                'distance' => 140,
             ),
             31 => 
             array (
@@ -274,6 +305,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-01-02',
                 'nom' => 'Concours Dressage Poneys Plabennec',
+                'distance' => 240,
             ),
             32 => 
             array (
@@ -282,6 +314,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-10-08',
                 'nom' => 'Dressage Amateur Pro Poney de Mur-de-Bretagne Guerlédan',
+                'distance' => 110,
             ),
             33 => 
             array (
@@ -290,6 +323,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-10-22',
                 'nom' => 'Dressage Poney Cardroc La Foucheraie',
+                'distance' => 30,
             ),
             34 => 
             array (
@@ -298,6 +332,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-11-12',
                 'nom' => 'Dressage Poney Carhaix',
+                'distance' => 160,
             ),
             35 => 
             array (
@@ -306,6 +341,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-04-15',
                 'nom' => 'Dressage International Poney Amateur Pro Le Mans Boulerie',
+                'distance' => 140,
             ),
             36 => 
             array (
@@ -314,6 +350,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-03-12',
                 'nom' => 'Dressage National Pro Amateur La Roche sur Yon',
+                'distance' => 190,
             ),
             37 => 
             array (
@@ -322,6 +359,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-06-21',
                 'nom' => 'Dressage National de Cholet',
+                'distance' => 170,
             ),
             38 => 
             array (
@@ -330,6 +368,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-07-25',
                 'nom' => 'International Shetland Pony Show de Saint Lô',
+                'distance' => 150,
             ),
             39 => 
             array (
@@ -338,6 +377,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-09-15',
                 'nom' => 'La Grande Semaine de Pompadour International AA',
+                'distance' => 540,
             ),
             40 => 
             array (
@@ -346,6 +386,7 @@ class EvenementsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'date' => '2001-07-26',
                 'nom' => 'Modèle et Allures SF et AA Saint Lô',
+                'distance' => 150,
             ),
         ));
         
