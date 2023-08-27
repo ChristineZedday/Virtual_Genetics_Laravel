@@ -188,4 +188,21 @@ public function acheteTerres($surface)
     $this->save();
     }   
 }
+
+public function fraisTransport($animal,$distance) 
+{
+    $taille = $animal->taille();
+    $frais = $distance * $taille / 150;
+    if (NULL != $animal->StatutFemelle && $inscrit->animal->StatutFemelle->suitee ) {
+        $frais += $frais * 0.5;
+    }
+    if ($this->budget >= $frais) {
+        $this->budget -= $frais;
+        $this->save();
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 }

@@ -164,17 +164,12 @@ public function run($competition, $evenement) {
 
     foreach ($inscrits as $inscrit) {
     $elevage = $inscrit->animal->elevage;
-    $frais = $competition->frais_voyage;
-    if (NULL != $inscrit->animal->StatutFemelle && $inscrit->animal->StatutFemelle->suitee ) {
-        $frais += $frais * 0.5;
-    }
-        if ($elevage->budget > $frais ) {
-            $elevage->budget -= $frais;
-            $elevage->save();
-        } 
-        else {
+    $frais = $elevage->fraisTransport();
+        if (!$frais ) {
+           
             $inscrits->forget($inscrit->id);
-    }
+            // faut les sous pour y aller!
+        }
     }   
 
     $prix = $competition->prix_premier;

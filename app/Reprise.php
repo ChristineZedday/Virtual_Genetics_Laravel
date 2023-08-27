@@ -25,13 +25,12 @@ class Reprise extends Model
 
         foreach ($inscrits as $inscrit) {
             $elevage = $inscrit->animal->elevage;
-                if ($elevage->budget > $competition->frais_voyage) {
-                    $elevage->budget -= $competition->frais_voyage;
-                    $elevage->save();
-                } 
-                else {
+            $frais = $elevage->fraisTransport();
+                if (!$frais ) {
+                   
                     $inscrits->forget($inscrit->id);
-            }
+                    // faut les sous pour y aller!
+                }
             }   
 
         $prix = $competition->prix_premier;
