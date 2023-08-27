@@ -164,7 +164,7 @@ public function run($competition, $evenement) {
 
     foreach ($inscrits as $inscrit) {
     $elevage = $inscrit->animal->elevage;
-    $frais = $elevage->fraisTransport();
+    $frais = $elevage->fraisTransport($inscrit->animal, $competition->distance);
         if (!$frais ) {
            
             $inscrits->forget($inscrit->id);

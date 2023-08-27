@@ -83,6 +83,10 @@ static function checkNouveaux($date)
                 $animal->elevage_id = $animal->Dam->elevage_id;
                 $animal->save();
             }
+            if ($animal->elevage->role == 'vendeur') {
+                $animal->statut_administratif = 'naissance_declaree';
+                $animal->save();
+            }
 
             $statut = StatutFemelle::where('animal_id', $animal->dam_id)->first();
             if (isset($statut))

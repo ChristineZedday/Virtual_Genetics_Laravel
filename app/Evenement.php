@@ -28,6 +28,7 @@ $evenement = New Evenement();
 $evenement->nom = $this->nom;
 $competes = $this->Competitions;
 $evenement->date = $date;
+$evenement->distance = $this->distance;
 $evenement->save();
 foreach ($competes as $comp) {
     $evenement->Competitions()->attach($comp);

@@ -193,7 +193,7 @@ public function fraisTransport($animal,$distance)
 {
     $taille = $animal->taille();
     $frais = $distance * $taille / 150;
-    if (NULL != $animal->StatutFemelle && $inscrit->animal->StatutFemelle->suitee ) {
+    if (NULL != $animal->StatutFemelle && $animal->StatutFemelle->suitee ) {
         $frais += $frais * 0.5;
     }
     if ($this->budget >= $frais) {
