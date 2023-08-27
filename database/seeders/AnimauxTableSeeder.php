@@ -47,6 +47,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 99,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             1 => 
             array (
@@ -76,6 +77,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 102,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             2 => 
             array (
@@ -105,6 +107,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 114,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             3 => 
             array (
@@ -134,6 +137,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 106,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             4 => 
             array (
@@ -163,6 +167,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 15,
                 'taille_additive' => 117,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             5 => 
             array (
@@ -192,6 +197,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 121,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             6 => 
             array (
@@ -221,6 +227,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 104,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             7 => 
             array (
@@ -250,6 +257,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 118,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             8 => 
             array (
@@ -279,6 +287,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 113,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             9 => 
             array (
@@ -308,6 +317,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 120,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             10 => 
             array (
@@ -337,6 +347,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 119,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             11 => 
             array (
@@ -366,6 +377,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 129,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             12 => 
             array (
@@ -395,6 +407,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 122,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             13 => 
             array (
@@ -424,6 +437,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 101,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             14 => 
             array (
@@ -453,6 +467,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 99,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             15 => 
             array (
@@ -482,6 +497,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 112,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             16 => 
             array (
@@ -511,6 +527,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 103,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             17 => 
             array (
@@ -540,6 +557,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 105,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             18 => 
             array (
@@ -569,6 +587,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 98,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             19 => 
             array (
@@ -598,6 +617,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 109,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             20 => 
             array (
@@ -627,6 +647,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 114,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             21 => 
             array (
@@ -656,6 +677,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 107,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             22 => 
             array (
@@ -685,6 +707,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 101,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             23 => 
             array (
@@ -714,6 +737,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 113,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             24 => 
             array (
@@ -743,6 +767,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 111,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             25 => 
             array (
@@ -772,6 +797,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 106,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             26 => 
             array (
@@ -801,6 +827,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 108,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             27 => 
             array (
@@ -830,6 +857,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 6,
                 'taille_additive' => 103,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             28 => 
             array (
@@ -859,6 +887,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 98,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             29 => 
             array (
@@ -888,6 +917,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 107,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             30 => 
             array (
@@ -917,6 +947,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 105,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             31 => 
             array (
@@ -946,6 +977,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 108,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             32 => 
             array (
@@ -975,6 +1007,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 105,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             33 => 
             array (
@@ -1004,6 +1037,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 6,
                 'taille_additive' => 98,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             34 => 
             array (
@@ -1033,6 +1067,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 93,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             35 => 
             array (
@@ -1062,6 +1097,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 91,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             36 => 
             array (
@@ -1091,6 +1127,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 85,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             37 => 
             array (
@@ -1120,6 +1157,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 125,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             38 => 
             array (
@@ -1149,6 +1187,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 119,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             39 => 
             array (
@@ -1178,6 +1217,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 135,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             40 => 
             array (
@@ -1207,6 +1247,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 132,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             41 => 
             array (
@@ -1236,6 +1277,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 116,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             42 => 
             array (
@@ -1265,6 +1307,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 120,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             43 => 
             array (
@@ -1294,6 +1337,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 110,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             44 => 
             array (
@@ -1323,6 +1367,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 136,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             45 => 
             array (
@@ -1352,6 +1397,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 133,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             46 => 
             array (
@@ -1381,6 +1427,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 151,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             47 => 
             array (
@@ -1410,6 +1457,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 114,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             48 => 
             array (
@@ -1439,6 +1487,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 148,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             49 => 
             array (
@@ -1468,6 +1517,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 153,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             50 => 
             array (
@@ -1497,6 +1547,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 154,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             51 => 
             array (
@@ -1526,6 +1577,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 156,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             52 => 
             array (
@@ -1555,6 +1607,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 153,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             53 => 
             array (
@@ -1584,6 +1637,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 149,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             54 => 
             array (
@@ -1613,6 +1667,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 95,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             55 => 
             array (
@@ -1642,6 +1697,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 101,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             56 => 
             array (
@@ -1671,6 +1727,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 104,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             57 => 
             array (
@@ -1700,6 +1757,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 102,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             58 => 
             array (
@@ -1729,6 +1787,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 100,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             59 => 
             array (
@@ -1758,6 +1817,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 80,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             60 => 
             array (
@@ -1787,6 +1847,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 127,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             61 => 
             array (
@@ -1816,6 +1877,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 115,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             62 => 
             array (
@@ -1845,6 +1907,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 126,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             63 => 
             array (
@@ -1874,6 +1937,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 134,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             64 => 
             array (
@@ -1903,6 +1967,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 136,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             65 => 
             array (
@@ -1932,6 +1997,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 137,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             66 => 
             array (
@@ -1961,6 +2027,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 133,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             67 => 
             array (
@@ -1990,6 +2057,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 11,
                 'taille_additive' => 135,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             68 => 
             array (
@@ -2019,6 +2087,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 132,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             69 => 
             array (
@@ -2048,6 +2117,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 129,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             70 => 
             array (
@@ -2077,6 +2147,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 148,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             71 => 
             array (
@@ -2106,6 +2177,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 134,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             72 => 
             array (
@@ -2135,6 +2207,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 151,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             73 => 
             array (
@@ -2164,6 +2237,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 147,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             74 => 
             array (
@@ -2193,6 +2267,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 142,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             75 => 
             array (
@@ -2222,6 +2297,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 155,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             76 => 
             array (
@@ -2251,6 +2327,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 89,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             77 => 
             array (
@@ -2280,6 +2357,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 95,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             78 => 
             array (
@@ -2309,6 +2387,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 105,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             79 => 
             array (
@@ -2338,6 +2417,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 74,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             80 => 
             array (
@@ -2367,6 +2447,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 6,
                 'taille_additive' => 150,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             81 => 
             array (
@@ -2396,6 +2477,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 15,
                 'taille_additive' => 149,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             82 => 
             array (
@@ -2425,6 +2507,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 152,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             83 => 
             array (
@@ -2454,6 +2537,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 147,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             84 => 
             array (
@@ -2483,6 +2567,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 152,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             85 => 
             array (
@@ -2512,6 +2597,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 154,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             86 => 
             array (
@@ -2541,6 +2627,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 145,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             87 => 
             array (
@@ -2570,6 +2657,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 6,
                 'taille_additive' => 144,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             88 => 
             array (
@@ -2599,6 +2687,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 128,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             89 => 
             array (
@@ -2628,6 +2717,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 124,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             90 => 
             array (
@@ -2657,6 +2747,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 116,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             91 => 
             array (
@@ -2686,6 +2777,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 118,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             92 => 
             array (
@@ -2715,6 +2807,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 138,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             93 => 
             array (
@@ -2744,6 +2837,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 145,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             94 => 
             array (
@@ -2773,6 +2867,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 149,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             95 => 
             array (
@@ -2802,6 +2897,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 131,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             96 => 
             array (
@@ -2831,6 +2927,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 85,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             97 => 
             array (
@@ -2860,6 +2957,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 92,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             98 => 
             array (
@@ -2889,6 +2987,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 89,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             99 => 
             array (
@@ -2918,6 +3017,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 151,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             100 => 
             array (
@@ -2947,6 +3047,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 147,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             101 => 
             array (
@@ -2976,6 +3077,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 11,
                 'taille_additive' => 139,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             102 => 
             array (
@@ -3005,6 +3107,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 11,
                 'taille_additive' => 112,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             103 => 
             array (
@@ -3034,6 +3137,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 15,
                 'taille_additive' => 152,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             104 => 
             array (
@@ -3063,6 +3167,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 11,
                 'taille_additive' => 116,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             105 => 
             array (
@@ -3092,6 +3197,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 11,
                 'taille_additive' => 119,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             106 => 
             array (
@@ -3121,6 +3227,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 122,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             107 => 
             array (
@@ -3150,6 +3257,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 119,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             108 => 
             array (
@@ -3179,6 +3287,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 128,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             109 => 
             array (
@@ -3208,6 +3317,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 11,
                 'taille_additive' => 132,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             110 => 
             array (
@@ -3237,6 +3347,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 135,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             111 => 
             array (
@@ -3266,6 +3377,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 152,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             112 => 
             array (
@@ -3295,6 +3407,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 148,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             113 => 
             array (
@@ -3324,6 +3437,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 155,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             114 => 
             array (
@@ -3353,6 +3467,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 139,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             115 => 
             array (
@@ -3382,6 +3497,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 147,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             116 => 
             array (
@@ -3411,6 +3527,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 142,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             117 => 
             array (
@@ -3440,6 +3557,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 137,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             118 => 
             array (
@@ -3469,6 +3587,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 138,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             119 => 
             array (
@@ -3498,6 +3617,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 6,
                 'taille_additive' => 145,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             120 => 
             array (
@@ -3527,6 +3647,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 130,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             121 => 
             array (
@@ -3556,6 +3677,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 128,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             122 => 
             array (
@@ -3585,6 +3707,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 136,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             123 => 
             array (
@@ -3614,6 +3737,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 129,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             124 => 
             array (
@@ -3643,6 +3767,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 144,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             125 => 
             array (
@@ -3672,6 +3797,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 140,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             126 => 
             array (
@@ -3701,6 +3827,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 127,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             127 => 
             array (
@@ -3730,6 +3857,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 129,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             128 => 
             array (
@@ -3759,6 +3887,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 145,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             129 => 
             array (
@@ -3788,6 +3917,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 147,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             130 => 
             array (
@@ -3817,6 +3947,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 125,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             131 => 
             array (
@@ -3846,6 +3977,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 130,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             132 => 
             array (
@@ -3875,6 +4007,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 132,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             133 => 
             array (
@@ -3904,6 +4037,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 137,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             134 => 
             array (
@@ -3933,6 +4067,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 137,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             135 => 
             array (
@@ -3962,6 +4097,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 126,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             136 => 
             array (
@@ -3991,6 +4127,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 138,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             137 => 
             array (
@@ -4020,6 +4157,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 119,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             138 => 
             array (
@@ -4049,6 +4187,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 123,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             139 => 
             array (
@@ -4078,6 +4217,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 131,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             140 => 
             array (
@@ -4107,6 +4247,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 15,
                 'taille_additive' => 119,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             141 => 
             array (
@@ -4136,6 +4277,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 127,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             142 => 
             array (
@@ -4165,6 +4307,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 134,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             143 => 
             array (
@@ -4194,6 +4337,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 140,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             144 => 
             array (
@@ -4223,6 +4367,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 142,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             145 => 
             array (
@@ -4252,6 +4397,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 20,
                 'taille_additive' => 147,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             146 => 
             array (
@@ -4281,6 +4427,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 148,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             147 => 
             array (
@@ -4310,6 +4457,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 146,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             148 => 
             array (
@@ -4339,6 +4487,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 144,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             149 => 
             array (
@@ -4368,6 +4517,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 138,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             150 => 
             array (
@@ -4397,6 +4547,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 141,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             151 => 
             array (
@@ -4426,6 +4577,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 148,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             152 => 
             array (
@@ -4455,6 +4607,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 143,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             153 => 
             array (
@@ -4484,6 +4637,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 14,
                 'taille_additive' => 133,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             154 => 
             array (
@@ -4513,6 +4667,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 135,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             155 => 
             array (
@@ -4542,6 +4697,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 12,
                 'taille_additive' => 134,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             156 => 
             array (
@@ -4571,6 +4727,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 138,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             157 => 
             array (
@@ -4600,6 +4757,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 127,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             158 => 
             array (
@@ -4629,6 +4787,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 133,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             159 => 
             array (
@@ -4658,6 +4817,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 121,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             160 => 
             array (
@@ -4687,6 +4847,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 16,
                 'taille_additive' => 118,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             161 => 
             array (
@@ -4716,6 +4877,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 135,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             162 => 
             array (
@@ -4745,6 +4907,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 165,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             163 => 
             array (
@@ -4774,6 +4937,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 162,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             164 => 
             array (
@@ -4803,6 +4967,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 19,
                 'taille_additive' => 167,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             165 => 
             array (
@@ -4832,6 +4997,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 168,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             166 => 
             array (
@@ -4861,6 +5027,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 8,
                 'taille_additive' => 170,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             167 => 
             array (
@@ -4890,6 +5057,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 5,
                 'taille_additive' => 159,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             168 => 
             array (
@@ -4919,6 +5087,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 6,
                 'taille_additive' => 158,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             169 => 
             array (
@@ -4948,6 +5117,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 10,
                 'taille_additive' => 171,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             170 => 
             array (
@@ -4977,6 +5147,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 18,
                 'taille_additive' => 156,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             171 => 
             array (
@@ -5006,6 +5177,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 7,
                 'taille_additive' => 169,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             172 => 
             array (
@@ -5035,6 +5207,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 13,
                 'taille_additive' => 160,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             173 => 
             array (
@@ -5064,6 +5237,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 161,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             174 => 
             array (
@@ -5093,6 +5267,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 17,
                 'taille_additive' => 163,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             175 => 
             array (
@@ -5122,6 +5297,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 15,
                 'taille_additive' => 166,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             176 => 
             array (
@@ -5151,6 +5327,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 9,
                 'taille_additive' => 155,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             177 => 
             array (
@@ -5180,6 +5357,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 15,
                 'taille_additive' => 163,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
             178 => 
             array (
@@ -5209,6 +5387,7 @@ class AnimauxTableSeeder extends Seeder
                 'capacite_dressage_additive' => 6,
                 'taille_additive' => 156,
                 'notes' => NULL,
+                'statut_administratif' => 'enregistré',
             ),
         ));
         

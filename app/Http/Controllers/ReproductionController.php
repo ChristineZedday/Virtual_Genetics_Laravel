@@ -26,7 +26,9 @@ class ReproductionController extends Controller
  * launch reproduction process
 */
 {
-   static function croisement($elevage, $etalon, $jument)
+   const DECLARE_SAILLIE = 7;
+  
+  static function croisement($elevage, $etalon, $jument, $declaree=1)
    {
     //vérification du statut des reproducteurs
     $jument = Animal::Find($jument);
@@ -61,11 +63,12 @@ class ReproductionController extends Controller
 
           if ($etalon->elevage->id != $elevage->id)
           {
+            $declarre =1;
             $elevage->budget = $elevage->budget - $statutM->prix;
             $elevage->save();
 
             $etalonnier = $etalon->Elevage;
-            $etalonnier->budget = $etalonnier->budget + $statutM->prix;
+            $etalonnier->budget = $etalonnier->budget + $statutM->prix - DECLARE_SAILLIE;
             $etalonnier->save();
           }
           if ($success > 50)
@@ -77,6 +80,9 @@ class ReproductionController extends Controller
               $animal = new Animal;
               $animal->foetus = true;
               $animal->fondateur = false;
+              if ($declaree) {
+                $animal->statut_administratif = 'saillie déclarée';
+              }
             
               $animal->date_naissance = $date;
               $animal->sire_id = $etalon->id;

@@ -84,9 +84,9 @@ Route::get('/reproduction/jument/{elevage}', 'ElevageController@faireSaillir')->
 
 Route::get('/reproduction/etalons/{elevage}/{jument}', 'ElevageController@choixEtalon')->name('saillir');
 
-Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}', 'AnimalController@confirmeEtalon')->name('etalon')->middleware('confirme');
+Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}/', 'AnimalController@confirmeEtalon')->name('etalon')->middleware('confirme');
 
-Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}', 'ReproductionController@croisement')->name('croisement');
+Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}/{declaree}', 'ReproductionController@croisement')->name('croisement');
 
 Route::get('/reproduction/consang/{elevage}/{etalon}/{jument}', 'ReproductionController@devoileConsang')->name('consang');
 
