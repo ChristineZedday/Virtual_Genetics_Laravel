@@ -74,7 +74,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
 
     public function verification($animal, $evenement, $reprise=NULL)
     {
-        if ($animal->satut_administratif != 'enregistré') {
+        if ($animal->statut_administratif != 'enregistré') {
             return 'Votre cheval doit être enregistré!';
         }
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau

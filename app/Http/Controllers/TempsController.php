@@ -186,16 +186,17 @@ static function regCompetNPC()
             }
                 if ($cheval->Performance->Niveau != $niveau){
                    
-                    if (!$niveau->open ) {
+                    if (!$niveau->open_before || !$niveau->open_after ) {
                 continue;
                     }
-                    else if ($cheval->Performance->Niveau > $niveau) {
+                    else if (!$niveau->open_before &&$cheval->Performance->Niveau > $niveau) {
                         continue;
                     }
+                    
             }
           
-                if (strpos($cheval->sexe,'stérilisé') != false){
-                  continue;//à déplacer quand autre que MA
+                if (strpos($cheval->sexe,'stérilisé') != false && $comp->type ='Modèle et Allures'){
+                  continue;
               }
                 if ($cheval->ageAdministratif($date->format('Y-m-d')) < 1) {
                   continue; //pas de compétitions poulains
