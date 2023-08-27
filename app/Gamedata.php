@@ -83,7 +83,7 @@ static function checkNouveaux($date)
                 $animal->elevage_id = $animal->Dam->elevage_id;
                 $animal->save();
             }
-            if ($animal->elevage->role == 'vendeur') {
+            if ($animal->elevage->role == 'Vendeur') {
                 $animal->statut_administratif = 'naissance_declaree';
                 $animal->save();
             }
