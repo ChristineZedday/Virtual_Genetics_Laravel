@@ -113,7 +113,7 @@
 						<button>  Contrôle vétérinaire d'aptitude à la reproduction (prix 200 euros)</button>
 						</a>
 						@endif
-						@if ($animal->StatutMale->qualite == 'approuvé'  && $animal->elevage_id == $elevage->id)
+						@if ($animal->StatutMale->qualite == 'approuvé'  && $animal->elevage_id == $elevage->id && ! $animal->StatutMale->carnet_saillies)
 						<a href="{{route('carnet',[$elevage->id,$animal->id])}}">
 						<button>  Obtenir un carnet de saillie pour l'année en cours (60 euros)</button>
 						</a>

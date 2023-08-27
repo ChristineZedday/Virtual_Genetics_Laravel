@@ -280,9 +280,13 @@ class ElevageController extends Controller
 
     public function carnetSaillies($elevage, $etalon) 
     {
-        if ($etalon->ageAdministratif >= $etalon->race->age_repro_male) {
+        $elevage = Elevage::Find($elevage);
+        $etalon = Animal::Find($etalon);
+        $date = Gamedata::date();
 
-            $etalon->StatutMale->carnet = true;
+        if ($etalon->ageAdministratif($date) >= $etalon->race->age_repro_male) {
+
+            $etalon->StatutMale->carnet_saillies = true;
             $elevage->budget -= 60;
 
             $etalon->StatutMale->save();
