@@ -411,8 +411,25 @@ class AnimalController extends Controller
      */
     public function enregistrer($animal)
     {
-
+        $date = GameData::date();
+        
         $animal = Animal::Find($animal);
+        if ($animal->ageMonths() >= 0) {
+            $elevage = $animal->elevage;
+            $elevage->budget -= 50;
+            $elevage->save();
+        }
+
+        if ($animal->ageAdminstratif($date) > 0) {
+            $animal->race_id = 17;
+            $animal->save();
+            foreach ($animal->RacesPossibles()->get() as $possible) {
+                $animal->RacesPossible()->detach($possible->id);
+            }
+
+        }
+            
+        
         if ($animal->Race->nom == 'OC')
         {
             $races = $animal->RacesPossibles()->get();
@@ -423,10 +440,9 @@ class AnimalController extends Controller
         {
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
         }
-       
-       
-    }    
+    }
 
+    
     public function registration(Request $request, $animal)
     {
         $animal = Animal::Find($animal);
@@ -469,7 +485,7 @@ class AnimalController extends Controller
                 $elevage->save();
             }
         }
-
+        $animal->statut_administratif = 'enregistré';
         if ($animal->save())
         {
             {

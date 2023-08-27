@@ -63,7 +63,7 @@ class ReproductionController extends Controller
 
           if ($etalon->elevage->id != $elevage->id)
           {
-            $declarre =1;
+            $declaree =1;
             $elevage->budget = $elevage->budget - $statutM->prix;
             $elevage->save();
 
@@ -82,6 +82,9 @@ class ReproductionController extends Controller
               $animal->fondateur = false;
               if ($declaree) {
                 $animal->statut_administratif = 'saillie déclarée';
+              }
+              else {
+                $animal->statut_administratif = 'saillie non déclarée';
               }
             
               $animal->date_naissance = $date;

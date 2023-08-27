@@ -10,9 +10,12 @@
 				@isset($animal->couleur)
 					<p>{{ $animal->couleur }}</p>
 				@else
-				@if ($elevage == $animal->elevage)
+				
+				
 				<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
-				@endif
+				<p>Gratuit pour les animaux achetés et les poulains dans leurs premier mois, 50 euros après, poulain ONC si pas enregistré dans l'année.</p>
+	
+				
 				@endisset
 				<p>
 					@if (Auth::user()->name == 'admin')
