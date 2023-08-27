@@ -77,6 +77,9 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         if ($animal->statut_administratif != 'enregistré') {
             return 'Votre cheval doit être enregistré!';
         }
+        if ($animal->race_id == 17) {
+            return 'Pas de compétition officielle pour les ONC!';
+        }
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
         //Possibilité se zapper le niveau départemental 
         $race = $animal->race_id;
