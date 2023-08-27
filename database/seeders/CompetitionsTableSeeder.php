@@ -28,7 +28,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-                'frais_voyage' => 5,
                 'prix_premier' => 100,
             ),
             1 => 
@@ -40,7 +39,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 5,
-                'frais_voyage' => 5,
                 'prix_premier' => 50,
             ),
             2 => 
@@ -52,7 +50,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-                'frais_voyage' => 7,
                 'prix_premier' => 100,
             ),
             3 => 
@@ -64,7 +61,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 50,
-                'frais_voyage' => 7,
                 'prix_premier' => 500,
             ),
             4 => 
@@ -76,7 +72,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 5,
-                'frais_voyage' => 4,
                 'prix_premier' => 50,
             ),
             5 => 
@@ -88,7 +83,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'frais_voyage' => 7,
                 'prix_premier' => 200,
             ),
             6 => 
@@ -100,7 +94,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 5,
-                'frais_voyage' => 7,
                 'prix_premier' => 100,
             ),
             7 => 
@@ -112,7 +105,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-                'frais_voyage' => 6,
                 'prix_premier' => 100,
             ),
             8 => 
@@ -124,7 +116,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-                'frais_voyage' => 7,
                 'prix_premier' => 100,
             ),
             9 => 
@@ -136,7 +127,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'frais_voyage' => 8,
                 'prix_premier' => 200,
             ),
             10 => 
@@ -148,7 +138,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-                'frais_voyage' => 5,
                 'prix_premier' => 100,
             ),
             11 => 
@@ -160,7 +149,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 10,
-                'frais_voyage' => 7,
                 'prix_premier' => 100,
             ),
             12 => 
@@ -172,7 +160,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'frais_voyage' => 7,
                 'prix_premier' => 200,
             ),
             13 => 
@@ -184,7 +171,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'frais_voyage' => 6,
                 'prix_premier' => 200,
             ),
             14 => 
@@ -196,7 +182,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'frais_voyage' => 10,
                 'prix_premier' => 200,
             ),
             15 => 
@@ -208,7 +193,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 10,
-                'frais_voyage' => 5,
                 'prix_premier' => 100,
             ),
             16 => 
@@ -220,7 +204,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'frais_voyage' => 7,
                 'prix_premier' => 200,
             ),
             17 => 
@@ -232,7 +215,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 100,
-                'frais_voyage' => 12,
                 'prix_premier' => 1000,
             ),
             18 => 
@@ -244,7 +226,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 10,
-                'frais_voyage' => 5,
                 'prix_premier' => 100,
             ),
             19 => 
@@ -256,7 +237,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 50,
-                'frais_voyage' => 10,
+               
                 'prix_premier' => 500,
             ),
             20 => 
@@ -268,7 +249,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 10,
-                'frais_voyage' => 10,
+               
                 'prix_premier' => 200,
             ),
             21 => 
@@ -280,7 +261,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'frais_voyage' => 10,
+               
                 'prix_premier' => 200,
             ),
             22 => 
@@ -292,7 +273,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'frais_voyage' => 12,
+               
                 'prix_premier' => 200,
             ),
             23 => 
@@ -304,7 +285,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 35,
-                'frais_voyage' => 15,
+               
                 'prix_premier' => 400,
             ),
             24 => 
@@ -316,7 +297,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'frais_voyage' => 8,
+              
                 'prix_premier' => 200,
             ),
             25 => 
@@ -328,7 +309,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'frais_voyage' => 10,
+               
                 'prix_premier' => 200,
             ),
             26 => 
@@ -340,7 +321,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 35,
-                'frais_voyage' => 12,
+               
                 'prix_premier' => 400,
             ),
             27 => 
@@ -352,7 +333,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 35,
-                'frais_voyage' => 10,
+               
                 'prix_premier' => 400,
             ),
             28 => 
@@ -364,7 +345,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 50,
+               
                 'prix_premier' => 1000,
             ),
             29 => 
@@ -376,7 +357,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 50,
+               
                 'prix_premier' => 800,
             ),
             30 => 
@@ -388,7 +369,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 80,
+               
                 'prix_premier' => 1000,
             ),
             31 => 
@@ -400,7 +381,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 50,
+               
                 'prix_premier' => 1500,
             ),
             32 => 
@@ -412,7 +393,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 120,
+             
                 'prix_premier' => 2000,
             ),
             33 => 
@@ -424,7 +405,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 150,
+               
                 'prix_premier' => 2000,
             ),
             34 => 
@@ -436,7 +417,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 150,
+               
                 'prix_premier' => 2000,
             ),
             35 => 
@@ -448,7 +429,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 120,
+               
                 'prix_premier' => 5000,
             ),
             36 => 
@@ -460,7 +441,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 80,
+               
                 'prix_premier' => 2000,
             ),
             37 => 
@@ -472,7 +453,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 500,
+               
                 'prix_premier' => 3000,
             ),
             38 => 
@@ -484,7 +465,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 2000,
             ),
             39 => 
@@ -496,7 +477,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 150,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 12000,
             ),
             40 => 
@@ -508,7 +489,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 25,
-                'frais_voyage' => 80,
+               
                 'prix_premier' => 500,
             ),
             41 => 
@@ -520,7 +501,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 25,
-                'frais_voyage' => 85,
+              
                 'prix_premier' => 500,
             ),
             42 => 
@@ -532,7 +513,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 150,
+               
                 'prix_premier' => 500,
             ),
             43 => 
@@ -544,7 +525,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 150,
+               
                 'prix_premier' => 1000,
             ),
             44 => 
@@ -556,7 +537,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 1000,
             ),
             45 => 
@@ -568,7 +549,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 150,
+               
                 'prix_premier' => 2000,
             ),
             46 => 
@@ -580,7 +561,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 130,
+             
                 'prix_premier' => 1000,
             ),
             47 => 
@@ -592,7 +573,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 175,
+               
                 'prix_premier' => 2000,
             ),
             48 => 
@@ -604,7 +585,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 150,
+               
                 'prix_premier' => 1500,
             ),
             49 => 
@@ -616,7 +597,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 200,
+               
                 'prix_premier' => 3000,
             ),
             50 => 
@@ -628,7 +609,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 800,
             ),
             51 => 
@@ -640,7 +621,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
                 'prix_inscription' => 100,
-                'frais_voyage' => 150,
+               
                 'prix_premier' => 1500,
             ),
             52 => 
@@ -652,7 +633,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 1,
                 'prix_inscription' => 5,
-                'frais_voyage' => 8,
+                
                 'prix_premier' => 0,
             ),
             53 => 
@@ -664,7 +645,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-                'frais_voyage' => 10,
+               
                 'prix_premier' => 0,
             ),
             54 => 
@@ -676,7 +657,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'frais_voyage' => 12,
                 'prix_premier' => 0,
             ),
             55 => 
@@ -688,7 +668,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 2,
                 'prix_inscription' => 25,
-                'frais_voyage' => 15,
+               
                 'prix_premier' => 0,
             ),
             56 => 
@@ -700,7 +680,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-                'frais_voyage' => 10,
+               
                 'prix_premier' => 100,
             ),
             57 => 
@@ -712,7 +692,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 2,
                 'prix_inscription' => 25,
-                'frais_voyage' => 15,
+               
                 'prix_premier' => 250,
             ),
             58 => 
@@ -724,7 +704,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 500,
             ),
             59 => 
@@ -736,7 +716,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 3,
                 'prix_inscription' => 100,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 1000,
             ),
             60 => 
@@ -748,7 +728,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 3,
                 'prix_inscription' => 40,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 0,
             ),
             61 => 
@@ -760,7 +740,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 3,
                 'prix_inscription' => 40,
-                'frais_voyage' => 100,
+               
                 'prix_premier' => 0,
             ),
             62 => 
@@ -772,7 +752,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 10,
-                'frais_voyage' => 50,
+               
                 'prix_premier' => 100,
             ),
             63 => 
@@ -784,7 +764,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
                 'prix_inscription' => 30,
-                'frais_voyage' => 25,
+               
                 'prix_premier' => 100,
             ),
             64 => 
@@ -796,7 +776,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 25,
-                'frais_voyage' => 20,
+               
                 'prix_premier' => 50,
             ),
         ));
