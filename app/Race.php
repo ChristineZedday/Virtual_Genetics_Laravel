@@ -80,7 +80,7 @@ public function approuveEtalonsPFS($resultat, $animal)
 static function determineRace ($etalon,$jument,$produit,$dateS) {
    $racet = $etalon->race_id;
    $raceju = $jument->race_id;
-   if ($etalon->StatutMale->qualite == 'entier' || $etalon->StatutMale->qualite == 'refusé'  ) {
+   if ($etalon->StatutMale->qualite == 'entier' || $etalon->StatutMale->qualite == 'refusé' || $jument->statut_administratif != 'enregistré' ) {
       $produit->race_id = 17;
       $produit->save();
      //ONC, point barre.

@@ -1,5 +1,5 @@
 <div class='pedigree'>
-				@if (! $animal->fondateur)
+				@if (! $animal->fondateur && ! $animal->race_id == 17)
 						<span class='generation'>
 							<span class='male'>
 								<a class='nom' href="{{route('animal',[$elevage->id, $animal->Sire->id])}}"> 

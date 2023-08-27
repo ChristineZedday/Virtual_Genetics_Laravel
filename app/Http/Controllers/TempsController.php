@@ -186,7 +186,7 @@ static function regCompetNPC()
             }
                 if ($cheval->Performance->Niveau != $niveau){
                    
-                    if (!$niveau->open_before || !$niveau->open_after ) {
+                    if (!$niveau->open_before &&!$niveau->open_after ) {
                 continue;
                     }
                     else if (!$niveau->open_before &&$cheval->Performance->Niveau > $niveau) {

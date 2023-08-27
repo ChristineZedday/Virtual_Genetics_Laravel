@@ -45,7 +45,7 @@
 					@endisset
 				</p> 
 				<p>né le: {{$animal->date_naissance}}</p>
-				<p>Taux de consanguinité: {{$animal->consang}}</p>
+				<p>@if (! $animal->race_id == 17) Taux de consanguinité: {{$animal->consang}}@endif</p>
 					
 		</div>
 	
@@ -108,7 +108,7 @@
 
 				<div>
 					@isset($animal->StatutMale)
-						@if ($animal->StatutMale->qualite == 'entier'  && $animal->elevage_id == $elevage->id)
+						@if ($animal->StatutMale->qualite == 'entier'  && $animal->statut_adminstratif == 'enregistré' && $animal->elevage_id == $elevage->id)
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
 						<button>  Contrôle vétérinaire d'aptitude à la reproduction (prix 200 euros)</button>
 						</a>

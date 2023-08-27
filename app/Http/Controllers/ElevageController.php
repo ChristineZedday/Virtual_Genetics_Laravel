@@ -233,10 +233,11 @@ class ElevageController extends Controller
      * refusé: produce grades (OC)
      */
 
-    public function commissionEtalons ($id, $etalon)
+    public function commissionEtalons ($elevage, $etalon)
     {
        
         $etalon = Animal::Find($etalon);
+        $elevage = Elevage::Find($elevage);
         $race = Race::Find($etalon->race_id);
         $pathos = $etalon->Pathologie;
 

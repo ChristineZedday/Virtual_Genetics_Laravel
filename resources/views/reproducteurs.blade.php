@@ -37,7 +37,7 @@ $date = \App\Gamedata::date();
 ?>
 @if ($jument->StatutFemelle->date_saillie != $date)
 <div id='boutons'>
-	@if ($etalon->elevage_id == $elevage_id)
+	@if ($etalon->elevage_id == $elevage->id)
 	@if ($etalon->StatutMale->carnet_saillies)
 <a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id, 1])}}">
 			<button>Confirmer le croisement avec déclaration de saillie </button></a>
