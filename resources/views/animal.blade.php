@@ -9,7 +9,7 @@
 				<p>{{ $animal->Sexe() }}</p>
 				@isset($animal->couleur)
 					<p>{{ $animal->couleur }}</p>
-				@else
+				@elseif ($animal->elevage_id == $elevage->id)
 				
 				
 				<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>

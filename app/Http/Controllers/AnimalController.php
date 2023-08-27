@@ -420,7 +420,7 @@ class AnimalController extends Controller
             $elevage->save();
         }
 
-        if ($animal->ageAdminstratif($date) > 0) {
+        if ($animal->ageAdministratif($date) > 0) {
             $animal->race_id = 17;
             $animal->save();
             foreach ($animal->RacesPossibles()->get() as $possible) {
