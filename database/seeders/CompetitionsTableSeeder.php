@@ -27,7 +27,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Mountain',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 10,
+                'prix_inscription' => 20,
                 'prix_premier' => 100,
             ),
             1 => 
@@ -38,8 +38,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Shetland',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 5,
-                'prix_premier' => 50,
+                'prix_inscription' => 15,
+                'prix_premier' => 75,
             ),
             2 => 
             array (
@@ -49,7 +49,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Connemara',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 10,
+                'prix_inscription' => 20,
                 'prix_premier' => 100,
             ),
             3 => 
@@ -60,8 +60,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 50,
-                'prix_premier' => 500,
+                'prix_inscription' => 30,
+                'prix_premier' => 200,
             ),
             4 => 
             array (
@@ -71,8 +71,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle Et Allures Miniature',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 5,
-                'prix_premier' => 50,
+                'prix_inscription' => 20,
+                'prix_premier' => 100,
             ),
             5 => 
             array (
@@ -83,7 +83,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'prix_premier' => 200,
+                'prix_premier' => 100,
             ),
             6 => 
             array (
@@ -93,7 +93,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Pottok A',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 5,
+                'prix_inscription' => 15,
                 'prix_premier' => 100,
             ),
             7 => 
@@ -104,7 +104,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Pony',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 10,
+                'prix_inscription' => 20,
                 'prix_premier' => 100,
             ),
             8 => 
@@ -115,7 +115,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Pony Type Cob',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 10,
+                'prix_inscription' => 20,
                 'prix_premier' => 100,
             ),
             9 => 
@@ -127,7 +127,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'prix_premier' => 200,
+                'prix_premier' => 100,
             ),
             10 => 
             array (
@@ -137,7 +137,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
-                'prix_inscription' => 10,
+                'prix_inscription' => 20,
                 'prix_premier' => 100,
             ),
             11 => 
@@ -148,7 +148,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Pottok B',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 10,
+                'prix_inscription' => 20,
                 'prix_premier' => 100,
             ),
             12 => 
@@ -160,7 +160,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'prix_premier' => 200,
+                'prix_premier' => 100,
             ),
             13 => 
             array (
@@ -171,7 +171,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 1,
                 'prix_inscription' => 20,
-                'prix_premier' => 200,
+                'prix_premier' => 100,
             ),
             14 => 
             array (
@@ -182,7 +182,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'prix_premier' => 200,
+                'prix_premier' => 150,
             ),
             15 => 
             array (
@@ -192,7 +192,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Shetland',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 10,
+                'prix_inscription' => 15,
                 'prix_premier' => 100,
             ),
             16 => 
@@ -204,7 +204,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-                'prix_premier' => 200,
+                'prix_premier' => 150,
             ),
             17 => 
             array (
@@ -214,8 +214,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 100,
-                'prix_premier' => 1000,
+                'prix_inscription' => 50,
+                'prix_premier' => 300,
             ),
             18 => 
             array (
@@ -225,8 +225,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle Et Allures Miniature',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 10,
-                'prix_premier' => 100,
+                'prix_inscription' => 20,
+                'prix_premier' => 150,
             ),
             19 => 
             array (
@@ -236,9 +236,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Français de Selle',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 50,
-               
-                'prix_premier' => 500,
+                'prix_inscription' => 20,
+                'prix_premier' => 200,
             ),
             20 => 
             array (
@@ -248,9 +247,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Pottok A',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 10,
-               
-                'prix_premier' => 200,
+                'prix_inscription' => 15,
+                'prix_premier' => 150,
             ),
             21 => 
             array (
@@ -261,8 +259,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-               
-                'prix_premier' => 200,
+                'prix_premier' => 150,
             ),
             22 => 
             array (
@@ -273,8 +270,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-               
-                'prix_premier' => 200,
+                'prix_premier' => 150,
             ),
             23 => 
             array (
@@ -284,9 +280,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Cob',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 35,
-               
-                'prix_premier' => 400,
+                'prix_inscription' => 20,
+                'prix_premier' => 200,
             ),
             24 => 
             array (
@@ -297,8 +292,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-              
-                'prix_premier' => 200,
+                'prix_premier' => 150,
             ),
             25 => 
             array (
@@ -309,8 +303,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 20,
-               
-                'prix_premier' => 200,
+                'prix_premier' => 150,
             ),
             26 => 
             array (
@@ -320,9 +313,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 35,
-               
-                'prix_premier' => 400,
+                'prix_inscription' => 25,
+                'prix_premier' => 200,
             ),
             27 => 
             array (
@@ -332,9 +324,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours poneys ',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
-                'prix_inscription' => 35,
-               
-                'prix_premier' => 400,
+                'prix_inscription' => 25,
+                'prix_premier' => 200,
             ),
             28 => 
             array (
@@ -344,9 +335,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Mountain',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 1000,
+                'prix_inscription' => 30,
+                'prix_premier' => 300,
             ),
             29 => 
             array (
@@ -356,9 +346,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Shetland',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 800,
+                'prix_inscription' => 30,
+                'prix_premier' => 300,
             ),
             30 => 
             array (
@@ -368,9 +357,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Connemara',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 1000,
+                'prix_inscription' => 30,
+                'prix_premier' => 300,
             ),
             31 => 
             array (
@@ -380,9 +368,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Shetland',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 1500,
+                'prix_inscription' => 40,
+                'prix_premier' => 400,
             ),
             32 => 
             array (
@@ -392,9 +379,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Mountain',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-             
-                'prix_premier' => 2000,
+                'prix_inscription' => 40,
+                'prix_premier' => 500,
             ),
             33 => 
             array (
@@ -404,9 +390,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Connemara',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 2000,
+                'prix_inscription' => 40,
+                'prix_premier' => 500,
             ),
             34 => 
             array (
@@ -416,9 +401,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 2000,
+                'prix_inscription' => 40,
+                'prix_premier' => 500,
             ),
             35 => 
             array (
@@ -428,9 +412,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle et Allures Pur-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 5000,
+                'prix_inscription' => 50,
+                'prix_premier' => 1000,
             ),
             36 => 
             array (
@@ -440,9 +423,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle Et Allures Miniature',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 2000,
+                'prix_inscription' => 25,
+                'prix_premier' => 250,
             ),
             37 => 
             array (
@@ -452,9 +434,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèle Et Allures Miniature',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 3000,
+                'prix_inscription' => 40,
+                'prix_premier' => 400,
             ),
             38 => 
             array (
@@ -464,9 +445,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Français de Selle',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 2000,
+                'prix_inscription' => 40,
+                'prix_premier' => 600,
             ),
             39 => 
             array (
@@ -476,9 +456,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Riding Pony Breeds',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 150,
-               
-                'prix_premier' => 12000,
+                'prix_inscription' => 50,
+                'prix_premier' => 1000,
             ),
             40 => 
             array (
@@ -488,9 +467,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Pottok A',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 25,
-               
-                'prix_premier' => 500,
+                'prix_inscription' => 20,
+                'prix_premier' => 400,
             ),
             41 => 
             array (
@@ -500,9 +478,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Pottok B',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 25,
-              
-                'prix_premier' => 500,
+                'prix_inscription' => 20,
+                'prix_premier' => 400,
             ),
             42 => 
             array (
@@ -512,9 +489,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 500,
+                'prix_inscription' => 40,
+                'prix_premier' => 400,
             ),
             43 => 
             array (
@@ -524,9 +500,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Demi-sang Arabe',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 1000,
+                'prix_inscription' => 50,
+                'prix_premier' => 700,
             ),
             44 => 
             array (
@@ -536,9 +511,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Pony',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 1000,
+                'prix_inscription' => 40,
+                'prix_premier' => 300,
             ),
             45 => 
             array (
@@ -548,9 +522,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Pony',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 2000,
+                'prix_inscription' => 40,
+                'prix_premier' => 500,
             ),
             46 => 
             array (
@@ -560,9 +533,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Pony Type Cob',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-             
-                'prix_premier' => 1000,
+                'prix_inscription' => 40,
+                'prix_premier' => 300,
             ),
             47 => 
             array (
@@ -572,9 +544,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Pony Type Cob',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 2000,
+                'prix_inscription' => 40,
+                'prix_premier' => 500,
             ),
             48 => 
             array (
@@ -584,9 +555,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Cob',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 1500,
+                'prix_inscription' => 40,
+                'prix_premier' => 500,
             ),
             49 => 
             array (
@@ -596,9 +566,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Cob',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 3000,
+                'prix_inscription' => 40,
+                'prix_premier' => 1000,
             ),
             50 => 
             array (
@@ -608,9 +577,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 800,
+                'prix_inscription' => 40,
+                'prix_premier' => 300,
             ),
             51 => 
             array (
@@ -620,9 +588,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Modèles et Allures Welsh Part-Breed',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 4,
-                'prix_inscription' => 100,
-               
-                'prix_premier' => 1500,
+                'prix_inscription' => 40,
+                'prix_premier' => 600,
             ),
             52 => 
             array (
@@ -632,8 +599,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'concours Dressage Poney',
                 'type' => 'Dressage',
                 'niveau_id' => 1,
-                'prix_inscription' => 5,
-                
+                'prix_inscription' => 10,
                 'prix_premier' => 0,
             ),
             53 => 
@@ -645,7 +611,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 1,
                 'prix_inscription' => 10,
-               
                 'prix_premier' => 0,
             ),
             54 => 
@@ -668,7 +633,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 2,
                 'prix_inscription' => 25,
-               
                 'prix_premier' => 0,
             ),
             56 => 
@@ -679,8 +643,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours dressage Amateur',
                 'type' => 'Dressage',
                 'niveau_id' => 1,
-                'prix_inscription' => 10,
-               
+                'prix_inscription' => 15,
                 'prix_premier' => 100,
             ),
             57 => 
@@ -692,7 +655,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 2,
                 'prix_inscription' => 25,
-               
                 'prix_premier' => 250,
             ),
             58 => 
@@ -703,8 +665,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours dressage Amateur',
                 'type' => 'Dressage',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
+                'prix_inscription' => 40,
                 'prix_premier' => 500,
             ),
             59 => 
@@ -715,8 +676,7 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Dressage Pro',
                 'type' => 'Dressage',
                 'niveau_id' => 3,
-                'prix_inscription' => 100,
-               
+                'prix_inscription' => 50,
                 'prix_premier' => 1000,
             ),
             60 => 
@@ -728,7 +688,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 3,
                 'prix_inscription' => 40,
-               
                 'prix_premier' => 0,
             ),
             61 => 
@@ -740,7 +699,6 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Dressage',
                 'niveau_id' => 3,
                 'prix_inscription' => 40,
-               
                 'prix_premier' => 0,
             ),
             62 => 
@@ -751,9 +709,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours Pottok B',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 10,
-               
-                'prix_premier' => 100,
+                'prix_inscription' => 20,
+                'prix_premier' => 400,
             ),
             63 => 
             array (
@@ -763,9 +720,8 @@ class CompetitionsTableSeeder extends Seeder
                 'nom' => 'Concours 2 et 3 ans AA',
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 3,
-                'prix_inscription' => 30,
-               
-                'prix_premier' => 100,
+                'prix_inscription' => 40,
+                'prix_premier' => 500,
             ),
             64 => 
             array (
@@ -776,8 +732,7 @@ class CompetitionsTableSeeder extends Seeder
                 'type' => 'Modèle et Allures',
                 'niveau_id' => 2,
                 'prix_inscription' => 25,
-               
-                'prix_premier' => 50,
+                'prix_premier' => 200,
             ),
         ));
         
