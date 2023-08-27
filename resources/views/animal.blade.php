@@ -108,7 +108,7 @@
 
 				<div>
 					@isset($animal->StatutMale)
-						@if ($animal->StatutMale->qualite == 'entier'  && $animal->statut_adminstratif == 'enregistré' && $animal->elevage_id == $elevage->id)
+						@if ($animal->StatutMale->qualite == 'entier'  && $animal->statut_administratif == 'enregistré' && $animal->elevage_id == $elevage->id)
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
 						<button>  Contrôle vétérinaire d'aptitude à la reproduction (prix 200 euros)</button>
 						</a>

@@ -289,8 +289,6 @@ class ElevageController extends Controller
 
         }
         
-
-
         return redirect()->back();
     }
 
@@ -299,7 +297,13 @@ class ElevageController extends Controller
         $elevage = Elevage::Find($elevage);
         $etalon = Animal::Find($etalon);
 
-        return view('monte',['elevage'=>$elevage, 'etalon'=>$etalon]);
+        if ($etalon->StatutMale->carnet_saillies)
+{
+        return view('monte',['elevage'=>$elevage, 'etalon'=>$etalon]);}
+
+        else {
+            redirect()->back();
+        }
     }
 
     public function retirerMonte($elevage, $etalon)

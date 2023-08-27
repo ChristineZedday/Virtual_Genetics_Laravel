@@ -26,7 +26,7 @@ class ReproductionController extends Controller
  * launch reproduction process
 */
 {
-   const DECLARE_SAILLIE = 0; //on paye pour le carnet
+  
   
   static function croisement($elevage, $etalon, $jument, $declaree=1)
    {
@@ -68,7 +68,7 @@ class ReproductionController extends Controller
             $elevage->save();
 
             $etalonnier = $etalon->Elevage;
-            $etalonnier->budget = $etalonnier->budget + $statutM->prix - DECLARE_SAILLIE;
+            $etalonnier->budget = $etalonnier->budget + $statutM->prix;
             $etalonnier->save();
           }
           if ($success > 50)

@@ -154,7 +154,7 @@ static function associeRaces ($etalon,$jument,$produit)
          }
       }
     }
-dd($produit->RacesPossibles()->get());
+
     
     /* switch (true) {
          case Animal::pourCentWelsh($produit->id) >= 12.5:
