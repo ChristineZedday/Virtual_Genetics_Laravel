@@ -277,6 +277,22 @@ class ElevageController extends Controller
         return redirect()->back();
     }
 
+    public function carnetSaillies($elevage, $etalon) 
+    {
+        if ($etalon->ageAdministratif >= $etalon->race->age_repro_male) {
+
+            $etalon->StatutMale->carnet = true;
+            $elevage->budget -= 60;
+
+            $etalon->StatutMale->save();
+
+        }
+        
+
+
+        return redirect()->back();
+    }
+
     public function proposerMonte($elevage, $etalon)
     {
         $elevage = Elevage::Find($elevage);

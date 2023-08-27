@@ -92,6 +92,8 @@ Route::get('/reproduction/consang/{elevage}/{etalon}/{jument}', 'ReproductionCon
 
 Route::get('/reproduction/etalon/{elevage}/{etalon}', 'ElevageController@commissionEtalons')->name('commission');
 
+Route::get('/reproduction/etalon/carnet/{elevage}/{etalon}', 'ElevageController@carnetSaillies')->name('carnet');
+
 Route::get('/reproduction/monte/{elevage}/{etalon}', 'ElevageController@proposerMonte')->name('monte');
 
 Route::get('/reproduction/demonte/{elevage}/{etalon}', 'ElevageController@retirerMonte')->name('demonte');

@@ -128,6 +128,20 @@ static function checkSevres()
         }
     }
 }
+static function checkCarnets()
+{
+    $animaux = Animal::whereHas('StatutMale', function ($q) {
+        $q->where('carnetSaillies', 1);
+    })->whereHas('elevage', function ($qu) {
+        $qu->where('role', '!=' , 'Vendeur');
+    })->get();
+    foreach ($animaux as $animal) {
+        $statut = $animal->StatutMale;
+        $statut->carnetSaillies = false;
+        $statut->save(); //faut redemander chaque année
+    }
+}
+
 
 static function checkPuberes()
 {
@@ -146,8 +160,8 @@ static function checkPuberes()
             {
                 if ($animal->modele_allures >= 10)
                 {
-                    if ($animal->race->approbation) {
-                        $statut->qualite = 'autorisation sanitaire';
+                    if ($animal->race->approbation && $animal->modele_allures < 15) {
+                         $statut->qualite = 'autorisation sanitaire';
                     }
                     else {
                         $statut->qualite = 'approuvé';
@@ -157,6 +171,10 @@ static function checkPuberes()
                 {
                     $statut->qualite = 'refusé';
                 }
+            }
+            if ('approuvé' == $statut->qualite) {
+                $statut->$carnetSaillies = true;
+               
             }
             $statut->save();
          }

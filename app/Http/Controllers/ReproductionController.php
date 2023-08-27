@@ -26,7 +26,7 @@ class ReproductionController extends Controller
  * launch reproduction process
 */
 {
-   const DECLARE_SAILLIE = 7;
+   const DECLARE_SAILLIE = 0; //on paye pour le carnet
   
   static function croisement($elevage, $etalon, $jument, $declaree=1)
    {
