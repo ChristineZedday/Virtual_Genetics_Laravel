@@ -131,13 +131,13 @@ static function checkSevres()
 static function checkCarnets()
 {
     $animaux = Animal::whereHas('StatutMale', function ($q) {
-        $q->where('carnetSaillies', 1);
+        $q->where('carnet_saillies', 1);
     })->whereHas('elevage', function ($qu) {
         $qu->where('role', '!=' , 'Vendeur');
     })->get();
     foreach ($animaux as $animal) {
         $statut = $animal->StatutMale;
-        $statut->carnetSaillies = false;
+        $statut->carnet_saillies = false;
         $statut->save(); //faut redemander chaque année
     }
 }
@@ -173,7 +173,7 @@ static function checkPuberes()
                 }
             }
             if ('approuvé' == $statut->qualite) {
-                $statut->$carnetSaillies = true;
+                $statut->carnet_saillies = true;
                
             }
             $statut->save();
