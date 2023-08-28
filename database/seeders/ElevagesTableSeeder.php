@@ -229,6 +229,20 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 1,
             ),
+            15 => 
+            array (
+                'id' => 16,
+                'affixe_id' => NULL,
+                'created_at' => '2023-08-28 19:54:10',
+                'updated_at' => '2023-08-28 19:54:10',
+                'nom_elevage' => 'Fox Trot',
+                'nom_eleveur' => 'Aimé Sulky',
+                'budget' => 20000,
+                'role' => 'Joueur',
+                'surface' => 10.0,
+                'foin' => 0.0,
+                'user_id' => 1,
+            ),
         ));
         
         
