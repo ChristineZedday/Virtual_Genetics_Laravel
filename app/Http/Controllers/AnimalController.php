@@ -304,26 +304,7 @@ class AnimalController extends Controller
             $elevage->budget = $elevage->budget - $animal->prix;
             $elevage->save();
             $animal->acheter($elevage->id);
-            // $animal->a_vendre = false;
-            // $animal->date_achat = $date;
-            // $animal->elevage_id = $elevage->id;
-            // $statut = StatutFemelle::where('animal_id', $animal->id)->first();
-            // if (isset($statut) )
-            // {
-            //    if ($statut->vide == false)
-            //     {
-            //         $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
-            //         $produit->elevage_id = $elevage->id;
-            //         $produit->affixe_id = $elevage->Affixe->id;
-            //         $produit->save();
-            //     }
-            //    if ($statut->suitee)
-            //    {
-            //     $produit = Animal::where('dam_id',$animal->id)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->first(); 
-            //     $produit->elevage_id = $elevage->id; 
-            //     $produit->save();
-            //    }
-            
+      
             
             if ($animal->save())
             {

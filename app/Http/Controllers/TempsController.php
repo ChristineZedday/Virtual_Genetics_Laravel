@@ -77,7 +77,9 @@ class TempsController extends Controller
            
             Gamedata::checkApproProvisoire();
             Gamedata::checkVieux ($date);
-            Gamedata::VenteSaillies();   
+            Gamedata::checkCarnets();
+            Gamedata::VenteSaillies(); 
+
         }
         if ( Gamedata::saison())
        { TempsController::reproNPC();}

@@ -370,6 +370,10 @@ class Animal extends Model
                 $produit->save();
                }
             }
+            if ($this->StatutMale != NULL){
+                $this->StatutMale->disponible = false;
+                $this->StatutMale->save();
+            }
             
            
         }

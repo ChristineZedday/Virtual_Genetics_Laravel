@@ -341,7 +341,7 @@ static function VenteSaillies ()
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur)
     {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'approuvé')->where('race_id','!=',16);})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('carnet_saillies', 1);})->get();
         foreach ($animaux as $animal)
       
         {
