@@ -158,6 +158,8 @@ static function checkPuberes()
             $statut->fertilite = 100 - $animal->consang/2 ;
             if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1)
             {
+                $animal->statut_administratif = 'enregistré';
+                $animal->save();
                 if ($animal->modele_allures >= 10)
                 {
                     if ($animal->race->approbation && $animal->modele_allures < 15) {
@@ -188,6 +190,10 @@ static function checkPuberes()
     {
         if ($animal->ageAdministratif($date) >= 2)
         { $animal->sexe = 'femelle';
+        if ($animal->elevage->role == 'Vendeur') {
+            $animal->statut_administratif = 'enregistré';
+            $animal->save();
+        }
          $animal->save();
          $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
