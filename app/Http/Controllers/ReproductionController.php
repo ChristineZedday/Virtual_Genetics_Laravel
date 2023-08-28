@@ -188,7 +188,7 @@ class ReproductionController extends Controller
               Genome::readGenes($animal->id);
               $animal = Animal::find($animal->id); //pour mettre à jour modif effectuées ds Genome!
               $animal->save();
-              Race::determineRace($etalon,$jument,$animal,$dateS);
+              Race::determineRace($etalon,$jument,$animal,$dateS,$declaree);
               
               
           } //end if succès

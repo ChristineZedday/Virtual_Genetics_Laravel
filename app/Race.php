@@ -77,16 +77,16 @@ public function approuveEtalonsPFS($resultat, $animal)
    
 }
 
-static function determineRace ($etalon,$jument,$produit,$dateS) {
+static function determineRace ($etalon,$jument,$produit,$dateS, $declaree) {
    $racet = $etalon->race_id;
    $raceju = $jument->race_id;
-   if ($etalon->StatutMale->qualite == 'entier' || $etalon->StatutMale->qualite == 'refusé' || $jument->statut_administratif != 'enregistré' ) {
+   if (!$declaree || $jument->statut_administratif != 'enregistré' ) {
       $produit->race_id = 17;
       $produit->save();
-     //ONC, point barre.
+     //ONC si saillie non déclarée ou jument non enregistrée
      
    }
-   else if ($etalon->qualite == 'autorisation sanitaire' || $etalon->ageAdministratif($dateS) < $etalon->race->age_repro_male || $jument->ageAdministratif($dateS) < $jument->race->age_repro_femelle ) {
+   else if ( $jument->ageAdministratif($dateS) < $jument->race->age_repro_femelle ) {
       $produit->race_id =1; 
       $produit->save();
       
