@@ -395,7 +395,7 @@ class AnimalController extends Controller
         $date = GameData::date();
         
         $animal = Animal::Find($animal);
-        if ($animal->ageMonths() > 0) {
+        if ($animal->ageMonths() > 0 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
             $elevage->budget -= 50;
             $elevage->save();
