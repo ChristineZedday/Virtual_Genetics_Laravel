@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -1464,6 +1465,24 @@ class ImagesTableSeeder extends Seeder
                 'chemin' => 'smokyblack',
                 'extension' => 'png',
                 'z_index' => 4,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            161 => 
+            array (
+                'id' => 173,
+                'chemin' => 'W208',
+                'extension' => 'png',
+                'z_index' => 80,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            162 => 
+            array (
+                'id' => 174,
+                'chemin' => 'W209',
+                'extension' => 'png',
+                'z_index' => 80,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
