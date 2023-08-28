@@ -29,6 +29,7 @@ class CreateRacesTable extends Migration
             $table->tinyInteger('age_repro_male')->default(3);
             $table->tinyInteger('age_repro_femelle')->default(2);
             $table->boolean('poney_sport')->default(true);
+            $table->boolean('cheval_sport')->default(false);
 
         });
     }
