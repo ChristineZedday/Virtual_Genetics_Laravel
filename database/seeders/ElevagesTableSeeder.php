@@ -238,7 +238,7 @@ class ElevagesTableSeeder extends Seeder
                 'nom_elevage' => 'Fox Trot',
                 'nom_eleveur' => 'Aimé Sulky',
                 'budget' => 20000,
-                'role' => 'Joueur',
+                'role' => 'Vendeur',
                 'surface' => 10.0,
                 'foin' => 0.0,
                 'user_id' => 1,
