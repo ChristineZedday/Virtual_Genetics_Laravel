@@ -23,6 +23,7 @@ class Reprise extends Model
     {
         $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $categorie->id)->where('competition_id', $competition->id)->where('reprise_id', $this->id)->get();
 
+
         foreach ($inscrits as $inscrit) {
             $elevage = $inscrit->animal->elevage;
             $frais = $elevage->fraisTransport($inscrit->animal,$competition->distance);
@@ -32,6 +33,17 @@ class Reprise extends Model
                     // faut les sous pour y aller!
                 }
             }   
+
+        
+            $malusTaille = 0;
+            if ($categorie->libelle == 'cheval ou poney') {
+                $taille = $inscrit->animal->taille();
+                if ($taille < 150) {
+                    $malusTaille =  150 - $taille;
+
+                }
+    
+            }
 
         $prix = $competition->prix_premier;
         $nb = $inscrits->count();
@@ -44,7 +56,7 @@ class Reprise extends Model
     
              $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + 
              ($animal->Performance->niveau_dressage * $animal->capacite_apprentissage_additive)/100 -
-             $this->niveau_num_global +
+             $this->niveau_num_global - $malusTaille + 
              random_int(-20,20);
 
              if ( $notes[$animal->id] > 100) {

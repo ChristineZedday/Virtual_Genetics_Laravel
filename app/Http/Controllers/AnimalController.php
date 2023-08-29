@@ -459,36 +459,47 @@ class AnimalController extends Controller
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back();
              }
+        $elevage = Elevage::Find($animal->elevage_id);
         $animal->couleur = $validated['couleur'];
         if (($animal->race_id == 1) && ($validated['race']!==null))
         {
             $animal->race_id = $validated['race'];
             if ($animal->race !==1)
             {
-                $elevage = Elevage::Find($animal->elevage_id);
+              
                 $race = Race::Find($animal->race_id);
                 $elevage->budget -= $race->frais_enregistrement;
                 $elevage->save();
             }
         }
 
-        if ($animal->race != 1 && $animal->race != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
+        if ($animal->race_id != 1 && $animal->race_id != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
             $fraisSB = 50;
+            $animal->statut_administratif = 'déclaré';
         }
         else {
             $fraisSB = 0;
+            $animal->statut_administratif = 'déclaré';
         }
         if ($animal->ageMonths() > 0 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
             $elevage->budget -= (50 + $fraisSB);
+            $animal->statut_administratif = 'déclaré';
            
         }
-        else {
+        else if ($animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage->budget -= $fraisSB;
+            $animal->statut_administratif = 'déclaré';
         }
+
+        else {
+            $animal->statut_administratif = 'enregistré';
+           
+        }
+
         $elevage->save();
 
-        $animal->statut_administratif = 'déclaré';
+        
         if ($animal->save())
         {
             {
