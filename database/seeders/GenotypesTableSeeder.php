@@ -6497,7 +6497,7 @@ class GenotypesTableSeeder extends Seeder
                 'created_at' => '2022-10-14 17:47:58',
                 'updated_at' => '2022-10-14 17:47:58',
                 'animal_id' => 156,
-                'allele_p_id' => 4,
+                'allele_p_id' => 5,
                 'allele_m_id' => 4,
                 'locus_id' => 2,
             ),
@@ -6928,7 +6928,7 @@ class GenotypesTableSeeder extends Seeder
                 'updated_at' => '2022-10-14 20:27:30',
                 'animal_id' => 163,
                 'allele_p_id' => 4,
-                'allele_m_id' => 4,
+                'allele_m_id' => 5,
                 'locus_id' => 2,
             ),
             191 => 
@@ -7408,7 +7408,7 @@ class GenotypesTableSeeder extends Seeder
                 'updated_at' => '2023-02-06 12:16:47',
                 'animal_id' => 170,
                 'allele_p_id' => 4,
-                'allele_m_id' => 4,
+                'allele_m_id' => 5,
                 'locus_id' => 2,
             ),
             239 => 
@@ -7618,7 +7618,7 @@ class GenotypesTableSeeder extends Seeder
                 'updated_at' => '2023-02-06 18:19:26',
                 'animal_id' => 174,
                 'allele_p_id' => 4,
-                'allele_m_id' => 4,
+                'allele_m_id' => 5,
                 'locus_id' => 2,
             ),
             260 => 
@@ -7677,7 +7677,7 @@ class GenotypesTableSeeder extends Seeder
                 'created_at' => '2023-02-06 18:22:38',
                 'updated_at' => '2023-02-06 18:22:38',
                 'animal_id' => 175,
-                'allele_p_id' => 4,
+                'allele_p_id' => 5,
                 'allele_m_id' => 3,
                 'locus_id' => 2,
             ),
@@ -8906,8 +8906,8 @@ class GenotypesTableSeeder extends Seeder
                 'id' => 1180,
                 'created_at' => '2023-08-26 13:24:45',
                 'updated_at' => '2023-08-26 13:24:45',
-                'animal_id' => 201,
-                'allele_p_id' => 5,
+                'animal_id' => 149,
+                'allele_p_id' => 4,
                 'allele_m_id' => 3,
                 'locus_id' => 2,
             ),
@@ -10172,6 +10172,76 @@ class GenotypesTableSeeder extends Seeder
                 'allele_p_id' => 44,
                 'allele_m_id' => 43,
                 'locus_id' => 24,
+            ),
+            15 => 
+            array (
+                'id' => 1307,
+                'created_at' => '2023-08-29 11:06:09',
+                'updated_at' => '2023-08-29 11:06:09',
+                'animal_id' => 221,
+                'allele_p_id' => 1,
+                'allele_m_id' => 1,
+                'locus_id' => 1,
+            ),
+            16 => 
+            array (
+                'id' => 1308,
+                'created_at' => '2023-08-29 11:06:09',
+                'updated_at' => '2023-08-29 11:06:09',
+                'animal_id' => 221,
+                'allele_p_id' => 4,
+                'allele_m_id' => 3,
+                'locus_id' => 2,
+            ),
+            17 => 
+            array (
+                'id' => 1309,
+                'created_at' => '2023-08-29 11:06:09',
+                'updated_at' => '2023-08-29 11:06:09',
+                'animal_id' => 221,
+                'allele_p_id' => 15,
+                'allele_m_id' => 16,
+                'locus_id' => 11,
+            ),
+            18 => 
+            array (
+                'id' => 1310,
+                'created_at' => '2023-08-29 11:06:09',
+                'updated_at' => '2023-08-29 11:06:09',
+                'animal_id' => 221,
+                'allele_p_id' => 41,
+                'allele_m_id' => 41,
+                'locus_id' => 23,
+            ),
+            19 => 
+            array (
+                'id' => 1311,
+                'created_at' => '2023-08-29 11:06:09',
+                'updated_at' => '2023-08-29 11:06:09',
+                'animal_id' => 221,
+                'allele_p_id' => 44,
+                'allele_m_id' => 43,
+                'locus_id' => 24,
+            ),
+            20 => 
+            array (
+                'id' => 1312,
+                'created_at' => '2023-08-29 11:07:49',
+                'updated_at' => '2023-08-29 11:07:49',
+                'animal_id' => 222,
+                'allele_p_id' => 1,
+                'allele_m_id' => 2,
+                'locus_id' => 1,
+            ),
+            21 => 
+            array (
+                'id' => 1313,
+                'created_at' => '2023-08-29 11:07:49',
+                'updated_at' => '2023-08-29 11:07:49',
+                'animal_id' => 222,
+                'allele_p_id' => 3,
+                'allele_m_id' => 3,
+                'locus_id' => 2,
             ),
         ));
         
