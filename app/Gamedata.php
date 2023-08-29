@@ -149,7 +149,7 @@ static function checkNonEnregistres()
         $race_id = 17;
         $animal->save();
         foreach ($animal->RacesPossibles()->get() as $possible) {
-            $animal->RacesPossible()->detach($possible->id);
+            $animal->RacesPossibles()->detach($possible->id);
         }
     }
 }
