@@ -12,11 +12,13 @@
 				@elseif ($animal->elevage_id == $elevage->id)
 				
 				
-				<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
-				<p>Gratuit pour les animaux achetés et les poulains dans leurs premier mois, 50 euros après, poulain ONC si pas enregistré dans l'année.</p>
-	
-				
+				<a href="{{route('enregistrement',[$animal->id])}}"><button>Déclaration</button></a>
+				<p>Gratuite pour les animaux achetés. Pour les poulains dans leurs premier mois, gratuit pour les OC, 50 euros de frais d'enregistrement dans le stud-book de la race en sus pour les pure race, 50 euros de pénalités supplémentaires après un mois, poulain ONC si pas enregistré dans l'année.</p>
 				@endisset
+				@if ($animal->statut_administratif == 'déclaré')
+				<a href="{{route('signalement',[$animal->id])}}"><button>Signalement et identification (puce)</button></a>
+				<p>60 euros, poulain ONC si pas effectué dans l'année.</p>
+				@endif
 				<p>
 					@if (Auth::user()->name == 'admin')
 				<?php 

@@ -104,6 +104,8 @@ Route::put('/reproduction/montepublique/{elevage}', 'ElevageController@montePubl
 
 Route::get('/enregistrement/{animal}', 'AnimalController@enregistrer')->name('enregistrement');
 
+Route::get('/signalement/{animal}', 'AnimalController@signalementIdentification')->name('signalement');
+
 Route::put('/registration/{animal}', 'AnimalController@registration')->name('registration');
 
 //Stériliser

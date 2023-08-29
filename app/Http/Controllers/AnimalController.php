@@ -392,25 +392,21 @@ class AnimalController extends Controller
      */
     public function enregistrer($animal)
     {
-        $date = GameData::date();
+       
         
         $animal = Animal::Find($animal);
-        if ($animal->ageMonths() > 0 && $animal->Dam->elevage_id == $animal->elevage_id) {
-            $elevage = $animal->elevage;
-            $elevage->budget -= 50;
-            $elevage->save();
-        }
 
-        if ($animal->ageAdministratif($date) > 0) {
+      
+
+     /*   if ($animal->ageAdministratif($date) > 0) {
             $animal->race_id = 17;
             $animal->save();
             foreach ($animal->RacesPossibles()->get() as $possible) {
                 $animal->RacesPossible()->detach($possible->id);
-            }
-
-        }
             
-        
+
+        }*/
+             
         if ($animal->Race->nom == 'OC')
         {
             $races = $animal->RacesPossibles()->get();
@@ -421,6 +417,15 @@ class AnimalController extends Controller
         {
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
         }
+    }
+
+    public function signalementIdentification($animal) 
+    {
+        $animal->elevage->budget - 60;
+        $animal->elevage->save();
+        $animal->statut_administratif = 'enregistré';
+        $animal->save();
+        return redirect()->back();
     }
 
     
@@ -466,7 +471,24 @@ class AnimalController extends Controller
                 $elevage->save();
             }
         }
-        $animal->statut_administratif = 'enregistré';
+
+        if ($animal->race != 1 && $animal->race != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
+            $fraisSB = 50;
+        }
+        else {
+            $fraisSB = 0;
+        }
+        if ($animal->ageMonths() > 0 && $animal->Dam->elevage_id == $animal->elevage_id) {
+            $elevage = $animal->elevage;
+            $elevage->budget -= (50 + $fraisSB);
+           
+        }
+        else {
+            $elevage->budget -= $fraisSB;
+        }
+        $elevage->save();
+
+        $animal->statut_administratif = 'déclaré';
         if ($animal->save())
         {
             {

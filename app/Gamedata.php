@@ -142,6 +142,17 @@ static function checkCarnets()
     }
 }
 
+static function checkNonEnregistres() 
+{//Pas enregistrés l'année de naissance, ONC
+    $animaux = Animal::whereHas('elevage', function ($query) { $query->where('role','Joueur');})->where('statut_administratif', '!=', 'enregistré')->where('race_id', '!=', 17)->get();
+    foreach ($animaux as $animal) {
+        $race_id = 17;
+        $animal->save();
+        foreach ($animal->RacesPossibles()->get() as $possible) {
+            $animal->RacesPossible()->detach($possible->id);
+        }
+    }
+}
 
 static function checkPuberes()
 {
