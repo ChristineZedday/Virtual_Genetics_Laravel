@@ -392,21 +392,9 @@ class AnimalController extends Controller
      */
     public function enregistrer($animal)
     {
-       
         
         $animal = Animal::Find($animal);
 
-      
-
-     /*   if ($animal->ageAdministratif($date) > 0) {
-            $animal->race_id = 17;
-            $animal->save();
-            foreach ($animal->RacesPossibles()->get() as $possible) {
-                $animal->RacesPossible()->detach($possible->id);
-            
-
-        }*/
-             
         if ($animal->Race->nom == 'OC')
         {
             $races = $animal->RacesPossibles()->get();
@@ -417,6 +405,24 @@ class AnimalController extends Controller
         {
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
         }
+    }
+
+      /**
+     * Registration of name/color
+     *
+     * @param  int  $animal->id, 
+     * @return \Illuminate\Http\Response
+     */
+    public function enregistrerStudBook($animal)
+    {
+        
+        $animal = Animal::Find($animal);
+
+        
+            $races = $animal->RacesPossibles()->get();
+         
+            return view('formEnregistrementStudBook', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
+       
     }
 
     public function signalementIdentification($animal) 
@@ -465,7 +471,7 @@ class AnimalController extends Controller
         if (($animal->race_id == 1) && ($validated['race']!==null))
         {
             $animal->race_id = $validated['race'];
-            if ($animal->race !==1)
+            if ($animal->race_id !==1)
             {
               
                 $race = Race::Find($animal->race_id);
@@ -513,6 +519,34 @@ class AnimalController extends Controller
       
        
     }   
+
+public function registrationStudBook(Request $request, $animal) 
+{
+    $animal = Animal::Find($animal);
+        
+    $validated = $request->validate([ 
+    'race'=>'integer']); 
+
+    $animal->race_id = $validated['race'];
+    if ($animal->race_id !==1)
+            {
+              
+                $race = Race::Find($animal->race_id);
+                $elevage->budget -= $race->frais_enregistrement;
+                $elevage->save();
+                if ($animal->save())
+                {
+                    {
+                        $request->session()->flash('status',"animal enregistré avec succès");
+                        $request->session()->flash('alert-class',"alert-success");
+                     
+                       
+                    }
+                }
+            }
+            return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+}
+
     public function updateNotes(Request $request, $animal) 
     {
         $animal = Animal::Find($animal);

@@ -107,6 +107,12 @@
 				Stériliser</button>
 				@endif
 				</div>	
+				<div>
+					@if ($animal->statut_administratif == 'enregistré' && $animal->race_id == 1 &&!empty($animal->RacesPossibles))
+					<a href="{{route('studbook',[$elevage->id,$animal->id])}}">
+					<button>Enregistrer dans un stud-book</button></a>
+					@endif
+				</div>
 
 				<div>
 					@isset($animal->StatutMale)
