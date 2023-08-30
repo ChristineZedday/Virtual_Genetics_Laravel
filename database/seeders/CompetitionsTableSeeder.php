@@ -734,6 +734,17 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 25,
                 'prix_premier' => 200,
             ),
+            65 => 
+            array (
+                'id' => 70,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Selle Français',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 25,
+                'prix_premier' => 200,
+            ),
         ));
         
         
