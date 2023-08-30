@@ -196,7 +196,7 @@ class EvenementsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'date' => '2000-07-29',
-                'nom' => 'Régional Français de Selle à Lamballe' ,
+                'nom' => 'Régional Français de Selle à Lamballe',
                 'distance' => 90,
             ),
             20 => 
@@ -387,6 +387,42 @@ class EvenementsTableSeeder extends Seeder
                 'date' => '2001-07-26',
                 'nom' => 'Modèle et Allures SF et AA Saint Lô',
                 'distance' => 150,
+            ),
+            41 => 
+            array (
+                'id' => 56,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-12-05',
+                'nom' => 'Championnat mâles SF Saint Lô',
+                'distance' => 150,
+            ),
+            42 => 
+            array (
+                'id' => 57,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-08-29',
+                'nom' => 'Grande semaine de Fontainebleau',
+                'distance' => 370,
+            ),
+            43 => 
+            array (
+                'id' => 58,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-07-25',
+                'nom' => 'Concours qualificatif femelles SF Lamballe',
+                'distance' => 90,
+            ),
+            44 => 
+            array (
+                'id' => 59,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-11-17',
+                'nom' => 'Concours qualifcatif mâles SF Lamballe',
+                'distance' => 90,
             ),
         ));
         
