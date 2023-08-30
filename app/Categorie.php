@@ -211,7 +211,7 @@ public function run($competition, $evenement) {
     $perf = $animal->Performance;
     if ($value >= 12) {
         if ($perf->niveau->id == 1) {
-            $perf->niveau->id == 2;
+            $perf->niveau->id = 2;
             $perf->save();
         }
         
