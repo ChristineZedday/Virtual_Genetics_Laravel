@@ -421,6 +421,7 @@ class AnimalController extends Controller
 
     public function signalementIdentification($animal) 
     {
+        $animal = Animal::find($animal);
         $animal->elevage->budget - 60;
         $animal->elevage->save();
         $animal->statut_administratif = 'enregistré';

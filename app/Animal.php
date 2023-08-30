@@ -106,8 +106,11 @@ class Animal extends Model
     {
         if (isset($this->StatutMale) && $this->StatutMale->fertilite > 0 )
         {
-            if ($this->StatutMale->approuvePFS) {
+            if ($this->StatutMale->approuvePFS && $this->race->poney_sport) {
                 return 'Étalon approuvé dans sa race et en Poney Français de Selle';
+            }
+            else if ($this->StatutMale->approuvePFS && $this->race->cheval_sport) {
+                return 'Étalon approuvé dans sa race et en Selle Français';
             }
             else {
             return 'Étalon '.$this->StatutMale->qualite;

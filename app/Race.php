@@ -77,7 +77,8 @@ public function approuveEtalonsPFS($resultat, $animal)
    
 }
 
-static function determineRace ($etalon,$jument,$produit,$dateS, $declaree) {
+static function determineRace ($etalon,$jument,$produit,$dateS, $declaree) 
+{
    $racet = $etalon->race_id;
    $raceju = $jument->race_id;
    if (!$declaree || $jument->statut_administratif != 'enregistré' ) {

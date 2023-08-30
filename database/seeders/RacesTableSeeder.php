@@ -36,7 +36,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 0, 'cheval_sport'=> 1,
+                'poney_sport' => 0,
+                'cheval_sport' => 1,
             ),
             1 => 
             array (
@@ -55,7 +56,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 0, 'cheval_sport'=> 0,
+                'poney_sport' => 0,
+                'cheval_sport' => 0,
             ),
             2 => 
             array (
@@ -64,7 +66,7 @@ class RacesTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Miniature',
                 'prix_moyen' => 1600,
-                'frais_enregistrement' => 100,
+                'frais_enregistrement' => 75,
                 'taille_min' => 30,
                 'taille_max' => 89,
                 'approbation' => 0,
@@ -74,7 +76,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 3,
-                'poney_sport' => 0, 'cheval_sport'=> 0,
+                'poney_sport' => 0,
+                'cheval_sport' => 0,
             ),
             3 => 
             array (
@@ -93,7 +96,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 100.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             4 => 
             array (
@@ -112,7 +116,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 100.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             5 => 
             array (
@@ -131,7 +136,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 100.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             6 => 
             array (
@@ -150,7 +156,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 100.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             7 => 
             array (
@@ -169,7 +176,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 3,
-                'poney_sport' => 1, 'cheval_sport' => 1,
+                'poney_sport' => 1,
+                'cheval_sport' => 1,
             ),
             8 => 
             array (
@@ -178,7 +186,7 @@ class RacesTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Demi-sang Arabe',
                 'prix_moyen' => 3000,
-                'frais_enregistrement' => 150,
+                'frais_enregistrement' => 100,
                 'taille_min' => 30,
                 'taille_max' => 215,
                 'approbation' => 0,
@@ -188,7 +196,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 1,
+                'poney_sport' => 1,
+                'cheval_sport' => 1,
             ),
             9 => 
             array (
@@ -207,7 +216,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             10 => 
             array (
@@ -226,7 +236,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             11 => 
             array (
@@ -245,7 +256,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             12 => 
             array (
@@ -264,7 +276,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             13 => 
             array (
@@ -283,7 +296,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 1, 'cheval_sport' => 0,
+                'poney_sport' => 1,
+                'cheval_sport' => 0,
             ),
             14 => 
             array (
@@ -302,7 +316,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 3,
-                'poney_sport' => 1, 'cheval_sport' => 1,
+                'poney_sport' => 1,
+                'cheval_sport' => 1,
             ),
             15 => 
             array (
@@ -321,7 +336,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 0, 'cheval_sport'=> 0,
+                'poney_sport' => 0,
+                'cheval_sport' => 0,
             ),
             16 => 
             array (
@@ -340,7 +356,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 0, 'cheval_sport'=> 1,
+                'poney_sport' => 0,
+                'cheval_sport' => 1,
             ),
             17 => 
             array (
@@ -359,7 +376,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 0, 'cheval_sport'=> 1,
+                'poney_sport' => 0,
+                'cheval_sport' => 1,
             ),
             18 => 
             array (
@@ -378,7 +396,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 0, 'cheval_sport'=> 1,
+                'poney_sport' => 0,
+                'cheval_sport' => 1,
             ),
             19 => 
             array (
@@ -387,7 +406,7 @@ class RacesTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'nom' => 'Selle Français',
                 'prix_moyen' => 6000,
-                'frais_enregistrement' => NULL,
+                'frais_enregistrement' => 150,
                 'taille_min' => 149,
                 'taille_max' => 215,
                 'approbation' => 0,
@@ -397,7 +416,8 @@ class RacesTableSeeder extends Seeder
                 'pcWelsh' => 0.0,
                 'age_repro_male' => 3,
                 'age_repro_femelle' => 2,
-                'poney_sport' => 0, 'cheval_sport'=> 1,
+                'poney_sport' => 0,
+                'cheval_sport' => 1,
             ),
         ));
         
