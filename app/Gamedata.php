@@ -144,7 +144,8 @@ static function checkCarnets()
 
 static function checkNonEnregistres() 
 {//Pas enregistrés l'année de naissance, ONC
-    $animaux = Animal::whereHas('elevage', function ($query) { $query->where('role','Joueur');})->where('statut_administratif', '!=', 'enregistré')->where('race_id', '!=', 17)->get();
+    $animaux = Animal::whereHas('elevage', function ($query) { $query->where('role','Joueur');})->where('sexe', 'like', '%jeune')->where('statut_administratif', '!=', 'enregistré')->where('race_id', '!=', 17)->get();
+    dd($animaux);
     foreach ($animaux as $animal) {
         $race_id = 17;
         $animal->save();

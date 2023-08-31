@@ -138,13 +138,16 @@ static function associeRaces ($etalon,$jument,$produit)
       $possibles = AssoRace::where('automatique', 0)->where(function ($q3) use ($racet){$q3->where('race_pere_id', $racet)->orwhere('race_pere_id', NULL);})->where(function ($q4) use ($raceju){$q4->where('race_mere_id', $raceju)->orwhere('race_mere_id', NULL);})->where(function ($q1) use ($welsh) { $q1->where('PourCentWelsh', '<=', $welsh)->orWhere('PourCentWelsh', NULL);})->where(function ($q2) use ($arabe) { $q2->where('PourCentArabe', '<=', $arabe)->orWhere('PourCentArabe', NULL);})->get();
      
     }
+
+   
     foreach ($possibles as $possible) {
-      if ($produit->RacesPossibles()->get()->contains($possible->race_produit_id)) {
+    /*  if ($produit->RacesPossibles()->get()->contains($possible->race_produit_id)) {
         
          continue;
-      }
+      }*/
       if ($possible->taille_conditions == 0) {
       $produit->RacesPossibles()->attach($possible->race_produit_id);
+    
       }
       else {
          $race = Race::Find($possible->race_produit_id);             
@@ -155,108 +158,6 @@ static function associeRaces ($etalon,$jument,$produit)
          }
       }
     }
-
-    
-    /* switch (true) {
-         case Animal::pourCentWelsh($produit->id) >= 12.5:
-            $produit->RacesPossibles()->attach(10); //WPB
-         case Animal::pourCentRace($produit->id,8) >= 50:
-            $produit->RacesPossibles()->attach(9); //DSA
-         case $produit->taille_cm < 90 && empty($produit->pathologie):
-            $produit->RacesPossibles()->attach(3); //miniature
-         default:
-            $produit->RacesPossibles()->attach(1);
-
-      }
-    
-   }
-   else if ($raceju == $racet){
-      $produit->race_id =$racet;
-      $produit->save();
-   }
-
-   else {
-      switch (true) {
-         case Animal::pourCentWelsh($produit->id) == 100:
-            $taille = $produit->taille_cm;
-           switch (true) {
-            case ($racet == 4 && $raceju == 5) || ($racet == 5 && $raceju == 4):
-               $produit->race_id = 5;
-               $produit->save();
-            break;
-            case ($racet == 4 && $raceju == 6) || ($racet == 6 && $raceju == 4):
-               $produit->race_id = 6;
-               $produit->save();
-            break;
-            case ($racet == 4 && $raceju) == 7 || ($racet == 7 && $raceju == 4):
-               $produit->race_id = 6;
-               $produit->save();
-            break;
-            case ($racet == 5 && $raceju == 6) || ($racet == 6 && $raceju == 5):
-               $produit->race_id = 6;
-               $produit->save();
-            break;
-            case ($racet == 5 && $raceju == 7) || ($racet == 7 && $raceju == 5):
-               if ($taille < 138) {
-                  $produit->race_id = 6;
-               }
-               else {
-                  $produit->race_id = 7;
-               }
-               $produit->save();
-               break;
-
-            case ($racet == 6 && $raceju == 7) || ($racet == 7 && $raceju == 6):
-                  if ($taille < 138) {
-                     $produit->race_id = 6;
-                  }
-                  else {
-                     $produit->race_id = 7;
-                  }
-               $produit->save();
-           }
-
-         break;
-         case ($racet == 13 && $raceju == 16) :
-            $produit->race_id = 13;
-            $produit->save();
-         break;
-         case ($racet == 16 && $raceju== 13 && $jument->elevage->id == 13) :
-            $produit->race_id = 13;
-            $produit->save();
-         break;
-         case  ($racet == 13 && $raceju == 14 ) || ($jument->elevage->id == 13 && $etalon->race->id == 14) :
-            $produit->race_id = 14;
-            $produit->save();
-         break;
-         case $etalon->StatutMale->approuvePFS == 1 || $racet == 11:
-            if (AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('race_produit_id', 11)->first() != NULL) {
-               $produit->RacesPossibles()->attach(11); //PFS
-            }
-            if (AssoRace::where('race_pere_id', $racet)->where('race_mere_id', $raceju)->where('race_produit_id', 14)->first() != NULL) {
-               $produit->RacesPossibles()->attach(14); //Pottok B
-
-            }
-         case $etalon->race_id == 13:
-            $produit->RacesPossibles()->attach(14);
-
-         case Animal::pourCentWelsh($produit->id) >= 12.5:
-               $produit->RacesPossibles()->attach(10); //WPB
-         case Animal::pourCentRace($produit->id, 8) >= 50:
-               $produit->RacesPossibles()->attach(9); //DSA
-         case $produit->taille_cm < 90 && empty($produit->pathologie):
-               $produit->RacesPossibles()->attach(3); //miniature
-         default:
-               $produit->RacesPossibles()->attach(1);
-               $produit->Race_id =1;
-               $produit->save();
          
-
-      }
-   }
- if ($produit->race_id == NULL) {
-                     $produit->race_id = 1;
-                     $produit->save();
-                    }*/
 }
 }

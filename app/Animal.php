@@ -10,10 +10,17 @@ use DateTime;
 use App\GameData;
 use App\Race;
 
+/** class Animal (table animaux)
+ * Relations: Genotypes, Elevage, Race, RacesPossibles (table races_possible): when a choice between different studbooks is required, Affixe, Performance, Sire, Dam (parents, table animaux), Progeny (children, table animaux), Palmares (table resultats), StatutFemelle or StatutMale, Pathologie, Couleur, Image
+ * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur, foetus 
+*/
+
+
+
 class Animal extends Model
 {
     protected $table ='animaux';
-    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'prix', 'sexe', 'date_achat', 'date_naissance', 'a_vendre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id', 'taille_additive', 'modele_allures_additifs', 'modele_allures' ];
+    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'sexe', 'date_achat', 'date_naissance', 'a_vendre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id', 'taille_additive', 'modele_allures_additifs', 'modele_allures' ];
 
     public function Genotypes()
     {

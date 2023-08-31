@@ -420,6 +420,7 @@ class AnimalController extends Controller
 
         
             $races = $animal->RacesPossibles()->get();
+            dd($races);
          
             return view('formEnregistrementStudBook', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
        

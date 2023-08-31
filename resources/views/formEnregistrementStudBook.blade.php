@@ -33,10 +33,6 @@
 	</div>
 
 
-					
-	<div id='image'>	
-			@include('includes.image')
-	</div>
 
 </div>
 <script>

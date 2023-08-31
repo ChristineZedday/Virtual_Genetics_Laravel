@@ -106,7 +106,7 @@ Route::get('/enregistrement/{animal}', 'AnimalController@enregistrer')->name('en
 
 Route::get('/studbook/{animal}', 'AnimalController@enregistrerStudBook')->name('studbook');
 
-Route::put('/enregitrement_studbook/{animal}', 'AnimalController@registrationStdBook')->name('regSB');
+Route::put('/enregistrement_studbook/{animal}', 'AnimalController@registrationStudBook')->name('regSB');
 
 Route::get('/signalement/{animal}', 'AnimalController@signalementIdentification')->name('signalement');
 

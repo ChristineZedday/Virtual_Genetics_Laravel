@@ -108,7 +108,7 @@
 				@endif
 				</div>	
 				<div>
-					@if ($animal->statut_administratif == 'enregistré' && $animal->race_id == 1 &&!empty($animal->RacesPossibles))
+					@if ($animal->statut_administratif == 'enregistré' && $animal->race_id == 1 &&$animal->RacesPossibles != null)
 					<a href="{{route('studbook',[$elevage->id,$animal->id])}}">
 					<button>Enregistrer dans un stud-book</button></a>
 					@endif
