@@ -11,8 +11,18 @@ use App\GameData;
 use App\Race;
 
 /** class Animal (table animaux)
- * Relations: Genotypes, Elevage, Race, RacesPossibles (table races_possible): when a choice between different studbooks is required, Affixe, Performance, Sire, Dam (parents, table animaux), Progeny (children, table animaux), Palmares (table resultats), StatutFemelle or StatutMale, Pathologie, Couleur, Image
+ * Relations: Genotypes, Elevage, Race, RacesPossibles (table races_possible): when a choice between different studbooks is required, Affixe, Performance, Sire, Dam (parents, table animaux), StatutFemelle or StatutMale, Pathologie, Couleur, Image
  * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur, foetus 
+ * functions: Sexe (sex and statut for reproduction)
+ * Genre: (male or female, for competition registration)
+ * Progneny: born children (including miscarriages)
+ * Palmares: competition results (from table resultats) where the animal is ranked
+ * NomComplet (name + affix)
+ * ageMonths: age given in months
+ * ageYears: age given in years
+ * ageAdministratif ($date): age given in years at a given date, as if the animal was born in january (for competition registration)
+ * taille: current height at the current date, equal to taille_cm where horse is adult
+ * checkNom: check if the name is not already taken (without affix or with same affix)
 */
 
 
