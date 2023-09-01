@@ -21,18 +21,18 @@ return new class extends Migration
             $table->bigInteger('solde_debut')->default(20000);
             $table->bigInteger('solde_fin')->nullable();
 
-            $table->mediumInteger('veto_marechal')->nullable();
-            $table->mediumInteger('frais_administratifs')->nullable();
-            $table->mediumInteger('frais_nourriture')->nullable();
-            $table->mediumInteger('frais_engagements')->nullable();
-            $table->mediumInteger('frais_transports')->nullable();
-            $table->bigInteger('achat_foncier')->nullable();
-            $table->mediumInteger('achat_animaux')->nullable();
-            $table->mediumInteger('achat_saillies')->nullable();
-            $table->mediumInteger('gains_concours')->nullable();
-            $table->mediumInteger('vente_saillies')->nullable();
-            $table->mediumInteger('vente_animaux')->nullable();
-            $table->mediuminteger('revenus_externes')->nullable();
+            $table->mediumInteger('veto_marechal')->default(0);
+            $table->mediumInteger('frais_administratifs')->default(0);
+            $table->mediumInteger('frais_nourriture')->default(0);
+            $table->mediumInteger('frais_engagements')->default(0);
+            $table->mediumInteger('frais_transports')->default(0);
+            $table->bigInteger('achat_foncier')->default(0);
+            $table->mediumInteger('achat_animaux')->default(0);
+            $table->mediumInteger('achat_saillies')->default(0);
+            $table->mediumInteger('gains_concours')->default(0);
+            $table->mediumInteger('vente_saillies')->default(0);
+            $table->mediumInteger('vente_animaux')->default(0);
+            $table->mediuminteger('revenus_externes')->default(0);
         });
     }
 

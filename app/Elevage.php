@@ -191,6 +191,8 @@ public function acheteTerres($surface)
         $this->budget -= $prix;
         $this->surface += $surface;
     $this->save();
+
+    $this->budget->acheteFoncier($prix);
     }   
 }
 

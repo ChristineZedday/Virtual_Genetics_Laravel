@@ -42,8 +42,19 @@ class Budget extends Model
         $this->solde_fin = $this->solde_debut - $this->veto_marechal - $this->frais_nourriture;
 
         $this->save();
-        
+    
+    }
 
+    public function acheteFoncier($prix) {
+        $this->achat_foncier = $prix;
+        $this->solde_fin -= $prix;
+        $this->save();
+    }
+
+    public function acheteAnimal($prix) {
+        $this->achat_animal += $prix;
+        $this->solde_fin -= $prix;
+        $this->save();
     }
 
 }
