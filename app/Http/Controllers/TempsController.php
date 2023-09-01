@@ -77,6 +77,22 @@ class TempsController extends Controller
         Gamedata::achete();
         Gamedata::checkMorts();
         Gamedata::checkNouveaux($date);
+
+        $elevages = Elevage::where('role','Joueur')->get();
+        foreach ($elevages as $elevage)
+        {
+            $elevage->budget +=1000;
+            $elevage->budget -= $elevage->calculeFrais();
+           
+           
+            $elevage->save();
+
+            $budget = New Budget();
+            $budget->elevage_id = $elevage->id;
+            $budget->initialize();
+            $budget->save();
+        }
+
         
         $dateM = date('m',strtotime($date));
         if ($dateM == 01) {

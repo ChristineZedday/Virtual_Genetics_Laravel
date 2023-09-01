@@ -8,28 +8,40 @@ use App\Gamedata;
 class Budget extends Model
 {
     const REVENU = 1000;
+    const DEBUT = 20000;
+    const PRIX_AFFIXE = 60;
 
     public function Elevage()
     {
         return $this->BelongsTo('App\Elevage');
     }
     
-    public function soldePrecedent($date) 
+    private function soldePrecedent($date) 
     {
       
         $lastmonth = date('Y-m-d',strtotime('-1 month',strtotime($date)));
-        return Budget::where($elevage_id = $this->elevage_id)->where('mois', $lastmonth)->first()->solde_fin;
+        return Budget::where('elevage_id', $this->elevage_id)->where('mois', $lastmonth)->first()->solde_fin;
     }
 
-    public function soldeDebut() 
-    {
-        return $this->soldePrecedent() + REVENU;
-    }
 
     public function initialize() 
     {
-        $this->mois =   $date = Gamedata::date();
+        $this->mois = Gamedata::date();
+        if ( $this->mois == Gamedata::first()->date_debut) {
+            $this->solde_debut = Budget::DEBUT;
+            if ($this->elevage->affixe_id != NULL) {
+                $this->solde_debut -= Budget::PRIX_AFFIXE;  
+            }
+        }
+        else {
+            $this->solde_debut = $this->soldePrecedent($this->mois) + Budget::REVENU;
+        }
+        $frais_veto_marechal = $this->elevage->calculeFraisVeto();
+        $frais_nourriture = $this->elevage->calculeFrais() - $this->frais_veto_marechal;
+
+        $this->save();
         
+
     }
 
 }
