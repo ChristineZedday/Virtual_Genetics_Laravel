@@ -44,23 +44,7 @@ class TempsController extends Controller
             }
         }
      
-        $elevages = Elevage::where('role','Joueur')->get();
-        foreach ($elevages as $elevage)
-        {
-            $elevage->budget +=1000;
-            $elevage->budget -= $elevage->calculeFrais();
-           
-           
-            $elevage->save();
-
-            $budget = New Budget();
-            $budget->elevage_id = $elevage->id;
-            $budget->initialize();
-            $budget->save();
-        }
-
-
-       
+   
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
       
         $game->date_courante = $date;
