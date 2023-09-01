@@ -183,6 +183,9 @@ public function run($competition, $evenement) {
         $animal = $inscrit->animal;
     
         $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
+        if ($notes[$animal->id] > 20) {
+            $notes[$animal->id] = 20;
+        }
           
     $inscrit->note_synthese = $notes[$animal->id];
     $inscrit->save();
