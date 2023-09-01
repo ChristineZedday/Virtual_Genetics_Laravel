@@ -19,6 +19,7 @@ use App\Competition;
 use App\Resultat;
 use App\Performance;
 use App\Niveau;
+use App\Budget;
 use DateTime;
 
 
@@ -51,7 +52,14 @@ class TempsController extends Controller
            
            
             $elevage->save();
+
+            $budget = New Budget();
+            $budget->elevage_id = $elevage->id;
+            $budget->initialize();
+            $budget->save();
         }
+
+
        
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
       

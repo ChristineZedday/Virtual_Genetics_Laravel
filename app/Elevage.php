@@ -27,6 +27,11 @@ class Elevage extends Model
         return $this->HasMany('App\Animal');
     }
 
+    public function Budget()
+    {
+        return $this->HasMany('App\Budget');
+    }
+
     public function Affixe()
     {
         return $this->belongsTo('App\Affixe'); //hasMany si un élevage peut déposer plusieurs affixes
