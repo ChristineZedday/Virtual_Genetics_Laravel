@@ -91,20 +91,6 @@ class ElevagesTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 6,
-                'affixe_id' => 25,
-                'created_at' => '2020-04-06 18:43:04',
-                'updated_at' => '2023-01-10 18:25:24',
-                'nom_elevage' => 'Les Bisounours',
-                'nom_eleveur' => 'Corinne Titoune',
-                'budget' => 54000,
-                'role' => 'Joueur',
-                'surface' => 10.0,
-                'foin' => 0.0,
-                'user_id' => 2,
-            ),
-            6 => 
-            array (
                 'id' => 7,
                 'affixe_id' => NULL,
                 'created_at' => NULL,
@@ -117,35 +103,7 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 1,
             ),
-            7 => 
-            array (
-                'id' => 8,
-                'affixe_id' => 47,
-                'created_at' => '2020-05-13 20:36:35',
-                'updated_at' => '2023-01-10 18:25:26',
-                'nom_elevage' => 'Couleur Ti\'arab',
-                'nom_eleveur' => 'Nadia Berberian',
-                'budget' => 54000,
-                'role' => 'Joueur',
-                'surface' => 10.0,
-                'foin' => 0.0,
-                'user_id' => 2,
-            ),
-            8 => 
-            array (
-                'id' => 9,
-                'affixe_id' => 48,
-                'created_at' => '2020-05-31 15:38:47',
-                'updated_at' => '2023-01-10 18:25:26',
-                'nom_elevage' => 'Must of Mushroom',
-                'nom_eleveur' => 'Christine Gallo',
-                'budget' => 54000,
-                'role' => 'Joueur',
-                'surface' => 10.0,
-                'foin' => 0.0,
-                'user_id' => 2,
-            ),
-            9 => 
+            6 => 
             array (
                 'id' => 10,
                 'affixe_id' => 49,
@@ -159,7 +117,7 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 1,
             ),
-            10 => 
+            7 => 
             array (
                 'id' => 11,
                 'affixe_id' => 50,
@@ -173,7 +131,7 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 1,
             ),
-            11 => 
+            8 => 
             array (
                 'id' => 12,
                 'affixe_id' => 70,
@@ -187,7 +145,7 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 1,
             ),
-            12 => 
+            9 => 
             array (
                 'id' => 13,
                 'affixe_id' => NULL,
@@ -201,7 +159,7 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 1,
             ),
-            13 => 
+            10 => 
             array (
                 'id' => 14,
                 'affixe_id' => 71,
@@ -215,7 +173,7 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 3,
             ),
-            14 => 
+            11 => 
             array (
                 'id' => 15,
                 'affixe_id' => NULL,
@@ -229,7 +187,7 @@ class ElevagesTableSeeder extends Seeder
                 'foin' => 0.0,
                 'user_id' => 1,
             ),
-            15 => 
+            12 => 
             array (
                 'id' => 16,
                 'affixe_id' => NULL,
