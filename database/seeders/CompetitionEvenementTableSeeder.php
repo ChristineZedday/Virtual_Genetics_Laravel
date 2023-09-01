@@ -763,6 +763,22 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'competition_id' => 74,
                 'evenement_id' => 58,
             ),
+            93 => 
+            array (
+                'id' => 285,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 75,
+                'evenement_id' => 59,
+            ),
+            94 => 
+            array (
+                'id' => 286,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 76,
+                'evenement_id' => 56,
+            ),
         ));
         
         

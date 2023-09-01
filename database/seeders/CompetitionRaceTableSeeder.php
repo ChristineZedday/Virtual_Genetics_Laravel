@@ -723,6 +723,54 @@ class CompetitionRaceTableSeeder extends Seeder
                 'competition_id' => 59,
                 'race_id' => 21,
             ),
+            88 => 
+            array (
+                'id' => 96,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 73,
+                'race_id' => 21,
+            ),
+            89 => 
+            array (
+                'id' => 97,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 74,
+                'race_id' => 21,
+            ),
+            90 => 
+            array (
+                'id' => 98,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 75,
+                'race_id' => 18,
+            ),
+            91 => 
+            array (
+                'id' => 99,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 75,
+                'race_id' => 20,
+            ),
+            92 => 
+            array (
+                'id' => 100,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 75,
+                'race_id' => 18,
+            ),
+            93 => 
+            array (
+                'id' => 101,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 75,
+                'race_id' => 20,
+            ),
         ));
         
         
