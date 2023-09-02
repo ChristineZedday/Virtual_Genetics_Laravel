@@ -300,8 +300,11 @@ class AnimalController extends Controller
         if ($elevage->budget >= $animal->prix)
             {
             $vendeur->budget = $vendeur->budget + $animal->prix;
+            $vendeur->Budget->venteAnimal($animal->prix);
             $vendeur->save();
+            
             $elevage->budget = $elevage->budget - $animal->prix;
+            $elevage->Budget->achatAnimal($animal->prix);
             $elevage->save();
             $animal->acheter($elevage->id);
       
@@ -346,6 +349,7 @@ class AnimalController extends Controller
                     $animal->save();
                     $animal->StatutMale->fertilite = 0;
                     $animal->StatutMale->save();
+                    $prix = $prixM;
                     $elevage->budget -= $prixM;
                     $elevage->save();
                 break;
@@ -356,6 +360,7 @@ class AnimalController extends Controller
                     $animal->StatutMale->fertilite = 0;
                     $animal->StatutMale->save();
                     $elevage->budget -= $prixM;
+                    $prix = $prixM;
                     $elevage->save();
                 break;
 
@@ -364,6 +369,7 @@ class AnimalController extends Controller
                     $animal->save();
                     $animal->StatutFemelle->delete();
                     $elevage->budget -= $prixF;
+                    $prix = $prixF;
                     $elevage->save();
                 break;
 
@@ -371,13 +377,14 @@ class AnimalController extends Controller
                     $animal->sexe = 'vieille femelle stérilisée';
                     $animal->save();
                     $animal->StatutFemelle->delete();
+                    $prix = $prixF;
                     $elevage->budget -= $prixF;
                     $elevage->save();
                 break;
 
                 default:
                 dd('comment suis-je arrivée là?');
-            
+            $elevage->Budget->fraisVeto($prix);
 
             }
             return redirect()->back();
@@ -430,6 +437,7 @@ class AnimalController extends Controller
     {
         $animal = Animal::find($animal);
         $animal->elevage->budget - 60;
+        $animal->elevage->Budget->fraisAdministratifs(-60);
         $animal->elevage->save();
         $animal->statut_administratif = 'enregistré';
         $animal->save();
@@ -477,6 +485,7 @@ class AnimalController extends Controller
               
                 $race = Race::Find($animal->race_id);
                 $elevage->budget -= $race->frais_enregistrement;
+                $elevage->Budget->fraisAdministratifs($race->frais_enregistrement);
                 $elevage->save();
             }
         }
@@ -492,11 +501,13 @@ class AnimalController extends Controller
         if ($animal->ageMonths() > 0 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
             $elevage->budget -= (50 + $fraisSB);
+            $elevage->Budget->fraisAdministratifs(50 + $fraisSB);
             $animal->statut_administratif = 'déclaré';
            
         }
         else if ($animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage->budget -= $fraisSB;
+            $elevage->Budget->fraisAdministratifs($fraisSB);
             $animal->statut_administratif = 'déclaré';
         }
 
@@ -534,6 +545,7 @@ public function registrationStudBook(Request $request, $animal)
               
                 $race = Race::Find($animal->race_id);
                 $elevage->budget -= $race->frais_enregistrement;
+                $elevage->Budget->fraisAdministratifs($race->frais_enregistrement);
                 $elevage->save();
                 if ($animal->save())
                 {

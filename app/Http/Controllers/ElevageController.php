@@ -272,6 +272,7 @@ class ElevageController extends Controller
             }
         }
         $elevage->budget -= 200;
+        $elevage->Budget->fraisVeto(200);
         $elevage->save();
 
         $etalon->StatutMale->save(); }
@@ -288,6 +289,7 @@ class ElevageController extends Controller
 
             $etalon->StatutMale->carnet_saillies = true;
             $elevage->budget -= 60;
+            $elevage->Budget->fraisAdministratifs(60);
 
             $etalon->StatutMale->save();
 

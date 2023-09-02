@@ -109,4 +109,10 @@ class Budget extends Model
         $this->save();
     }
 
+    public function fraisVeto($prix) {
+        $this->veto_marechal += $prix;
+        $this->solde_fin -= $prix;
+        $this->save();
+    }
+
 }

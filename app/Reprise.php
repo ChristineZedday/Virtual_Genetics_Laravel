@@ -23,16 +23,17 @@ class Reprise extends Model
     {
         $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $categorie->id)->where('competition_id', $competition->id)->where('reprise_id', $this->id)->get();
 
-
         foreach ($inscrits as $inscrit) {
             $elevage = $inscrit->animal->elevage;
-            $frais = $elevage->fraisTransport($inscrit->animal,$competition->distance);
+            if ($elevage->role == 'Joueur') {
+            $frais = $elevage->fraisTransport($inscrit->animal, $competition->distance);
                 if (!$frais ) {
                    
                     $inscrits->forget($inscrit->id);
                     // faut les sous pour y aller!
                 }
             }   
+        }   
 
         
             $malusTaille = 0;
