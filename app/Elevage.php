@@ -36,8 +36,7 @@ class Elevage extends Model
     public function Budget()
     {
         $date = Gamedata::date();
-        dd($this->Budgets->where('mois', $date)->first());
-        return $this->Budgets->where('mois', $date)->first();
+        return $this->Budgets()->where('mois', $date)->first();
     }
 
     public function Affixe()

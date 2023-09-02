@@ -301,11 +301,11 @@ class AnimalController extends Controller
         if ($elevage->budget >= $animal->prix)
             {
             $vendeur->budget = $vendeur->budget + $animal->prix;
-            if ($vendeur->role != 'Joueur') {
+            if ($vendeur->role == 'Joueur') {
             $vendeur->Budget()->venteAnimal($animal->prix);
             $vendeur->save();
             }
-            if ($elevage->role != 'Joueur') {
+            if ($elevage->role == 'Joueur') {
             $elevage->budget = $elevage->budget - $animal->prix;
             $elevage->Budget()->achatAnimal($animal->prix);
             $elevage->save(); }
@@ -388,7 +388,7 @@ class AnimalController extends Controller
 
                 default:
                 dd('comment suis-je arrivée là?');
-                if ($elevage->role != 'Joueur') {
+                if ($elevage->role == 'Joueur') {
             $elevage->Budget()->fraisVeto($prix);
                 }
 

@@ -258,7 +258,7 @@ public function run($competition, $evenement) {
     
     $elevage = Elevage::Find($animal->elevage_id);
     
-    if ($elevage->role != 'Joueur') {
+    if ($elevage->role == 'Joueur') {
         if ($i == 1 ) {
         $elevage->budget += $prix; 
         $elevage->Budget()->gainsConcours($prix);
