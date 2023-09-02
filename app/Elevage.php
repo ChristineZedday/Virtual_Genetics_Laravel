@@ -210,9 +210,8 @@ public function fraisTransport($animal,$distance)
     if (NULL != $animal->StatutFemelle && $animal->StatutFemelle->suitee ) {
         $frais += $frais * 0.5;
     }
-    if ($this->budget >= $frais) {
-        $this->budget -= $frais;
-        $this->save();
+    if ($this->Budget()->solde() >= $frais) {
+        
         $this->Budget()->fraisTransport($frais);
         return true;
     }

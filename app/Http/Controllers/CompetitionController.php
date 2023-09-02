@@ -105,8 +105,7 @@ class CompetitionController extends Controller
           
                 if ($resultat->save()) {
                  
-                $elevage->budget -= $competition->prix_inscription;
-                $elevage->save();
+                $elevage->Budget()->fraisEngagement($competition->prix_inscription);
                 $request->session()->flash('message');
                 $request->session()->flash('alert-class',"alert-sucess");
                 if ($reprise == NULL) {

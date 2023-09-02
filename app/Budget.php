@@ -115,4 +115,8 @@ class Budget extends Model
         $this->save();
     }
 
+    public function solde() {
+        return $this->solde_fin;
+    }
+
 }

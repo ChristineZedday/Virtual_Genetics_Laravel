@@ -40,8 +40,8 @@ class Reprise extends Model
             $malusTaille = 0;
             if ($categorie->libelle == 'cheval ou poney') {
                 $taille = $inscrit->animal->taille();
-                if ($taille < 150) {
-                    $malusTaille =  150 - $taille;
+                if ($taille < 140) {
+                    $malusTaille =  140 - $taille;
 
                 }
     

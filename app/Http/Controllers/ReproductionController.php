@@ -66,10 +66,14 @@ class ReproductionController extends Controller
             $declaree =1;
             $elevage->budget = $elevage->budget - $statutM->prix;
             $elevage->save();
+            $elevage->Budget()->acheteSaillie($statutM->prix);
 
             $etalonnier = $etalon->Elevage;
+            if ($etalonnier->role == 'Joueur') {
             $etalonnier->budget = $etalonnier->budget + $statutM->prix;
             $etalonnier->save();
+            $elevage->Budget()->venteSaillie($statutM->prix);
+          }
           }
           if ($success > 50)
           {
