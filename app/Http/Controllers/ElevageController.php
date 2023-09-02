@@ -91,7 +91,7 @@ class ElevageController extends Controller
        
         if (isset($elevage->affixe_id))
         {
-            $elevage->budget = $elevage->budget - 500;
+            $elevage->budget = $elevage->budget - 60;
         }
 
         if ($elevage->save())

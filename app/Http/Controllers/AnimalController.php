@@ -443,7 +443,7 @@ class AnimalController extends Controller
     {
         $animal = Animal::find($animal);
         $animal->elevage->budget - 60;
-        $animal->elevage->Budget()->fraisAdministratifs(-60);
+        $animal->elevage->Budget()->fraisAdministratifs(60);
         $animal->elevage->save();
         $animal->statut_administratif = 'enregistré';
         $animal->save();
