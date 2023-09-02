@@ -11,6 +11,7 @@ use App\Evenement;
 use App\Categorie;
 use App\Performance;
 use App\Resultat;
+use App\Budget;
 
 class Reprise extends Model
 {

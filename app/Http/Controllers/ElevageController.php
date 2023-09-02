@@ -11,6 +11,7 @@ use App\Animal;
 use App\Gamedata;
 use App\Affixe;
 use App\Race;
+use App\Budget;
 use Illuminate\Validation\Rules\Unique;
 
 class ElevageController extends Controller

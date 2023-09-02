@@ -7,6 +7,7 @@ use App\Animal;
 use App\Evenement;
 use App\Performance;
 use App\StatutFemelle;
+use App\Budget;
 
 class Categorie extends Model
 {

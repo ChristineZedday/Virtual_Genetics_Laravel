@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\elevages;
 use App\GameData;
+use App\Budget;
 
 class Elevage extends Model
 {

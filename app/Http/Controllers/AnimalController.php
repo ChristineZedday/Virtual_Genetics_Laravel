@@ -15,6 +15,7 @@ use App\Locus;
 use App\Genotype;
 use App\Allele;
 use App\Genome;
+use App\Budget;
 use phpDocumentor\Reflection\Types\Nullable;
 
 class AnimalController extends Controller
