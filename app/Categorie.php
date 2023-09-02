@@ -257,16 +257,18 @@ public function run($competition, $evenement) {
     }
     
     $elevage = Elevage::Find($animal->elevage_id);
-   
-    if ($i == 1) {
+    
+    if ($elevage->role != 'Joueur') {
+        if ($i == 1 ) {
         $elevage->budget += $prix; 
         $elevage->Budget->gainsConcours($prix);
-    }
-    else  {
+        }
+        else  {
         $elevage->budget += (int) ($prix/$i);//prix_premier/$i);
         $elevage->Budget->gainsConcours((int) ($prix/$i));
-    }
-    $elevage->save();
+        }
+        $elevage->save();
+}
     //dd($elevage);//OK
     $i++; } //animaux classés
 
