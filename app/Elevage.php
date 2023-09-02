@@ -37,7 +37,7 @@ class Elevage extends Model
     {
         $date = Gamedata::date();
         dd($this->Budgets->where('mois', $date)->first());
-        return $this->Budgets()->where('mois', $date)->first();
+        return $this->Budgets->where('mois', $date)->first();
     }
 
     public function Affixe()
@@ -200,7 +200,7 @@ public function acheteTerres($surface)
         $this->surface += $surface;
     $this->save();
 
-    $this->Budget->acheteFoncier($prix);
+    $this->Budget()->acheteFoncier($prix);
     }   
 }
 
@@ -214,7 +214,7 @@ public function fraisTransport($animal,$distance)
     if ($this->budget >= $frais) {
         $this->budget -= $frais;
         $this->save();
-        $this->Budget->fraisTransport($frais);
+        $this->Budget()->fraisTransport($frais);
         return true;
     }
     else {
