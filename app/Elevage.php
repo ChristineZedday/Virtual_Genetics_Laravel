@@ -28,9 +28,15 @@ class Elevage extends Model
         return $this->HasMany('App\Animal');
     }
 
-    public function Budget()
+    public function Budgets()
     {
         return $this->HasMany('App\Budget');
+    }
+
+    public function Budget()
+    {
+        $date = Gamedata::date();
+        return $this->Budgets->where('mois', $date)->first();
     }
 
     public function Affixe()
