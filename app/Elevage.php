@@ -192,7 +192,7 @@ public function acheteTerres($surface)
         $this->surface += $surface;
     $this->save();
 
-    $this->budget->acheteFoncier($prix);
+    $this->Budget->acheteFoncier($prix);
     }   
 }
 
@@ -206,6 +206,7 @@ public function fraisTransport($animal,$distance)
     if ($this->budget >= $frais) {
         $this->budget -= $frais;
         $this->save();
+        $this->Budget->fraisTransport($frais);
         return true;
     }
     else {

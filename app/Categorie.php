@@ -164,6 +164,7 @@ public function run($competition, $evenement) {
 
     foreach ($inscrits as $inscrit) {
     $elevage = $inscrit->animal->elevage;
+    if ($elevage->role == 'Joueur') {
     $frais = $elevage->fraisTransport($inscrit->animal, $competition->distance);
         if (!$frais ) {
            
@@ -171,6 +172,7 @@ public function run($competition, $evenement) {
             // faut les sous pour y aller!
         }
     }   
+}
 
     $prix = $competition->prix_premier;
     $nb = $inscrits->count();
