@@ -27,7 +27,7 @@ class Reprise extends Model
         foreach ($inscrits as $inscrit) {
             $elevage = $inscrit->animal->elevage;
             if ($elevage->role == 'Joueur') {
-            $frais = $elevage->fraisTransport($inscrit->animal, $competition->distance);
+            $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
                 if (!$frais ) {
                    
                     $inscrits->forget($inscrit->id);
