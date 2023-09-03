@@ -496,7 +496,7 @@ class AnimalController extends Controller
             }
         }
 
-        if ($animal->race_id != 1 && $animal->race_id != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
+        else if ($animal->race_id != 1 && $animal->race_id != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
             $fraisSB = 50;
             $animal->statut_administratif = 'déclaré';
         }
@@ -504,7 +504,7 @@ class AnimalController extends Controller
             $fraisSB = 0;
             $animal->statut_administratif = 'déclaré';
         }
-        if ($animal->ageMonths() > 0 && $animal->Dam->elevage_id == $animal->elevage_id) {
+        if ($animal->ageMonths() > 1 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
             $elevage->budget -= (50 + $fraisSB);
             $elevage->Budget()->fraisAdministratifs(50 + $fraisSB);

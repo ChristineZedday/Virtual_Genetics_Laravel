@@ -207,12 +207,15 @@ public function acheteTerres($surface)
 public function fraisTransport($animal,$distance) 
 {
     $taille = $animal->taille();
-    $frais = floor($distance * $taille / 150);
+    $frais = $distance * $taille / 150;
     if (NULL != $animal->StatutFemelle && $animal->StatutFemelle->suitee ) {
-        $frais += floor($frais * 0.5);
+        $frais += $frais * 0.5;
     }
+    $frais = floor($frais);
     $debug = new Debug();
     $debug->evenement = $frais;
+    $debug->competition = $distance;
+    $debug->categorie = $taille;
     $debug->save();
     
     if ($this->Budget()->solde() >= $frais) {

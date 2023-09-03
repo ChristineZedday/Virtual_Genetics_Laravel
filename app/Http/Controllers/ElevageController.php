@@ -242,7 +242,7 @@ class ElevageController extends Controller
         $race = Race::Find($etalon->race_id);
         $pathos = $etalon->Pathologie;
 
-        if ($elevage->budget > 200 ){
+        if ($elevage->Budget()->solde() > 200 ){
         
         if ($etalon->modele_allures > 9 && $race->approbation == false && $race->id != 1 && $race->id != 17)
         {
