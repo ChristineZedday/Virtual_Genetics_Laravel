@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\elevages;
 use App\GameData;
 use App\Budget;
+use App\Debug;
 
 class Elevage extends Model
 {
@@ -206,10 +207,14 @@ public function acheteTerres($surface)
 public function fraisTransport($animal,$distance) 
 {
     $taille = $animal->taille();
-    $frais = (int) ($distance * $taille / 150);
+    $frais = floor($distance * $taille / 150);
     if (NULL != $animal->StatutFemelle && $animal->StatutFemelle->suitee ) {
-        $frais += $frais * 0.5;
+        $frais += floor($frais * 0.5);
     }
+    $debug = new Debug();
+    $debug->evenement = $frais;
+    $debug->save();
+    
     if ($this->Budget()->solde() >= $frais) {
        
         $this->Budget()->fraisTransport($frais);
