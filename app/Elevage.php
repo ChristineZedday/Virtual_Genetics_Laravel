@@ -211,7 +211,7 @@ public function fraisTransport($animal,$distance)
         $frais += $frais * 0.5;
     }
     if ($this->Budget()->solde() >= $frais) {
-        
+        dd($this->Budget()->solde());
         $this->Budget()->fraisTransport($frais);
         return true;
     }

@@ -316,7 +316,8 @@ static function runCompetitions() {
 
     foreach ($evenements as $evenement){
     $competitions = $evenement->Competitions;
-        try {
+    $evenement->nextYear();
+        
         foreach ($competitions as $competition) {
             $comp= $competition->id;
             $filter = function($query) use ($comp) {
@@ -335,9 +336,8 @@ static function runCompetitions() {
                 }
         }
         }
-    }
-finally 
- {   $evenement->nextYear();}
+    
+
   }
 
 }

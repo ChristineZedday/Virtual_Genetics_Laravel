@@ -811,6 +811,17 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 40,
                 'prix_premier' => 500,
             ),
+            72 => 
+            array (
+                'id' => 77,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Pottok A',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 3,
+                'prix_inscription' => 20,
+                'prix_premier' => 400,
+            ),
         ));
         
         
