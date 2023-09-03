@@ -213,7 +213,6 @@ public function fraisTransport($animal,$distance)
     if ($this->Budget()->solde() >= $frais) {
        
         $this->Budget()->fraisTransport($frais);
-        dd($this->Budget()->fraisTransport($frais));
         return true;
     }
     else {
