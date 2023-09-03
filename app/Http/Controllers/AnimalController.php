@@ -301,9 +301,9 @@ class AnimalController extends Controller
         if ($elevage->budget >= $animal->prix)
             {
             $vendeur->budget = $vendeur->budget + $animal->prix;
-            if ($vendeur->role == 'Joueur') {
-            $vendeur->Budget()->venteAnimal($animal->prix);
             $vendeur->save();
+            if ($vendeur->role == 'Joueur') {
+            $vendeur->Budget()->vendAnimal($animal->prix);
             }
             if ($elevage->role == 'Joueur') {
             $elevage->budget = $elevage->budget - $animal->prix;
