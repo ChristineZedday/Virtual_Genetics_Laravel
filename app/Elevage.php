@@ -195,7 +195,7 @@ static function terresAVendre() {
 public function acheteTerres($surface) 
 {
     $prix = $surface * self::PRIX_HECTARE;
-    if ($this->Budget() > $prix) {  
+    if ($this->Budget()->solde() > $prix) {  
 
     $this->Budget()->acheteFoncier($prix);
     }   
