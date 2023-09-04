@@ -195,17 +195,12 @@ static function regCompetNPC()
                 if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
             }
-                if ($cheval->Performance->Niveau != $niveau){
-                   
-                    if (!$niveau->open_before &&!$niveau->open_after ) {
-                continue;
-                    }
-                    else if (!$niveau->open_before &&$cheval->Performance->Niveau > $niveau) {
-                        continue;
-                    }
-                    
-            }
-          
+                if ($cheval->Performance->Niveau < $niveau && !$niveau->open_before){
+                    continue;
+                }
+                else if (!$niveau->open_after &&$cheval->Performance->Niveau > $niveau) {
+                    continue;
+                }
                 if (strpos($cheval->sexe,'stérilisé') != false && $comp->type ='Modèle et Allures'){
                   continue;
               }

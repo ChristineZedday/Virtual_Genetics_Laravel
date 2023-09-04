@@ -19,7 +19,6 @@ class CreateElevagesTable extends Migration
             $table->timestamps();
             $table->string('nom_elevage')->unique();
             $table->string('nom_eleveur')->unique();
-            $table->bigInteger('budget');
             $table->enum('role',['Joueur','Vendeur', 'Acheteur', 'Haras', 'Mort', 'Retraite']);
             $table->float('surface',6,2)->default(10);
             $table->float('foin',7,2)->default(0);

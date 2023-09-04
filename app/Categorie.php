@@ -47,9 +47,13 @@ class Categorie extends Model
    if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id > $competition->niveau->id && !$competition->niveau->open_after) {
     return 'Hors Concours';
    }
+
+   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id < $competition->niveau->id && !$competition->niveau->open_before) {
+    return 'Non qualifié';
+   }
   
 
-        if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
+    if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
             return 'Jument pleine ou suitée';
         }
@@ -221,22 +225,14 @@ public function run($competition, $evenement) {
             $perf->save();
         }
         
-            switch($i) {
-            case 1:
-            $perf->points += 5;
-            break;
-            case 2:
-            $perf->points += 2;
-            break;
-            default:
-            $perf->points +=1;
-            }
+            if ($i < 4 ) {
+
+            $perf->niveau_id += 1;
+            $perf->save();
             
-       
+            }      
     }
-    $perf->save();
    
-    $perf->upgrade();
 
     if ($animal->StatutMale != NULL && !$animal->StatutMale->approuvePFS &&$competition->niveau->id >= 3)  {
       //$msg = 'appel approuveEtalons classes si';
