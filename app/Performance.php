@@ -34,4 +34,13 @@ class Performance extends Model
             $this->pourcent_niveau = 0;
         }
     }
+
+    public function upgrade()
+    {
+       
+        if ($this->niveau_id < 4)  {
+        $this->niveau_id += 1;
+      
+       }
+    }
 }

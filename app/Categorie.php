@@ -227,7 +227,7 @@ public function run($competition, $evenement) {
         
             if ($i < 4 ) {
 
-            $perf->niveau_id += 1;
+            $perf->upgrade();
             $perf->save();
             
             }      
