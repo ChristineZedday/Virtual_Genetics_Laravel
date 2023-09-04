@@ -353,7 +353,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 7,
-                'categorie_id' => 4,
+                'categorie_id' => 1,
             ),
             42 => 
             array (
@@ -361,7 +361,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 7,
-                'categorie_id' => 10,
+                'categorie_id' => 2,
             ),
             43 => 
             array (
@@ -1905,7 +1905,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 7,
-                'categorie_id' => 6,
+                'categorie_id' => 3,
             ),
             236 => 
             array (
@@ -3693,21 +3693,13 @@ class CategorieCompetitionTableSeeder extends Seeder
             ),
             459 => 
             array (
-                'id' => 522,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 7,
-                'categorie_id' => 5,
-            ),
-            460 => 
-            array (
                 'id' => 523,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 77,
                 'categorie_id' => 4,
             ),
-            461 => 
+            460 => 
             array (
                 'id' => 524,
                 'created_at' => NULL,
@@ -3715,7 +3707,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 77,
                 'categorie_id' => 5,
             ),
-            462 => 
+            461 => 
             array (
                 'id' => 525,
                 'created_at' => NULL,
@@ -3723,7 +3715,7 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 77,
                 'categorie_id' => 6,
             ),
-            463 => 
+            462 => 
             array (
                 'id' => 526,
                 'created_at' => NULL,
