@@ -198,6 +198,7 @@ public function acheteTerres($surface)
     if ($this->Budget()->solde() > $prix) {  
 
     $this->Budget()->acheteFoncier($prix);
+    $this->surface += $surface;
     }   
 }
 
