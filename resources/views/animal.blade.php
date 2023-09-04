@@ -97,7 +97,7 @@
 				<div id='sterilisation'>
 				@if ($animal->elevage_id == $elevage->id )
 					<input type="hidden" id ="sexe" value ="{{$animal->sexe}}">
-					<input type="hidden" id ="budget" value ="{{$elevage->budget}}">
+					<input type="hidden" id ="budget" value ="{{$elevage->Budget()->solde()}}">
 					
 					<input type="hidden" id ="vide" @isset ($animal->Statut) value ="{{$animal->Statut->vide}}"  @else value="1" @endisset >
 					
