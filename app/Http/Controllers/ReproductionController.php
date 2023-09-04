@@ -64,15 +64,13 @@ class ReproductionController extends Controller
           if ($etalon->elevage->id != $elevage->id)
           {
             $declaree =1;
-            $elevage->budget = $elevage->budget - $statutM->prix;
-            $elevage->save();
+          
             $elevage->Budget()->acheteSaillie($statutM->prix);
 
             $etalonnier = $etalon->Elevage;
             if ($etalonnier->role == 'Joueur') {
-            $etalonnier->budget = $etalonnier->budget + $statutM->prix;
-            $etalonnier->save();
-            $elevage->Budget()->venteSaillie($statutM->prix);
+           
+            $etalonnier->Budget()->venteSaillie($statutM->prix);
           }
           }
           if ($success > 50)
@@ -213,8 +211,8 @@ class ReproductionController extends Controller
 {
   $cons = calculConsang($S,$D);
   $el = Elevage::Find($el);
-  $el->budget = $el->budget -10;
-  $el->save();
+  $el->Budget()->fraisAdministratifs(10);
+  
   return redirect()->back()->with('message', $cons);
 }
 

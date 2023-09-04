@@ -298,15 +298,14 @@ class AnimalController extends Controller
         $vendeur = $animal->elevage_id;
         $vendeur = Elevage::Find($vendeur);
 
-        if ($elevage->budget >= $animal->prix)
+        if ($elevage->Budget()->solde() >= $animal->prix)
             {
-            $vendeur->budget = $vendeur->budget + $animal->prix;
-            $vendeur->save();
+            
             if ($vendeur->role == 'Joueur') {
             $vendeur->Budget()->vendAnimal($animal->prix);
             }
             if ($elevage->role == 'Joueur') {
-            $elevage->budget = $elevage->budget - $animal->prix;
+           
             $elevage->Budget()->acheteAnimal($animal->prix);
             $elevage->save(); }
 
@@ -319,7 +318,7 @@ class AnimalController extends Controller
             }
         }
         else {
-            return redirect()->back()->with('alert', $elevage->budget);
+            return redirect()->back()->with('alert', 'pas assez de flouze');
         }
 
         
@@ -354,8 +353,7 @@ class AnimalController extends Controller
                     $animal->StatutMale->fertilite = 0;
                     $animal->StatutMale->save();
                     $prix = $prixM;
-                    $elevage->budget -= $prixM;
-                    $elevage->save();
+                  
                 break;
 
                 case 'vieux mâle':
@@ -363,18 +361,18 @@ class AnimalController extends Controller
                     $animal->save();
                     $animal->StatutMale->fertilite = 0;
                     $animal->StatutMale->save();
-                    $elevage->budget -= $prixM;
+                  
                     $prix = $prixM;
-                    $elevage->save();
+                   
                 break;
 
                 case 'femelle':
                     $animal->sexe = 'femelle stérilisée';
                     $animal->save();
                     $animal->StatutFemelle->delete();
-                    $elevage->budget -= $prixF;
+                   
                     $prix = $prixF;
-                    $elevage->save();
+                  
                 break;
 
                 case 'vieille femelle':
@@ -382,8 +380,7 @@ class AnimalController extends Controller
                     $animal->save();
                     $animal->StatutFemelle->delete();
                     $prix = $prixF;
-                    $elevage->budget -= $prixF;
-                    $elevage->save();
+                  
                 break;
 
                 default:
@@ -442,9 +439,9 @@ class AnimalController extends Controller
     public function signalementIdentification($animal) 
     {
         $animal = Animal::find($animal);
-        $animal->elevage->budget - 60;
+       
         $animal->elevage->Budget()->fraisAdministratifs(60);
-        $animal->elevage->save();
+      
         $animal->statut_administratif = 'enregistré';
         $animal->save();
         return redirect()->back();
@@ -511,7 +508,7 @@ class AnimalController extends Controller
     }
         if ($animal->ageMonths() > 1 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
-            $elevage->budget -= (50 + $fraisSB);
+          
             $elevage->Budget()->fraisAdministratifs(50 + $fraisSB);
             $animal->statut_administratif = 'déclaré';
            
@@ -555,7 +552,7 @@ public function registrationStudBook(Request $request, $animal)
             {
               
                 $race = Race::Find($animal->race_id);
-                $elevage->budget -= $race->frais_enregistrement;
+              
                 $elevage->Budget()->fraisAdministratifs($race->frais_enregistrement);
                 $elevage->save();
                 if ($animal->save())

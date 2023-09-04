@@ -10,11 +10,7 @@ use DateTime;
 
 class Gamedata extends Model
 {
-    
-   static function budget()
-    {
-        return  Gamedata::find(1)->budget;
-    }
+   
 
     static function date()
     {
@@ -471,8 +467,8 @@ static function achete ()
           }
           if ($achat) {
             $vendeur = Elevage::Find($av->elevage_id);
-            $vendeur->budget += $av->prix;
-            $vendeur->save();
+            $vendeur->Budget()->acheteAnimal($av->prix) ;
+        
             $av->acheter($acheteur->id);
             $av->save();
 

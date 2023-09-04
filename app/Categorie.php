@@ -256,11 +256,11 @@ public function run($competition, $evenement) {
     
     if ($elevage->role == 'Joueur') {
         if ($i == 1 ) {
-        $elevage->budget += $prix; 
+       
         $elevage->Budget()->gainsConcours($prix);
         }
         else  {
-        $elevage->budget += (int) ($prix/$i);//prix_premier/$i);
+       //prix_premier/$i);
         $elevage->Budget()->gainsConcours((int) ($prix/$i));
         }
         $elevage->save();

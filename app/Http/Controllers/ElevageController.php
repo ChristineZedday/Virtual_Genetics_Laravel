@@ -85,13 +85,15 @@ class ElevageController extends Controller
         $user = Auth::user();
         if (isset($user)) {
             $elevage ->user_id = $user->id;
+            $elevage->Budget()->initialize();
         }
 
-        $elevage->budget= gameData::budget();
+      
        
         if (isset($elevage->affixe_id))
         {
-            $elevage->budget = $elevage->budget - 60;
+            $elevage->Budget()->initialize();
+            $elevage-Budget()->fraisAdministratifs(60); 
         }
 
         if ($elevage->save())
@@ -272,7 +274,7 @@ class ElevageController extends Controller
                 $etalon->StatutMale->qualite ='aurorisation sanitaire';
             }
         }
-        $elevage->budget -= 200;
+      
         $elevage->Budget()->fraisVeto(200);
         $elevage->save();
 
@@ -289,7 +291,7 @@ class ElevageController extends Controller
         if ($etalon->ageAdministratif($date) >= $etalon->race->age_repro_male) {
 
             $etalon->StatutMale->carnet_saillies = true;
-            $elevage->budget -= 60;
+           
             $elevage->Budget()->fraisAdministratifs(60);
 
             $etalon->StatutMale->save();
@@ -351,7 +353,7 @@ class ElevageController extends Controller
     public function choixEtalon ($id,$jument)
     {
         $elevage = Elevage::Find($id);
-        $budget = $elevage->budget;
+        $budget = $elevage->Budget()->solde();
         
         $jument =Animal::Find($jument);
         

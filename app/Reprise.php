@@ -107,11 +107,11 @@ class Reprise extends Model
         if ($elevage->role == 'Joueur') {
        //Pas de dotations pour les notes inférieures à 60%!
         if ($i == 1 && $note >= 60) {
-            $elevage->budget += $prix; // prix_premier, mettre en f compète et pas race;
+          // prix_premier, mettre en f compète et pas race;
             $elevage->Budget()->gainsConcours($prix);
         }
         else if ($note >= 60) {
-            $elevage->budget += (int) ($prix/$i);//prix_premier/$i);
+           //prix_premier/$i);
             $elevage->Budget()->gainsConcours((int) ($prix/$i));
         }
     }
