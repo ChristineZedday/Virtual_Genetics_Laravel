@@ -481,6 +481,9 @@ class AnimalController extends Controller
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back();
              }
+
+        $fraisSB = 50;
+
         $elevage = Elevage::Find($animal->elevage_id);
         $animal->couleur = $validated['couleur'];
         if (($animal->race_id == 1) && ($validated['race']!==null))
@@ -490,20 +493,22 @@ class AnimalController extends Controller
             {
               
                 $race = Race::Find($animal->race_id);
-                $elevage->budget -= $race->frais_enregistrement;
+               
                 $elevage->Budget()->fraisAdministratifs($race->frais_enregistrement);
-                $elevage->save();
+                
             }
         }
 
-        else if ($animal->race_id != 1 && $animal->race_id != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
-            $fraisSB = 50;
-            $animal->statut_administratif = 'déclaré';
+        else {
+            if ($animal->race_id != 1 && $animal->race_id != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
+           
         }
         else {
             $fraisSB = 0;
-            $animal->statut_administratif = 'déclaré';
+           
         }
+        $animal->statut_administratif = 'déclaré';
+    }
         if ($animal->ageMonths() > 1 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
             $elevage->budget -= (50 + $fraisSB);
@@ -512,7 +517,7 @@ class AnimalController extends Controller
            
         }
         else if ($animal->Dam->elevage_id == $animal->elevage_id) {
-            $elevage->budget -= $fraisSB;
+            
             $elevage->Budget()->fraisAdministratifs($fraisSB);
             $animal->statut_administratif = 'déclaré';
         }
