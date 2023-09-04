@@ -372,11 +372,9 @@ class ElevageController extends Controller
     public function budget ($id)
     {
         $elevage = Elevage::Find($id);
-        $budget = $elevage->budget;
-        $veto = $elevage->calculeFraisVeto();
-        $nourriture = $elevage->calculeFrais() - $veto;
-
-       return redirect()->route('dashboard',$elevage)->with('alert', 'Votre budget: '.$budget."\r\n".'dépenses frais vétérinaires: '.$veto."\r\n".' frais nourriture: '.$nourriture);
+        $budget = $elevage->Budget();
+      
+       return view('budget', ['elevage'=> $elevage,'budget'=> $budget]);
 
     }
 
