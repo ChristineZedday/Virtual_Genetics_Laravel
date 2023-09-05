@@ -58,7 +58,7 @@ class TempsController extends Controller
         Gamedata::VenteJeunes();
         Gamedata::retireVente();
       
-        Gamedata::achete();
+       
         Gamedata::checkMorts();
         Gamedata::checkNouveaux($date);
 
@@ -84,6 +84,7 @@ class TempsController extends Controller
             Gamedata::checkCarnets();
             Gamedata::checkNonEnregistres();
             Gamedata::VenteSaillies(); 
+            Gamedata::achete();
 
         }
         if ( Gamedata::saison())

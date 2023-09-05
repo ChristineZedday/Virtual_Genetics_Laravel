@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\gamedatas;
 use DB;
 use DateTime;
+use App\Budget;
 
 
 class Gamedata extends Model
@@ -467,7 +468,8 @@ static function achete ()
           }
           if ($achat) {
             $vendeur = Elevage::Find($av->elevage_id);
-            $vendeur->Budget()->acheteAnimal($av->prix) ;
+            
+            $vendeur->Budget()->vendAnimal($av->prix) ;
         
             $av->acheter($acheteur->id);
             $av->save();
