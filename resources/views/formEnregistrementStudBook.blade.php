@@ -14,7 +14,7 @@
 			
 			Veuillez trouver la liste des races dans lesquelles votre cheval peut être inscrit ci-dessous. Si l'animal est inscriptible dans plusieurs registres, un seul peut-être choisi, conformémént au règlement des Haras Nationaux.
 			@isset($races)</p>
-			<input type="hidden" id ="budget" value ="{{$elevage->budget}}"/>
+			<input type="hidden" id ="budget" value ="{{$elevage->Budget()->solde()}}"/>
 			
 			<label for="race">Vous avez la possibilité d'enregistrer votre produit, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
 			<select  name="race" id="race">
