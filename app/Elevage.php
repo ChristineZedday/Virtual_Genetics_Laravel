@@ -84,6 +84,7 @@ class Elevage extends Model
         $mois = date('n',strtotime($date));
         $rendement = Rendement::where('mois',$mois)->first()->foin_tMS_ha;
         $this->foin += $rendement * $surface;
+        $this->save();
 
     }
 
@@ -211,11 +212,7 @@ public function fraisTransport($animal,$distance)
         $frais += $frais * 0.5;
     }
     $frais = floor($frais);
-    $debug = new Debug();
-    $debug->evenement = $frais;
-    $debug->competition = $distance;
-    $debug->categorie = $taille;
-    $debug->save();
+  
     
     if ($this->Budget()->solde() >= $frais) {
        
