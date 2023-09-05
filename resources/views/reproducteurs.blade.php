@@ -50,7 +50,7 @@ $date = \App\Gamedata::date();
 @endif
 <a href="{{route('saillir',[$elevage->id,$jument->id])}}">
 			<button>Changer d'étalon</button></a>
-<input type="hidden" id="budget" value="{{$elevage->budget}}" />
+<input type="hidden" id="budget" value="{{$elevage->Budget()->solde()}}" />
 <input type="hidden" id ="route" value ="{{route('consang',[$elevage->id,$etalon->id,$jument->id])}}"/>
 			<button onclick="checkBudget()">Connaître la consanguinité (10 euros)</button>
 <p id="consang"> {{session ('message')}}</p>
