@@ -263,9 +263,9 @@ public function run($competition, $evenement) {
        //prix_premier/$i);
         $elevage->Budget()->gainsConcours((int) ($prix/$i));
         }
-        $elevage->save();
+      
 }
-    //dd($elevage);//OK
+    
     $i++; } //animaux classés
 
 
