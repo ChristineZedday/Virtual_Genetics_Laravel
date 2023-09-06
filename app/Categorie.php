@@ -212,7 +212,7 @@ public function run($competition, $evenement) {
    $notes = array_slice($notes,0,$classes,true);//on garde les classés
   
    $i =1;
-   foreach ($notes as $key => $value){ //pour tous les classés
+   foreach ($notes as $key => $value) { //pour tous les classés
     $res= Resultat::where('evenement_id',$evenement->id)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
     //dd($res);//c'est ça
     $res->classement = $i;
