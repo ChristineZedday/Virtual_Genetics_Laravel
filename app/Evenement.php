@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Competition;
+use App\Gamedata;
+use DateTime;
 
 
 class Evenement extends Model
@@ -22,17 +24,25 @@ class Evenement extends Model
     }*/
 
   
-    public function nextYear() {
-$date = date('Y-m-d',strtotime('+12 month',strtotime($this->date)));
-$evenement = New Evenement();
-$evenement->nom = $this->nom;
-$competes = $this->Competitions;
-$evenement->date = $date;
-$evenement->distance = $this->distance;
-$evenement->save();
-foreach ($competes as $comp) {
-    $evenement->Competitions()->attach($comp);
+    static function nextYear() 
+{
+    $date =new DateTime(Gamedata::date());
+    $m = $date->format('m');
+    $y = $date->format('Y');
+    
+    $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->get(); 
+    foreach ($evenements as $evenement)  {
+        $date = date('Y-m-d',strtotime('+12 month',strtotime($evenement->date)));
+        $nevenement = New Evenement();
+        $nevenement->nom = $evenement->nom;
+        $competes = $evenement->Competitions;
+        $nevenement->date = $date;
+        $nevenement->distance = $evenement->distance;
+        $nevenement->save();
+        foreach ($competes as $comp) {
+            $nevenement->Competitions()->attach($comp);
+        }
+    }
 }
 
-    }
 }

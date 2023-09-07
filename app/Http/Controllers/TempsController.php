@@ -90,6 +90,7 @@ class TempsController extends Controller
         if ( Gamedata::saison())
        { TempsController::reproNPC();}
        //so far so good
+       Evenement::nextYear();
        TempsController::regCompetNPC();
        //y a un bug dans l'enregistrement PNJ
        
@@ -308,8 +309,7 @@ static function runCompetitions() {
 
     foreach ($evenements as $evenement){
     $competitions = $evenement->Competitions;
-    $evenement->nextYear();
-        
+    
         foreach ($competitions as $competition) {
             $comp= $competition->id;
             $filter = function($query) use ($comp) {
