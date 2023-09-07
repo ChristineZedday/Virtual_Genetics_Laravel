@@ -83,17 +83,17 @@ class TempsController extends Controller
             Gamedata::VenteSaillies(); 
             Gamedata::achete();
         }
-        
+
         Evenement::nextYear();
+
+        TempsController::regCompetNPC();
+        //y a un bug dans l'enregistrement PNJ   
+        TempsController::runCompetitions();
 
         if ( Gamedata::saison())
        { TempsController::reproNPC();}
        //so far so good
       
-       TempsController::regCompetNPC();
-       //y a un bug dans l'enregistrement PNJ
-       
-       TempsController::runCompetitions();
         return redirect()->back();
     }
 
