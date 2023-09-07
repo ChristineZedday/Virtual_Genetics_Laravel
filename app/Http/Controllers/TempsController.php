@@ -52,13 +52,8 @@ class TempsController extends Controller
         $game->save();
 
         // checkFemellesTerme($date);
-        
-        Gamedata::checkPuberes();
         Gamedata::checkSevres();
         Gamedata::VenteJeunes();
-        Gamedata::retireVente();
-      
-       
         Gamedata::checkMorts();
         Gamedata::checkNouveaux($date);
 
@@ -78,7 +73,9 @@ class TempsController extends Controller
         if ($dateM == 01) {
             $game->lettre = Gamedata::checkLettre($date);
             $game->save();
-           
+
+            Gamedata::checkPuberes();
+            Gamedata::retireVente();
             Gamedata::checkApproProvisoire();
             Gamedata::checkVieux ($date);
             Gamedata::checkCarnets();
