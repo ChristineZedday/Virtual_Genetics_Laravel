@@ -5967,7 +5967,7 @@ class AnimauxTableSeeder extends Seeder
                 'nom' => 'Golden Boy',
                 'affixe_id' => NULL,
                 'couleur' => 'alezan crins lavés',
-                'base' => 'alezan',
+                'base' => 'alezan aa',
                 'taille_cm' => 79,
                 'race_id' => 3,
                 'sexe' => 'jeune male',
