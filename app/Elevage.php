@@ -37,7 +37,10 @@ class Elevage extends Model
     public function Budget()
     {
         $date = Gamedata::date();
+        if ($this->role == 'Joueur') {
         return $this->Budgets()->where('mois', $date)->first();
+        }
+        else return NULL;
     }
 
     public function Affixe()

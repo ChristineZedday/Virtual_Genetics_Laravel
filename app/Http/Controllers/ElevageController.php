@@ -85,16 +85,18 @@ class ElevageController extends Controller
         $user = Auth::user();
         if (isset($user)) {
             $elevage ->user_id = $user->id;
+            if ($elevage->role == 'Joueur') {
             $elevage->Budget()->initialize();
+            if (isset($elevage->affixe_id))
+        {
+            $elevage-Budget()->fraisAdministratifs(60); 
+        }
+            }
         }
 
       
        
-        if (isset($elevage->affixe_id))
-        {
-            $elevage->Budget()->initialize();
-            $elevage-Budget()->fraisAdministratifs(60); 
-        }
+        
 
         if ($elevage->save())
             {

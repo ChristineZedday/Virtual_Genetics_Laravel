@@ -25,7 +25,7 @@
 			<p>Les animaux de pure race sont automatiquement enregistrés dans le livre généalogique de la race sans frais supplémentaires, sous réserve que le père soit autorisé ou approuvé. Les animaux issus de croisement ou d'étalons non autorisés sont enregistrés comme Origine Constatée (OC), gratuitement, mais vous avez la possibité sous certaines conditions de les faire enregistrer dans un stud book ouvert (acceptant des animaux dont les deux parents ne sont pas inscrits), moyennant paiement d'un droit d'inscription.
 			Dans ce cas veuillez trouver la liste ci-dessous. Si l'animal est inscriptible dans plusieurs registres, un seul peut-être choisi, conformémént au règlement des Haras Nationaux.
 			@isset($races)</p>
-			<input type="hidden" id ="budget" value ="{{$elevage->Budget()->solde()}}"/>
+			@if ($elevage->role == 'Joueur')<input type="hidden" id ="budget" value ="{{$elevage->Budget()->solde()}}"/>@endif
 			
 			<label for="race">Vous avez la possibilité d'enregistrer votre produit, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
 			<select  name="race" id="race">

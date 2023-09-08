@@ -298,7 +298,7 @@ class AnimalController extends Controller
         $vendeur = $animal->elevage_id;
         $vendeur = Elevage::Find($vendeur);
 
-        if ($elevage->Budget()->solde() >= $animal->prix)
+        if ($elevage->role == 'Joueur' && $elevage->Budget()->solde() >= $animal->prix)
             {
             
             if ($vendeur->role == 'Joueur') {

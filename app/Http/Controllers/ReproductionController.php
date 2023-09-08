@@ -61,16 +61,16 @@ class ReproductionController extends Controller
 
         
 
-          if ($etalon->elevage->id != $elevage->id)
+          if ($etalon->elevage->id != $elevage->id )
           {
             $declaree =1;
-          
-            $elevage->Budget()->acheteSaillie($statutM->prix);
-
+            if ($elevage->role == 'Joueur') {
+              $elevage->Budget()->acheteSaillie($statutM->prix);
+            }
             $etalonnier = $etalon->Elevage;
             if ($etalonnier->role == 'Joueur') {
            
-            $etalonnier->Budget()->venteSaillie($statutM->prix);
+              $etalonnier->Budget()->venteSaillie($statutM->prix);
           }
           }
           if ($success > 50)
