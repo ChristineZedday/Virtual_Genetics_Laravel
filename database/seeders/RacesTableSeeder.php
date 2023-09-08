@@ -409,7 +409,7 @@ class RacesTableSeeder extends Seeder
                 'frais_enregistrement' => 150,
                 'taille_min' => 149,
                 'taille_max' => 215,
-                'approbation' => 0,
+                'approbation' => 1,
                 'approbation_provisoire' => 0,
                 'approbation_classes' => 0,
                 'pcArabe' => 0,
