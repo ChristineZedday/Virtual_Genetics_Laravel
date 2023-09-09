@@ -210,7 +210,7 @@ public function acheteTerres($surface)
 public function fraisTransport($animal,$distance) 
 {
     $taille = $animal->taille();
-    $frais = $distance * $taille / 170;
+    $frais = ($distance * $taille / 170) *0.75;
     if (NULL != $animal->StatutFemelle && $animal->StatutFemelle->suitee ) {
         $frais += $frais * 0.5;
     }

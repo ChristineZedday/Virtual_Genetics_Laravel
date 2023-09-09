@@ -20,7 +20,7 @@
 						
 <h3>{{$evenement->nom}}: {{$competition->nom}}</h3>
 <p>Distance approximative: {{$evenement->distance}} km<br/>
-On estime à 1 euro du km le prix de transport pour un cheval d' 1,70 m. A payer au moment du concours, vous ne pourrez participer si vous n'avez plus d'argent.</p>
+On estime à 0.75 euro du km le prix de transport pour un cheval d' 1,70 m. A payer au moment du concours, vous ne pourrez participer si vous n'avez plus d'argent.</p>
 <p>prix d'inscription par animal: {{$competition->prix_inscription}} <br/>
 prix pour le premier:
 {{$competition->prix_premier}}
