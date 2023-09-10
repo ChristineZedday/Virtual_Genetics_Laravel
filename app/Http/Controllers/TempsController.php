@@ -81,9 +81,9 @@ class TempsController extends Controller
             Gamedata::checkCarnets();
             Gamedata::checkNonEnregistres();
             Gamedata::VenteSaillies(); 
-            Gamedata::achete();
+           
         }
-
+        Gamedata::achete();
         Evenement::nextYear();
 
         TempsController::regCompetNPC();
