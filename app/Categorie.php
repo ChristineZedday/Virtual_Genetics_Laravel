@@ -51,17 +51,19 @@ class Categorie extends Model
    if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id < $competition->niveau->id && !$competition->niveau->open_before) {
     return 'Non qualifié';
    }
-  
+   if ($animal->StatutFemelle && $animal->StatutFemelle->terme == $date) {
+    return 'Jument à terme ce mois-là';
+   }
 
     if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
             return 'Jument pleine ou suitée';
         }
-        if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
+    if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
            
             return 'Pas suitée, ou le poulain sera sevré à cette date';
         }
-        if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
+    if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
            
             return 'Jument ou pouliche suitée à la date du concours';
         }

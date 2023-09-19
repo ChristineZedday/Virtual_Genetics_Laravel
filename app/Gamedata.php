@@ -340,6 +340,8 @@ static function checkVieux ($date)
                     if ($animal->sexe == 'vieux mâle'  && isset($animal->StatutMale))
                     {
                         $animal->StatutMale->fertilite = 0;
+                        $animal->StatutMale->disponible = false;
+                        $animal->StatutMale->save();
                     }
                 }
             
