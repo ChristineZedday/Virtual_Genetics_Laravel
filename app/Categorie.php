@@ -22,6 +22,7 @@ class Categorie extends Model
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
    public function verification($animal, $evenement, $competition) 
    {
+   
     $date = $evenement->date;
     $competition = Competition::Find($competition);
 
@@ -55,7 +56,7 @@ class Categorie extends Model
     return 'Jument à terme ce mois-là';
    }
 
-    if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
+   if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
             return 'Jument pleine ou suitée';
         }
@@ -68,14 +69,14 @@ class Categorie extends Model
             return 'Jument ou pouliche suitée à la date du concours';
         }
 
-        $races = $competition->Races;
+    $races = $competition->Races;
       
-        if (!empty($races)) {
+    if (!empty($races)) {
             $races = $races->modelkeys();
            // dd($races);
-            if (!in_array($animal->race_id, $races) ) {
+        if (!in_array($animal->race_id, $races) ) {
               
-                if (!in_array(1,$races)) {
+            if (!in_array(1,$races)) {
                     return 'Cheval pas de la bonne race pour cette compétition';
                 }
             }
@@ -108,7 +109,7 @@ class Categorie extends Model
     if ($this->taille_max != null && $this->taille_max < $animal->taille()) {
        
         return 'trop grand pour cette catégorie';
-}
+    }
 
 
     return 'OK';

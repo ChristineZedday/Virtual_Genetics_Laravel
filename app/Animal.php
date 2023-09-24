@@ -412,12 +412,14 @@ public function Resultats() //Resultats en compète, mais c'est la fonction Palm
 }
         
 public function seraSuiteeAu($date)   {
+    $id = $this->id;
      if ($this->StatutFemelle->suitee) {
-        $foal = Animal::where('dam_id',$this->id)->where('sexe','jeune poulain')->orWhere('sexe','jeune pouliche')->first();
+        $foal = Animal::where('dam_id',$id)->where('sexe', 'LIKE','jeune poul%')->first();
+       
         $age = $foal->ageMonths();
         $months = GameData::HowManyMonths($date);
         if ($age + $months > 6) {
-           // dd('poulain sevré');
+           //dd('poulain sevré');
             return false;
         }
         else {
@@ -442,5 +444,6 @@ public function seraSuiteeAu($date)   {
         //dd('ni pleine ni suitée');
     }
 } 
+
  
 }
