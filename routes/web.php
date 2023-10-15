@@ -132,6 +132,7 @@ Route::get('/dressage/{elevage}/{evenement}/{competition}/{reprise}', 'Competiti
 
 Route::get('/competitions/{elevage}/{evenement}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
 
+Route::get('/chevaux/dressage/{elevage}', 'CompetitionController@chevauxDressage')->name('chevauxdressage');
 
 Route::post('/inscription/{evenement}/{competition}', 'CompetitionController@inscription')->name('inscription');
 

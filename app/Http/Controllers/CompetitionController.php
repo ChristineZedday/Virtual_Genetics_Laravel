@@ -202,11 +202,20 @@ class CompetitionController extends Controller
        
     }
 
-  public function reprises($elevage) {
+  public function reprises($elevage) 
+  {
     $reprises = Reprise::liste();
     $elevage = Elevage::find($elevage);
     
     return view('ReprisesDressage',['elevage'=>$elevage, 'reprises' =>$reprises]);
+  }
+
+  public function chevauxDressage ($elevage)
+  {
+    $animaux = Animal::where('elevage_id', $elevage)->with('Performance')->get();
+    $elevage = Elevage::Find($elevage);
+
+    return view('chevauxDressage',['elevage'=>$elevage, 'animaux' =>$animaux]);
   }
 
 }
