@@ -14,6 +14,7 @@ use App\Gamedata;
 use App\Race;
 use App\Reprise;
 use Session;
+use DateTime;
 
 
 class CompetitionController extends Controller
@@ -212,7 +213,9 @@ class CompetitionController extends Controller
 
   public function chevauxDressage ($elevage)
   {
-    $animaux = Animal::where('elevage_id', $elevage)->with('Performance')->get();
+    $date = new DateTime(Gamedata::date());
+    $an = $date->format('Y') - 3;
+    $animaux = Animal::where('elevage_id', $elevage)->whereYear('date_naissance','<=',$an)->with('Performance')->get();
     $elevage = Elevage::Find($elevage);
 
     return view('chevauxDressage',['elevage'=>$elevage, 'animaux' =>$animaux]);
