@@ -34,7 +34,7 @@
  
   <td> {{ $animal->taille() }}  </td>
 	<td>{{$animal->date_naissance}} </td>
-	<td>{{$animal->Performance->niveau_dressage}}</td>
+	<td>{{(int)($animal->Performance->niveau_dressage)}}</td>
 
 
 </tr>
@@ -117,37 +117,11 @@ return 0;
 
 };
 
-function AMA(a,b) {
-
-a=a[1];
-ind  = a.indexOf('>');
-a = a[ind+1];
-
-b=b[1];
-ind  = b.indexOf('>');
-b = b[ind+1]
-
-
-return a - b;
 
 
 
-};
-
-function DMA(a,b) {
 
 
-	a=a[1];
-ind  = a.indexOf('>');
-a = a[ind+1];
-
-b=b[1];
-ind  = b.indexOf('>');
-b = b[ind+1]
-
-return b - a;
-
-};
 
 
 
