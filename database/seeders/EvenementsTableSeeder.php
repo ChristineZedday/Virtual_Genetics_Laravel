@@ -424,6 +424,24 @@ class EvenementsTableSeeder extends Seeder
                 'nom' => 'Concours qualifcatif mâles SF Lamballe',
                 'distance' => 90,
             ),
+            45 => 
+            array (
+                'id' => 60,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-05-21',
+                'nom' => 'Internationaux Dressage Compiègne',
+                'distance' => 420,
+            ),
+            46 => 
+            array (
+                'id' => 61,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-07-21',
+                'nom' => 'Dress\' In Deauville',
+                'distance' => 240,
+            ),
         ));
         
         

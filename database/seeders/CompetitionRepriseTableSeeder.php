@@ -129,7 +129,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 55,
-                'reprise_id' => 11,
+                'reprise_id' => 30,
             ),
             14 => 
             array (
@@ -421,45 +421,13 @@ class CompetitionRepriseTableSeeder extends Seeder
             ),
             50 => 
             array (
-                'id' => 64,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 61,
-                'reprise_id' => 56,
-            ),
-            51 => 
-            array (
-                'id' => 65,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 61,
-                'reprise_id' => 57,
-            ),
-            52 => 
-            array (
-                'id' => 66,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 61,
-                'reprise_id' => 58,
-            ),
-            53 => 
-            array (
-                'id' => 67,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'competition_id' => 61,
-                'reprise_id' => 59,
-            ),
-            54 => 
-            array (
                 'id' => 68,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 62,
                 'reprise_id' => 20,
             ),
-            55 => 
+            51 => 
             array (
                 'id' => 69,
                 'created_at' => NULL,
@@ -467,7 +435,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 19,
             ),
-            56 => 
+            52 => 
             array (
                 'id' => 70,
                 'created_at' => NULL,
@@ -475,7 +443,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 18,
             ),
-            57 => 
+            53 => 
             array (
                 'id' => 71,
                 'created_at' => NULL,
@@ -483,7 +451,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 17,
             ),
-            58 => 
+            54 => 
             array (
                 'id' => 72,
                 'created_at' => NULL,
@@ -491,7 +459,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 22,
             ),
-            59 => 
+            55 => 
             array (
                 'id' => 73,
                 'created_at' => NULL,
@@ -499,7 +467,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 21,
             ),
-            60 => 
+            56 => 
             array (
                 'id' => 74,
                 'created_at' => NULL,
@@ -507,7 +475,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 24,
             ),
-            61 => 
+            57 => 
             array (
                 'id' => 75,
                 'created_at' => NULL,
@@ -515,7 +483,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 63,
                 'reprise_id' => 30,
             ),
-            62 => 
+            58 => 
             array (
                 'id' => 76,
                 'created_at' => NULL,
@@ -523,7 +491,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 63,
                 'reprise_id' => 31,
             ),
-            63 => 
+            59 => 
             array (
                 'id' => 77,
                 'created_at' => NULL,
@@ -531,7 +499,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 63,
                 'reprise_id' => 16,
             ),
-            64 => 
+            60 => 
             array (
                 'id' => 78,
                 'created_at' => NULL,
@@ -539,7 +507,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 63,
                 'reprise_id' => 15,
             ),
-            65 => 
+            61 => 
             array (
                 'id' => 79,
                 'created_at' => NULL,
@@ -547,7 +515,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 28,
             ),
-            66 => 
+            62 => 
             array (
                 'id' => 80,
                 'created_at' => NULL,
@@ -555,7 +523,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 62,
                 'reprise_id' => 27,
             ),
-            67 => 
+            63 => 
             array (
                 'id' => 81,
                 'created_at' => NULL,
@@ -563,7 +531,7 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 59,
                 'reprise_id' => 61,
             ),
-            68 => 
+            64 => 
             array (
                 'id' => 82,
                 'created_at' => NULL,
@@ -571,13 +539,173 @@ class CompetitionRepriseTableSeeder extends Seeder
                 'competition_id' => 58,
                 'reprise_id' => 61,
             ),
-            69 => 
+            65 => 
             array (
                 'id' => 83,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 60,
                 'reprise_id' => 61,
+            ),
+            66 => 
+            array (
+                'id' => 84,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 54,
+                'reprise_id' => 21,
+            ),
+            67 => 
+            array (
+                'id' => 85,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 55,
+                'reprise_id' => 11,
+            ),
+            68 => 
+            array (
+                'id' => 86,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 6,
+            ),
+            69 => 
+            array (
+                'id' => 87,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 24,
+            ),
+            70 => 
+            array (
+                'id' => 88,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 27,
+            ),
+            71 => 
+            array (
+                'id' => 89,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 56,
+                'reprise_id' => 19,
+            ),
+            72 => 
+            array (
+                'id' => 90,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'reprise_id' => 30,
+            ),
+            73 => 
+            array (
+                'id' => 91,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 57,
+                'reprise_id' => 13,
+            ),
+            74 => 
+            array (
+                'id' => 92,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 62,
+                'reprise_id' => 12,
+            ),
+            75 => 
+            array (
+                'id' => 93,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 63,
+                'reprise_id' => 13,
+            ),
+            76 => 
+            array (
+                'id' => 94,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 58,
+                'reprise_id' => 44,
+            ),
+            77 => 
+            array (
+                'id' => 95,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'reprise_id' => 42,
+            ),
+            78 => 
+            array (
+                'id' => 96,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'reprise_id' => 43,
+            ),
+            79 => 
+            array (
+                'id' => 97,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'reprise_id' => 44,
+            ),
+            80 => 
+            array (
+                'id' => 98,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'reprise_id' => 45,
+            ),
+            81 => 
+            array (
+                'id' => 99,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 59,
+                'reprise_id' => 47,
+            ),
+            82 => 
+            array (
+                'id' => 100,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 78,
+                'reprise_id' => 59,
+            ),
+            83 => 
+            array (
+                'id' => 101,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 78,
+                'reprise_id' => 58,
+            ),
+            84 => 
+            array (
+                'id' => 102,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 78,
+                'reprise_id' => 57,
+            ),
+            85 => 
+            array (
+                'id' => 103,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 78,
+                'reprise_id' => 56,
             ),
         ));
         

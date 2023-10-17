@@ -822,6 +822,17 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 20,
                 'prix_premier' => 400,
             ),
+            73 => 
+            array (
+                'id' => 78,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Dressage Pro',
+                'type' => 'Dressage',
+                'niveau_id' => 4,
+                'prix_inscription' => 50,
+                'prix_premier' => 3000,
+            ),
         ));
         
         
