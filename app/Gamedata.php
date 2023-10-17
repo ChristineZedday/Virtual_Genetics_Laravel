@@ -222,6 +222,9 @@ static function checkVieux ($date)
         $age = $animal->ageYears();
         if ($age > 15)
         {
+            $perf= $animal->Performance;
+            $perf->sante - 10;
+            $perf->save();
             switch ($animal->sexe) 
      
             {

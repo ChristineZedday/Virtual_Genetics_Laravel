@@ -42,9 +42,12 @@ class Reprise extends Model
                 $taille = $inscrit->animal->taille();
                 if ($taille < 140) {
                     $malusTaille =  140 - $taille;
-
                 }
-    
+            }
+            $malusSante = 0;
+            $sante = $inscrit->performance->sante;
+            if ($sante != 100) {
+                $malusSante = 100 - $sante;
             }
 
         $prix = $competition->prix_premier;
@@ -58,7 +61,7 @@ class Reprise extends Model
     
              $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + 
              ($animal->Performance->niveau_dressage * $animal->capacite_apprentissage_additive)/100 -
-             $this->niveau_num_global - $malusTaille + 
+             $this->niveau_num_global - $malusTaille  - $malusSante + 
              random_int(-20,20);
 
              if ( $notes[$animal->id] > 100) {
