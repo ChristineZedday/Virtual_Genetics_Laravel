@@ -34,21 +34,10 @@ class Reprise extends Model
                     // faut les sous pour y aller!
                 }
             }   
-        }   
+        } 
 
         
-            $malusTaille = 0;
-            if ($categorie->libelle == 'cheval ou poney') {
-                $taille = $inscrit->animal->taille();
-                if ($taille < 140) {
-                    $malusTaille =  140 - $taille;
-                }
-            }
-            $malusSante = 0;
-            $sante = $inscrit->performance->sante;
-            if ($sante != 100) {
-                $malusSante = 100 - $sante;
-            }
+        
 
         $prix = $competition->prix_premier;
         $nb = $inscrits->count();
@@ -58,6 +47,19 @@ class Reprise extends Model
        //dd('inscrits: '.$nb.' classés: '.$classes);
         foreach ($inscrits as $inscrit) {
             $animal = $inscrit->animal;
+            
+            $malusTaille = 0;
+            if ($categorie->libelle == 'cheval ou poney') {
+                $taille = $animal->taille();
+                if ($taille < 140) {
+                    $malusTaille =  140 - $taille;
+                }
+            }
+            $malusSante = 0;
+            $sante = $animal->Performance->sante;
+            if ($sante != 100) {
+                $malusSante = 100 - $sante;
+            }
     
              $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + 
              ($animal->Performance->niveau_dressage * $animal->capacite_apprentissage_additive)/100 -
