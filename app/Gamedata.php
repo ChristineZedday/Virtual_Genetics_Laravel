@@ -222,9 +222,7 @@ static function checkVieux ($date)
         $age = $animal->ageYears();
         if ($age > 15)
         {
-            $perf= $animal->Performance;
-            $perf->sante - 10;
-            $perf->save();
+          
             switch ($animal->sexe) 
      
             {
@@ -249,6 +247,21 @@ static function checkVieux ($date)
             }
             $animal->save();
         }
+    }
+    $vieux = Animal::where('sexe', 'LIKE','vie%')->get();
+    foreach ($vieux as $vieux) {
+        $perf= $vieux->Performance;
+        $age = $vieux->ageYears();
+        if ($age < 25) {
+            $degradation = random_int(0,15);
+        }
+        else {
+            $degradation = random_int(0,25);
+        }
+        
+        $perf->sante - $degradation;
+        $perf->save();
+
     }
     
 }
@@ -289,23 +302,23 @@ static function checkVieux ($date)
     foreach ($animaux as $animal)
     {
         
-        $age = $animal->ageYears();
-            switch ($age)
+        $sante = $animal->Performance->sante;
+            switch ($sante)
             {
-                case $age<20:
-                    $var = 1500;
+                case $sante<10:
+                    $var = 2;
                 break;
-                case $age<25:
-                    $var = 750;
+                case $sante<20:
+                    $var = 10;
                 break;
-                case $age<30:
-                    $var =150;
+                case $sante<30:
+                    $var =20;
                 break;
-                case $age<35:
-                    $var =75;
+                case $sante<50:
+                    $var =50;
                 break;
                 default:
-                $var = 10;
+                $var = 100000;
             }
                 if (rand(1,$var)==1)
                 {
@@ -313,7 +326,7 @@ static function checkVieux ($date)
                     $animal->date_achat = Gamedata::date();
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     
-                    if ($animal->sexe == 'vieille femelle')
+                    if ($animal->sexe == 'vieille femelle' || $animal->sexe == 'femelle')
                   {  $statut = $animal->StatutFemelle;
                    
                     
