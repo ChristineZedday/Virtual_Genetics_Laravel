@@ -253,13 +253,13 @@ static function checkVieux ($date)
         $perf= $vieux->Performance;
         $age = $vieux->ageYears();
         if ($age < 25) {
-            $degradation = random_int(0,15);
+            $degradation = random_int(0,10);
         }
         else {
-            $degradation = random_int(0,25);
+            $degradation = random_int(0,20);
         }
         
-        $perf->sante - $degradation;
+        $perf->sante -= $degradation;
         $perf->save();
 
     }
