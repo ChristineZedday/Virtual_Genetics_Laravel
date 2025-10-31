@@ -47,7 +47,7 @@ class Race extends Model
       }
 
 
-public function approuveEtalonsClasses($resultat, $animal)
+/*public function approuveEtalonsClasses($resultat, $animal)
 {
    $date = Gamedata::date();
    $noteAppro =  15;
@@ -60,7 +60,7 @@ public function approuveEtalonsClasses($resultat, $animal)
    
    }
    
-}
+}*/
 
 public function approuveEtalonsPFS($resultat, $animal)
 {
