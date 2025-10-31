@@ -15,7 +15,7 @@ class Elevage extends Model
     const COEFF_UGB_PLEINE_SUITEE = 0.63 ;//0.37/0.59
     const PRIX_FOIN = 100;
     const PRIX_HECTARE = 25000;
-    const CONSO_FOIN_UGB_AN = 4.75;
+    const CONSO_FOIN_UGB_AN = 6;
 
     protected $fillable = ['nom_elevage','nom_eleveur','affixe_id','affixe_pre'];
 
