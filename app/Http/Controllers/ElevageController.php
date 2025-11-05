@@ -234,8 +234,8 @@ class ElevageController extends Controller
     /**
      * Examination of males before use them for reproduction
      * approuvé: produce breed registrables offspring
-     * autorisation sanitaire: should be approved in a show to produce breed registrables offspring, else produce OC
-     * refusé: produce grades (OC)
+     * autorisation sanitaire: should be approved in a show to produce breed registrables offspring, else produce ONC
+     * refusé: produce grades (ONC)
      */
 
     public function commissionEtalons ($elevage, $etalon)
@@ -244,43 +244,24 @@ class ElevageController extends Controller
         $etalon = Animal::Find($etalon);
         $elevage = Elevage::Find($elevage);
         $race = Race::Find($etalon->race_id);
-        $pathos = $etalon->Pathologie;
-
-        if ($elevage->Budget()->solde() > 200 ){
         
-        if ($etalon->modele_allures > 9 && $race->approbation == false && $race->id != 1 && $race->id != 17)
-        {
-            $etalon->StatutMale->qualite = 'approuvé';
-           
-        }
-        else if ($etalon->modele_allures < 10)
-        { 
-            $etalon->StatutMale->qualite ='refusé';
-        }
-        else {
-            $etalon->StatutMale->qualite ='autorisation sanitaire';
-        }
-        foreach ($pathos as $patho)
-        {
-            if ($patho->redhibitoire)
-            {
-                $etalon->StatutMale->qualite ='refusé';
-            }
-        }
-        $mini = Race::where('nom', 'Miniature')->first();
-        if ($etalon->Race == $mini)
+
+        if ($elevage->Budget()->solde() > 200 || $elevage->role =='vendeur'){
+           $etalon->StatutMale->setAutorisationSanitaire();
+        
+        if ($race->id != 1 && $race->id != 17)
         {
            
-            if ($etalon->taille_cm > $mini->taille_max &&  $etalon->StatutMale->qualite ='approuvé')
-            {
-                $etalon->StatutMale->qualite ='aurorisation sanitaire';
-            }
+            $etalon->StatutMale->approuveEtalons();
+           
         }
+        
+        
+       
       
         $elevage->Budget()->fraisVeto(200);
         $elevage->save();
-
-        $etalon->StatutMale->save(); }
+ }
         return redirect()->back();
     }
 

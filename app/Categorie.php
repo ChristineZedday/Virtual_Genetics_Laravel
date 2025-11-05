@@ -166,9 +166,11 @@ public static function rechercheDressage(Animal $cheval)
    }
 
 public function run($competition, $evenement) {
-    
+    //Modèle et Allures
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();
-
+   
+      $nb = $inscrits->count();
+    $debug = "nombre inscrits: ".$nb;
 
     foreach ($inscrits as $inscrit) {
     $elevage = $inscrit->animal->elevage;
@@ -183,10 +185,10 @@ public function run($competition, $evenement) {
 }
 
     $prix = $competition->prix_premier;
-    $nb = $inscrits->count();
   
     //ça marche quand il ya des animaux du bon âge
     $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
+
     $notes = [];
   
     foreach ($inscrits as $inscrit) {
@@ -197,22 +199,19 @@ public function run($competition, $evenement) {
             $notes[$animal->id] = 20;
         }
           
-    $inscrit->note_synthese = $notes[$animal->id];
-    $inscrit->save();
-  //  $msg = 'appel approuveEtalons si';
-    if ($competition->niveau->libelle == 'National' && $animal->StatutMale != NULL &&($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite =='approbation provisoire')) {
-        
-        $animal->race->approuveEtalons($inscrit, $animal);
-      //  $msg = $msg.' '.$animal->StatutMale->qualite;
-
+        $inscrit->note_synthese = $notes[$animal->id];
+        if ($inscrit->note_synthese >= 15 && $animal->StatutMale != NULL && $animal->StatutMale->qualite != 'approuvé') {
+        $animal->StatutMale->setModele15();
+        $animal->StatutMale->approuveEtalons();
     }
-    
-}  
 
- 
+    $inscrit->save();
+}
 
-   arsort($notes); //tri décroissant des valeurs
+
+   arsort($notes, SORT_NUMERIC); //tri décroissant des valeurs
    $notes = array_slice($notes,0,$classes,true);//on garde les classés
+  
   
    $i =1;
    foreach ($notes as $key => $value) { //pour tous les classés
@@ -221,6 +220,13 @@ public function run($competition, $evenement) {
     $res->classement = $i;
     $res->save();
     $animal = Animal::find($key);
+     if ($competition->niveau->libelle == 'National' && $animal->StatutMale != NULL && $animal->StatutMale->qualite != 'approuvé') {
+        $animal->StatutMale->setClasseNat();
+        $animal->StatutMale->approuveEtalons();
+        if ($animal->StatutMale->qualite == 'approuvé'   && $animal->race->poney_sport) {
+           $animal->StatutMale->setApprouvePFS(); 
+        }
+     }
     $perf = $animal->Performance;
     if ($value >= 12) {
         if ($perf->niveau->id == 1) {
@@ -237,23 +243,6 @@ public function run($competition, $evenement) {
     }
    
 
-    if ($animal->StatutMale != NULL && !$animal->StatutMale->approuvePFS &&$competition->niveau->id >= 3)  {
-      //$msg = 'appel approuveEtalons classes si';
-        if ($animal->StatutMale->qualite == 'autorisation sanitaire' || $animal->StatutMale->qualite == 'approbation provisoire' ) {
-            //l'étalon doit avoir au minimum l'autorisation sanitaire, s'il a appro PFS il a tout
-           // $msg = $msg.' '.$animal->StatutMale->qualite;
-            $animal->race->approuveEtalons($res, $animal);
-
-
-        }
-        if ($animal->StatutMale->qualite == 'approuvé' && $animal->race->poney_sport) {
-           
-            $animal->race->approuveEtalonsPFS($res, $animal);
-
-
-        }
-
-    }
     
     $elevage = Elevage::Find($animal->elevage_id);
     

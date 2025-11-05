@@ -26,19 +26,13 @@ class Race extends Model
       return $this->belongsToMany('App\Competition');
    }
 
-   public function approuveEtalons($resultat, $animal)
+  /* public function approuveEtalons($resultat, $animal)
    {
-      $date = Gamedata::date();
-      $noteAppro = 15;
-      $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation provisoire' : 'autorisation sanitaire');
-      $statut = $animal->StatutMale;
-      $races = $resultat->competition->Races;
-      if ($races->count() == 1 && $races->first()->id == $this->id) {
-      
-         if ($resultat->note_synthese >= $noteAppro) {
+         if ($resultat->note_synthese >= 15) {
+
+               $animal->statutMale->setModele15;
            
-               $statut->qualite = $appro;
-               $statut->save();
+               $animal->statutMale->approuveEtalons();
             
             }
       
@@ -47,7 +41,7 @@ class Race extends Model
       }
 
 
-/*public function approuveEtalonsClasses($resultat, $animal)
+public function approuveEtalonsClasses($resultat, $animal)
 {
    $date = Gamedata::date();
    $noteAppro =  15;

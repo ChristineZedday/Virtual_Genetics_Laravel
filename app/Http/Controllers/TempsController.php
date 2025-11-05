@@ -97,7 +97,7 @@ class TempsController extends Controller
         return redirect()->back();
     }
 
-   
+
 
 
 static function reproNPC()

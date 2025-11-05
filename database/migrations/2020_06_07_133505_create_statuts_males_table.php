@@ -17,7 +17,11 @@ class CreateStatutsMalesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->boolean('disponible')->default(false);
-            $table->enum('qualite', ['entier','autorisation sanitaire','approuvé', 'approbation provisoire','refusé'])->default('entier');
+            $table->boolean('modele15')->default(false);
+            $table->boolean('classeNat')->default(false);
+            $table->boolean('autorisationSanitaire')->default(false);
+
+            $table->enum('qualite', ['entier','autorisation sanitaire','approuvé', 'approbation provisoire cette année', 'approbation provisoire an prochain','refusé', 'ajourné', 'approuvé an prochain'])->default('entier');
             $table->string('approuvePFS')->default(false);
             $table->tinyInteger('fertilite')->unsigned()->default(100);
             $table->bigInteger('animal_id')->unsigned()->unique();

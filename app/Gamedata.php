@@ -165,25 +165,14 @@ static function checkPuberes()
             $statut = new StatutMale();
             $statut->animal_id = $animal->id;
             $statut->fertilite = 100 - $animal->consang/2 ;
-            if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1)
+            if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1 && $animal->race_id != 17)
             {
                 $animal->statut_administratif = 'enregistré';
                 $animal->save();
-                if ($animal->modele_allures >= 10)
-                {
-                    if ($animal->race->approbation && $animal->modele_allures < 15) {
-                         $statut->qualite = 'autorisation sanitaire';
-                    }
-                    else {
-                        $statut->qualite = 'approuvé';
-                    }
-                }
-                else
-                {
-                    $statut->qualite = 'refusé';
-                }
-            }
-            if ('approuvé' == $statut->qualite) {
+                $statut->setAutorisationSanitaire();
+                $statut->approuveEtalons();
+            }   
+            if ('approuvé' == $statut->qualite || 'approbation provisoire cette année' == $statut->qualite ) {
                 $statut->carnet_saillies = true;
                
             }
@@ -363,10 +352,26 @@ static function checkVieux ($date)
             
     }
 }
-static function checkApproProvisoire() 
-{
-    $appros = DB::table('statuts_males')->where('qualite','approbation provisoire')->update(['qualite' => 'autorisation sanitaire']);
-}
+static function checkApproProvisoire() {
+    $males = StatutMale::where('qualite' , 'approbation provisoire cette année')->get();
+    foreach ($males as $male) {
+        $male->qualite = 'autorisation sanitaire';
+        $male->save();
+
+    }
+     $males = StatutMale::where('qualite' , 'approbation provisoire an prochain')->get();
+    foreach ($males as $male) {
+        $male->qualite = 'approbation provisoire cette année';
+        $male->save();
+
+    }
+ $males = StatutMale::where('qualite' , 'approuvé an prochain')->get();
+    foreach ($males as $male) {
+        $male->qualite = 'approuvé';
+        $male->save();
+
+    }
+}  
 
 // 
 static function VenteSaillies ()
