@@ -223,7 +223,7 @@ public function run($competition, $evenement) {
      if ($competition->niveau->libelle == 'National' && $animal->StatutMale != NULL && $animal->StatutMale->qualite != 'approuvé') {
         $animal->StatutMale->setClasseNat();
         $animal->StatutMale->approuveEtalons();
-        if ($animal->StatutMale->qualite == 'approuvé'   && $animal->race->poney_sport) {
+        if ($animal->StatutMale->qualite == 'approuvé'   && ($animal->race->poney_sport || $animal->race->cheval_sport)) {
            $animal->StatutMale->setApprouvePFS(); 
         }
      }
