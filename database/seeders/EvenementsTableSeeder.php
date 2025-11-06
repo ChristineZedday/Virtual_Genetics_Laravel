@@ -393,7 +393,7 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 56,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '2001-12-05',
+                'date' => '2000-12-05',
                 'nom' => 'Championnat mâles SF Saint Lô',
                 'distance' => 150,
             ),
