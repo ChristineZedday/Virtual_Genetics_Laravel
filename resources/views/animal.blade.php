@@ -126,7 +126,7 @@
 						<button>  Obtenir un carnet de saillie pour l'année en cours (60 euros)</button>
 						</a>
 						@endif
-						@if ($animal->StatutMale->qualite == 'approuvé' && ($animal->race->poney_sport || $animal->race->cheval_sport) &&!$animal->StatutMale->approuvePFS &&  ($animal->elevage_id == $elevage->id )
+						@if ($animal->StatutMale->qualite == 'approuvé' && ($animal->race->poney_sport || $animal->race->cheval_sport) &&!$animal->StatutMale->approuvePFS &&  $animal->elevage_id == $elevage->id )
 						<a href="{{route('approConcours',[$elevage->id,$animal->id])}}">
 						<button>  Approbation SF/PFS sur les résultats en compétition (60 euros)</button>
 						</a>
