@@ -74,7 +74,8 @@ class StatutMale extends Model
             $this->qualite = 'approuvé';
             // Si les étalons sont approuvés automatiquement dans la race
             if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
-            { $this->setApprouvePFS();}
+            {
+                $this->setApprouvePFS();}
             break;
         case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite = 'approuvé an prochain';

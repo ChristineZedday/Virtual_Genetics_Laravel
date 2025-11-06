@@ -220,8 +220,10 @@ public function run($competition, $evenement) {
     $res->classement = $i;
     $res->save();
     $animal = Animal::find($key);
-     if ($competition->niveau->libelle == 'National' && $animal->StatutMale != NULL && $animal->StatutMale->qualite != 'approuvé') {
+     if (($competition->niveau->libelle == 'national' || $competition->niveau->libelle == 'mondial') && $animal->StatutMale != NULL ) {
+        
         $animal->StatutMale->setClasseNat();
+        
         $animal->StatutMale->approuveEtalons();
         if ($animal->StatutMale->qualite == 'approuvé'   && ($animal->race->poney_sport || $animal->race->cheval_sport)) {
            $animal->StatutMale->setApprouvePFS(); 
@@ -238,10 +240,16 @@ public function run($competition, $evenement) {
 
             $perf->upgrade();
             $perf->save();
+            }
+             if ($value >= 15) {
+                if ($perf->niveau->id == 2) {
+                $perf->niveau->id = 3;
             
-            }      
-    }
-   
+                $perf->save();
+            
+                }      
+            }
+        }
 
     
     $elevage = Elevage::Find($animal->elevage_id);
