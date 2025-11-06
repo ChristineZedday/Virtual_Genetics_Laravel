@@ -378,7 +378,7 @@ static function checkApproConcours() {
         }  
 
     }
-
+}
 // 
 static function VenteSaillies ()
 {
