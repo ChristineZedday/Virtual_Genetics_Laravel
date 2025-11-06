@@ -177,9 +177,7 @@ static function checkPuberes()
                
             }
             $statut->save();
-         }
-
-        
+         } 
             
     }
 
@@ -357,7 +355,6 @@ static function checkApproProvisoire() {
     foreach ($males as $male) {
         $male->qualite = 'autorisation sanitaire';
         $male->save();
-
     }
      $males = StatutMale::where('qualite' , 'approbation provisoire an prochain')->get();
     foreach ($males as $male) {
@@ -372,6 +369,15 @@ static function checkApproProvisoire() {
 
     }
 }  
+
+static function checkApproConcours() {
+    $males = StatutMale::whereHas('elevage', function($q) {$q->where('role', 'vendeur');})->where('qualite' , 'approuvé')->andWhere('modele15' , TRUE)->get();
+    foreach ($males as $male) {
+        if ($male->approuveEtalonsResultatsConcours()){
+            $male->save();
+        }  
+
+    }
 
 // 
 static function VenteSaillies ()

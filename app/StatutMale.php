@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Animal;
+use App\Performance;
 
 class StatutMale extends Model
 {
@@ -47,6 +48,7 @@ class StatutMale extends Model
     public function setApprouvePFS() {
         $this->approuvePFS = true;
         $this->save();
+        return true;
     }
 
     public function setClasseNat ()
@@ -71,6 +73,8 @@ class StatutMale extends Model
         case !$this->male->race->approbation && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
             $this->qualite = 'approuvé';
             // Si les étalons sont approuvés automatiquement dans la race
+            if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
+            { $this->setApprouvePFS();}
             break;
         case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite = 'approuvé an prochain';
@@ -81,6 +85,8 @@ class StatutMale extends Model
             break;
         case $this->male->ageAdministratif($date) >= 4 && !$this->male->race->classeNat :
              $this->qualite ='approuvé';
+               if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
+            { $this->setApprouvePFS();}
             break;
 
         case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
@@ -97,6 +103,8 @@ class StatutMale extends Model
             break;
         case $this->male->ageAdministratif($date) >=4:
              $this->qualite ='approuvé';
+               if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
+            { $this->setApprouvePFS();}
             break;
         case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite ='approbation provisoire an prochain';
@@ -109,7 +117,25 @@ class StatutMale extends Model
    
       }
     
-      
+     public function approuveEtalonsResultatsConcours() {
+         $date = Gamedata::date();
+        $niveauDressage =$this->male->Performance->niveau_dressage;
+        switch (true) {
+            case (!$this->modele15):
+                return false; //faut quand m^me un bon modèle!
+            case ($this->male->race->poney_sport &&$niveauDressage >= $this->male->ageAdministratif($date) + 3):
+                 if ($this->setApprouvePFS()){
+                    return true;
+                 }
+                 break;
+            case ($this->male->race->cheval_sport &&$niveauDressage >= $this->male->ageAdministratif($date) + 4):
+                if ($this->setApprouvePFS()){
+                    return true;
+                 }
+              
+
+        }
+     } 
   
      
 }

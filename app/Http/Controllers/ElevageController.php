@@ -265,6 +265,23 @@ class ElevageController extends Controller
         return redirect()->back();
     }
 
+     public function approbationCompetition ($elevage, $etalon)
+    {
+       
+        $etalon = Animal::Find($etalon);
+        $elevage = Elevage::Find($elevage);
+       
+
+        if ($elevage->Budget()->solde() > 60 || $elevage->role =='vendeur'){
+           $etalon->StatutMale->approuveEtalonsResultatsConcours();
+           
+        }
+      
+        $elevage->Budget()->fraisVeto(200);
+        $elevage->save();
+        return redirect()->back();
+    }
+
     public function carnetSaillies($elevage, $etalon) 
     {
         $elevage = Elevage::Find($elevage);

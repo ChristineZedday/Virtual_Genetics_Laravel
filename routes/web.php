@@ -94,6 +94,8 @@ Route::get('/reproduction/etalon/{elevage}/{etalon}', 'ElevageController@commiss
 
 Route::get('/etalon/carnet/{elevage}/{etalon}', 'ElevageController@carnetSaillies')->name('carnet');
 
+Route::get('/etalon/approbation/{elevage}/{etalon}', 'ElevageController@approbationCompetition')->name('approConcours');
+
 Route::get('/reproduction/monte/{elevage}/{etalon}', 'ElevageController@proposerMonte')->name('monte');
 
 Route::get('/reproduction/demonte/{elevage}/{etalon}', 'ElevageController@retirerMonte')->name('demonte');
