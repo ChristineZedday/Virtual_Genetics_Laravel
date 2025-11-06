@@ -420,8 +420,8 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 59,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '2001-11-17',
-                'nom' => 'Concours qualifcatif mâles SF Lamballe',
+                'date' => '2000-11-17',
+                'nom' => 'Concours qualificatif mâles SF Lamballe',
                 'distance' => 90,
             ),
             45 => 
