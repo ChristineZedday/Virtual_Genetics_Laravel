@@ -61,7 +61,6 @@ class StatutMale extends Model
       $date = Gamedata::date();
        $mini = Race::where('nom', 'Miniature')->first();
         
-
       switch (true) {
         case !$this->autorisationSanitaire:
             break;
@@ -115,7 +114,6 @@ class StatutMale extends Model
 
         }
        $this->save();
-   
       }
     
      public function approuveEtalonsResultatsConcours() {
