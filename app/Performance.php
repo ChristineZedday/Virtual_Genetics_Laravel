@@ -35,12 +35,19 @@ class Performance extends Model
         }
     }
 
-    public function upgrade()
+    public function upgrade($classement, $note, $libelle)
     {
-       
         if ($this->niveau_id < 4)  {
-        $this->niveau_id += 1;
-      
-       }
+         
+            if ($this->niveau_id == 1 || $classement < 4 || $note >= 15) {
+                $this->niveau_id ++;
+                $this->save();
+                if ($this->niveau_id == 2 && $note >= 15 && ($libelle == 'départemental' || $libelle == 'régional')) {
+                    $this->niveau_id ++;
+                    $this->save(); //passer direct en national
+                }
+            }
+       
+        }
     }
 }

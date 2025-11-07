@@ -169,20 +169,18 @@ public function run($competition, $evenement) {
     //Modèle et Allures
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();
    
-      $nb = $inscrits->count();
-    $debug = "nombre inscrits: ".$nb;
+    $nb = $inscrits->count();
 
     foreach ($inscrits as $inscrit) {
-    $elevage = $inscrit->animal->elevage;
-    if ($elevage->role == 'Joueur') {
-    $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
-        if (!$frais ) {
-           
-            $inscrits->forget($inscrit->id);
-            // faut les sous pour y aller!
-        }
-    }   
-}
+        $elevage = $inscrit->animal->elevage;
+        if ($elevage->role == 'Joueur') {
+            $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
+            if (!$frais ) {
+                $inscrits->forget($inscrit->id);
+                // faut les sous pour y aller!
+            }
+        }   
+    }
 
     $prix = $competition->prix_premier;
   
@@ -200,76 +198,54 @@ public function run($competition, $evenement) {
         }
           
         $inscrit->note_synthese = $notes[$animal->id];
-        if ($inscrit->note_synthese >= 15 && $animal->StatutMale != NULL && $animal->StatutMale->qualite != 'approuvé') {
-        $animal->StatutMale->setModele15();
-        $animal->StatutMale->approuveEtalons();
+        if ($inscrit->note_synthese >= 15 &&    $animal->StatutMale != NULL && $animal->StatutMale->qualite != 'approuvé') {
+            $animal->StatutMale->setModele15();
+            $animal->StatutMale->approuveEtalons();
+        }
+
+        $inscrit->save();
     }
-
-    $inscrit->save();
-}
-
 
    arsort($notes, SORT_NUMERIC); //tri décroissant des valeurs
    $notes = array_slice($notes,0,$classes,true);//on garde les classés
   
-  
    $i =1;
    foreach ($notes as $key => $value) { //pour tous les classés
-    $res= Resultat::where('evenement_id',$evenement->id)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
-    //dd($res);//c'est ça
-    $res->classement = $i;
-    $res->save();
-    $animal = Animal::find($key);
-     if (($competition->niveau->libelle == 'national' || $competition->niveau->libelle == 'mondial') && $animal->StatutMale != NULL ) {
+        $res= Resultat::where('evenement_id',$evenement->id)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
+    
+        $res->classement = $i;
+        $res->save();
+        $animal = Animal::find($key);
+        if (($competition->niveau->libelle == 'national' || $competition->niveau->libelle == 'mondial') && $animal->StatutMale != NULL ) {
         
-        $animal->StatutMale->setClasseNat();
+            $animal->StatutMale->setClasseNat();
         
-        $animal->StatutMale->approuveEtalons();
-        if ($animal->StatutMale->qualite == 'approuvé'   && ($animal->race->poney_sport || $animal->race->cheval_sport)) {
-           $animal->StatutMale->setApprouvePFS(); 
-        }
-     }
-    $perf = $animal->Performance;
-    if ($value >= 12) {
-        if ($perf->niveau->id == 1) {
-            $perf->niveau->id = 2;
-            $perf->save();
-        }
-        
-            if ($i < 4 ) {
-
-            $perf->upgrade();
-            $perf->save();
-            }
-             if ($value >= 15) {
-                if ($perf->niveau->id == 2) {
-                $perf->niveau->id = 3;
-            
-                $perf->save();
-            
-                }      
+            $animal->StatutMale->approuveEtalons();
+            if ($animal->StatutMale->qualite == 'approuvé'   && ($animal->race->poney_sport || $animal->race->cheval_sport)) {
+                $animal->StatutMale->setApprouvePFS(); 
             }
         }
+        $perf = $animal->Performance;
+        if ($value >= 12) {
+            $perf->upgrade($i, $value, $competition->niveau->libelle); 
+            }
 
+        $elevage = Elevage::Find($animal->elevage_id);
     
-    $elevage = Elevage::Find($animal->elevage_id);
-    
-    if ($elevage->role == 'Joueur') {
-        if ($i == 1 ) {
+        if ($elevage->role == 'Joueur') {
+            if ($i == 1 ) {
        
-        $elevage->Budget()->gainsConcours($prix);
+            $elevage->Budget()->gainsConcours($prix);
         }
         else  {
        //prix_premier/$i);
-        $elevage->Budget()->gainsConcours((int) ($prix/$i));
+            $elevage->Budget()->gainsConcours((int) ($prix/$i));
         }
       
-}
+        }
     
-    $i++; } //animaux classés
-
-
-
+        $i++; 
+    } //animaux classés
 }  
 }
 
