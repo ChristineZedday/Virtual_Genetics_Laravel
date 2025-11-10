@@ -144,7 +144,7 @@ static function checkCarnets()
     })->get();
      foreach ($animaux as $animal) {
         $statut = $animal->StatutMale;
-        $statut->carnet_saillies = false;
+        $statut->carnet_saillies = true;
         $statut->save(); //faut redemander chaque année
     }
 }
