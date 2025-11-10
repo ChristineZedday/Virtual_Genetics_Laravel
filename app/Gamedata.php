@@ -137,6 +137,16 @@ static function checkCarnets()
         $statut->carnet_saillies = false;
         $statut->save(); //faut redemander chaque année
     }
+     $animaux = Animal::whereHas('StatutMale', function ($q) {
+        $q->where('qualite', 'approuvé')->where('carnet_saillies', 0);
+    })->whereHas('elevage', function ($qu) {
+        $qu->where('role', '==' , 'Vendeur');
+    })->get();
+     foreach ($animaux as $animal) {
+        $statut = $animal->StatutMale;
+        $statut->carnet_saillies = false;
+        $statut->save(); //faut redemander chaque année
+    }
 }
 
 static function checkNonEnregistres() 

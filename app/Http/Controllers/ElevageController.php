@@ -354,7 +354,7 @@ class ElevageController extends Controller
     public function choixEtalon ($id,$jument)
     {
         $elevage = Elevage::Find($id);
-        $budget = $elevage->Budget()->solde();
+        $budget = $elevage->role=='joueur'?$elevage->Budget()->solde():1000;
         
         $jument =Animal::Find($jument);
         
