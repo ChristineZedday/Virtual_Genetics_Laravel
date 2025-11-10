@@ -276,10 +276,11 @@ class ElevageController extends Controller
            $etalon->StatutMale->approuveEtalonsResultatsConcours();
            
         }
-      
-        $elevage->Budget()->fraisVeto(200);
+        if ($elevage->role != "vendeur") {
+        $elevage->Budget()->fraisVeto(60);
         $elevage->save();
         return redirect()->back();
+        }
     }
 
     public function carnetSaillies($elevage, $etalon) 
