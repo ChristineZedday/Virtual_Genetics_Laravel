@@ -198,11 +198,13 @@ public function run($competition, $evenement) {
         }
           
         $inscrit->note_synthese = $notes[$animal->id];
-        if ($inscrit->note_synthese >= 15 &&    $animal->StatutMale != NULL && $animal->StatutMale->qualite != 'approuvé') {
-            $animal->StatutMale->setModele15();
+        if ($inscrit->note_synthese >= 15 &&    $animal->StatutMale != NULL) {
+              $animal->StatutMale->setModele15();
+        if ($animal->StatutMale->qualite != 'approuvé') {
+          
             $animal->StatutMale->approuveEtalons();
         }
-
+    }
         $inscrit->save();
     }
 
