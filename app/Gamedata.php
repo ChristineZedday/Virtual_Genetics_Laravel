@@ -23,7 +23,7 @@ class Gamedata extends Model
         return  Gamedata::find(1)->date_debut;
     }
 
-    
+    //first letter of name for the current year
     static function checkLettre($date)
     {
         $lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'];
@@ -32,7 +32,7 @@ class Gamedata extends Model
     return $lettre;
 
     }
-
+//Season for reproduction (march to september)
     static function saison()
 {
     $date = Gamedata::date();
@@ -49,7 +49,7 @@ class Gamedata extends Model
     }
     return $saison;
 }
-
+//date of birth 11 months after conception
 static function ElevenMonths()
 {
     $date = Gamedata::date();
@@ -66,7 +66,7 @@ static function HowManyMonths($datefutur)
     return 12 * $diff->y + $diff->m;;
 
 }
-
+//birth of foals
 static function checkNouveaux($date)
 {
     $animaux = Animal::where('date_naissance', '<='  ,$date)->where('foetus',1)->get();
@@ -99,7 +99,7 @@ static function checkNouveaux($date)
     }
     
 }
-
+// weanlings when 6 months old
 static function checkSevres()
 {
     $animaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
@@ -125,6 +125,7 @@ static function checkSevres()
         }
     }
 }
+//Virtuals books for stallions
 static function checkCarnets()
 {
     $animaux = Animal::whereHas('StatutMale', function ($q) {
@@ -149,6 +150,7 @@ static function checkCarnets()
     }
 }
 
+//foals that where not registered during their first years become grades (Origine Non Constatée)
 static function checkNonEnregistres() 
 {//Pas enregistrés l'année de naissance, ONC
     $animaux = Animal::whereHas('elevage', function ($query) { $query->where('role','Joueur');})->where('foetus', 0)->where('statut_administratif', '!=', 'enregistré')->where('race_id', '!=', 17)->get();
@@ -161,7 +163,7 @@ static function checkNonEnregistres()
         }
     }
 }
-
+//animals of two years old (administratively, i.e. supposed to be born in january) can technically reproduce
 static function checkPuberes()
 {
     $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
@@ -209,7 +211,7 @@ static function checkPuberes()
             
     }
 }
-
+//old horses limitations of health and performances
 static function checkVieux ($date)
 {
     $cas = ['mâle', 'femelle', 'mâle stérilisé', 'femelle stérilisée'];  
@@ -264,7 +266,7 @@ static function checkVieux ($date)
 }
 
 
-
+//Sending to Ankou (Death) the horses (possibly during gestation or at birth) that have letal gens or those that died of age
   static function checkMorts()
 {
     $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal_foetus',1);})->get(); //avortés
