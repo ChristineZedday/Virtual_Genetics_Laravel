@@ -49,6 +49,20 @@ class Gamedata extends Model
     }
     return $saison;
 }
+
+static function beforeSeason() {
+     $date = Gamedata::date();
+    $mois = date('m',strtotime($date));
+    $before = $mois<=3 ? true : false;
+    return $before;
+}
+static function afterSeason() {
+     $date = Gamedata::date();
+    $mois = date('m',strtotime($date));
+    $after = $mois>=9 ? true : false;
+    return $after;
+}
+
 //date of birth 11 months after conception
 static function ElevenMonths()
 {
@@ -139,7 +153,7 @@ static function checkCarnets()
         $statut->save(); //faut redemander chaque année
     }
      $animaux = Animal::whereHas('StatutMale', function ($q) {
-        $q->where('qualite', 'approuvé')->where('carnet_saillies', 0);
+        $q->where('qualite', 'approuvé')->orWhere('qualite', 'approbation provisoire cette année')->where('carnet_saillies', 0);
     })->whereHas('elevage', function ($qu) {
         $qu->where('role', '==' , 'Vendeur');
     })->get();
@@ -181,13 +195,12 @@ static function checkPuberes()
             {
                 $animal->statut_administratif = 'enregistré';
                 $animal->save();
+                if ($animal->ageAdministratif(date()) >= $animal->race->age_approbation_male) {
                 $statut->setAutorisationSanitaire();
                 $statut->approuveEtalons();
+                }
             }   
-            if ('approuvé' == $statut->qualite || 'approbation provisoire cette année' == $statut->qualite ) {
-                $statut->carnet_saillies = true;
-               
-            }
+           
             $statut->save();
          } 
             
@@ -209,6 +222,28 @@ static function checkPuberes()
          $statut->save();
         }
             
+    }
+}
+
+static function checkApprovals () {
+    $animaux = Animaux::whereHas('statuts_male', function ($q) {$q->where('qualite', '!=', 'approuvé')->orWhere('qualite', '!=', 'refusé')->orWhere('qualite', '!=', 'ajourné');})->get();
+    foreach ($animaux as $animal) {
+        switch (true) {
+            case $animal->StatutMale->qualite = 'approuvé an prochain':
+               $animal->statutMale->setApproval(); 
+               break;
+            case $animal->StatutMale->qualite = 'approbation provisoire an prochain':
+                $animal->statutMale->setProvisoire(); 
+               break;
+               case $animal->StatutMale->qualite = 'approbation provisoire cette année':
+                $animal->statutMale->setModele15(false); 
+                 $animal->statutMale->setClasseNat(false);
+                   $animal->statutMale->setApproval(false);
+                   //il doit se requalifier
+               break;
+               
+        }
+
     }
 }
 //old horses limitations of health and performances
