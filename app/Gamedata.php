@@ -195,7 +195,7 @@ static function checkPuberes()
             {
                 $animal->statut_administratif = 'enregistré';
                 $animal->save();
-                if ($animal->ageAdministratif(date()) >= $animal->race->age_approbation_male) {
+                if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
                 $statut->setAutorisationSanitaire();
                 $statut->approuveEtalons();
                 }
@@ -226,7 +226,7 @@ static function checkPuberes()
 }
 
 static function checkApprovals () {
-    $animaux = Animaux::whereHas('statuts_male', function ($q) {$q->where('qualite', '!=', 'approuvé')->orWhere('qualite', '!=', 'refusé')->orWhere('qualite', '!=', 'ajourné');})->get();
+    $animaux = Animal::whereHas('statuts_male', function ($q) {$q->where('qualite', '!=', 'approuvé')->orWhere('qualite', '!=', 'refusé')->orWhere('qualite', '!=', 'ajourné');})->get();
     foreach ($animaux as $animal) {
         switch (true) {
             case $animal->StatutMale->qualite = 'approuvé an prochain':
