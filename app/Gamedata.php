@@ -228,7 +228,7 @@ static function checkPuberes()
 }
 
 static function checkApprovals () {
-    $animaux = Animal::whereHas('statutMale', function ($q) {$q->where('qualite', '!=', 'approuvé')->andWhere('qualite', '!=', 'refusé')->andWhere('qualite', '!=', 'ajourné');})->get();
+    $animaux = Animal::whereHas('statutMale', function ($q) {$q->where('qualite', '!=', 'approuvé')->where('qualite', '!=', 'refusé')->where('qualite', '!=', 'ajourné');})->get();
     foreach ($animaux as $animal) {
         switch (true) {
             case $animal->StatutMale->qualite = 'approuvé an prochain':
