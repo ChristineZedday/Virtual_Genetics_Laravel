@@ -116,7 +116,7 @@
 
 				<div>
 					@isset($animal->StatutMale)
-						@if ($animal->StatutMale->qualite == 'entier'  && $animal->statut_administratif == 'enregistré' && $animal->elevage_id == $elevage->id && )
+						@if ($animal->StatutMale->qualite == 'entier'  && $animal->statut_administratif == 'enregistré' && $animal->elevage_id == $elevage->id )
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
 						<button>  Contrôle vétérinaire d'aptitude à la reproduction (prix 200 euros)</button>
 						</a>
@@ -136,7 +136,7 @@
 
 				<div>
 				@isset($animal->StatutMale)
-						@if ( ($animal->StatutMale->qualite == 'approuvé' || $animal->StatutMale->qualite == 'approbation provisoire') && $animal->elevage_id == $elevage->id  && ! $animal->StatutMale->disponible )
+						@if ( ($animal->StatutMale->qualite == 'approuvé' || $animal->StatutMale->qualite == 'approbation provisoire cette année') && $animal->elevage_id == $elevage->id  && ! $animal->StatutMale->disponible )
 						<a href="{{route('monte',[$elevage->id,$animal->id])}}">
 						<button>  Proposer à la monte</button>
 						</a>
