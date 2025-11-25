@@ -198,6 +198,8 @@ static function checkPuberes()
                 if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
                 $statut->setAutorisationSanitaire();
                 $statut->approuveEtalons();
+                if ($statut->qualite == 'approuvé' || $statut->qualite == 'approbation provisoire cette année')
+                {$statut->carnet_saillies = true;}
                 }
             }   
            
