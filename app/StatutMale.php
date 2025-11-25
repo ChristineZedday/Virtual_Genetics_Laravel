@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Animal;
 use App\Performance;
+use App\Gamedata;
 
 class StatutMale extends Model
 {
@@ -13,6 +14,16 @@ class StatutMale extends Model
     public function male ()
     {
         return  $this->belongsTo('App\Animal', 'animal_id');
+    }
+
+    public function setApproval($bool = true) {
+        $this->qualite = $bool? "approuvé" : "ajourné";
+        $this->save();
+    }
+
+     public function setProvisoire() {
+        $this->qualite ="approbation provisoire cette année";
+        $this->save();
     }
 
      public function setAutorisationSanitaire ()
@@ -39,9 +50,9 @@ class StatutMale extends Model
         $this->save();
     }
 
-    public function setModele15 ()
+    public function setModele15 ($bool = true)
     {
-        $this->modele15 = true;
+        $this->modele15 = $bool? true :false;
         $this->save();
     }
 
@@ -51,14 +62,15 @@ class StatutMale extends Model
         return true;
     }
 
-    public function setClasseNat ()
+    public function setClasseNat ($bool = true)
     {
-        $this->classeNat = true;
+        $this->classeNat = $bool? true :false;
         $this->save();
     }
 
     public function approuveEtalons () {
       $date = Gamedata::date();
+      $after = Gamedata::afterSeason();
        $mini = Race::where('nom', 'Miniature')->first();
         
       switch (true) {
@@ -76,7 +88,7 @@ class StatutMale extends Model
             {
                 $this->setApprouvePFS();}
             break;
-        case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
+       case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite = 'approuvé an prochain';
             break;
         //Maintenant on est dans les cas où l'obtention d'une note de 15 en concours de Modle et Allures est nécessaire:
@@ -90,10 +102,10 @@ class StatutMale extends Model
             break;
 
         case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
-            $this->qualite ='approbation provisoire cette année';
+            $this->qualite = $after? 'approuvé an prochain' :'approbation provisoire cette année';
             //races où l'approbation n'est d'abord accordée que pour un an en dessous de 4 ans
             break;
-         case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
+        case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite ='approbation provisoire an prochain';
             //races où l'approbation n'est d'abord accordée que pour un an en dessous de 4 ans
             break;
@@ -110,7 +122,7 @@ class StatutMale extends Model
             $this->qualite ='approbation provisoire an prochain';
             break;
         default:
-         $this->qualite ='approbation provisoire cette année'; 
+         $this->qualite = $after? 'approbation provisoire an prochain' : 'approbation provisoire cette année'; 
 
         }
        $this->save();
