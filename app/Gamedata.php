@@ -397,7 +397,7 @@ static function checkVieux ($date)
             
     }
 }
-static function checkApproProvisoire() {
+/*static function checkApproProvisoire() {
     $males = StatutMale::where('qualite' , 'approbation provisoire cette année')->get();
     foreach ($males as $male) {
         $male->qualite = 'autorisation sanitaire';
@@ -415,7 +415,7 @@ static function checkApproProvisoire() {
         $male->save();
 
     }
-}  
+}  */
 
 static function checkApproConcours() {
     $males = StatutMale::whereHas('elevage', function($q) {$q->where('role', 'vendeur');})->where('qualite' , 'approuvé')->andWhere('modele15' , TRUE)->get();

@@ -76,7 +76,7 @@ class TempsController extends Controller
 
             Gamedata::checkPuberes();
             Gamedata::retireVente();
-            Gamedata::checkApproProvisoire();
+            Gamedata::checkApprovals();
             Gamedata::checkVieux ($date);
             Gamedata::checkCarnets();
             Gamedata::checkNonEnregistres();
