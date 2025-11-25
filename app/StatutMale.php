@@ -91,7 +91,7 @@ class StatutMale extends Model
        case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite = 'approuvé an prochain';
             break;
-        //Maintenant on est dans les cas où l'obtention d'une note de 15 en concours de Modle et Allures est nécessaire:
+        //Maintenant on est dans les cas où l'obtention d'une note de 15 en concours de Modèle et Allures est nécessaire:
         case !$this->modele15:
             $this->qualite ='ajourné';
             break;
@@ -124,6 +124,9 @@ class StatutMale extends Model
         default:
          $this->qualite = $after? 'approbation provisoire an prochain' : 'approbation provisoire cette année'; 
 
+        }
+        if ($this->male->elevage->role == 'vendeur') {
+            $this->carnet_saillies = true;
         }
        $this->save();
       }
