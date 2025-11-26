@@ -233,9 +233,15 @@ static function checkApprovals () {
         switch (true) {
             case $animal->StatutMale->qualite == 'approuvé an prochain':
                $animal->statutMale->setApproval(); 
+               if ($animal->elevage->role == 'vendeur') {
+                $animal->statutMale->carnet_saillies = true;
+               }
                break;
             case $animal->StatutMale->qualite == 'approbation provisoire an prochain':
                 $animal->statutMale->setProvisoire(); 
+                 if ($animal->elevage->role == 'vendeur') {
+                $animal->statutMale->carnet_saillies = true;
+               }
                break;
             case $animal->StatutMale->qualite == 'approbation provisoire cette année':
                 $animal->statutMale->setModele15(false); 
