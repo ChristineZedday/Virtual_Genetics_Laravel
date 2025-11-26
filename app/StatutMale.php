@@ -18,12 +18,12 @@ class StatutMale extends Model
 
     public function setApproval($bool = true) {
         $this->qualite = $bool? "approuvé" : "ajourné";
-           if ($animal->elevage->role == 'vendeur' && $bool) {
-                $animal->statutMale->setCarnetSaillies();
+           if ($this->male->elevage->role == 'vendeur' && $bool) {
+                $this->setCarnetSaillies();
                }
             else 
-                 if ($animal->elevage->role == 'vendeur' && !$bool) {
-                $animal->statutMale->setCarnetSaillies(false);
+                 if ($this->male->elevage->role == 'vendeur' && !$bool) {
+                $this->setCarnetSaillies(false);
                }
         $this->save();
     }
@@ -98,7 +98,7 @@ class StatutMale extends Model
         case !$this->male->race->approbation && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
             $this->qualite = 'approuvé';
               if ($this->male->elevage->role == 'vendeur') {
-            $this->carnet_saillies = true;}
+            $this->setCarnetSaillies();}
             // Si les étalons sont approuvés automatiquement dans la race
             if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             {
