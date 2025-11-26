@@ -149,8 +149,8 @@ static function checkCarnets()
     })->get();
     foreach ($animaux as $animal) {
         $statut = $animal->StatutMale;
-        $statut->carnet_saillies = false;
-        $statut->save(); //faut redemander chaque année
+        $statut->setCarnetSaillies(false);
+         //faut redemander chaque année
     }
      $animaux = Animal::whereHas('StatutMale', function ($q) {
         $q->where('qualite', 'approuvé')->orWhere('qualite', 'approbation provisoire cette année')->where('carnet_saillies', 0);
@@ -159,8 +159,7 @@ static function checkCarnets()
     })->get();
      foreach ($animaux as $animal) {
         $statut = $animal->StatutMale;
-        $statut->carnet_saillies = true;
-        $statut->save(); //faut redemander chaque année
+      $statut->setCarnetSaillies(true); 
     }
 }
 

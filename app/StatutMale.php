@@ -20,23 +20,22 @@ class StatutMale extends Model
         if ($bool) {
            $this->qualite =  'approuvé' ;
            if ($this->male->elevage->role == 'vendeur')
-            {
-                
+            {     
                 $this->setCarnetSaillies();
                }
         }
-          
             else {
+                $this->qualite =  'ajourné' ;
                 $this->setCarnetSaillies(false);
                }
         $this->save();
     }
+ 
 
      public function setProvisoire() {
         $this->qualite ="approbation provisoire cette année";
             if ($this->male->elevage->role == 'vendeur')
             {
-                 
                 $this->setCarnetSaillies();
                }
         $this->save();
