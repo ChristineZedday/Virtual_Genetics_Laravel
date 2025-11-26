@@ -17,12 +17,16 @@ class StatutMale extends Model
     }
 
     public function setApproval($bool = true) {
-        $this->qualite = $bool? "approuvé" : "ajourné";
-           if ($this->male->elevage->role == 'vendeur' && $bool) {
+        if ($bool) {
+           $this->qualite =  'approuvé' ;
+           if ($this->male->elevage->role == 'vendeur')
+            {
+                
                 $this->setCarnetSaillies();
                }
-            else 
-                 if ($this->male->elevage->role == 'vendeur' && !$bool) {
+        }
+          
+            else {
                 $this->setCarnetSaillies(false);
                }
         $this->save();
@@ -30,8 +34,10 @@ class StatutMale extends Model
 
      public function setProvisoire() {
         $this->qualite ="approbation provisoire cette année";
-            if ($animal->elevage->role == 'vendeur') {
-                $animal->statutMale->setCarnetSaillies();
+            if ($this->male->elevage->role == 'vendeur')
+            {
+                 
+                $this->setCarnetSaillies();
                }
         $this->save();
     }
