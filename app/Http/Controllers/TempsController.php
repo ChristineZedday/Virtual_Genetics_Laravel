@@ -74,9 +74,9 @@ class TempsController extends Controller
             $game->lettre = Gamedata::checkLettre($date);
             $game->save();
 
+            Gamedata::checkApprovals();
             Gamedata::checkPuberes();
             Gamedata::retireVente();
-            Gamedata::checkApprovals();
             Gamedata::checkVieux ($date);
             Gamedata::checkCarnets();
             Gamedata::checkNonEnregistres();
