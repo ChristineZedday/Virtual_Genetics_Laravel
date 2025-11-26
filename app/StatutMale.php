@@ -80,9 +80,14 @@ class StatutMale extends Model
         case $this->male->race == $mini:
              if ($this->male->taille_cm <= $mini->taille_max) {
                 $this->qualite = 'approuvé';
+                  if ($this->male->elevage->role == 'vendeur') {
+            $this->carnet_saillies = true;}
              }
+             break;
         case !$this->male->race->approbation && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
             $this->qualite = 'approuvé';
+              if ($this->male->elevage->role == 'vendeur') {
+            $this->carnet_saillies = true;}
             // Si les étalons sont approuvés automatiquement dans la race
             if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             {
@@ -97,12 +102,15 @@ class StatutMale extends Model
             break;
         case $this->male->ageAdministratif($date) >= 4 && !$this->male->race->classeNat :
              $this->qualite ='approuvé';
+               if ($this->male->elevage->role == 'vendeur') {
+            $this->carnet_saillies = true;}
                if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             { $this->setApprouvePFS();}
             break;
 
         case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
-            $this->qualite = $after? 'approuvé an prochain' :'approbation provisoire cette année';
+            if ($after) {$this->qualite =  'approuvé an prochain';}
+             else {$this->qualite = 'approbation provisoire cette année';}
             //races où l'approbation n'est d'abord accordée que pour un an en dessous de 4 ans
             break;
         case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
@@ -115,6 +123,8 @@ class StatutMale extends Model
             break;
         case $this->male->ageAdministratif($date) >=4:
              $this->qualite ='approuvé';
+               if ($this->male->elevage->role == 'vendeur') {
+            $this->carnet_saillies = true;}
                if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             { $this->setApprouvePFS();}
             break;
@@ -125,9 +135,7 @@ class StatutMale extends Model
          $this->qualite = $after? 'approbation provisoire an prochain' : 'approbation provisoire cette année'; 
 
         }
-        if ($this->male->elevage->role == 'vendeur') {
-            $this->carnet_saillies = true;
-        }
+      
        $this->save();
       }
     
