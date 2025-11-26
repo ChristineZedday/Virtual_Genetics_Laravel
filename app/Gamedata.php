@@ -231,16 +231,16 @@ static function checkApprovals () {
     $animaux = Animal::whereHas('statutMale', function ($q) {$q->where('qualite', '!=', 'approuvé')->where('qualite', '!=', 'refusé')->where('qualite', '!=', 'ajourné');})->get();
     foreach ($animaux as $animal) {
         switch (true) {
-            case $animal->StatutMale->qualite = 'approuvé an prochain':
+            case $animal->StatutMale->qualite == 'approuvé an prochain':
                $animal->statutMale->setApproval(); 
                break;
-            case $animal->StatutMale->qualite = 'approbation provisoire an prochain':
+            case $animal->StatutMale->qualite == 'approbation provisoire an prochain':
                 $animal->statutMale->setProvisoire(); 
                break;
-               case $animal->StatutMale->qualite = 'approbation provisoire cette année':
+            case $animal->StatutMale->qualite == 'approbation provisoire cette année':
                 $animal->statutMale->setModele15(false); 
-                 $animal->statutMale->setClasseNat(false);
-                   $animal->statutMale->setApproval(false);
+                $animal->statutMale->setClasseNat(false);
+                $animal->statutMale->setApproval(false);
                    //il doit se requalifier
                break;
                
