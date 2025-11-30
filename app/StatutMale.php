@@ -149,6 +149,9 @@ class StatutMale extends Model
         case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite ='approbation provisoire an prochain';
             break;
+        case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) >= $this->male->race->age_repro_male && $after:
+            $this->qualite ='approuvé an prochain';
+            break;
         default:
          $this->qualite =  'approbation provisoire cette année'; 
         $this->setCarnetSaillies();
