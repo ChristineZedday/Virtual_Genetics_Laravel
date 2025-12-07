@@ -19,20 +19,20 @@ class GamedataTest extends TestCase
     {
         {
             $date = "1984-07-01";
-            $this->assertEquals('S', GameData::checkLettre($date));
+            $this->assertEquals('S', Gamedata::checkLettre($date));
          }
     }
 
     public function testSaisonFertile()
     {
         $date = GamedataTest::CreateGamedata();
-        $this->assertEquals(true, GameData::saison());
+        $this->assertEquals(true, Gamedata::saison());
     }
 
     public function testSaisonNonFertile()
     {
         $date = GamedataTest::CreateGamedata('1975-01-01');
-        $this->assertEquals(false, GameData::saison());
+        $this->assertEquals(false, Gamedata::saison());
     }
 
     public function testElevenMonths() 
@@ -55,9 +55,9 @@ class GamedataTest extends TestCase
         $this->assertEquals(15, Gamedata::HowManyMonths($futur));
     }
 
-    static function createGameData($date = '1970-05-10') 
+    static function createGamedata($date = '1970-05-10') 
     {
-       $gamedata = New GameData;
+       $gamedata = New Gamedata;
        $gamedata->date_debut = "1970-02-01";
        $gamedata->date_courante = $date;
        $gamedata->budget = 20000;

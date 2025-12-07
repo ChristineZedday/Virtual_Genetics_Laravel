@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\elevages;
-use App\GameData;
+use App\Gamedata;
 use App\Budget;
 use App\Debug;
 

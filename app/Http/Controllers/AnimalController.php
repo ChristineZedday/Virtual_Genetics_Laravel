@@ -20,16 +20,7 @@ use phpDocumentor\Reflection\Types\Nullable;
 
 class AnimalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -197,19 +188,26 @@ class AnimalController extends Controller
             $animal->fill($validated);
 
             if ($animal->save()) {
-                $request->session()->flash('status',"animal modifiée avec succès");
+                $request->session()->flash('status',"animal modifié avec succès");
                 $request->session()->flash('alert-class',"alert-success");
-                return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal]);
+               
             }
+            else {
+                 $request->session()->flash('status',"animal n'a pu être modifié");
+                $request->session()->flash('alert-class',"alert-error");
+
+            }
+             return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal]);
+            
     }
 
-    /**
+ /*  /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+  /*  public function destroy($id)
     {
         $animal = Animal::find($id);
         $genotypes = $animal->Genotypes();
@@ -223,7 +221,7 @@ class AnimalController extends Controller
             //detach les imeges du poney
         }
 
-    }
+    }*/
 
     /**
      * Putting animal for sale: display form.
@@ -240,6 +238,7 @@ class AnimalController extends Controller
         {
             return view('vendreAnimal',['elevage'=>$elevage,'animal'=>$animal]);
         }
+        else { return redirect()->back();}
     }
 
      /**
@@ -264,6 +263,11 @@ class AnimalController extends Controller
             $request->session()->flash('alert-class',"alert-success");
             return redirect()->route('animaux',[$animal->elevage_id, 'vente']);
         }
+        else {
+             $request->session()->flash('status',"animal n'a pu être proposé à la vente");
+                $request->session()->flash('alert-class',"alert-error");
+                 return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal]);
+        }
     }
 
      /**
@@ -281,6 +285,11 @@ class AnimalController extends Controller
        {
         
            return redirect()->route('animaux',[$animal->elevage_id,'tous']);
+       }
+       else {
+         
+                 return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal])->with('alert', 'oups, ça ne marche pas');
+
        }
     }
 
@@ -315,6 +324,9 @@ class AnimalController extends Controller
             if ($animal->save())
             {
                 return redirect()->back();
+            }
+            else {
+                return redirect()->back()->with('alert', 'oups, ça ne marche pas');
             }
         }
         else {
@@ -543,6 +555,7 @@ class AnimalController extends Controller
 public function registrationStudBook(Request $request, $animal) 
 {
     $animal = Animal::Find($animal);
+    $elevage =$animal->elevage;
         
     $validated = $request->validate([ 
     'race'=>'integer']); 

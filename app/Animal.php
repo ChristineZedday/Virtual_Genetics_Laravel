@@ -7,7 +7,7 @@ use Orangehill\IseedServiceProvider\animaux;
 use App\Http\Controllers\ReproductionController;
 use App\Affixe;
 use DateTime;
-use App\GameData;
+use App\Gamedata;
 use App\Race;
 
 /** class Animal (table animaux)
@@ -417,7 +417,7 @@ public function seraSuiteeAu($date)   {
         $foal = Animal::where('dam_id',$id)->where('sexe', 'LIKE','jeune poul%')->first();
        
         $age = $foal->ageMonths();
-        $months = GameData::HowManyMonths($date);
+        $months = Gamedata::HowManyMonths($date);
         if ($age + $months > 6) {
            //dd('poulain sevré');
             return false;
