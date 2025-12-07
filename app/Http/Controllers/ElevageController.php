@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\checkElevage;
 use Illuminate\Support\Facades\DB;
 use App\Elevage;
@@ -113,39 +113,39 @@ class ElevageController extends Controller
 
     
 
-    /**
+ /*   /**
      * Show the form for editing stud name or affixe (v2).
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+ /*   public function edit($id)
     {
         //
-    }
+    }*/
 
-    /**
+  /*  /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+   /* public function update(Request $request, $id)
     {
         //
-    }
+    }*/
 
-    /**
+ /*   /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+  /*  public function destroy($id)
     {
         //
-    }
+    }*/
 
     /**
      * Show list of animals for this stud, with filters (age, sex...)
@@ -394,7 +394,7 @@ class ElevageController extends Controller
     }
     public function chercheTerres ($id)
     {
-        $game = GameData::Find(1);
+        $game = Gamedata::Find(1);
         
         if ($game->terres == false)
         {          
