@@ -10,7 +10,7 @@ class Genotype extends Model
     public function Locus()
     {
 
-        return $this->hasOne('App\locus', 'id', 'locus_id');
+        return $this->hasOne('App\Locus', 'id', 'locus_id');
     }
 
     public function Animal()
