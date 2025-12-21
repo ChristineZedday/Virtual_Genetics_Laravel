@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('performances', function (Blueprint $table) {
-            $table->tinyInteger('niveau_dressage')->default(1);
-            $table->tinyInteger('pourcent_niveau')->default(0);
-    
+        Schema::create('races_possibles', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->foreignId('animal_id')->constrained('animaux');
+            $table->foreignId('race_id')->constrained();
         });
     }
 
@@ -27,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('performances', function (Blueprint $table) {
-            $table->dropColumn('niveau_dressage');
-        });
+        Schema::dropIfExists('races_possibles');
     }
 };

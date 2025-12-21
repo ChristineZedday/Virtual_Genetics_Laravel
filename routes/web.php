@@ -47,6 +47,9 @@ Route::get('/dashboard/{id}', 'ElevageController@index')->name('dashboard');
 
 Route::get('/budget/{elevage}', 'ElevageController@budget')->name('budget');
 
+Route::get('/studbooks/{elevage}', 'ElevageController@studbooks')->name('studbooks');
+
+
 Route::get('/agricole/{elevage}', 'ElevageController@donneesAgricoles')->name('agricole');
 
 Route::get('/agrandir/{elevage}', 'ElevageController@chercheTerres')->name('agrandir');
@@ -81,13 +84,17 @@ Route::get('/reproduction/jument/{elevage}', 'ElevageController@faireSaillir')->
 
 Route::get('/reproduction/etalons/{elevage}/{jument}', 'ElevageController@choixEtalon')->name('saillir');
 
-Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}', 'AnimalController@confirmeEtalon')->name('etalon')->middleware('confirme');
+Route::get('/reproduction/etalon/{elevage}/{etalon}/{jument}/', 'AnimalController@confirmeEtalon')->name('etalon')->middleware('confirme');
 
-Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}', 'ReproductionController@croisement')->name('croisement');
+Route::get('/reproduction/croisement/{elevage}/{etalon}/{jument}/{declaree}', 'ReproductionController@croisement')->name('croisement');
 
 Route::get('/reproduction/consang/{elevage}/{etalon}/{jument}', 'ReproductionController@devoileConsang')->name('consang');
 
 Route::get('/reproduction/etalon/{elevage}/{etalon}', 'ElevageController@commissionEtalons')->name('commission');
+
+Route::get('/etalon/carnet/{elevage}/{etalon}', 'ElevageController@carnetSaillies')->name('carnet');
+
+Route::get('/etalon/approbation/{elevage}/{etalon}', 'ElevageController@approbationCompetition')->name('approConcours');
 
 Route::get('/reproduction/monte/{elevage}/{etalon}', 'ElevageController@proposerMonte')->name('monte');
 
@@ -98,6 +105,12 @@ Route::put('/reproduction/montepublique/{elevage}', 'ElevageController@montePubl
 //routes enregistrement 
 
 Route::get('/enregistrement/{animal}', 'AnimalController@enregistrer')->name('enregistrement');
+
+Route::get('/studbook/{animal}', 'AnimalController@enregistrerStudBook')->name('studbook');
+
+Route::put('/enregistrement_studbook/{animal}', 'AnimalController@registrationStudBook')->name('regSB');
+
+Route::get('/signalement/{animal}', 'AnimalController@signalementIdentification')->name('signalement');
 
 Route::put('/registration/{animal}', 'AnimalController@registration')->name('registration');
 
@@ -117,7 +130,11 @@ Route::get('/tous_resultats/{elevage}/{type}', 'CompetitionController@tousResult
 
 Route::get('/inscrits/{elevage}/{type}', 'CompetitionController@inscrits')->name('inscrits');
 
+Route::get('/dressage/{elevage}/{evenement}/{competition}/{reprise}', 'CompetitionController@inscrireDressage')->name('inscrire_dressage');
+
 Route::get('/competitions/{elevage}/{evenement}/{competition}', 'CompetitionController@inscrire')->name('inscrire');
+
+Route::get('/chevaux/dressage/{elevage}', 'CompetitionController@chevauxDressage')->name('chevauxdressage');
 
 Route::post('/inscription/{evenement}/{competition}', 'CompetitionController@inscription')->name('inscription');
 

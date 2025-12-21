@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -1959,6 +1960,22 @@ class CouleurImageTableSeeder extends Seeder
                 'id' => 289,
                 'couleur_id' => 182,
                 'image_id' => 167,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            243 => 
+            array (
+                'id' => 290,
+                'couleur_id' => 66,
+                'image_id' => 173,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            244 => 
+            array (
+                'id' => 291,
+                'couleur_id' => 67,
+                'image_id' => 174,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

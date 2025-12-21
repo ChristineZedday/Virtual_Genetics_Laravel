@@ -20,7 +20,6 @@ class CreateCompetitionsTable extends Migration
             $table->enum('type', ['Modèle et Allures', 'Dressage'])->default('Modèle et Allures');
             $table->tinyInteger('niveau_id')->unsigned();
             $table->mediumInteger('prix_inscription');
-            $table->mediumInteger('frais_voyage');
             $table->mediumInteger('prix_premier');
             $table->foreign('niveau_id')->references('id')->on('niveaux');
         });

@@ -23,7 +23,7 @@ class CreateAssoRaceTable extends Migration
             $table->boolean('automatique')->default(FALSE);
             $table->string('commentaire')->nullable();
            $table->boolean('approbation')->default(FALSE);
-           $table->tinyInteger('pourCentArabe')->nullable();
+           $table->float('pourCentArabe')->nullable();
            $table->float('pourCentWelsh')->nullable();
             $table->foreign('race_pere_id')->references('id')->on('races');
             $table->foreign('race_mere_id')->references('id')->on('races');

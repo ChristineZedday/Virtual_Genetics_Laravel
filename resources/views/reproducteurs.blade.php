@@ -37,13 +37,22 @@ $date = \App\Gamedata::date();
 ?>
 @if ($jument->StatutFemelle->date_saillie != $date)
 <div id='boutons'>
-<a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id])}}">
-			<button>Confirmer le croisement</button></a>
+	@if ($etalon->elevage_id == $elevage->id)
+	@if ($etalon->StatutMale->carnet_saillies)
+<a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id, 1])}}">
+			<button>Confirmer le croisement avec déclaration de saillie </button></a>
+	@endif
+<a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id, 0])}}">
+<button>Confirmer le croisement sans déclaration de saillie </button></a>
+@else 
+<a href="{{route('croisement',[$elevage->id,$etalon->id,$jument->id, 1])}}">
+			<button>Confirmer le croisement (saillie déclarée par l'étalonnier)</button></a>
+@endif
 <a href="{{route('saillir',[$elevage->id,$jument->id])}}">
 			<button>Changer d'étalon</button></a>
-<input type="hidden" id="budget" value="{{$elevage->budget}}" />
+			@if ($elevage->role == 'Joueur')<input type="hidden" id="budget" value="{{$elevage->Budget()->solde()}}" />@endif
 <input type="hidden" id ="route" value ="{{route('consang',[$elevage->id,$etalon->id,$jument->id])}}"/>
-			<button onclick="checkBudget()">Connaître la consanguinité (10 achetoires)</button>
+			<button onclick="checkBudget()">Connaître la consanguinité (10 euros)</button>
 <p id="consang"> {{session ('message')}}</p>
 			</div>
 			@endif

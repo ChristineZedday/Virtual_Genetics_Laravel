@@ -1,6 +1,9 @@
 @extends('layouts.elevageDashboard')
 @section('content')
-
+<div><h3>Avertissement</h3>
+<p>Votre liste de juments et d'étalons présente tous vos animaux biologiquement en âge de se reproduire, néanmoins pour avoir des poulains "pleins papiers" il y a des conditions à respecter:<br/>
+	 L'étalon doit être approuvé, ce qui selon les races est automatique dès lors qu'il a passé le contrôle vétérinaire, ou peut nécessiter l'obtention d'une certaine note en coucours de Modèle et Allures ou même être classé en niveau régional ou national, et dans certaines races l'étalon doit avoir un minimum de 3 ans dans l'année même s'il est approuvé à deux ans.<br/>
+	La jument doit avoir deux ans dans l'année ou trois ans dans certaines races. Consultez les règlements!</p></div>
 <div class='animaux'>
 <h3>Jument à faire saillir:</h3>
 <p class='nom'>{{$jument->NomComplet()}}</p>

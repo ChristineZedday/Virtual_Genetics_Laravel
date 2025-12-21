@@ -4,16 +4,21 @@
 	<div id='rensa'>
 		<div class='texte'>
 			<h1 class='nom'>{{$animal->NomComplet()}}</h1>
-				<h3>{{$animal->Race->nom}}</h3>
+			@isset ($animal->Race)<h3>{{$animal->Race->nom}}</h3>@endisset
 				<p>@if ($animal->elevage_id != $elevage->id) Propriétaire: {{$animal->Elevage->nom_eleveur}} @endif</p>
 				<p>{{ $animal->Sexe() }}</p>
 				@isset($animal->couleur)
 					<p>{{ $animal->couleur }}</p>
-				@else
-				@if ($elevage == $animal->elevage)
-				<a href="{{route('enregistrement',[$animal->id])}}"><button>Enregistrer</button></a>
-				@endif
+				@elseif ($animal->elevage_id == $elevage->id)
+				
+				
+				<a href="{{route('enregistrement',[$animal->id])}}"><button>Déclaration</button></a>
+				<p>Gratuite pour les animaux achetés. Pour les poulains dans leurs premier mois, gratuit pour les OC, 50 euros de frais d'enregistrement dans le stud-book de la race en sus pour les pure race, 50 euros de pénalités supplémentaires après un mois, poulain ONC si pas enregistré dans l'année.</p>
 				@endisset
+				@if ($animal->statut_administratif == 'déclaré')
+				<a href="{{route('signalement',[$animal->id])}}"><button>Signalement et identification (puce)</button></a>
+				<p>60 euros, poulain ONC si pas effectué dans l'année.</p>
+				@endif
 				<p>
 					@if (Auth::user()->name == 'admin')
 				<?php 
@@ -42,7 +47,7 @@
 					@endisset
 				</p> 
 				<p>né le: {{$animal->date_naissance}}</p>
-				<p>Taux de consanguinité: {{$animal->consang}}</p>
+				<p>@if (! $animal->race_id == 17) Taux de consanguinité: {{$animal->consang}}@endif</p>
 					
 		</div>
 	
@@ -92,7 +97,7 @@
 				<div id='sterilisation'>
 				@if ($animal->elevage_id == $elevage->id )
 					<input type="hidden" id ="sexe" value ="{{$animal->sexe}}">
-					<input type="hidden" id ="budget" value ="{{$elevage->budget}}">
+					@if ($elevage->role == 'Joueur')<input type="hidden" id ="budget" value ="{{$elevage->Budget()->solde()}}">@endif
 					
 					<input type="hidden" id ="vide" @isset ($animal->Statut) value ="{{$animal->Statut->vide}}"  @else value="1" @endisset >
 					
@@ -102,12 +107,28 @@
 				Stériliser</button>
 				@endif
 				</div>	
+				<div>
+					@if ($animal->statut_administratif == 'enregistré' && $animal->race_id == 1 &&$animal->RacesPossibles != null)
+					<a href="{{route('studbook',[$elevage->id,$animal->id])}}">
+					<button>Enregistrer dans un stud-book</button></a>
+					@endif
+				</div>
 
 				<div>
 					@isset($animal->StatutMale)
-						@if ($animal->StatutMale->qualite == 'non autorisé' && $animal->race_id != 1 && $animal->elevage_id == $elevage->id)
+						@if ($animal->StatutMale->qualite == 'entier'  && $animal->statut_administratif == 'enregistré' && $animal->elevage_id == $elevage->id )
 						<a href="{{route('commission',[$elevage->id,$animal->id])}}">
-						<button>  Présenter à la commission étalons</button>
+						<button>  Contrôle vétérinaire d'aptitude à la reproduction (prix 200 euros)</button>
+						</a>
+						@endif
+						@if (($animal->StatutMale->qualite == 'approuvé' || $animal->StatutMale->qualite == 'approbation provisoire') && $animal->elevage_id == $elevage->id && ! $animal->StatutMale->carnet_saillies)
+						<a href="{{route('carnet',[$elevage->id,$animal->id])}}">
+						<button>  Obtenir un carnet de saillie pour l'année en cours (60 euros)</button>
+						</a>
+						@endif
+						@if ($animal->StatutMale->qualite == 'approuvé' && ($animal->race->poney_sport || $animal->race->cheval_sport) &&!$animal->StatutMale->approuvePFS &&  $animal->elevage_id == $elevage->id )
+						<a href="{{route('approConcours',[$elevage->id,$animal->id])}}">
+						<button>  Approbation SF/PFS sur les résultats en compétition (60 euros)</button>
 						</a>
 						@endif
 					@endisset
@@ -115,7 +136,7 @@
 
 				<div>
 				@isset($animal->StatutMale)
-						@if (($animal->StatutMale->qualite == 'autorisé' || $animal->StatutMale->qualite == 'approuvé') && $animal->elevage_id == $elevage->id  && ! $animal->StatutMale->disponible )
+						@if ( ($animal->StatutMale->qualite == 'approuvé' || $animal->StatutMale->qualite == 'approbation provisoire cette année') && $animal->elevage_id == $elevage->id  && ! $animal->StatutMale->disponible )
 						<a href="{{route('monte',[$elevage->id,$animal->id])}}">
 						<button>  Proposer à la monte</button>
 						</a>

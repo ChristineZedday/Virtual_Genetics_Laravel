@@ -41,15 +41,11 @@
 			</select> 
 	</div>
 	<div>
-	<label for="taille_additive">Entrez la taille (taille non définitive: ne tient pas compte des gènes agissant sur la taille)</label><br/>
+	<label for="taille_additive">Entrez la taille en cm (taille non définitive: ne tient pas compte des gènes agissant sur la taille)</label><br/>
 	<input type="number" name="taille_additive" pattern="[0-9]" min="40" max="200" value="{{old('taille_additive')}}" required />
 	
 	</div>
-	<div>
-	<label for="modele_allures_additifs">Entrez la note de modèle et allures (sur 20): attention cette note peut être baissée par un gène defectueux</label><br/>
-	<input type="number" name="modele_allures_additifs" pattern="[0-9]" min="1" max="20" value="{{old('modele_allures_additifs')}}" required />
 	
-	</div>
 	<div>
 	<label>Choisissez les gènes (si vous choisissez les allèles par defaut, vous n'avez pas besoin de les renseigner)</label><br/>
 	

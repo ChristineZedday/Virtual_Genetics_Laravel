@@ -24,352 +24,423 @@ class EvenementsTableSeeder extends Seeder
                 'id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-03-28',
-                'nom' => 'Printemps du Welsh',
+                'date' => '2000-05-11',
+                'nom' => 'Concours de Printemps Welsh à Saumur',
+                'distance' => 200,
             ),
             1 => 
             array (
                 'id' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-05-14',
-                'nom' => 'Shetland en Folie',
+                'date' => '2000-06-12',
+                'nom' => 'Modèle et Allures Poney Saint-Lô',
+                'distance' => 150,
             ),
             2 => 
-            array (
-                'id' => 3,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-02-22',
-                'nom' => 'Connemara',
-            ),
-            3 => 
-            array (
-                'id' => 4,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-02-02',
-                'nom' => 'Arabe et demi-sang arabe',
-            ),
-            4 => 
             array (
                 'id' => 5,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-03-02',
-                'nom' => 'Français de selle',
+                'date' => '2000-06-24',
+                'nom' => 'Grand Régional FPPL au Lion d\'Angers',
+                'distance' => 100,
             ),
-            5 => 
-            array (
-                'id' => 6,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-05-07',
-                'nom' => 'Pottokak',
-            ),
-            6 => 
-            array (
-                'id' => 7,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-04-07',
-                'nom' => 'Great Mini Show',
-            ),
-            7 => 
-            array (
-                'id' => 8,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-06-02',
-                'nom' => 'Pony Super Show',
-            ),
-            8 => 
-            array (
-                'id' => 9,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-10-06',
-                'nom' => 'Welsh Rare Bits',
-            ),
-            9 => 
-            array (
-                'id' => 10,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-09-12',
-                'nom' => 'Shetland',
-            ),
-            10 => 
-            array (
-                'id' => 11,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-09-22',
-                'nom' => 'Connemara',
-            ),
-            11 => 
-            array (
-                'id' => 12,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-11-17',
-                'nom' => 'Arabes et demi-sangs',
-            ),
-            12 => 
+            3 => 
             array (
                 'id' => 13,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-12-14',
-                'nom' => 'Minatures',
+                'date' => '2000-06-25',
+                'nom' => 'Minature Western Show Yssingeaux',
+                'distance' => 760,
             ),
-            13 => 
-            array (
-                'id' => 14,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-09-23',
-                'nom' => 'Pottokak',
-            ),
-            14 => 
+            4 => 
             array (
                 'id' => 15,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-11-30',
-                'nom' => 'Français de Selle',
+                'date' => '2000-07-07',
+                'nom' => 'Modèle et Allures Poney Haras du Pin',
+                'distance' => 200,
             ),
-            15 => 
-            array (
-                'id' => 16,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-12-16',
-                'nom' => 'Concours Poneys Toutes Races',
-            ),
-            16 => 
+            5 => 
             array (
                 'id' => 18,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-05-27',
-                'nom' => 'Régional Welsh',
+                'date' => '2000-06-01',
+                'nom' => 'Régional Welsh du Lion d\'Angers',
+                'distance' => 100,
             ),
-            17 => 
+            6 => 
             array (
                 'id' => 19,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1972-12-27',
+                'date' => '2000-12-27',
                 'nom' => 'Salon du cheval',
+                'distance' => 350,
             ),
-            18 => 
+            7 => 
             array (
                 'id' => 20,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-07-25',
-                'nom' => 'Royal Welsh Show',
+                'date' => '2000-07-25',
+                'nom' => 'Royal Welsh Show à Llanelwedd',
+                'distance' => 700,
             ),
-            19 => 
+            8 => 
             array (
                 'id' => 21,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-08-14',
+                'date' => '2000-08-14',
                 'nom' => 'National Connemara de Pompadour',
+                'distance' => 540,
             ),
-            20 => 
+            9 => 
             array (
                 'id' => 22,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-08-24',
+                'date' => '2000-08-24',
                 'nom' => 'Connemara Pony Show of Clifden',
+                'distance' => 1320,
             ),
-            21 => 
+            10 => 
             array (
                 'id' => 23,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-06-26',
+                'date' => '2000-10-01',
                 'nom' => 'National Welsh Saumur',
+                'distance' => 200,
             ),
-            22 => 
+            11 => 
             array (
                 'id' => 24,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-08-18',
+                'date' => '2000-08-18',
                 'nom' => 'Sologn\' Pony',
+                'distance' => 380,
             ),
-            23 => 
+            12 => 
             array (
                 'id' => 25,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-09-28',
-                'nom' => 'National Shetland de Lamotte-Beuvron',
+                'date' => '2000-09-28',
+                'nom' => 'National Shetland de Lignières-en-Berry',
+                'distance' => 450,
             ),
-            24 => 
+            13 => 
             array (
                 'id' => 26,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-08-12',
+                'date' => '2000-08-12',
                 'nom' => 'Championnat de France Arabe de Vichy',
+                'distance' => 575,
             ),
-            25 => 
+            14 => 
             array (
                 'id' => 27,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-08-06',
+                'date' => '2000-08-06',
                 'nom' => 'Championnat du cheval miniature Français Vichy',
+                'distance' => 575,
             ),
-            26 => 
-            array (
-                'id' => 28,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-09-02',
-                'nom' => 'Championnat du monde de Fort Worth Texas',
-            ),
-            27 => 
+            15 => 
             array (
                 'id' => 29,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-07-24',
-                'nom' => 'Tout Rennes Shet',
+                'date' => '2000-07-16',
+                'nom' => 'Régional Shetland Landivisiau Plougourvest',
+                'distance' => 210,
             ),
-            28 => 
+            16 => 
             array (
                 'id' => 30,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-06-12',
-                'nom' => 'Arabesques',
+                'date' => '2000-07-14',
+                'nom' => 'Régional Arabes et DSA Landivisiau',
+                'distance' => 210,
             ),
-            29 => 
+            17 => 
             array (
                 'id' => 31,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-04-25',
-                'nom' => 'Foire de Rennes spécial Connemara',
+                'date' => '2000-09-09',
+                'nom' => 'Régional Connemara Lamballe',
+                'distance' => 90,
             ),
-            30 => 
-            array (
-                'id' => 32,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'date' => '1971-07-08',
-                'nom' => 'Grand Branle-Bas dans Landerneau',
-            ),
-            31 => 
+            18 => 
             array (
                 'id' => 33,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-07-30',
-                'nom' => 'Régional Pottokak',
+                'date' => '2000-03-18',
+                'nom' => 'Concours des mâles Pottok Ascain et Hélette',
+                'distance' => 680,
             ),
-            32 => 
+            19 => 
             array (
                 'id' => 34,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-07-20',
-                'nom' => 'Régional Français de Selle',
+                'date' => '2000-07-29',
+                'nom' => 'Régional Français de Selle à Lamballe',
+                'distance' => 90,
             ),
-            33 => 
+            20 => 
             array (
                 'id' => 35,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-09-07',
-                'nom' => 'National Pottok',
+                'date' => '2000-07-21',
+                'nom' => 'Concours des juments et pouliches Pottok à Sare',
+                'distance' => 680,
             ),
-            34 => 
+            21 => 
             array (
                 'id' => 36,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-03-14',
-                'nom' => 'Dressage ',
+                'date' => '2001-03-05',
+                'nom' => 'Concours Amateur et Poney Epiniac',
+                'distance' => 55,
             ),
-            35 => 
+            22 => 
             array (
                 'id' => 37,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-05-21',
-                'nom' => 'Dressage Poneys',
+                'date' => '2001-05-08',
+                'nom' => 'Dressage Poneys Amateur et Pro Mur-de-Bretagne Guerlédan',
+                'distance' => 110,
             ),
-            36 => 
+            23 => 
             array (
                 'id' => 38,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-06-25',
-                'nom' => 'Dressage',
+                'date' => '2001-06-11',
+                'nom' => 'Dressage Championnat Ille-et-Vilaine Amateur et Poney à Montfort-sur-Meu',
+                'distance' => 30,
             ),
-            37 => 
+            24 => 
             array (
                 'id' => 39,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-04-19',
-                'nom' => 'Dressage Régional',
+                'date' => '2001-04-30',
+                'nom' => 'Concours Amateur Etrier de Plerguer',
+                'distance' => 60,
             ),
-            38 => 
+            25 => 
             array (
                 'id' => 40,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-09-18',
-                'nom' => 'Dressage Régional',
+                'date' => '2001-07-15',
+                'nom' => 'Championnat Dressage Bretagne Amateur Poney et  Pro Hennebont Kermat',
+                'distance' => 145,
             ),
-            39 => 
+            26 => 
             array (
                 'id' => 41,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-11-22',
-                'nom' => 'Dressage Régional',
+                'date' => '2001-08-12',
+                'nom' => 'Dressage Amateur Poney Etrier de Plerguer',
+                'distance' => 60,
             ),
-            40 => 
+            27 => 
             array (
                 'id' => 42,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1972-06-22',
-                'nom' => 'Dressage National',
+                'date' => '2001-10-29',
+                'nom' => 'Dressage National Le Mans Boulerie Poney Amateur Pro',
+                'distance' => 140,
             ),
-            41 => 
+            28 => 
             array (
                 'id' => 43,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1972-09-15',
-                'nom' => 'Dressage National',
+                'date' => '2001-10-01',
+                'nom' => 'Dressage Amateur Thorigné-Fouillard',
+                'distance' => 15,
             ),
-            42 => 
+            29 => 
             array (
                 'id' => 44,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-02-20',
-                'nom' => 'Dressage Poneys',
+                'date' => '2001-02-20',
+                'nom' => 'Concours Dressage Poneys Petite Hublais Betton',
+                'distance' => 15,
             ),
-            43 => 
+            30 => 
             array (
                 'id' => 45,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'date' => '1971-04-20',
-                'nom' => 'Dressage Poneys',
+                'date' => '2001-04-23',
+                'nom' => 'Concours Dressage Poneys Plouisy Argoat Equitation',
+                'distance' => 140,
+            ),
+            31 => 
+            array (
+                'id' => 46,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-01-02',
+                'nom' => 'Concours Dressage Poneys Plabennec',
+                'distance' => 240,
+            ),
+            32 => 
+            array (
+                'id' => 47,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-10-08',
+                'nom' => 'Dressage Amateur Pro Poney de Mur-de-Bretagne Guerlédan',
+                'distance' => 110,
+            ),
+            33 => 
+            array (
+                'id' => 48,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-10-22',
+                'nom' => 'Dressage Poney Cardroc La Foucheraie',
+                'distance' => 30,
+            ),
+            34 => 
+            array (
+                'id' => 49,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-11-12',
+                'nom' => 'Dressage Poney Carhaix',
+                'distance' => 160,
+            ),
+            35 => 
+            array (
+                'id' => 50,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-04-15',
+                'nom' => 'Dressage International Poney Amateur Pro Le Mans Boulerie',
+                'distance' => 140,
+            ),
+            36 => 
+            array (
+                'id' => 51,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-03-12',
+                'nom' => 'Dressage National Pro Amateur La Roche sur Yon',
+                'distance' => 190,
+            ),
+            37 => 
+            array (
+                'id' => 52,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-06-21',
+                'nom' => 'Dressage National de Cholet',
+                'distance' => 170,
+            ),
+            38 => 
+            array (
+                'id' => 53,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-07-25',
+                'nom' => 'International Shetland Pony Show de Saint Lô',
+                'distance' => 150,
+            ),
+            39 => 
+            array (
+                'id' => 54,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-09-15',
+                'nom' => 'La Grande Semaine de Pompadour International AA',
+                'distance' => 540,
+            ),
+            40 => 
+            array (
+                'id' => 55,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-07-26',
+                'nom' => 'Modèle et Allures SF et AA Saint Lô',
+                'distance' => 150,
+            ),
+            41 => 
+            array (
+                'id' => 56,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-12-05',
+                'nom' => 'Championnat mâles SF Saint Lô',
+                'distance' => 150,
+            ),
+            42 => 
+            array (
+                'id' => 57,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-08-29',
+                'nom' => 'Grande semaine de Fontainebleau',
+                'distance' => 370,
+            ),
+            43 => 
+            array (
+                'id' => 58,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-07-25',
+                'nom' => 'Concours qualificatif femelles SF Lamballe',
+                'distance' => 90,
+            ),
+            44 => 
+            array (
+                'id' => 59,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-11-17',
+                'nom' => 'Concours qualificatif mâles SF Lamballe',
+                'distance' => 90,
+            ),
+            45 => 
+            array (
+                'id' => 60,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-05-21',
+                'nom' => 'Internationaux Dressage Compiègne',
+                'distance' => 420,
+            ),
+            46 => 
+            array (
+                'id' => 61,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2001-07-21',
+                'nom' => 'Dress\' In Deauville',
+                'distance' => 240,
             ),
         ));
         

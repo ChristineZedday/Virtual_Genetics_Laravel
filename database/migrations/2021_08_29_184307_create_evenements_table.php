@@ -18,6 +18,7 @@ class CreateEvenementsTable extends Migration
             $table->timestamps();
             $table->date('date');
             $table->string('nom');
+            $table->mediumInteger('distance');
            
            
         });

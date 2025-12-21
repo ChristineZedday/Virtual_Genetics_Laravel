@@ -26,7 +26,9 @@ class ReproductionController extends Controller
  * launch reproduction process
 */
 {
-   static function croisement($elevage, $etalon, $jument)
+  
+  
+  static function croisement($elevage, $etalon, $jument, $declaree=1)
    {
     //vérification du statut des reproducteurs
     $jument = Animal::Find($jument);
@@ -38,14 +40,7 @@ class ReproductionController extends Controller
     }
     $etalon = Animal::Find($etalon);
     $statutM = $etalon->StatutMale; //fondateurs
-    if (!isset($statutM)) //à supprimer? normalement tous les animaux ont un statut avec checkPuberes
-    {
-      $statutM = new StatutMale();
-      $statutM->animal_id = $etalon->id;
-      $statutM->qualite = 'autorisé' ;
-      $statutM->save();
-
-    }
+   
     
     $elevage = Elevage::Find($elevage);
     //controle pas déjà saillie
@@ -64,16 +59,19 @@ class ReproductionController extends Controller
         $fertilite = ($statutM->fertilite * $statut->fertilite)/100 ;
         $success = rand(1,$fertilite);
 
-      
+        
 
-          if ($etalon->elevage->id != $elevage->id)
+          if ($etalon->elevage->id != $elevage->id )
           {
-            $elevage->budget = $elevage->budget - $statutM->prix;
-            $elevage->save();
-
+            $declaree =1;
+            if ($elevage->role == 'Joueur') {
+              $elevage->Budget()->acheteSaillie($statutM->prix);
+            }
             $etalonnier = $etalon->Elevage;
-            $etalonnier->budget = $etalonnier->budget + $statutM->prix;
-            $etalonnier->save();
+            if ($etalonnier->role == 'Joueur') {
+           
+              $etalonnier->Budget()->venteSaillie($statutM->prix);
+          }
           }
           if ($success > 50)
           {
@@ -84,6 +82,12 @@ class ReproductionController extends Controller
               $animal = new Animal;
               $animal->foetus = true;
               $animal->fondateur = false;
+              if ($declaree) {
+                $animal->statut_administratif = 'saillie déclarée';
+              }
+              else {
+                $animal->statut_administratif = 'saillie non déclarée';
+              }
             
               $animal->date_naissance = $date;
               $animal->sire_id = $etalon->id;
@@ -185,12 +189,10 @@ class ReproductionController extends Controller
               Genome::mixGenes($etalon->id, $jument->id, $animal->id);
               Genome::readGenes($animal->id);
               $animal = Animal::find($animal->id); //pour mettre à jour modif effectuées ds Genome!
-              $qualite = $etalon->StatutMale->qualite;
-            
-
-              $animal->race_id = Animal::chercheRaces($etalon->race_id,$jument->race_id,$animal->taille_cm, $qualite);
-              
               $animal->save();
+              Race::determineRace($etalon,$jument,$animal,$dateS,$declaree);
+              
+              
           } //end if succès
           else{
               $statut->vide = true;
@@ -209,8 +211,8 @@ class ReproductionController extends Controller
 {
   $cons = calculConsang($S,$D);
   $el = Elevage::Find($el);
-  $el->budget = $el->budget -10;
-  $el->save();
+  $el->Budget()->fraisAdministratifs(10);
+  
   return redirect()->back()->with('message', $cons);
 }
 

@@ -6,7 +6,7 @@
 <h3>Parcelle de {{$surface}} hectares à vendre</h3>
 <h2>Prix: {{$surface * App\Elevage::PRIX_HECTARE}} achetoires</h2>
 <div class ='form'>
-<input type="hidden" id ="budget" value ="{{$elevage->budget}}"/>
+@if ($elevage->role == 'Joueur')<input type="hidden" id ="budget" value ="{{$elevage->Budget()->solde()}}"/>@endif
 <input type="hidden" id ="prix" value ="{{$surface * App\Elevage::PRIX_HECTARE}}"/>
 	
 			<input type="hidden" name="elevage"  value="{{ $elevage->id }}"

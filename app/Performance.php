@@ -20,40 +20,34 @@ class Performance extends Model
         $perf = new Performance();
         $perf->animal_id = $animalid;
         $perf->sante = 100;
-        $perf->points = 0;
         $perf->niveau_id = 1;
         $perf->niveau_dressage = 1;
         $perf->pourcent_niveau = 0;
         $perf->save();
         return ($perf);
     }
-    public function upgrade()
-    {
-        $actuel = $this->Niveau;
-        
-            if ($actuel->libelle == "départemental" && $this->points >= 3)  {
-                $niveau = Niveau::where('libelle','régional')->first();
-                $this->niveau_id = $niveau->id;
-                $this->points = 0;
-                $this->save();}
-            else if ($actuel->libelle == "régional" && $this->points >=5)
-             {   $niveau = Niveau::where('libelle','national')->first();
-                $this->niveau_id = $niveau->id;
-                $this->points = 0;
-                $this->save();}
-          else if ($actuel->libelle == "national" && $this->points >=10)
-                 {   $niveau = Niveau::where('libelle','mondial')->first();
-                    $this->niveau_id = $niveau->id;
-                    $this->points = 0;
-                    $this->save();
-        }
-       
-    }
+  
     public function upgradeDressage()
     {
         if ($this->pourcent_niveau >= 90) {
             $this->niveau_dressage ++;
             $this->pourcent_niveau = 0;
+        }
+    }
+
+    public function upgrade($classement, $note, $libelle)
+    {
+        if ($this->niveau_id < 4)  {
+         
+            if ($this->niveau_id == 1 || $classement < 4 || $note >= 15) {
+                $this->niveau_id ++;
+                $this->save();
+                if ($this->niveau_id == 2 && $note >= 15 && ($libelle == 'départemental' || $libelle == 'régional')) {
+                    $this->niveau_id ++;
+                    $this->save(); //passer direct en national
+                }
+            }
+       
         }
     }
 }

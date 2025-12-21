@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\elevages;
-use App\GameData;
+use App\Gamedata;
+use App\Budget;
+use App\Debug;
 
 class Elevage extends Model
 {
@@ -13,7 +15,7 @@ class Elevage extends Model
     const COEFF_UGB_PLEINE_SUITEE = 0.63 ;//0.37/0.59
     const PRIX_FOIN = 100;
     const PRIX_HECTARE = 25000;
-    const CONSO_FOIN_UGB_AN = 4.75;
+    const CONSO_FOIN_UGB_AN = 6;
 
     protected $fillable = ['nom_elevage','nom_eleveur','affixe_id','affixe_pre'];
 
@@ -25,6 +27,20 @@ class Elevage extends Model
     public function Animaux()
     {
         return $this->HasMany('App\Animal');
+    }
+
+    public function Budgets()
+    {
+        return $this->HasMany('App\Budget');
+    }
+
+    public function Budget()
+    {
+        $date = Gamedata::date();
+        if ($this->role == 'Joueur') {
+        return $this->Budgets()->where('mois', $date)->first();
+        }
+        else return NULL;
     }
 
     public function Affixe()
@@ -71,6 +87,7 @@ class Elevage extends Model
         $mois = date('n',strtotime($date));
         $rendement = Rendement::where('mois',$mois)->first()->foin_tMS_ha;
         $this->foin += $rendement * $surface;
+        $this->save();
 
     }
 
@@ -182,10 +199,47 @@ static function terresAVendre() {
 public function acheteTerres($surface) 
 {
     $prix = $surface * self::PRIX_HECTARE;
-    if ($this->budget > $prix) {  
-        $this->budget -= $prix;
-        $this->surface += $surface;
+    if ($this->Budget()->solde() > $prix) {  
+
+    $this->Budget()->acheteFoncier($prix);
+    $this->surface += $surface;
     $this->save();
     }   
+}
+
+public function fraisTransport($animal,$distance) 
+{
+    $taille = $animal->taille();
+    switch(true) {
+        case $taille <= 90:
+            $prix = 0.3;
+            break;
+        case $taille <= 115:
+            $prix = 0.4;
+            break;
+        case $taille <= 140;
+            $prix = 0.5;
+            break;
+        case $taille <= 170;
+            $prix = 0.6;
+            break;
+        default:
+         $prix = 0.7;
+    }
+    $frais = $distance * $prix;
+    if (NULL != $animal->StatutFemelle && $animal->StatutFemelle->suitee ) {
+        $frais += $frais * 0.5;
+    }
+    $frais = floor($frais);
+  
+    
+    if ($this->Budget()->solde() >= $frais) {
+       
+        $this->Budget()->fraisTransport($frais);
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 }

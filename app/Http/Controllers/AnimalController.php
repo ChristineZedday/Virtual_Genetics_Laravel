@@ -15,20 +15,12 @@ use App\Locus;
 use App\Genotype;
 use App\Allele;
 use App\Genome;
+use App\Budget;
 use phpDocumentor\Reflection\Types\Nullable;
 
 class AnimalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -57,7 +49,6 @@ class AnimalController extends Controller
             'race_id' =>'integer',   
             'sexe' =>'string|required',
             'taille_additive' =>'integer|required',
-            'modele_allures_additifs' => 'integer|required',
             'couleur'=>'string|required'
             
             ]);
@@ -81,6 +72,7 @@ class AnimalController extends Controller
             return redirect()->back(); 
         }
         $animal->elevage_id = $elevage;
+        $animal->Randomize();
         $animal->date_naissance = Gamedata::date();
         $animal->taille_cm = $animal->taille_additive;
         $animal->modele_allures = $animal->modele_allures_additifs;
@@ -196,19 +188,26 @@ class AnimalController extends Controller
             $animal->fill($validated);
 
             if ($animal->save()) {
-                $request->session()->flash('status',"animal modifiée avec succès");
+                $request->session()->flash('status',"animal modifié avec succès");
                 $request->session()->flash('alert-class',"alert-success");
-                return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal]);
+               
             }
+            else {
+                 $request->session()->flash('status',"animal n'a pu être modifié");
+                $request->session()->flash('alert-class',"alert-error");
+
+            }
+             return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal]);
+            
     }
 
-    /**
+ /*  /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+  /*  public function destroy($id)
     {
         $animal = Animal::find($id);
         $genotypes = $animal->Genotypes();
@@ -222,7 +221,7 @@ class AnimalController extends Controller
             //detach les imeges du poney
         }
 
-    }
+    }*/
 
     /**
      * Putting animal for sale: display form.
@@ -239,6 +238,7 @@ class AnimalController extends Controller
         {
             return view('vendreAnimal',['elevage'=>$elevage,'animal'=>$animal]);
         }
+        else { return redirect()->back();}
     }
 
      /**
@@ -263,6 +263,11 @@ class AnimalController extends Controller
             $request->session()->flash('alert-class',"alert-success");
             return redirect()->route('animaux',[$animal->elevage_id, 'vente']);
         }
+        else {
+             $request->session()->flash('status',"animal n'a pu être proposé à la vente");
+                $request->session()->flash('alert-class',"alert-error");
+                 return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal]);
+        }
     }
 
      /**
@@ -281,6 +286,11 @@ class AnimalController extends Controller
         
            return redirect()->route('animaux',[$animal->elevage_id,'tous']);
        }
+       else {
+         
+                 return redirect()->action('AnimalController@show' ,['elevage'=>$animal->elevage,'animal'=>$animal])->with('alert', 'oups, ça ne marche pas');
+
+       }
     }
 
      /**
@@ -297,41 +307,30 @@ class AnimalController extends Controller
         $vendeur = $animal->elevage_id;
         $vendeur = Elevage::Find($vendeur);
 
-        if ($elevage->budget >= $animal->prix)
+        if ($elevage->role == 'Joueur' && $elevage->Budget()->solde() >= $animal->prix)
             {
-            $vendeur->budget = $vendeur->budget + $animal->prix;
-            $vendeur->save();
-            $elevage->budget = $elevage->budget - $animal->prix;
-            $elevage->save();
-            $animal->acheter($elevage->id);
-            // $animal->a_vendre = false;
-            // $animal->date_achat = $date;
-            // $animal->elevage_id = $elevage->id;
-            // $statut = StatutFemelle::where('animal_id', $animal->id)->first();
-            // if (isset($statut) )
-            // {
-            //    if ($statut->vide == false)
-            //     {
-            //         $produit = Animal::where('foetus', true)->where('dam_id',$animal->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
-            //         $produit->elevage_id = $elevage->id;
-            //         $produit->affixe_id = $elevage->Affixe->id;
-            //         $produit->save();
-            //     }
-            //    if ($statut->suitee)
-            //    {
-            //     $produit = Animal::where('dam_id',$animal->id)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->first(); 
-            //     $produit->elevage_id = $elevage->id; 
-            //     $produit->save();
-            //    }
             
+            if ($vendeur->role == 'Joueur') {
+            $vendeur->Budget()->vendAnimal($animal->prix);
+            }
+            if ($elevage->role == 'Joueur') {
+           
+            $elevage->Budget()->acheteAnimal($animal->prix);
+            $elevage->save(); }
+
+            $animal->acheter($elevage->id);
+      
             
             if ($animal->save())
             {
                 return redirect()->back();
             }
+            else {
+                return redirect()->back()->with('alert', 'oups, ça ne marche pas');
+            }
         }
         else {
-            return redirect()->back()->with('alert', $elevage->budget);
+            return redirect()->back()->with('alert', 'pas assez de flouze');
         }
 
         
@@ -365,8 +364,8 @@ class AnimalController extends Controller
                     $animal->save();
                     $animal->StatutMale->fertilite = 0;
                     $animal->StatutMale->save();
-                    $elevage->budget -= $prixM;
-                    $elevage->save();
+                    $prix = $prixM;
+                  
                 break;
 
                 case 'vieux mâle':
@@ -374,29 +373,33 @@ class AnimalController extends Controller
                     $animal->save();
                     $animal->StatutMale->fertilite = 0;
                     $animal->StatutMale->save();
-                    $elevage->budget -= $prixM;
-                    $elevage->save();
+                  
+                    $prix = $prixM;
+                   
                 break;
 
                 case 'femelle':
                     $animal->sexe = 'femelle stérilisée';
                     $animal->save();
                     $animal->StatutFemelle->delete();
-                    $elevage->budget -= $prixF;
-                    $elevage->save();
+                   
+                    $prix = $prixF;
+                  
                 break;
 
                 case 'vieille femelle':
                     $animal->sexe = 'vieille femelle stérilisée';
                     $animal->save();
                     $animal->StatutFemelle->delete();
-                    $elevage->budget -= $prixF;
-                    $elevage->save();
+                    $prix = $prixF;
+                  
                 break;
 
                 default:
                 dd('comment suis-je arrivée là?');
-            
+                if ($elevage->role == 'Joueur') {
+            $elevage->Budget()->fraisVeto($prix);
+                }
 
             }
             return redirect()->back();
@@ -411,62 +414,52 @@ class AnimalController extends Controller
      */
     public function enregistrer($animal)
     {
-
+        
         $animal = Animal::Find($animal);
+
         if ($animal->Race->nom == 'OC')
         {
-            $ar = Race::where('nom', 'Pur-sang Arabe')->first()->id;
-            $arabe = Animal::pourCentRace($animal->id,$ar);
-            
-            $welsh = Animal::pourCentWelsh($animal->id);
-            $rDam = $animal->Dam->Race->id;
-            $rSire = $animal->Sire->Race->id;
-            $qualite = $animal->Sire->StatutMale->qualite;
-            $taille = $animal->taille_cm;
-            $races = AssoRace::where
-            (
-                function ($query) use ($rSire,$rDam,$arabe,$welsh)
-                 {
-                        $query->where(function ($qp) use ($rSire,$rDam) {
-                            $qp->where('race_pere_id', $rSire)->where('race_mere_id',$rDam);
-                        }
-                    )->orWhere(function ($qr) use ($arabe) { 
-                        $qr->where('pourCentArabe', '!=', NULL)->where('pourCentArabe', '<=', $arabe);
-
-                    })->orWhere(function ($qr) use ($welsh) { 
-                        $qr->where('pourCentWelsh', '!=', NULL)->where('pourCentWelsh', '<=', $welsh);
-                    }
-                    )
-                   
-                    
-                ;}
-            ) ->orWhere('race_produit_id', '3')     
-            ->join('races','races.id', 'asso_race.race_produit_id')->where(function ($qu) use ($taille) {$qu->where('taille_min', '<=', $taille)->where('taille_max', '>=', $taille);})->get()->unique()->all();
-            if ($qualite != 'approuvé')
-            {
-                foreach ($races as $race)
-                {
-                    if ($race->approbation)
-                    {
-                       
-                       $i= array_search($race,$races);
-                       array_splice($races, $i);
-                    }
-                }
-             
-            }
-            
-         
+            $races = $animal->RacesPossibles()->get();
+           // dd($races);
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
         }
         else
         {
             return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
         }
-       
-       
-    }    
+    }
 
+      /**
+     * Registration of name/color
+     *
+     * @param  int  $animal->id, 
+     * @return \Illuminate\Http\Response
+     */
+    public function enregistrerStudBook($animal)
+    {
+        
+        $animal = Animal::Find($animal);
+
+        
+            $races = $animal->RacesPossibles()->get();
+            dd($races);
+         
+            return view('formEnregistrementStudBook', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
+       
+    }
+
+    public function signalementIdentification($animal) 
+    {
+        $animal = Animal::find($animal);
+       
+        $animal->elevage->Budget()->fraisAdministratifs(60);
+      
+        $animal->statut_administratif = 'enregistré';
+        $animal->save();
+        return redirect()->back();
+    }
+
+    
     public function registration(Request $request, $animal)
     {
         $animal = Animal::Find($animal);
@@ -497,19 +490,55 @@ class AnimalController extends Controller
             $request->session()->flash('alert-class',"alert-danger");
             return redirect()->back();
              }
+
+        $fraisSB = 50;
+
+        $elevage = Elevage::Find($animal->elevage_id);
         $animal->couleur = $validated['couleur'];
         if (($animal->race_id == 1) && ($validated['race']!==null))
         {
             $animal->race_id = $validated['race'];
-            if ($animal->race !==1)
+            if ($animal->race_id !==1)
             {
-                $elevage = Elevage::Find($animal->elevage_id);
+              
                 $race = Race::Find($animal->race_id);
-                $elevage->budget -= $race->frais_enregistrement;
-                $elevage->save();
+               
+                $elevage->Budget()->fraisAdministratifs($race->frais_enregistrement);
+                
             }
         }
 
+        else {
+            if ($animal->race_id != 1 && $animal->race_id != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
+           
+        }
+        else {
+            $fraisSB = 0;
+           
+        }
+        $animal->statut_administratif = 'déclaré';
+    }
+        if ($animal->ageMonths() > 1 && $animal->Dam->elevage_id == $animal->elevage_id) {
+            $elevage = $animal->elevage;
+          
+            $elevage->Budget()->fraisAdministratifs(50 + $fraisSB);
+            $animal->statut_administratif = 'déclaré';
+           
+        }
+        else if ($animal->Dam->elevage_id == $animal->elevage_id) {
+            
+            $elevage->Budget()->fraisAdministratifs($fraisSB);
+            $animal->statut_administratif = 'déclaré';
+        }
+
+        else {
+            $animal->statut_administratif = 'enregistré';
+           
+        }
+
+        $elevage->save();
+
+        
         if ($animal->save())
         {
             {
@@ -522,6 +551,36 @@ class AnimalController extends Controller
       
        
     }   
+
+public function registrationStudBook(Request $request, $animal) 
+{
+    $animal = Animal::Find($animal);
+    $elevage =$animal->elevage;
+        
+    $validated = $request->validate([ 
+    'race'=>'integer']); 
+
+    $animal->race_id = $validated['race'];
+    if ($animal->race_id !==1)
+            {
+              
+                $race = Race::Find($animal->race_id);
+              
+                $elevage->Budget()->fraisAdministratifs($race->frais_enregistrement);
+                $elevage->save();
+                if ($animal->save())
+                {
+                    {
+                        $request->session()->flash('status',"animal enregistré avec succès");
+                        $request->session()->flash('alert-class',"alert-success");
+                     
+                       
+                    }
+                }
+            }
+            return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+}
+
     public function updateNotes(Request $request, $animal) 
     {
         $animal = Animal::Find($animal);

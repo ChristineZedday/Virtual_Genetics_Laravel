@@ -19,6 +19,7 @@ $date = $game->date();
 
 	<nav>
 			<ul>
+				<li class='deroule'><a href="{{route('chevauxdressage', [$elevage])}}">Liste des chevaux de dressage</a></li>
 				<li class='deroule'><a href="{{route('competitions', [$elevage, 'toutes'])}}">Compétitions à venir</a>
 					<ul class='sousmenu'>
 						<li><a href="{{route('competitions', [$elevage, 'Modèle et Allures'])}}">Modèles et allures</a></li>

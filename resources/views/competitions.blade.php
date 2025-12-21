@@ -1,37 +1,36 @@
 @extends('layouts.competitionDashboard')
 @section('content')
 
-<div class='animaux'>
-<h3 >Prochaines compétitions:</h3>
-<table>
-<tr>
-	<th>Nom</th>
-    <th>Niveau</th>
-    <th>Date </th>
-   
-  
-</tr>
+<div class="concours">
+<h1 >Prochaines compétitions:</h1>
+
 @foreach ($evenements as $evenement)
-<tr> <td colspan="2">
-    {{$evenement->nom}}
-</td>
-<td>{{$evenement->date}} </td>
-</tr>
+<h2>
+    {{$evenement->nom}} du {{$evenement->date}} 
+
 <?php 
 $id = $evenement->id;
 $competitions = App\Competition::whereHas('evenements', function ($q) use ($id){$q->where('evenement_id',$id);})->get();
 ?>
 @foreach ($competitions as $competition)
 
-<tr>
-	<td>{{$competition->nom}}</td>
-    <td>{{$competition->Niveau->libelle}}</td>
+<h3>{{$competition->nom}}
+    {{$competition->Niveau->libelle}}</h3>
+   @if ($competition->type == "Dressage")
+   <p>
+        @foreach ($competition->reprises as $reprise)
+       {{$reprise->nom}}
+        <a href="{{route('inscrire_dressage',[$elevage, $evenement,$competition,$reprise])}}"><button>Inscrire</button></a><br/>
+        @endforeach
    
-   
-    <td><a href="{{route('inscrire',[$elevage, $evenement,$competition])}}">Inscrire</a></td>
-</tr>
+   @else
+   <p>
+    <a href="{{route('inscrire',[$elevage, $evenement,$competition])}}"><button>Inscrire</button></a></p>
+    @endif
+</p>
 
 @endforeach
+<hr/>
 @endforeach
 </div>
 

@@ -682,6 +682,19 @@ class ReprisesTableSeeder extends Seeder
                 'age_min_administratif' => 4,
                 'niveau_num_global' => 2,
             ),
+            51 => 
+            array (
+                'id' => 61,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Amateur 2 préliminaire',
+                'categorie' => 'amateur',
+                'niveau' => '2',
+                'taille_min_cm' => 108,
+                'taille_max_cm' => 149,
+                'age_min_administratif' => 5,
+                'niveau_num_global' => 8,
+            ),
         ));
         
         

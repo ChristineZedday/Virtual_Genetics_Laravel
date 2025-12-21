@@ -68,16 +68,21 @@ class Resultat extends Pivot
    public function texteClassement() 
    {
 switch ($this->classement) {
-   case null:
+   case NULL:
       return "non classé";
    case 1:
       return "premier";
+      
    case 2:
       return "deuxième";
+    
    case 3: 
       return "troisième";
-   default:
-    return $this->classement."ème";
+      
+   case 4:
+    return "quatrième";
+    default:
+    return "classé";
 
 }
    }

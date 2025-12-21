@@ -7,6 +7,7 @@ use App\Animal;
 use App\Evenement;
 use App\Performance;
 use App\StatutFemelle;
+use App\Budget;
 
 class Categorie extends Model
 {
@@ -21,6 +22,7 @@ class Categorie extends Model
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
    public function verification($animal, $evenement, $competition) 
    {
+   
     $date = $evenement->date;
     $competition = Competition::Find($competition);
 
@@ -43,33 +45,45 @@ class Categorie extends Model
         }
     }
    
-   
-  
+   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id > $competition->niveau->id && !$competition->niveau->open_after) {
+    return 'Hors Concours';
+   }
 
-        if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
+   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id < $competition->niveau->id && !$competition->niveau->open_before) {
+    return 'Non qualifié';
+   }
+   if ($animal->StatutFemelle && $animal->StatutFemelle->terme == $date) {
+    return 'Jument à terme ce mois-là';
+   }
+
+   if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
             return 'Jument pleine ou suitée';
         }
-        if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
+    if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
            
             return 'Pas suitée, ou le poulain sera sevré à cette date';
         }
-        if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
+    if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
            
             return 'Jument ou pouliche suitée à la date du concours';
         }
 
-        $races = $competition->Races;
+    $races = $competition->Races;
       
-        if (!empty($races)) {
+    if (!empty($races)) {
             $races = $races->modelkeys();
            // dd($races);
-            if (!in_array($animal->race_id, $races) ) {
+        if (!in_array($animal->race_id, $races) ) {
               
-                if (!in_array(1,$races)) {
+            if (!in_array(1,$races)) {
                     return 'Cheval pas de la bonne race pour cette compétition';
                 }
             }
+        }
+
+        if ($animal->race_id == 17) {
+            return 'Les Origine Non Constatée ne sont pas autorisés en compétition';
         }
   
         if  ($animal->ageAdministratif ($date) < $this->age_min) {
@@ -95,7 +109,7 @@ class Categorie extends Model
     if ($this->taille_max != null && $this->taille_max < $animal->taille()) {
        
         return 'trop grand pour cette catégorie';
-}
+    }
 
 
     return 'OK';
@@ -113,7 +127,7 @@ class Categorie extends Model
    if ($cheval->Genre() === 'mâle') {
     $autorise = 0;
     if ($cheval->StatutMale) {
-        if ($cheval->StatutMale->qualite == "autorisé"
+        if ($cheval->StatutMale->qualite == "autorisation sanitaire"
         || $cheval->StatutMale->qualite == "approuvé") {
             $autorise = 1;
         }
@@ -152,99 +166,88 @@ public static function rechercheDressage(Animal $cheval)
    }
 
 public function run($competition, $evenement) {
-    
+    //Modèle et Allures
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();
-
+   
+    $nb = $inscrits->count();
 
     foreach ($inscrits as $inscrit) {
-    $elevage = $inscrit->animal->elevage;
-    $frais = $competition->frais_voyage;
-    if (NULL != $inscrit->animal->StatutFemelle && $inscrit->animal->StatutFemelle->suitee ) {
-        $frais += $frais * 0.5;
+        $elevage = $inscrit->animal->elevage;
+        if ($elevage->role == 'Joueur') {
+            $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
+            if (!$frais ) {
+                $inscrits->forget($inscrit->id);
+                // faut les sous pour y aller!
+            }
+        }   
     }
-        if ($elevage->budget > $frais ) {
-            $elevage->budget -= $frais;
-            $elevage->save();
-        } 
-        else {
-            $inscrits->forget($inscrit->id);
-    }
-    }   
 
     $prix = $competition->prix_premier;
-    $nb = $inscrits->count();
-   //dd($nb);
+  
     //ça marche quand il ya des animaux du bon âge
     $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
+
     $notes = [];
-   //dd('inscrits: '.$nb.' classés: '.$classes);
+  
     foreach ($inscrits as $inscrit) {
         $animal = $inscrit->animal;
-      
-
-   
+    
         $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
+        if ($notes[$animal->id] > 20) {
+            $notes[$animal->id] = 20;
+        }
           
+        $inscrit->note_synthese = $notes[$animal->id];
+        if ($inscrit->note_synthese >= 15 &&    $animal->StatutMale != NULL) {
+              $animal->StatutMale->setModele15();
+        if ($animal->StatutMale->qualite != 'approuvé') {
+          
+            $animal->StatutMale->approuveEtalons();
+        }
+    }
+        $inscrit->save();
+    }
 
-    $inscrit->note_synthese = $notes[$animal->id];
-    $inscrit->save();
-}  
-
-    //dd($inscrit);//ouais!!
-
-   arsort($notes); //tri décroissant des valeurs
+   arsort($notes, SORT_NUMERIC); //tri décroissant des valeurs
    $notes = array_slice($notes,0,$classes,true);//on garde les classés
   
    $i =1;
-   foreach ($notes as $key => $value){ //pour tous les classés
-    $res= Resultat::where('evenement_id',$evenement->id)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
-    //dd($res);//c'est ça
-    $res->classement = $i;
-    $res->save();
-    $animal = Animal::find($key);
-    $perf = $animal->Performance;
-    if ($value >= 12) {
-        
-            switch($i) {
-            case 1:
-            $perf->points += 5;
-            break;
-            case 2:
-            $perf->points += 2;
-            break;
-            default:
-            $perf->points +=1;
-            }
-            break;
-       
-    }
-    $perf->save();
-    switch ($competition->type) {
-        case 'Modèle et Allures':
-    $perf->upgrade();
-    break;
-            case 'Dressage':
-    $perf->upgradeDressage();
-    }
-  
-
-    $animal = Animal::Find($key);
-    //dd($animal->nomComplet());// Chouette!
+   foreach ($notes as $key => $value) { //pour tous les classés
+        $res= Resultat::where('evenement_id',$evenement->id)->where('competition_id', $competition->id)->where('categorie_id', $this->id)->where('animal_id', $key)->first();
     
-    $elevage = Elevage::Find($animal->elevage_id);
-   
-    if ($i == 1) {
-        $elevage->budget += $prix; 
-    }
-    else  {
-        $elevage->budget += (int) ($prix/$i);//prix_premier/$i);
-    }
-    $elevage->save();
-    //dd($elevage);//OK
-    $i++; }
+        $res->classement = $i;
+        $res->save();
+        $animal = Animal::find($key);
+        if (($competition->niveau->libelle == 'national' || $competition->niveau->libelle == 'mondial') && $animal->StatutMale != NULL ) {
+        
+            $animal->StatutMale->setClasseNat();
+        
+            $animal->StatutMale->approuveEtalons();
+            if ($animal->StatutMale->qualite == 'approuvé'   && ($animal->race->poney_sport || $animal->race->cheval_sport)) {
+                $animal->StatutMale->setApprouvePFS(); 
+            }
+        }
+        $perf = $animal->Performance;
+        if ($value >= 12) {
+            $perf->upgrade($i, $value, $competition->niveau->libelle); 
+            }
 
-
-
+        $elevage = Elevage::Find($animal->elevage_id);
+    
+        if ($elevage->role == 'Joueur') {
+            if ($i == 1 ) {
+       
+            $elevage->Budget()->gainsConcours($prix);
+        }
+        else  {
+       //prix_premier/$i);
+            $elevage->Budget()->gainsConcours((int) ($prix/$i));
+        }
+      
+        }
+    
+        $i++; 
+    } //animaux classés
 }  
 }
 

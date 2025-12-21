@@ -4,16 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\gamedatas;
+use DB;
 use DateTime;
+use App\Budget;
 
 
 class Gamedata extends Model
 {
-    
-   static function budget()
-    {
-        return  Gamedata::find(1)->budget;
-    }
+   
 
     static function date()
     {
@@ -25,7 +23,7 @@ class Gamedata extends Model
         return  Gamedata::find(1)->date_debut;
     }
 
-    
+    //first letter of name for the current year
     static function checkLettre($date)
     {
         $lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'];
@@ -34,7 +32,7 @@ class Gamedata extends Model
     return $lettre;
 
     }
-
+//Season for reproduction (march to september)
     static function saison()
 {
     $date = Gamedata::date();
@@ -52,6 +50,20 @@ class Gamedata extends Model
     return $saison;
 }
 
+static function beforeSeason() {
+     $date = Gamedata::date();
+    $mois = date('m',strtotime($date));
+    $before = $mois<=3 ? true : false;
+    return $before;
+}
+static function afterSeason() {
+     $date = Gamedata::date();
+    $mois = date('m',strtotime($date));
+    $after = $mois>=9 ? true : false;
+    return $after;
+}
+
+//date of birth 11 months after conception
 static function ElevenMonths()
 {
     $date = Gamedata::date();
@@ -68,7 +80,7 @@ static function HowManyMonths($datefutur)
     return 12 * $diff->y + $diff->m;;
 
 }
-
+//birth of foals
 static function checkNouveaux($date)
 {
     $animaux = Animal::where('date_naissance', '<='  ,$date)->where('foetus',1)->get();
@@ -80,6 +92,10 @@ static function checkNouveaux($date)
             if ($animal->elevage_id != 2)
             {
                 $animal->elevage_id = $animal->Dam->elevage_id;
+                $animal->save();
+            }
+            if ($animal->elevage->role == 'Vendeur') {
+                $animal->statut_administratif = 'enregistré';
                 $animal->save();
             }
 
@@ -97,7 +113,7 @@ static function checkNouveaux($date)
     }
     
 }
-
+// weanlings when 6 months old
 static function checkSevres()
 {
     $animaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
@@ -123,46 +139,83 @@ static function checkSevres()
         }
     }
 }
+//Virtuals books for stallions
+static function checkCarnets()
+{
+    $animaux = Animal::whereHas('StatutMale', function ($q) {
+        $q->where('carnet_saillies', 1);
+    })->whereHas('elevage', function ($qu) {
+        $qu->where('role', '!=' , 'Vendeur');
+    })->get();
+    foreach ($animaux as $animal) {
+        $statut = $animal->StatutMale;
+        $statut->setCarnetSaillies(false);
+         //faut redemander chaque année
+    }
+     $animaux = Animal::whereHas('StatutMale', function ($q) {
+        $q->where('qualite', 'approuvé')->orWhere('qualite', 'approbation provisoire cette année')->where('carnet_saillies', 0);
+    })->whereHas('elevage', function ($qu) {
+        $qu->where('role', '==' , 'Vendeur');
+    })->get();
+     foreach ($animaux as $animal) {
+        $statut = $animal->StatutMale;
+      $statut->setCarnetSaillies(true); 
+    }
+}
 
+//foals that where not registered during their first years become grades (Origine Non Constatée)
+static function checkNonEnregistres() 
+{//Pas enregistrés l'année de naissance, ONC
+    $animaux = Animal::whereHas('elevage', function ($query) { $query->where('role','Joueur');})->where('foetus', 0)->where('statut_administratif', '!=', 'enregistré')->where('race_id', '!=', 17)->get();
+ 
+    foreach ($animaux as $animal) {
+        $animal->race_id = 17;
+        $animal->save();
+        foreach ($animal->RacesPossibles()->get() as $possible) {
+            $animal->RacesPossibles()->detach($possible->id);
+        }
+    }
+}
+//animals of two years old (administratively, i.e. supposed to be born in january) can technically reproduce
 static function checkPuberes()
 {
     $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
+    $date = Gamedata::date();
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths() >= 24)
+        if ($animal->ageAdministratif($date) >= 2)
         { 
            $animal->sexe = 'mâle';
             $animal->save();
             $statut = new StatutMale();
             $statut->animal_id = $animal->id;
             $statut->fertilite = 100 - $animal->consang/2 ;
-            if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1)
+            if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1 && $animal->race_id != 17)
             {
-                if ($animal->modele_allures >= 15)
-                {
-                    $statut->qualite = 'approuvé';
+                $animal->statut_administratif = 'enregistré';
+                $animal->save();
+                if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
+                $statut->setAutorisationSanitaire();
+                $statut->approuveEtalons();
+                if ($statut->qualite == 'approuvé' || $statut->qualite == 'approbation provisoire cette année')
+                {$statut->carnet_saillies = true;}
                 }
-                else if ($animal->modele_allures >= 10)
-                {
-                    $statut->qualite = 'autorisé';
-                }
-                else
-                {
-                    $statut->qualite = 'refusé';
-                }
-            }
+            }   
+           
             $statut->save();
-         }
-
-        
+         } 
             
     }
 
     $animaux = Animal::where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->get();
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths() >= 24)
+        if ($animal->ageAdministratif($date) >= 2)
         { $animal->sexe = 'femelle';
+        if ($animal->elevage->role == 'Vendeur') {
+            $animal->statut_administratif = 'enregistré';
+            $animal->save();
+        }
          $animal->save();
          $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
@@ -173,6 +226,30 @@ static function checkPuberes()
     }
 }
 
+static function checkApprovals () {
+    $animaux = Animal::whereHas('statutMale', function ($q) {$q->where('qualite', '!=', 'approuvé')->where('qualite', '!=', 'refusé');})->get();
+    foreach ($animaux as $animal) {
+        switch (true) {
+            case $animal->StatutMale->qualite == 'approuvé an prochain':
+               $animal->statutMale->setApproval(); 
+               break;
+            case $animal->StatutMale->qualite == 'approbation provisoire an prochain':
+                $animal->statutMale->setProvisoire(); 
+             
+               break;
+            case $animal->StatutMale->qualite == 'approbation provisoire cette année':
+                $animal->statutMale->setModele15(false); 
+                $animal->statutMale->setClasseNat(false);
+                $animal->statutMale->setApproval(false);
+               
+                   //il doit se requalifier
+               break;
+               
+        }
+
+    }
+}
+//old horses limitations of health and performances
 static function checkVieux ($date)
 {
     $cas = ['mâle', 'femelle', 'mâle stérilisé', 'femelle stérilisée'];  
@@ -182,6 +259,7 @@ static function checkVieux ($date)
         $age = $animal->ageYears();
         if ($age > 15)
         {
+          
             switch ($animal->sexe) 
      
             {
@@ -207,11 +285,26 @@ static function checkVieux ($date)
             $animal->save();
         }
     }
+    $vieux = Animal::where('sexe', 'LIKE','vie%')->get();
+    foreach ($vieux as $vieux) {
+        $perf= $vieux->Performance;
+        $age = $vieux->ageYears();
+        if ($age < 25) {
+            $degradation = random_int(0,10);
+        }
+        else {
+            $degradation = random_int(0,20);
+        }
+        
+        $perf->sante -= $degradation;
+        $perf->save();
+
+    }
     
 }
 
 
-
+//Sending to Ankou (Death) the horses (possibly during gestation or at birth) that have letal gens or those that died of age
   static function checkMorts()
 {
     $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal_foetus',1);})->get(); //avortés
@@ -246,23 +339,23 @@ static function checkVieux ($date)
     foreach ($animaux as $animal)
     {
         
-        $age = $animal->ageYears();
-            switch ($age)
+        $sante = $animal->Performance->sante;
+            switch ($sante)
             {
-                case $age<20:
-                    $var = 1500;
+                case $sante<10:
+                    $var = 2;
                 break;
-                case $age<25:
-                    $var = 750;
+                case $sante<20:
+                    $var = 10;
                 break;
-                case $age<30:
-                    $var =150;
+                case $sante<30:
+                    $var =20;
                 break;
-                case $age<35:
-                    $var =75;
+                case $sante<50:
+                    $var =50;
                 break;
                 default:
-                $var = 10;
+                $var = 100000;
             }
                 if (rand(1,$var)==1)
                 {
@@ -270,7 +363,7 @@ static function checkVieux ($date)
                     $animal->date_achat = Gamedata::date();
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     
-                    if ($animal->sexe == 'vieille femelle')
+                    if ($animal->sexe == 'vieille femelle' || $animal->sexe == 'femelle')
                   {  $statut = $animal->StatutFemelle;
                    
                     
@@ -300,19 +393,49 @@ static function checkVieux ($date)
                     if ($animal->sexe == 'vieux mâle'  && isset($animal->StatutMale))
                     {
                         $animal->StatutMale->fertilite = 0;
+                        $animal->StatutMale->disponible = false;
+                        $animal->StatutMale->save();
                     }
                 }
             
     }
 }
+/*static function checkApproProvisoire() {
+    $males = StatutMale::where('qualite' , 'approbation provisoire cette année')->get();
+    foreach ($males as $male) {
+        $male->qualite = 'autorisation sanitaire';
+        $male->save();
+    }
+     $males = StatutMale::where('qualite' , 'approbation provisoire an prochain')->get();
+    foreach ($males as $male) {
+        $male->qualite = 'approbation provisoire cette année';
+        $male->save();
 
+    }
+ $males = StatutMale::where('qualite' , 'approuvé an prochain')->get();
+    foreach ($males as $male) {
+        $male->qualite = 'approuvé';
+        $male->save();
+
+    }
+}  */
+
+static function checkApproConcours() {
+    $males = StatutMale::whereHas('elevage', function($q) {$q->where('role', 'vendeur');})->where('qualite' , 'approuvé')->andWhere('modele15' , TRUE)->get();
+    foreach ($males as $male) {
+        if ($male->approuveEtalonsResultatsConcours()){
+            $male->save();
+        }  
+
+    }
+}
 // 
 static function VenteSaillies ()
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur)
     {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'autorisé')->orWhere('qualite', 'approuvé');})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('carnet_saillies', 1);})->get();
         foreach ($animaux as $animal)
       
         {
@@ -424,8 +547,9 @@ static function achete ()
           }
           if ($achat) {
             $vendeur = Elevage::Find($av->elevage_id);
-            $vendeur->budget += $av->prix;
-            $vendeur->save();
+            
+            $vendeur->Budget()->vendAnimal($av->prix) ;
+        
             $av->acheter($acheteur->id);
             $av->save();
 

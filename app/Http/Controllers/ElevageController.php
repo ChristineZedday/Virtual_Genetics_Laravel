@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\checkElevage;
 use Illuminate\Support\Facades\DB;
 use App\Elevage;
@@ -11,6 +11,7 @@ use App\Animal;
 use App\Gamedata;
 use App\Affixe;
 use App\Race;
+use App\Budget;
 use Illuminate\Validation\Rules\Unique;
 
 class ElevageController extends Controller
@@ -84,14 +85,18 @@ class ElevageController extends Controller
         $user = Auth::user();
         if (isset($user)) {
             $elevage ->user_id = $user->id;
+            if ($elevage->role == 'Joueur') {
+            $elevage->Budget()->initialize();
+            if (isset($elevage->affixe_id))
+        {
+            $elevage-Budget()->fraisAdministratifs(60); 
+        }
+            }
         }
 
-        $elevage->budget= gameData::budget();
+      
        
-        if (isset($elevage->affixe_id))
-        {
-            $elevage->budget = $elevage->budget - 500;
-        }
+        
 
         if ($elevage->save())
             {
@@ -108,39 +113,39 @@ class ElevageController extends Controller
 
     
 
-    /**
+ /*   /**
      * Show the form for editing stud name or affixe (v2).
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+ /*   public function edit($id)
     {
         //
-    }
+    }*/
 
-    /**
+  /*  /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+   /* public function update(Request $request, $id)
     {
         //
-    }
+    }*/
 
-    /**
+ /*   /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+  /*  public function destroy($id)
     {
         //
-    }
+    }*/
 
     /**
      * Show list of animals for this stud, with filters (age, sex...)
@@ -228,48 +233,72 @@ class ElevageController extends Controller
 
     /**
      * Examination of males before use them for reproduction
-     * approuvé: best quality, produce breed registrables offspring
-     * autorisé: produce breed registrables offspring
-     * refusé: produce grades (OC)
+     * approuvé: produce breed registrables offspring
+     * autorisation sanitaire: should be approved in a show to produce breed registrables offspring, else produce ONC
+     * refusé: produce grades (ONC)
      */
 
-    public function commissionEtalons ($id, $etalon)
+    public function commissionEtalons ($elevage, $etalon)
     {
        
         $etalon = Animal::Find($etalon);
+        $elevage = Elevage::Find($elevage);
         $race = Race::Find($etalon->race_id);
-        $pathos = $etalon->Pathologie;
         
-        if ($etalon->modele_allures > 14)
-        {
-            $etalon->StatutMale->qualite ='approuvé';
-        }
-        else if ($etalon->modele_allures > 9 && $race->approbation == false)
-        {
-            $etalon->StatutMale->qualite = 'autorisé';
-        }
-        else 
-        { 
-            $etalon->StatutMale->qualite ='refusé';
-        }
-        foreach ($pathos as $patho)
-        {
-            if ($patho->redhibitoire)
-            {
-                $etalon->StatutMale->qualite ='refusé';
-            }
-        }
-        $mini = Race::where('nom', 'Miniature')->first();
-        if ($etalon->Race == $mini)
+
+        if ($elevage->Budget()->solde() > 200 || $elevage->role =='vendeur'){
+           $etalon->StatutMale->setAutorisationSanitaire();
+        
+        if ($race->id != 1 && $race->id != 17)
         {
            
-            if ($etalon->taille_cm > $mini->taille_max )
-            {
-                $etalon->StatutMale->qualite ='refusé';
-            }
+            $etalon->StatutMale->approuveEtalons();
+           
         }
+        
+        
+       
+      
+        $elevage->Budget()->fraisVeto(200);
+        $elevage->save();
+ }
+        return redirect()->back();
+    }
 
-        $etalon->StatutMale->save();
+     public function approbationCompetition ($elevage, $etalon)
+    {
+       
+        $etalon = Animal::Find($etalon);
+        $elevage = Elevage::Find($elevage);
+       
+
+        if ($elevage->Budget()->solde() > 60 || $elevage->role =='vendeur'){
+           $etalon->StatutMale->approuveEtalonsResultatsConcours();
+           
+        }
+        if ($elevage->role != "vendeur") {
+        $elevage->Budget()->fraisVeto(60);
+        $elevage->save();
+        return redirect()->back();
+        }
+    }
+
+    public function carnetSaillies($elevage, $etalon) 
+    {
+        $elevage = Elevage::Find($elevage);
+        $etalon = Animal::Find($etalon);
+        $date = Gamedata::date();
+
+        if ($etalon->ageAdministratif($date) >= $etalon->race->age_repro_male) {
+
+            $etalon->StatutMale->carnet_saillies = true;
+           
+            $elevage->Budget()->fraisAdministratifs(60);
+
+            $etalon->StatutMale->save();
+
+        }
+        
         return redirect()->back();
     }
 
@@ -278,7 +307,13 @@ class ElevageController extends Controller
         $elevage = Elevage::Find($elevage);
         $etalon = Animal::Find($etalon);
 
-        return view('monte',['elevage'=>$elevage, 'etalon'=>$etalon]);
+        if ($etalon->StatutMale->carnet_saillies)
+{
+        return view('monte',['elevage'=>$elevage, 'etalon'=>$etalon]);}
+
+        else {
+            redirect()->back();
+        }
     }
 
     public function retirerMonte($elevage, $etalon)
@@ -319,13 +354,15 @@ class ElevageController extends Controller
     public function choixEtalon ($id,$jument)
     {
         $elevage = Elevage::Find($id);
-        $budget = $elevage->budget;
+        $budget = $elevage->role=='joueur'?$elevage->Budget()->solde():1000;
         
         $jument =Animal::Find($jument);
         
         $etalons = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'mâle')->orwhere('sexe','vieux mâle');})->get();
-
-        $exterieurs = Animal::where('elevage_id', '!=', $id)->whereHas('StatutMale', function ($query) use ($budget) {return $query->where('disponible', 1)->where('prix', '<=', $budget);})->get();
+        if ($elevage->role != 'vendeur'){
+             $exterieurs = Animal::where('elevage_id', '!=', $id)->whereHas('StatutMale', function ($query) use ($budget) {return $query->where('disponible', 1)->where('prix', '<=', $budget);})->get();
+       
+        }
        
 
       
@@ -340,11 +377,9 @@ class ElevageController extends Controller
     public function budget ($id)
     {
         $elevage = Elevage::Find($id);
-        $budget = $elevage->budget;
-        $veto = $elevage->calculeFraisVeto();
-        $nourriture = $elevage->calculeFrais() - $veto;
-
-       return redirect()->route('dashboard',$elevage)->with('alert', 'Votre budget: '.$budget."\r\n".'dépenses frais vétérinaires: '.$veto."\r\n".' frais nourriture: '.$nourriture);
+        $budget = $elevage->Budget();
+      
+       return view('budget', ['elevage'=> $elevage,'budget'=> $budget]);
 
     }
 
@@ -359,7 +394,7 @@ class ElevageController extends Controller
     }
     public function chercheTerres ($id)
     {
-        $game = GameData::Find(1);
+        $game = Gamedata::Find(1);
         
         if ($game->terres == false)
         {          
@@ -394,6 +429,12 @@ class ElevageController extends Controller
         
        
         return redirect()->route('dashboard',$elevage);
+    }
+
+    public function studbooks($elevage) 
+    {
+        $elevage = Elevage::find($elevage);
+        return view('studbooks',['elevage'=>$elevage]);
     }
 
 }

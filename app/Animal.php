@@ -7,12 +7,30 @@ use Orangehill\IseedServiceProvider\animaux;
 use App\Http\Controllers\ReproductionController;
 use App\Affixe;
 use DateTime;
-use App\GameData;
+use App\Gamedata;
+use App\Race;
+
+/** class Animal (table animaux)
+ * Relations: Genotypes, Elevage, Race, RacesPossibles (table races_possible): when a choice between different studbooks is required, Affixe, Performance, Sire, Dam (parents, table animaux), StatutFemelle or StatutMale, Pathologie, Couleur, Image
+ * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur, foetus 
+ * functions: Sexe (sex and statut for reproduction)
+ * Genre: (male or female, for competition registration)
+ * Progneny: born children (including miscarriages)
+ * Palmares: competition results (from table resultats) where the animal is ranked
+ * NomComplet (name + affix)
+ * ageMonths: age given in months
+ * ageYears: age given in years
+ * ageAdministratif ($date): age given in years at a given date, as if the animal was born in january (for competition registration)
+ * taille: current height at the current date, equal to taille_cm where horse is adult
+ * checkNom: check if the name is not already taken (without affix or with same affix)
+*/
+
+
 
 class Animal extends Model
 {
     protected $table ='animaux';
-    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'prix', 'sexe', 'date_achat', 'date_naissance', 'a_vendre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id', 'taille_additive', 'modele_allures_additifs', 'modele_allures' ];
+    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'sexe', 'date_achat', 'date_naissance', 'a_vendre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id', 'taille_additive', 'modele_allures_additifs', 'modele_allures' ];
 
     public function Genotypes()
     {
@@ -28,6 +46,11 @@ class Animal extends Model
     public function Race()
     {
         return $this->BelongsTo('App\Race');
+    }
+
+    public function RacesPossibles() 
+    {
+        return $this->BelongsToMany('App\Race','races_possibles');
     }
 
     public function Affixe()
@@ -71,7 +94,7 @@ class Animal extends Model
 
     }
 
-    public function StatutMale() //male en âge de se reproduire, fertilité, qualité (autorisé, approuvé)
+    public function StatutMale() //male en âge de se reproduire, fertilité, qualité (approuvé)
     {
         return $this->HasOne('App\StatutMale', 'animal_id');
     }
@@ -100,7 +123,19 @@ class Animal extends Model
     {
         if (isset($this->StatutMale) && $this->StatutMale->fertilite > 0 )
         {
+            if ($this->StatutMale->approuvePFS && $this->race->cheval_sport && $this->race->poney_sport) {
+                return 'Étalon approuvé dans sa race, en Poney Français de Selle et en Selle Français';
+            }
+            
+            else if ($this->StatutMale->approuvePFS && $this->race->poney_sport) {
+                return 'Étalon approuvé dans sa race et en Poney Français de Selle';
+            }
+            else if ($this->StatutMale->approuvePFS && $this->race->cheval_sport ) {
+                return 'Étalon approuvé dans sa race et en Selle Français';
+            }
+            else {
             return 'Étalon '.$this->StatutMale->qualite;
+            }
         }
         else
         {
@@ -237,27 +272,14 @@ class Animal extends Model
             
     }
 
-    static function chercheRaces($etalon,$jument,$taille,$qualite) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
+    static function chercheRaces($etalon,$jument,$taille) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
     {
-        $appro = Race::find($etalon)->approbation;
-     
-        switch(true)
-       {
-           case $etalon==$jument:
-            switch(true)
-            {
-                case $qualite == 'approuvé':
-                    return $etalon;
+        $qualite = $etalon->StatutMale->qualite;
+       
+            if ($qualite == 'approuvé' || $qualite == 'approbation provisoire') {
 
-                case $qualite == 'autorisé' && $appro == false:
-                    return $etalon;
-                   
-                
-                default:
-                return 1; //OC si étalon non autorisé ou refusé, ou non approuvé pour FS
-            }
-            case $qualite == 'approuvé':
-              $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->first();
+
+              $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first();
 
                 if (isset ($race))
                 {
@@ -266,7 +288,7 @@ class Animal extends Model
                 }
                 else 
                 {
-                  $races = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions', 1)->get();
+                  $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions', 1)->get();
   
                   if (sizeof($races)>0)
                   {
@@ -284,42 +306,16 @@ class Animal extends Model
                   }
                    
                 }
-              
+            } 
            
 
-            case $qualite == 'autorisé':
+            else {
+                return 1;
+            }
        
-                $race = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',0)->where('approbation', 0)->first(); 
-
-                if (isset ($race))
-                {
-                  return $race->race_produit_id;
-                }
-                else 
-                {
-                    $races = AssoRace::where('race_pere_id', $etalon)->where('race_mere_id', $jument)->where('automatique', 1)->where('taille_conditions',1)->get();
-
-                    if (sizeof($races)>0)
-                    {
-                    foreach ($races as $race)
-                    {
-                    
-                        $race = Race::Find($race->race_produit_id);
-                        
-
-                        if (($taille >= $race->taille_min) && ($taille <= $race->taille_max))
-                        {
-                            return $race->id;
-                        
-                        }
-                        }
-                    }
-                }  
-        default:
-        return 1;
-       }    
-       
+              
     }
+
     static function pourCentRace($animal, $bred) //$bred: id bred
     //Pour les races de croisement ou un % de telle ou telle race est requis
     {
@@ -328,7 +324,7 @@ class Animal extends Model
         {
             return 100;
         }
-        else if ($animal->fondateur)
+        else if ($animal->fondateur || $animal->race_id == 17)
         {
             return 0;
         }
@@ -344,7 +340,7 @@ class Animal extends Model
         {
             return 100;
         }
-        else if ($animal->fondateur)
+        else if ($animal->fondateur || $animal->race_id == 17)
         {
             return 0;
         }
@@ -352,6 +348,21 @@ class Animal extends Model
         {
             return (Animal::pourCentWelsh($animal->sire_id) + Animal::pourCentWelsh($animal->dam_id))/2;
         }
+    }
+
+    public function Randomize() 
+    {
+        if ($this->Race->approbation) {
+            $min = $this->Genre() == 1 ? 15 : 8;
+           
+        }
+        else {
+            $min = $this->Genre() == 1 ? 12 : 10;
+        }
+        $this->modele_allures_additifs = rand($min, 19);
+        $this->capacite_dressage_additive = rand(5,19);
+        $this->capacite_apprentissage_additive = rand(5,19);
+        $this->save();
     }
 
     public function acheter($elevage)
@@ -383,6 +394,10 @@ class Animal extends Model
                 $produit->save();
                }
             }
+            if ($this->StatutMale != NULL){
+                $this->StatutMale->disponible = false;
+                $this->StatutMale->save();
+            }
             
            
         }
@@ -397,12 +412,14 @@ public function Resultats() //Resultats en compète, mais c'est la fonction Palm
 }
         
 public function seraSuiteeAu($date)   {
+    $id = $this->id;
      if ($this->StatutFemelle->suitee) {
-        $foal = Animal::where('dam_id',$this->id)->where('sexe','jeune poulain')->orWhere('sexe','jeune pouliche')->first();
+        $foal = Animal::where('dam_id',$id)->where('sexe', 'LIKE','jeune poul%')->first();
+       
         $age = $foal->ageMonths();
-        $months = GameData::HowManyMonths($date);
+        $months = Gamedata::HowManyMonths($date);
         if ($age + $months > 6) {
-           // dd('poulain sevré');
+           //dd('poulain sevré');
             return false;
         }
         else {
@@ -427,5 +444,6 @@ public function seraSuiteeAu($date)   {
         //dd('ni pleine ni suitée');
     }
 } 
+
  
 }

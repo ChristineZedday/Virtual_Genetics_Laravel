@@ -20,9 +20,9 @@ class AnimalTest extends TestCase
      * @return void
      */
 
-     static function createGameData() 
+     static function createGamedata() 
      {
-        $gamedata = New GameData;
+        $gamedata = New Gamedata;
         $gamedata->date_debut = "1970-02-01";
         $gamedata->date_courante = "1970-05-10";
         $gamedata->budget = 20000;
@@ -31,7 +31,7 @@ class AnimalTest extends TestCase
 
      public function testAgeMonthsAdulte () 
      {
-        GamedataTest::createGameData();
+        GamedataTest::createGamedata();
         $animal = New Animal;
         $animal->date_naissance = "1966-05-10";
         
@@ -41,7 +41,7 @@ class AnimalTest extends TestCase
 
      public function testAgeMonthsFoal () 
      {
-        GameDataTest::createGameData();
+        GamedataTest::createGamedata();
         $animal = New Animal;
         $animal->date_naissance = "1970-07-01";
         
@@ -51,7 +51,7 @@ class AnimalTest extends TestCase
 
      public function testAgeYearsAdulte () 
      {
-        GamedataTest::createGameData();
+        GamedataTest::createGamedata();
         $animal = New Animal;
         $animal->date_naissance = "1966-05-10";
         
@@ -61,7 +61,7 @@ class AnimalTest extends TestCase
 
      public function testAgeAdministratif () 
      {
-        GamedataTest::createGameData();
+        GamedataTest::createGamedata();
         $animal = New Animal;
         $animal->date_naissance = "1966-08-10";
         
@@ -74,7 +74,7 @@ class AnimalTest extends TestCase
 
     public function testTailleAdulte()
     {
-        GamedataTest::createGameData();
+        GamedataTest::createGamedata();
         $animal = New Animal;
         $animal->taille_cm = 140;
         $animal->date_naissance = '1965-05-10';
@@ -85,7 +85,7 @@ class AnimalTest extends TestCase
     }
     public function testTailleNewborn()
     {
-        GamedataTest::createGameData();
+        GamedataTest::createGamedata();
         $animal = New Animal;
         $animal->taille_cm = 140;
         $animal->date_naissance = '1970-05-10';
