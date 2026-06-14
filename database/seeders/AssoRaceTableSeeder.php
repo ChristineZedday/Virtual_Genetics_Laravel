@@ -33,6 +33,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             1 => 
             array (
@@ -48,6 +49,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             2 => 
             array (
@@ -63,6 +65,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             3 => 
             array (
@@ -78,6 +81,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             4 => 
             array (
@@ -93,6 +97,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             5 => 
             array (
@@ -108,6 +113,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             6 => 
             array (
@@ -123,6 +129,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             7 => 
             array (
@@ -138,6 +145,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             8 => 
             array (
@@ -153,6 +161,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             9 => 
             array (
@@ -168,6 +177,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             10 => 
             array (
@@ -183,6 +193,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             11 => 
             array (
@@ -198,6 +209,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             12 => 
             array (
@@ -212,7 +224,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'DSA 50% min',
                 'approbation' => 0,
                 'pourCentArabe' => 50.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             13 => 
             array (
@@ -227,7 +239,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'DSA 50% min',
                 'approbation' => 0,
                 'pourCentArabe' => 50.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             14 => 
             array (
@@ -242,7 +254,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             15 => 
             array (
@@ -257,7 +269,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             16 => 
             array (
@@ -272,7 +284,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             17 => 
             array (
@@ -287,7 +299,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             18 => 
             array (
@@ -303,6 +315,8 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
+
             ),
             19 => 
             array (
@@ -318,6 +332,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             20 => 
             array (
@@ -333,6 +348,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             21 => 
             array (
@@ -348,6 +364,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             22 => 
             array (
@@ -363,6 +380,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             23 => 
             array (
@@ -378,6 +396,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             24 => 
             array (
@@ -393,6 +412,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             25 => 
             array (
@@ -408,6 +428,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             26 => 
             array (
@@ -422,7 +443,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             27 => 
             array (
@@ -437,7 +458,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             28 => 
             array (
@@ -452,7 +473,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             29 => 
             array (
@@ -467,7 +488,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             30 => 
             array (
@@ -482,7 +503,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             31 => 
             array (
@@ -497,7 +518,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             32 => 
             array (
@@ -512,7 +533,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             33 => 
             array (
@@ -527,7 +548,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             34 => 
             array (
@@ -542,7 +563,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             35 => 
             array (
@@ -557,7 +578,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             36 => 
             array (
@@ -572,7 +593,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'miniature',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             37 => 
             array (
@@ -587,7 +608,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'miniature',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             38 => 
             array (
@@ -602,7 +623,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'DSA > 50%',
                 'approbation' => 0,
                 'pourCentArabe' => 50.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             39 => 
             array (
@@ -617,7 +638,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'DSA > 50%',
                 'approbation' => 0,
                 'pourCentArabe' => 50.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             40 => 
             array (
@@ -633,6 +654,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             41 => 
             array (
@@ -648,6 +670,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             42 => 
             array (
@@ -663,6 +686,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             43 => 
             array (
@@ -678,6 +702,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             44 => 
             array (
@@ -693,6 +718,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             45 => 
             array (
@@ -708,6 +734,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             46 => 
             array (
@@ -723,6 +750,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             47 => 
             array (
@@ -738,6 +766,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             48 => 
             array (
@@ -753,6 +782,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             49 => 
             array (
@@ -768,6 +798,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             50 => 
             array (
@@ -783,6 +814,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             51 => 
             array (
@@ -798,6 +830,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 100.0,
+                'pourCentLusitanien' => NULL,
             ),
             52 => 
             array (
@@ -812,7 +845,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             53 => 
             array (
@@ -827,7 +860,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             54 => 
             array (
@@ -842,7 +875,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             55 => 
             array (
@@ -857,7 +890,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             56 => 
             array (
@@ -872,7 +905,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             57 => 
             array (
@@ -887,7 +920,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             58 => 
             array (
@@ -902,7 +935,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             59 => 
             array (
@@ -917,7 +950,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             60 => 
             array (
@@ -932,7 +965,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             61 => 
             array (
@@ -947,7 +980,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             62 => 
             array (
@@ -962,7 +995,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             63 => 
             array (
@@ -978,6 +1011,7 @@ class AssoRaceTableSeeder extends Seeder
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
                 'pourCentWelsh' => 12.5,
+                'pourCentLusitanien' => NULL,
             ),
             64 => 
             array (
@@ -992,7 +1026,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'DSA',
                 'approbation' => 0,
                 'pourCentArabe' => 50.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             65 => 
             array (
@@ -1007,7 +1041,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'miniarure',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             66 => 
             array (
@@ -1022,7 +1056,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             67 => 
             array (
@@ -1037,7 +1071,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             68 => 
             array (
@@ -1052,7 +1086,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             69 => 
             array (
@@ -1067,7 +1101,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             70 => 
             array (
@@ -1082,7 +1116,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             71 => 
             array (
@@ -1097,7 +1131,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             72 => 
             array (
@@ -1112,7 +1146,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             73 => 
             array (
@@ -1127,7 +1161,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             74 => 
             array (
@@ -1142,7 +1176,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             75 => 
             array (
@@ -1157,7 +1191,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             76 => 
             array (
@@ -1172,7 +1206,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             77 => 
             array (
@@ -1187,7 +1221,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             78 => 
             array (
@@ -1202,7 +1236,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             79 => 
             array (
@@ -1217,7 +1251,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             80 => 
             array (
@@ -1232,7 +1266,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             81 => 
             array (
@@ -1247,7 +1281,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             82 => 
             array (
@@ -1262,7 +1296,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             83 => 
             array (
@@ -1277,7 +1311,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             84 => 
             array (
@@ -1292,7 +1326,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             85 => 
             array (
@@ -1307,7 +1341,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             86 => 
             array (
@@ -1322,7 +1356,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             87 => 
             array (
@@ -1337,7 +1371,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             88 => 
             array (
@@ -1352,7 +1386,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             89 => 
             array (
@@ -1367,7 +1401,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             90 => 
             array (
@@ -1382,7 +1416,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             91 => 
             array (
@@ -1397,7 +1431,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             92 => 
             array (
@@ -1412,7 +1446,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             93 => 
             array (
@@ -1427,7 +1461,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 0,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             94 => 
             array (
@@ -1442,7 +1476,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             95 => 
             array (
@@ -1457,7 +1491,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             96 => 
             array (
@@ -1472,7 +1506,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             97 => 
             array (
@@ -1487,7 +1521,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pottok B',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             98 => 
             array (
@@ -1502,7 +1536,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             99 => 
             array (
@@ -1517,7 +1551,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             100 => 
             array (
@@ -1532,7 +1566,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             101 => 
             array (
@@ -1547,7 +1581,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             102 => 
             array (
@@ -1562,7 +1596,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             103 => 
             array (
@@ -1577,7 +1611,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             104 => 
             array (
@@ -1592,7 +1626,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             105 => 
             array (
@@ -1607,7 +1641,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             106 => 
             array (
@@ -1622,7 +1656,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             107 => 
             array (
@@ -1637,7 +1671,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             108 => 
             array (
@@ -1652,7 +1686,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             109 => 
             array (
@@ -1667,7 +1701,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             110 => 
             array (
@@ -1682,7 +1716,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             111 => 
             array (
@@ -1697,7 +1731,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             112 => 
             array (
@@ -1712,7 +1746,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             113 => 
             array (
@@ -1727,7 +1761,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             114 => 
             array (
@@ -1742,7 +1776,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             115 => 
             array (
@@ -1757,7 +1791,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             116 => 
             array (
@@ -1772,7 +1806,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             117 => 
             array (
@@ -1787,7 +1821,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             118 => 
             array (
@@ -1802,7 +1836,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             119 => 
             array (
@@ -1817,7 +1851,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             120 => 
             array (
@@ -1832,7 +1866,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             121 => 
             array (
@@ -1847,7 +1881,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             122 => 
             array (
@@ -1862,7 +1896,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             123 => 
             array (
@@ -1877,7 +1911,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             124 => 
             array (
@@ -1892,7 +1926,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             125 => 
             array (
@@ -1907,7 +1941,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             126 => 
             array (
@@ -1922,7 +1956,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             127 => 
             array (
@@ -1937,7 +1971,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'FS',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             128 => 
             array (
@@ -1952,7 +1986,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pintabian',
                 'approbation' => 0,
                 'pourCentArabe' => 99.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             129 => 
             array (
@@ -1967,7 +2001,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pintabian',
                 'approbation' => 0,
                 'pourCentArabe' => 99.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             130 => 
             array (
@@ -1982,7 +2016,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pintabian',
                 'approbation' => 0,
                 'pourCentArabe' => 99.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             131 => 
             array (
@@ -1997,7 +2031,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'Pintabian',
                 'approbation' => 0,
                 'pourCentArabe' => 99.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             132 => 
             array (
@@ -2011,8 +2045,8 @@ class AssoRaceTableSeeder extends Seeder
                 'automatique' => 0,
                 'commentaire' => 'Pintabian',
                 'approbation' => 0,
-                'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentArabe' => 99,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             133 => 
             array (
@@ -2027,7 +2061,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'AA',
                 'approbation' => 0,
                 'pourCentArabe' => 50.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             134 => 
             array (
@@ -2042,7 +2076,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'AA',
                 'approbation' => 0,
                 'pourCentArabe' => 56.25,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             135 => 
             array (
@@ -2057,7 +2091,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'AA',
                 'approbation' => 0,
                 'pourCentArabe' => 50.0,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             136 => 
             array (
@@ -2072,7 +2106,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'AA',
                 'approbation' => 0,
                 'pourCentArabe' => 12.5,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             137 => 
             array (
@@ -2087,7 +2121,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             138 => 
             array (
@@ -2102,7 +2136,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             139 => 
             array (
@@ -2117,7 +2151,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             140 => 
             array (
@@ -2132,7 +2166,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             141 => 
             array (
@@ -2147,7 +2181,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             142 => 
             array (
@@ -2162,7 +2196,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             143 => 
             array (
@@ -2177,7 +2211,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             144 => 
             array (
@@ -2192,7 +2226,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             145 => 
             array (
@@ -2207,7 +2241,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             146 => 
             array (
@@ -2222,7 +2256,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             147 => 
             array (
@@ -2237,7 +2271,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             148 => 
             array (
@@ -2252,7 +2286,7 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
             ),
             149 => 
             array (
@@ -2267,7 +2301,264 @@ class AssoRaceTableSeeder extends Seeder
                 'commentaire' => 'SF',
                 'approbation' => 1,
                 'pourCentArabe' => NULL,
-                'pourCentWelsh' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+               150 => 
+            array (
+                'id' => 171,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 24,
+                'race_mere_id' => 21,
+                'race_produit_id' => 21,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'SF',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+               151 => 
+            array (
+                'id' => 172,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 21,
+                'race_mere_id' => 24,
+                'race_produit_id' => 21,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'SF',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+             
+            153 => 
+            array (
+                'id' => 174,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 24,
+                'race_mere_id' => 8,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+            154 => 
+            array (
+                'id' => 175,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 8,
+                'race_mere_id' => 24,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+            155 => 
+            array (
+                'id' => 176,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 18,
+                'race_mere_id' => 24,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+            156 => 
+            array (
+                'id' => 177,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 24,
+                'race_mere_id' => 18,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+            157 => 
+            array (
+                'id' => 178,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 19,
+                'race_mere_id' => 24,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+             158 => 
+            array (
+                'id' => 179,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 24,
+                'race_mere_id' => 19,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+             159 => 
+            array (
+                'id' => 180,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 20,
+                'race_mere_id' => 24,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+             160 => 
+            array (
+                'id' => 181,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 24,
+                'race_mere_id' => 19,
+                'race_produit_id' => 24,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'CSAN',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+              161 => 
+            array (
+                'id' => 182,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 21,
+                'race_mere_id' => 9,
+                'race_produit_id' => 21,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'SF',
+                'approbation' => 1,
+                'pourCentArabe' => 50,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+              162 => 
+            array (
+                'id' => 183,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 9,
+                'race_mere_id' => 21,
+                'race_produit_id' => 21,
+                'taille_conditions' => 0,
+                'automatique' => 0,
+                'commentaire' => 'SF',
+                'approbation' => 1,
+                'pourCentArabe' => 50,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+             163 => 
+            array (
+                'id' => 184,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => NULL,
+                'race_mere_id' => 21,
+                'race_produit_id' => 21,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'SF',
+                'approbation' => 1,
+                'pourCentArabe' => 50,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+             164 => 
+            array (
+                'id' => 185,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 21,
+                'race_mere_id' => 9,
+                'race_produit_id' => 21,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'SF',
+                'approbation' => 1,
+                'pourCentArabe' => 50,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => NULL,
+            ),
+              165 => 
+            array (
+                'id' => 186,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => 23,
+                'race_mere_id' => NULL,
+                'race_produit_id' => 25,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'CDF',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => 50,
+            ),
+              166 => 
+            array (
+                'id' => 187,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => NULL,
+                'race_mere_id' => 23,
+                'race_produit_id' => 25,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'CDF',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 'pourCentLusitanien' => 50,
+            ),
+             167 => 
+            array (
+                'id' => 188,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'race_pere_id' => NULL,
+                'race_mere_id' => NULL,
+                'race_produit_id' => 25,
+                'taille_conditions' => 1,
+                'automatique' => 0,
+                'commentaire' => 'CDF',
+                'approbation' => 1,
+                'pourCentArabe' => NULL,
+                'pourCentWelsh' => NULL, 
+                'pourCentLusitanien' => 12.5,
             ),
         ));
         

@@ -24,8 +24,8 @@ class CreateRacesTable extends Migration
             $table->boolean('approbation')->default(FALSE); //approbation étalons requise
             $table->boolean('approbation_provisoire')->default(FALSE); //approbation étalons de deux ans pour l'année suivante
             $table->boolean('approbation_classes')->default(FALSE); //étalons classés à un concours pour être approuvés (PFS)
-            $table->tinyInteger('pcArabe')->default(0);
-            $table->float('pcWelsh')->default(0);
+            $table->float('pcArabe')->default(0)->nullable();
+            $table->float('pcWelsh')->default(0)->nullable();
             $table->tinyInteger('age_repro_male')->default(3);
             $table->tinyInteger('age_repro_femelle')->default(2);
             $table->boolean('poney_sport')->default(true);
