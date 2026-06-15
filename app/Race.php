@@ -92,7 +92,7 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
    }
 
    else {
-      $race = Animal::chercheRaces($etalon, $jument, $produit->taille_cm);
+      $race = chercheRaces($etalon, $jument, $produit->taille_cm);
       if ($race != NULL) {
          $produit->race_id = $race;
          $produit->save();
@@ -112,6 +112,84 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
    
 }
 
+  static function chercheRaces($etalon,$jument,$taille) //Race d'un produit dont les parents sont de races différentes, quand cette race est déterminée automatiquement (exemple: Welsh Pony x Welsh Cob)
+    {
+        $qualite = $etalon->StatutMale->qualite;
+       
+            if ($qualite == 'approuvé' || $qualite == 'approbation provisoire') {
+
+
+              $race = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions',0)->first();
+
+                if (isset ($race))
+                {
+                    return $race->race_produit_id;
+                   
+                }
+                else 
+                {
+                  $races = AssoRace::where('race_pere_id', $etalon->race_id)->where('race_mere_id', $jument->race_id)->where('automatique', 1)->where('taille_conditions', 1)->get();
+  
+                  if (sizeof($races)>0)
+                  {
+                    foreach ($races as $race)
+                    {
+                        $race = Race::Find($race->race_produit_id);             
+  
+                        if (($taille >= $race->taille_min) && ($taille <= $race->taille_max))
+                        {
+                         return $race->id;
+                        }
+                       
+                      
+                    }
+                  }
+                   
+                }
+            } 
+           
+
+            else {
+                return 1;
+            }
+       
+              
+    }
+
+    static function pourCentRace($animal, $bred) //$bred: id bred
+    //Pour les races de croisement ou un % de telle ou telle race est requis
+    {
+        $animal = Animal::Find($animal);
+        if ($animal->race_id == $bred)
+        {
+            return 100;
+        }
+        else if ($animal->fondateur || $animal->race_id == 17)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Animal::pourCentRace($animal->sire_id,$bred) + Animal::pourCentRace($animal->dam_id,$bred))/2;
+        }
+    }
+    static function pourCentWelsh($animal)
+    { //le Welsh est divisé en 4 sections traitées ici comme des races 
+        $animal = Animal::Find($animal);
+        if ($animal->race_id == 4 || $animal->race_id == 5 || $animal->race_id == 6 || $animal->race_id == 7 )
+        {
+            return 100;
+        }
+        else if ($animal->fondateur || $animal->race_id == 17)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Animal::pourCentWelsh($animal->sire_id) + Animal::pourCentWelsh($animal->dam_id))/2;
+        }
+    }
+
 
 static function associeRaces ($etalon,$jument,$produit) 
 {
@@ -120,6 +198,7 @@ static function associeRaces ($etalon,$jument,$produit)
    $taille = $produit->taille_cm;
    $welsh = Animal::PourCentWelsh($produit->id);
    $arabe = Animal::PourCentRace($produit->id, 8);
+   $lusitanien = Animal::PourCentRace($produit->id, 23);
    $appro = $etalon->StatutMale->approuvePFS;
 
  
@@ -154,4 +233,6 @@ static function associeRaces ($etalon,$jument,$produit)
     }
          
 }
+
+
 }
