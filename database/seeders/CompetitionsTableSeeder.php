@@ -833,6 +833,30 @@ class CompetitionsTableSeeder extends Seeder
                 'prix_inscription' => 50,
                 'prix_premier' => 3000,
             ),
+            74 => 
+            array (
+                'id' => 79,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Poneys Dressage',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 3,
+                'prix_inscription' => 30,
+                'prix_premier' => 300,
+                'tous_poneys_sport' =>1,
+            ),
+            75 => 
+            array (
+                'id' => 80,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Chevaux Dressage',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 3,
+                'prix_inscription' => 60,
+                'prix_premier' => 500,
+                'tous_chevaux_sport' =>1,
+            ),
         ));
         
         

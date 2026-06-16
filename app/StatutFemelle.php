@@ -18,4 +18,10 @@ class StatutFemelle extends Model
     {
         return $this->hasOne('App\Animal', 'id', 'etalon_id');
     }
+
+    public function confirme() {
+        if ($this->Femelle->$this->modele_allures_additifs == 15) {
+            $this->confirmee = true;
+        }
+    }
 }

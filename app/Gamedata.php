@@ -214,11 +214,15 @@ static function checkPuberes()
         { $animal->sexe = 'femelle';
         if ($animal->elevage->role == 'Vendeur') {
             $animal->statut_administratif = 'enregistré';
+           
             $animal->save();
         }
          $animal->save();
          $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
+          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments) {
+                $StatutFemelle->confirme();
+            }
          $statut->fertilite = 100 - $animal->consang/2 ;
          $statut->save();
         }
@@ -427,6 +431,13 @@ static function checkApproConcours() {
             $male->save();
         }  
 
+    }
+}
+
+static function checkIDR() {
+    $animaux = Animal::has('performances')->get();
+    foreach ($animaux as $animal) {
+        $animal->Performance->IDR();
     }
 }
 // 

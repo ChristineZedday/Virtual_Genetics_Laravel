@@ -196,8 +196,8 @@ static function associeRaces ($etalon,$jument,$produit)
    $racet = $etalon->race_id;
    $raceju = $jument->race_id;
    $taille = $produit->taille_cm;
-   $welsh = Animal::PourCentWelsh($produit->id);
-   $arabe = Animal::PourCentRace($produit->id, 8);
+   $welsh = PourCentWelsh($produit->id);
+   $arabe = PourCentRace($produit->id, 8);
    $lusitanien = Animal::PourCentRace($produit->id, 23);
    $appro = $etalon->StatutMale->approuvePFS;
 
@@ -233,6 +233,34 @@ static function associeRaces ($etalon,$jument,$produit)
     }
          
 }
+static function WelshPartBreed ($produit) {
+   if (pourCentWelsh($produit) >= 12.5) {
+      return true;
 
+   }
+   else return false;
+}
+static function DemiSangArabe ($produit) {
+   if (pourCentRace($produit, 8) >= 50) {
+      return true;
+
+   }
+   else return false;
+}
+
+static function CDF ($etalon, $jument, $produit) {
+   if (pourCentRace($produit, 23) < 12.5){
+      return false;
+   }
+   if (pourCentRace($produit, 17) > 12.5){
+      return false; //Origines connues jusqu'à la troisième génération
+   }
+   else if (!$etalon->race->cheval_sport ||  !$jument->race->cheval_sport){
+      return false;
+   }
+
+   //ajouter acceptation jument
+   else {return true;}
+}
 
 }
