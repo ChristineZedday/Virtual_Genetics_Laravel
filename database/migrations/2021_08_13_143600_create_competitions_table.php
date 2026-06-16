@@ -21,7 +21,9 @@ class CreateCompetitionsTable extends Migration
             $table->tinyInteger('niveau_id')->unsigned();
             $table->mediumInteger('prix_inscription');
             $table->mediumInteger('prix_premier');
+          
             $table->foreign('niveau_id')->references('id')->on('niveaux');
+           
         });
     }
 

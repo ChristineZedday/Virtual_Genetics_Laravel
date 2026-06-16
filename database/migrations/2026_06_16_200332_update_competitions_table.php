@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-         Schema::update('competitions', function (Blueprint $table) {
+           Schema::table('competitions', function (Blueprint $table) {
             $table->boolean('tous_poneys_sport')->default(0)->nullable();
             $table->boolean('tous_chevaux_sport')->default(0)->nullable();
-        });
+           });
     }
 
     /**

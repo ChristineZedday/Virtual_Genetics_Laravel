@@ -435,7 +435,7 @@ static function checkApproConcours() {
 }
 
 static function checkIDR() {
-    $animaux = Animal::has('performances')->get();
+    $animaux = Animal::has('performance')->get();
     foreach ($animaux as $animal) {
         $animal->Performance->IDR();
     }
