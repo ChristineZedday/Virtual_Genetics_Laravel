@@ -3763,6 +3763,328 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 33,
                 'categorie_id' => 1,
             ),
+             468 => 
+            array (
+                'id' => 532,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 79,
+                'categorie_id' => 1,
+            ),
+            469 => 
+            array (
+                'id' => 533,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 79,
+                'categorie_id' => 2,
+            ),
+              470 => 
+            array (
+                'id' => 534,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 79,
+                'categorie_id' => 4,
+            ),
+            471 => 
+            array (
+                'id' => 535,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 79,
+                'categorie_id' => 10,
+            ),
+                472 => 
+            array (
+                'id' => 536,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 80,
+                'categorie_id' => 1,
+            ),
+            473 => 
+            array (
+                'id' => 537,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 80,
+                'categorie_id' => 2,
+            ),
+              474 => 
+            array (
+                'id' => 538,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 80,
+                'categorie_id' => 4,
+            ),
+            471 => 
+            array (
+                'id' => 539,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 80,
+                'categorie_id' => 10,
+            ),
+              472 => 
+            array (
+                'id' => 540,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 81,
+                'categorie_id' => 1,
+            ),
+            473 => 
+            array (
+                'id' => 541,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 81,
+                'categorie_id' => 2,
+            ),
+              474 => 
+            array (
+                'id' => 542,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 81,
+                'categorie_id' => 4,
+            ),
+            475 => 
+            array (
+                'id' => 543,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 81,
+                'categorie_id' => 10,
+            ),
+                476 => 
+            array (
+                'id' => 544,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 82,
+                'categorie_id' => 1,
+            ),
+            477 => 
+            array (
+                'id' => 545,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 82,
+                'categorie_id' => 2,
+            ),
+              478 => 
+            array (
+                'id' => 546,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 82,
+                'categorie_id' => 4,
+            ),
+            479 => 
+            array (
+                'id' => 547,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 82,
+                'categorie_id' => 10,
+            ),
+              ));
+             \DB::table('categorie_competition')->insert(array (
+            0 => 
+            array (
+                'id' => 548,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 10,
+            ),
+              1 => 
+            array (
+                'id' => 549,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 4,
+            ),
+              2 => 
+            array (
+                'id' => 550,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 1,
+            ),
+             3 => 
+            array (
+                'id' => 551,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 3,
+            ),
+             4 => 
+            array (
+                'id' => 552,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 5,
+            ),
+             5 => 
+            array (
+                'id' => 553,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 2,
+            ),
+              6 => 
+            array (
+                'id' => 554,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 6,
+            ),
+              7 => 
+            array (
+                'id' => 555,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83,
+                'categorie_id' => 7,
+            ),
+               8 => 
+            array (
+                'id' => 556,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 10,
+            ),
+              9 => 
+            array (
+                'id' => 557,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 4,
+            ),
+              10 => 
+            array (
+                'id' => 558,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 1,
+            ),
+             11 => 
+            array (
+                'id' => 559,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 3,
+            ),
+             12 => 
+            array (
+                'id' => 560,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 5,
+            ),
+             13 => 
+            array (
+                'id' => 561,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 2,
+            ),
+              14 => 
+            array (
+                'id' => 562,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 6,
+            ),
+              15 => 
+            array (
+                'id' => 563,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84,
+                'categorie_id' => 7,
+            ),
+             16 => 
+            array (
+                'id' => 564,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 10,
+            ),
+              17 => 
+            array (
+                'id' => 565,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 4,
+            ),
+              18 => 
+            array (
+                'id' => 566,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 1,
+            ),
+             19 => 
+            array (
+                'id' => 567,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 3,
+            ),
+             20 => 
+            array (
+                'id' => 568,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 5,
+            ),
+             21 => 
+            array (
+                'id' => 569,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 2,
+            ),
+            22 => 
+            array (
+                'id' => 570,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 6,
+            ),
+              23 => 
+            array (
+                'id' => 571,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85,
+                'categorie_id' => 7,
+            ),
         ));
         
         

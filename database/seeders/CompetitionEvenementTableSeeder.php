@@ -891,6 +891,67 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'competition_id' => 80, //MAD chevaux
                 'evenement_id' => 42,
             ),
+             109 => 
+            array (
+                'id' => 304,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 81, //MAD poneys
+                'evenement_id' => 5,
+            ),
+              110 => 
+            array (
+                'id' => 305,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 81, //MAD poneys
+                'evenement_id' => 62,
+            ),
+             111 => 
+            array (
+                'id' => 306,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 82, //MAD chevaux
+                'evenement_id' => 62,
+            ),
+               112 => 
+            array (
+                'id' => 307,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 81, //MAD poneys
+                'evenement_id' => 63,
+            ),
+             113 => 
+            array (
+                'id' => 308,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 82, //MAD chevaux
+                'evenement_id' => 63,
+            ),
+            114 =>  array (
+                'id' => 309,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 83, //MA Lusitanos
+                'evenement_id' => 64,
+            ),
+             115 =>  array (
+                'id' => 310,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 84, //MA Lusitanos
+                'evenement_id' => 64,
+            ),
+               116 =>  array (
+                'id' => 311,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 85, //MA Lusitanos
+                'evenement_id' => 65,
+            ),
         ));
         
         

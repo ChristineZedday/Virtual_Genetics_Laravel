@@ -442,6 +442,42 @@ class EvenementsTableSeeder extends Seeder
                 'nom' => 'Dress\' In Deauville',
                 'distance' => 240,
             ),
+             47 => 
+            array (
+                'id' => 62,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-07-16',
+                'nom' => 'Qualification Dressage Pluméliau',
+                'distance' => 124,
+            ),
+              48 => 
+            array (
+                'id' => 63,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-07-30',
+                'nom' => 'Qualification Dressage Saint-Sulpice-des-Landes',
+                'distance' => 45,
+            ),
+               49 => 
+            array (
+                'id' => 64,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-07-05',
+                'nom' => 'Festival Lusitanien Beaucaire',
+                'distance' => 985,
+            ),
+              50 => 
+            array (
+                'id' => 65,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'date' => '2000-07-14',
+                'nom' => 'Concours Régional Lusitanien la Roche-sur-Yon',
+                'distance' => 189,
+            ),
         ));
         
         

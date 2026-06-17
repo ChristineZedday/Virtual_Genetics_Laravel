@@ -220,7 +220,7 @@ static function checkPuberes()
          $animal->save();
          $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
-          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments) {
+          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 15) {
                 $StatutFemelle->confirme();
             }
          $statut->fertilite = 100 - $animal->consang/2 ;

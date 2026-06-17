@@ -121,26 +121,34 @@ class Animal extends Model
 
     public function Sexe() //Sexe et stade de développement, en fait...
     {
-        if (isset($this->StatutMale) && $this->StatutMale->fertilite > 0 )
+        if (isset($this->StatutMale))
         {
             if ($this->StatutMale->approuvePFS && $this->race->cheval_sport && $this->race->poney_sport) {
-                return 'Étalon approuvé dans sa race, en Poney Français de Selle et en Selle Français';
+                $res = 'Étalon approuvé dans sa race, en Poney Français de Selle et en Selle Français';
             }
             
             else if ($this->StatutMale->approuvePFS && $this->race->poney_sport) {
-                return 'Étalon approuvé dans sa race et en Poney Français de Selle';
+                $res = 'Étalon approuvé dans sa race et en Poney Français de Selle';
             }
             else if ($this->StatutMale->approuvePFS && $this->race->cheval_sport ) {
-                return 'Étalon approuvé dans sa race et en Selle Français';
+                $res = 'Étalon approuvé dans sa race et en Selle Français';
             }
             else {
-            return 'Étalon '.$this->StatutMale->qualite;
+            $res = 'Étalon '.$this->StatutMale->qualite;
             }
+
+            return ($this->StatutMale->labellise_dressage)?  $res.' labellisé dressage':  $res;
         }
-        else
+        else  if (isset($this->StatutFemelle)  )
         {
-            return $this->sexe;
+            
+                $res = $this->StatutFemelle->confirmee? 'Jument confirmée': 'Jument';
+                $res = $this->StatutFemelle->labellisee_dressage? $res.' Labellisée dressage': $res;
+                return $res;
+          
         }
+          else {
+        return $this->sexe;}
         
     }
 
@@ -451,6 +459,10 @@ public function seraSuiteeAu($date)   {
         //dd('ni pleine ni suitée');
     }
 } 
+public function confirmeJument() {
+    $this->StatutFemelle->confirmee = TRUE;
+    $this->StatutFemelle->save();
 
+}
  
 }

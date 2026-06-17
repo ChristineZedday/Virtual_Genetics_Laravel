@@ -1009,6 +1009,71 @@ class CompetitionsTableSeeder extends Seeder
                 'tous_chevaux_sport' =>1,
                 'tous_poneys_sport' =>0,
             ),
+              76 => 
+            array (
+                'id' => 81,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Poneys Dressage',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 20,
+                'prix_premier' => 150,
+                'tous_poneys_sport' =>1,
+                'tous_chevaux_sport' =>0,
+            ),
+            77 => 
+            array (
+                'id' => 82,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Concours Modèles et Allures Chevaux Dressage',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 30,
+                'prix_premier' => 250,
+                'tous_chevaux_sport' =>1,
+                'tous_poneys_sport' =>0,
+            ),
+              78 => 
+            array (
+                'id' => 83,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Concours International Modèles et Allures Lusitaniens',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 4,
+                'prix_inscription' => 100,
+                'prix_premier' => 1000,
+                'tous_chevaux_sport' =>0,
+                'tous_poneys_sport' =>0,
+            ),
+             79 => 
+            array (
+                'id' => 84,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Concours National Modèles et Allures Lusitaniens',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 3,
+                'prix_inscription' => 60,
+                'prix_premier' => 700,
+                'tous_chevaux_sport' =>0,
+                'tous_poneys_sport' =>0,
+            ),
+              80 => 
+            array (
+                'id' => 85,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Concours National Modèles et Allures Lusitaniens',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 40,
+                'prix_premier' => 400,
+                'tous_chevaux_sport' =>0,
+                'tous_poneys_sport' =>0,
+            ),
        
         ));
         
