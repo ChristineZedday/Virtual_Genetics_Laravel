@@ -40,6 +40,46 @@ class TempsController extends Controller
                 $animal->Randomize();
                 Genome::readGenes($animal->id);
                 Performance::initialize($animal->id);
+                 if ($animal->ageAdministratif($date) >= 2 && $animal->Genre())
+        { 
+           $animal->sexe = 'mâle';
+            $animal->save();
+            $statut = new StatutMale();
+            $statut->animal_id = $animal->id;
+            $statut->fertilite = 100 - $animal->consang/2 ;
+            if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1 && $animal->race_id != 17)
+            {
+                $animal->statut_administratif = 'enregistré';
+                $animal->save();
+                if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
+                $statut->setAutorisationSanitaire();
+                $statut->approuveEtalons();
+                if ($statut->qualite == 'approuvé' || $statut->qualite == 'approbation provisoire cette année')
+                {$statut->carnet_saillies = true;}
+                }
+            }   
+           
+            $statut->save();
+            
+         } 
+            
+   
+        if ($animal->ageAdministratif($date) >= 2 && !$animal->Genre())
+        { $animal->sexe = 'femelle';
+        if ($animal->elevage->role == 'Vendeur') {
+            $animal->statut_administratif = 'enregistré';
+           
+            $animal->save();
+        }
+         $animal->save();
+         $statut = new StatutFemelle();
+         $statut->animal_id = $animal->id;
+          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 15) {
+                $statut->confirme();
+            }
+         $statut->fertilite = 100 - $animal->consang/2 ;
+         $statut->save();
+        }
                
             }
         }
@@ -187,11 +227,11 @@ static function regCompetNPC()
         if ($comp->type == 'Modèle et Allures')
                 {
                    if ( $comp->tous_poneys_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($sq) {$qu->where('poney_sport', 1);})->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->get();
 
                    } 
                    else if ($comp->tous_cheval_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($sq) {$qu->where('cheval_sport', 1);})->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->get();
                    }
                    else {
                 $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();

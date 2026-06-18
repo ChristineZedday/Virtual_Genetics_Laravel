@@ -119,7 +119,7 @@ class Animal extends Model
         return $this->belongsToMany('App\Couleur');
     }
 
-    public function Sexe() //Sexe et stade de développement, en fait...
+    public function SexeAdm() //Sexe et stade de développement +statut administratif, en fait...
     {
         if (isset($this->StatutMale))
         {
@@ -143,7 +143,7 @@ class Animal extends Model
         {
             
                 $res = $this->StatutFemelle->confirmee? 'Jument confirmée': 'Jument';
-                $res = $this->StatutFemelle->labellisee_dressage? $res.' Labellisée dressage': $res;
+                $res = $this->StatutFemelle->labellisee_dressage? $res.' labellisée dressage': $res;
                 return $res;
           
         }

@@ -109,9 +109,9 @@ class StatutMale extends Model
             {
                 $this->setApprouvePFS();}
             break;
-       case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
+      /* case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite = 'approuvé an prochain';
-            break;
+            break;*/
         //Maintenant on est dans les cas où l'obtention d'une note de 15 en concours de Modèle et Allures est nécessaire:
         case !$this->modele15:
             $this->qualite ='ajourné';
@@ -124,17 +124,17 @@ class StatutMale extends Model
             { $this->setApprouvePFS();}
             break;
 
-        case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
+      /*  case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
             if ($after) {$this->qualite =  'approuvé an prochain';}
              else {$this->qualite = 'approbation provisoire cette année';
                $this->setCarnetSaillies();  
-            }
+            
             //races où l'approbation n'est d'abord accordée que pour un an en dessous de 4 ans
             break;
         case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite ='approbation provisoire an prochain';
             //races où l'approbation n'est d'abord accordée que pour un an en dessous de 4 ans
-            break;
+            break;*/
         //Maintenant, races très selectives où un classemnt dans les meilleurs est exigé:
         case !$this->classeNat:
              $this->qualite ='ajourné';
@@ -146,14 +146,14 @@ class StatutMale extends Model
                if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             { $this->setApprouvePFS();}
             break;
-        case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
+      /*  case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite ='approbation provisoire an prochain';
             break;
         case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) >= $this->male->race->age_repro_male && $after:
             $this->qualite ='approuvé an prochain';
-            break;
+            break;*/
         default:
-         $this->qualite =  'approbation provisoire cette année'; 
+         $this->qualite =  'approuvé'; 
         $this->setCarnetSaillies();
 
         }

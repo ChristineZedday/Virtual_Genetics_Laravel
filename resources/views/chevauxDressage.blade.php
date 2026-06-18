@@ -28,7 +28,7 @@
 	</td>
 	<td> <a class='nom' href="{{route('animal',[$elevage->id, $animal->id])}}">{{$animal->NomComplet()}}</a></td>
 	@isset ($animal->Race)<td> {{$animal->Race->nom}} </td>@endisset
-	<td> {{$animal->Sexe()}}
+	<td> {{$animal->SexeAdm()}}
 		 </td>
   <td> {{$animal->couleur}} </td>
  

@@ -183,7 +183,7 @@ static function checkPuberes()
     $date = Gamedata::date();
     foreach ($animaux as $animal)
     {
-        if ($animal->ageAdministratif($date) >= 2)
+        if ($animal->ageAdministratif($date) >= 2 )
         { 
            $animal->sexe = 'mâle';
             $animal->save();
@@ -203,6 +203,7 @@ static function checkPuberes()
             }   
            
             $statut->save();
+          
          } 
             
     }
@@ -221,7 +222,7 @@ static function checkPuberes()
          $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
           if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 15) {
-                $StatutFemelle->confirme();
+                $statut->confirme();
             }
          $statut->fertilite = 100 - $animal->consang/2 ;
          $statut->save();
