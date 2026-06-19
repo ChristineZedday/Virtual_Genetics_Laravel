@@ -264,6 +264,7 @@ static function checkFondateurs($date)
    
                 else 
                 { 
+                   
                     $animal->sexe = 'femelle';
                     $animal->save();
                     $statut = new StatutFemelle();
@@ -272,6 +273,7 @@ static function checkFondateurs($date)
                     $statut->save();
                     if ( $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
                         $animal->confirmeJument();
+                        dd('conf');
                      }
         
                
