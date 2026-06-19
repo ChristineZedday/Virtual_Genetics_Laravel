@@ -268,7 +268,7 @@ static function checkFondateurs($date)
                     $statut->animal_id = $animal->id;
                     $statut->fertilite = 100 - $animal->consang/2 ;
                     if ( $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
-                        $statut->confirme();
+                        $aniaml->confirmeJument();
                      }
         
                 $statut->save();

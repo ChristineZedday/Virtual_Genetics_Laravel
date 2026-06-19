@@ -319,9 +319,12 @@ class Animal extends Model
 
             else {
                 return 1;
-            }
-       
-              
+            }       
+    }
+
+    public function confirmeJument() {
+        $this->StatutFemelle->confirmee = true;
+        $this->StatutFemelle->save();
     }
 
     static function pourCentRace($animal, $bred) //$bred: id bred
