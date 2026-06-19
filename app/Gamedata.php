@@ -246,16 +246,18 @@ static function checkFondateurs($date)
                     $statut = new StatutMale();
                     $statut->animal_id = $animal->id;
                     $statut->fertilite = 100 - $animal->consang/2 ;
+                     $statut->save();
                     
                 
                     if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
                             $statut->setAutorisationSanitaire();
                             $statut->approuveEtalons();
+                            
                             if ($statut->qualite == 'approuvé' || $statut->qualite == 'approbation provisoire cette année')
                             {$statut->carnet_saillies = true;}
                             }
                         
-                    $statut->save();
+                   
             
                 } // fin if male
             
@@ -267,11 +269,12 @@ static function checkFondateurs($date)
                     $statut = new StatutFemelle();
                     $statut->animal_id = $animal->id;
                     $statut->fertilite = 100 - $animal->consang/2 ;
+                    $statut->save();
                     if ( $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
-                        $aniaml->confirmeJument();
+                        $animal->confirmeJument();
                      }
         
-                $statut->save();
+               
                 }
                
             }// end foreach
