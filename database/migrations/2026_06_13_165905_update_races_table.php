@@ -15,7 +15,7 @@ return new class extends Migration
      public function up()
     {
         Schema::table('races', function (Blueprint $table) {
-            $table->boolean('confirmation_juments')->default(FALSE);
+            $table->boolean('confirmation_juments')->default(FALSE)->nullable();
             $table->float('pclusitanien')->default(0)->nullable();
         });
     }
