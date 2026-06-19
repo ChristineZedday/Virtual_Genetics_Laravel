@@ -71,9 +71,9 @@ class Categorie extends Model
 
     $races = $competition->Races;
     $poneys = $competition->tous_poneys_sport;
-    $chevaux = $competitions->tous_chevaux_sport;
+    $chevaux = $competition->tous_chevaux_sport;
     $isPony = $animal->race->poney_sport;
-    $isHorse = $animal->rave->cheval_sport;
+    $isHorse = $animal->race->cheval_sport;
       
     if (!empty($races)) {
             $races = $races->modelkeys();
