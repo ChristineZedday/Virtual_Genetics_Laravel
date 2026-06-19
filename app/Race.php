@@ -92,7 +92,7 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
    }
 
    else {
-      $race = chercheRaces($etalon, $jument, $produit->taille_cm);
+      $race = RACE::chercheRaces($etalon, $jument, $produit->taille_cm);
       if ($race != NULL) {
          $produit->race_id = $race;
          $produit->save();

@@ -369,7 +369,7 @@ class Animal extends Model
         }
 
         if ($this->Race->confirmation_juments) {
-            $min = 15;
+            $min = 12;
            
         }
         
@@ -459,10 +459,6 @@ public function seraSuiteeAu($date)   {
         //dd('ni pleine ni suitée');
     }
 } 
-public function confirmeJument() {
-    $this->StatutFemelle->confirmee = TRUE;
-    $this->StatutFemelle->save();
 
-}
  
 }

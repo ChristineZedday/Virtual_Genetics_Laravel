@@ -88,6 +88,8 @@ class StatutMale extends Model
       $date = Gamedata::date();
       $after = Gamedata::afterSeason();
        $mini = Race::where('nom', 'Miniature')->first();
+
+
         
       switch (true) {
         case !$this->autorisationSanitaire:
@@ -95,33 +97,33 @@ class StatutMale extends Model
             //pas d'avis véto positif, pas d'approbation possible
         case $this->male->race == $mini:
              if ($this->male->taille_cm <= $mini->taille_max) {
-                $this->qualite = 'approuvé';
-                  if ($this->male->elevage->role == 'vendeur') {
-             $this->setCarnetSaillies();}
-             }
+                    $this->qualite = 'approuvé';
+                        if ($this->male->elevage->role == 'vendeur') {
+                            $this->setCarnetSaillies();}
+                        }
              break;
         case !$this->male->race->approbation && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
             $this->qualite = 'approuvé';
               if ($this->male->elevage->role == 'vendeur') {
-            $this->setCarnetSaillies();}
+                $this->setCarnetSaillies();}
             // Si les étalons sont approuvés automatiquement dans la race
             if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             {
                 $this->setApprouvePFS();}
             break;
-      /* case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
+       case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
             $this->qualite = 'approuvé an prochain';
-            break;*/
+            break;
         //Maintenant on est dans les cas où l'obtention d'une note de 15 en concours de Modèle et Allures est nécessaire:
-        case !$this->modele15:
+        case $this->male->race->approbation && !$this->modele15:
             $this->qualite ='ajourné';
             break;
-        case $this->male->ageAdministratif($date) >= 4 && !$this->male->race->classeNat :
+        case $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male && !$this->male->race->classeNat :
              $this->qualite ='approuvé';
                if ($this->male->elevage->role == 'vendeur') {
-            $this->setCarnetSaillies();}
+                    $this->setCarnetSaillies();}
                if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
-            { $this->setApprouvePFS();}
+                    { $this->setApprouvePFS();}
             break;
 
       /*  case $this->male->race->approbation_provisoire && !$this->male->race->classeNat && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
@@ -139,7 +141,7 @@ class StatutMale extends Model
         case !$this->classeNat:
              $this->qualite ='ajourné';
             break;
-        case $this->male->ageAdministratif($date) >=4:
+        case $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
              $this->qualite ='approuvé';
                if ($this->male->elevage->role == 'vendeur') {
             $this->carnet_saillies = true;}
@@ -151,10 +153,10 @@ class StatutMale extends Model
             break;
         case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) >= $this->male->race->age_repro_male && $after:
             $this->qualite ='approuvé an prochain';
-            break;*/
+            break;
         default:
          $this->qualite =  'approuvé'; 
-        $this->setCarnetSaillies();
+        $this->setCarnetSaillies();*/
 
         }
       

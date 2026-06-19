@@ -32,60 +32,28 @@ class TempsController extends Controller
        
         $date = Gamedata::date();
         $game = Gamedata::Find(1);
+        $debut = false;
         if ($date == $game->date_debut )
         {
+            $debut = true;
             $animaux = Animal::where('fondateur',1)->get();
             foreach ($animaux as $animal)
             {
                 $animal->Randomize();
                 Genome::readGenes($animal->id);
                 Performance::initialize($animal->id);
-                 if ($animal->ageAdministratif($date) >= 2 && $animal->Genre())
-        { 
-           $animal->sexe = 'mâle';
-            $animal->save();
-            $statut = new StatutMale();
-            $statut->animal_id = $animal->id;
-            $statut->fertilite = 100 - $animal->consang/2 ;
-            if ($animal->Elevage->role == 'Vendeur' && $animal->race_id !=1 && $animal->race_id != 17)
-            {
                 $animal->statut_administratif = 'enregistré';
                 $animal->save();
-                if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
-                $statut->setAutorisationSanitaire();
-                $statut->approuveEtalons();
-                if ($statut->qualite == 'approuvé' || $statut->qualite == 'approbation provisoire cette année')
-                {$statut->carnet_saillies = true;}
-                }
-            }   
-           
-            $statut->save();
-            
-         } 
-            
-   
-        if ($animal->ageAdministratif($date) >= 2 && !$animal->Genre())
-        { $animal->sexe = 'femelle';
-        if ($animal->elevage->role == 'Vendeur') {
-            $animal->statut_administratif = 'enregistré';
-           
-            $animal->save();
+           }   
         }
-         $animal->save();
-         $statut = new StatutFemelle();
-         $statut->animal_id = $animal->id;
-          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 15) {
-                $statut->confirme();
-            }
-         $statut->fertilite = 100 - $animal->consang/2 ;
-         $statut->save();
-        }
-               
-            }
-        }
-     
-   
-        $date= date('Y-m-d',strtotime('+1 month',strtotime($date)));
+        
+        $date = date('Y-m-d',strtotime('+1 month',strtotime($date)));
+
+          if ($debut)
+           {
+            Gamedata::checkFondateurs($date);
+        }// end if debut
+    
       
         $game->date_courante = $date;
         $game->terres = false;

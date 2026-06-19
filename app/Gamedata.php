@@ -221,7 +221,7 @@ static function checkPuberes()
          $animal->save();
          $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
-          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 15) {
+          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
                 $statut->confirme();
             }
          $statut->fertilite = 100 - $animal->consang/2 ;
@@ -229,6 +229,53 @@ static function checkPuberes()
         }
             
     }
+}
+
+static function checkFondateurs($date) 
+{
+    $animaux = Animal::where('fondateur',1)->get();
+            foreach ($animaux as $animal) {
+                if ($animal->ageAdministratif($date) < 2) {
+                    break;
+                }
+
+                 if ( $animal->Genre()) 
+                { 
+                    $animal->sexe = 'mâle';
+                    $animal->save();
+                    $statut = new StatutMale();
+                    $statut->animal_id = $animal->id;
+                    $statut->fertilite = 100 - $animal->consang/2 ;
+                    
+                
+                    if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
+                            $statut->setAutorisationSanitaire();
+                            $statut->approuveEtalons();
+                            if ($statut->qualite == 'approuvé' || $statut->qualite == 'approbation provisoire cette année')
+                            {$statut->carnet_saillies = true;}
+                            }
+                        
+                    $statut->save();
+            
+                } // fin if male
+            
+   
+                else 
+                { 
+                    $animal->sexe = 'femelle';
+                    $animal->save();
+                    $statut = new StatutFemelle();
+                    $statut->animal_id = $animal->id;
+                    $statut->fertilite = 100 - $animal->consang/2 ;
+                    if ( $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
+                        $statut->confirme();
+                     }
+        
+                $statut->save();
+                }
+               
+            }// end foreach
+
 }
 
 static function checkApprovals () {

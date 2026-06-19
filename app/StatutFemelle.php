@@ -20,8 +20,9 @@ class StatutFemelle extends Model
     }
 
     public function confirme() {
-        if ($this->Femelle->$this->modele_allures_additifs == 15) {
+        if ($this->Femelle->$this->modele_allures_additifs >= 12) {
             $this->confirmee = true;
+            $this->save();
         }
     }
 }
