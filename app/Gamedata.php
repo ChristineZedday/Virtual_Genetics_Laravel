@@ -7,6 +7,8 @@ use Orangehill\IseedServiceProvider\gamedatas;
 use DB;
 use DateTime;
 use App\Budget;
+use App\StatutMale;
+use app\StatutFemelle;
 
 
 class Gamedata extends Model
@@ -221,6 +223,7 @@ static function checkPuberes()
          $animal->save();
          $statut = new StatutFemelle();
          $statut->animal_id = $animal->id;
+
           if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
                 $statut->confirme();
             }
@@ -243,10 +246,14 @@ static function checkFondateurs($date)
                 { 
                     $animal->sexe = 'mâle';
                     $animal->save();
+                    if (!$animal->StatutMale) {
                     $statut = new StatutMale();
                     $statut->animal_id = $animal->id;
                     $statut->fertilite = 100 - $animal->consang/2 ;
                      $statut->save();
+                    }
+                    else { $statut = $animal->StatutMale;}
+                  
                     
                 
                     if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
@@ -267,13 +274,18 @@ static function checkFondateurs($date)
                    
                     $animal->sexe = 'femelle';
                     $animal->save();
+                    
+                     if (!$animal->StatutFemelle) {
                     $statut = new StatutFemelle();
-                    $statut->animal_id = $animal->id;
-                    $statut->fertilite = 100 - $animal->consang/2 ;
-                    $statut->save();
-                    if ( $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
-                        $animal->confirmeJument();
-                        dd('conf');
+                    $statut->Initialise($animal);
+                  
+                     }
+                       else { $statut = $animal->StatutFemelle;}
+
+                  
+                    if ( $animal->race->confirmation_juments) {
+                        $statut->confirme($animal);
+                       
                      }
         
                

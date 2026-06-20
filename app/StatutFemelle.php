@@ -4,11 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\statutsfemelles;
+use App\Animal;
 
 class StatutFemelle extends Model
 {
     protected $table = 'statutsfemelles';
    //Statut de la poulinière 
+
+   public function Initialise($femelle) {
+    $this->animal_id = $femelle->id;
+    $this->fertilite = 100 - $femelle->consang/2 ;
+    $this->save();
+                    
+   }
 
     public function Femelle()
     {
@@ -19,10 +27,15 @@ class StatutFemelle extends Model
         return $this->hasOne('App\Animal', 'id', 'etalon_id');
     }
 
-    public function confirme() {
-        if ($this->Femelle->$this->modele_allures_additifs >= 12) {
+
+
+    public function confirme($fem) {
+       
+        if ($fem->modele_allures >= 12) {
             $this->confirmee = true;
             $this->save();
         }
     }
+    
+
 }
