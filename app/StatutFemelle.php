@@ -14,7 +14,8 @@ class StatutFemelle extends Model
    public function Initialise($femelle) {
     $this->animal_id = $femelle->id;
     $this->fertilite = 100 - $femelle->consang/2 ;
-    $this->save();
+    
+        $this->save();
                     
    }
 
@@ -31,7 +32,7 @@ class StatutFemelle extends Model
 
     public function confirme($fem) {
        
-        if ($fem->modele_allures >= 12) {
+        if ($fem->modele_allures > 11) {
             $this->confirmee = true;
             $this->save();
         }

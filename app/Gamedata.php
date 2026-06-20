@@ -236,11 +236,10 @@ static function checkPuberes()
 
 static function checkFondateurs($date) 
 {
-    $animaux = Animal::where('fondateur',1)->get();
+    
+    $animaux = Animal::where('fondateur',1)->whereDate('date_naissance', '<' , '1999-01-01')->get();
             foreach ($animaux as $animal) {
-                if ($animal->ageAdministratif($date) < 2) {
-                    break;
-                }
+               
 
                  if ( $animal->Genre()) 
                 { 
@@ -280,10 +279,10 @@ static function checkFondateurs($date)
                     $statut->Initialise($animal);
                   
                      }
-                       else { $statut = $animal->StatutFemelle;}
+                     else { $statut = $animal->StatutFemelle;}
 
                   
-                    if ( $animal->race->confirmation_juments) {
+                   if ( $animal->race->confirmation_juments) {
                         $statut->confirme($animal);
                        
                      }
