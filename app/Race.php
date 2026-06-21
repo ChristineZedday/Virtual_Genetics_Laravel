@@ -159,7 +159,7 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
     static function pourCentRace($animal, $bred) //$bred: id bred
     //Pour les races de croisement ou un % de telle ou telle race est requis
     {
-        $animal = Animal::Find($animal);
+        
         if ($animal->race_id == $bred)
         {
             return 100;
@@ -173,6 +173,21 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
             return (Animal::pourCentRace($animal->sire_id,$bred) + Animal::pourCentRace($animal->dam_id,$bred))/2;
         }
     }
+
+static function pourCentPoney($animal) {
+   if ($animal->race->poney_sport || $animal->race_id == 2 || $animal->race_id == 3) {
+      return 100;
+   }
+    else if ($animal->fondateur || $animal->race_id == 17)
+        {
+            return 0;
+        }
+          else
+        {
+            return (Animal::pourCentPoney($animal->sire_id) + Animal::pourCentPoney($animal->dam_id))/2;
+        }
+}
+
     static function pourCentWelsh($animal)
     { //le Welsh est divisé en 4 sections traitées ici comme des races 
         $animal = Animal::Find($animal);
@@ -197,8 +212,8 @@ static function associeRaces ($etalon,$jument,$produit)
    $raceju = $jument->race_id;
    $taille = $produit->taille_cm;
    $welsh = PourCentWelsh($produit->id);
-   $arabe = PourCentRace($produit->id, 8);
-   $lusitanien = Animal::PourCentRace($produit->id, 23);
+   $arabe = PourCentRace($produit, 8);
+   $lusitanien = Animal::PourCentRace($produit, 23);
    $appro = $etalon->StatutMale->approuvePFS;
 
  
@@ -233,14 +248,14 @@ static function associeRaces ($etalon,$jument,$produit)
     }
          
 }
-static function WelshPartBreed ($produit) {
+static function WelshPartBreed ($produit,$etalon,$jument) {
    if (pourCentWelsh($produit) >= 12.5) {
       return true;
 
    }
    else return false;
 }
-static function DemiSangArabe ($produit) {
+static function DemiSangArabe ($produit,$etalon,$jument) {
    if (pourCentRace($produit, 8) >= 50) {
       return true;
 
@@ -248,7 +263,27 @@ static function DemiSangArabe ($produit) {
    else return false;
 }
 
-static function CDF ($etalon, $jument, $produit) {
+static function PottokB ($produit, $etalon,$jument) {
+   if (pourCentRace($produit, 13)< 50) {
+      return false;
+    $produit_id = $produit->id;
+      $gris = Genotype::where(function ($q, $produit_id){$q->where('animal_id',$produit_id);})->where('allele_m_id',30)->orWhere('allele_p_id',30)->get();
+      if ($gris) {
+         return false;
+      }
+
+   }
+   else if ($etalon->SatutMale->qualite == "approuvé" && ($etalon->race_id = 13 ) || ($etalon->race_id = 14)) {
+      return true;
+   }
+    else if ($etalon->SatutMale->approuvePFS ) {
+      return true;
+   }
+      
+      else {return false;}
+}
+
+static function CDF ($produit, $etalon,$jument) {
    if (pourCentRace($produit, 23) < 12.5){
       return false;
    }
@@ -260,7 +295,91 @@ static function CDF ($etalon, $jument, $produit) {
    }
 
    //ajouter acceptation jument
-   else {return true;}
+   else {
+      if (($etalon->race->cheval_sport && $etalon->StatutMale->labellise_dressage || $etalon->race_id == 25) && ($jument->race->cheval_sport && $jument->StatutFemelle->labellisee_dressage || $jument->race_id == 25)) {
+         {return true;}
+      }
+    else { return false;}
+}
+
+}
+static function PFS ($produit, $etalon,$jument) {
+   if ($produit->taille > 149) {
+      return false;
+   }
+   switch (true) {
+      case $etalon->statutMale->approuvePFS:
+         switch (true) {
+            case $jument->race->poney_sport:
+               return true;
+            case ($jument->race_id == 9  || $jument->race_id == 1) && ($jument->Sire->race->poney_sport || $jument->Dam->race->poney_sport) :
+               return true;
+         }
+      case $etalon->qualite=='approuvé' && $etalon->race->cheval_sport && $jument->race->poney_sport && $jument->taille < 140:
+   return true;
+      case $etalon->statutMale->approuvePFS && $etalon->taille < 140 && $jument->race->cheval_sport && $jument->taille < 14:
+   return true;
+   default:
+   return false;
+      }
+}
+
+static function Pintabian ($produit, $etalon,$jument) {
+   if (pourCentRace($produit,8) < 99){
+      return false;}
+   else {
+      $produit_id = $produit->id;
+      $tob = Genotype::where(function ($q, $produit_id){$q->where('animal_id',$produit_id);})->where('allele_m_id',8)->orWhere('allele_p_id',8)->get();
+      if ($tob) {
+         return true;
+      }
+      else {return false;}
+   }
+   }
+
+static function AngloArabe ($produit, $etalon,$jument) {
+    if (pourCentRace($produit,8) < 12.5 || pourCentRace($produit,18) == 0){
+      return false;}
+   if (pourCentRace($produit,8) + pourCentRace($produit,18) + pourCentRace($produit,19) >= 87.5) {
+      if (pourCentRace($produit,17) >= 6.25 || pourCentPoney($produit) >= 6.25){
+         return false;
+
+      }
+      else {return true;}
+   }
+   else {return false;}
+
+}
+
+static function CSAN ($produit, $etalon,$jument) {
+   if (!$etalon->StatutMale->approuve) {
+      return false;
+   }
+   $originel = pourCentRace($produit,8) + pourCentRace($produit,18) + pourCentRace($produit,19) + pourCentRace($produit,24) + pourCentRace($produit,20) + pourCentRace($produit,21);
+   if ( $originel == 100) {
+      return true;
+}
+else if ($originel + pourCentRace($produit,9) == 100 && (pourCentPoney($produit) + pourcentRace($produit,17) < 6.25)) {
+return true;
+
+}
+else {return false;}
+}
+static function SF ($produit, $etalon,$jument) {
+   $originel = pourCentRace($produit,8) + pourCentRace($produit,18) + pourCentRace($produit,19) + pourCentRace($produit,24) + pourCentRace($produit,20) + pourCentRace($produit,21);
+if (!$etalon->approuveSF){
+   return false;
+}
+else if ($originel == 100) {
+   return true;
+}
+else if ($originel + pourCentRace($produit,9) == 100 && (pourCentPoney($produit) + pourcentRace($produit,17) < 6.25)) {
+return true;
+}
+else if ( $jument->StatutFemelle->labellisee_SF){
+  return true;
+}
+else {return false;}
 }
 
 }

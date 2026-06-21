@@ -30,6 +30,11 @@ class CreateRacesTable extends Migration
             $table->tinyInteger('age_repro_femelle')->default(2);
             $table->boolean('poney_sport')->default(true);
             $table->boolean('cheval_sport')->default(false);
+            $table->boolean('confirmation_juments')->default(FALSE)->nullable();
+            $table->float('pclusitanien')->default(0)->nullable();
+            $table->boolean('croisement')->default(0)->nullable();
+            $table->string('fonction_inscription')->default('')->nullable();
+
         });
     }
 

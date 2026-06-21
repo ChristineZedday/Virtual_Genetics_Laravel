@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('statutsfemelles', function (Blueprint $table) {
             
             $table->boolean('labellisee_dressage')->default(0)->nullable();
+             $table->boolean('labellisee_SF')->default(0)->nullable();
         });
     }
 

@@ -39,7 +39,9 @@ class RacesTableSeeder extends Seeder
                 'age_repro_male' => 2,
                 'age_repro_femelle' => 2,
                 'poney_sport' => 0,
-                'cheval_sport' => 1,
+                'cheval_sport' => 0,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             1 => 
             array (
@@ -60,6 +62,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 0,
                 'cheval_sport' => 0,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             2 => 
             array (
@@ -80,6 +84,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 3,
                 'poney_sport' => 0,
                 'cheval_sport' => 0,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             3 => 
             array (
@@ -102,6 +108,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             4 => 
             array (
@@ -124,6 +132,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             5 => 
             array (
@@ -146,6 +156,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             6 => 
             array (
@@ -168,6 +180,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             7 => 
             array (
@@ -188,6 +202,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 3,
                 'poney_sport' => 1,
                 'cheval_sport' => 1,
+                'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             8 => 
             array (
@@ -208,6 +224,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 1,
+                'croisement' => 1,
+                'fonction_inscription' => 'DemiSangArabe',
             ),
             9 => 
             array (
@@ -228,6 +246,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                'croisement' => 1,
+                'fonction_inscription' => 'WelsPartBreed',
             ),
             10 => 
             array (
@@ -248,6 +268,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                 'croisement' => 1,
+                'fonction_inscription' => 'PFS',
             ),
             11 => 
             array (
@@ -268,6 +290,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                  'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             12 => 
             array (
@@ -288,6 +312,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                  'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             13 => 
             array (
@@ -308,6 +334,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 1,
                 'cheval_sport' => 0,
+                 'croisement' => 1,
+                'fonction_inscription' => 'PottokB',
             ),
             14 => 
             array (
@@ -328,6 +356,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 3,
                 'poney_sport' => 1,
                 'cheval_sport' => 1,
+                 'croisement' => 1,
+                'fonction_inscription' => 'Pintabian',
             ),
             15 => 
             array (
@@ -348,6 +378,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 0,
                 'cheval_sport' => 0,
+                  'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             16 => 
             array (
@@ -368,6 +400,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 0,
                 'cheval_sport' => 1,
+                  'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             17 => 
             array (
@@ -388,6 +422,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 0,
                 'cheval_sport' => 1,
+                  'croisement' => 1,
+                'fonction_inscription' => 'AngloArabe',
             ),
             18 => 
             array (
@@ -408,6 +444,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 0,
                 'cheval_sport' => 1,
+                  'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
             19 => 
             array (
@@ -428,6 +466,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 2,
                 'poney_sport' => 0,
                 'cheval_sport' => 1,
+                  'croisement' => 1,
+                'fonction_inscription' => 'SF',
             ),
      /*        20 => 
             array (
@@ -455,8 +495,8 @@ class RacesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'Lusitanien',
-                'prix_moyen' => 7000,
-                'frais_enregistrement' => 200,
+                'prix_moyen' => 8000,
+                'frais_enregistrement' => NULL,
                 'taille_min' => 152,
                 'taille_max' => 172,
                 'approbation' => 1,
@@ -470,6 +510,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 3,
                 'poney_sport' => 0,
                 'cheval_sport' => 1,
+                  'croisement' => 0,
+                'fonction_inscription' => NULL,
             ),
              22 => 
             array (
@@ -490,6 +532,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 3,
                 'poney_sport' => 0,
                 'cheval_sport' => 1,
+                  'croisement' => 1,
+                'fonction_inscription' => 'CSAN',
             ),
               23 => 
             array (
@@ -512,6 +556,8 @@ class RacesTableSeeder extends Seeder
                 'age_repro_femelle' => 3,
                 'poney_sport' => 0,
                 'cheval_sport' => 1,
+                  'croisement' => 1,
+                'fonction_inscription' => 'CDF',
             ),
            
         ));
