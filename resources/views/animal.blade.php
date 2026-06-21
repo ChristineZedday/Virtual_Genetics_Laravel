@@ -36,6 +36,11 @@
 					?>	
 					</p>
 					@endif	
+
+				@if ($animal->race_id == 1)
+				<a href="{{route('InscrireOCSB',[$animal->id])}}"><button>Inscription dans un studbook</button></a>
+				<p>Sous conditions, inscriptions dans une race de croisement.</p>
+				@endif
 				
 				
 				<p>{{ $animal->taille() }} cm</p>

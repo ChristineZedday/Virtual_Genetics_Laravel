@@ -430,7 +430,7 @@ class AnimalController extends Controller
     }
 
       /**
-     * Registration of name/color
+     * 
      *
      * @param  int  $animal->id, 
      * @return \Illuminate\Http\Response
@@ -559,27 +559,43 @@ public function registrationStudBook(Request $request, $animal)
         
     $validated = $request->validate([ 
     'race'=>'integer']); 
-
-    $animal->race_id = $validated['race'];
-    if ($animal->race_id !==1)
-            {
-              
-                $race = Race::Find($animal->race_id);
+        
+    $race = Race::Find($validated['race']);
+    $fonction = $race->fonction_inscription;
+    if ($fonction.'($animal, $animal->Sire, $animal->Dam)') {
               
                 $elevage->Budget()->fraisAdministratifs($race->frais_enregistrement);
                 $elevage->save();
+                $animal->race_id = $race->id;
                 if ($animal->save())
                 {
                     {
                         $request->session()->flash('status',"animal enregistré avec succès");
-                        $request->session()->flash('alert-class',"alert-success");
-                     
-                       
+                        $request->session()->flash('alert-class',"alert-success");   
                     }
                 }
             }
+    else {
+         $request->session()->flash('status',"Votre animal ne remplit pas les conditions");
+        $request->session()->flash('alert-class',"alert-danger");   
+    }
             return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
 }
+
+ /**
+     * 
+     *
+     * @param  int  $animal->id, 
+     * @return \Illuminate\Http\Response
+     */
+ public function inscrireOCSB(Request $request, $animal)
+    {
+         $animal = Animal::Find($animal);
+         $races = Race::where('croisement', 1)->get();
+            dd($races);
+         
+            return view('formEnregistrementStudBook', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
+    }
 
     public function updateNotes(Request $request, $animal) 
     {

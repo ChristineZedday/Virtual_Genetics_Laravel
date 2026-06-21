@@ -114,6 +114,9 @@ Route::get('/signalement/{animal}', 'AnimalController@signalementIdentification'
 
 Route::put('/registration/{animal}', 'AnimalController@registration')->name('registration');
 
+Route::get('/OCstudbook/{animal}', 'AnimalController@inscrireOCStudBook')->name('inscrireOCSB');
+
+
 //Stériliser
 
 Route::get('/steriliser/{elevage}/{animal}', 'AnimalController@steriliser')->name('steriliser');

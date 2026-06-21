@@ -372,8 +372,7 @@ class Animal extends Model
         }
 
         if ($this->Race->confirmation_juments) {
-            $min = 12;
-           
+             $min = $this->Genre() == 1 ? 15 : 12;
         }
         
 

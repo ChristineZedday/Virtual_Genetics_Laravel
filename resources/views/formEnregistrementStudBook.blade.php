@@ -12,12 +12,12 @@
 			@endif
 			<div class='form-group'>
 			
-			Veuillez trouver la liste des races dans lesquelles votre cheval peut être inscrit ci-dessous. Si l'animal est inscriptible dans plusieurs registres, un seul peut-être choisi, conformémént au règlement des Haras Nationaux.
+			Veuillez trouver la liste des races dans lesquelles votre cheval peut éventuellemnt être inscrit ci-dessous. Si l'animal est inscriptible dans plusieurs registres, un seul peut-être choisi, conformémént au règlement des Haras Nationaux.
 			@isset($races)</p>
 			@if ($elevage->role == 'Joueur')
 			<input type="hidden" id ="budget" value ="{{$elevage->Budget()->solde()}}"/>@endif
 			
-			<label for="race">Vous avez la possibilité d'enregistrer votre produit, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
+			<label for="race">Vous avez la possibilité d'enregistrer votre produit, sous conditions d'ascendance ou de performance, moyennant des frais variables, dans l'une des races suivantes:</label><br/>
 			<select  name="race" id="race">
 				<option value="1">OC 0</option>
 					@foreach ($races as $race)
