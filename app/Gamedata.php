@@ -222,13 +222,12 @@ static function checkPuberes()
         }
          $animal->save();
          $statut = new StatutFemelle();
-         $statut->animal_id = $animal->id;
+         $statut->initialise($animal);
 
-          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments && $animal->modeles_allures >= 12) {
+          if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments) {
                 $statut->confirme();
             }
-         $statut->fertilite = 100 - $animal->consang/2 ;
-         $statut->save();
+       
         }
             
     }

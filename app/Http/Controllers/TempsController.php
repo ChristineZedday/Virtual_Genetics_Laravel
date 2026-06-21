@@ -196,15 +196,16 @@ static function regCompetNPC()
                 {
                    if ( $comp->tous_poneys_sport) {
                     $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->get();
-
+                     
                    } 
                    else if ($comp->tous_cheval_sport) {
                     $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->get();
                    }
                    else {
                 $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
-                   }
-        //dd($engageables);
+               
+            }
+                  
             foreach ($engageables as $cheval) {
                 if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
