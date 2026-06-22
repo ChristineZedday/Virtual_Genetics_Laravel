@@ -8,7 +8,7 @@ use DB;
 use DateTime;
 use App\Budget;
 use App\StatutMale;
-use app\StatutFemelle;
+use App\StatutFemelle;
 
 
 class Gamedata extends Model
@@ -510,7 +510,7 @@ static function VenteSaillies ()
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur)
     {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('carnet_saillies', 1);})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'approuvé');})->get();
         foreach ($animaux as $animal)
       
         {
