@@ -952,6 +952,13 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'competition_id' => 85, //MA Lusitanos
                 'evenement_id' => 65,
             ),
+             117 =>  array (
+                'id' => 312,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 86, //label SF
+                'evenement_id' => 43,
+            ),
         ));
         
         

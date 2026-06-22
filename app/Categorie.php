@@ -216,7 +216,11 @@ public function run($competition, $evenement) {
             $animal->StatutMale->approuveEtalons();
         }
         if ($inscrit->note_synthese >= 12 &&    $animal->StatutFemelle != NULL) {
-            if ($animal->race->confirmation_juments) {$animal->confirmeJument();}
+            if ($animal->race->confirmation_juments) {$animal->StatutFemelle->confirmeJument($animal);
+                if ($competition->id == 43 ){
+                    $incrit->StatutFemelle->labelliseSF();
+                }
+            }
         }
     }
         $inscrit->save();

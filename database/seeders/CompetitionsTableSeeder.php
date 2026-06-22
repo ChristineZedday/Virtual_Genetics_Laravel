@@ -1074,6 +1074,19 @@ class CompetitionsTableSeeder extends Seeder
                 'tous_chevaux_sport' =>0,
                 'tous_poneys_sport' =>0,
             ),
+              81 => 
+            array (
+                'id' => 86,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Labellisation SF des juments',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 40,
+                'prix_premier' => 400,
+                'tous_chevaux_sport' =>1,
+                'tous_poneys_sport' =>0,
+            ),
        
         ));
         

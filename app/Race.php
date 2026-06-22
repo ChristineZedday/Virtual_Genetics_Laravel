@@ -382,13 +382,4 @@ else if ( $jument->StatutFemelle->labellisee_SF){
 else {return false;}
 }
 
-
-/*function inscriptibleStudBook($animal,$race_id) {
-   switch($race_id) {
-      case 9:
-
-   }  
-
-
-}*/
 }

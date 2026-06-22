@@ -221,11 +221,12 @@ static function checkPuberes()
             $animal->save();
         }
          $animal->save();
-         $statut = new StatutFemelle();
-         $statut->initialise($animal);
+            if (!$animal->StatutFemelle) {
+                    $statut = new StatutFemelle();
+                    $statut->Initialise($animal);}
 
           if ($animal->Elevage->role == 'Vendeur' && $animal->race->confirmation_juments) {
-                $statut->confirme();
+                $statut->confirme($animal);
             }
        
         }

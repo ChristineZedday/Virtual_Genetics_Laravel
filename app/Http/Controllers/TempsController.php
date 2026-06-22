@@ -138,17 +138,17 @@ static function reproNPC()
                 {
                     $ageR = Race::find($jument->race_id)->age_repro_femelle;
                     if ($jument->ageAdministratif($date) < $ageR) {
-                        break;
+                        continue;
                     }
                     $statut = $jument->StatutFemelle;
                    
                     if ($statut==null)
                     {
                         $statut = new StatutFemelle();
-                        $statut->animal_id = $jument->id;
-                        $statut->save();
+                        $statut->initialise($jument);
+                        
                     }
-                    if ($statut->vide==true)
+                    if ($statut->vide)
                     {
                         srand((float) microtime()*1000000);
                         if ($jument->sexe ='vieille femelle')
@@ -158,8 +158,11 @@ static function reproNPC()
                         
                         if(rand(1,$var)==1)
                         {
-                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('carnet_saillies', 1);})->get();
+                            //$etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('carnet_saillies', 1);})->get();
+                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite', 'approuvé');})->get();
+
                             $nb = sizeof($etalons);
+                            
                             if ($nb > 0) {
                                 $choisi = rand(1,$nb) -1;
                                 $etalon = $etalons[$choisi];

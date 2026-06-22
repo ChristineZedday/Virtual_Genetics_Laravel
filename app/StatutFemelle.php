@@ -37,6 +37,14 @@ class StatutFemelle extends Model
             $this->save();
         }
     }
+
+    public function labelliseSF($fem) {
+       
+        if ($fem->modele_allures >= 13) {
+            $this->labellisee_SF = true;
+            $this->save();
+        }
+    }
     
 
 }
