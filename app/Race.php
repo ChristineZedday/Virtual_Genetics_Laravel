@@ -106,9 +106,9 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
       
    }
 
-   if (1 == $produit->race_id) {
+ /*  if (1 == $produit->race_id) {
       Race::associeRaces($etalon,$jument,$produit);
-   }
+   }*/
    
 }
 

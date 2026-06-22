@@ -82,10 +82,10 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         }
         //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
         //Possibilité se zapper le niveau départemental 
-        $race = $animal->race_id;
+     /*   $race = $animal->race_id;
         $races = $this->Races->modelKeys();
       
-        if (in_array($race, $races) || in_array(1, $races)) {
+        if (in_array($race, $races) || in_array(1, $races) |) {*/
            
             if ($this->type == 'Modèle et Allures') {  
               
@@ -100,12 +100,9 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
                 return $msg;
             }
         }
-        else {
-            return 'Pas la bonne race';
-        }
         
     
-    }
+    
   
 
 }

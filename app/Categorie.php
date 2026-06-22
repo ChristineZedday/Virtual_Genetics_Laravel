@@ -74,21 +74,28 @@ class Categorie extends Model
     $chevaux = $competition->tous_chevaux_sport;
     $isPony = $animal->race->poney_sport;
     $isHorse = $animal->race->cheval_sport;
+
+       if ($poneys && $isPony ) {
+                    return 'OK';
+            }
+        if ($chevaux && $isHorse ) {
+                    return 'OK';
+            }
       
     if (!empty($races)) {
             $races = $races->modelkeys();
-           // dd($races);
+           
         if (!in_array($animal->race_id, $races) ) {
               
             if (!in_array(1,$races) && !$poneys && !$chevaux) {
                
                     return 'Cheval pas de la bonne race pour cette compétition';
                 }
-            else if ($poneys && !isPony ) {
+            if ($poneys && !$isPony ) {
                     return 'Compétition réservée aux poneys de sport';
             }
-            else {
-                return 'Compétition réservée aux chevaux de sport';
+             if ($chevaux && !$isHorse ) {
+                    return 'Compétition réservée aux chevaux de sport';
             }
             }
         }
