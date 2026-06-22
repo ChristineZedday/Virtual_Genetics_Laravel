@@ -323,10 +323,7 @@ class Animal extends Model
             }       
     }
 
-    public function confirmeJument() {
-        $this->StatutFemelle->confirmee = true;
-        $this->StatutFemelle->save();
-    }
+   
 
     static function pourCentRace($animal, $bred) //$bred: id bred
     //Pour les races de croisement ou un % de telle ou telle race est requis

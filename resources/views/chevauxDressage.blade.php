@@ -14,6 +14,7 @@
 	<th>Taille <button onclick="tri(5, ASC)"> &#x23F6;</button><button onclick="tri(5, DESC)"> &#x23F7;</button></th>
     <th>Date de naissance <button onclick="tri(6, ASC)"> &#x23F6;</button><button onclick="tri(6, DESC)"> &#x23F7;</button></th>
 	<th>Niveau Dressage <button onclick="tri(7, ASC)"> &#x23F6;</button><button onclick="tri(7, DESC)"> &#x23F7;</button></th>
+		<th>Indice Dressage (IDR) <button onclick="tri(7, ASC)"> &#x23F6;</button><button onclick="tri(7, DESC)"> &#x23F7;</button></th>
    
 	
    
@@ -35,6 +36,7 @@
   <td> {{ $animal->taille() }}  </td>
 	<td>{{$animal->date_naissance}} </td>
 	<td>{{(int)($animal->Performance->niveau_dressage)}}</td>
+	<td>{{(int)($animal->Performance->IDR)}}</td>
 
 
 </tr>

@@ -607,5 +607,21 @@ public function registrationStudBook(Request $request, $animal)
         $animal->save();
         return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
     }
-    
+    public function labelliserDressagePerf($animal) {
+         $animal = Animal::find($animal);
+         if ($animal->Performance && $animal->Performance->IDR >= 110) {
+             $animal->elevage->Budget()->fraisAdministratifs(60);
+      
+        if ($animal->genre()) {
+            $animal->StatutMale->labellise_dressage = true;
+            $animal->StatutMale->save();
+        }
+        else {
+            $animal->StatutFemelle->labellisee_dressage = true;
+            $animal->StatutFemelle->save();
+        }
+        return redirect()->back();
+         }
+       
+    }
 }

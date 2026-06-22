@@ -136,6 +136,11 @@
 						<button>  Approbation SF/PFS sur les résultats en compétition (60 euros)</button>
 						</a>
 						@endif
+						@if ($animal->ageAdministratif(Gamedata::date()) >=4 )
+						<a href="{{route('labelDressage',[$elevage->id,$animal->id])}}">
+						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
+						</a>
+						@endif
 					@endisset
 				</div>
 
