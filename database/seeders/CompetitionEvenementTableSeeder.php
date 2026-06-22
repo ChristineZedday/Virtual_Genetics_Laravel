@@ -957,7 +957,7 @@ class CompetitionEvenementTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'competition_id' => 86, //label SF
-                'evenement_id' => 43,
+                'evenement_id' => 58,
             ),
         ));
         
