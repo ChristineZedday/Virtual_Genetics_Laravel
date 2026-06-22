@@ -441,8 +441,8 @@ class AnimalController extends Controller
         $animal = Animal::Find($animal);
 
         
-            $races = $animal->RacesPossibles()->get();
-            dd($races);
+            $races = Race::where('croisement',1)->get();
+            
          
             return view('formEnregistrementStudBook', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
        
