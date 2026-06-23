@@ -610,7 +610,9 @@ public function registrationStudBook(Request $request, $animal)
     }
     public function labelliserDressagePerf($animal) {
          $animal = Animal::find($animal);
-         if ($animal->Performance && $animal->Performance->IDR >= 110) {
+         $poney = $animal->race->poney_sport || $animal->taille < 149;
+         $IDR = $animal->poney? $animal->Performance->IDR_poney : $animal->Performance->IDR_cheval;
+         if ($animal->Performance && $IDR >= 110) {
              $animal->elevage->Budget()->fraisAdministratifs(60);
       
         if ($animal->genre()) {
@@ -621,8 +623,9 @@ public function registrationStudBook(Request $request, $animal)
             $animal->StatutFemelle->labellisee_dressage = true;
             $animal->StatutFemelle->save();
         }
-        return redirect()->back();
+      
          }
+           return redirect()->back();
        
     }
 }

@@ -1087,6 +1087,32 @@ class CompetitionsTableSeeder extends Seeder
                 'tous_chevaux_sport' =>1,
                 'tous_poneys_sport' =>0,
             ),
+              82 => 
+            array (
+                'id' => 87,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Criterium dressage OC',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 2,
+                'prix_inscription' => 30,
+                'prix_premier' => 300,
+                'tous_chevaux_sport' =>0,
+                'tous_poneys_sport' =>0,
+            ),
+                83 => 
+            array (
+                'id' => 88,
+                'created_at' => NULL,
+                  'updated_at' => NULL,
+                'nom' => 'Criterium dressage OC',
+                'type' => 'Modèle et Allures',
+                'niveau_id' => 3,
+                'prix_inscription' => 40,
+                'prix_premier' => 400,
+                'tous_chevaux_sport' =>0,
+                'tous_poneys_sport' =>0,
+            ),
        
         ));
         

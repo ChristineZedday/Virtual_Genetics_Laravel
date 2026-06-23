@@ -4133,6 +4133,70 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 80,
                 'categorie_id' => 4,
             ),
+            14 => 
+            array (
+                'id' => 583,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 87,
+                'categorie_id' => 1,
+            ),
+            15 => 
+            array (
+                'id' => 584,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 87,
+                'categorie_id' => 2,
+            ),
+            16 => 
+            array (
+                'id' => 585,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 87,
+                'categorie_id' => 4,
+            ),
+            17 => 
+            array (
+                'id' => 586,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 87,
+                'categorie_id' => 10,
+            ),
+            18 => 
+            array (
+                'id' => 587,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 88,
+                'categorie_id' => 10,
+            ),
+            19 => 
+            array (
+                'id' => 588,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 88,
+                'categorie_id' => 4,
+            ),
+            20 => 
+            array (
+                'id' => 589,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 88,
+                'categorie_id' => 2,
+            ),
+            21 => 
+            array (
+                'id' => 590,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 88,
+                'categorie_id' => 1,
+            ),
         ));
         
         

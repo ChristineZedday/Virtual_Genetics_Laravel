@@ -222,12 +222,20 @@ public function run($competition, $evenement) {
           
             $animal->StatutMale->approuveEtalons();
         }
+         if ($competition->id >=79 && $competition->id <=82) {
+            $animal->StatutMale->labellise_dressage = true;
+            
+        }
+    }
+       
         if ($inscrit->note_synthese >= 12 &&    $animal->StatutFemelle != NULL) {
             if ($animal->race->confirmation_juments) {$animal->StatutFemelle->confirmeJument($animal);
                 if ($competition->id == 43 ){
                     $incrit->StatutFemelle->labelliseSF();
                 }
             }
+            if ($competition->id >=79 && $competition->id <=82) {
+            $animal->StatutFemelle->labellisee_dressage = true;
         }
     }
         $inscrit->save();

@@ -138,6 +138,12 @@
 						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
 						</a>
 						@endif
+						@else 
+						@if ($animal->Performance)
+						<a href="{{route('labelDressage',[$elevage->id,$animal->id])}}">
+						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
+						</a>
+						@endif
 					@endisset
 				</div>
 
