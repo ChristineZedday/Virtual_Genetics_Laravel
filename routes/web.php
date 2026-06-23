@@ -120,6 +120,7 @@ Route::get('/labelDressage/{elevage}/{animal}', 'AnimalController@labelliserDres
 
 
 
+
 //Stériliser
 
 Route::get('/steriliser/{elevage}/{animal}', 'AnimalController@steriliser')->name('steriliser');

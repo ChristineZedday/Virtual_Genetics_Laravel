@@ -75,13 +75,13 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
 {
    $racet = $etalon->race_id;
    $raceju = $jument->race_id;
-   if (!$declaree || $jument->statut_administratif != 'enregistré' ) {
+   if ($jument->statut_administratif != 'enregistré'  || $etalon->statut_administratif != 'enregistré') {
       $produit->race_id = 17;
       $produit->save();
-     //ONC si saillie non déclarée ou jument non enregistrée
+     //ONC si jument non enregistrée ou etalon non declaré
      
    }
-   else if ( $jument->ageAdministratif($dateS) < $jument->race->age_repro_femelle ) {
+   else if ( $jument->ageAdministratif($dateS) < $jument->race->age_repro_femelle || !$declaree) {
       $produit->race_id =1; 
       $produit->save();
       
