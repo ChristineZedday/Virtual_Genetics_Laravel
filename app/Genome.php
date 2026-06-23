@@ -293,7 +293,7 @@ class Genome extends Model
                       if ($phenotype->pathologie_id == 5) //mort embryon
                       {
                         if (!$animal->fondateur)
-                       { $statut = $animal->Dam()->statut();
+                       { $statut = $animal->Dam->StatutFemelle;
                         $statut->vide = true; 
                         $statut->terme = Gamedata::date();
                         $statut->save();}
