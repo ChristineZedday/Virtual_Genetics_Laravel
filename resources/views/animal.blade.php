@@ -37,10 +37,6 @@
 					</p>
 					@endif	
 
-				@if ($animal->race_id == 1)
-				<a href="{{route('inscrireOCSB',[$animal->id])}}"><button>Inscription dans un studbook</button></a>
-				<p>Sous conditions, inscriptions dans une race de croisement.</p>
-				@endif
 				
 				
 				<p>{{ $animal->taille() }} cm</p>
@@ -114,8 +110,9 @@
 				</div>	
 				<div>
 					@if ($animal->statut_administratif == 'enregistré' && $animal->race_id == 1 &&$animal->RacesPossibles != null)
-					<a href="{{route('studbook',[$elevage->id,$animal->id])}}">
-					<button>Enregistrer dans un stud-book</button></a>
+					<a href="{{route('studbook',[$animal->id])}}">
+					<p>Sous conditions, inscriptions dans une race de croisement:</p>
+					</a>
 					@endif
 				</div>
 

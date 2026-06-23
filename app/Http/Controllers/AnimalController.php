@@ -555,8 +555,8 @@ class AnimalController extends Controller
 public function registrationStudBook(Request $request, $animal) 
 {
     $animal = Animal::Find($animal);
-    $elevage =$animal->elevage;
-        
+    $elevage = $animal->Elevage;
+   
     $validated = $request->validate([ 
     'race'=>'integer']); 
         
@@ -579,23 +579,24 @@ public function registrationStudBook(Request $request, $animal)
          $request->session()->flash('status',"Votre animal ne remplit pas les conditions");
         $request->session()->flash('alert-class',"alert-danger");   
     }
-            return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
+            return redirect()->route('animal',[$elevage->id, $animal->id]);
 }
 
- /**
+ /*/**
      * 
      *
      * @param  int  $animal->id, 
      * @return \Illuminate\Http\Response
      */
- public function inscrireOCSB(Request $request, $animal)
+ /*public function inscrireOCSB(Request $request, $animal)
     {
          $animal = Animal::Find($animal);
+         $elevage = $animal->Elevage;
          $races = Race::where('croisement', 1)->get();
-            dd($races);
+          
          
-            return view('formEnregistrementStudBook', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
-    }
+            return view('formEnregistrementStudBook', ['elevage'=>$elevage, 'animal' =>$animal, 'races' =>$races]);
+    }*/
 
     public function updateNotes(Request $request, $animal) 
     {
