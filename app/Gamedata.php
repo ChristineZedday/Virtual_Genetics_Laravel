@@ -501,7 +501,14 @@ static function checkApproConcours() {
 static function checkIDR() {
     $animaux = Animal::has('performance')->get();
     foreach ($animaux as $animal) {
-        $animal->Performance->IDR();
+        $idr = $animal->Performance->IDR();
+        if ($animal->race_id == 2 || $animal->race->poney_sport || ($animal->race_id == 1 && $animal->taille() < 149)) {
+            $animal->Performance->IDR_poney = $idr;
+        }
+        else {
+            $animal->Performance->IDR_cheval = $idr;
+        }
+        $animal->Performance->save();
     }
 }
 // 

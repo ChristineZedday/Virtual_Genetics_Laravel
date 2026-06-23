@@ -610,7 +610,7 @@ public function registrationStudBook(Request $request, $animal)
     }
     public function labelliserDressagePerf($animal) {
          $animal = Animal::find($animal);
-         $poney = $animal->race->poney_sport || $animal->taille < 149;
+         $poney = $animal->race->poney_sport || $animal->taille()< 149;
          $IDR = $animal->poney? $animal->Performance->IDR_poney : $animal->Performance->IDR_cheval;
          if ($animal->Performance && $IDR >= 110) {
              $animal->elevage->Budget()->fraisAdministratifs(60);
