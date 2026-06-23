@@ -8,6 +8,7 @@ use App\Animal;
 use App\Gamedata;
 use App\Http\Controllers\TempsController;
 use App\StatutFemelle;
+use App\StatutMale;
 use App\AssoRace;
 use App\Race;
 use App\Affixe;
@@ -16,6 +17,7 @@ use App\Genotype;
 use App\Allele;
 use App\Genome;
 use App\Budget;
+use App\Performance;
 use phpDocumentor\Reflection\Types\Nullable;
 
 class AnimalController extends Controller
@@ -608,10 +610,13 @@ public function registrationStudBook(Request $request, $animal)
         $animal->save();
         return redirect()->route('animal',[$animal->elevage->id, $animal->id]);
     }
+
     public function labelliserDressagePerf($animal) {
          $animal = Animal::find($animal);
          $poney = $animal->race->poney_sport || $animal->taille()< 149;
+       
          $IDR = $animal->poney? $animal->Performance->IDR_poney : $animal->Performance->IDR_cheval;
+        
          if ($animal->Performance && $IDR >= 110) {
              $animal->elevage->Budget()->fraisAdministratifs(60);
       
