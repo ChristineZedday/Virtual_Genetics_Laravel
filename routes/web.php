@@ -116,7 +116,7 @@ Route::put('/registration/{animal}', 'AnimalController@registration')->name('reg
 
 Route::get('/OCstudbook/{animal}', 'AnimalController@inscrireOCSB')->name('inscrireOCSB');
 
-Route::get('/labelDressage/{elevage}/{animal}', 'AnimalController@labelliserDressagePerf')->name('labelDressage');
+Route::get('/labelDressage/{animal}', 'AnimalController@labelliserDressagePerf')->name('labelDressage');
 
 
 

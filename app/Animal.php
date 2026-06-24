@@ -145,6 +145,7 @@ class Animal extends Model
                 $res = $this->StatutFemelle->confirmee? 'Jument confirmée': 'Jument';
                 $res = $this->StatutFemelle->labellisee_dressage? $res.' labellisée dressage': $res;
                  $res = $this->StatutFemelle->labellisee_SF? $res.' labellisée SF': $res;
+              
                 return $res;
           
         }

@@ -229,7 +229,7 @@ public function run($competition, $evenement) {
     }
        
         if ($inscrit->note_synthese >= 12 &&    $animal->StatutFemelle != NULL) {
-            if ($animal->race->confirmation_juments) {$animal->StatutFemelle->confirmeJument($animal);
+            if ($animal->race->confirmation_juments) {$animal->StatutFemelle->confirme($animal);
                 if ($competition->id == 43 ){
                     $incrit->StatutFemelle->labelliseSF();
                 }

@@ -109,9 +109,9 @@
 				
 				</div>	
 				<div>
-					@if ($animal->statut_administratif == 'enregistré' && $animal->race_id == 1 &&$animal->RacesPossibles != null)
+					@if ($animal->statut_administratif == 'enregistré' && $animal->race_id == 1 )
 					<a href="{{route('studbook',[$animal->id])}}">
-					<p>Sous conditions, inscriptions dans une race de croisement:</p>
+					<p><button>Sous conditions, inscriptions dans une race de croisement</button></p>
 					</a>
 					@endif
 				</div>
@@ -133,19 +133,17 @@
 						<button>  Approbation SF/PFS sur les résultats en compétition (60 euros)</button>
 						</a>
 						@endif
-						@if ($animal->Performance)
-						<a href="{{route('labelDressage',[$elevage->id,$animal->id])}}">
-						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
-						</a>
-						@endif
-						@else 
-						@if ($animal->Performance)
-						<a href="{{route('labelDressage',[$elevage->id,$animal->id])}}">
-						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
-						</a>
-						@endif
+					
+						
 					@endisset
 				</div>
+				<div>
+						@if ($animal->Performance)
+						<a href="{{route('labelDressage',[$animal->id])}}">
+						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
+						</a>
+						@endif
+					</div>
 
 				<div>
 				@isset($animal->StatutMale)
