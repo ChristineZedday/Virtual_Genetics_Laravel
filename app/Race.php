@@ -394,23 +394,23 @@ $etalon = $produit->Sire;
 $jument = $produit->Dam;
 
 switch (true) {
-   case $race->fonction_inscription = 'WelshPartBred':
+   case $race->fonction_inscription == 'WelshPartBred':
       return Race::WelshPartBred($produit);
-   case $race->fonction_inscription = 'DemiSangArabe'://bug ici
+   case $race->fonction_inscription == 'DemiSangArabe':
       return Race::DemiSangArabe($produit);
-   case $race->fonction_inscription = 'PottokB':
+   case $race->fonction_inscription == 'PottokB':
       return Race::PottokB($produit);
-   case $race->fonction_inscription = 'CDF':
+   case $race->fonction_inscription == 'CDF':
       return Race::CDF($produit,$etalon,$jument);
-   case $race->fonction_inscription = 'PFS':
+   case $race->fonction_inscription == 'PFS':
       return Race::PFS($produit,$etalon,$jument);
-   case $race->fonction_inscription = 'Pintabian':
+   case $race->fonction_inscription == 'Pintabian':
       return Race::Pintabian($produit);
-    case $race->fonction_inscription = 'AngloArabe':
+    case $race->fonction_inscription == 'AngloArabe':
       return Race::AngloArabe($produit);
-   case $race->fonction_inscription = 'CSAN':
+   case $race->fonction_inscription == 'CSAN':
       return Race::CSAN($produit, $etalon);
-   case $race->fonction_inscription = 'SF':
+   case $race->fonction_inscription =='SF':
       return Race::SF($produit,$etalon,$jument);
       default:
       return false;
