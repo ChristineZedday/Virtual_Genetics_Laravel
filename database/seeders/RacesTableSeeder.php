@@ -210,7 +210,7 @@ class RacesTableSeeder extends Seeder
                 'id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'nom' => 'Demi-sang Arabe',
+                'nom' => 'DemisangArabe',
                 'prix_moyen' => 3000,
                 'frais_enregistrement' => 100,
                 'taille_min' => 30,

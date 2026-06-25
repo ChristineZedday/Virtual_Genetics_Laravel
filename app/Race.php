@@ -259,7 +259,6 @@ static function WelshPartBred ($produit) {
    else return false;
 }
 static function DemiSangArabe ($produit) {
-   //dd(Race::pourCentRace($produit, 8));
    if (Race::pourCentRace($produit, 8) >= 50) {
       return true;
 
@@ -311,6 +310,9 @@ static function PFS ($produit, $etalon,$jument) {
    if ($produit->taille_cm > 149) {
       return false;
    }
+   if (!$etalon->statutMale->approuvePFS && !($etalon->qualite=='approuvé' && $etalon->race->cheval_sport) ) {
+      return false;
+   }
    switch (true) {
       case $etalon->statutMale->approuvePFS:
          switch (true) {
@@ -319,9 +321,9 @@ static function PFS ($produit, $etalon,$jument) {
             case ($jument->race_id == 9  || $jument->race_id == 1) && ($jument->Sire->race->poney_sport || $jument->Dam->race->poney_sport) :
                return true;
          }
-      case $etalon->qualite=='approuvé' && $etalon->race->cheval_sport && $jument->race->poney_sport && $jument->taille < 140:
+      case ($etalon->qualite=='approuvé' && $etalon->race->cheval_sport) && ($jument->race->poney_sport && $jument->taille < 140):
    return true;
-      case $etalon->statutMale->approuvePFS && $etalon->taille < 140 && $jument->race->cheval_sport && $jument->taille < 14:
+      case $etalon->statutMale->approuvePFS && $etalon->taille < 140 && $jument->race->cheval_sport && $jument->taille < 149:
    return true;
    default:
    return false;
@@ -410,6 +412,8 @@ switch (true) {
       return Race::CSAN($produit, $etalon);
    case $race->fonction_inscription = 'SF':
       return Race::SF($produit,$etalon,$jument);
+      default:
+      return false;
 }
 }
 }
