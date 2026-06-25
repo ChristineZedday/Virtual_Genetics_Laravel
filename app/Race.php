@@ -266,7 +266,7 @@ static function DemiSangArabe ($produit) {
    else return false;
 }
 
-static function PottokB ($produit) {
+static function PottokB ($produit,$etalon) {
    if (Race::pourCentRace($produit, 13)< 50) {
       return false;
     $produit_id = $produit->id;
@@ -393,27 +393,30 @@ static function raceCroisement($produit, $race)
 $etalon = $produit->Sire;
 $jument = $produit->Dam;
 
-switch (true) {
-   case $race->fonction_inscription == 'WelshPartBred':
+
+   if ($race->nom == 'Welsh Part Bred') {
       return Race::WelshPartBred($produit);
-   case $race->fonction_inscription == 'DemiSangArabe':
+   }
+      
+   if($race->fonction_inscription == 'DemiSangArabe'){ 
       return Race::DemiSangArabe($produit);
-   case $race->fonction_inscription == 'PottokB':
-      return Race::PottokB($produit);
-   case $race->fonction_inscription == 'CDF':
+   }
+   if ($race->fonction_inscription == 'PottokB') {
+      return Race::PottokB($produit,$etalon);
+   }
+      
+   if ($race->fonction_inscription == 'CDF')
       return Race::CDF($produit,$etalon,$jument);
-   case $race->fonction_inscription == 'PFS':
+   if ($race->fonction_inscription == 'PFS')
       return Race::PFS($produit,$etalon,$jument);
-   case $race->fonction_inscription == 'Pintabian':
+   if ($race->fonction_inscription == 'Pintabian')
       return Race::Pintabian($produit);
-    case $race->fonction_inscription == 'AngloArabe':
+    if ($race->fonction_inscription == 'AngloArabe')
       return Race::AngloArabe($produit);
-   case $race->fonction_inscription == 'CSAN':
+   if ($race->fonction_inscription == 'CSAN')
       return Race::CSAN($produit, $etalon);
-   case $race->fonction_inscription =='SF':
+   if ($race->fonction_inscription =='SF')
       return Race::SF($produit,$etalon,$jument);
-      default:
-      return false;
-}
+
 }
 }

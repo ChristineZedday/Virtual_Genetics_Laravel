@@ -461,5 +461,24 @@ public function seraSuiteeAu($date)   {
     }
 } 
 
- 
+ public function labelliserDressagePerformances () {
+       $poney = $this->race->poney_sport || $this->race_id == 2 || ($this->race_id == 1 && $this->taille()< 149);
+      
+         $IDR = $poney? $this->Performance->IDR_poney : $this->Performance->IDR_cheval;
+        
+         if ($this->Performance && $IDR >= 110) {
+             $this->elevage->Budget()->fraisAdministratifs(60); 
+      
+            if ($this->genre()) {
+            $this->StatutMale->labellise_dressage = true;
+            $this->StatutMale->save();
+            }
+            else {
+            $this->StatutFemelle->labellisee_dressage = true;
+            $this->StatutFemelle->save();
+            }
+      
+         }
+
+ }
 }

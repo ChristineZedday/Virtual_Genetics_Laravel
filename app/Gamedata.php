@@ -509,6 +509,9 @@ static function checkIDR() {
             $animal->Performance->IDR_cheval = $idr;
         }
         $animal->Performance->save();
+        if ($animal->elevage->role == 'vendeur') {
+            $animal->labelliserDressagePerformances();
+        }
     }
 }
 // 
