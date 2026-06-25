@@ -248,23 +248,24 @@ static function associeRaces ($etalon,$jument,$produit)
     }
          
 }
-static function WelshPartBreed ($produit,$etalon,$jument) {
-   if (pourCentWelsh($produit) >= 12.5) {
+static function WelshPartBred ($produit) {
+   if (Race::pourCentWelsh($produit) >= 12.5) {
+    
       return true;
 
    }
    else return false;
 }
-static function DemiSangArabe ($produit,$etalon,$jument) {
-   if (pourCentRace($produit, 8) >= 50) {
+static function DemiSangArabe ($produit) {
+   if (Race::pourCentRace($produit, 8) >= 50) {
       return true;
 
    }
    else return false;
 }
 
-static function PottokB ($produit, $etalon,$jument) {
-   if (pourCentRace($produit, 13)< 50) {
+static function PottokB ($produit) {
+   if (Race::pourCentRace($produit, 13)< 50) {
       return false;
     $produit_id = $produit->id;
       $gris = Genotype::where(function ($q, $produit_id){$q->where('animal_id',$produit_id);})->where('allele_m_id',30)->orWhere('allele_p_id',30)->get();
@@ -284,10 +285,10 @@ static function PottokB ($produit, $etalon,$jument) {
 }
 
 static function CDF ($produit, $etalon,$jument) {
-   if (pourCentRace($produit, 23) < 12.5){
+   if (Race::pourCentRace($produit, 23) < 12.5){
       return false;
    }
-   if (pourCentRace($produit, 17) > 12.5){
+   if (Race::pourCentRace($produit, 17) > 12.5){
       return false; //Origines connues jusqu'à la troisième génération
    }
    else if (!$etalon->race->cheval_sport ||  !$jument->race->cheval_sport){
@@ -324,8 +325,8 @@ static function PFS ($produit, $etalon,$jument) {
       }
 }
 
-static function Pintabian ($produit, $etalon,$jument) {
-   if (pourCentRace($produit,8) < 99){
+static function Pintabian ($produit) {
+   if (Race::pourCentRace($produit,8) < 99){
       return false;}
    else {
       $produit_id = $produit->id;
@@ -337,11 +338,11 @@ static function Pintabian ($produit, $etalon,$jument) {
    }
    }
 
-static function AngloArabe ($produit, $etalon,$jument) {
-    if (pourCentRace($produit,8) < 12.5 || pourCentRace($produit,18) == 0){
+static function AngloArabe ($produit) {
+    if (Race::pourCentRace($produit,8) < 12.5 || pRace::ourCentRace($produit,18) == 0){
       return false;}
-   if (pourCentRace($produit,8) + pourCentRace($produit,18) + pourCentRace($produit,19) >= 87.5) {
-      if (pourCentRace($produit,17) >= 6.25 || pourCentPoney($produit) >= 6.25){
+   if (Race::pourCentRace($produit,8) + Race::pourCentRace($produit,18) + Race::pourCentRace($produit,19) >= 87.5) {
+      if (Race::pourCentRace($produit,17) >= 6.25 || Race::pourCentPoney($produit) >= 6.25){
          return false;
 
       }
@@ -351,29 +352,29 @@ static function AngloArabe ($produit, $etalon,$jument) {
 
 }
 
-static function CSAN ($produit, $etalon,$jument) {
+static function CSAN ($produit) {
    if (!$etalon->StatutMale->approuve) {
       return false;
    }
-   $originel = pourCentRace($produit,8) + pourCentRace($produit,18) + pourCentRace($produit,19) + pourCentRace($produit,24) + pourCentRace($produit,20) + pourCentRace($produit,21);
+   $originel = Race::pourCentRace($produit,8) + Race::pourCentRace($produit,18) + Race::pourCentRace($produit,19) + Race::pourCentRace($produit,24) + Race::pourCentRace($produit,20) + Race::pourCentRace($produit,21);
    if ( $originel == 100) {
       return true;
 }
-else if ($originel + pourCentRace($produit,9) == 100 && (pourCentPoney($produit) + pourcentRace($produit,17) < 6.25)) {
+else if ($originel + Race::pourCentRace($produit,9) == 100 && (Race::pourCentPoney($produit) + Race::pourcentRace($produit,17) < 6.25)) {
 return true;
 
 }
 else {return false;}
 }
 static function SF ($produit, $etalon,$jument) {
-   $originel = pourCentRace($produit,8) + pourCentRace($produit,18) + pourCentRace($produit,19) + pourCentRace($produit,24) + pourCentRace($produit,20) + pourCentRace($produit,21);
+   $originel = Race::pourCentRace($produit,8) + Race::pourCentRace($produit,18) + Race::pourCentRace($produit,19) + Race::pourCentRace($produit,24) + Race::pourCentRace($produit,20) + Race::pourCentRace($produit,21);
 if (!$etalon->approuveSF){
    return false;
 }
 else if ($originel == 100) {
    return true;
 }
-else if ($originel + pourCentRace($produit,9) == 100 && (pourCentPoney($produit) + pourcentRace($produit,17) < 6.25)) {
+else if ($originel + Race::pourCentRace($produit,9) == 100 && (Race::pourCentPoney($produit) + Race::pourcentRace($produit,17) < 6.25)) {
 return true;
 }
 else if ( $jument->StatutFemelle->labellisee_SF){
@@ -382,4 +383,29 @@ else if ( $jument->StatutFemelle->labellisee_SF){
 else {return false;}
 }
 
+static function raceCroisement($produit, $race)
+ {
+$etalon = $produit->Sire;
+$jument = $produit->Dam;
+switch (true) {
+   case $race->fonction_inscription = 'WelshPartBred':
+      return Race::WelshPartBred($produit);
+   case $race->fonction_inscription = 'DemiSangArabe':
+      return Race::DemiSangArabe($produit);
+   case $race->fonction_inscription = 'PottokB':
+      return Race::PottokB($produit);
+   case $race->fonction_inscription = 'CDF':
+      return Race::CDF($produit,$etalon,$jument);
+   case $race->fonction_inscription = 'PFS':
+      return Race::PFS($produit,$etalon,$jument);
+   case $race->fonction_inscription = 'Pintabian':
+      return Race::Pintabian($produit);
+    case $race->fonction_inscription = 'AngloArabe':
+      return Race::AgloArabe($produit);
+   case $race->fonction_inscription = 'CSAN':
+      return Race::CSAN($produit);
+   case $race->fonction_inscription = 'SF':
+      return Race::SF($produit,$etalon,$jument);
+}
+}
 }

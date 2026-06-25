@@ -563,8 +563,9 @@ public function registrationStudBook(Request $request, $animal)
     'race'=>'integer']); 
         
     $race = Race::Find($validated['race']);
-    $fonction = $race->fonction_inscription;
-    if ($fonction.'($animal, $animal->Sire, $animal->Dam)') {
+   
+    
+    if (RACE::raceCroisement($animal, $race)) {
               
                 $elevage->Budget()->fraisAdministratifs($race->frais_enregistrement);
                 $elevage->save();
