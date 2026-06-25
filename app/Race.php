@@ -175,6 +175,7 @@ static function determineRace ($etalon,$jument,$produit,$dateS, $declaree)
     }
 
 static function pourCentPoney($animal) {
+ 
    if ($animal->race->poney_sport || $animal->race_id == 2 || $animal->race_id == 3) {
       return 100;
    }
@@ -189,8 +190,9 @@ static function pourCentPoney($animal) {
 }
 
     static function pourCentWelsh($animal)
+     
     { //le Welsh est divisé en 4 sections traitées ici comme des races 
-        $animal = Animal::Find($animal);
+      
         if ($animal->race_id == 4 || $animal->race_id == 5 || $animal->race_id == 6 || $animal->race_id == 7 )
         {
             return 100;
@@ -257,6 +259,7 @@ static function WelshPartBred ($produit) {
    else return false;
 }
 static function DemiSangArabe ($produit) {
+   //dd(Race::pourCentRace($produit, 8));
    if (Race::pourCentRace($produit, 8) >= 50) {
       return true;
 
@@ -305,7 +308,7 @@ static function CDF ($produit, $etalon,$jument) {
 
 }
 static function PFS ($produit, $etalon,$jument) {
-   if ($produit->taille > 149) {
+   if ($produit->taille_cm > 149) {
       return false;
    }
    switch (true) {
@@ -352,7 +355,7 @@ static function AngloArabe ($produit) {
 
 }
 
-static function CSAN ($produit) {
+static function CSAN ($produit,$etalon) {
    if (!$etalon->StatutMale->approuve) {
       return false;
    }
@@ -387,10 +390,11 @@ static function raceCroisement($produit, $race)
  {
 $etalon = $produit->Sire;
 $jument = $produit->Dam;
+
 switch (true) {
    case $race->fonction_inscription = 'WelshPartBred':
       return Race::WelshPartBred($produit);
-   case $race->fonction_inscription = 'DemiSangArabe':
+   case $race->fonction_inscription = 'DemiSangArabe'://bug ici
       return Race::DemiSangArabe($produit);
    case $race->fonction_inscription = 'PottokB':
       return Race::PottokB($produit);
@@ -401,9 +405,9 @@ switch (true) {
    case $race->fonction_inscription = 'Pintabian':
       return Race::Pintabian($produit);
     case $race->fonction_inscription = 'AngloArabe':
-      return Race::AgloArabe($produit);
+      return Race::AngloArabe($produit);
    case $race->fonction_inscription = 'CSAN':
-      return Race::CSAN($produit);
+      return Race::CSAN($produit, $etalon);
    case $race->fonction_inscription = 'SF':
       return Race::SF($produit,$etalon,$jument);
 }
