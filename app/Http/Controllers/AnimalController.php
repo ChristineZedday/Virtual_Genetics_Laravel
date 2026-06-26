@@ -615,7 +615,7 @@ public function registrationStudBook(Request $request, $animal)
     public function labelliserDressagePerf($animal) {
        
          $animal = Animal::find($animal);
-         $animal->labelliserDressagePerfprmance();
+         $animal->labelliserDressagePerformances();
     /*     $poney = $animal->race->poney_sport || $animal->race_id == 2 || ($animal->race_id == 1 && $animal->taille()< 149);
       
          $IDR = $poney? $animal->Performance->IDR_poney : $animal->Performance->IDR_cheval;

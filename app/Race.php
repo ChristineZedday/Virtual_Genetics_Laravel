@@ -293,19 +293,24 @@ static function CDF ($produit, $etalon,$jument) {
    if (Race::pourCentRace($produit, 17) > 12.5){
       return false; //Origines connues jusqu'à la troisième génération
    }
-   else if (!$etalon->race->cheval_sport ||  !$jument->race->cheval_sport){
+   if (!$etalon->race->cheval_sport ||  !$jument->race->cheval_sport){
       return false;
    }
+   if ($etalon->race->cheval_sport && $etalon->StatutMale->labellise_dressage  && ($jument->race_id == 25 || $jument->race_id == 23) ){
+      return true;
+   }
 
-   //ajouter acceptation jument
-   else {
-      if (($etalon->race->cheval_sport && $etalon->StatutMale->labellise_dressage || $etalon->race_id == 25) && ($jument->race->cheval_sport && $jument->StatutFemelle->labellisee_dressage || $jument->race_id == 25)) {
-         {return true;}
-      }
+   if ($etalon->race_id == 23 && (($jument->race->cheval_sport && $jument->StatutFemelle->labellisee_dressage) || $jument->race_id == 25 ) ) {
+         return true;}
+
+   if ($etalon->race_id == 25 && (($jument->race->cheval_sport && $jument->StatutFemelle->labellisee_dressage) || ($jument->race_id == 25 || $jument->race_id == 23)))  {
+         return true;}
+   
+      
     else { return false;}
 }
 
-}
+
 static function PFS ($produit, $etalon,$jument) {
    if ($produit->taille_cm > 149) {
       return false;
