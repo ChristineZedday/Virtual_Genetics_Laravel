@@ -83,13 +83,14 @@ class TempsController extends Controller
             $game->save();
 
             Gamedata::checkApprovals();
-            Gamedata::checkIDR();
+          
             Gamedata::checkPuberes();
             Gamedata::retireVente();
             Gamedata::checkVieux ($date);
             Gamedata::checkCarnets();
             Gamedata::checkNonEnregistres();
             Gamedata::VenteSaillies(); 
+            Gamedata::checkIDR();
            
         }
         Gamedata::achete();
