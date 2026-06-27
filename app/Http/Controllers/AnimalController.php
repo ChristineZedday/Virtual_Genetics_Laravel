@@ -497,29 +497,12 @@ class AnimalController extends Controller
 
         $elevage = Elevage::Find($animal->elevage_id);
         $animal->couleur = $validated['couleur'];
-        if (($animal->race_id == 1) && ($validated['race']!==null))
+        if ($animal->race_id == 1 )
         {
-            $animal->race_id = $validated['race'];
-            if ($animal->race_id !==1)
-            {
-              
-                $race = Race::Find($animal->race_id);
-               
-                $elevage->Budget()->fraisAdministratifs($race->frais_enregistrement);
-                
-            }
-        }
-
-        else {
-            if ($animal->race_id != 1 && $animal->race_id != 17 && $animal->Dam->elevage_id == $animal->elevage_id ) {
-           
-        }
-        else {
-            $fraisSB = 0;
-           
+            $fraisSB = 0;      
         }
         $animal->statut_administratif = 'déclaré';
-    }
+    
         if ($animal->ageMonths() > 1 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
           

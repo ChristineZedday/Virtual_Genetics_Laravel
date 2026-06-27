@@ -20,8 +20,7 @@
 			<input type="text" name="couleur" id="couleur" value="{{ old('couleur') }}"  pattern="[^\s][A-zÀ-ž\s]{2,}"/>
 			</div>
 			
-			
-			
+		
 			<div class='form'> 
 				<button type="submit">Valider</button>
 				</div>
