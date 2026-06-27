@@ -510,7 +510,7 @@ static function checkIDR() {
         }
         $animal->Performance->save();
         if ($animal->Elevage->role == 'vendeur') {
-           // dd('ici');
+          
             $animal->labelliserDressagePerformances();
         }
     }

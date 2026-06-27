@@ -44,7 +44,7 @@
 @include('includes.petiteImage')
 	</td>
 	<td class='nom'> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
-	<td> &Eacute;talon {{ $animal->SexeAdm() }}</td>
+	<td> {{ $animal->SexeAdm() }}</td>
 	<td> {{$animal->Race->nom}} </td>
 
 	<td> {{$animal->couleur}} </td>
@@ -88,7 +88,7 @@
 @include('includes.petiteImage')
 	</td>
 	<td class='nom'> <a href="{{route('animal',[$elevage->id, $animal->id])}}"> {{$animal->NomComplet()}} </a></td>
-	<td> &Eacute;talon {{ $animal->SexeAdm() }}</td>
+	<td>  {{ $animal->SexeAdm() }}</td>
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille() }} </td>
