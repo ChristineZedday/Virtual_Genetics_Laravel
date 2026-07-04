@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\statutsfemelles;
 use App\Animal;
 
+/**
+ * @mixin IdeHelperStatutFemelle
+ */
 class StatutFemelle extends Model
 {
     protected $table = 'statutsfemelles';

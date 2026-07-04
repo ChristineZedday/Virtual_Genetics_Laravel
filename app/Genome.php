@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 //use App\Debug;
 
+/**
+ * @mixin IdeHelperGenome
+ */
 class Genome extends Model
 {
   /*classe qui travaille sur les génômes (ensemble des génotypes) des chevaux pour la reproduction
@@ -295,7 +298,7 @@ class Genome extends Model
                         if (!$animal->fondateur)
                        { $statut = $animal->Dam->StatutFemelle;
                         $statut->vide = true; 
-                        $statut->terme = Gamedata::date();
+                        $statut->terme = Gamedata::getDate();
                         $statut->save();}
                        
                         $embryoletal = true;

@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin IdeHelperAffixe
+ */
 class Affixe extends Model
 {
     /*Affixe: partie du nom d'un cheval qui fait référence à son naisseur, la marque de l'élevage en quelque sorte:

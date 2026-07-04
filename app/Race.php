@@ -9,6 +9,9 @@ use App\Competition;
 use App\StatutMale;
 use App\RacesPossibles;
 
+/**
+ * @mixin IdeHelperRace
+ */
 class Race extends Model
 {
    public function AssoRace() //Races de croisement: Demi-sang Arabe, Welsh Part Bred, Français de Selle...
@@ -30,9 +33,9 @@ class Race extends Model
    {
          if ($resultat->note_synthese >= 15) {
 
-               $animal->statutMale->setModele15;
+               $animal->StatutMale->setModele15;
            
-               $animal->statutMale->approuveEtalons();
+               $animal->StatutMale->approuveEtalons();
             
             }
       
@@ -43,7 +46,7 @@ class Race extends Model
 
 public function approuveEtalonsClasses($resultat, $animal)
 {
-   $date = Gamedata::date();
+   $date = Gamedata::getDate();
    $noteAppro =  15;
    $appro = $animal->ageAdministratif($date) >= $this->age_repro_male ? 'approuvé' : ($this->approbation_provisoire?'approbation provisoire' : 'autorisation sanitaire');
    $statut = $animal->StatutMale;
@@ -208,7 +211,7 @@ static function pourCentPoney($animal) {
     }
 
 
-static function associeRaces ($etalon,$jument,$produit) 
+/*static function associeRaces ($etalon,$jument,$produit) 
 {
    $racet = $etalon->race_id;
    $raceju = $jument->race_id;
@@ -231,10 +234,10 @@ static function associeRaces ($etalon,$jument,$produit)
 
    
     foreach ($possibles as $possible) {
-    /*  if ($produit->RacesPossibles()->get()->contains($possible->race_produit_id)) {
+      if ($produit->RacesPossibles()->get()->contains($possible->race_produit_id)) {
         
          continue;
-      }*/
+      }
       if ($possible->taille_conditions == 0) {
       $produit->RacesPossibles()->attach($possible->race_produit_id);
     
@@ -249,7 +252,7 @@ static function associeRaces ($etalon,$jument,$produit)
       }
     }
          
-}
+}*/
 static function WelshPartBred ($produit) {
    if (Race::pourCentWelsh($produit) >= 12.5) {
     
@@ -315,11 +318,11 @@ static function PFS ($produit, $etalon,$jument) {
    if ($produit->taille_cm > 149) {
       return false;
    }
-   if (!$etalon->statutMale->approuvePFS && !($etalon->qualite=='approuvé' && $etalon->race->cheval_sport) ) {
+   if (!$etalon->StatutMale->approuvePFS && !($etalon->qualite=='approuvé' && $etalon->race->cheval_sport) ) {
       return false;
    }
    switch (true) {
-      case $etalon->statutMale->approuvePFS:
+      case $etalon->StatutMale->approuvePFS:
          switch (true) {
             case $jument->race->poney_sport:
                return true;
@@ -328,7 +331,7 @@ static function PFS ($produit, $etalon,$jument) {
          }
       case ($etalon->qualite=='approuvé' && $etalon->race->cheval_sport) && ($jument->race->poney_sport && $jument->taille < 140):
    return true;
-      case $etalon->statutMale->approuvePFS && $etalon->taille < 140 && $jument->race->cheval_sport && $jument->taille < 149:
+      case $etalon->StatutMale->approuvePFS && $etalon->taille < 140 && $jument->race->cheval_sport && $jument->taille < 149:
    return true;
    default:
    return false;

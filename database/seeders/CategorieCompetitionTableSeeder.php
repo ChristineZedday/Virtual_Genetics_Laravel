@@ -4205,6 +4205,14 @@ class CategorieCompetitionTableSeeder extends Seeder
                 'competition_id' => 34,
                 'categorie_id' => 1,
             ),
+             23 => 
+            array (
+                'id' => 592,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'competition_id' => 37,
+                'categorie_id' => 4,
+            ),
         ));
         
         

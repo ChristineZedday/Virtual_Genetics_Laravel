@@ -13,8 +13,8 @@
 <h3>{{$elevage->nom_eleveur}}</h3>
 
 <?php
-$game =  App\Gamedata::Find(1);
-$date = $game->date();
+//$game =  App\Gamedata::Find(1);
+$date = App\Gamedata::getDate();
 ?>
 
 	<nav>

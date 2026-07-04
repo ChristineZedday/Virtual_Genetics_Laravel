@@ -24,7 +24,7 @@ class AnimalController extends Controller
 {
  
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new horse.
      *
      * @return \Illuminate\Http\Response
      */
@@ -75,7 +75,7 @@ class AnimalController extends Controller
         }
         $animal->elevage_id = $elevage;
         $animal->Randomize();
-        $animal->date_naissance = Gamedata::date();
+        $animal->date_naissance = Gamedata::getDate();
         $animal->taille_cm = $animal->taille_additive;
         $animal->modele_allures = $animal->modele_allures_additifs;
         $animal->fondateur = true;
@@ -418,17 +418,8 @@ class AnimalController extends Controller
     {
         
         $animal = Animal::Find($animal);
-
-        if ($animal->Race->nom == 'OC')
-        {
-            $races = $animal->RacesPossibles()->get();
-           // dd($races);
-            return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal, 'races' =>$races]);
-        }
-        else
-        {
-            return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
-        }
+        return view('formEnregistrement', ['elevage'=>$animal->Elevage, 'animal' =>$animal]);
+        
     }
 
       /**
@@ -503,7 +494,7 @@ class AnimalController extends Controller
         }
         $animal->statut_administratif = 'déclaré';
     
-        if ($animal->ageMonths() > 1 && $animal->Dam->elevage_id == $animal->elevage_id) {
+        if ($animal->ageMonths(Gamedata::getdate()) > 1 && $animal->Dam->elevage_id == $animal->elevage_id) {
             $elevage = $animal->elevage;
           
             $elevage->Budget()->fraisAdministratifs(50 + $fraisSB);

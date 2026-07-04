@@ -3,8 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+
 use Orangehill\IseedServiceProvider\alleles;
 
+/**
+ * @mixin IdeHelperAllele
+ */
 class Allele extends Model
 {
     /*Chaque gène ou locus a plusieurs allèles possibles*/

@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin IdeHelperGenotype
+ */
 class Genotype extends Model
 { 
     /*Genotype: père d'allèles d'un locus donné pour un cheval donné */

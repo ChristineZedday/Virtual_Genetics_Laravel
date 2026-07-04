@@ -30,6 +30,8 @@ class ReproductionController extends Controller
   
   static function croisement($elevage, $etalon, $jument, $declaree=1)
    {
+
+    $date = Gamedata::getDate();
     //vérification du statut des reproducteurs
     $jument = Animal::Find($jument);
     $statut = $jument->StatutFemelle;
@@ -44,13 +46,13 @@ class ReproductionController extends Controller
     
     $elevage = Elevage::Find($elevage);
     //controle pas déjà saillie
-    $dateS = Gamedata::date();
+    $dateS = $date;
     if ($statut->vide )
       {
         $statut->pres_pleine = true; 
         $statut->etalon_id = $etalon->id;
         $statut->date_saillie = $dateS;
-        $date = Gamedata::ElevenMonths();
+        $date = Gamedata::ElevenMonths($date);
         $statut->terme = $date;
         $statut->save();
   
@@ -222,16 +224,18 @@ class ReproductionController extends Controller
 
 function calculConsang($S, $D)
 {
+
+  $date = Gamedata::getDate();
   $SS = Animal::find($S);
   if (isset ($SS))
   {
-    $ageS = $SS->ageMonths();
+    $ageS = $SS->ageMonths($date);
   }
  
   $DD = Animal::find($D);
   if (isset ($DD))
   {
-    $ageD = $DD->ageMonths();
+    $ageD = $DD->ageMonths($date);
   }
 
   switch (true)

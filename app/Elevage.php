@@ -8,6 +8,9 @@ use App\Gamedata;
 use App\Budget;
 use App\Debug;
 
+/**
+ * @mixin IdeHelperElevage
+ */
 class Elevage extends Model
 {
     
@@ -36,7 +39,7 @@ class Elevage extends Model
 
     public function Budget()
     {
-        $date = Gamedata::date();
+        $date = Gamedata::getDate();
         if ($this->role == 'Joueur') {
         return $this->Budgets()->where('mois', $date)->first();
         }
@@ -74,7 +77,7 @@ class Elevage extends Model
     private function chargeHa() 
     //charge d'animaux à l'hectare possible selon saison
     {
-        $date = Gamedata::date();
+        $date = Gamedata::getDate();
         $mois = date('n',strtotime($date));
         $charge = Rendement::where('mois',$mois)->first()->ha_par_UGB;
         return $charge; 
@@ -83,7 +86,7 @@ class Elevage extends Model
 
     private function faitFoin($surface) 
     {
-        $date = Gamedata::date();
+        $date = Gamedata::getDate();
         $mois = date('n',strtotime($date));
         $rendement = Rendement::where('mois',$mois)->first()->foin_tMS_ha;
         $this->foin += $rendement * $surface;

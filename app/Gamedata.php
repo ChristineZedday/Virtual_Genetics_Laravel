@@ -9,15 +9,26 @@ use DateTime;
 use App\Budget;
 use App\StatutMale;
 use App\StatutFemelle;
+use App\Elevage;
+use App\Genotype;
 
 
+/**
+ * @mixin IdeHelperGamedata
+ */
 class Gamedata extends Model
 {
+  /*  private $date;
    
 
-    static function date()
+    static function setDate()
     {
-        return  Gamedata::find(1)->date_courante;
+        $date =  Gamedata::find(1)->date_courante;
+    }*/
+
+     static function getDate()
+    {
+        return Gamedata::find(1)->date_courante;
     }
 
     static function dateDeb()
@@ -35,9 +46,9 @@ class Gamedata extends Model
 
     }
 //Season for reproduction (march to september)
-    static function saison()
+    static function saison($date)
 {
-    $date = Gamedata::date();
+    //$date = $this->date;
     $mois = date('m',strtotime($date));
     switch ($mois) {
         case $mois<3:
@@ -52,50 +63,75 @@ class Gamedata extends Model
     return $saison;
 }
 
-static function beforeSeason() {
-     $date = Gamedata::date();
+/*static function beforeSeason() {
+    // $date = $this->date;
     $mois = date('m',strtotime($date));
     $before = $mois<=3 ? true : false;
     return $before;
 }
 static function afterSeason() {
-     $date = Gamedata::date();
+   // $date = $this->date;
     $mois = date('m',strtotime($date));
     $after = $mois>=9 ? true : false;
     return $after;
-}
+}*/
 
 //date of birth 11 months after conception
-static function ElevenMonths()
+static function ElevenMonths($date)
 {
-    $date = Gamedata::date();
-    $date= date('Y-m-d',strtotime('+11 month',strtotime($date)));
+   // $date = $this->date;
+    $res= date('Y-m-d',strtotime('+11 month',strtotime($date)));
     
-   return $date;
+   return $res;
 }
 
-static function HowManyMonths($datefutur)
+static function HowManyMonths($date,$datefutur)
 {
-    $maintenant = New DateTime(Gamedata::date());
+    $maintenant = New DateTime($date);
     $datefutur = New DateTime($datefutur);
     $diff= $datefutur->diff($maintenant);
     return 12 * $diff->y + $diff->m;;
 
 }
+
+static function initialiseJeu() 
+{
+   
+
+    $animaux = Animal::select(['id','fondateur','race_id', 'statut_administratif'])->where('fondateur',1)->with(['race', 'Genotypes'])->get();
+         
+    foreach ($animaux as $animal)
+            {
+                
+      
+                $animal->Randomize($animal->race);
+ 
+                Genome::readGenes($animal->id);
+
+    
+                Performance::initialize($animal->id);
+
+    
+                $animal->statut_administratif = 'enregistré';
+                $animal->save();
+           }  
+    
+   
+}
+
 //birth of foals
 static function checkNouveaux($date)
 {
-    $animaux = Animal::where('date_naissance', '<='  ,$date)->where('foetus',1)->get();
+    $animaux = Animal::where('date_naissance', '<='  ,$date)->where('foetus',1)->where('elevage_id','!=','2')->with(['Dam','elevage'])->get();
     // <= au lieu de  =: rattrapper le coup s'il y a eu bug et que ça n'a pas tourné au mois d'avant
 
     foreach ($animaux as $animal)
     {
             $animal->foetus = false;
-            if ($animal->elevage_id != 2)
-            {
-                $animal->elevage_id = $animal->Dam->elevage_id;
-                $animal->save();
-            }
+           
+            $animal->elevage_id = $animal->Dam->elevage_id;
+            $animal->save();
+            
             if ($animal->elevage->role == 'Vendeur') {
                 $animal->statut_administratif = 'enregistré';
                 $animal->save();
@@ -116,12 +152,12 @@ static function checkNouveaux($date)
     
 }
 // weanlings when 6 months old
-static function checkSevres()
+static function checkSevres($date)
 {
-    $animaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->get(); 
+    $animaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->with('Dam')->get(); 
     foreach ($animaux as $animal)
     {
-        if ($animal->ageMonths() >= 6)
+        if ($animal->ageMonths($date) >= 6)
         {
             if ($animal->sexe == 'jeune poulain')
             {
@@ -173,16 +209,13 @@ static function checkNonEnregistres()
     foreach ($animaux as $animal) {
         $animal->race_id = 17;
         $animal->save();
-        foreach ($animal->RacesPossibles()->get() as $possible) {
-            $animal->RacesPossibles()->detach($possible->id);
-        }
+        
     }
 }
 //animals of two years old (administratively, i.e. supposed to be born in january) can technically reproduce
-static function checkPuberes()
+static function checkPuberes($date)
 {
     $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
-    $date = Gamedata::date();
     foreach ($animaux as $animal)
     {
         if ($animal->ageAdministratif($date) >= 2 )
@@ -237,8 +270,9 @@ static function checkPuberes()
 static function checkFondateurs($date) 
 {
     
-    $animaux = Animal::where('fondateur',1)->whereDate('date_naissance', '<' , '1999-01-01')->get();
-            foreach ($animaux as $animal) {
+    $animaux = Animal::select(['id','date_naissance','fondateur','race_id', 'sexe'])->where('fondateur',1)->whereDate('date_naissance', '<' , '1999-01-01')->with(['StatutMale','StatutFemelle','race'])->get();
+       
+    foreach ($animaux as $animal) {
                
 
                  if ( $animal->Genre()) 
@@ -292,23 +326,25 @@ static function checkFondateurs($date)
                
             }// end foreach
 
+    
 }
 
 static function checkApprovals () {
-    $animaux = Animal::whereHas('statutMale', function ($q) {$q->where('qualite', '!=', 'approuvé')->where('qualite', '!=', 'refusé');})->get();
+    $animaux = StatutMale::where('qualite', '!=', 'approuvé')->where('qualite', '!=', 'refusé')->get();
     foreach ($animaux as $animal) {
+       
         switch (true) {
-            case $animal->StatutMale->qualite == 'approuvé an prochain':
-               $animal->statutMale->setApproval(); 
+            case $animal->qualite == 'approuvé an prochain':
+               $animal->setApproval(); 
                break;
-            case $animal->StatutMale->qualite == 'approbation provisoire an prochain':
-                $animal->statutMale->setProvisoire(); 
+            case $animal->qualite == 'approbation provisoire an prochain':
+                $animal->setProvisoire(); 
              
                break;
-            case $animal->StatutMale->qualite == 'approbation provisoire cette année':
-                $animal->statutMale->setModele15(false); 
-                $animal->statutMale->setClasseNat(false);
-                $animal->statutMale->setApproval(false);
+            case $animal->qualite == 'approbation provisoire cette année':
+                $animal->setModele15(false); 
+                $animal->setClasseNat(false);
+                $animal->setApproval(false);
                
                    //il doit se requalifier
                break;
@@ -321,7 +357,7 @@ static function checkApprovals () {
 static function checkVieux ($date)
 {
     $cas = ['mâle', 'femelle', 'mâle stérilisé', 'femelle stérilisée'];  
-    $animaux = Animal::whereIn('sexe',$cas)->get();
+    $animaux = Animal::select(['id', 'sexe', 'date_naissance'])->whereIn('sexe',$cas)->get();
     foreach ($animaux as $animal)
     {
         $age = $animal->ageYears();
@@ -353,7 +389,7 @@ static function checkVieux ($date)
             $animal->save();
         }
     }
-    $vieux = Animal::where('sexe', 'LIKE','vie%')->get();
+    $vieux = Animal::select(['id', 'sexe', 'date_naissance'])->where('sexe', 'LIKE','vie%')->with('Performance')->get();
     foreach ($vieux as $vieux) {
         $perf= $vieux->Performance;
         $age = $vieux->ageYears();
@@ -375,7 +411,7 @@ static function checkVieux ($date)
 //Sending to Ankou (Death) the horses (possibly during gestation or at birth) that have letal gens or those that died of age
   static function checkMorts()
 {
-    $letaux = Animal::where('elevage_id', '!=', 2)->whereHas('Pathologie', function ($query) {$query->where('letal_foetus',1);})->get(); //avortés
+    $letaux = Animal::select(['id', 'elevage_id', 'dam_id'])->where('elevage_id', '!=', 2)->withWhereHas('Pathologie', function ($query) {$query->where('letal_foetus',1);})->with('Dam.StatutFemelle')->get(); //avortés
    
     foreach ($letaux as $letal)
     {
@@ -395,15 +431,15 @@ static function checkVieux ($date)
      
       
     }
-    $letaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->whereHas('Pathologie', function ($query) {$query->where('letal',1);})->get(); //morts peu de temps après la naissance
+    $letaux = Animal::select(['id', 'elevage_id'])->where('elevage_id', '!=', 2)->where('foetus', 0)->whereHas('Pathologie', function ($query) {$query->where('letal',1);})->get(); //morts peu de temps après la naissance
         foreach ($letaux as $letal)
         {
             $letal->elevage_id =2;//chez l'Ankou!
-            $letal->date_achat = Gamedata::date();
+            $letal->date_achat = $this->date;
             $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
         }
 
-    $animaux = Animal::where('elevage_id', '!=', 2)->where('sexe','LIKE','vie%')->get();
+    $animaux = Animal::select(['id', 'elevage_id', 'sexe'])->where('elevage_id', '!=', 2)->where('sexe','LIKE','vie%')->with(['Performance', 'StatutMale', 'StatutFemelle'])->get();
     foreach ($animaux as $animal)
     {
         
@@ -428,7 +464,7 @@ static function checkVieux ($date)
                 if (rand(1,$var)==1)
                 {
                     $animal->elevage_id =2;//chez l'Ankou!
-                    $animal->date_achat = Gamedata::date();
+                    $animal->date_achat = $this->date;
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     
                     if ($animal->sexe == 'vieille femelle' || $animal->sexe == 'femelle')
@@ -447,6 +483,7 @@ static function checkVieux ($date)
                             $produit->elevage_id =2;//pour effacer faudrait effacer genotypes et images
                             $produit->save();
                             $statut->delete();
+                            
 
                           
                         }
@@ -489,17 +526,18 @@ static function checkVieux ($date)
 }  */
 
 static function checkApproConcours() {
-    $males = StatutMale::whereHas('elevage', function($q) {$q->where('role', 'vendeur');})->where('qualite' , 'approuvé')->andWhere('modele15' , TRUE)->get();
+    $males = StatutMale::withWhereHas('male.Elevage', function($q) {$q->where('role', 'vendeur');})->where('qualite' , 'approuvé')->andWhere('modele15' , TRUE)->get();
     foreach ($males as $male) {
         if ($male->approuveEtalonsResultatsConcours()){
             $male->save();
+            dd('male approuvé concours');
         }  
 
     }
 }
 
 static function checkIDR() {
-    $animaux = Animal::has('performance')->get();
+    $animaux = Animal::select(['id', 'race_id', 'taille_cm', 'elevage_id'])->has('performance')->with('Elevage')->get();
     foreach ($animaux as $animal) {
         $idr = $animal->Performance->IDR();
         if ($animal->race_id == 2 || $animal->race->poney_sport || ($animal->race_id == 1 && $animal->taille() < 149)) {
@@ -521,7 +559,7 @@ static function VenteSaillies ()
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur)
     {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->whereHas('StatutMale', function ($query) { return $query-> where('qualite', 'approuvé');})->get();
+        $animaux = Animal::select(['id', 'elevage_id','race_id'])->where('elevage_id', $vendeur->id)->withWhereHas('StatutMale', function ($query) { return $query-> where('qualite', 'approuvé');})->get();
         foreach ($animaux as $animal)
       
         {
@@ -532,8 +570,7 @@ static function VenteSaillies ()
                 {
                     $statut->disponible = false;
                     $statut->save();
-                  
-                    
+                              
                 }
             }
             else 
@@ -556,7 +593,7 @@ static function VenteSaillies ()
     }
 }
 
-static function VenteJeunes ()
+static function VenteJeunes ($date)
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur) {
@@ -564,7 +601,7 @@ static function VenteJeunes ()
 
         foreach ($animaux as $animal)
         {
-            if (($animal->ageMonths() >= 6) && (! $animal->fondateur) )
+            if (($animal->ageMonths($date) >= 6) && (! $animal->fondateur) )
         { 
             $animal->a_vendre = true;
             $race = Race::find($animal->race_id);

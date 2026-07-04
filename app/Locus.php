@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Orangehill\IseedServiceProvider\loci;
 use App\Linkage;
 
+/**
+ * @mixin IdeHelperLocus
+ */
 class Locus extends Model
 {
     protected $table = 'loci';

@@ -12,6 +12,9 @@ use App\Evenement;
 use DateTime;
 
 
+/**
+ * @mixin IdeHelperResultat
+ */
 class Resultat extends Pivot
 {
    /*Résultat d'une compétition/cheval/catégorie voir  Competition*/
@@ -50,7 +53,7 @@ class Resultat extends Pivot
 
    static function inscrits($elevage_id, $type = NULL)
    {
-      $date =new DateTime(Gamedata::date());
+      $date =new DateTime(Gamedata::getDate());
       $m = $date->format('m');
       $y = $date->format('Y');
       
@@ -91,7 +94,7 @@ switch ($this->classement) {
 
    static function resultats($elevage_id, $type) //Les résultats des chevaux d'un élevage
    {
-      $date =new DateTime(Gamedata::date());
+      $date =new DateTime(Gamedata::getDate());
   
      if ($type != 'toutes') {
       
@@ -107,7 +110,7 @@ switch ($this->classement) {
 
    static function tousResultats($type) //les résultats de tous les chevaux y compris ceux des autres joueurs et PNJ
    {
-      $date =new DateTime(Gamedata::date());
+      $date =new DateTime(Gamedata::getDate());
       $y = $date->format('Y');
       if ($type == 'toutes') {
       $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 

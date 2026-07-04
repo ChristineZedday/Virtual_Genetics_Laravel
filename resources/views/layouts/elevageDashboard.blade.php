@@ -14,7 +14,7 @@
 
 <?php
 $game =  App\Gamedata::Find(1);
-$date = $game->date();
+$date = $game->getDate();
 ?>
 
 	<nav>
@@ -51,7 +51,7 @@ $date = $game->date();
 					@endforeach
 				</ul>
 				</li>
-				@if (app\Gamedata::saison())
+				@if (app\Gamedata::saison($date))
 				<li><a href="{{route('reproduction.jument',[$elevage])}}">Faire saillir une jument</a></li>
 				@endif
 				<li><a href="{{route('competition',[$elevage])}}">Gérer mes compétitions</a></li>

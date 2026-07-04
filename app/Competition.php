@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin IdeHelperCompetition
+ */
 class Competition extends Model
 {
    /* Une compétition est un type d'évènement sportif par exemple concours d'élevage, saut d'obstacles,  et relevant d'un niveau donné (local, régional, national...).
@@ -51,7 +54,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
     {
        
 
-        $competitions = Competition::whereHas('evenements', function ($q) use ($m,$y) {$q->whereMonth('date',$m)->whereYear('date',$y);})->get();
+        $competitions = Competition::withWhereHas('evenements', function ($q) use ($m,$y) {$q->whereMonth('date',$m)->whereYear('date',$y);})->with(['Races','Categories','Niveau','Reprises'])->get();
         return $competitions;
        
        

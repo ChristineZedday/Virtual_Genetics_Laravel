@@ -13,6 +13,9 @@ use App\Performance;
 use App\Resultat;
 use App\Budget;
 
+/**
+ * @mixin IdeHelperReprise
+ */
 class Reprise extends Model
 {
     public function Competitions() 
@@ -22,12 +25,13 @@ class Reprise extends Model
 
     public function Run($evenement, $competition, $categorie) 
     {
-        $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $categorie->id)->where('competition_id', $competition->id)->where('reprise_id', $this->id)->get();
+        $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $categorie->id)->where('competition_id', $competition->id)
+        ->where('reprise_id', $this->id)->with(['Animal.Elevage','Animal.Performance'])->get();
 
         foreach ($inscrits as $inscrit) {
-            $elevage = $inscrit->animal->elevage;
+            $elevage = $inscrit->Animal->Elevage;
             if ($elevage->role == 'Joueur') {
-            $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
+            $frais = $elevage->fraisTransport($inscrit->Animal, $evenement->distance);
                 if (!$frais ) {
                    
                     $inscrits->forget($inscrit->id);
@@ -46,7 +50,7 @@ class Reprise extends Model
         $notes = [];
        //dd('inscrits: '.$nb.' classés: '.$classes);
         foreach ($inscrits as $inscrit) {
-            $animal = $inscrit->animal;
+            $animal = $inscrit->Animal;
             
             $malusTaille = 0;
             if ($categorie->libelle == 'cheval ou poney') {

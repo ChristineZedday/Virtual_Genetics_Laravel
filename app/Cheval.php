@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @mixin IdeHelperRendement
- */
-class Rendement extends Model
+class Cheval extends Model
 {
     use HasFactory;
+
+       public function Elevage()
+    {
+        return $this->BelongsTo('App\Elevage');
+    }
 }

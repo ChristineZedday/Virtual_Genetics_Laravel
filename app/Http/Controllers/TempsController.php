@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Gamedata;
 use App\StatutFemelle;
 use App\Animal;
@@ -27,24 +27,18 @@ class TempsController extends Controller
 {
    
 
+
     static function nextMonth($elevage)
     {
        
-        $date = Gamedata::date();
+        
         $game = Gamedata::Find(1);
+        $date = $game->date_courante;
         $debut = false;
         if ($date == $game->date_debut )
         {
             $debut = true;
-            $animaux = Animal::where('fondateur',1)->get();
-            foreach ($animaux as $animal)
-            {
-                $animal->Randomize();
-                Genome::readGenes($animal->id);
-                Performance::initialize($animal->id);
-                $animal->statut_administratif = 'enregistré';
-                $animal->save();
-           }   
+            Gamedata::initialiseJeu();
         }
         
         $date = date('Y-m-d',strtotime('+1 month',strtotime($date)));
@@ -60,8 +54,8 @@ class TempsController extends Controller
         $game->save();
 
         // checkFemellesTerme($date);
-        Gamedata::checkSevres();
-        Gamedata::VenteJeunes();
+        Gamedata::checkSevres($date);
+        Gamedata::VenteJeunes($date);
         Gamedata::checkMorts();
         Gamedata::checkNouveaux($date);
 
@@ -84,7 +78,7 @@ class TempsController extends Controller
 
             Gamedata::checkApprovals();
           
-            Gamedata::checkPuberes();
+            Gamedata::checkPuberes($date);
             Gamedata::retireVente();
             Gamedata::checkVieux ($date);
             Gamedata::checkCarnets();
@@ -96,12 +90,12 @@ class TempsController extends Controller
         Gamedata::achete();
         Evenement::nextYear();
 
-        TempsController::regCompetNPC();
+        TempsController::regCompetNPC($date);
         //y a un bug dans l'enregistrement PNJ   
-        TempsController::runCompetitions();
+        TempsController::runCompetitions($date);
 
-        if ( Gamedata::saison())
-       { TempsController::reproNPC();}
+        if ( Gamedata::saison($date))
+       { TempsController::reproNPC($date);}
        //so far so good
       
         return redirect()->back();
@@ -110,15 +104,14 @@ class TempsController extends Controller
 
 
 
-static function reproNPC()
+static function reproNPC($date)
 {
-        $date = Gamedata::date();
        
             $vendeurs = Elevage::where('role','Vendeur')->get();
             foreach($vendeurs as $vendeur)
             {
                 $fem = ['femelle', 'vieille femelle'];
-                $juments = Animal::where('elevage_id', $vendeur->id)->whereIn('sexe',$fem)->get();
+                $juments = Animal::where('elevage_id', $vendeur->id)->whereIn('sexe',$fem)->with(['StatutFemelle','Race'])->get();
 
                 $count = sizeof($juments);
                 switch (true)
@@ -160,7 +153,7 @@ static function reproNPC()
                         if(rand(1,$var)==1)
                         {
                             //$etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('carnet_saillies', 1);})->get();
-                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite', 'approuvé');})->get();
+                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite', 'approuvé');})->with('Race')->get();
 
                             $nb = sizeof($etalons);
                             
@@ -168,7 +161,7 @@ static function reproNPC()
                                 $choisi = rand(1,$nb) -1;
                                 $etalon = $etalons[$choisi];
                                 if ($etalon->ageAdministratif($date) >= $etalon->race->age_repro_male) {
-                                ReproductionController::croisement($vendeur->id, $etalon->id, $jument->id);
+                                ReproductionController::croisement($vendeur->id, $etalon->id, $jument->id, $date);
                                 }
                             }
                         }                    
@@ -181,10 +174,10 @@ static function reproNPC()
         
 }
 
-static function regCompetNPC() 
+static function regCompetNPC($date) 
 {
     //Note: pour les PNJ, on ne réclame pas les frais d'inscriptions
-    $date =new DateTime(Gamedata::date());
+    $date =new DateTime($date);
     $m = $date->format('m');
     $y = $date->format('Y');
 
@@ -199,14 +192,15 @@ static function regCompetNPC()
         if ($comp->type == 'Modèle et Allures')
                 {
                    if ( $comp->tous_poneys_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})
+                    ->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance.Niveau','StatutFemelle', 'StatutMale'])->get();
                      
                    } 
                    else if ($comp->tous_cheval_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance.Niveau','StatutFemelle', 'StatutMale'])->get();
                    }
                    else {
-                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->get();
+                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->with(['Performance.Niveau','StatutFemelle', 'StatutMale'])->get();
                
             }
                   
@@ -242,7 +236,7 @@ static function regCompetNPC()
                     $resultat->evenement_id = $evenement->id;
                     $resultat->categorie_id = $categorie->id;
                     $resultat->competition_id = $comp->id;
-                   //dd($resultat);//OK;
+                 
                     $resultat->save();
                }
             }
@@ -252,7 +246,7 @@ static function regCompetNPC()
         if ($comp->type == 'Dressage') {
             
         
-            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->get();
+            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->with(['Performance','StatutFemelle'])->get();
           
                 foreach ($dressables as $cheval) {
                     if (is_null ($cheval->Performance)) {
@@ -320,13 +314,13 @@ static function regCompetNPC()
     }
 }
 
-static function runCompetitions() {
+static function runCompetitions($date) {
     
-    $date =new DateTime(Gamedata::date());
+    $date =new DateTime($date);
     $m = $date->format('m');
     $y = $date->format('Y');
 
-    $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->get(); 
+    $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->with('Competitions.Reprises')->get(); 
 
     foreach ($evenements as $evenement){
     $competitions = $evenement->Competitions;
@@ -336,7 +330,7 @@ static function runCompetitions() {
             $filter = function($query) use ($comp) {
                 $query->where('competition_id', $comp);
                 };
-            $categories = Categorie::with(['competitions' =>$filter])->get();
+            $categories = Categorie::with(['Competitions' =>$filter])->get();
             //with et pas whereHas sinon 1 seule catégorie???
             foreach ($categories as $categorie) {
                 if ($competition->type == 'Modèle et Allures') {

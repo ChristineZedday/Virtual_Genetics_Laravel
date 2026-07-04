@@ -223,7 +223,7 @@ class ElevageController extends Controller
     {
         
         $elevage = Elevage::Find($id);
-        $date = Gamedata::date();
+        $date = Gamedata::getDate();
         $juments = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'femelle')->orWhere('sexe', 'vieille femelle');})->whereHas('StatutFemelle', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
        
 
@@ -287,7 +287,7 @@ class ElevageController extends Controller
     {
         $elevage = Elevage::Find($elevage);
         $etalon = Animal::Find($etalon);
-        $date = Gamedata::date();
+        $date = Gamedata::getDate();
 
         if ($etalon->ageAdministratif($date) >= $etalon->race->age_repro_male) {
 

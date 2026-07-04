@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Gamedata;
 
+/**
+ * @mixin IdeHelperBudget
+ */
 class Budget extends Model
 {
     const REVENU = 1000;
@@ -35,7 +38,7 @@ class Budget extends Model
 
     public function initialize() 
     {
-        $this->mois = Gamedata::date();
+        $this->mois = Gamedata::getDate();
         if ( $this->mois == Gamedata::first()->date_debut) {
             $this->solde_debut = self::DEBUT;
             if ($this->elevage->affixe_id != NULL) {

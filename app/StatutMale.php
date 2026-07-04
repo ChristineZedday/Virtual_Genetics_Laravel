@@ -7,6 +7,9 @@ use App\Animal;
 use App\Performance;
 use App\Gamedata;
 
+/**
+ * @mixin IdeHelperStatutMale
+ */
 class StatutMale extends Model
 {
     protected $table = 'statuts_males';
@@ -85,8 +88,8 @@ class StatutMale extends Model
     }
 
     public function approuveEtalons () {
-      $date = Gamedata::date();
-      $after = Gamedata::afterSeason();
+      $date = Gamedata::getDate();
+     // $after = Gamedata::afterSeason();
        $mini = Race::where('nom', 'Miniature')->first();
 
 
@@ -164,7 +167,7 @@ class StatutMale extends Model
       }
     
      public function approuveEtalonsResultatsConcours() {
-         $date = Gamedata::date();
+         $date = Gamedata::getDate();
         $niveauDressage =$this->male->Performance->niveau_dressage;
         switch (true) {
             case (!$this->modele15):

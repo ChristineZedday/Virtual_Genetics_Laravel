@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Image;
 use App\AssoCouleur;
 
+/**
+ * @mixin IdeHelperCouleur
+ */
 class Couleur extends Model
 {
    

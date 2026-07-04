@@ -69,7 +69,7 @@
 			</div>	
 			@endif
 			<div id='vente'>
-				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && ($animal->ageMonths()>=6))
+				@if (($animal->elevage_id == $elevage->id )&& !($animal->a_vendre) && ($animal->ageMonths(App\Gamedata::getDate())>=6))
 
 					<a href="{{route('vendre',[$elevage->id,$animal->id])}}">
 								<button >Mettre en vente</button></a>
@@ -83,8 +83,8 @@
 			</div>
 
 			<div id='saillie'>
-				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe=='vieille femelle') && ( isset($animal->StatutFemelle) && ($animal->StatutFemelle->vide == true && $animal->StatutFemelle->date_saillie != App\Gamedata::date()) ) )
-					@if (App\Gamedata::saison())
+				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe=='vieille femelle') && ( isset($animal->StatutFemelle) && ($animal->StatutFemelle->vide == true && $animal->StatutFemelle->date_saillie != App\Gamedata::getDate()) ) )
+					@if (App\Gamedata::saison(App\Gamedata::getDate()))
 					
 					<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
 								<button >Faire saillir</button>
@@ -138,11 +138,11 @@
 					@endisset
 				</div>
 				<div>
-						@if ($animal->Performance)
+						
 						<a href="{{route('labelDressage',[$animal->id])}}">
 						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
 						</a>
-						@endif
+						
 					</div>
 
 				<div>

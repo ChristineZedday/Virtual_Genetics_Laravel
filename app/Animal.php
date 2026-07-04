@@ -10,9 +10,10 @@ use DateTime;
 use App\Gamedata;
 use App\Race;
 
-/** class Animal (table animaux)
+/**
+ * class Animal (table animaux)
  * Relations: Genotypes, Elevage, Race, RacesPossibles (table races_possible): when a choice between different studbooks is required, Affixe, Performance, Sire, Dam (parents, table animaux), StatutFemelle or StatutMale, Pathologie, Couleur, Image
- * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur, foetus 
+ * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur, foetus
  * functions: Sexe (sex and statut for reproduction)
  * Genre: (male or female, for competition registration)
  * Progneny: born children (including miscarriages)
@@ -23,7 +24,9 @@ use App\Race;
  * ageAdministratif ($date): age given in years at a given date, as if the animal was born in january (for competition registration)
  * taille: current height at the current date, equal to taille_cm where horse is adult
  * checkNom: check if the name is not already taken (without affix or with same affix)
-*/
+ *
+ * @mixin IdeHelperAnimal
+ */
 
 
 
@@ -34,8 +37,8 @@ class Animal extends Model
 
     public function Genotypes()
     {
-        return $this->hasMany('App\Genotypes');
-        /*chaque génotype est une père d'allèles pour un gène donné, un allèle provenant du père, l'autre de la mère*/
+        return $this->hasMany('App\Genotype');
+        /*chaque génotype est une paire d'allèles pour un gène donné, un allèle provenant du père, l'autre de la mère*/
     }
 
     public function Elevage()
@@ -48,10 +51,10 @@ class Animal extends Model
         return $this->BelongsTo('App\Race');
     }
 
-    public function RacesPossibles() 
+  /*  public function RacesPossibles() 
     {
         return $this->BelongsToMany('App\Race','races_possibles');
-    }
+    }*/
 
     public function Affixe()
     {
@@ -82,7 +85,7 @@ class Animal extends Model
 
     public function Palmares() 
     {
-        $date =  Gamedata::date();
+        
         $resultats =  Resultat::where('animal_id', $this->id)->where('classement', '!=', null)->get();
         return $resultats;
     }
@@ -188,10 +191,10 @@ class Animal extends Model
         }
     }
 
-    public function ageMonths()
+    public function ageMonths($date)
     {
         
-        $date = DateTime::createFromFormat('Y-m-d', Gamedata::date());
+        $date = DateTime::createFromFormat('Y-m-d', $date);
         
         $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
       
@@ -203,7 +206,7 @@ class Animal extends Model
 
     public function ageYears()
     {
-        $date = DateTime::createFromFormat('Y-m-d', Gamedata::date());
+        $date = DateTime::createFromFormat('Y-m-d', Gamedata::getDate());
         
         $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
       
@@ -220,7 +223,7 @@ class Animal extends Model
        { $date = DateTime::createFromFormat('Y-m-d', $date);
    }
        else
-       { $date = DateTime::createFromFormat('Y-m-d', Gamedata::date());
+       { $date = DateTime::createFromFormat('Y-m-d', Gamedata::getDate());
    }
       
         
@@ -240,7 +243,7 @@ class Animal extends Model
 
     public function taille() //évolution de la taille (enregistrée en BDD ) en fonction de l'âge
     {
-        $age = $this->ageMonths();
+        $age = $this->ageMonths(Gamedata::getdate());
         
         switch (true)
         {
@@ -360,9 +363,9 @@ class Animal extends Model
         }
     }
 
-    public function Randomize() 
+    public function Randomize($race) 
     {
-        if ($this->Race->approbation) {
+        if ($race->approbation) {
             $min = $this->Genre() == 1 ? 15 : 8;
            
         }
@@ -370,7 +373,7 @@ class Animal extends Model
             $min = $this->Genre() == 1 ? 12 : 10;
         }
 
-        if ($this->Race->confirmation_juments) {
+        if ($race->confirmation_juments) {
              $min = $this->Genre() == 1 ? 15 : 12;
         }
         
@@ -381,12 +384,14 @@ class Animal extends Model
         $this->save();
     }
 
+ 
+
     public function acheter($elevage)
     {
        
         $elevage = Elevage::Find($elevage);
        
-        $date =  Gamedata::date();
+        $date =  Gamedata::getDate();
        
             $this->a_vendre = false;
             $this->date_achat = $date;
@@ -427,13 +432,15 @@ public function Resultats() //Resultats en compète, mais c'est la fonction Palm
     return $this->BelongsToMany('App\Resultat');
 }
         
-public function seraSuiteeAu($date)   {
+public function seraSuiteeAu($datefutur)   {
     $id = $this->id;
+    $date = Gamedata::getDate();
      if ($this->StatutFemelle->suitee) {
         $foal = Animal::where('dam_id',$id)->where('sexe', 'LIKE','jeune poul%')->first();
-       
-        $age = $foal->ageMonths();
-        $months = Gamedata::HowManyMonths($date);
+        
+        $age = $foal->ageMonths($date);
+        
+        $months = Gamedata::HowManyMonths($date,$datefutur);
         if ($age + $months > 6) {
            //dd('poulain sevré');
             return false;

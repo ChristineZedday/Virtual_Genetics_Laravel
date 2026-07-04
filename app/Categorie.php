@@ -9,6 +9,9 @@ use App\Performance;
 use App\StatutFemelle;
 use App\Budget;
 
+/**
+ * @mixin IdeHelperCategorie
+ */
 class Categorie extends Model
 {
    /*Catégorie (liée au sexe, âge...) dans laquelle peut concourrir un cheval. Voir à Compétitions pour le fonctionnement. */
@@ -139,7 +142,7 @@ class Categorie extends Model
    /**Fonction qui cherche la catégorie  pour un cheval de PNJ */
    public static function recherche(Animal $cheval) 
    {
-    $date =Gamedata::date();
+    $date =Gamedata::getDate();
     $age = $cheval->ageAdministratif($date);
    
    if ($cheval->Genre() === 'mâle') {
@@ -185,12 +188,12 @@ public static function rechercheDressage(Animal $cheval)
 
 public function run($competition, $evenement) {
     //Modèle et Allures
-    $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->get();
+    $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->with(['Animal.Elevage', 'Animal.StatutMale','Animal.StatutFemelle'])->get();
    
     $nb = $inscrits->count();
 
     foreach ($inscrits as $inscrit) {
-        $elevage = $inscrit->animal->elevage;
+        $elevage = $inscrit->Animal->Elevage;
         if ($elevage->role == 'Joueur') {
             $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
             if (!$frais ) {
@@ -208,7 +211,7 @@ public function run($competition, $evenement) {
     $notes = [];
   
     foreach ($inscrits as $inscrit) {
-        $animal = $inscrit->animal;
+        $animal = $inscrit->Animal;
     
         $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
         if ($notes[$animal->id] > 20) {
@@ -233,6 +236,7 @@ public function run($competition, $evenement) {
                 if ($competition->id == 43 ){
                     $incrit->StatutFemelle->labelliseSF();
                 }
+            
             }
             if ($competition->id >=79 && $competition->id <=82) {
             $animal->StatutFemelle->labellisee_dressage = true;

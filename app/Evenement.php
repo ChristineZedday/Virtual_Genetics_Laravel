@@ -8,6 +8,9 @@ use App\Gamedata;
 use DateTime;
 
 
+/**
+ * @mixin IdeHelperEvenement
+ */
 class Evenement extends Model
 {
     protected $fillable = ['date'];
@@ -26,11 +29,11 @@ class Evenement extends Model
   
     static function nextYear() 
 {
-    $date =new DateTime(Gamedata::date());
+    $date =new DateTime(Gamedata::getDate());
     $m = $date->format('m');
     $y = $date->format('Y');
     
-    $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->get(); 
+    $evenements = Evenement::whereMonth('date', $m)->whereYear('date',$y)->with('Competitions')->get(); 
     foreach ($evenements as $evenement)  {
         $date = date('Y-m-d',strtotime('+12 month',strtotime($evenement->date)));
         $nevenement = New Evenement();

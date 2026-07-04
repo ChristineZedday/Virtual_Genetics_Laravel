@@ -35,7 +35,7 @@ class CompetitionController extends Controller
     public function aVenir($elevage, $type)
     {
         $elevage = Elevage::Find($elevage);
-        $date = Gamedata::date();
+        $date = Gamedata::getDate();
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date))); 
         if ($type == 'toutes') {
             $evenements = Evenement::with('competitions.races')->where('date', '>=', $date)->orderBy('date')->get();
@@ -213,7 +213,7 @@ class CompetitionController extends Controller
 
   public function chevauxDressage ($elevage)
   {
-    $date = new DateTime(Gamedata::date());
+    $date = new DateTime(Gamedata::getDate());
     $an = $date->format('Y') - 3;
     $animaux = Animal::where('elevage_id', $elevage)->whereYear('date_naissance','<=',$an)->with('Performance')->get();
     $elevage = Elevage::Find($elevage);
