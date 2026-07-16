@@ -183,6 +183,9 @@ class ReproductionController extends Controller
               $animal->modele_allures_additifs = (int)(($etalon->modele_allures_additifs + $jument->modele_allures_additifs) /2 + rand (-$n,$m));
               $animal->capacite_apprentissage_additive = (int)(($etalon->capacite_apprentissage_additive + $jument->capacite_apprentissage_additive) /2 + rand (-$n,$m));
               $animal->capacite_dressage_additive = (int)(($etalon->capacite_dressage_additive + $jument->capacite_dressage_additive) /2 + rand (-$n,$m));
+              if ($animal->modele_allures_additifs > 20) {$animal->modele_allures_additifs = 20;}
+              if ($animal->capacite_apprentissage_additive > 20) {$animal->capacite_apprentissage_additive = 20;}
+              if ($animal->capacite_dressage_additive > 20) {$animal->capacite_dressage_additive = 20;}
               
               $animal->save();
 

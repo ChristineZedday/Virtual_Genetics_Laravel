@@ -110,7 +110,7 @@ class StatutMale extends Model
               if ($this->male->elevage->role == 'vendeur') {
                 $this->setCarnetSaillies();}
             // Si les étalons sont approuvés automatiquement dans la race
-            if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
+            if ($this->classNat && $this->modele15 && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             {
                 $this->setApprouvePFS();}
             break;
