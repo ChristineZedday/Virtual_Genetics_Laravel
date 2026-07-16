@@ -70,7 +70,8 @@ class TempsController extends Controller
             $budget->save();
         }
 
-        
+        Evenement::nextYear();
+
         $dateM = date('m',strtotime($date));
         if ($dateM == 01) {
             $game->lettre = Gamedata::checkLettre($date);
@@ -88,7 +89,7 @@ class TempsController extends Controller
            
         }
         Gamedata::achete();
-        Evenement::nextYear();
+        
 
         TempsController::regCompetNPC($date);
         //y a un bug dans l'enregistrement PNJ   
