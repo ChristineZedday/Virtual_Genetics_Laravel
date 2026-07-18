@@ -194,14 +194,21 @@ class Animal extends Model
     public function ageMonths($date)
     {
         
+       
         $date = DateTime::createFromFormat('Y-m-d', $date);
         
         $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
-      
+        if (!$date_naissance) {
+            dump("date_naissance pas conforme ou inexistante");
+            $date_naissance = $date;
+        }
+       
         $age = $date_naissance->diff($date);
         $age = 12 * $age->y + $age->m; //ppfffiou!
-        
-        return $age;
+    
+       
+            
+            return $age;
     }
 
     public function ageYears()

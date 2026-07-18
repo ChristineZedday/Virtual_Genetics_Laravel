@@ -331,7 +331,7 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'nom' => 'mâles 1 an',
-                'sexe' => NULL,
+                'sexe' => 1,
                 'age_min' => 1,
                 'age_max' => 1,
                 'taille_min' => NULL,

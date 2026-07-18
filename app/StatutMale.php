@@ -148,7 +148,7 @@ class StatutMale extends Model
              $this->qualite ='approuvé';
                if ($this->male->elevage->role == 'vendeur') {
             $this->carnet_saillies = true;}
-               if ($this->classNat && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
+               if ($this->classNat && $this->modele15 && ($this->male->race->cheval_sport || $this->male->race->poney_sport))
             { $this->setApprouvePFS();}
             break;
       /*  case $this->male->race->approbation_provisoire &&$this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
