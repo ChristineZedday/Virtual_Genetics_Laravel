@@ -270,16 +270,17 @@ static function DemiSangArabe ($produit) {
 }
 
 static function PottokB ($produit,$etalon) {
-   if (Race::pourCentRace($produit, 13)< 50) {
-      return false;
-    $produit_id = $produit->id;
-      $gris = Genotype::where(function ($q, $produit_id){$q->where('animal_id',$produit_id);})->where('allele_m_id',30)->orWhere('allele_p_id',30)->get();
-      if ($gris) {
+  if (Race::pourCentRace($produit, 13)< 50) {
+      return false; }
+   $produit_id = $produit->id;
+      $gris = Genotype::where('animal_id',$produit_id)->where(function ($q) {$q->where('allele_p_id',30)->orWhere('allele_m_id',30);})->count();
+     
+      if ($gris > 0) {
+        
          return false;
       }
-
-   }
-   else if ($etalon->SatutMale->qualite == "approuvé" && ($etalon->race_id = 13 ) || ($etalon->race_id = 14)) {
+   
+   if ($etalon->StatutMale->qualite == "approuvé" && ($etalon->race_id = 13 ) || ($etalon->race_id = 14)) {
       return true;
    }
     else if ($etalon->SatutMale->approuvePFS ) {
