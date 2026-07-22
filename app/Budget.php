@@ -46,7 +46,7 @@ class Budget extends Model
             }
         }
         else {
-            if ($this->solde_debut) {
+            if ($this->soldePrecedent($this->mois)) {
             $this->solde_debut = $this->soldePrecedent($this->mois) + self::REVENU;
             }
             
