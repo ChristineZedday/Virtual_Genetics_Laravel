@@ -46,7 +46,10 @@ class Budget extends Model
             }
         }
         else {
+            if ($this->solde_debut) {
             $this->solde_debut = $this->soldePrecedent($this->mois) + self::REVENU;
+            }
+            
         }
         $this->veto_marechal = $this->elevage->calculeFraisVeto();
         $this->frais_nourriture = $this->elevage->calculeFrais() - $this->veto_marechal;
