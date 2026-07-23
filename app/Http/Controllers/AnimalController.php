@@ -559,22 +559,7 @@ public function registrationStudBook(Request $request, $animal)
             return redirect()->route('animal',[$elevage->id, $animal->id]);
 }
 
- /*/**
-     * 
-     *
-     * @param  int  $animal->id, 
-     * @return \Illuminate\Http\Response
-     */
- /*public function inscrireOCSB(Request $request, $animal)
-    {
-         $animal = Animal::Find($animal);
-         $elevage = $animal->Elevage;
-         $races = Race::where('croisement', 1)->get();
-          
-         
-            return view('formEnregistrementStudBook', ['elevage'=>$elevage, 'animal' =>$animal, 'races' =>$races]);
-    }*/
-
+ 
     public function updateNotes(Request $request, $animal) 
     {
         $animal = Animal::Find($animal);
@@ -590,23 +575,7 @@ public function registrationStudBook(Request $request, $animal)
        
          $animal = Animal::find($animal);
          $animal->labelliserDressagePerformances();
-    /*     $poney = $animal->race->poney_sport || $animal->race_id == 2 || ($animal->race_id == 1 && $animal->taille()< 149);
-      
-         $IDR = $poney? $animal->Performance->IDR_poney : $animal->Performance->IDR_cheval;
-        
-         if ($animal->Performance && $IDR >= 110) {
-             $animal->elevage->Budget()->fraisAdministratifs(60); 
-      
-            if ($animal->genre()) {
-            $animal->StatutMale->labellise_dressage = true;
-            $animal->StatutMale->save();
-            }
-            else {
-            $animal->StatutFemelle->labellisee_dressage = true;
-            $animal->StatutFemelle->save();
-            }
-      
-         }*/
+   
            return redirect()->back();
        
     }
