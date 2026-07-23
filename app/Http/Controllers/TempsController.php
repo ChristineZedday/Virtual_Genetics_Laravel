@@ -112,7 +112,7 @@ static function reproNPC($date)
             foreach($vendeurs as $vendeur)
             {
                 $fem = ['femelle', 'vieille femelle'];
-                $juments = Animal::select(['id','nom','affixe_id', 'elevage_id','race_id', 'sexe'])->where('elevage_id', $vendeur->id)->whereIn('sexe',$fem)->with(['StatutFemelle','Race'])->get();
+                $juments = Animal::select(['id','nom','affixe_id', 'elevage_id','race_id', 'sexe', 'date_naissance'])->where('elevage_id', $vendeur->id)->whereIn('sexe',$fem)->with(['StatutFemelle','Race'])->get();
 
                 $count = sizeof($juments);
                 switch (true)

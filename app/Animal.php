@@ -197,9 +197,10 @@ class Animal extends Model
        
         $date = DateTime::createFromFormat('Y-m-d', $date);
         
-        $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
+        
+        $date_naissance = DateTime::createFromFormat('!Y-m-d|',$this->date_naissance);
         if (!$date_naissance) {
-            dump("date_naissance pas conforme ou inexistante");
+            dump("date_naissance pas conforme ou inexistante, âge en mois ".$this->NomComplet());
             $date_naissance = $date;
         }
        
@@ -214,8 +215,12 @@ class Animal extends Model
     public function ageYears()
     {
         $date = DateTime::createFromFormat('Y-m-d', Gamedata::getDate());
-        
-        $date_naissance = DateTime::createFromFormat('Y-m-d',$this->date_naissance);
+         
+        $date_naissance = DateTime::createFromFormat('!Y-m-d|',$this->date_naissance);
+         if (!$date_naissance) {
+            dump("date_naissance pas conforme ou inexistante, âge en années ".$this->NomComplet());
+            $date_naissance = $date;
+        }
       
         $age = $date_naissance->diff($date)->y;
        
@@ -227,15 +232,20 @@ class Animal extends Model
     { //Chaque cheval prend un an au premier janvier qui suit sa naissance 
         
         if ($date != "1960-01-01")
-       { $date = DateTime::createFromFormat('Y-m-d', $date);
+       { $date = DateTime::createFromFormat('!Y-m-d|', $date);
    }
        else
-       { $date = DateTime::createFromFormat('Y-m-d', Gamedata::getDate());
+       { $date = DateTime::createFromFormat('!Y-m-d|', Gamedata::getDate());
    }
+   $dateN = trim($this->date_naissance);
       
-        
+         if (!$dateN) {
+            dump("date_naissance pas conforme ou inexistante, âge administratif ".$this->NomComplet());
+          
+            $dateN = "1997-01-01";
+        }
        
-        $annee = explode("-",$this->date_naissance)[0];
+        $annee = explode("-",$dateN)[0];
         
       
         $date_admin = DateTime::createFromFormat('Y-m-d',$annee.'-01-01');
