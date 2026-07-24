@@ -228,6 +228,13 @@ class Animal extends Model
         return $age;
     }
 
+    public function prendUnAn() {
+    
+            $this->age_administratif ++;
+            $this->save();
+        }
+
+
     public function ageAdministratif($date = "1960-01-01")
     { //Chaque cheval prend un an au premier janvier qui suit sa naissance 
         

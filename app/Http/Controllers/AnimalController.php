@@ -76,6 +76,7 @@ class AnimalController extends Controller
         $animal->elevage_id = $elevage;
         $animal->Randomize();
         $animal->date_naissance = Gamedata::getDate();
+        $animal->age_administratif = 0;
         $animal->taille_cm = $animal->taille_additive;
         $animal->modele_allures = $animal->modele_allures_additifs;
         $animal->fondateur = true;

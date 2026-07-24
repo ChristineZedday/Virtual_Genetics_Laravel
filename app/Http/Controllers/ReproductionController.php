@@ -92,6 +92,7 @@ class ReproductionController extends Controller
               }
             
               $animal->date_naissance = $date;
+              $animal->age_administratif = 0;
               $animal->sire_id = $etalon->id;
               $animal->dam_id = $jument->id;
               $dam = Animal::Find($animal->dam_id);

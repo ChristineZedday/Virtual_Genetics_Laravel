@@ -26,12 +26,9 @@ use DateTime;
 class TempsController extends Controller
 {
    
-
-
     static function nextMonth($elevage)
     {
-       
-        
+         
         $game = Gamedata::Find(1);
         $date = $game->date_courante;
         $debut = false;
@@ -43,15 +40,18 @@ class TempsController extends Controller
         
         $date = date('Y-m-d',strtotime('+1 month',strtotime($date)));
 
-          if ($debut)
+         if ($debut)
            {
-            Gamedata::checkFondateurs($date);
+            Gamedata::checkFondateurs();
         }// end if debut
     
       
         $game->date_courante = $date;
         $game->terres = false;
         $game->save();
+
+       // $statuts = Animal::where('age_administratif', '>=' , 2)->where('sexe', 'like', '%femelle')->whereDoesntHave('statutFemelle')->get();
+       // dump($statuts);
 
         // checkFemellesTerme($date);
         Gamedata::checkSevres($date);
@@ -74,14 +74,18 @@ class TempsController extends Controller
 
         $dateM = date('m',strtotime($date));
         if ($dateM == 01) {
+           
             $game->lettre = Gamedata::checkLettre($date);
             $game->save();
 
+            Gamedata::vieillir();
+
             Gamedata::checkApprovals();
-          
-            Gamedata::checkPuberes($date);
+            
+            Gamedata::checkPuberes();
+           
             Gamedata::retireVente();
-            Gamedata::checkVieux ($date);
+            Gamedata::checkVieux ();
             Gamedata::checkCarnets();
             Gamedata::checkNonEnregistres();
             Gamedata::VenteSaillies(); 

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Support\Facades\DB;
 use Orangehill\IseedServiceProvider\gamedatas;
 use DB;
 use DateTime;
@@ -212,14 +213,28 @@ static function checkNonEnregistres()
         
     }
 }
+
+static function vieillir() {
+   // $animaux = Animal::select('id', 'age_administratif')->get();
+   DB::table('animaux')->where('foetus', 0)->increment('age_administratif') ;
+    
+   /*     foreach ($animaux as $animal) {
+            dump($animal->age_administratif);
+            $animal->prendUnAn();
+        }
+  */
+}
+
 //animals of two years old (administratively, i.e. supposed to be born in january) can technically reproduce
-static function checkPuberes($date)
+static function checkPuberes()
 {
-    $animaux = Animal::where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->get();
+    
+    $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
+    dump("pubères ".$animaux);
     foreach ($animaux as $animal)
     {
-        if ($animal->ageAdministratif($date) >= 2 )
-        { 
+        
+    
            $animal->sexe = 'mâle';
             $animal->save();
             $statut = new StatutMale();
@@ -229,7 +244,7 @@ static function checkPuberes($date)
             {
                 $animal->statut_administratif = 'enregistré';
                 $animal->save();
-                if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
+                if ($animal->age_administratif >= $animal->race->age_appro_male) {
                 $statut->setAutorisationSanitaire();
                 $statut->approuveEtalons();
                 if ($statut->qualite == 'approuvé' || $statut->qualite == 'approbation provisoire cette année')
@@ -238,16 +253,15 @@ static function checkPuberes($date)
             }   
            
             $statut->save();
-          
-         } 
             
     }
 
-    $animaux = Animal::where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->get();
+    $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
+    dump('femelles'.$animaux);
     foreach ($animaux as $animal)
     {
-        if ($animal->ageAdministratif($date) >= 2)
-        { $animal->sexe = 'femelle';
+       
+         $animal->sexe = 'femelle';
         if ($animal->elevage->role == 'Vendeur') {
             $animal->statut_administratif = 'enregistré';
            
@@ -262,18 +276,18 @@ static function checkPuberes($date)
                 $statut->confirme($animal);
             }
        
-        }
+        
             
     }
 }
 
-static function checkFondateurs($date) 
+static function checkFondateurs() 
 {
     
-    $animaux = Animal::select(['id','date_naissance','fondateur','race_id', 'sexe'])->where('fondateur',1)->whereDate('date_naissance', '<' , '1999-01-01')->with(['StatutMale','StatutFemelle','race'])->get();
+    $animaux = Animal::select(['id','age_administratif','race_id', 'sexe'])->where('age_administratif', '>=' , 2)->with(['StatutMale','StatutFemelle','race'])->get();
        
     foreach ($animaux as $animal) {
-               
+          
 
                  if ( $animal->Genre()) 
                 { 
@@ -289,7 +303,7 @@ static function checkFondateurs($date)
                   
                     
                 
-                    if ($animal->ageAdministratif(date($date)) >= $animal->race->age_appro_male) {
+                    if ($animal->age_administratif >= $animal->race->age_appro_male) {
                             $statut->setAutorisationSanitaire();
                             $statut->approuveEtalons();
                             
@@ -354,13 +368,13 @@ static function checkApprovals () {
     }
 }
 //old horses limitations of health and performances
-static function checkVieux ($date)
+static function checkVieux ()
 {
     $cas = ['mâle', 'femelle', 'mâle stérilisé', 'femelle stérilisée'];  
-    $animaux = Animal::select(['id', 'sexe', 'date_naissance'])->whereIn('sexe',$cas)->get();
+    $animaux = Animal::select(['id', 'sexe', 'age_administratif'])->whereIn('sexe',$cas)->get();
     foreach ($animaux as $animal)
     {
-        $age = $animal->ageYears();
+        $age = $animal->age_administratif;
         if ($age > 15)
         {
           
@@ -389,10 +403,10 @@ static function checkVieux ($date)
             $animal->save();
         }
     }
-    $vieux = Animal::select(['id', 'sexe', 'date_naissance'])->where('sexe', 'LIKE','vie%')->with('Performance')->get();
+    $vieux = Animal::select(['id', 'sexe', 'age_administratif'])->where('sexe', 'LIKE','vie%')->with('Performance')->get();
     foreach ($vieux as $vieux) {
         $perf= $vieux->Performance;
-        $age = $vieux->ageYears();
+        $age = $vieux->age_administratif;
         if ($age < 25) {
             $degradation = random_int(0,10);
         }
