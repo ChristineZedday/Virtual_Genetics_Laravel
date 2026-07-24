@@ -212,8 +212,13 @@ public function run($competition, $evenement) {
   
     foreach ($inscrits as $inscrit) {
         $animal = $inscrit->Animal;
-    
-        $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
+        if ($competition->nom == 'Concours Modèle et Allures Poneys Dressage' || $competition->nom == 'Concours Modèle et Allures Chevaux Dressage' || $competition->nom == 'Criterium dressage OC régional' || $competition->nom == 'Criterium dressage OC national')
+        {
+        $notes[$animal->id] = ($animal->modele_allures*2  + $animal->capacite_dressage_additive)/3 + rand(-1000,1000)/1000; 
+        }
+        else
+           { $notes[$animal->id] = $animal->modele_allures  + rand(-1000,1000)/1000; //éviter les ex-aequo
+        }
         if ($notes[$animal->id] > 20) {
             $notes[$animal->id] = 20;
         }
