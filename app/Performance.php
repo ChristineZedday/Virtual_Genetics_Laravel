@@ -55,7 +55,7 @@ class Performance extends Model
     }
 
     public function IDR() {
-        $age = $this->animal->ageAdministratif();
+        $age = $this->animal->age_administratif;
         switch ($age) {
             case 4:
                 if ($this->niveau_dressage == 1) {
