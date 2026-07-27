@@ -218,11 +218,7 @@ static function vieillir() {
    // $animaux = Animal::select('id', 'age_administratif')->get();
    DB::table('animaux')->where('foetus', 0)->increment('age_administratif') ;
     
-   /*     foreach ($animaux as $animal) {
-            dump($animal->age_administratif);
-            $animal->prendUnAn();
-        }
-  */
+  
 }
 
 //animals of two years old (administratively, i.e. supposed to be born in january) can technically reproduce
@@ -230,7 +226,7 @@ static function checkPuberes()
 {
     
     $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
-    dump("pubères ".$animaux);
+   
     foreach ($animaux as $animal)
     {
         
@@ -257,7 +253,7 @@ static function checkPuberes()
     }
 
     $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
-    dump('femelles'.$animaux);
+   
     foreach ($animaux as $animal)
     {
        

@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CouleursTableSeeder::class);
         $this->call(PathologiesTableSeeder::class);
         $this->call(PhenotypesTableSeeder::class);
-        $this->call(NiveauxTableSeeder::class);
+       
         $this->call(CompetitionsTableSeeder::class);
         $this->call(ReprisesTableSeeder::class);
         $this->call(AssoCouleursTableSeeder::class);
@@ -36,11 +36,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriesTableSeeder::class);
         $this->call(EvenementsTableSeeder::class);
        
-        $this->call(CompetitionRaceTableSeeder::class);
         $this->call(CompetitionEvenementTableSeeder::class);
         $this->call(RendementsTableSeeder::class);
 		$this->call(ReprisesTableSeeder::class);
 		$this->call(CompetitionRepriseTableSeeder::class);
-        $this->call(CategorieCompetitionTableSeeder::class);
     }
 }

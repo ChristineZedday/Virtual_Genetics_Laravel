@@ -18,11 +18,13 @@ class CreatePerformancesTable extends Migration
             $table->timestamps();
             $table->smallInteger('sante');
             $table->bigInteger('animal_id')->unsigned();
-            $table->tinyInteger('niveau_id')->unsigned();
-            $table->foreign('niveau_id')->references('id')->on('niveaux');
             $table->foreign('animal_id')->references('id')->on('animaux');
             $table->tinyInteger('niveau_dressage')->default(1);
             $table->tinyInteger('pourcent_niveau')->default(0);
+            $table->boolean('qualifie')->default(0);
+            $table->boolean('label_dressage')->default(0)->nullable();
+            $table->float('IDR_cheval')->default(0)->nullable();
+            $table->float('IDR_poney')->default(0)->nullable();
             
         });
     }

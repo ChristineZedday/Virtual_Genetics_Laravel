@@ -16,11 +16,7 @@ class Categorie extends Model
 {
    /*Catégorie (liée au sexe, âge...) dans laquelle peut concourrir un cheval. Voir à Compétitions pour le fonctionnement. */
 
-   public function Competitions() 
-   {
-       return $this->BelongsToMany('App\Competition', 'categorie_competition', 'competition_id', 'categorie_id');
-   }
-
+  
    
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
    public function verification($animal, $evenement, $competition) 
@@ -39,7 +35,7 @@ class Categorie extends Model
            if ($event != $evenement){
             return 'Inscrit ailleurs à cette date'; //déjà inscrit ailleurs
            }
-           else if ($competition->type == 'Modèle et Allures') {
+           else if (stripos($competition->type,'Modèle')) {
             return 'Déjà inscrit';
            }
            if ($count > 1) {
@@ -48,18 +44,18 @@ class Categorie extends Model
         }
     }
    
-   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id > $competition->niveau->id && !$competition->niveau->open_after) {
+   if (stripos($competition->type,'Modèle') && $animal->Performance->niveau->id > $competition->niveau->id && !$competition->niveau->open_after) {
     return 'Hors Concours';
    }
 
-   if ($competition->type == "Modèle et Allures" && $animal->Performance->niveau->id < $competition->niveau->id && !$competition->niveau->open_before) {
+   if (stripos($competition->type,'Modèle') && $animal->Performance->niveau->id < $competition->niveau->id && !$competition->niveau->open_before) {
     return 'Non qualifié';
    }
    if ($animal->StatutFemelle && $animal->StatutFemelle->terme == $date) {
     return 'Jument à terme ce mois-là';
    }
 
-   if ($competition->type != 'Modèle et Allures' && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
+   if (!stripos($competition->type,'Modèle') && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
             return 'Jument pleine ou suitée';
         }
@@ -212,7 +208,7 @@ public function run($competition, $evenement) {
   
     foreach ($inscrits as $inscrit) {
         $animal = $inscrit->Animal;
-        if ($competition->nom == 'Concours Modèle et Allures Poneys Dressage' || $competition->nom == 'Concours Modèle et Allures Chevaux Dressage' || $competition->nom == 'Criterium dressage OC régional' || $competition->nom == 'Criterium dressage OC national')
+        if ($competition->type == 'Concours Modèle et Allures Dressage')
         {
         $notes[$animal->id] = ($animal->modele_allures*2  + $animal->capacite_dressage_additive)/3 + rand(-1000,1000)/1000; 
         }
@@ -260,7 +256,7 @@ public function run($competition, $evenement) {
         $res->classement = $i;
         $res->save();
         $animal = Animal::find($key);
-        if (($competition->niveau->libelle == 'national' || $competition->niveau->libelle == 'mondial') && $animal->StatutMale != NULL ) {
+        if (!$competition->qualificatif && $animal->StatutMale != NULL ) {
         
             $animal->StatutMale->setClasseNat();
         
@@ -271,7 +267,7 @@ public function run($competition, $evenement) {
         }
         $perf = $animal->Performance;
         if ($value >= 12) {
-            $perf->upgrade($i, $value, $competition->niveau->libelle); 
+            $perf->qualifieMA($i, $value); 
             }
 
         $elevage = Elevage::Find($animal->elevage_id);

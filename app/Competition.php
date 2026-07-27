@@ -27,26 +27,44 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         return $this->BelongsToMany('App\Evenement');
     }
 
-    public function Categories()
-    {
-        return $this->BelongsToMany('App\Categorie');
-    }
-
     public function Reprises()
     {
         return $this->BelongsToMany('App\Reprise');
     }
-    public function Races() 
+    public function Race() 
     {
-        return $this->BelongsToMany('App\Race');
+        return $this->hasOne('App\Race');
     }
     public function Resultats()
     {
         return $this->BelongsToMany('App\Resultat');  
     }
-    public function Niveau()
+    
+   
+
+    public function listeCategories()
     {
-        return $this->BelongsTo('App\Niveau');  
+        if ($this->type == 'Modèle et Allures Tous') {
+            return Categorie::whereIn('nom', ['mâles 1 an', 'pouliches 1 an', 'mâles 2 ans', 'pouliches 2 ans', 'mâles 3 ans', 'pouliches 3 ans', 'étalons', 'juments', 'juments suitées'])->get();
+        }
+         if ($this->type == 'Modèle et Allures jeunes' || $this->type == 'Modèle et Allures Dressage' ) {
+            return Categorie::whereIn('nom', ['mâles 2 ans', 'pouliches 2 ans', 'mâles 3 ans', 'pouliches 3 ans'])->get();
+        }
+        if ($this->type == 'Modèle et Allures mâles' ) {
+            return Categorie::whereIn('nom', ['mâles 2 ans', 'mâles 3 ans', 'étalons'])->get();
+        }
+         if ($this->type == 'Modèle et Allures femelles' ) {
+            return Categorie::whereIn('nom', ['femelles 2 ans', 'femelles 3 ans', 'juments', 'juments suitées'])->get();
+        }
+         if ($this->type == 'Dressage poneys' ) {
+            return Categorie::whereIn('nom', ['Poney A ou B', 'Poney C', 'Poney D'])->get();
+         }
+         if ($this->type == 'Dressage poneys E' ) {
+            return Categorie::where('nom', 'Poney E')->get();
+         }
+         if ($this->type == 'Dressage chevaux' ) {
+            return Categorie::where('nom', 'Cheval ou Poney')->get();
+         }
     }
 
     
@@ -54,7 +72,9 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
     {
        
 
-        $competitions = Competition::withWhereHas('evenements', function ($q) use ($m,$y) {$q->whereMonth('date',$m)->whereYear('date',$y);})->with(['Races','Categories','Niveau','Reprises'])->get();
+        $competitions = Competition::withWhereHas('evenements', function ($q) use ($m,$y)
+            {$q->whereMonth('date',$m)->whereYear('date',$y);})
+            ->with(['Reprises'])->get();
         return $competitions;
        
        
@@ -65,13 +85,15 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         //recherche la bonne catégorie et le bon niveau pour un cheval de PNJ (les joueurs doivent l'indiquer eux-mêmes!)
         $racid = $cheval->race->id;
        
-        $nivid = $cheval->Performance->niveau_id;
-        $competitions = Competition::where('type', 'Modèle et Allures')->whereHas('races', function ($q) use ($racid) {
-            $q->where('race_id', $racid);
-        })->whereHas('niveau', function ($q) use ($nivid) {
-            $q->where('id', $nivid)->orWhere('id', function ($q1) use ($nivid) {$q1->where('id', '<', $nivid)->where('open_before',true);})->orWhere('id', function ($q2) use ($nivid) {$q1->where('id', '>', $nivid)->where('open_after',true);});
-        })->get();
-       
+        $qualif = $cheval->Performance->qualifie;
+        if ($qualif) {
+             $competitions = Competition::where('type', 'LIKE', 'Modèle et Allures%')->where('race', $racid)
+            ->where('qualificatif',0)->get();
+        }
+        else {
+             $competitions = Competition::where('type', 'LIKE', 'Modèle et Allures%')->where('race', $racid)
+            ->where('qualificatif',1)->get();
+        }
         return $competitions;
     }
 
@@ -83,18 +105,27 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         if ($animal->race_id == 17) {
             return 'Pas de compétition officielle pour les ONC!';
         }
-        //Vérifie que le cheval est bien incrit dans une compétition correspondant à sa race et à son niveau
-        //Possibilité se zapper le niveau départemental 
-     /*   $race = $animal->race_id;
-        $races = $this->Races->modelKeys();
-      
-        if (in_array($race, $races) || in_array(1, $races) |) {*/
+      if ($this->race_id != NULL && $this->race_id != $animal->race_id) {
+        return "cheval pas de la bonne race";
+      }
+        if ($this->tous_poneys-sport && !$animal->race->poney_sport) {
+        return "Pas une race de poney de sport";
+      }
+        if ($this->tous_chevaux-sport && !$animal->race->cheval_sport) {
+        return "Pas une race de cheval de sport";
+      }
            
-            if ($this->type == 'Modèle et Allures') {  
+            if (stripos($competition->type,'Modèle')) {  
               
-                if ($animal->Performance->Niveau->libelle ==     $this->Niveau->libelle || ($animal->Performance->Niveau->id < $this->niveau->id && $this->Niveau->open_before) || (($animal->Performance->Niveau->id > $this->niveau->id && $this->Niveau->open_after)))
-                {return 'OK';}
-                else {return 'Pas le bon niveau';}
+                if (!$animal->Performance->qualifie  &&  !$this->qualificatif )
+                
+                {return 'Non qualifié';}
+
+                else if ($animal->Performance->qualifie  &&  $this->qualificatif )
+                
+                {return 'Hors Concours';}
+
+                else { return "OK";}
             }
             else {
               

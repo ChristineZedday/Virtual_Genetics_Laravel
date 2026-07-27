@@ -38,10 +38,15 @@ class CompetitionController extends Controller
         $date = Gamedata::getDate();
         $date= date('Y-m-d',strtotime('+1 month',strtotime($date))); 
         if ($type == 'toutes') {
-            $evenements = Evenement::with('competitions.races')->where('date', '>=', $date)->orderBy('date')->get();
+            $evenements = Evenement::with('competitions')->where('date', '>=', $date)->orderBy('date')->get();
+        }
+        else if ($type == "Modèle et Allures") {
+               
+            $evenements = Evenement::where('date', '>=', $date)->whereHas('competitions', function ($query)  { $query->Where('type','LIKE', 'Modèle et Allures%');})->orderBy('date')->get(); 
+            
         }
         else {
-            $evenements = Evenement::where('date', '>=', $date)->whereHas('competitions', function ($query) use($type) { $query->Where('type',$type);})->orderBy('date')->get(); 
+            $evenements = Evenement::where('date', '>=', $date)->whereHas('competitions', function ($query)  { $query->Where('type','LIKE', 'Dressage%')->with('reprises');})->orderBy('date')->get(); 
         }
        
        return view('competitions',['evenements' =>$evenements, 'elevage' =>$elevage]);
@@ -53,11 +58,13 @@ class CompetitionController extends Controller
         $elevage = Elevage::Find($elevage);
        $evenement = Evenement::Find($evenement);
         $competition = Competition::Find($competition);
-      //  $categories = $competition->Categories;
+        $categories = $competition->listeCategories();
+      
+      
      
         $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
 
-       return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'animaux' => $animaux]);
+       return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'categories' => $categories, 'animaux' => $animaux]);
        
     }
 
@@ -67,11 +74,12 @@ class CompetitionController extends Controller
        $evenement = Evenement::Find($evenement);
         $competition = Competition::Find($competition);
         $reprise = Reprise::Find($reprise);
-      //  $categories = $competition->Categories;
+       $categories = $competition->listeCategories();
+      
      
         $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
 
-       return view('inscriptionDressage', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'reprise' => $reprise, 'animaux' => $animaux]);
+       return view('inscriptionDressage', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'categories' => $categories, 'reprise' => $reprise, 'animaux' => $animaux]);
        
     }
 

@@ -43,6 +43,10 @@ class CreateAnimauxTable extends Migration
             $table->tinyInteger('modele_allures_additifs')->unsigned()->default(12);
             $table->tinyInteger('capacite_apprentissage_additive')->unsigned()->default(12);
             $table->tinyInteger('capacite_dressage_additive')->unsigned()->default(12);
+             $table->text('notes')->nullable();
+            $table->string('statut_administratif')->default('enregistré');
+            $table->tinyInteger('taille_additive')->unsigned()->nullable();
+            $table->tinyInteger('age_administratif')->default(0)->nullable();
         });
     }
 

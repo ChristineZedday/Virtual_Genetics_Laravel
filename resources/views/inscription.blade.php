@@ -29,7 +29,7 @@ prix pour le premier:
 <label for="categorie_id">Sélectionner la catégorie</label>
 
 <select name="categorie_id" >
-	@foreach ($competition->Categories as $categorie)
+	@foreach ($competition->listeCategories() as $categorie)
 	
   <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
   @endforeach

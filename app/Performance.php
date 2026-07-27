@@ -13,21 +13,25 @@ class Performance extends Model
     {
         return $this->belongsTo('App\Animal');  
     }
-    public function Niveau()
-    {
-        return $this->belongsTo('App\Niveau');  
-    }
+  
 
     static function initialize($animalid)
     {
         $perf = new Performance();
         $perf->animal_id = $animalid;
         $perf->sante = 100;
-        $perf->niveau_id = 1;
+        $perf->qualifie = false;
         $perf->niveau_dressage = 1;
         $perf->pourcent_niveau = 0;
         $perf->save();
         return ($perf);
+    }
+
+    public function qualifieMA($classement, $note) 
+    {
+        if ($classement < 3 && $note >= 15)
+        {$this->qualifie = true;
+        $this->save();}
     }
   
     public function upgradeDressage()
@@ -38,22 +42,7 @@ class Performance extends Model
         }
     }
 
-    public function upgrade($classement, $note, $libelle)
-    {
-        if ($this->niveau_id < 4)  {
-         
-            if ($this->niveau_id == 1 || $classement < 4 || $note >= 15) {
-                $this->niveau_id ++;
-                $this->save();
-                if ($this->niveau_id == 2 && $note >= 15 && ($libelle == 'départemental' || $libelle == 'régional')) {
-                    $this->niveau_id ++;
-                    $this->save(); //passer direct en national
-                }
-            }
-       
-        }
-    }
-
+ 
     public function IDR() {
         $age = $this->animal->age_administratif;
         switch ($age) {

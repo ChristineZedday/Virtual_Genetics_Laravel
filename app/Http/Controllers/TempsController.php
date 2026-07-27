@@ -187,39 +187,43 @@ static function regCompetNPC($date)
     $y = $date->format('Y');
 
     $competitions = Competition::RechercheParDate($m,$y);
+    
     foreach ($competitions as $comp) {
-        $races = $comp->Races;
+       
+        $race = $comp->race_id;
+        $qual = $comp->qualificatif;
         $compid = $comp->id;
-        $races = $races->modelKeys();
-        $niveau = $comp->Niveau;
+        //$races = $races->modelKeys();
+        
         $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
         
-        if ($comp->type == 'Modèle et Allures')
+        if (stripos($comp->type,"Modèle"))
                 {
                    if ( $comp->tous_poneys_sport) {
                     $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})
-                    ->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance.Niveau','StatutFemelle', 'StatutMale'])->get();
+                    ->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance.qualifie','StatutFemelle', 'StatutMale'])->get();
                      
                    } 
                    else if ($comp->tous_cheval_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance.Niveau','StatutFemelle', 'StatutMale'])->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance.qualifie','StatutFemelle', 'StatutMale'])->get();
                    }
                    else {
-                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $races)->with(['Performance.Niveau','StatutFemelle', 'StatutMale'])->get();
+                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $race)->with(['Performance.qualifie','StatutFemelle', 'StatutMale'])->get();
                
             }
+            dump($engageables);
                   
             foreach ($engageables as $cheval) {
                 if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
             }
-                if ($cheval->Performance->Niveau < $niveau && !$niveau->open_before){
+                if (!$cheval->Performance->qualifie && $qual ){
                     continue;
                 }
-                else if (!$niveau->open_after &&$cheval->Performance->Niveau > $niveau) {
+                else if ($cheval->Performance->qualifie && !$qual ) {
                     continue;
                 }
-                if (strpos($cheval->sexe,'stérilisé') != false && $comp->type ='Modèle et Allures'){
+                if (strpos($cheval->sexe,'stérilisé')  && stripos($competition->type,'Modèle')){
                   continue;
               }
                 if ($cheval->ageAdministratif($date->format('Y-m-d')) < 1) {
@@ -229,7 +233,9 @@ static function regCompetNPC($date)
 
                 $categorie = Categorie::recherche($cheval);
                 
-                $cats = $comp->Categories->modelKeys(); //OK
+               // $cats = $comp->Categories->modelKeys(); //OK
+               $cats = $comp->listeCategories();
+               
           
                 if ($categorie && in_array($categorie->id,$cats)) {
        
@@ -248,7 +254,7 @@ static function regCompetNPC($date)
         }
             
         }   
-        if ($comp->type == 'Dressage') {
+         if (!stripos($comp->type,"Modèle")) {
             
         
             $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->with(['Performance','StatutFemelle'])->get();
@@ -332,13 +338,10 @@ static function runCompetitions($date) {
     
         foreach ($competitions as $competition) {
             $comp= $competition->id;
-            $filter = function($query) use ($comp) {
-                $query->where('competition_id', $comp);
-                };
-            $categories = Categorie::with(['Competitions' =>$filter])->get();
-            //with et pas whereHas sinon 1 seule catégorie???
+            $categories = $competition->listeCategories();
+            
             foreach ($categories as $categorie) {
-                if ($competition->type == 'Modèle et Allures') {
+                if (stripos($competition->type,'Modèle')) {
                 $categorie->run($competition,$evenement) ;  
             }
                 else {
