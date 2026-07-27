@@ -15,24 +15,27 @@ $competitions = App\Competition::whereHas('evenements', function ($q) use ($id){
 ?>
 @foreach ($competitions as $competition)
 <?php
-$modele = stripos( $competition->type,"Modèle");
+$modele = stripos( $competition->type,"Allures");
+
 ?>
 
 <h3>{{$competition->nom}}
    </h3>
+   <div>
+   @if (!$modele)
    
-   @if ($modele != 0)
-   <p>
         @foreach ($competition->reprises as $reprise)
        {{$reprise->nom}}
         <a href="{{route('inscrire_dressage',[$elevage, $evenement,$competition,$reprise])}}"><button>Inscrire</button></a><br/>
         @endforeach
+   @endif
    
-   @else
-   <p>
-    <a href="{{route('inscrire',[$elevage, $evenement,$competition])}}"><button>Inscrire</button></a></p>
+   @if ($modele)
+  
+   
+    <a href="{{route('inscrire',[$elevage, $evenement,$competition])}}"><button>Inscrire</button></a><br/>
     @endif
-
+</div>
 
 @endforeach
 <hr/>

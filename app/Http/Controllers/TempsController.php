@@ -197,21 +197,21 @@ static function regCompetNPC($date)
         
         $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
         
-        if (stripos($comp->type,"Modèle"))
+        if (stripos($comp->type,"Allures"))
                 {
                    if ( $comp->tous_poneys_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})
-                    ->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance.qualifie','StatutFemelle', 'StatutMale'])->get();
-                     
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
+                     dump("poneys sport ".$engageables);
                    } 
                    else if ($comp->tous_cheval_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance.qualifie','StatutFemelle', 'StatutMale'])->get();
-                   }
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
+                       dump("chevaux sport ".$engageables);
+                    }
                    else {
-                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereIn('race_id', $race)->with(['Performance.qualifie','StatutFemelle', 'StatutMale'])->get();
-               
+                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('race_id', $race)->with(['Performance'])->get();
+                 
             }
-            dump($engageables);
+          
                   
             foreach ($engageables as $cheval) {
                 if (is_null ($cheval->Performance)) {
@@ -234,7 +234,7 @@ static function regCompetNPC($date)
                 $categorie = Categorie::recherche($cheval);
                 
                // $cats = $comp->Categories->modelKeys(); //OK
-               $cats = $comp->listeCategories();
+               $cats = $comp->listeCategories()->modelKeys();
                
           
                 if ($categorie && in_array($categorie->id,$cats)) {
@@ -254,7 +254,7 @@ static function regCompetNPC($date)
         }
             
         }   
-         if (!stripos($comp->type,"Modèle")) {
+         if (!stripos($comp->type,"Allures")) {
             
         
             $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->with(['Performance','StatutFemelle'])->get();
@@ -281,7 +281,8 @@ static function regCompetNPC($date)
                     }
                    
                     $catid = null;
-                    foreach ($comp->Categories as $categorie) {
+                    if  ($comp->listeCategories() != NULL) {
+                    foreach ($comp->listeCategories() as $categorie) {
                        if (in_array($categorie->id,$categories_cheval->modelKeys())) {
                          $catid = $categorie->id;
                          break;
@@ -321,6 +322,7 @@ static function regCompetNPC($date)
                     }   
 
                 } //foreach dressables
+            }// end if not null
             }
     }
 }
@@ -339,9 +341,15 @@ static function runCompetitions($date) {
         foreach ($competitions as $competition) {
             $comp= $competition->id;
             $categories = $competition->listeCategories();
+            if  ($categories == NULL) {
+                dump ("pas de catégories? ");
+                dump($competition);
+                continue;
+            }
+            
             
             foreach ($categories as $categorie) {
-                if (stripos($competition->type,'Modèle')) {
+                if (stripos($competition->type,'Allures')) {
                 $categorie->run($competition,$evenement) ;  
             }
                 else {

@@ -8,7 +8,7 @@
 	<th>Nom de l'animal</th>
 	<th>Evènement</th>
     <th>Compétition</th>
-	<th>Niveau</th>
+	
     <th>Catégorie</th>
 	<th> Classement</th>
     <th>Note de synthèse</th>
@@ -20,7 +20,7 @@
 	<td><a href="{{route('animal', ['elevage'=>$elevage, 'animal'=>$resultat->animal_id])}}">{{$resultat->Animal->NomComplet()}}</a></td>
 	<td>{{$resultat->Evenement->nom}} {{$resultat->Evenement->date}}</td>
 	<td>{{$resultat->competition->nom }}</td>
-	<td>{{$resultat->Competition->Niveau->libelle }}</td>
+	
 	@if ($resultat->Competition->type == 'Dressage')
     <td>{{$resultat->Reprise->nom}}</td>
 	@else
