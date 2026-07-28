@@ -185,7 +185,7 @@ public static function rechercheDressage(Animal $cheval)
 public function run($competition, $evenement) {
     //Modèle et Allures
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->with(['Animal.Elevage', 'Animal.StatutMale','Animal.StatutFemelle'])->get();
-  // dump("run Categorie inscrits ".$inscrits);
+  
     $nb = $inscrits->count();
 
     foreach ($inscrits as $inscrit) {
@@ -203,6 +203,7 @@ public function run($competition, $evenement) {
   
     //ça marche quand il ya des animaux du bon âge
     $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
+   
 
     $notes = [];
   

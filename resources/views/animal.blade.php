@@ -183,11 +183,15 @@
 			<div id="palmares">
 			<h3>Palmarès: </h3>
 				@foreach ($animal->Palmares() as $palm)
+				<?php
+			$modele = stripos( $palm->competition->type,"Allures");
+
+				?>
 				
 				<p> {{$palm->evenement->nom}} du &nbsp;{{$palm->evenement->date}} 
 				{{$palm->competition->nom}} 
 			
-				@if ($palm->competition->type == 'Dressage')
+				@if (!$modele)
 				{{$palm->Reprise->nom}} 
 				@else
 				{{$palm->categorie->nom}} 

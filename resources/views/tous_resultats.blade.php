@@ -14,14 +14,19 @@
     <th>Note de synthèse</th>
 </tr>
 @foreach ($resultats as $resultat)
+<?php
+$modele = stripos( $resultat->competition->type,"Allures");
+
+?>
+
 
 <tr>
-
+	
 	<td><a href="{{route('animal', ['elevage'=>$elevage, 'animal'=>$resultat->animal_id])}}">{{$resultat->Animal->NomComplet()}}</a></td>
 	<td>{{$resultat->Evenement->nom}} {{$resultat->Evenement->date}}</td>
 	<td>{{$resultat->competition->nom }}</td>
 	
-	@if ($resultat->Competition->type == 'Dressage')
+	@if (!$modele)
     <td>{{$resultat->Reprise->nom}}</td>
 	@else
 	<td>{{$resultat->Categorie->nom}}</td>
