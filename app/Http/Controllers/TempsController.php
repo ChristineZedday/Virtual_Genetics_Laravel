@@ -115,8 +115,8 @@ static function reproNPC($date)
             $vendeurs = Elevage::where('role','Vendeur')->get();
             foreach($vendeurs as $vendeur)
             {
-                $fem = ['femelle', 'vieille femelle'];
-                $juments = Animal::select(['id','nom','affixe_id', 'elevage_id','race_id', 'sexe', 'date_naissance'])->where('elevage_id', $vendeur->id)->whereIn('sexe',$fem)->with(['StatutFemelle','Race'])->get();
+               
+                $juments = Animal::select(['id','nom','affixe_id', 'elevage_id','race_id', 'sexe', 'date_naissance'])->where('elevage_id', $vendeur->id)->where('sexe','f')->with(['StatutFemelle','Race'])->get();
 
                 $count = sizeof($juments);
                 switch (true)
@@ -150,7 +150,7 @@ static function reproNPC($date)
                     if ($statut->vide)
                     {
                         srand((float) microtime()*1000000);
-                        if ($jument->sexe ='vieille femelle')
+                        if ($jument->vieux)
                         {
                              $var = $var +1;
                             }
@@ -224,7 +224,7 @@ static function regCompetNPC($date)
                     
                     continue;
                 }
-                if (strpos($cheval->sexe,'stérilisé')  && stripos($competition->type,'Modèle')){
+                if (($cheval->sexeAdm() == 'Hongre' || $cheval->sexeAdm() == 'Jument stérilisée' ) && stripos($comp->type,'Modèle')){
                   continue;
               }
                 if ($cheval->ageAdministratif($date->format('Y-m-d')) < 1) {

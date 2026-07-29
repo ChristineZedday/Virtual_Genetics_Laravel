@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nom');
-            $table->boolean('sexe')->nullable();
+            $table->enum('sexe', ['m','f'])->nullable();
             $table->tinyInteger('age_min')->unsigned()->nullable();
             $table->tinyInteger('age_max')->unsigned()->nullable();
             $table->tinyInteger('taille_min')->unsigned()->nullable();

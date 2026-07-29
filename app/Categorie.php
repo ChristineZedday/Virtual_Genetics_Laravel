@@ -106,7 +106,7 @@ class Categorie extends Model
             }
        
         if ($this->sexe !== NULL) { 
-            if ($this->sexe != $animal->genre()) {
+            if ($this->sexe != $animal->sexe) {
                 return 'Avez-vous bien regardé ses organes génitaux?';
         }
     }
@@ -134,7 +134,7 @@ class Categorie extends Model
     $date =Gamedata::getDate();
     $age = $cheval->ageAdministratif($date);
    
-   if ($cheval->Genre() === 'mâle') {
+   if ($cheval->sexe === 'm') {
     $autorise = 0;
     if ($cheval->StatutMale) {
         if ($cheval->StatutMale->qualite == "autorisation sanitaire"
@@ -142,7 +142,7 @@ class Categorie extends Model
             $autorise = 1;
         }
     }
-        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+        $categorie = Categorie::where('sexe', $cheval->sexe)->where('age_min','<=', $age)->where('age_max', '>=', $age)->where(function ($q) use ($autorise){$q->whereNull('autorise')->orWhere('autorise', $autorise);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
         //)
        
 
@@ -154,7 +154,7 @@ class Categorie extends Model
         $suitee = 1;
         }
     }
-        $categorie = Categorie::where('sexe', $cheval->Genre())->where('age_min','<=', $age)->where('age_max', '>=', $age)->where(function ($q) use ($suitee){$q->whereNull('suitee')->orWhere('suitee', $suitee);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
+        $categorie = Categorie::where('sexe', $cheval->sexe)->where('age_min','<=', $age)->where('age_max', '>=', $age)->where(function ($q) use ($suitee){$q->whereNull('suitee')->orWhere('suitee', $suitee);})->first(); //éligibilité cheval, puis chercher les évènements avec ces cat
         //)
 
    }

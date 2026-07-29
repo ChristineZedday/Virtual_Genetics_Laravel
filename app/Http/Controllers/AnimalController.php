@@ -204,27 +204,7 @@ class AnimalController extends Controller
             
     }
 
- /*  /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-  /*  public function destroy($id)
-    {
-        $animal = Animal::find($id);
-        $genotypes = $animal->Genotypes();
-        foreach ($genotypes as $genotype)
-        {
-            $genotype->delete();
-        }
-        $images = $animal->Image();
-        foreach ($images as $imagee)
-        {
-            //detach les imeges du poney
-        }
 
-    }*/
 
     /**
      * Putting animal for sale: display form.
@@ -362,41 +342,24 @@ class AnimalController extends Controller
         $prixM = 100;
         switch ($animal->sexe)
             {
-                case 'mâle':
-                    $animal->sexe = 'mâle stérilisé';
-                    $animal->save();
+                case 'm':
+                   
                     $animal->StatutMale->fertilite = 0;
                     $animal->StatutMale->save();
                     $prix = $prixM;
                   
                 break;
 
-                case 'vieux mâle':
-                    $animal->sexe = 'vieux mâle stérilisé';
-                    $animal->save();
-                    $animal->StatutMale->fertilite = 0;
-                    $animal->StatutMale->save();
-                  
-                    $prix = $prixM;
+                case 'f':
                    
-                break;
-
-                case 'femelle':
-                    $animal->sexe = 'femelle stérilisée';
-                    $animal->save();
                     $animal->StatutFemelle->delete();
                    
                     $prix = $prixF;
                   
                 break;
 
-                case 'vieille femelle':
-                    $animal->sexe = 'vieille femelle stérilisée';
-                    $animal->save();
-                    $animal->StatutFemelle->delete();
-                    $prix = $prixF;
-                  
-                break;
+               
+                   
 
                 default:
                 dd('comment suis-je arrivée là?');

@@ -83,6 +83,7 @@ class ReproductionController extends Controller
             
               $animal = new Animal;
               $animal->foetus = true;
+              $animal->foal = false;
               $animal->fondateur = false;
               if ($declaree) {
                 $animal->statut_administratif = 'saillie déclarée';
@@ -149,7 +150,7 @@ class ReproductionController extends Controller
               
               $animal->elevage_id = $elevage->id;
               $sexe = rand(1,2);
-              $animal->sexe = $sexe==1? 'jeune poulain' : 'jeune pouliche';
+              $animal->sexe = $sexe==1? 'm' : 'f';
             
 
               $animal->taille_additive = (int) (($etalon->taille_additive + $jument->taille_additive) /2 + rand (-2,2)) ;

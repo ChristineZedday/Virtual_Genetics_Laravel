@@ -99,7 +99,7 @@ static function initialiseJeu()
 {
    
 
-    $animaux = Animal::select(['id','fondateur','race_id', 'statut_administratif'])->where('fondateur',1)->with(['race', 'Genotypes'])->get();
+    $animaux = Animal::select(['id','fondateur','race_id', 'statut_administratif', 'sexe',])->where('fondateur',1)->get();
          
     foreach ($animaux as $animal)
             {
@@ -129,6 +129,7 @@ static function checkNouveaux($date)
     foreach ($animaux as $animal)
     {
             $animal->foetus = false;
+            $animal->foal = true;
            
             $animal->elevage_id = $animal->Dam->elevage_id;
             $animal->save();
@@ -155,19 +156,14 @@ static function checkNouveaux($date)
 // weanlings when 6 months old
 static function checkSevres($date)
 {
-    $animaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->with('Dam')->get(); 
+    $animaux = Animal::where('elevage_id', '!=', 2)->where('foetus', 0)->where('foal',  1)->with('Dam')->get(); 
     foreach ($animaux as $animal)
     {
         if ($animal->ageMonths($date) >= 6)
         {
-            if ($animal->sexe == 'jeune poulain')
-            {
-                $animal->sexe = 'jeune mâle';
-            }
-            else
-            {
-                $animal->sexe = 'jeune femelle';
-            }
+            
+                $animal->foal = 0;
+            
                 $animal->save();
                 if (isset($animal->Dam) && $animal->Dam->elevage_id !=2)
              {   $statut = $animal->Dam->StatutFemelle;
@@ -225,14 +221,11 @@ static function vieillir() {
 static function checkPuberes()
 {
     
-    $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'jeune mâle')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
+    $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'm')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
    
     foreach ($animaux as $animal)
     {
         
-    
-           $animal->sexe = 'mâle';
-            $animal->save();
             $statut = new StatutMale();
             $statut->animal_id = $animal->id;
             $statut->fertilite = 100 - $animal->consang/2 ;
@@ -252,12 +245,11 @@ static function checkPuberes()
             
     }
 
-    $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'jeune femelle')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
+    $animaux = Animal::select(['id','age_administratif','race_id', 'sexe','elevage_id'])->where('sexe', 'f')->where('elevage_id', '!=', 2)->where('age_administratif', 2)->get();
    
     foreach ($animaux as $animal)
     {
        
-         $animal->sexe = 'femelle';
         if ($animal->elevage->role == 'Vendeur') {
             $animal->statut_administratif = 'enregistré';
            
@@ -285,10 +277,9 @@ static function checkFondateurs()
     foreach ($animaux as $animal) {
           
 
-                 if ( $animal->Genre()) 
+                 if ( $animal->sexe ='m') 
                 { 
-                    $animal->sexe = 'mâle';
-                    $animal->save();
+                    
                     if (!$animal->StatutMale) {
                     $statut = new StatutMale();
                     $statut->animal_id = $animal->id;
@@ -315,8 +306,6 @@ static function checkFondateurs()
                 else 
                 { 
                    
-                    $animal->sexe = 'femelle';
-                    $animal->save();
                     
                      if (!$animal->StatutFemelle) {
                     $statut = new StatutFemelle();
@@ -367,39 +356,14 @@ static function checkApprovals () {
 static function checkVieux ()
 {
     $cas = ['mâle', 'femelle', 'mâle stérilisé', 'femelle stérilisée'];  
-    $animaux = Animal::select(['id', 'sexe', 'age_administratif'])->whereIn('sexe',$cas)->get();
+    $animaux = Animal::select(['id', 'age_administratif'])->where('age_administratif', 16)->get();
     foreach ($animaux as $animal)
     {
-        $age = $animal->age_administratif;
-        if ($age > 15)
-        {
-          
-            switch ($animal->sexe) 
-     
-            {
-               case 'femelle':
-                $animal->sexe = 'vieille femelle';
-               break;
-          
-               case 'mâle':
-                $animal->sexe = 'vieux mâle';
-              break;
-
-              case 'mâle stérilisé':
-                $animal->sexe = 'vieux mâle stérilisé';
-              break;
-
-              case 'femelle stérilisée':
-                $animal->sexe = 'vieille femelle stérilisée';
-              break;
-
-              default :
-              dd ('quoi? un transexuel?');
-            }
-            $animal->save();
-        }
+        $animal->vieux = true;
+        $animal->save();
+        
     }
-    $vieux = Animal::select(['id', 'sexe', 'age_administratif'])->where('sexe', 'LIKE','vie%')->with('Performance')->get();
+    $vieux = Animal::select(['id', 'vieux', 'age_administratif'])->with('Performance')->get();
     foreach ($vieux as $vieux) {
         $perf= $vieux->Performance;
         $age = $vieux->age_administratif;
@@ -449,7 +413,7 @@ static function checkVieux ()
             $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
         }
 
-    $animaux = Animal::select(['id', 'elevage_id', 'sexe'])->where('elevage_id', '!=', 2)->where('sexe','LIKE','vie%')->with(['Performance', 'StatutMale', 'StatutFemelle'])->get();
+    $animaux = Animal::select(['id', 'elevage_id', 'vieux'])->where('elevage_id', '!=', 2)->where('vieux',1)->with(['Performance', 'StatutMale', 'StatutFemelle'])->get();
     foreach ($animaux as $animal)
     {
         
@@ -477,7 +441,7 @@ static function checkVieux ()
                     $animal->date_achat = $this->date;
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     
-                    if ($animal->sexe == 'vieille femelle' || $animal->sexe == 'femelle')
+                    if ($animal->sexe == 'f')
                   {  $statut = $animal->StatutFemelle;
                    
                     
@@ -493,8 +457,6 @@ static function checkVieux ()
                             $produit->elevage_id =2;//pour effacer faudrait effacer genotypes et images
                             $produit->save();
                             $statut->delete();
-                            
-
                           
                         }
                         else
@@ -505,7 +467,7 @@ static function checkVieux ()
                     }
                    }
                        
-                    if ($animal->sexe == 'vieux mâle'  && isset($animal->StatutMale))
+                    if ($animal->sexe == 'm'  && isset($animal->StatutMale))
                     {
                         $animal->StatutMale->fertilite = 0;
                         $animal->StatutMale->disponible = false;
@@ -607,7 +569,7 @@ static function VenteJeunes ($date)
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur) {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->where(function($query) { return $query->where('sexe', 'jeune mâle')->orWhere('sexe', 'jeune femelle');})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where('age_administratif','<', 2)->get();
 
         foreach ($animaux as $animal)
         {
@@ -616,7 +578,7 @@ static function VenteJeunes ($date)
             $animal->a_vendre = true;
             $race = Race::find($animal->race_id);
             $animal->prix = $race->prix_moyen; 
-            if ($animal->sexe=='jeune femelle')
+            if ($animal->sexe=='f')
             {
                 $animal->prix += ($animal->prix)*0.2;
             }
@@ -630,7 +592,7 @@ static function retireVente()
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur) {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->where('a_vendre', true)->where(function($query) { return $query->where('sexe', 'mâle')->orWhere('sexe', 'femelle');})->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where('a_vendre', true)->where('age_administratif', '>=', 2)->get();
 
         foreach ($animaux as $animal)
         {

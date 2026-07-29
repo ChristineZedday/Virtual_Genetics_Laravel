@@ -109,7 +109,7 @@ class Elevage extends Model
     public function calculeFraisVeto()
     {
        
-        $poulains = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereIn('sexe',['jeune poulain','jeune pouliche'] )->get()->count();
+        $poulains = Animal::where('elevage_id',$this->id)->where('foetus',0)->where('foal',1 )->get()->count();
 
         $autres = $this->nbAnimaux() - $poulains;
 
@@ -122,7 +122,7 @@ class Elevage extends Model
     {
         $UGB_totaux=0;
        
-        $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->whereNotIn('sexe',['jeune poulain','jeune pouliche'] )->get();
+        $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->where('foal', 0 )->get();
         
         foreach ($animaux as $animal) {
             if ($animal->StatutFemelle?->suitee or $animal->StatutFemelle?->pres_pleine) {
