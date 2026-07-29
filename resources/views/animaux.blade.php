@@ -35,7 +35,7 @@
  
   <td> {{ $animal->taille() }}  </td>
 	<td>@isset ($animal->date_achat) {{$animal->date_achat}} @else {{$animal->date_naissance}} @endisset</td>
-	<td>@isset ($animal->Performance){{$animal->Performance->qualifie}}
+	<td>@isset ($animal->Performance){{$animal->Performance->qualifie}} @endisset</td>
 	<td>@isset ($vente) {{$animal->prix}} @else {{ $animal->a_vendre ? "à vendre" : ""  }} @endisset</td>
 
 </tr>

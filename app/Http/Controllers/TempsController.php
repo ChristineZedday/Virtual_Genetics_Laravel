@@ -201,11 +201,11 @@ static function regCompetNPC($date)
                 {
                    if ( $comp->tous_poneys_sport) {
                     $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
-                     dump("poneys sport ".$engageables);
+                   
                    } 
                    else if ($comp->tous_cheval_sport) {
                     $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
-                       dump("chevaux sport ".$engageables);
+                     
                     }
                    else {
                 $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('race_id', $race)->with(['Performance'])->get();

@@ -68,38 +68,31 @@ class Categorie extends Model
             return 'Jument ou pouliche suitée à la date du concours';
         }
 
-    $races = $competition->Races;
+    $race = $competition->race_id;
     $poneys = $competition->tous_poneys_sport;
     $chevaux = $competition->tous_chevaux_sport;
     $isPony = $animal->race->poney_sport;
     $isHorse = $animal->race->cheval_sport;
 
-       if ($poneys && $isPony ) {
-                    return 'OK';
+    if ($poneys && $isPony ) {
+                return 'OK';
             }
-        if ($chevaux && $isHorse ) {
-                    return 'OK';
+    if ($chevaux && $isHorse ) {
+                return 'OK';
             }
       
-    if (!empty($races)) {
-            $races = $races->modelkeys();
-           
-        if (!in_array($animal->race_id, $races) ) {
-              
-            if (!in_array(1,$races) && !$poneys && !$chevaux) {
-               
-                    return 'Cheval pas de la bonne race pour cette compétition';
+    if (NULL != $race && $animal->race_id != $race) {
+       
+                return 'Cheval pas de la bonne race pour cette compétition';
                 }
-            if ($poneys && !$isPony ) {
-                    return 'Compétition réservée aux poneys de sport';
+    if ($poneys && !$isPony ) {
+                return 'Compétition réservée aux poneys de sport';
             }
-             if ($chevaux && !$isHorse ) {
-                    return 'Compétition réservée aux chevaux de sport';
+    if ($chevaux && !$isHorse ) {
+                return 'Compétition réservée aux chevaux de sport';
             }
-            }
-        }
 
-        if ($animal->race_id == 17) {
+    if ($animal->race_id == 17) {
             return 'Les Origine Non Constatée ne sont pas autorisés en compétition';
         }
   

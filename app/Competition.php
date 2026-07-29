@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Race;
 
 /**
  * @mixin IdeHelperCompetition
@@ -108,14 +109,14 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
       if ($this->race_id != NULL && $this->race_id != $animal->race_id) {
         return "cheval pas de la bonne race";
       }
-        if ($this->tous_poneys-sport && !$animal->race->poney_sport) {
+        if ($this->tous_poneys_sport && !$animal->race->poney_sport) {
         return "Pas une race de poney de sport";
       }
-        if ($this->tous_chevaux-sport && !$animal->race->cheval_sport) {
+        if ($this->tous_chevaux_sport && !$animal->race->cheval_sport) {
         return "Pas une race de cheval de sport";
       }
            
-            if (stripos($competition->type,'Modèle')) {  
+            if (stripos($this->type,'Modèle')) {  
               
                 if (!$animal->Performance->qualifie  &&  !$this->qualificatif )
                 

@@ -17,7 +17,7 @@ class CreateCompetitionsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nom');
-            $table->enum('type', ['Modèle et Allures Tous', 'Modèle et Allures Dressage','Dressage poneys', 'Dressage chevaux', 'Dressage poneys E', 'Modèle et Allures mâles', 'Modèle et Alllures femelles', 'Modèles et Allures jeunes'])->default('Modèle et Allures Tous');
+            $table->enum('type', ['Modèle et Allures Tous', 'Modèle et Allures Dressage','Dressage poneys', 'Dressage chevaux', 'Dressage poneys E', 'Modèle et Allures mâles', 'Modèle et Allures femelles', 'Modèle et Allures jeunes'])->default('Modèle et Allures Tous');
            // $table->tinyInteger('niveau_id')->unsigned();
             $table->mediumInteger('prix_inscription');
             $table->mediumInteger('prix_premier');

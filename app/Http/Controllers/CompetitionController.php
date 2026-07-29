@@ -109,8 +109,7 @@ class CompetitionController extends Controller
 
         $message = $categorie->verification($animal, $evenement, $competition->id);
         if ($message == 'OK')  { 
-           $message = $competition->verification($animal, $evenement->id, $reprise);
-            if ($message== "OK")  {
+           
           
                 if ($resultat->save()) {
                  
@@ -124,7 +123,7 @@ class CompetitionController extends Controller
                     return redirect()->route('inscrire_dressage', [$elevage->id,$evenement->id,$competition->id, $reprise->id])->withInput()->with('message',"votre animal a été inscrit dans sa catégorie");   
                 }
                 }
-            }
+            
             else {
                 if ($reprise == NULL) {
                 return redirect()->route('inscrire', [$elevage->id,$evenement->id,$competition->id])->withInput()->withErrors([$message]);
@@ -153,6 +152,7 @@ class CompetitionController extends Controller
             $inscrits = Resultat::inscrits($elevage);
         }
         else {
+            
             $inscrits = Resultat::inscrits($elevage, $type);
         }
        
