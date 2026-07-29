@@ -259,10 +259,12 @@ public function run($competition, $evenement) {
                 $animal->StatutMale->setApprouvePFS(); 
             }
         }
-        $perf = $animal->Performance;
-        if ($value >= 12) {
+        if ($competition->qualificatif) {
+       
+            $perf = $animal->Performance;
             $perf->qualifieMA($i, $value); 
-            }
+            
+        }
 
         $elevage = Elevage::Find($animal->elevage_id);
     

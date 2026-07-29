@@ -193,22 +193,21 @@ static function regCompetNPC($date)
         $race = $comp->race_id;
         $qual = $comp->qualificatif;
         $compid = $comp->id;
-        //$races = $races->modelKeys();
         
         $evenement = Evenement::whereMonth('date',$m)->whereYear('date',$y)->whereHas('competitions', function ($q) use ($compid){$q->where('competition_id',$compid);})->first();
         
         if (stripos($comp->type,"Allures"))
                 {
                    if ( $comp->tous_poneys_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('age_administratif', '>', 0)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
                    
                    } 
                    else if ($comp->tous_cheval_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('age_administratif', '>' ,0)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
                      
                     }
                    else {
-                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('race_id', $race)->with(['Performance'])->get();
+                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('age_administratif', '>', 0)->where('race_id', $race)->with(['Performance'])->get();
                  
             }
           
@@ -217,10 +216,12 @@ static function regCompetNPC($date)
                 if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
             }
-                if (!$cheval->Performance->qualifie && $qual ){
+                if (!$cheval->Performance->qualifie && !$qual ){
+                    
                     continue;
                 }
-                else if ($cheval->Performance->qualifie && !$qual ) {
+                else if ($cheval->Performance->qualifie && $qual ) {
+                    
                     continue;
                 }
                 if (strpos($cheval->sexe,'stérilisé')  && stripos($competition->type,'Modèle')){
@@ -257,7 +258,7 @@ static function regCompetNPC($date)
          if (!stripos($comp->type,"Allures")) {
             
         
-            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->with(['Performance','StatutFemelle'])->get();
+            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->where('age_administratif', '>', 3)->with(['Performance','StatutFemelle'])->get();
           
                 foreach ($dressables as $cheval) {
                     if (is_null ($cheval->Performance)) {
@@ -287,16 +288,7 @@ static function regCompetNPC($date)
                          $catid = $categorie->id;
                          break;
                        }
-                        // foreach ($categories_cheval as $cat) {
-                        //     if ($cat == $categorie)
-                        //    { $catid = $categorie->id;
-                        //     break;}
-                        
-                        //     else if ($categorie->nom == 'cheval ou poney' && $cheval->taille() >= 108) {
-                        //     $catid = $categorie->id;
-                        //     break;
-                        //     }
-                        // }
+                    
                        
                     }
                    if ($catid == null) {
