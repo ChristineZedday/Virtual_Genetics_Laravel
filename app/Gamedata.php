@@ -105,7 +105,7 @@ static function initialiseJeu()
             {
                 
       
-                $animal->Randomize($animal->race);
+                $animal->Randomize();
  
                 Genome::readGenes($animal->id);
 

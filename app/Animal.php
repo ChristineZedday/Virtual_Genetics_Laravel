@@ -387,21 +387,11 @@ class Animal extends Model
         }
     }
 
-    public function Randomize($race) 
+    public function Randomize() 
     {
-        if ($race->approbation) {
-            $min = $this->Genre() == 1 ? 15 : 8;
-           
-        }
-        else {
-            $min = $this->Genre() == 1 ? 12 : 10;
-        }
-
-        if ($race->confirmation_juments) {
-             $min = $this->Genre() == 1 ? 15 : 12;
-        }
         
-
+        $min = $this->Genre() == 1 ? 15 : 12;
+        
         $this->modele_allures_additifs = rand($min, 19);
         $this->capacite_dressage_additive = rand(5,19);
         $this->capacite_apprentissage_additive = rand(5,19);
