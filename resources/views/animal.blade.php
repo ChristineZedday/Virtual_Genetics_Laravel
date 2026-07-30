@@ -83,7 +83,7 @@
 			</div>
 
 			<div id='saillie'>
-				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe=='vieille femelle') && ( isset($animal->StatutFemelle) && ($animal->StatutFemelle->vide == true && $animal->StatutFemelle->date_saillie != App\Gamedata::getDate()) ) )
+				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='f'  && ( isset($animal->StatutFemelle) && ($animal->StatutFemelle->vide == true && $animal->StatutFemelle->date_saillie != App\Gamedata::getDate()) ) )
 					@if (App\Gamedata::saison(App\Gamedata::getDate()))
 					
 					<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
