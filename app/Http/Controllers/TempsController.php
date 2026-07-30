@@ -112,7 +112,7 @@ class TempsController extends Controller
 static function reproNPC($date)
 {
        
-            $vendeurs = Elevage::where('role','Vendeur')->get();
+        $vendeurs = Elevage::where('role','Vendeur')->get();
             foreach($vendeurs as $vendeur)
             {
                

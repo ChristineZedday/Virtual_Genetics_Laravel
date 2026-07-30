@@ -277,7 +277,7 @@ static function checkFondateurs()
     foreach ($animaux as $animal) {
           
 
-                 if ( $animal->sexe ='m') 
+                 if ( $animal->sexe =='m') 
                 { 
                     
                     if (!$animal->StatutMale) {
@@ -318,9 +318,7 @@ static function checkFondateurs()
                    if ( $animal->race->confirmation_juments) {
                         $statut->confirme($animal);
                        
-                     }
-        
-               
+                     }   
                 }
                
             }// end foreach
@@ -558,8 +556,6 @@ static function VenteSaillies ()
                    
                 }
             }
-           
-        
         }
 
     }
