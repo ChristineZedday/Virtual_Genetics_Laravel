@@ -1076,7 +1076,7 @@ class CompetitionsTableSeeder extends Seeder
                 'id' => 85,
                 'created_at' => NULL,
                   'updated_at' => NULL,
-                'nom' => 'Concours National Modèle et Allures Lusitaniens',
+                'nom' => 'Concours Régional Modèle et Allures Lusitaniens',
                 'type' => 'Modèle et Allures Tous',
                'race_id' => 23, 'qualificatif' => 1,
                 'prix_inscription' => 40,

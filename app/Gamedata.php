@@ -569,12 +569,11 @@ static function VenteJeunes ($date)
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur) {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->where('age_administratif','<', 2)->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where('age_administratif','<', 2)->where('foal',0)->get();
 
         foreach ($animaux as $animal)
         {
-            if (($animal->ageMonths($date) >= 6) && (! $animal->fondateur) )
-        { 
+           
             $animal->a_vendre = true;
             $race = Race::find($animal->race_id);
             $animal->prix = $race->prix_moyen; 
@@ -584,7 +583,7 @@ static function VenteJeunes ($date)
             }
             $animal->save();}
                 
-        }
+        
     }
 }
 
