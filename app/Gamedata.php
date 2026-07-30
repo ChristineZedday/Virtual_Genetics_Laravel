@@ -569,7 +569,7 @@ static function VenteJeunes ($date)
 {
     $vendeurs = Elevage::where('role','Vendeur')->get();
     foreach ($vendeurs as $vendeur) {
-        $animaux = Animal::where('elevage_id', $vendeur->id)->where('age_administratif','<', 2)->where('foal',0)->get();
+        $animaux = Animal::where('elevage_id', $vendeur->id)->where('age_administratif','<', 2)->where('foal',0)->where('foetus', 0)->get();
 
         foreach ($animaux as $animal)
         {
