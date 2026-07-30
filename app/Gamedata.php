@@ -436,7 +436,7 @@ static function checkVieux ()
                 if (rand(1,$var)==1)
                 {
                     $animal->elevage_id =2;//chez l'Ankou!
-                    $animal->date_achat = $this->date;
+                    $animal->date_achat = Gamedata::getDate();
                     $animal->save(); //tu parles d'un sauvé, je l'ai tué là!
                     
                     if ($animal->sexe == 'f')
