@@ -407,7 +407,7 @@ static function checkVieux ()
         foreach ($letaux as $letal)
         {
             $letal->elevage_id =2;//chez l'Ankou!
-            $letal->date_achat = $this->date;
+            $letal->date_achat = Gamedata::getDate();
             $letal->save(); //tu parles d'un sauvé, je l'ai tué là!
         }
 
