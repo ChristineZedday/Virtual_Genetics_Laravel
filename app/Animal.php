@@ -124,10 +124,10 @@ class Animal extends Model
     public function SexeAdm() //Sexe et stade de développement +statut administratif, en fait...
     {
      if ($this->foal && $this->sexe == 'f')   {
-        $res ="pouliche sous la mère";
+        return "pouliche";
      }
      if ($this->foal && $this->sexe == 'm')   {
-        $res ="poulain sous la mère";
+         return "poulain";
      }
      if (isset($this->StatutMale) && $this->StatutMale->fertilite == 0) {
         return 'Hongre';
