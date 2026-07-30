@@ -44,18 +44,18 @@ class Categorie extends Model
         }
     }
    
-   if (stripos($competition->type,'Modèle') && $animal->Performance->niveau->id > $competition->niveau->id && !$competition->niveau->open_after) {
+   if (stripos($competition->type,'Allures') && $animal->Performance->qualifie && $competition->qualificatif) {
     return 'Hors Concours';
    }
 
-   if (stripos($competition->type,'Modèle') && $animal->Performance->niveau->id < $competition->niveau->id && !$competition->niveau->open_before) {
+   if (stripos($competition->type,'Allures') && !$animal->Performance->qualifie  && !$competition->qualificatif) {
     return 'Non qualifié';
    }
    if ($animal->StatutFemelle && $animal->StatutFemelle->terme == $date) {
     return 'Jument à terme ce mois-là';
    }
 
-   if (!stripos($competition->type,'Modèle') && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
+   if (!stripos($competition->type,'Allures') && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
             return 'Jument pleine ou suitée';
         }
