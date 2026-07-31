@@ -88,7 +88,7 @@ class StatutMale extends Model
     }
 
     public function approuveEtalons () {
-      $date = Gamedata::getDate();
+     
      // $after = Gamedata::afterSeason();
        $mini = Race::where('nom', 'Miniature')->first();
 
@@ -105,7 +105,7 @@ class StatutMale extends Model
                             $this->setCarnetSaillies();}
                         }
              break;
-        case !$this->male->race->approbation && $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
+        case !$this->male->race->approbation && $this->male->age_administratif >= $this->male->race->age_repro_male:
             $this->qualite = 'approuvé';
               if ($this->male->elevage->role == 'vendeur') {
                 $this->setCarnetSaillies();}
@@ -114,14 +114,14 @@ class StatutMale extends Model
             {
                 $this->setApprouvePFS();}
             break;
-       case !$this->male->race->approbation && $this->male->ageAdministratif($date) < $this->male->race->age_repro_male:
+       case !$this->male->race->approbation && $this->male->age_administratif < $this->male->race->age_repro_male:
             $this->qualite = 'approuvé an prochain';
             break;
         //Maintenant on est dans les cas où l'obtention d'une note de 15 en concours de Modèle et Allures est nécessaire:
         case $this->male->race->approbation && !$this->modele15:
             $this->qualite ='ajourné';
             break;
-        case $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male && !$this->male->race->classeNat :
+        case $this->male->age_administratif >= $this->male->race->age_repro_male && !$this->male->race->classeNat :
              $this->qualite ='approuvé';
                if ($this->male->elevage->role == 'vendeur') {
                     $this->setCarnetSaillies();}
@@ -144,7 +144,7 @@ class StatutMale extends Model
         case !$this->classeNat:
              $this->qualite ='ajourné';
             break;
-        case $this->male->ageAdministratif($date) >= $this->male->race->age_repro_male:
+        case $this->male->age_administratif >= $this->male->race->age_repro_male:
              $this->qualite ='approuvé';
                if ($this->male->elevage->role == 'vendeur') {
             $this->carnet_saillies = true;}

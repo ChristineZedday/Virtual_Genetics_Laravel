@@ -49,7 +49,7 @@ class Gamedata extends Model
 //Season for reproduction (march to september)
     static function saison($date)
 {
-    //$date = $this->date;
+  
     $mois = date('m',strtotime($date));
     switch ($mois) {
         case $mois<3:
@@ -80,7 +80,7 @@ static function afterSeason() {
 //date of birth 11 months after conception
 static function ElevenMonths($date)
 {
-   // $date = $this->date;
+   
     $res= date('Y-m-d',strtotime('+11 month',strtotime($date)));
     
    return $res;
@@ -103,16 +103,11 @@ static function initialiseJeu()
          
     foreach ($animaux as $animal)
             {
-                
       
                 $animal->Randomize();
- 
                 Genome::readGenes($animal->id);
 
-    
                 Performance::initialize($animal->id);
-
-    
                 $animal->statut_administratif = 'enregistré';
                 $animal->save();
            }  
