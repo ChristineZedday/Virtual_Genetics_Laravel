@@ -35,7 +35,7 @@ class Categorie extends Model
            if ($event != $evenement){
             return 'Inscrit ailleurs à cette date'; //déjà inscrit ailleurs
            }
-           else if (stripos($competition->type,'Modèle')) {
+           else if (stripos($competition->type,'Allures')) {
             return 'Déjà inscrit';
            }
            if ($count > 1) {
