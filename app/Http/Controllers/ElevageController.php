@@ -127,12 +127,12 @@ class ElevageController extends Controller
             break;
 
             case 'jeunes':
-                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])
-                ->where('elevage_id', $id)->where('foal', 0)->where('age_administratif','<', 2)->get(); 
+                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre', 'foetus'])
+                ->where('elevage_id', $id)->where('foal', 0)->where('foetus', 0)->where('age_administratif','<', 2)->get(); 
             break;
 
             case 'foals':
-                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->where('foal', 1)->get(); 
+                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre','foal'])->where('elevage_id', $id)->where('foal', 1)->get(); 
             break;
 
             case 'males':
