@@ -21,6 +21,7 @@ class Categorie extends Model
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
    public function verification($animal, $evenement, $competition, $reprise = NULL) 
    {
+    
    
     $date = $evenement->date;
     $competition = Competition::Find($competition);
@@ -35,48 +36,51 @@ class Categorie extends Model
            if ($event != $evenement){
             return 'Inscrit ailleurs à cette date'; //déjà inscrit ailleurs
            }
-           else if (stripos($event->competition->type,'Allures')) {
-            return 'Déjà inscrit';
-           }
-            else if (!stripos($event->competition->type,'Allures' && $event->competition->reprise_id == $reprise_>id)) {
-            return 'Déjà inscrit dans cette reprise';
-           }
-           if ($count > 1) {
-            return 'Déjà inscrit dans 2 épreuves ce jour'; //max 2 épreuves
-           }
-        }
-    }
-   /* if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage != $reprise->niveau) {
+           else {
+                if (stripos($competition->type,'Allures')) {
+                    return 'Déjà inscrit'; }
+           
+                else  if ($count > 1) {
+                    return 'Déjà inscrit dans 2 épreuves ce jour'; //max 2 épreuves
+                    }
+                else
+                    {
+                     $deja = Resultat::where('animal_id', $animal->id)->where('evenement_id', $evenement->id)->where('reprise_id',$reprise->id)->first();
+                     if ($deja) {
+                        return "Déjà inscrit dans cette reprise là";
+                     }
+                     }
+             }
+        } 
+     }
+            if (stripos($competition->type,'Allures') && $animal->Performance->qualifie && $competition->qualificatif) {
+                return 'Hors Concours';
+            }
 
-    }*/
-   if (stripos($competition->type,'Allures') && $animal->Performance->qualifie && $competition->qualificatif) {
-    return 'Hors Concours';
-   }
+            if (stripos($competition->type,'Allures') && !$animal->Performance->qualifie  && !$competition->qualificatif) {
+            return 'Non qualifié';
+             }
+            if ($animal->StatutFemelle && $animal->StatutFemelle->terme == $date) {
+            return 'Jument à terme ce mois-là';
+            }
 
-   if (stripos($competition->type,'Allures') && !$animal->Performance->qualifie  && !$competition->qualificatif) {
-    return 'Non qualifié';
-   }
-   if ($animal->StatutFemelle && $animal->StatutFemelle->terme == $date) {
-    return 'Jument à terme ce mois-là';
-   }
-
-   if (!stripos($competition->type,'Allures') && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
-        {
+            if (!stripos($competition->type,'Allures') && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
+             {
             return 'Jument pleine ou suitée';
-        }
-    if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage < $reprise->niveau_num_global)
-        {
+                }
+           if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage < $reprise->niveau_num_global)
+                {
             return 'Non qualifié pour ce niveau';
-        }
-     if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage > $reprise->niveau_num_global)
-        {
+            }
+            if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage > $reprise->niveau_num_global)
+                {
             return 'Hors concours';
-        }
-    if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
+            }
+            if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
            
             return 'Pas suitée, ou le poulain sera sevré à cette date';
-        }
-    if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
+             }
+            if (!$this->suitee && ($animal->StatutFemelle && $animal->seraSuiteeAu($date))) {
            
             return 'Jument ou pouliche suitée à la date du concours';
         }

@@ -130,10 +130,11 @@ class Reprise extends Model
         }
     }
 
-    public function verification($animal, $evenement)
+ /*   public function verification($animal, $evenement)
     {
         
-        //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau, et pas deux fois dans la m^me
+      
+    //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau, et pas deux fois dans la m^me
         $niveau = $animal->Performance->niveau_dressage;
         $deja = Resultat::where('animal_id', $animal->id)->where('evenement_id', $evenement)->where('reprise_id',$this->id)->first();
        
@@ -150,7 +151,7 @@ class Reprise extends Model
       
             return "OK";
         }
-    }
+    }*/
     
 static function liste() {
     return Reprise::all()->sortBy('niveau_num_global');

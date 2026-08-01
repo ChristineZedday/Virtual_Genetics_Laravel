@@ -98,8 +98,10 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         return $competitions;
     }
 
-    public function verification($animal, $evenement, $reprise=NULL)
+   /* public function verification($animal, $evenement, $reprise=NULL)
+    
     {
+        dd("compétition");
         if ($animal->statut_administratif != 'enregistré') {
             return 'Votre cheval doit être enregistré!';
         }
@@ -135,7 +137,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
                 return $msg;
             }
         }
-        
+        */
     
     
   
