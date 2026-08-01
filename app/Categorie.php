@@ -35,8 +35,11 @@ class Categorie extends Model
            if ($event != $evenement){
             return 'Inscrit ailleurs à cette date'; //déjà inscrit ailleurs
            }
-           else if (stripos($competition->type,'Allures')) {
+           else if (stripos($event->competition->type,'Allures')) {
             return 'Déjà inscrit';
+           }
+            else if (!stripos($event->competition->type,'Allures' && $event->competition->reprise_id == $reprise_>id)) {
+            return 'Déjà inscrit dans cette reprise';
            }
            if ($count > 1) {
             return 'Déjà inscrit dans 2 épreuves ce jour'; //max 2 épreuves

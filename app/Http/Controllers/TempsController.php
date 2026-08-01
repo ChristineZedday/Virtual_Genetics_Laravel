@@ -29,6 +29,7 @@ class TempsController extends Controller
     static function nextMonth($elevage)
     {
          
+        set_time_limit(120);
         $game = Gamedata::Find(1);
         $date = $game->date_courante;
         $debut = false;
