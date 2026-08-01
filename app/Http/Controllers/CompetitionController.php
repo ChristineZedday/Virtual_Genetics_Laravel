@@ -107,7 +107,7 @@ class CompetitionController extends Controller
         
        $categorie = Categorie::Find($resultat->categorie_id);
 
-        $message = $categorie->verification($animal, $evenement, $competition->id);
+        $message = $categorie->verification($animal, $evenement, $competition->id, $reprise);
         if ($message == 'OK')  { 
            
           

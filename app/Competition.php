@@ -116,7 +116,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
         return "Pas une race de cheval de sport";
       }
            
-            if (stripos($this->type,'Modèle')) {  
+            if (stripos($this->type,'Allures')) {  
               
                 if (!$animal->Performance->qualifie  &&  !$this->qualificatif )
                 

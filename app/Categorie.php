@@ -19,7 +19,7 @@ class Categorie extends Model
   
    
 /**Fonction qui vérifie qu'un cheval de joueur est inscrit dans la bonne catégorie */
-   public function verification($animal, $evenement, $competition) 
+   public function verification($animal, $evenement, $competition, $reprise = NULL) 
    {
    
     $date = $evenement->date;
@@ -43,7 +43,9 @@ class Categorie extends Model
            }
         }
     }
-   
+   /* if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage != $reprise->niveau) {
+
+    }*/
    if (stripos($competition->type,'Allures') && $animal->Performance->qualifie && $competition->qualificatif) {
     return 'Hors Concours';
    }
@@ -58,6 +60,14 @@ class Categorie extends Model
    if (!stripos($competition->type,'Allures') && $animal->StatutFemelle && (!$animal->StatutFemelle->vide || $animal->seraSuiteeAu($date) ))
         {
             return 'Jument pleine ou suitée';
+        }
+    if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage < $reprise->niveau_num_global)
+        {
+            return 'Non qualifié pour ce niveau';
+        }
+     if (!stripos($competition->type,'Allures') && $animal->Performance->niveau_dressage > $reprise->niveau_num_global)
+        {
+            return 'Hors concours';
         }
     if ($this->suitee && ($animal->StatutFemelle && !$animal->seraSuiteeAu($date))) {
            
