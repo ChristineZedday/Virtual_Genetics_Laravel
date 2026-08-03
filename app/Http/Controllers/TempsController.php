@@ -259,7 +259,7 @@ static function regCompetNPC($date)
          if (!stripos($comp->type,"Allures")) {
             
         
-            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 10)->where('capacite_dressage_additive', '>=', 10)->where('age_administratif', '>', 3)->with(['Performance','StatutFemelle'])->get();
+            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 11)->where('capacite_dressage_additive', '>=', 11)->where('age_administratif', '>', 3)->with(['Performance','StatutFemelle'])->get();
           
                 foreach ($dressables as $cheval) {
                     if (is_null ($cheval->Performance)) {

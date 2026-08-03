@@ -55,7 +55,7 @@ Au moment de l'inscription, les animaux sont inscrits dans un évènement, pour 
             return Categorie::whereIn('nom', ['mâles 2 ans', 'mâles 3 ans', 'étalons'])->get();
         }
          if ($this->type == 'Modèle et Allures femelles' ) {
-            return Categorie::whereIn('nom', ['femelles 2 ans', 'femelles 3 ans', 'juments', 'juments suitées'])->get();
+            return Categorie::whereIn('nom', ['pouliches 2 ans', 'pouliches 3 ans', 'juments', 'juments suitées'])->get();
         }
          if ($this->type == 'Dressage poneys' ) {
             return Categorie::whereIn('nom', ['Poney A ou B', 'Poney C', 'Poney D'])->get();
