@@ -85,18 +85,7 @@ class Categorie extends Model
             return 'Jument ou pouliche suitée à la date du concours';
         }
 
-    $race = $competition->race_id;
-    $poneys = $competition->tous_poneys_sport;
-    $chevaux = $competition->tous_chevaux_sport;
-    $isPony = $animal->race->poney_sport;
-    $isHorse = $animal->race->cheval_sport;
-
-    if ($poneys && $isPony ) {
-                return 'OK';
-            }
-    if ($chevaux && $isHorse ) {
-                return 'OK';
-            }
+   
       
     if (NULL != $race && $animal->race_id != $race) {
        
@@ -137,6 +126,19 @@ class Categorie extends Model
        
         return 'trop grand pour cette catégorie';
     }
+
+     $race = $competition->race_id;
+    $poneys = $competition->tous_poneys_sport;
+    $chevaux = $competition->tous_chevaux_sport;
+    $isPony = $animal->race->poney_sport;
+    $isHorse = $animal->race->cheval_sport;
+
+    if ($poneys && $isPony ) {
+                return 'OK';
+            }
+    if ($chevaux && $isHorse ) {
+                return 'OK';
+            }
 
 
     return 'OK';
