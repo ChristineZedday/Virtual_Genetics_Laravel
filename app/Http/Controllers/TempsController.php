@@ -259,7 +259,7 @@ static function regCompetNPC($date)
          if (!stripos($comp->type,"Allures")) {
             
         
-            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 11)->where('capacite_dressage_additive', '>=', 11)->where('age_administratif', '>', 3)->with(['Performance','StatutFemelle'])->get();
+            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('capacite_dressage_additive', '>=', 12)->where('age_administratif', '>', 3)->with(['Performance','StatutFemelle'])->get();
           
                 foreach ($dressables as $cheval) {
                     if (is_null ($cheval->Performance)) {
@@ -311,6 +311,7 @@ static function regCompetNPC($date)
                             $resultat->competition_id = $comp->id;
                             $resultat->reprise_id = $reprise->id;
                             $resultat->save();
+                          //  dump($cheval->nom." MA:".$cheval->modele_allures." CDR: ".$cheval->capacite_dressage_additive);
                         }
                     }   
 

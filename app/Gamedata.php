@@ -348,15 +348,16 @@ static function checkApprovals () {
 //old horses limitations of health and performances
 static function checkVieux ()
 {
-    $cas = ['mâle', 'femelle', 'mâle stérilisé', 'femelle stérilisée'];  
+   
     $animaux = Animal::select(['id', 'age_administratif'])->where('age_administratif', 16)->get();
     foreach ($animaux as $animal)
     {
         $animal->vieux = true;
         $animal->save();
+        dump($animal->nom." ".$animal->age_administratif);
         
     }
-    $vieux = Animal::select(['id', 'vieux', 'age_administratif'])->with('Performance')->get();
+    $vieux = Animal::select(['id', 'vieux', 'age_administratif'])->where('vieux', 1)->with('Performance')->get();
     foreach ($vieux as $vieux) {
         $perf= $vieux->Performance;
         $age = $vieux->age_administratif;
