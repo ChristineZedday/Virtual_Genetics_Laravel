@@ -23,7 +23,7 @@ $date = App\Gamedata::getDate();
 				<li class='deroule'><a href="{{route('competitions', [$elevage, 'toutes'])}}">Compétitions à venir</a>
 					<ul class='sousmenu'>
 						<li><a href="{{route('competitions', [$elevage, 'Modèle et Allures'])}}">Modèles et allures</a></li>
-						<li><a href="{{route('competitions', [$elevage,'dressage'])}}">Dressage</a></li>
+						<li><a href="{{route('competitions', [$elevage,'Dressage'])}}">Dressage</a></li>
 						
 					</ul>
 				</li>

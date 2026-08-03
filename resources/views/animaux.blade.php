@@ -14,7 +14,7 @@
 
 	<th>Taille <button onclick="tri(5, ASC)"> &#x23F6;</button><button onclick="tri(5, DESC)"> &#x23F7;</button></th>
     <th>Date acquisition <button onclick="tri(6, ASC)"> &#x23F6;</button><button onclick="tri(6, DESC)"> &#x23F7;</button></th>
-	<th>Niveau Modèle et Allures <button onclick="tri(7, AMA)"> &#x23F6;</button><button onclick="tri(7, DMA)"> &#x23F7;</button></th>
+	<th>Qualifié Modèle et Allures <button onclick="tri(7, AMA)"> &#x23F6;</button><button onclick="tri(7, DMA)"> &#x23F7;</button></th>
     <th> @isset ($vente) prix @else A Vendre? @endisset</th>
 	
    
@@ -35,8 +35,7 @@
  
   <td> {{ $animal->taille() }}  </td>
 	<td>@isset ($animal->date_achat) {{$animal->date_achat}} @else {{$animal->date_naissance}} @endisset</td>
-	<td>@isset ($animal->Performance){{$animal->Performance->Niveau->libelle}}
-		<span hidden>{{$animal->Performance->Niveau->id}}</span>@endisset</td>
+	<td>@isset ($animal->Performance){{$animal->Performance->qualifie}} @endisset</td>
 	<td>@isset ($vente) {{$animal->prix}} @else {{ $animal->a_vendre ? "à vendre" : ""  }} @endisset</td>
 
 </tr>

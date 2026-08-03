@@ -61,9 +61,10 @@ class Resultat extends Pivot
       $res = Resultat::whereHas('Animal', function (Builder $q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','>=', $date);})->get();
     }
    else {
-      $res = Resultat::whereHas('Animal', function (Builder $q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','>=', $date);})->whereHas('Competition', function (Builder $query2) use ($type) {$query2->where('type','=', $type);})->get();
+      $type = $type."%";
+      $res = Resultat::whereHas('Animal', function (Builder $q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','>=', $date);})->whereHas('Competition', function (Builder $query2) use ($type) {$query2->where('type','LIKE', $type);})->get();
    }
-     //dd($res);
+    
       return $res;
       
    }
@@ -97,8 +98,10 @@ switch ($this->classement) {
       $date =new DateTime(Gamedata::getDate());
   
      if ($type != 'toutes') {
+     $type = $type."%";
       
-      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','<=', $date);})->whereHas('Competition', function (Builder $query2) use ($type){$query2->where('type',$type);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();
+      $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','<=', $date);})->whereHas('Competition', function (Builder $query2) use ($type){$query2->where('type','LIKE', $type);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();
+         
      }
      else {
       $res = Resultat::whereHas('Animal', function ($q) use ($elevage_id) { $q->where('elevage_id', $elevage_id);})->whereHas('Evenement', function (Builder $query) use ($date) {$query->whereDate('date','<=', $date);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();
@@ -116,7 +119,8 @@ switch ($this->classement) {
       $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();// 
         }
         else {
-        $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->whereHas('Competition', function (Builder $query2) use ($type){$query2->where('type',$type);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();
+         $type = $type."%";
+        $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->whereHas('Competition', function (Builder $query2) use ($type){$query2->where('type','LIKE',$type);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();
       }
       
       return $res;

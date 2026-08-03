@@ -6,7 +6,7 @@
 	<div class='texte'>
 <h1 class='nom'>{{$etalon->NomComplet()}}</h1>
 <h3>{{$etalon->Race->nom}}</h3>
-<p>{{$etalon->StatutMale->qualite}}</p>
+<p>{{$etalon->sexeAdm()}}</p>
 <p>{{$etalon->couleur}}</p>
 <p>{{$etalon->taille()}}</p>
 

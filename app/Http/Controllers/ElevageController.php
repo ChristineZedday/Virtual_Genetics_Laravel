@@ -122,28 +122,30 @@ class ElevageController extends Controller
         switch ($filtre)
         {
             case 'reps':
-                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->whereIn('sexe',['mâle', 'vieux mâle', 'femelle', 'vieille femelle'])->get(); 
+                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre', 'age_administratif'])
+                ->where('elevage_id', $id)->where('age_administratif','>=', 2)->get(); 
             break;
 
             case 'jeunes':
-                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->where('foetus', false)->whereIn('sexe',['jeune mâle', 'jeune femelle'])->get(); 
+                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre', 'foetus'])
+                ->where('elevage_id', $id)->where('foal', 0)->where('foetus', 0)->where('age_administratif','<', 2)->get(); 
             break;
 
             case 'foals':
-                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->where('foetus', false)->whereIn('sexe',['jeune poulain', 'jeune pouliche'])->get(); 
+                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre','foal'])->where('elevage_id', $id)->where('foal', 1)->get(); 
             break;
 
             case 'males':
-                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->whereIn('sexe',['mâle', 'vieux mâle'])->get(); 
+                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->where('sexe','m')->where('foetus', 0)->get(); 
             break;
 
             case 'femelles':
-                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->whereIn('sexe',['femelle', 'vieille femelle'])->get(); 
+                $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->where('sexe','f')->where('foetus', 0)->get(); 
             break;
 
-            case 'hongres':
+         /*   case 'hongres':
                 $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre'])->where('elevage_id', $id)->whereIn('sexe',['mâle stérilisé', 'femelle stérilisée', 'vieux mâle stérilisé', 'vieille femelle stérilisée'])->get(); 
-            break;
+            break;*/
 
             case 'vente':
                 $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance','date_achat', 'a_vendre', 'prix'])->where('elevage_id', $id)->where('foetus', false)->where('a_vendre', true)->get(); 
@@ -189,7 +191,8 @@ class ElevageController extends Controller
         
         $elevage = Elevage::Find($id);
         $date = Gamedata::getDate();
-        $juments = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'sire_id','dam_id','couleur', 'taille_cm', 'date_naissance', 'a_vendre'])->where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'femelle')->orWhere('sexe', 'vieille femelle');})->whereHas('StatutFemelle', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
+        $juments = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'sire_id','dam_id','couleur', 'taille_cm', 'date_naissance', 'a_vendre'])
+        ->where('elevage_id', $id)->where('sexe', 'f')->whereHas('StatutFemelle', function($q) use ($date) { $q->where('vide', true)->where(function ($qu) use ($date) {$qu->where('date_saillie','<>', $date)->orWhere('date_saillie', null);});})->get();
        
 
       return view('femelles', ['elevage'=>$elevage, 'juments'=>$juments]);
@@ -323,7 +326,7 @@ class ElevageController extends Controller
         
         $jument =Animal::Find($jument);
         
-        $etalons = Animal::where('elevage_id', $id)->where(function ($query){$query->where('sexe', 'mâle')->orwhere('sexe','vieux mâle');})->get();
+        $etalons = Animal::where('elevage_id', $id)->where('sexe','m')->whereHas('statutMale')->get();
         if ($elevage->role != 'vendeur'){
              $exterieurs = Animal::where('elevage_id', '!=', $id)->whereHas('StatutMale', function ($query) use ($budget) {return $query->where('disponible', 1)->where('prix', '<=', $budget);})->get();
        

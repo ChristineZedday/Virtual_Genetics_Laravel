@@ -64,15 +64,20 @@ class Reprise extends Model
             if ($sante != 100) {
                 $malusSante = 100 - $sante;
             }
+            dump($malusSante." ".$animal->age_administratif);
     
              $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + 
-             ($animal->Performance->niveau_dressage * $animal->capacite_apprentissage_additive)/100 -
+             (($animal->Performance->pourcent_niveau +1)* $animal->capacite_apprentissage_additive)/100 -
              $this->niveau_num_global - $malusTaille  - $malusSante + 
              random_int(-20,20);
 
              if ( $notes[$animal->id] > 100) {
                 $notes[$animal->id] = 100;
              }
+               if ( $notes[$animal->id] < 0) {
+                $notes[$animal->id] = 0;
+             }
+             dump("niveau: ".$this->niveau_num_global." ".$animal->Performance->pourcent_niveau."%  MA :".$animal->modele_allures." CDR: ".$animal->capacite_dressage_additive." CApp: ".$animal->capacite_apprentissage_additive." note: ".$notes[$animal->id]);
        
         $inscrit->note_synthese = $notes[$animal->id];
         $inscrit->save();
@@ -130,10 +135,11 @@ class Reprise extends Model
         }
     }
 
-    public function verification($animal, $evenement)
+ /*   public function verification($animal, $evenement)
     {
         
-        //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau, et pas deux fois dans la m^me
+      
+    //Vérifie que le cheval est bien incrit dans une reprise correspondant à son niveau, et pas deux fois dans la m^me
         $niveau = $animal->Performance->niveau_dressage;
         $deja = Resultat::where('animal_id', $animal->id)->where('evenement_id', $evenement)->where('reprise_id',$this->id)->first();
        
@@ -150,7 +156,7 @@ class Reprise extends Model
       
             return "OK";
         }
-    }
+    }*/
     
 static function liste() {
     return Reprise::all()->sortBy('niveau_num_global');

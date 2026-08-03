@@ -83,7 +83,7 @@
 			</div>
 
 			<div id='saillie'>
-				@if ( ($animal->elevage_id == $elevage->id ) && ($animal->sexe=='femelle' || $animal->sexe=='vieille femelle') && ( isset($animal->StatutFemelle) && ($animal->StatutFemelle->vide == true && $animal->StatutFemelle->date_saillie != App\Gamedata::getDate()) ) )
+				@if ( ($animal->elevage_id == $elevage->id ) && $animal->sexe=='f'  && ( isset($animal->StatutFemelle) && ($animal->StatutFemelle->vide == true && $animal->StatutFemelle->date_saillie != App\Gamedata::getDate()) ) )
 					@if (App\Gamedata::saison(App\Gamedata::getDate()))
 					
 					<a href="{{route('saillir',[$elevage->id,$animal->id])}}">
@@ -183,11 +183,15 @@
 			<div id="palmares">
 			<h3>Palmarès: </h3>
 				@foreach ($animal->Palmares() as $palm)
+				<?php
+			$modele = stripos( $palm->competition->type,"Allures");
+
+				?>
 				
 				<p> {{$palm->evenement->nom}} du &nbsp;{{$palm->evenement->date}} 
 				{{$palm->competition->nom}} 
-				{{$palm->competition->Niveau->libelle}} 
-				@if ($palm->competition->type == 'Dressage')
+			
+				@if (!$modele)
 				{{$palm->Reprise->nom}} 
 				@else
 				{{$palm->categorie->nom}} 

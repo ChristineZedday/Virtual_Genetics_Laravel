@@ -15,7 +15,6 @@ use App\Race;
  * Relations: Genotypes, Elevage, Race, RacesPossibles (table races_possible): when a choice between different studbooks is required, Affixe, Performance, Sire, Dam (parents, table animaux), StatutFemelle or StatutMale, Pathologie, Couleur, Image
  * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur, foetus
  * functions: Sexe (sex and statut for reproduction)
- * Genre: (male or female, for competition registration)
  * Progneny: born children (including miscarriages)
  * Palmares: competition results (from table resultats) where the animal is ranked
  * NomComplet (name + affix)
@@ -124,7 +123,20 @@ class Animal extends Model
 
     public function SexeAdm() //Sexe et stade de développement +statut administratif, en fait...
     {
-        if (isset($this->StatutMale))
+     if ($this->foal && $this->sexe == 'f')   {
+        return "pouliche";
+     }
+     if ($this->foal && $this->sexe == 'm')   {
+         return "poulain";
+     }
+     if (isset($this->StatutMale) && $this->StatutMale->fertilite == 0) {
+        return 'Hongre';
+     }
+     if (!isset($this->StatutFemelle) && $this->sexe == 'f' && $this->age_administratif >= 2) {
+        return 'Jument stérilisée';
+     }
+    
+    if (isset($this->StatutMale))
         {
             if ($this->StatutMale->approuvePFS && $this->race->cheval_sport && $this->race->poney_sport) {
                 $res = 'Étalon approuvé dans sa race, en Poney Français de Selle et en Selle Français';
@@ -153,23 +165,8 @@ class Animal extends Model
           
         }
           else {
-        return $this->sexe;}
+        return $this->sexe == 'm'? 'poulain sevré' : 'pouliche sevrée';}
         
-    }
-
-    public function Genre() //sexe pour les catégories élevage 1 mâle 0 femelle
-    {
-        switch ($this->sexe) {
-            case 'jeune poulain':
-            case 'jeune mâle':
-            case 'mâle':
-            case 'vieux mâle':
-            case 'mâle stérilisé':
-            case 'vieux mâle stérilisé':
-                return 1;
-            default:
-            return 0;
-        }
     }
 
 
@@ -387,25 +384,16 @@ class Animal extends Model
         }
     }
 
-    public function Randomize($race) 
+    public function Randomize() 
     {
-        if ($race->approbation) {
-            $min = $this->Genre() == 1 ? 15 : 8;
-           
-        }
-        else {
-            $min = $this->Genre() == 1 ? 12 : 10;
-        }
-
-        if ($race->confirmation_juments) {
-             $min = $this->Genre() == 1 ? 15 : 12;
-        }
         
-
+        if ($this->sexe == 'm') {$min = 15;} else {$min = 12;}
+        
         $this->modele_allures_additifs = rand($min, 19);
         $this->capacite_dressage_additive = rand(5,19);
         $this->capacite_apprentissage_additive = rand(5,19);
         $this->save();
+        
     }
 
  
@@ -434,7 +422,7 @@ class Animal extends Model
                 }
                if ($statut->suitee)
                {
-                $produit = Animal::where('dam_id',$this->id)->where( function ($query) {$query->where('sexe', 'jeune poulain')->orWhere('sexe', 'jeune pouliche');})->first(); 
+                $produit = Animal::where('dam_id',$this->id)->where( 'foal', 1)->first(); 
                 $produit->elevage_id = $elevage->id; 
                 $produit->save();
                }
@@ -460,7 +448,7 @@ public function seraSuiteeAu($datefutur)   {
     $id = $this->id;
     $date = Gamedata::getDate();
      if ($this->StatutFemelle->suitee) {
-        $foal = Animal::where('dam_id',$id)->where('sexe', 'LIKE','jeune poul%')->first();
+        $foal = Animal::where('dam_id',$id)->where('foal', 1)->first();
         
         $age = $foal->ageMonths($date);
         
@@ -500,7 +488,7 @@ public function seraSuiteeAu($datefutur)   {
          if ($this->Performance && $IDR >= 110) {
              $this->elevage->Budget()->fraisAdministratifs(60); 
       
-            if ($this->genre()) {
+            if ($this->sexe == 'm') {
             $this->StatutMale->labellise_dressage = true;
             $this->StatutMale->save();
             }

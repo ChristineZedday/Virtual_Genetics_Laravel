@@ -9,7 +9,7 @@
     <th>Evènement</th>
     <th>Date</th>
     <th>Compétition</th>
-    <th>Niveau</th>
+   
     <th>Catégorie</th>
     <th>Actions</th>
 </tr>
@@ -19,7 +19,7 @@
 	<td>{{$inscrit->Evenement->nom}}</td>
     <td>{{$inscrit->Evenement->date}}</td>
     <td>{{$inscrit->Competition->nom}}</td>
-    <td>{{$inscrit->Competition->Niveau->libelle}}</td>
+   
     <td>{{$inscrit->Categorie->nom}} </td>
    
     <td><a href="{{route('desinscrire',['resultat'=>$inscrit])}}">désinscrire</a></td>
