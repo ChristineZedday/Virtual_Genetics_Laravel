@@ -14,8 +14,8 @@
 	</div>
 	<div>
 	<label for="sexe">Sexe</label><br/>
-	<input type="radio"  name="sexe" value="jeune poulain" checked="{{$animal->sexe==='jeune poulain'}}">mâle
-	<input type="radio"  name="sexe" value="jeune pouliche" checked="{{$animal->sexe==='jeune pouliche'}}">femelle 			
+	<input type="radio"  name="sexe" value="m" checked="{{$animal->sexe==='m'}}">mâle
+	<input type="radio"  name="sexe" value="f" checked="{{$animal->sexe==='f'}}">femelle 			
 	</div>
 	<div>
 	<label for="race_id">Race</label><br/>

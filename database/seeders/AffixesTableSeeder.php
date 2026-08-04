@@ -627,6 +627,30 @@ class AffixesTableSeeder extends Seeder
                 'libelle' => 'do Retiro',
                 'updated_at' => '2026-06-14 20:36:29',
             ),
+              76 => 
+            array (
+                'affixe_pre' => 1,
+                'created_at' => '2026-06-14 20:36:29',
+                'id' => 78,
+                'libelle' => 'Caederwen',
+                'updated_at' => '2026-06-14 20:36:29',
+            ),
+              77 => 
+            array (
+                'affixe_pre' => 1,
+                'created_at' => '2026-06-14 20:36:29',
+                'id' => 79,
+                'libelle' => 'Fronarth',
+                'updated_at' => '2026-06-14 20:36:29',
+            ),
+              78 => 
+            array (
+                'affixe_pre' => 1,
+                'created_at' => '2026-06-14 20:36:29',
+                'id' => 80,
+                'libelle' => 'Penddolfawr',
+                'updated_at' => '2026-06-14 20:36:29',
+            ),
         ));
         
         
