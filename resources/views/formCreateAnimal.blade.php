@@ -14,8 +14,8 @@
 	</div>
 	<div>
 	<label for="sexe">Entrez le sexe</label><br/>
-	<input type="radio"  name="sexe" value="jeune poulain" checked>mâle
-	<input type="radio"  name="sexe" value="jeune pouliche">femelle 			
+	<input type="radio"  name="sexe" value="m" checked>mâle
+	<input type="radio"  name="sexe" value="f">femelle	
 	</div>
 	<div>
 	<label for="race_id">Choississez la race</label><br/>

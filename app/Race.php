@@ -253,6 +253,8 @@ static function pourCentPoney($animal) {
     }
          
 }*/
+
+
 static function WelshPartBred ($produit) {
    if (Race::pourCentWelsh($produit) >= 12.5) {
     
