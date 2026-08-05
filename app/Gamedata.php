@@ -354,7 +354,6 @@ static function checkVieux ()
     {
         $animal->vieux = true;
         $animal->save();
-        dump($animal->nom." ".$animal->age_administratif);
         
     }
     $vieux = Animal::select(['id', 'vieux', 'age_administratif'])->where('vieux', 1)->with('Performance')->get();

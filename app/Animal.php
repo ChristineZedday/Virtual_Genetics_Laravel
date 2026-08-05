@@ -197,7 +197,7 @@ class Animal extends Model
         
         $date_naissance = DateTime::createFromFormat('!Y-m-d|',$this->date_naissance);
         if (!$date_naissance) {
-            dump("date_naissance pas conforme ou inexistante, âge en mois ".$this->NomComplet());
+            dump("date_naissance pas conforme ou inexistante, âge en mois ".$this);
             $date_naissance = $date;
         }
        

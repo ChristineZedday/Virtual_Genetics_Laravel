@@ -231,6 +231,9 @@ static function regCompetNPC($date)
                 if ($cheval->ageAdministratif($date->format('Y-m-d')) < 1) {
                   continue; //pas de compétitions poulains
               }
+              if ($cheval->Performance->sante < 85){
+                continue; // Sinon on va crouler sous les vétérans qui vont peiner à se classer
+              }
 
 
                 $categorie = Categorie::recherche($cheval);
