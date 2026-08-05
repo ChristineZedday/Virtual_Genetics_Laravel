@@ -64,7 +64,6 @@ class Reprise extends Model
             if ($sante != 100) {
                 $malusSante = 100 - $sante;
             }
-            dump($malusSante." ".$animal->age_administratif);
     
              $notes[$animal->id] = 2  * ($animal->modele_allures   + $animal->capacite_dressage_additive)  + $animal->capacite_apprentissage_additive + 
              (($animal->Performance->pourcent_niveau +1)* $animal->capacite_apprentissage_additive)/100 -
@@ -77,7 +76,7 @@ class Reprise extends Model
                if ( $notes[$animal->id] < 0) {
                 $notes[$animal->id] = 0;
              }
-             dump("niveau: ".$this->niveau_num_global." ".$animal->Performance->pourcent_niveau."%  MA :".$animal->modele_allures." CDR: ".$animal->capacite_dressage_additive." CApp: ".$animal->capacite_apprentissage_additive." note: ".$notes[$animal->id]);
+          
        
         $inscrit->note_synthese = $notes[$animal->id];
         $inscrit->save();

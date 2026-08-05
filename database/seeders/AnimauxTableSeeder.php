@@ -50,7 +50,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 99,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             1 => 
             array (
@@ -83,7 +83,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 102,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             2 => 
             array (
@@ -116,7 +116,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 114,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             3 => 
             array (
@@ -149,7 +149,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 106,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             4 => 
             array (
@@ -182,7 +182,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 117,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             5 => 
             array (
@@ -215,7 +215,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 121,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             6 => 
             array (
@@ -248,7 +248,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 104,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             7 => 
             array (
@@ -281,7 +281,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 118,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             8 => 
             array (
@@ -314,7 +314,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 113,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             9 => 
             array (
@@ -347,7 +347,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 120,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             10 => 
             array (
@@ -380,7 +380,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 119,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             11 => 
             array (
@@ -413,7 +413,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 129,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             12 => 
             array (
@@ -446,7 +446,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 122,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             13 => 
             array (
@@ -479,7 +479,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 101,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             14 => 
             array (
@@ -512,7 +512,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 99,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             15 => 
             array (
@@ -545,7 +545,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 112,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             16 => 
             array (
@@ -578,7 +578,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 103,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             17 => 
             array (
@@ -611,7 +611,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 105,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             18 => 
             array (
@@ -644,7 +644,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 98,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             19 => 
             array (
@@ -677,7 +677,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 109,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             20 => 
             array (
@@ -710,7 +710,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 114,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             21 => 
             array (
@@ -743,7 +743,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 107,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             22 => 
             array (
@@ -776,7 +776,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 101,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             23 => 
             array (
@@ -809,7 +809,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 113,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             24 => 
             array (
@@ -842,7 +842,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 111,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             25 => 
             array (
@@ -875,7 +875,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 106,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             26 => 
             array (
@@ -908,7 +908,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 108,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             27 => 
             array (
@@ -941,7 +941,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 103,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             28 => 
             array (
@@ -974,7 +974,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 98,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             29 => 
             array (
@@ -1007,7 +1007,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 107,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             30 => 
             array (
@@ -1040,7 +1040,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 105,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             31 => 
             array (
@@ -1073,7 +1073,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 108,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             32 => 
             array (
@@ -1106,7 +1106,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 105,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             33 => 
             array (
@@ -1139,7 +1139,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 98,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             34 => 
             array (
@@ -1172,7 +1172,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 93,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             35 => 
             array (
@@ -1205,7 +1205,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 91,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             36 => 
             array (
@@ -1238,7 +1238,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 85,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             37 => 
             array (
@@ -1271,7 +1271,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 125,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             38 => 
             array (
@@ -1304,7 +1304,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 119,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             39 => 
             array (
@@ -1337,7 +1337,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 135,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             40 => 
             array (
@@ -1370,7 +1370,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 132,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             41 => 
             array (
@@ -1403,7 +1403,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 116,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             42 => 
             array (
@@ -1436,7 +1436,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 120,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             43 => 
             array (
@@ -1469,7 +1469,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 110,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             44 => 
             array (
@@ -1502,7 +1502,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 136,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             45 => 
             array (
@@ -1535,7 +1535,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 133,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             46 => 
             array (
@@ -1568,7 +1568,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 151,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             47 => 
             array (
@@ -1601,7 +1601,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 114,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             48 => 
             array (
@@ -1634,7 +1634,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 148,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             49 => 
             array (
@@ -1667,7 +1667,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 153,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             50 => 
             array (
@@ -1700,7 +1700,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 154,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             51 => 
             array (
@@ -1733,7 +1733,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 156,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             52 => 
             array (
@@ -1766,7 +1766,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 153,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             53 => 
             array (
@@ -1799,7 +1799,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 149,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             54 => 
             array (
@@ -1832,7 +1832,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 95,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             55 => 
             array (
@@ -1865,7 +1865,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 101,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             56 => 
             array (
@@ -1898,7 +1898,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 104,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             57 => 
             array (
@@ -1931,7 +1931,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 102,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             58 => 
             array (
@@ -1964,7 +1964,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 100,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             59 => 
             array (
@@ -1997,7 +1997,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 80,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             60 => 
             array (
@@ -2030,7 +2030,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 127,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             61 => 
             array (
@@ -2063,7 +2063,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 115,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             62 => 
             array (
@@ -2096,7 +2096,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 126,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             63 => 
             array (
@@ -2129,7 +2129,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 134,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             64 => 
             array (
@@ -2162,7 +2162,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 136,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             65 => 
             array (
@@ -2195,7 +2195,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 137,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             66 => 
             array (
@@ -2228,7 +2228,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 133,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             67 => 
             array (
@@ -2261,7 +2261,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 135,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             68 => 
             array (
@@ -2294,7 +2294,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 132,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             69 => 
             array (
@@ -2327,7 +2327,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 129,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             70 => 
             array (
@@ -2360,7 +2360,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 148,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             71 => 
             array (
@@ -2393,7 +2393,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 134,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             72 => 
             array (
@@ -2426,7 +2426,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 151,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             73 => 
             array (
@@ -2459,7 +2459,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 147,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             74 => 
             array (
@@ -2492,7 +2492,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 142,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             75 => 
             array (
@@ -2525,7 +2525,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 155,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             76 => 
             array (
@@ -2558,7 +2558,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 89,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             77 => 
             array (
@@ -2591,7 +2591,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 95,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             78 => 
             array (
@@ -2624,7 +2624,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 105,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             79 => 
             array (
@@ -2657,7 +2657,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 74,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             80 => 
             array (
@@ -2690,7 +2690,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 150,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             81 => 
             array (
@@ -2723,7 +2723,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 149,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             82 => 
             array (
@@ -2756,7 +2756,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 152,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             83 => 
             array (
@@ -2789,7 +2789,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 147,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             84 => 
             array (
@@ -2822,7 +2822,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 152,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             85 => 
             array (
@@ -2855,7 +2855,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 154,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             86 => 
             array (
@@ -2888,7 +2888,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 145,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             87 => 
             array (
@@ -2921,7 +2921,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 144,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             88 => 
             array (
@@ -2954,7 +2954,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 128,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             89 => 
             array (
@@ -2987,7 +2987,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 124,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             90 => 
             array (
@@ -3020,7 +3020,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 116,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             91 => 
             array (
@@ -3053,7 +3053,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 118,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             92 => 
             array (
@@ -3086,7 +3086,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 138,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             93 => 
             array (
@@ -3119,7 +3119,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 145,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             94 => 
             array (
@@ -3152,7 +3152,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 149,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             95 => 
             array (
@@ -3185,7 +3185,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 131,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             96 => 
             array (
@@ -3218,7 +3218,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 85,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             97 => 
             array (
@@ -3251,7 +3251,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 92,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             98 => 
             array (
@@ -3284,7 +3284,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 89,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             99 => 
             array (
@@ -3317,7 +3317,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 151,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             100 => 
             array (
@@ -3350,7 +3350,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 147,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             101 => 
             array (
@@ -3383,7 +3383,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 139,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             102 => 
             array (
@@ -3416,7 +3416,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 112,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             103 => 
             array (
@@ -3449,7 +3449,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 152,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             104 => 
             array (
@@ -3482,7 +3482,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 116,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             105 => 
             array (
@@ -3515,7 +3515,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 119,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             106 => 
             array (
@@ -3548,7 +3548,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 122,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             107 => 
             array (
@@ -3581,7 +3581,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 119,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             108 => 
             array (
@@ -3614,7 +3614,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 128,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             109 => 
             array (
@@ -3647,7 +3647,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 132,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             110 => 
             array (
@@ -3680,7 +3680,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 135,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             111 => 
             array (
@@ -3713,7 +3713,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 152,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             112 => 
             array (
@@ -3746,7 +3746,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 148,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             113 => 
             array (
@@ -3779,7 +3779,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 155,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             114 => 
             array (
@@ -3812,7 +3812,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 139,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             115 => 
             array (
@@ -3845,7 +3845,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 147,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             116 => 
             array (
@@ -3878,7 +3878,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 142,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             117 => 
             array (
@@ -3911,7 +3911,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 137,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             118 => 
             array (
@@ -3944,7 +3944,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 138,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             119 => 
             array (
@@ -3977,7 +3977,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 145,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             120 => 
             array (
@@ -4010,7 +4010,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 130,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             121 => 
             array (
@@ -4043,7 +4043,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 128,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             122 => 
             array (
@@ -4076,7 +4076,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 136,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             123 => 
             array (
@@ -4109,7 +4109,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 129,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             124 => 
             array (
@@ -4142,7 +4142,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 144,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             125 => 
             array (
@@ -4175,7 +4175,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 140,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             126 => 
             array (
@@ -4208,7 +4208,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 127,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             127 => 
             array (
@@ -4241,7 +4241,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 129,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             128 => 
             array (
@@ -4274,7 +4274,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 145,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             129 => 
             array (
@@ -4307,7 +4307,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 147,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             130 => 
             array (
@@ -4340,7 +4340,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 125,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             131 => 
             array (
@@ -4373,7 +4373,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 130,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             132 => 
             array (
@@ -4406,7 +4406,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 132,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             133 => 
             array (
@@ -4439,7 +4439,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 137,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             134 => 
             array (
@@ -4472,7 +4472,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 137,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             135 => 
             array (
@@ -4505,7 +4505,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 126,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             136 => 
             array (
@@ -4538,7 +4538,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 138,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             137 => 
             array (
@@ -4571,7 +4571,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 119,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             138 => 
             array (
@@ -4604,7 +4604,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 123,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             139 => 
             array (
@@ -4637,7 +4637,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 131,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             140 => 
             array (
@@ -4670,7 +4670,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 119,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             141 => 
             array (
@@ -4703,7 +4703,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 127,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             142 => 
             array (
@@ -4736,7 +4736,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 134,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             143 => 
             array (
@@ -4769,7 +4769,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 140,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             144 => 
             array (
@@ -4802,7 +4802,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 142,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             145 => 
             array (
@@ -4835,7 +4835,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 147,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             146 => 
             array (
@@ -4868,7 +4868,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 148,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             147 => 
             array (
@@ -4901,7 +4901,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 146,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             148 => 
             array (
@@ -4934,7 +4934,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 144,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             149 => 
             array (
@@ -4967,7 +4967,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 138,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             150 => 
             array (
@@ -5000,7 +5000,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 141,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             151 => 
             array (
@@ -5033,7 +5033,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 148,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             152 => 
             array (
@@ -5066,7 +5066,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 143,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             153 => 
             array (
@@ -5099,7 +5099,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 133,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             154 => 
             array (
@@ -5132,7 +5132,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 135,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             155 => 
             array (
@@ -5165,7 +5165,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 134,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             156 => 
             array (
@@ -5198,7 +5198,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 138,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             157 => 
             array (
@@ -5231,7 +5231,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 127,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             158 => 
             array (
@@ -5264,7 +5264,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 133,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             159 => 
             array (
@@ -5297,7 +5297,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 121,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             160 => 
             array (
@@ -5330,7 +5330,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 118,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             161 => 
             array (
@@ -5363,7 +5363,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 135,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             162 => 
             array (
@@ -5396,7 +5396,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 165,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             163 => 
             array (
@@ -5429,7 +5429,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 162,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             164 => 
             array (
@@ -5462,7 +5462,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 167,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             165 => 
             array (
@@ -5495,7 +5495,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 168,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             166 => 
             array (
@@ -5528,7 +5528,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 170,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             167 => 
             array (
@@ -5561,7 +5561,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 159,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             168 => 
             array (
@@ -5594,7 +5594,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 158,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             169 => 
             array (
@@ -5627,7 +5627,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 171,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             170 => 
             array (
@@ -5660,7 +5660,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 156,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             171 => 
             array (
@@ -5693,7 +5693,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 169,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             172 => 
             array (
@@ -5726,7 +5726,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 160,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             173 => 
             array (
@@ -5759,7 +5759,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 161,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             174 => 
             array (
@@ -5792,7 +5792,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 163,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             175 => 
             array (
@@ -5825,7 +5825,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 166,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             176 => 
             array (
@@ -5858,7 +5858,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 155,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             177 => 
             array (
@@ -5891,7 +5891,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 163,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             178 => 
             array (
@@ -5924,7 +5924,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 156,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             179 => 
             array (
@@ -5957,7 +5957,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 170,
-                'age_administratif' => 3,
+                'age_administratif' => 1,
             ),
             180 => 
             array (
@@ -5990,7 +5990,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 162,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             181 => 
             array (
@@ -6023,7 +6023,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 166,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             182 => 
             array (
@@ -6056,7 +6056,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 167,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             183 => 
             array (
@@ -6089,7 +6089,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 155,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             184 => 
             array (
@@ -6122,7 +6122,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 155,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             185 => 
             array (
@@ -6155,7 +6155,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 173,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             186 => 
             array (
@@ -6188,7 +6188,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 173,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             187 => 
             array (
@@ -6221,7 +6221,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 158,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             188 => 
             array (
@@ -6254,7 +6254,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 157,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             189 => 
             array (
@@ -6287,7 +6287,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 169,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             190 => 
             array (
@@ -6320,7 +6320,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 172,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             191 => 
             array (
@@ -6353,7 +6353,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 164,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             192 => 
             array (
@@ -6386,7 +6386,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 176,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             193 => 
             array (
@@ -6419,7 +6419,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 180,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             194 => 
             array (
@@ -6452,7 +6452,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 172,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             195 => 
             array (
@@ -6485,7 +6485,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 177,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             196 => 
             array (
@@ -6518,7 +6518,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 153,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             197 => 
             array (
@@ -6551,7 +6551,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 75,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             198 => 
             array (
@@ -6584,7 +6584,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 79,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             199 => 
             array (
@@ -6617,7 +6617,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 165,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             200 => 
             array (
@@ -6650,7 +6650,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 162,
-                'age_administratif' => 4,
+                'age_administratif' => 1,
             ),
             201 => 
             array (
@@ -6683,7 +6683,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 170,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             202 => 
             array (
@@ -6700,7 +6700,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => 0,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-01-01',
+                'date_naissance' => '1999-02-01',
                 'a_vendre' => 0,
                 'prix' => 9600,
                 'elevage_id' => 17,
@@ -6716,7 +6716,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 164,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             203 => 
             array (
@@ -6749,7 +6749,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 163,
-                'age_administratif' => 4,
+                'age_administratif' => 1,
             ),
             204 => 
             array (
@@ -6782,7 +6782,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 168,
-                'age_administratif' => 4,
+                'age_administratif' => 1,
             ),
             205 => 
             array (
@@ -6815,7 +6815,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 166,
-                'age_administratif' => 4,
+                'age_administratif' => 1,
             ),
             206 => 
             array (
@@ -6848,7 +6848,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 171,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             207 => 
             array (
@@ -6881,7 +6881,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 162,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             208 => 
             array (
@@ -6914,7 +6914,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 164,
-                'age_administratif' => 5,
+                'age_administratif' => 2,
             ),
             209 => 
             array (
@@ -6947,7 +6947,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 169,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             210 => 
             array (
@@ -6980,7 +6980,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 161,
-                'age_administratif' => 4,
+                'age_administratif' => 1,
             ),
             211 => 
             array (
@@ -7013,7 +7013,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 167,
-                'age_administratif' => 6,
+                'age_administratif' => 3,
             ),
             212 => 
             array (
@@ -7046,7 +7046,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 160,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             213 => 
             array (
@@ -7079,7 +7079,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 159,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             214 => 
             array (
@@ -7112,7 +7112,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 172,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             215 => 
             array (
@@ -7145,7 +7145,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 173,
-                'age_administratif' => 3,
+                'age_administratif' => 0,
             ),
             216 => 
             array (
@@ -7162,7 +7162,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-03-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 1,
@@ -7178,7 +7178,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 107,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             217 => 
             array (
@@ -7195,7 +7195,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-04-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 1,
@@ -7211,7 +7211,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 110,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             218 => 
             array (
@@ -7228,7 +7228,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-05-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 1,
@@ -7244,7 +7244,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 115,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             219 => 
             array (
@@ -7261,7 +7261,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 4,
@@ -7277,7 +7277,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 132,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             220 => 
             array (
@@ -7294,7 +7294,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 4,
@@ -7310,7 +7310,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 128,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             221 => 
             array (
@@ -7327,7 +7327,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 4,
@@ -7343,7 +7343,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 135,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             222 => 
             array (
@@ -7360,7 +7360,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 4,
@@ -7376,7 +7376,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 125,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             223 => 
             array (
@@ -7393,7 +7393,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 5,
@@ -7409,7 +7409,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 100,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             224 => 
             array (
@@ -7426,7 +7426,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 5,
@@ -7442,7 +7442,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 108,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             225 => 
             array (
@@ -7459,7 +7459,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7475,7 +7475,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 149,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             226 => 
             array (
@@ -7492,7 +7492,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7508,7 +7508,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 152,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             227 => 
             array (
@@ -7525,7 +7525,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7541,7 +7541,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 157,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             228 => 
             array (
@@ -7558,7 +7558,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7574,7 +7574,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 156,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             229 => 
             array (
@@ -7591,7 +7591,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7607,7 +7607,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 148,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             230 => 
             array (
@@ -7624,7 +7624,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7640,7 +7640,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 155,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             231 => 
             array (
@@ -7657,7 +7657,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7673,7 +7673,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 144,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             232 => 
             array (
@@ -7690,7 +7690,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7706,7 +7706,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 154,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             233 => 
             array (
@@ -7723,7 +7723,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 7,
@@ -7739,7 +7739,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 153,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             234 => 
             array (
@@ -7756,7 +7756,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 10,
@@ -7772,7 +7772,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 123,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             235 => 
             array (
@@ -7789,7 +7789,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 10,
@@ -7805,7 +7805,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 119,
-                'age_administratif' => 2,
+                'age_administratif' => 0,
             ),
             236 => 
             array (
@@ -7822,7 +7822,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 10,
@@ -7838,7 +7838,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 124,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             237 => 
             array (
@@ -7855,7 +7855,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 10,
@@ -7871,7 +7871,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 120,
-                'age_administratif' => 2,
+                'age_administratif' => 1,
             ),
             238 => 
             array (
@@ -7888,7 +7888,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -7921,7 +7921,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -7937,7 +7937,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 153,
-                'age_administratif' => 1,
+                'age_administratif' => 0,
             ),
             240 => 
             array (
@@ -7954,7 +7954,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -7970,7 +7970,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 142,
-                'age_administratif' => 1,
+                'age_administratif' => 0,
             ),
             241 => 
             array (
@@ -7987,7 +7987,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -8020,7 +8020,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -8053,7 +8053,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-06-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -8069,7 +8069,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 149,
-                'age_administratif' => 1,
+                'age_administratif' => 0,
             ),
             244 => 
             array (
@@ -8086,7 +8086,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-07-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -8102,7 +8102,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 151,
-                'age_administratif' => 1,
+                'age_administratif' => 0,
             ),
             245 => 
             array (
@@ -8119,7 +8119,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-08-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 11,
@@ -8135,7 +8135,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 140,
-                'age_administratif' => 1,
+                'age_administratif' => 0,
             ),
             246 => 
             array (
@@ -8152,7 +8152,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-05-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 12,
@@ -8168,7 +8168,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 136,
-                'age_administratif' => 1,
+                'age_administratif' => 0,
             ),
             247 => 
             array (
@@ -8185,7 +8185,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-04-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 12,
@@ -8201,7 +8201,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 148,
-                'age_administratif' => 1,
+                'age_administratif' => 0,
             ),
             248 => 
             array (
@@ -8218,7 +8218,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 12,
@@ -8251,7 +8251,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 12,
@@ -8284,7 +8284,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1998-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 12,
@@ -8300,7 +8300,7 @@ class AnimauxTableSeeder extends Seeder
                 'notes' => NULL,
                 'statut_administratif' => 'enregistré',
                 'taille_additive' => 128,
-                'age_administratif' => 0,
+                'age_administratif' => 1,
             ),
             251 => 
             array (
@@ -8317,7 +8317,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 15,
@@ -8350,7 +8350,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 15,
@@ -8383,7 +8383,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 15,
@@ -8416,7 +8416,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 15,
@@ -8449,7 +8449,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 15,
@@ -8482,7 +8482,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '2000-01-01',
+                'date_naissance' => '1999-01-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 15,
@@ -8515,7 +8515,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-08-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 16,
@@ -8548,7 +8548,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-05-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 16,
@@ -8581,7 +8581,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-03-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 16,
@@ -8614,7 +8614,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-06-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 16,
@@ -8647,7 +8647,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-02-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 16,
@@ -8680,7 +8680,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-05-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 17,
@@ -8713,7 +8713,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-03-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 17,
@@ -8746,7 +8746,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-07-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 17,
@@ -8779,7 +8779,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-06-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 17,
@@ -8812,7 +8812,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-05-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 17,
@@ -8845,7 +8845,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-04-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 17,
@@ -8878,7 +8878,7 @@ class AnimauxTableSeeder extends Seeder
                 'foal' => NULL,
                 'vieux' => 0,
                 'date_achat' => NULL,
-                'date_naissance' => '1999-12-01',
+                'date_naissance' => '1999-04-01',
                 'a_vendre' => 0,
                 'prix' => NULL,
                 'elevage_id' => 17,
