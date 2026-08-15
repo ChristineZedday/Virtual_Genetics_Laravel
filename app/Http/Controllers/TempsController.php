@@ -29,7 +29,7 @@ class TempsController extends Controller
     static function nextMonth($elevage)
     {
          
-        set_time_limit(120);
+        set_time_limit(180);
         $game = Gamedata::Find(1);
         $date = $game->date_courante;
         $debut = false;
@@ -51,15 +51,14 @@ class TempsController extends Controller
         $game->terres = false;
         $game->save();
 
-       // $statuts = Animal::where('age_administratif', '>=' , 2)->where('sexe', 'like', '%femelle')->whereDoesntHave('statutFemelle')->get();
-       // dump($statuts);
-
-        // checkFemellesTerme($date);
         Gamedata::checkSevres($date);
+    
         Gamedata::VenteJeunes($date);
+     
         Gamedata::checkMorts();
+      
         Gamedata::checkNouveaux($date);
-
+     
         $elevages = Elevage::where('role','Joueur')->get();
         foreach ($elevages as $elevage)
         {
@@ -78,16 +77,17 @@ class TempsController extends Controller
            
             $game->lettre = Gamedata::checkLettre($date);
             $game->save();
-
+    
             Gamedata::vieillir();
 
             Gamedata::checkApprovals();
-            
-            Gamedata::checkPuberes();
            
+            Gamedata::checkPuberes();
+      
             Gamedata::retireVente();
             Gamedata::checkVieux ();
             Gamedata::checkCarnets();
+        
             Gamedata::checkNonEnregistres();
             Gamedata::VenteSaillies(); 
             Gamedata::checkIDR();
@@ -130,8 +130,12 @@ static function reproNPC($date)
                         $var = 3;
                     break;
 
+                     case $count < 75:
+                        $var = 4;
+                    break;
+
                     default:
-                    $var = 4;
+                    $var = 5;
                 }
                 
                 foreach ($juments as $jument)
@@ -200,15 +204,15 @@ static function regCompetNPC($date)
         if (stripos($comp->type,"Allures"))
                 {
                    if ( $comp->tous_poneys_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('age_administratif', '>', 0)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>', 0)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
                    
                    } 
                    else if ($comp->tous_cheval_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('age_administratif', '>' ,0)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
+                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>' ,0)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
                      
                     }
                    else {
-                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('age_administratif', '>', 0)->where('race_id', $race)->with(['Performance'])->get();
+                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>', 0)->where('race_id', $race)->with(['Performance'])->get();
                  
             }
           
@@ -262,7 +266,7 @@ static function regCompetNPC($date)
          if (!stripos($comp->type,"Allures")) {
             
         
-            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('capacite_dressage_additive', '>=', 12)->where('age_administratif', '>', 3)->with(['Performance','StatutFemelle'])->get();
+            $dressables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 12)->where('capacite_dressage_additive', '>=', 13)->where('age_administratif', '>', 3)->with(['Performance','StatutFemelle'])->get();
           
                 foreach ($dressables as $cheval) {
                     if (is_null ($cheval->Performance)) {
