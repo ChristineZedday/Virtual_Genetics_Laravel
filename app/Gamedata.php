@@ -525,13 +525,31 @@ static function VenteSaillies ()
     foreach ($vendeurs as $vendeur)
     {
         $animaux = Animal::select(['id', 'elevage_id','race_id'])->where('elevage_id', $vendeur->id)->withWhereHas('StatutMale', function ($query) { return $query-> where('qualite', 'approuvé');})->get();
+       $count = sizeof($animaux);
+          switch (true)
+                {
+                    case $count < 25:
+                        $var = 2;
+                    break;
+
+                    case $count < 50:
+                        $var = 3;
+                    break;
+
+                     case $count < 75:
+                        $var = 4;
+                    break;
+
+                    default:
+                    $var = 5;
+                }
         foreach ($animaux as $animal)
       
         {
             $statut = $animal->StatutMale;
             if ($statut->disponible)
             {
-                if (rand(1,3)== 1)
+                if (rand(1, 2)== 1)
                 {
                     $statut->disponible = false;
                     $statut->save();
@@ -540,7 +558,7 @@ static function VenteSaillies ()
             }
             else 
             {
-                if (rand(1,3)== 1)
+                if  (rand(1, $var +1)== 1)
                 {
                     $statut->disponible = true;
                     if ($statut->qualite == 'approuvé')
