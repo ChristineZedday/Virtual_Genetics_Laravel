@@ -25,6 +25,11 @@ class Categorie extends Model
    
     $date = $evenement->date;
     $competition = Competition::Find($competition);
+    $race = $competition->race_id;
+    $poneys = $competition->tous_poneys_sport;
+    $chevaux = $competition->tous_chevaux_sport;
+    $isPony = $animal->race->poney_sport;
+    $isHorse = $animal->race->cheval_sport;
 
     $results = Resultat::Where('animal_id', $animal->id)->get();
     $count = 0;
@@ -127,11 +132,7 @@ class Categorie extends Model
         return 'trop grand pour cette catégorie';
     }
 
-     $race = $competition->race_id;
-    $poneys = $competition->tous_poneys_sport;
-    $chevaux = $competition->tous_chevaux_sport;
-    $isPony = $animal->race->poney_sport;
-    $isHorse = $animal->race->cheval_sport;
+   
 
     if ($poneys && $isPony ) {
                 return 'OK';
