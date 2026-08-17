@@ -120,23 +120,7 @@ static function reproNPC($date)
                 $juments = Animal::select(['id','nom','affixe_id', 'elevage_id','race_id', 'sexe', 'date_naissance'])->where('elevage_id', $vendeur->id)->where('sexe','f')->with(['StatutFemelle','Race'])->get();
 
                 $count = sizeof($juments);
-                switch (true)
-                {
-                    case $count < 25:
-                        $var = 2;
-                    break;
-
-                    case $count < 50:
-                        $var = 3;
-                    break;
-
-                     case $count < 75:
-                        $var = 4;
-                    break;
-
-                    default:
-                    $var = 5;
-                }
+               $var = Gamedata::regule($count);
                 
                 foreach ($juments as $jument)
                 {
@@ -221,6 +205,20 @@ static function regCompetNPC($date)
                 if (is_null ($cheval->Performance)) {
             $cheval->Performance = Performance::initialize($cheval->id);
             }
+                if ($cheval->Performance->sante < 90) {
+                    continue;
+                }
+
+                if ($cheval->sexe == 'm' && $cheval->age_administratif > $cheval->Performance->niveau_dressage + 5)
+                    {
+                        continue;
+                    }
+                
+                 if ($cheval->sexe == 'f' && $cheval->age_administratif > $cheval->Performance->niveau_dressage + 10)
+                    {
+                        continue;
+                    }
+               
                 if (!$cheval->Performance->qualifie && !$qual ){
                     
                     continue;

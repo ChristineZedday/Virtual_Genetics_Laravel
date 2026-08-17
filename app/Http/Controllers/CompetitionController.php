@@ -184,7 +184,7 @@ class CompetitionController extends Controller
     public function tousResultats($elevage ,$type)
     {
        
-        
+         set_time_limit(100);
         $elevage =Elevage::Find($elevage);
         $resultats = Resultat::tousResultats($type);
         //dd($resultats);
