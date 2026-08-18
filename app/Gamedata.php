@@ -531,6 +531,11 @@ static function VenteSaillies ()
       
         {
             $statut = $animal->StatutMale;
+            if (!$animal->Performance->label_dressage) {
+                if ($animal->Performance->IDR_poney >= 110 || $animal->Performance->IDR_poney >=110) {
+                    $animal->labelliserDressagePerformances ();
+                }
+            }
             if ($statut->disponible)
             {
                 if (rand(1, $var)!= 1)
