@@ -200,7 +200,7 @@ public function run($competition, $evenement) {
     $inscrits = Resultat::where('evenement_id', $evenement->id)->where('categorie_id', $this->id)->where('competition_id', $competition->id)->with(['Animal.Elevage', 'Animal.StatutMale','Animal.StatutFemelle'])->get();
   
     $nb = $inscrits->count();
-    dump($nb);
+   
 
     foreach ($inscrits as $inscrit) {
         $elevage = $inscrit->Animal->Elevage;
@@ -220,7 +220,7 @@ public function run($competition, $evenement) {
     if ($classes > 25) {
         $classes = 25;
     }
-   dump($classes);
+  
 
     $notes = [];
   
