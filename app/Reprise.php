@@ -41,19 +41,17 @@ class Reprise extends Model
         } 
 
         
-        
-
         $prix = $competition->prix_premier;
         $nb = $inscrits->count();
-        dump($competition.' '.$nb);
+      
     
         $classes = ($nb%3==0) ? (int)($nb/3) : (int) ($nb/3) +1;
         if ($classes > 25) {
             $classes = 25;
         }
-        dump($classes);
+         
         $notes = [];
-       //dd('inscrits: '.$nb.' classés: '.$classes);
+     
         foreach ($inscrits as $inscrit) {
             $animal = $inscrit->Animal;
             
@@ -87,8 +85,7 @@ class Reprise extends Model
         $inscrit->save();
         }  
     
-        //dd($inscrit);//ouais!!
-    
+     
        arsort($notes); //tri décroissant des valeurs
        $notes = array_slice($notes,0,$classes,true);//on garde les classés
       

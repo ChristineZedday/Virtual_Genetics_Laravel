@@ -355,7 +355,7 @@ static function Pintabian ($produit) {
    }
 
 static function AngloArabe ($produit) {
-    if (Race::pourCentRace($produit,8) < 12.5 || pRace::ourCentRace($produit,18) == 0){
+    if (Race::pourCentRace($produit,8) < 12.5 || Race::pourCentRace($produit,18) == 0){
       return false;}
    if (Race::pourCentRace($produit,8) + Race::pourCentRace($produit,18) + Race::pourCentRace($produit,19) >= 87.5) {
       if (Race::pourCentRace($produit,17) >= 6.25 || Race::pourCentPoney($produit) >= 6.25){
@@ -382,19 +382,21 @@ return true;
 }
 else {return false;}
 }
+
 static function SF ($produit, $etalon,$jument) {
    $originel = Race::pourCentRace($produit,8) + Race::pourCentRace($produit,18) + Race::pourCentRace($produit,19) + Race::pourCentRace($produit,24) + Race::pourCentRace($produit,20) + Race::pourCentRace($produit,21);
 if (!$etalon->approuveSF){
    return false;
 }
-else if ($originel == 100) {
-   return true;
-}
-else if ($originel + Race::pourCentRace($produit,9) == 100 && (Race::pourCentPoney($produit) + Race::pourcentRace($produit,17) < 6.25)) {
+
+if ($originel + Race::pourCentRace($produit,9) == 100 && (Race::pourCentPoney($produit) + Race::pourcentRace($produit,17) < 6.25)) {
 return true;
 }
-else if ( $jument->StatutFemelle->labellisee_SF){
+if ( $jument->StatutFemelle->labellisee_SF){
   return true;
+}
+if ($etalon->approuveSF && in_array($jument->race_id,[8,18,19,24,20,21])) {
+   return true;
 }
 else {return false;}
 }

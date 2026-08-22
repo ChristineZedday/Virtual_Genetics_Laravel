@@ -486,13 +486,13 @@ public function seraSuiteeAu($datefutur)   {
          $IDR = $poney? $this->Performance->IDR_poney : $this->Performance->IDR_cheval;
         
          if ($this->Performance && $IDR >= 110) {
-             $this->elevage->Budget()->fraisAdministratifs(60); 
+             if ($this->elevage->role == 'joueur') {$this->elevage->Budget()->fraisAdministratifs(60);}
       
             if ($this->sexe == 'm') {
             $this->StatutMale->labellise_dressage = true;
             $this->StatutMale->save();
             }
-            else {
+            if ($this->sexe == 'f') {
             $this->StatutFemelle->labellisee_dressage = true;
             $this->StatutFemelle->save();
             }

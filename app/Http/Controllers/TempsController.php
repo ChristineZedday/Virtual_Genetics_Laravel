@@ -170,7 +170,8 @@ static function reproNPC($date)
 
 static function regCompetNPC($date) 
 {
-    //Note: pour les PNJ, on ne réclame pas les frais d'inscriptions
+   set_time_limit(300);
+//Note: pour les PNJ, on ne réclame pas les frais d'inscriptions
     $date =new DateTime($date);
     $m = $date->format('m');
     $y = $date->format('Y');
@@ -327,6 +328,8 @@ static function regCompetNPC($date)
 }
 
 static function runCompetitions($date) {
+
+set_time_limit(300);
     
     $date =new DateTime($date);
     $m = $date->format('m');
