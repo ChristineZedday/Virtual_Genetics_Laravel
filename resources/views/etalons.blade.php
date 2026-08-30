@@ -50,13 +50,15 @@
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille()}} </td>
 	<td> {{$animal->date_naissance}} </td>
-	@if (! $animal->fondateur)
+	@isset ($animal->Sire)
 	<td> {{ $animal->Sire->NomComplet() }} </td>
+	@else<td></td>@endisset
+	@isset ($animal->Dam)
 	<td> {{ $animal->Dam->NomComplet()}} </td>
 	@else
-<td></td>
-<td></td>
-	@endif
+<td></td>@endisset
+
+	
 
 	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>Celui-ci?</button></a> </td>
 </tr>
@@ -93,13 +95,14 @@
 	<td> {{$animal->couleur}} </td>
 	<td> {{$animal->taille() }} </td>
 	<td> {{$animal->date_naissance}} </td>
-	@if (! $animal->fondateur)
+@isset ($animal->Sire)
 	<td> {{ $animal->Sire->NomComplet() }} </td>
+	@else<td></td>@endisset
+	@isset ($animal->Dam)
 	<td> {{ $animal->Dam->NomComplet()}} </td>
 	@else
-<td></td>
-<td></td>
-	@endif
+<td></td>@endisset
+
 	<td> {{ $animal->StatutMale->prix}}</td>
 
 	<td> <a href="{{route('etalon',[$elevage->id, $animal->id, $jument->id])}}"><button>Celui-là?</button></a> </td>

@@ -101,7 +101,7 @@ class Elevage extends Model
 
     public function nbAnimaux() 
     {
-        $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->get()->count(); 
+        $animaux = Animal::select(['id','elevage_id','stade'])->where('elevage_id',$this->id)->where('stade','!=', 'foetus')->get()->count(); 
         return $animaux;
 
     }
@@ -109,7 +109,7 @@ class Elevage extends Model
     public function calculeFraisVeto()
     {
        
-        $poulains = Animal::where('elevage_id',$this->id)->where('foetus',0)->where('foal',1 )->get()->count();
+        $poulains = Animal::select(['id','elevage_id','stade'])->where('elevage_id',$this->id)->where('stade','foal' )->get()->count();
 
         $autres = $this->nbAnimaux() - $poulains;
 
@@ -122,7 +122,7 @@ class Elevage extends Model
     {
         $UGB_totaux=0;
        
-        $animaux = Animal::where('elevage_id',$this->id)->where('foetus',0)->where('foal', 0 )->get();
+        $animaux = Animal::select(['id','elevage_id','stade','elevage_id','date_naissance','taille_cm'])->where('elevage_id',$this->id)->where('stade', '!=', 'foal' )->get();
         
         foreach ($animaux as $animal) {
             if ($animal->StatutFemelle?->suitee or $animal->StatutFemelle?->pres_pleine) {

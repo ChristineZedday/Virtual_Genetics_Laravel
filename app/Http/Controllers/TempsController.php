@@ -118,8 +118,9 @@ static function reproNPC($date)
             {
                
                 $juments = Animal::select(['id','nom','affixe_id', 'elevage_id','race_id', 'sexe', 'date_naissance'])->where('elevage_id', $vendeur->id)->where('sexe','f')->with(['StatutFemelle','Race'])->get();
-
+          
                 $count = sizeof($juments);
+                 
                $var = Gamedata::regule($count);
                 
                 foreach ($juments as $jument)
@@ -147,9 +148,10 @@ static function reproNPC($date)
                         if(rand(1,$var)==1)
                         {
                             //$etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('carnet_saillies', 1);})->get();
-                            $etalons = Animal::where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite', 'approuvé');})->with('Race')->get();
+                            $etalons = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance', 'dam_id','sire_id'])->where('elevage_id',$vendeur->id)->whereHas( 'StatutMale', function ($query) { $query->where('qualite', 'approuvé');})->with('Race')->get();
 
                             $nb = sizeof($etalons);
+                           
                             
                             if ($nb > 0) {
                                 $choisi = rand(1,$nb) -1;
@@ -189,15 +191,15 @@ static function regCompetNPC($date)
         if (stripos($comp->type,"Allures"))
                 {
                    if ( $comp->tous_poneys_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>', 0)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
+                    $engageables = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'taille_cm', 'age_administratif','modele_allures','date_naissance'])->whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>', 0)->whereHas('race', function ($q) {$q->where('poney_sport', 1);})->with(['Performance'])->get();
                    
                    } 
                    else if ($comp->tous_cheval_sport) {
-                    $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>' ,0)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
+                    $engageables = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'taille_cm', 'age_administratif','modele_allures','date_naissance'])->whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>' ,0)->whereHas('race', function ($q) {$q->where('cheval_sport', 1);})->with(['Performance'])->get();
                      
                     }
                    else {
-                $engageables = Animal::whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>', 0)->where('race_id', $race)->with(['Performance'])->get();
+                $engageables = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'taille_cm', 'age_administratif','modele_allures','date_naissance'])->whereHas('elevage' , function ($q) {$q->where('role','Vendeur');})->where('modele_allures', '>=', 14)->where('age_administratif', '>', 0)->where('race_id', $race)->with(['Performance'])->get();
                  
             }
           
@@ -210,15 +212,6 @@ static function regCompetNPC($date)
                     continue;
                 }
 
-                if ($cheval->sexe == 'm' && $cheval->age_administratif > $cheval->Performance->niveau_dressage + 5)
-                    {
-                        continue;
-                    }
-                
-                 if ($cheval->sexe == 'f' && $cheval->age_administratif > $cheval->Performance->niveau_dressage + 10)
-                    {
-                        continue;
-                    }
                
                 if (!$cheval->Performance->qualifie && !$qual ){
                     
@@ -228,7 +221,7 @@ static function regCompetNPC($date)
                     
                     continue;
                 }
-                if (($cheval->sexeAdm() == 'Hongre' || $cheval->sexeAdm() == 'Jument stérilisée' ) && stripos($comp->type,'Modèle')){
+                if (($cheval->stade == 'sterile' ) && stripos($comp->type,'Allures')){
                   continue;
               }
                 if ($cheval->ageAdministratif($date->format('Y-m-d')) < 1) {
@@ -275,8 +268,24 @@ static function regCompetNPC($date)
                     continue; //pas de compétitions poulains
                     }
 
+                     if ($cheval->Performance->sante < 90) {
+                    continue;
+                }
+
+
                     $deja = Resultat::where('animal_id', $cheval->id)->WhereHas('evenement', function ($q) use ($m, $y){$q->whereMonth('date',$m)->whereYear('date',$y);})->first();
                     if ($deja != NULL) {
+                        continue;
+                    }
+
+
+                if ($cheval->sexe == 'm' && $cheval->age_administratif > $cheval->Performance->niveau_dressage + 5)
+                    {
+                        continue;
+                    }
+                
+                 if ($cheval->sexe == 'f' && $cheval->age_administratif > $cheval->Performance->niveau_dressage + 10)
+                    {
                         continue;
                     }
                     

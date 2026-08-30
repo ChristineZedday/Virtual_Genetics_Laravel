@@ -30,6 +30,7 @@ class ReproductionController extends Controller
   
   static function croisement($elevage, $etalon, $jument, $declaree=1)
    {
+    
 
     $date = Gamedata::getDate();
     //vérification du statut des reproducteurs
@@ -60,7 +61,6 @@ class ReproductionController extends Controller
       
         $fertilite = ($statutM->fertilite * $statut->fertilite)/100 ;
         $success = rand(1,$fertilite);
-
         
 
           if ($etalon->elevage->id != $elevage->id )
@@ -82,8 +82,7 @@ class ReproductionController extends Controller
               $statut->save();
             
               $animal = new Animal;
-              $animal->foetus = true;
-              $animal->foal = false;
+              $animal->stade ='foetus';
               $animal->fondateur = false;
               if ($declaree) {
                 $animal->statut_administratif = 'saillie déclarée';

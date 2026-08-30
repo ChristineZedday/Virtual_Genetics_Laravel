@@ -62,7 +62,7 @@ class CompetitionController extends Controller
       
       
      
-        $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
+        $animaux = Animal::select(['id','elevage_id','nom','affixe_id','race_id'])->Where('elevage_id', $elevage->id)->where('stade','!=', 'foetus')->get();
 
        return view('inscription', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'categories' => $categories, 'animaux' => $animaux]);
        
@@ -77,7 +77,7 @@ class CompetitionController extends Controller
        $categories = $competition->listeCategories();
       
      
-        $animaux = Animal::Where('elevage_id', $elevage->id)->where('foetus',0)->get();
+        $animaux = Animal::select(['id','elevage_id','nom','affixe_id','race_id'])->Where('elevage_id', $elevage->id)->where('age_administratif', '>=', 3)->get();
 
        return view('inscriptionDressage', ['elevage' => $elevage, 'evenement' => $evenement, 'competition' => $competition, 'categories' => $categories, 'reprise' => $reprise, 'animaux' => $animaux]);
        
@@ -102,7 +102,7 @@ class CompetitionController extends Controller
         $animal = Animal::Find($resultat->animal_id);
         $elevage= Elevage::Find($animal->elevage_id);
         $reprise = Reprise::Find($resultat->reprise_id);
-        $animaux= $elevage->Animaux()->get();
+        $animaux= $elevage->Animaux()->get();//en cas d'échec
         $evenement = Evenement::Find($resultat->evenement_id);
         
        $categorie = Categorie::Find($resultat->categorie_id);

@@ -24,8 +24,7 @@ class CreateAnimauxTable extends Migration
             $table->tinyInteger('taille_cm')->unsigned()->nullable();
             $table->bigInteger('race_id')->unsigned()->nullable();
             $table->enum('sexe',['m', 'f']);
-            $table->boolean('foal')->nullable();
-            $table->boolean('vieux')->default(false);
+        
             $table->date('date_achat')->nullable();
             $table->date('date_naissance')->nullable();
             $table->boolean('a_vendre')->default(false);
@@ -33,7 +32,7 @@ class CreateAnimauxTable extends Migration
             $table->bigInteger('elevage_id')->unsigned();
             $table->foreign('elevage_id')->references('id')->on('elevages')->onUpdate('cascade');
             $table->boolean('fondateur')->default(true);
-            $table->boolean('foetus')->default(false);
+         
             $table->float('consang')->default(0);
             $table->bigInteger('sire_id')->unsigned()->nullable();
             $table->bigInteger('dam_id')->unsigned()->nullable();
@@ -49,6 +48,7 @@ class CreateAnimauxTable extends Migration
             $table->string('statut_administratif')->default('enregistré');
             $table->tinyInteger('taille_additive')->unsigned()->nullable();
             $table->tinyInteger('age_administratif')->default(0)->nullable();
+             $table->enum('stade', ['embryon','foetus','foal','jeune','pubere','sterile','adulte','mort'])->default('pubere')->nullable();
         });
     }
 

@@ -13,7 +13,7 @@ use App\Race;
 /**
  * class Animal (table animaux)
  * Relations: Genotypes, Elevage, Race, RacesPossibles (table races_possible): when a choice between different studbooks is required, Affixe, Performance, Sire, Dam (parents, table animaux), StatutFemelle or StatutMale, Pathologie, Couleur, Image
- * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur, foetus
+ * Other attributes: nom, couleur (determinated by owner), taille_cm, taille_additive, sexe, prix, date_achat, date_naissance, statut_administratif, modele_allures_additifs, modele_allures, capacite_dressage_additive, capacite_dressage_additive, booleans a_vendre, fondateur
  * functions: Sexe (sex and statut for reproduction)
  * Progneny: born children (including miscarriages)
  * Palmares: competition results (from table resultats) where the animal is ranked
@@ -32,7 +32,7 @@ use App\Race;
 class Animal extends Model
 {
     protected $table ='animaux';
-    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'sexe', 'date_achat', 'date_naissance', 'a_vendre', 'prix', 'elevage_id', 'fondateur', 'foetus', 'sire_id', 'dam_id', 'taille_additive', 'modele_allures_additifs', 'modele_allures' ];
+    protected $fillable = ['nom', 'affixe_id', 'couleur', 'taille_cm', 'race_id', 'sexe', 'date_achat', 'date_naissance', 'a_vendre', 'prix', 'elevage_id', 'fondateur', 'stade', 'sire_id', 'dam_id', 'taille_additive', 'modele_allures_additifs', 'modele_allures' ];
 
     public function Genotypes()
     {
@@ -78,7 +78,7 @@ class Animal extends Model
     public function Progeny() //les enfants
     {
         $animal = $this;
-        $animaux =  Animal::where('foetus', 0)->where(function ($q) use ($animal) { $q->where('dam_id', $animal->id)->orWhere('sire_id', $animal->id);})->get();
+        $animaux =  Animal::select(['id','nom','affixe_id','dam_id','sire_id'])->where('stade', '!=', 'foetus')->where(function ($q) use ($animal) { $q->where('dam_id', $animal->id)->orWhere('sire_id', $animal->id);})->get();
         return $animaux;
     }
 
@@ -123,12 +123,29 @@ class Animal extends Model
 
     public function SexeAdm() //Sexe et stade de développement +statut administratif, en fait...
     {
-     if ($this->foal && $this->sexe == 'f')   {
+     if ( $this->stade == 'foal' && $this->sexe == 'f')   {
         return "pouliche";
      }
-     if ($this->foal && $this->sexe == 'm')   {
+     if ( $this->stade == 'foal' && $this->sexe == 'm')   {
          return "poulain";
      }
+      if ($this->stade == 'jeune' && $this->sexe == 'm')   {
+         return "poulain sevré";
+     }
+
+      if ($this->stade == 'jeune' && $this->sexe == 'f')   {
+         return "pouliche sevrée";
+     }
+
+   
+       if ($this->stade == 'sterile' && $this->sexe == 'f')   {
+         return "jument stérilisée";
+     }
+
+      if ($this->stade == 'sterile' && $this->sexe == 'm')   {
+         return "hongre";
+     }
+     
      if (isset($this->StatutMale) && $this->StatutMale->fertilite == 0) {
         return 'Hongre';
      }
@@ -414,7 +431,7 @@ class Animal extends Model
             {
                if ($statut->vide == false)
                 {
-                    $produit = Animal::where('foetus', true)->where('dam_id',$this->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
+                    $produit = Animal::where('stade', 'foetus')->where('dam_id',$this->id)->first(); //à changer quand on aura introduit la gemellité possible version 2
                     $produit->elevage_id = $elevage->id;
                     if (isset($elevage->Affixe->id))
                   {  $produit->affixe_id = $elevage->Affixe->id;}
@@ -422,7 +439,7 @@ class Animal extends Model
                 }
                if ($statut->suitee)
                {
-                $produit = Animal::where('dam_id',$this->id)->where( 'foal', 1)->first(); 
+                $produit = Animal::where('dam_id',$this->id)->where('stade','foal')->first(); 
                 $produit->elevage_id = $elevage->id; 
                 $produit->save();
                }
@@ -448,7 +465,7 @@ public function seraSuiteeAu($datefutur)   {
     $id = $this->id;
     $date = Gamedata::getDate();
      if ($this->StatutFemelle->suitee) {
-        $foal = Animal::where('dam_id',$id)->where('foal', 1)->first();
+        $foal = Animal::where('dam_id',$id)->where('stade', 'foal')->first();
         
         $age = $foal->ageMonths($date);
         
