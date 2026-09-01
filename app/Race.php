@@ -331,6 +331,8 @@ static function PFS ($produit, $etalon,$jument) {
                return true;
             case ($jument->race_id == 9  || $jument->race_id == 1) && ($jument->Sire->race->poney_sport || $jument->Dam->race->poney_sport) :
                return true;
+            default:
+               return false;
          }
       case ($etalon->qualite=='approuvé' && $etalon->race->cheval_sport) && ($jument->race->poney_sport && $jument->taille < 140):
    return true;

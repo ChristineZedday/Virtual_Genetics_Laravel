@@ -122,6 +122,11 @@ switch ($this->classement) {
          $type = $type."%";
         $res = Resultat::whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->whereHas('Competition', function (Builder $query2) use ($type){$query2->where('type','LIKE',$type);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();
       }
+
+      if ($type == 'Dressage poneys' || $type == 'Dressage chevaux') {
+         $res = Resultat::where('type',$type)->whereHas('evenement', function ($q) use ($date,$y) {$q->whereDate('date','<=', $date)->whereYear('date', '>=', $y -1);})->whereHas('Competition', function (Builder $query2) use ($type){$query2->where('type','LIKE',$type);})->orderBy('evenement_id','desc')->orderBy('competition_id')->orderBy('reprise_id')->orderBy('categorie_id')->orderBy('note_synthese','desc')->get();
+
+      }
       
       return $res;
       

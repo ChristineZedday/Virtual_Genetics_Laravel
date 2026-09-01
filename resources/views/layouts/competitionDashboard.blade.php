@@ -54,6 +54,14 @@ $date = App\Gamedata::getDate();
 						<li><a href="{{route('tous_resultats', [$elevage, 'Dressage'])}}">Dressage</a></li>
 						
 					</ul>
+					<ul class='sousmenu'>
+						<li><a href="{{route('tous_resultats', [$elevage, 'Dressage poneys'])}}">Dressage Poneys seulement</a></li>
+						
+					</ul>
+					<ul class='sousmenu'>
+						<li><a href="{{route('tous_resultats', [$elevage, 'Dressage chevaux'])}}">Dressage Chevaux seulement</a></li>
+						
+					</ul>
 				</li>
 				<li class='deroule'><a href="{{route('reprises', [$elevage])}}">Liste des reprises de dressage</a></li>
 				<li><a href="{{route('budget',[$elevage])}}">Voir mon budget</a></li>

@@ -26,25 +26,16 @@ prix pour le premier:
 {{$competition->prix_premier}}
 </p>
 <div class ='form'>
-<label for="categorie_id">Sélectionner la catégorie</label>
+<label for="categorie_id">Sélectionner la catégorie: </label>
 
-<select name="categorie_id" >
 	@foreach ($competition->listeCategories() as $categorie)
 	
-  <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
+  <input type="radio" name ="categorie_id" value="{{$categorie->id}}" checked="{{$categorie->id==0? true : false}}">{{$categorie->nom}}
   @endforeach
-</select>
+<br/>
 
-@if($competition->type == 'Dressage')
-<label for="reprise_id">Sélectionner la reprise</label>
-<select name="reprise_id">
-	@foreach ($competition->Reprises as $reprise)
-  <option value="{{$reprise->id}}">{{$reprise->nom}} </option>
-  @endforeach
-</select>
-@endif
 
-<label for="animal_id">Sélectionner l'animal</label>
+<label for="animal_id">Sélectionner l'animal: </label>
 <select name="animal_id">
 	@foreach ($animaux as $animal)
   <option value="{{$animal->id}}">{{$animal->nomComplet()}} {{$animal->race->nom}}</option>
