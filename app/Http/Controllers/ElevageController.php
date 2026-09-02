@@ -169,10 +169,10 @@ class ElevageController extends Controller
     {
         if ($race == 'tous')
         {
-            $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance', 'a_vendre','prix','elevage_id'])->where('elevage_id', '!=' , $id)->where('a_vendre',true)->get();   
+            $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance', 'a_vendre','prix','elevage_id','sire_id','dam_id'])->where('elevage_id', '!=' , $id)->where('a_vendre',true)->get();   
         }
         else{
-        $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance', 'a_vendre','prix','elevage_id'])->where('elevage_id', '!=' , $id)->where('a_vendre',true)->where('race_id', $race)->get();
+        $animaux = Animal::select(['id','nom','affixe_id', 'race_id', 'sexe', 'couleur', 'taille_cm', 'date_naissance', 'a_vendre','prix','elevage_id','sire_id','dam_id'])->where('elevage_id', '!=' , $id)->where('a_vendre',true)->where('race_id', $race)->get();
         }
         $elevage = Elevage::Find($id);
       

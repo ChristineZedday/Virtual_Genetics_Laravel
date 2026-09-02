@@ -11,6 +11,8 @@
     <th>Race</th>
 	<th>Sexe</th>
 	<th>taille</th>
+	<th>Père</th>
+	<th>Mère</th>
 	<th>Prix</th>
     <th>Elevage</th>
 
@@ -26,6 +28,8 @@
 	<td> {{$animal->Race->nom}} </td>
 	<td> {{$animal->SexeAdm()}} </td>
 	<td> {{$animal->taille()}}</td>
+	<td>@isset($animal->Sire) {{ $animal->Sire->NomComplet() }} @else <td></td> @endisset </td>
+	<td>@isset($animal->Dam) {{ $animal->Dam->NomComplet()}} @else <td></td> @endisset </td>
 	<td>{{$animal->prix}}</td>
 	<?php 
 		 $vendeur = $animal->elevage_id;
