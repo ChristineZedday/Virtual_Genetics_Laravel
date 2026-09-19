@@ -138,11 +138,11 @@
 					@endisset
 				</div>
 				<div>
-						
+						@if (!str_contains($animal->sexeAdm(),'dressage') )
 						<a href="{{route('labelDressage',[$animal->id])}}">
 						<button> Labellisation dressage sur les résultats en compétition (60 euros)</button>
 						</a>
-						
+						@endif
 					</div>
 
 				<div>
