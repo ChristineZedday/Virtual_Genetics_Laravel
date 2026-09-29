@@ -226,24 +226,28 @@ class ReproductionController extends Controller
 } //end class ReproductionController
 
 
-function calculConsang($S, $D)
+
+
+function calculConsang($S, $D, $profondeur = 1)
 {
 
-  $date = Gamedata::getDate();
+ 
   $SS = Animal::find($S);
   if (isset ($SS))
   {
-    $ageS = $SS->ageMonths($date);
+    $ageS = $SS->age_administratif;
   }
  
   $DD = Animal::find($D);
   if (isset ($DD))
   {
-    $ageD = $DD->ageMonths($date);
+    $ageD = $DD->age_administratif;
   }
 
   switch (true)
   {
+
+    
     case $D == null || $S==null :
       return 0;
     break;
@@ -257,19 +261,24 @@ function calculConsang($S, $D)
     break;
 
     case $SS->fondateur || ($ageS >= $ageD):
-      return calculConsang($S, $DD->sire_id)/2 + calculConsang($S, $DD->dam_id)/2 ;  
+      $profondeur++;
+      if ($profondeur < 10)
+        {return calculConsang($S, $DD->sire_id, $profondeur)/2 + calculConsang($S, $DD->dam_id,$profondeur)/2 ; } 
+      else {return 0;}
     break;
 
     case $DD->fondateur || ($ageD > $ageS):
-      return calculConsang($D, $SS->sire_id)/2 + calculConsang($D, $SS->dam_id)/2 ;  
+      $profondeur++;
+      if ($profondeur < 10)
+        {return calculConsang($D, $SS->sire_id,$profondeur)/2 + calculConsang($D, $SS->dam_id,$profondeur)/2 ;  }
+      else {return 0;}
     break;
 
     default:
     dd ('???oublié quoi????');
-  }
-      
-  
+  }  
 }
+
 
 function crenom ($lettre)
 {
