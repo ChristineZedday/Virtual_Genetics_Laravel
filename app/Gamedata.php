@@ -356,23 +356,35 @@ static function checkApprovals () {
 static function checkVieux ()
 {
    
-    $vieux = Animal::select(['id', 'age_administratif'])->where('age_administratif', 16)->with('Performance')->get();
+    $vieux = Animal::select(['id', 'age_administratif','sexe'])->where('age_administratif', '>=', 16)->with('Performance')->get();
     foreach ($vieux as $vieux) {
         $perf= $vieux->Performance;
         $age = $vieux->age_administratif;
         if ($age < 25) {
             $degradation = random_int(0,10);
+            $infertilite = random_int(0,5);
         }
         else {
             $degradation = random_int(0,20);
+            $infertilite = random_int(0,10);
+
         }
         
         $perf->sante -= $degradation;
         $perf->save();
 
+        if ($vieux->sexe == 'f') {
+            $statut = $vieux->statutFemelle; }
+            else {$statut = $vieux->satutMale;}
+            if ($statut) {
+                $statut->fertilite -= $infertilite;
+                $statut->save();
+            }
+        }
+
+
     }
     
-}
 
 
 //Sending to Ankou (Death) the horses (possibly during gestation or at birth) that have letal gens or those that died of age
