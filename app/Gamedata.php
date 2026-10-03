@@ -371,6 +371,7 @@ static function checkVieux ()
         }
         
         $perf->sante -= $degradation;
+         if ($perf->sante  < 0) { $perf->sante  = 0;}
         $perf->save();
 
         if ($vieux->sexe == 'f') {
@@ -378,6 +379,7 @@ static function checkVieux ()
             else {$statut = $vieux->satutMale;}
             if ($statut) {
                 $statut->fertilite -= $infertilite;
+                if ($statut->fertilite< 0) { $statut->fertilite =0;}
                 $statut->save();
             }
         }
