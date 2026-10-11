@@ -67,7 +67,10 @@ class ReproductionController extends Controller
           {
             $declaree =1;
             if ($elevage->role == 'Joueur') {
-              $elevage->Budget()->acheteSaillie($statutM->prix);
+              if (!$statut->paye )
+             { $elevage->Budget()->acheteSaillie($statutM->prix);
+              $statut->paye = true;
+              $statut->save();}
             }
             $etalonnier = $etalon->Elevage;
             if ($etalonnier->role == 'Joueur') {
@@ -79,6 +82,7 @@ class ReproductionController extends Controller
           {
             //gestion statut maternel et identité administrative
               $statut->vide = false; 
+              $statut->paye = false;
               $statut->save();
             
               $animal = new Animal;
