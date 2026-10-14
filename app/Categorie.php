@@ -204,12 +204,23 @@ public function run($competition, $evenement) {
 
     foreach ($inscrits as $inscrit) {
         $elevage = $inscrit->Animal->Elevage;
-        if ($elevage->role == 'Joueur') {
+       
+        
+        if ($elevage->role == 'Joueur' ) {
+             $autre = Resultat::where('evenement_id', $evenement->id)->where('animal_id', $inscrit->animal_id)->first();
+            if ($autre->transport_paye) {
+            $inscrit->transport_paye = true;
+            $inscrit->save();
+             }
+            if (!$inscrit->transport_paye) {
             $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
-            if (!$frais ) {
-                $inscrits->forget($inscrit->id);
+                if (!$frais ) {
+                    $inscrits->forget($inscrit->id);
                 // faut les sous pour y aller!
+                }
             }
+            else { $inscrit->transport_paye = true; 
+            $inscrit->save();}
         }   
     }
 

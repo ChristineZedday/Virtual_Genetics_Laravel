@@ -169,7 +169,7 @@ class CompetitionController extends Controller
     public function resultats( $elevage, $type)
     {
        
-        
+         set_time_limit(100);
         $elevage =Elevage::Find($elevage);
         
         $resultats  = Resultat::resultats($elevage->id, $type);

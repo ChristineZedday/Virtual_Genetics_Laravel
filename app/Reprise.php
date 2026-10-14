@@ -30,14 +30,22 @@ class Reprise extends Model
 
         foreach ($inscrits as $inscrit) {
             $elevage = $inscrit->Animal->Elevage;
-            if ($elevage->role == 'Joueur') {
-            $frais = $elevage->fraisTransport($inscrit->Animal, $evenement->distance);
+            if ($elevage->role == 'Joueur' ) {
+             $autre = Resultat::where('evenement_id', $evenement->id)->where('animal_id', $inscrit->animal_id)->first();
+            if ($autre->transport_paye) {
+            $inscrit->transport_paye = true;
+            $inscrit->save();
+             }
+            if (!$inscrit->transport_paye) {
+            $frais = $elevage->fraisTransport($inscrit->animal, $evenement->distance);
                 if (!$frais ) {
-                   
                     $inscrits->forget($inscrit->id);
-                    // faut les sous pour y aller!
+                // faut les sous pour y aller!
                 }
-            }   
+            }
+            else { $inscrit->transport_paye = true; 
+            $inscrit->save();}
+        }   
         } 
 
         
