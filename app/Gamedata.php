@@ -356,7 +356,7 @@ static function checkApprovals () {
 static function checkVieux ()
 {
    
-    $vieux = Animal::select(['id', 'age_administratif','sexe'])->where('age_administratif', '>=', 16)->with('Performance')->get();
+    $vieux = Animal::select(['id', 'age_administratif','sexe','stade'])->where('age_administratif', '>=', 16)->where('stade','!=', 'mort')->with('Performance')->get();
     foreach ($vieux as $vieux) {
         $perf= $vieux->Performance;
         $age = $vieux->age_administratif;
