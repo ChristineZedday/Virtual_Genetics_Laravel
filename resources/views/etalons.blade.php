@@ -34,7 +34,8 @@
     <th>Date de naissance<button onclick="tri(6, ASC, 0)"> &#x23F6;</button><button onclick="tri(6, DESC, 0)"> &#x23F7;</button></th>
     <th>Père<button onclick="tri(7, ASC, 0)"> &#x23F6;</button><button onclick="tri(7, DESC, 0)"> &#x23F7;</button></th>
 	<th>Mère<button onclick="tri(8, ASC, 0 )"> &#x23F6;</button><button onclick="tri(8, DESC, 0)"> &#x23F7;</button></th>
-    <th>Voir</th>
+    <th>IDR cheval/poney</th>
+	<th>Voir</th>
   </tr>
 </thead>
 <tbody>
@@ -57,6 +58,7 @@
 	<td> {{ $animal->Dam->NomComplet()}} </td>
 	@else
 <td></td>@endisset
+<td>{{(int)($animal->Performance->IDR_cheval)}} &nbsp; {{(int)($animal->Performance->IDR_poney)}} </td>
 
 	
 
