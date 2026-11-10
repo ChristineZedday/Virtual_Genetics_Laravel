@@ -207,7 +207,7 @@ static function checkNonEnregistres()
 
 static function vieillir() {
    // $animaux = Animal::select('id', 'age_administratif')->get();
-   DB::table('animaux')->orWhere('stade', '!=', 'foetus')->increment('age_administratif') ;
+   DB::table('animaux')->Where('stade', '!=', 'foetus')->where('stade', '!=', 'mort')->increment('age_administratif') ;
     
   
 }
